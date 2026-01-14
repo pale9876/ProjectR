@@ -1,0 +1,65 @@
+[gd_scene format=3 uid="uid://c3xwqsfprgbn4"]
+
+[ext_resource type="Script" uid="uid://dtacvaonrcmwg" path="res://player.gd" id="1_kpjcp"]
+[ext_resource type="Texture2D" uid="uid://b58av82qx4xss" path="res://icon.svg" id="1_xhfnw"]
+[ext_resource type="Resource" uid="uid://4ntuwag3k035" path="res://chara/red_hood/red_hood.tres" id="2_5ncpa"]
+[ext_resource type="Script" uid="uid://bl8ms0nmsmbkl" path="res://visible_notification_shape_2d.gd" id="3_kne1u"]
+[ext_resource type="Script" uid="uid://cdb4dyqk3exd" path="res://pose.gd" id="4_cxr5p"]
+[ext_resource type="Script" uid="uid://dv0fmn8qrven4" path="res://visible_notification_sprite_2d.gd" id="4_e80uo"]
+[ext_resource type="Script" uid="uid://c342mx8mdc4sm" path="res://hurt_box.gd" id="6_tdg3f"]
+[ext_resource type="Script" uid="uid://dgpate5wpm75e" path="res://pose_controller_2d.gd" id="6_wi0c6"]
+[ext_resource type="Script" uid="uid://x7od6vrds4mc" path="res://unit_event_handler.gd" id="7_dtqjt"]
+
+[sub_resource type="RectangleShape2D" id="RectangleShape2D_0rwas"]
+size = Vector2(20, 42)
+
+[sub_resource type="RectangleShape2D" id="RectangleShape2D_dtqjt"]
+size = Vector2(20, 42)
+
+[node name="Player" type="CharacterBody2D" unique_id=74662124 node_paths=PackedStringArray("pose_controller")]
+collision_layer = 0
+script = ExtResource("1_kpjcp")
+chara_info = ExtResource("2_5ncpa")
+pose_controller = NodePath("PoseController2D")
+
+[node name="UnitEventHandler" type="Node" parent="." unique_id=1569022870]
+script = ExtResource("7_dtqjt")
+
+[node name="PlaceHolder" type="Sprite2D" parent="." unique_id=610565242]
+position = Vector2(0, -21)
+scale = Vector2(0.15625, 0.328125)
+texture = ExtResource("1_xhfnw")
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="." unique_id=846775626]
+position = Vector2(0, -21)
+shape = SubResource("RectangleShape2D_0rwas")
+script = ExtResource("3_kne1u")
+
+[node name="PoseController2D" type="Node2D" parent="." unique_id=296513422 node_paths=PackedStringArray("cache", "init_pose")]
+script = ExtResource("6_wi0c6")
+cache = {
+&"Idle": NodePath("Idle")
+}
+init_pose = NodePath("Idle")
+
+[node name="Idle" type="Node2D" parent="PoseController2D" unique_id=1827049041]
+script = ExtResource("4_cxr5p")
+
+[node name="VisibleNotificationSprite2D" type="Sprite2D" parent="PoseController2D/Idle" unique_id=443780610]
+position = Vector2(0, -21)
+scale = Vector2(0.15625, 0.328125)
+texture = ExtResource("1_xhfnw")
+script = ExtResource("4_e80uo")
+
+[node name="HurtBox" type="Area2D" parent="PoseController2D/Idle" unique_id=973652727]
+collision_layer = 0
+monitorable = false
+script = ExtResource("6_tdg3f")
+mask = 1
+
+[node name="VisibleNotificationShape2D" type="CollisionShape2D" parent="PoseController2D/Idle/HurtBox" unique_id=1489290861]
+position = Vector2(0, -21)
+shape = SubResource("RectangleShape2D_dtqjt")
+debug_color = Color(0.81960785, 0, 0, 0.101960786)
+script = ExtResource("3_kne1u")
+metadata/_custom_type_script = "uid://bl8ms0nmsmbkl"

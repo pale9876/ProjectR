@@ -1,0 +1,61 @@
+[gd_scene format=3 uid="uid://bhfn1mwn6pof0"]
+
+[ext_resource type="Script" uid="uid://cu3fn7jpphedi" path="res://ui/title.gd" id="1_8lx1x"]
+[ext_resource type="Script" uid="uid://c3vmpde58py3t" path="res://tween_label.gd" id="1_y7k74"]
+[ext_resource type="Curve" uid="uid://buishkhyck2fd" path="res://tween_animated_label/fade_in_curve.tres" id="2_kpexm"]
+[ext_resource type="Curve" uid="uid://gf87g3ubwpn6" path="res://tween_animated_label/fade_out_curve.tres" id="3_3xoar"]
+
+[sub_resource type="LabelSettings" id="LabelSettings_06r0y"]
+
+[node name="Title" type="CanvasLayer" unique_id=1264384117]
+script = ExtResource("1_8lx1x")
+
+[node name="Control" type="Control" parent="." unique_id=413502613]
+layout_mode = 3
+anchors_preset = 15
+anchor_right = 1.0
+anchor_bottom = 1.0
+grow_horizontal = 2
+grow_vertical = 2
+
+[node name="TextureRect" type="TextureRect" parent="Control" unique_id=117686399]
+layout_mode = 1
+anchors_preset = 15
+anchor_right = 1.0
+anchor_bottom = 1.0
+grow_horizontal = 2
+grow_vertical = 2
+
+[node name="CenterContainer" type="CenterContainer" parent="Control" unique_id=1279470781]
+layout_mode = 1
+anchors_preset = 15
+anchor_right = 1.0
+anchor_bottom = 1.0
+grow_horizontal = 2
+grow_vertical = 2
+
+[node name="Control" type="Control" parent="Control/CenterContainer" unique_id=1629285532]
+layout_mode = 2
+
+[node name="TitleLabel" type="Label" parent="Control/CenterContainer/Control" unique_id=1567843593]
+modulate = Color(1, 1, 1, 0)
+layout_mode = 1
+anchors_preset = 8
+anchor_left = 0.5
+anchor_top = 0.5
+anchor_right = 0.5
+anchor_bottom = 0.5
+offset_left = -34.5
+offset_top = 18.5
+offset_right = 34.5
+offset_bottom = 41.500015
+grow_horizontal = 2
+grow_vertical = 2
+text = "Project R"
+label_settings = SubResource("LabelSettings_06r0y")
+horizontal_alignment = 1
+vertical_alignment = 1
+script = ExtResource("1_y7k74")
+current = 2
+fade_in_curve = ExtResource("2_kpexm")
+fade_out_curve = ExtResource("3_3xoar")
