@@ -4,26 +4,160 @@
 [ext_resource type="Texture2D" uid="uid://b58av82qx4xss" path="res://icon.svg" id="1_xhfnw"]
 [ext_resource type="Resource" uid="uid://4ntuwag3k035" path="res://chara/red_hood/red_hood.tres" id="2_5ncpa"]
 [ext_resource type="Script" uid="uid://bl8ms0nmsmbkl" path="res://visible_notification_shape_2d.gd" id="3_kne1u"]
-[ext_resource type="Script" uid="uid://cdb4dyqk3exd" path="res://pose.gd" id="4_cxr5p"]
 [ext_resource type="Script" uid="uid://dv0fmn8qrven4" path="res://visible_notification_sprite_2d.gd" id="4_e80uo"]
+[ext_resource type="Script" uid="uid://csrwbqy0d4o5e" path="res://stat_data.gd" id="4_hp6x6"]
 [ext_resource type="Script" uid="uid://c342mx8mdc4sm" path="res://hurt_box.gd" id="6_tdg3f"]
-[ext_resource type="Script" uid="uid://dgpate5wpm75e" path="res://pose_controller_2d.gd" id="6_wi0c6"]
 [ext_resource type="Script" uid="uid://x7od6vrds4mc" path="res://unit_event_handler.gd" id="7_dtqjt"]
 
 [sub_resource type="RectangleShape2D" id="RectangleShape2D_0rwas"]
 size = Vector2(20, 42)
 
+[sub_resource type="GDScript" id="GDScript_5ncpa"]
+script/source = "@tool
+extends Node2D
+class_name PoseController2D
+
+
+@export var cache: Dictionary[StringName, Pose2D]
+
+@export var init_pose: Pose2D
+var _current: Pose2D = null
+
+
+func _enter_tree() -> void:
+	if !cache.is_empty(): cache.clear()
+
+
+func _ready() -> void:
+	if Engine.is_editor_hint(): return
+	
+	if init_pose != null:
+		assert(has_pose(init_pose.name))
+		assert(get_children().filter(func(node)->bool: return node is Pose2D).has(init_pose))
+		change_pose(init_pose.name)
+
+
+func _physics_process(delta: float) -> void:
+	if Engine.is_editor_hint(): return
+	
+	if _current != null:
+		_current._update(delta)
+
+
+func remove_pose(pose: Pose2D) -> bool:
+	if !cache.has(pose.name): return false
+	
+	cache.erase(pose.name)
+	return true
+
+
+func add_pose(pose: Pose2D) -> bool:
+	if cache.has(pose.name):
+		return false
+	
+	cache[pose.name] = pose
+	return true
+
+
+func get_current_pose() -> Pose2D:
+	return _current
+
+
+func get_poses() -> Array[Pose2D]:
+	return cache.values()
+
+
+func get_list() -> PackedStringArray:
+	var list: Array = cache.keys()
+	var result: PackedStringArray = []
+	
+	for n: StringName in list:
+		result.push_back(String(n))
+	
+	return result
+
+
+func has_pose(pose_name: StringName) -> bool:
+	return cache.has(pose_name)
+
+
+func change_pose(pose_name: StringName) -> void:
+	if !has_pose(pose_name): return
+	
+	var prev_pose: Pose2D = get_current_pose()
+	var next_pose: Pose2D = cache[pose_name]
+	
+	if next_pose == prev_pose: return
+	
+	if prev_pose != null:
+		prev_pose._exit()
+	
+	for pose: Pose2D in get_poses():
+		if next_pose == pose:
+			pose.disabled = false
+			pose._enter()
+		else:
+			pose.disabled = true
+"
+
+[sub_resource type="GDScript" id="GDScript_wi0c6"]
+script/source = "@tool
+extends Node2D
+class_name Pose2D
+
+
+@export var disabled: bool = false: set = _set_disabled
+
+
+var _root: Node = null
+
+
+func _set_disabled(toggle: bool) -> void:
+	disabled = toggle
+	self.visible = false
+
+
+func _enter_tree() -> void:
+	_root = get_parent()
+	if _root is PoseController2D:
+		_root.add_pose(self)
+
+
+# OVERRIDE
+func _enter() -> void:
+	pass
+
+
+# OVERRIDE
+func _update(_delta: float) -> void:
+	pass
+
+
+# OVERRIDE
+func _exit() -> void:
+	pass
+
+
+
+func _process(_delta: float) -> void:
+	if _root != null:
+		if _root is Node2D and !disabled:
+			self.visible = _root.visible
+"
+
 [sub_resource type="RectangleShape2D" id="RectangleShape2D_dtqjt"]
 size = Vector2(20, 42)
 
-[node name="Player" type="CharacterBody2D" unique_id=74662124 node_paths=PackedStringArray("pose_controller")]
+[node name="Player" type="CharacterBody2D" unique_id=74662124]
 collision_layer = 0
 script = ExtResource("1_kpjcp")
 chara_info = ExtResource("2_5ncpa")
-pose_controller = NodePath("PoseController2D")
 
 [node name="UnitEventHandler" type="Node" parent="." unique_id=1569022870]
 script = ExtResource("7_dtqjt")
+
+[node name="StatData" type="Node" parent="." unique_id=234917428]
+script = ExtResource("4_hp6x6")
 
 [node name="PlaceHolder" type="Sprite2D" parent="." unique_id=610565242]
 position = Vector2(0, -21)
@@ -36,14 +170,16 @@ shape = SubResource("RectangleShape2D_0rwas")
 script = ExtResource("3_kne1u")
 
 [node name="PoseController2D" type="Node2D" parent="." unique_id=296513422 node_paths=PackedStringArray("cache", "init_pose")]
-script = ExtResource("6_wi0c6")
+script = SubResource("GDScript_5ncpa")
 cache = {
-&"Idle": NodePath("Idle")
+&"Fall": NodePath("Fall"),
+&"Idle": NodePath("Idle"),
+&"Move": NodePath("Move")
 }
 init_pose = NodePath("Idle")
 
 [node name="Idle" type="Node2D" parent="PoseController2D" unique_id=1827049041]
-script = ExtResource("4_cxr5p")
+script = SubResource("GDScript_wi0c6")
 
 [node name="VisibleNotificationSprite2D" type="Sprite2D" parent="PoseController2D/Idle" unique_id=443780610]
 position = Vector2(0, -21)
@@ -63,3 +199,11 @@ shape = SubResource("RectangleShape2D_dtqjt")
 debug_color = Color(0.81960785, 0, 0, 0.101960786)
 script = ExtResource("3_kne1u")
 metadata/_custom_type_script = "uid://bl8ms0nmsmbkl"
+
+[node name="Move" type="Node2D" parent="PoseController2D" unique_id=651046877]
+script = SubResource("GDScript_wi0c6")
+metadata/_custom_type_script = "uid://cdb4dyqk3exd"
+
+[node name="Fall" type="Node2D" parent="PoseController2D" unique_id=2130794940]
+script = SubResource("GDScript_wi0c6")
+metadata/_custom_type_script = "uid://cdb4dyqk3exd"
