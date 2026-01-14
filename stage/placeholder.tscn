@@ -1,6 +1,7 @@
 [gd_scene format=3 uid="uid://cwc50cjdjrhhm"]
 
 [ext_resource type="Script" uid="uid://b4vhbqg41oyrf" path="res://stage.gd" id="1_gxm52"]
+[ext_resource type="Script" uid="uid://b2joliyug4dov" path="res://stage/entrance_point.gd" id="2_qeeyh"]
 
 [node name="Stage" type="Node2D" unique_id=323469492]
 script = ExtResource("1_gxm52")
@@ -10,3 +11,8 @@ script = ExtResource("1_gxm52")
 [node name="CollisionPolygon2D" type="CollisionPolygon2D" parent="StaticBody2D" unique_id=492876771]
 build_mode = 1
 polygon = PackedVector2Array(0, 0, 960, 0, 960, 384, 0, 384)
+
+[node name="EntrancePoint2D" type="Node2D" parent="." unique_id=661184207]
+position = Vector2(48, 384)
+script = ExtResource("2_qeeyh")
+metadata/_custom_type_script = "uid://b2joliyug4dov"

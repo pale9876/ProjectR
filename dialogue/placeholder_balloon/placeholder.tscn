@@ -1,0 +1,26 @@
+[gd_scene format=3 uid="uid://bsu3q18tceuix"]
+
+[ext_resource type="Script" uid="uid://bioxe706w4iis" path="res://dialogue/placeholder_balloon/placeholder.gd" id="1_s72j1"]
+[ext_resource type="Script" uid="uid://g32um0mltv5d" path="res://addons/dialogue_manager/dialogue_label.gd" id="1_tog2g"]
+[ext_resource type="Resource" uid="uid://c507l6kp34thk" path="res://dialogue/sample.dialogue" id="2_oeren"]
+
+[node name="Control" type="Control" unique_id=2137650832]
+layout_mode = 3
+anchors_preset = 15
+anchor_right = 1.0
+anchor_bottom = 1.0
+grow_horizontal = 2
+grow_vertical = 2
+script = ExtResource("1_s72j1")
+dialogue = ExtResource("2_oeren")
+
+[node name="DialogueLabel" type="RichTextLabel" parent="." unique_id=1851158375]
+layout_mode = 1
+anchors_preset = -1
+anchor_right = 0.66700006
+anchor_bottom = 0.164
+offset_right = -0.3840332
+offset_bottom = -0.27200317
+script = ExtResource("1_tog2g")
+skip_pause_at_abbreviations = PackedStringArray("Mr", "Mrs", "Ms", "Dr", "etc", "eg", "ex")
+metadata/_custom_type_script = "uid://g32um0mltv5d"
