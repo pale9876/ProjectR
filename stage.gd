@@ -3,15 +3,26 @@ extends Node2D
 class_name Stage
 
 
-@export var entrance_point: Dictionary[String, Node2D] = {}
+@export var disabled: bool = false
+@export var size: Vector2 = Vector2(1., 1.)
 
 
-func _init() -> void:
-	entrance_point.clear()
+@export var entrance_point: Array[Node2D]
 
-func _enter_tree() -> void:
+
+@export_group("스폰포인트")
+@export var spawn_point: Array[Node2D] = []
+
+
+func _draw() -> void:
 	pass
 
 
-func add_entrance_point(point: Node2D) -> void:
-	entrance_point[point.name] = point
+func _notification(what: int) -> void:
+	if NOTIFICATION_CHILD_ORDER_CHANGED == what:
+		for node: Node in get_children():
+			if node is StaticBody2D:
+				pass
+			
+			if node is IconPoint2D:
+				pass

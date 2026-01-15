@@ -14,12 +14,6 @@ func _set_disabled(toggle: bool) -> void:
 	self.visible = false
 
 
-func _enter_tree() -> void:
-	_root = get_parent()
-	if _root is PoseController2D:
-		_root.add_pose(self)
-
-
 # OVERRIDE
 func _enter() -> void:
 	pass

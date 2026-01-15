@@ -7,6 +7,9 @@ class_name PhysicsUnit2D
 @export var pose_controller: PoseController2D
 
 
+var _pps: Vector2 = Vector2.ZERO
+
+
 func _init() -> void:
 	motion_mode == MOTION_MODE_GROUNDED
 	up_direction = Vector2.UP

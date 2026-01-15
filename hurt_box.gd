@@ -9,7 +9,8 @@ var _root: Node = null
 
 
 func _init() -> void:
-	monitorable = false
+	monitoring = false
+	monitorable = true
 	collision_layer = 0
 
 
@@ -18,14 +19,24 @@ func _enter_tree() -> void:
 
 	if !Engine.is_editor_hint():
 		area_entered.connect(on_area_entered)
+		area_exited.connect(on_area_exited)
 
 
-func _process(delta: float) -> void:
-	if _root is Node2D:
-		visible = _root.visible
+func _notification(what: int) -> void:
+	if what == NOTIFICATION_VISIBILITY_CHANGED:
+		monitorable = visible
+		
+		for node: Node in get_children():
+			if node is Node2D:
+				node.visible = visible
+
 
 
 func on_area_entered(area: Area2D) -> void:
+	pass
+
+
+func on_area_exited(area: Area2D) -> void:
 	pass
 
 

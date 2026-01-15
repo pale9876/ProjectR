@@ -12,7 +12,7 @@ script = ExtResource("1_gxm52")
 build_mode = 1
 polygon = PackedVector2Array(0, 0, 960, 0, 960, 384, 0, 384)
 
-[node name="EntrancePoint2D" type="Node2D" parent="." unique_id=661184207]
-position = Vector2(48, 384)
+[node name="IconPoint2D" type="Node2D" parent="." unique_id=661184207]
+position = Vector2(32, 352)
 script = ExtResource("2_qeeyh")
 metadata/_custom_type_script = "uid://b2joliyug4dov"

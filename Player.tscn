@@ -4,7 +4,6 @@
 [ext_resource type="Texture2D" uid="uid://b58av82qx4xss" path="res://icon.svg" id="1_xhfnw"]
 [ext_resource type="Resource" uid="uid://4ntuwag3k035" path="res://chara/red_hood/red_hood.tres" id="2_5ncpa"]
 [ext_resource type="Script" uid="uid://bl8ms0nmsmbkl" path="res://visible_notification_shape_2d.gd" id="3_kne1u"]
-[ext_resource type="Script" uid="uid://dv0fmn8qrven4" path="res://visible_notification_sprite_2d.gd" id="4_e80uo"]
 [ext_resource type="Script" uid="uid://csrwbqy0d4o5e" path="res://stat_data.gd" id="4_hp6x6"]
 [ext_resource type="Script" uid="uid://c342mx8mdc4sm" path="res://hurt_box.gd" id="6_tdg3f"]
 [ext_resource type="Script" uid="uid://dgpate5wpm75e" path="res://pose/pose_controller_2d.gd" id="7_3tkgg"]
@@ -39,25 +38,25 @@ position = Vector2(0, -21)
 shape = SubResource("RectangleShape2D_0rwas")
 script = ExtResource("3_kne1u")
 
-[node name="PoseController2D" type="Node2D" parent="." unique_id=296513422]
+[node name="PoseController2D" type="Node2D" parent="." unique_id=296513422 node_paths=PackedStringArray("init_pose")]
 script = ExtResource("7_3tkgg")
+init_pose = NodePath("Idle")
 
 [node name="Idle" type="Node2D" parent="PoseController2D" unique_id=1827049041]
 script = ExtResource("8_l6ohk")
 
-[node name="VisibleNotificationSprite2D" type="Sprite2D" parent="PoseController2D/Idle" unique_id=443780610]
+[node name="Sprite2D" type="Sprite2D" parent="PoseController2D/Idle" unique_id=443780610]
 position = Vector2(0, -21)
 scale = Vector2(0.15625, 0.328125)
 texture = ExtResource("1_xhfnw")
-script = ExtResource("4_e80uo")
 
 [node name="HurtBox" type="Area2D" parent="PoseController2D/Idle" unique_id=973652727]
 collision_layer = 0
-monitorable = false
+monitoring = false
 script = ExtResource("6_tdg3f")
 mask = 1
 
-[node name="VisibleNotificationShape2D" type="CollisionShape2D" parent="PoseController2D/Idle/HurtBox" unique_id=1489290861]
+[node name="NotificationShape2D" type="CollisionShape2D" parent="PoseController2D/Idle/HurtBox" unique_id=1489290861]
 position = Vector2(0, -21)
 shape = SubResource("RectangleShape2D_dtqjt")
 debug_color = Color(0.81960785, 0, 0, 0.101960786)

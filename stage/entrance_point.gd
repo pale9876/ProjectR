@@ -1,19 +1,16 @@
 @icon("res://aseprite/icon/entrance_point_icon.svg")
 @tool
 extends Node2D
-class_name EntrancePoint2D
+class_name IconPoint2D
 
 
 const ENTRANCE_POINT_ICON: Texture2D = preload("uid://ijfj1kiohbpt")
 
-var _root: Node = null
 
-
-func _enter_tree() -> void:
-	_root = get_parent()
-	if _root is Stage:
-		_root
-
+@export var texture: Texture2D = ENTRANCE_POINT_ICON:
+	set(t):
+		texture = t
+		queue_redraw()
 
 
 func _draw() -> void:
