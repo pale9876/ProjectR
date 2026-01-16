@@ -1,18 +1,28 @@
 [gd_scene format=3 uid="uid://cwc50cjdjrhhm"]
 
 [ext_resource type="Script" uid="uid://b4vhbqg41oyrf" path="res://stage.gd" id="1_gxm52"]
-[ext_resource type="Script" uid="uid://b2joliyug4dov" path="res://stage/entrance_point.gd" id="2_qeeyh"]
+[ext_resource type="Script" uid="uid://836rv2c0bnuk" path="res://stage/entrance_point_2d.gd" id="2_qeeyh"]
+[ext_resource type="Script" uid="uid://d2g0agxt3jvmp" path="res://stage/spawn_point_2d.gd" id="3_0sd2w"]
+[ext_resource type="Texture2D" uid="uid://ijfj1kiohbpt" path="res://aseprite/icon/entrance_point_icon.svg" id="3_ybyqf"]
+[ext_resource type="Texture2D" uid="uid://dydcfuwtrplgr" path="res://aseprite/icon/spawn_point_icon.svg" id="4_f62ff"]
 
-[node name="Stage" type="Node2D" unique_id=323469492]
+[node name="Stage" type="StaticBody2D" unique_id=1100972656]
 script = ExtResource("1_gxm52")
 
-[node name="StaticBody2D" type="StaticBody2D" parent="." unique_id=370598557]
-
-[node name="CollisionPolygon2D" type="CollisionPolygon2D" parent="StaticBody2D" unique_id=492876771]
+[node name="CollisionPolygon2D" type="CollisionPolygon2D" parent="." unique_id=492876771]
 build_mode = 1
 polygon = PackedVector2Array(0, 0, 960, 0, 960, 384, 0, 384)
 
-[node name="IconPoint2D" type="Node2D" parent="." unique_id=661184207]
-position = Vector2(32, 352)
+[node name="StartPoint" type="Node2D" parent="." unique_id=661184207]
+position = Vector2(64, 384)
 script = ExtResource("2_qeeyh")
+icon = ExtResource("3_ybyqf")
+offset = Vector2(0, -7.18)
 metadata/_custom_type_script = "uid://b2joliyug4dov"
+
+[node name="SpawnPoint2D" type="Node2D" parent="." unique_id=1926593828]
+position = Vector2(816, 384)
+script = ExtResource("3_0sd2w")
+icon = ExtResource("4_f62ff")
+offset = Vector2(0, -4.21)
+metadata/_custom_type_script = "uid://d2g0agxt3jvmp"

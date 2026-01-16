@@ -36,6 +36,7 @@ texture = ExtResource("1_xhfnw")
 [node name="CollisionShape2D" type="CollisionShape2D" parent="." unique_id=846775626]
 position = Vector2(0, -21)
 shape = SubResource("RectangleShape2D_0rwas")
+debug_color = Color(0, 0.7607843, 0.57254905, 0.11764706)
 script = ExtResource("3_kne1u")
 
 [node name="PoseController2D" type="Node2D" parent="." unique_id=296513422 node_paths=PackedStringArray("init_pose")]

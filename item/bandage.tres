@@ -1,0 +1,10 @@
+[gd_resource type="Resource" script_class="ItemBase" format=3 uid="uid://l047h8jslhfh"]
+
+[ext_resource type="Script" uid="uid://0obayvr1kmis" path="res://item/item_base.gd" id="1_614u6"]
+
+[resource]
+script = ExtResource("1_614u6")
+unique = null
+name = "붕대"
+description = "상처 부위에 붕대를 감습니다."
+metadata/_custom_type_script = "uid://0obayvr1kmis"
