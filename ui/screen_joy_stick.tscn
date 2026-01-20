@@ -1,6 +1,6 @@
 [gd_scene format=3 uid="uid://bk1bnhqoyyuuj"]
 
-[ext_resource type="Script" uid="uid://cnv8o6ygj714" path="res://ui/joystick_screen.gd" id="1_icap2"]
+[ext_resource type="Script" uid="uid://cnv8o6ygj714" path="res://ui/joystick_screen.gd" id="1_pcsbg"]
 
 [sub_resource type="Curve" id="Curve_icap2"]
 _data = [Vector2(0, 0), 0.0, 3.3248022, 0, 0, Vector2(1, 1), 0.0, 0.0, 0, 0]
@@ -15,5 +15,5 @@ anchor_right = 1.0
 anchor_bottom = 1.0
 grow_horizontal = 2
 grow_vertical = 2
-script = ExtResource("1_icap2")
+script = ExtResource("1_pcsbg")
 reset_curve = SubResource("Curve_icap2")

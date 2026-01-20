@@ -61,23 +61,23 @@ func _gui_input(event: InputEvent) -> void:
 		touch_ev_handler(event)
 	elif event is InputEventScreenDrag:
 		drag_ev_handler(event)
-
-	if event is InputEventMouseButton:
-		if event.is_pressed():
-			if event.button_index == MOUSE_BUTTON_LEFT:
-				_pressed = true
-				_point = event.position
-		elif event.is_released():
-			if event.button_index == MOUSE_BUTTON_LEFT:
-				_pressed = false
-				_initialization_inner_point()
-	elif event is InputEventMouseMotion:
-		if _pressed:
-			var dragged_pnt: Vector2 = event.position
-			var current_dist: float = event.position.distance_squared_to(_point)
-			if current_dist > radius ** 2:
-				dragged_pnt = _point + _point.direction_to(dragged_pnt) * radius
-			_inner_point = dragged_pnt
+#
+	#if event is InputEventMouseButton:
+		#if event.is_pressed():
+			#if event.button_index == MOUSE_BUTTON_LEFT:
+				#_pressed = true
+				#_point = event.position
+		#elif event.is_released():
+			#if event.button_index == MOUSE_BUTTON_LEFT:
+				#_pressed = false
+				#_initialization_inner_point()
+	#elif event is InputEventMouseMotion:
+		#if _pressed:
+			#var dragged_pnt: Vector2 = event.position
+			#var current_dist: float = event.position.distance_squared_to(_point)
+			#if current_dist > radius ** 2:
+				#dragged_pnt = _point + _point.direction_to(dragged_pnt) * radius
+			#_inner_point = dragged_pnt
 
 
 func touch_ev_handler(ev: InputEventScreenTouch) -> void:
