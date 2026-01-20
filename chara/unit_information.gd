@@ -5,6 +5,7 @@ class_name UnitInformation
 
 @export var name: String = ""
 @export var speed: float = 200.
+@export var weight: float = 1.
 @export var jump_force: float = 350.
 @export var acceleration: float = 3350.
 @export var friction: float = 2250.

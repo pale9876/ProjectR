@@ -5,7 +5,8 @@
 [ext_resource type="Script" uid="uid://bl8ms0nmsmbkl" path="res://visible_notification_shape_2d.gd" id="3_kne1u"]
 [ext_resource type="Script" uid="uid://csrwbqy0d4o5e" path="res://stat_handler.gd" id="4_hp6x6"]
 [ext_resource type="Script" uid="uid://cuxvpat0q3ao5" path="res://inventory.gd" id="4_l6ohk"]
-[ext_resource type="Script" uid="uid://cukf7tedk28ls" path="res://chara/chara_info.gd" id="5_l6ohk"]
+[ext_resource type="Script" uid="uid://cukf7tedk28ls" path="res://chara/unit_information.gd" id="5_l6ohk"]
+[ext_resource type="Script" uid="uid://cxckpw1sbak1o" path="res://chara/chara_stat.gd" id="6_d6rpx"]
 [ext_resource type="Script" uid="uid://c342mx8mdc4sm" path="res://hurt_box.gd" id="6_tdg3f"]
 [ext_resource type="Script" uid="uid://dgpate5wpm75e" path="res://pose/pose_controller_2d.gd" id="7_3tkgg"]
 [ext_resource type="Script" uid="uid://x7od6vrds4mc" path="res://unit_event_handler.gd" id="7_dtqjt"]
@@ -19,6 +20,11 @@ resource_local_to_scene = true
 script = ExtResource("5_l6ohk")
 name = "RedHood"
 metadata/_custom_type_script = "uid://cukf7tedk28ls"
+
+[sub_resource type="Resource" id="Resource_r3kul"]
+resource_local_to_scene = true
+script = ExtResource("6_d6rpx")
+metadata/_custom_type_script = "uid://cxckpw1sbak1o"
 
 [sub_resource type="RectangleShape2D" id="RectangleShape2D_0rwas"]
 size = Vector2(20, 42)
@@ -42,6 +48,7 @@ script = ExtResource("7_dtqjt")
 [node name="StatHandler" type="Node" parent="." unique_id=234917428]
 script = ExtResource("4_hp6x6")
 information = SubResource("Resource_oudfo")
+stat = SubResource("Resource_r3kul")
 
 [node name="PlaceHolder" type="Sprite2D" parent="." unique_id=610565242]
 position = Vector2(0, -21)

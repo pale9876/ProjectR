@@ -11,6 +11,7 @@ class_name PhysicsUnit2D
 var _collider: Dictionary[StringName, CollisionShape2D] = {}
 var _current: CollisionShape2D = null
 
+
 var _on_floor: bool = false
 var _on_wall: bool = false
 
@@ -48,27 +49,22 @@ func _physics_process(delta: float) -> void:
 		#TODO:: WHAT
 		return
 	
-	if !is_on_floor():
+	if !_on_floor:
 		velocity.y += get_gravity().y * delta
-	
-	move_and_slide()
-	#var collision: KinematicCollision2D = move_and_collide(
-		#velocity * delta
-	#)
-	#
-	#if collision:
-		#if collision.get_normal().dot(velocity) == 0.:
-			#_on_floor = true
-		#
-		#var remainder_force: Vector2 = collision.get_remainder()
-		#print(remainder_force)
-		#
-		#if remainder_force != Vector2.ZERO:
-			#var remainder_collision: KinematicCollision2D = move_and_collide(
-				#remainder_force.slide(collision.get_normal()) * delta
-			#)
-	
-	
+
+	while true: # move_and_slide
+		var collision: KinematicCollision2D = move_and_collide(velocity * delta)
+		if collision:
+			var collide_object: Object = collision.get_collider()
+			if collide_object is PhysicsUnit2D:
+				pass
+			
+			var _normal: Vector2 = collision.get_normal()
+			_on_floor = _normal.dot(velocity) == 0.
+			velocity = velocity.slide(_normal)
+		else:
+			break
+
 
 func get_collider_list() -> PackedStringArray:
 	var result: PackedStringArray = []
