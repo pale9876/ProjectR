@@ -8,6 +8,10 @@
 
 config_version=5
 
+[addons]
+
+ss2d/version="3.3.1"
+
 [application]
 
 config/name="ProjectR"
@@ -21,7 +25,11 @@ DialogueManager="*uid://c3rodes2l3gxb"
 InputHandler="*uid://e3v8nla7qwf3"
 QuestSystem="*uid://b05aindhdg27l"
 Executioner="*uid://db6qoudfuxmol"
-Inventory="*uid://cuxvpat0q3ao5"
+
+[display]
+
+window/size/viewport_width=1280
+window/size/viewport_height=720
 
 [dotnet]
 
@@ -29,7 +37,7 @@ project/assembly_name="ProjectR"
 
 [editor_plugins]
 
-enabled=PackedStringArray("res://addons/dialogue_manager/plugin.cfg")
+enabled=PackedStringArray("res://addons/dialogue_manager/plugin.cfg", "res://addons/rmsmartshape/plugin.cfg")
 
 [input]
 

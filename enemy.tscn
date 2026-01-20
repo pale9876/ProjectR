@@ -1,0 +1,39 @@
+[gd_scene format=3 uid="uid://bhiytsvxmox6n"]
+
+[ext_resource type="Script" uid="uid://dtacvaonrcmwg" path="res://physics_unit_2d.gd" id="1_4gyqm"]
+[ext_resource type="Script" uid="uid://bl8ms0nmsmbkl" path="res://visible_notification_shape_2d.gd" id="1_7k104"]
+[ext_resource type="Script" uid="uid://dgpate5wpm75e" path="res://pose/pose_controller_2d.gd" id="3_iifgy"]
+[ext_resource type="Script" uid="uid://cdb4dyqk3exd" path="res://pose/pose_2d.gd" id="4_epg4t"]
+
+[sub_resource type="RectangleShape2D" id="RectangleShape2D_7xaro"]
+size = Vector2(20, 46)
+
+[node name="Enemy" type="CharacterBody2D" unique_id=1164001035 node_paths=PackedStringArray("init_collider")]
+collision_layer = 0
+script = ExtResource("1_4gyqm")
+init_collider = NodePath("Idle")
+
+[node name="Idle" type="CollisionShape2D" parent="." unique_id=1939068632]
+position = Vector2(0, -23)
+shape = SubResource("RectangleShape2D_7xaro")
+debug_color = Color(0, 0.7607843, 0.57254905, 0.11764706)
+script = ExtResource("1_7k104")
+metadata/_custom_type_script = "uid://bl8ms0nmsmbkl"
+
+[node name="PoseController2D" type="Node2D" parent="." unique_id=1464128941 node_paths=PackedStringArray("agent", "pose", "init_pose")]
+script = ExtResource("3_iifgy")
+agent = NodePath("..")
+pose = {
+&"Fall": NodePath("Fall"),
+&"Idle": NodePath("Idle")
+}
+init_pose = NodePath("Idle")
+metadata/_custom_type_script = "uid://dgpate5wpm75e"
+
+[node name="Idle" type="Node2D" parent="PoseController2D" unique_id=422582414]
+script = ExtResource("4_epg4t")
+metadata/_custom_type_script = "uid://cdb4dyqk3exd"
+
+[node name="Fall" type="Node2D" parent="PoseController2D" unique_id=928962373]
+script = ExtResource("4_epg4t")
+metadata/_custom_type_script = "uid://cdb4dyqk3exd"

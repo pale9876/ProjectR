@@ -19,6 +19,6 @@ metadata/_custom_type_script = "uid://cukf7tedk28ls"
 position = Vector2(98, 346)
 chara_info = SubResource("Resource_d5x1h")
 
-[node name="Title" parent="." unique_id=1264384117 instance=ExtResource("1_0f027")]
-
 [node name="Enemy" type="CharacterBody2D" parent="." unique_id=2070822705]
+
+[node name="Title" parent="." unique_id=1264384117 instance=ExtResource("1_0f027")]

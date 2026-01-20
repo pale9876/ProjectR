@@ -1,0 +1,40 @@
+[gd_scene format=3 uid="uid://2cbinw3drmxd"]
+
+[ext_resource type="PackedScene" uid="uid://cwc50cjdjrhhm" path="res://stage/placeholder.tscn" id="1_7lgay"]
+[ext_resource type="PackedScene" uid="uid://c3xwqsfprgbn4" path="res://Player.tscn" id="2_65mt0"]
+[ext_resource type="PackedScene" uid="uid://bhfn1mwn6pof0" path="res://ui/title.tscn" id="4_bncev"]
+[ext_resource type="PackedScene" uid="uid://bhiytsvxmox6n" path="res://enemy.tscn" id="4_xwaqu"]
+[ext_resource type="Script" uid="uid://jr0f7own2t7o" path="res://screen_effect_canvas_layer.gd" id="5_65mt0"]
+[ext_resource type="Shader" uid="uid://c7rlgm1ootd5g" path="res://shader/rain_drop.gdshader" id="6_tkxnt"]
+
+[sub_resource type="ShaderMaterial" id="ShaderMaterial_bncev"]
+shader = ExtResource("6_tkxnt")
+shader_parameter/frequency = 1.5000001713637996
+shader_parameter/size = 0.0150000007125
+shader_parameter/blur = 0.426000020235
+
+[node name="DebugScene" type="Node2D" unique_id=32418687]
+
+[node name="Stage" parent="." unique_id=1100972656 instance=ExtResource("1_7lgay")]
+
+[node name="Player" parent="." unique_id=74662124 instance=ExtResource("2_65mt0")]
+position = Vector2(245, 265)
+
+[node name="MainCamera" type="Camera2D" parent="Player" unique_id=1311757757]
+
+[node name="Enemy" parent="." unique_id=1164001035 instance=ExtResource("4_xwaqu")]
+position = Vector2(686, 207)
+
+[node name="Title" parent="." unique_id=1264384117 instance=ExtResource("4_bncev")]
+
+[node name="ScreenEffectCanvasLayer" type="CanvasLayer" parent="." unique_id=520534330]
+visible = false
+script = ExtResource("5_65mt0")
+
+[node name="ColorRect2" type="ColorRect" parent="ScreenEffectCanvasLayer" unique_id=558451481]
+material = SubResource("ShaderMaterial_bncev")
+anchors_preset = 15
+anchor_right = 1.0
+anchor_bottom = 1.0
+grow_horizontal = 2
+grow_vertical = 2

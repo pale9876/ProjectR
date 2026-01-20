@@ -3,24 +3,38 @@ extends Node2D
 class_name PoseController2D
 
 
+signal pose_changed()
+
+
+@export var agent: Node
+
+
 @export var pose: Dictionary[StringName, Pose2D]
-@export var init_pose: Pose2D
+@export var init_pose: Pose2D = null
 
 
 var _current: Pose2D = null
 
 
-func _enter_tree() -> void:
-	if !pose.is_empty(): pose.clear()
-
-
 func _ready() -> void:
 	if Engine.is_editor_hint(): return
 	
+	_updated()
+	
 	if init_pose != null:
-		assert(has_pose(init_pose.name))
-		assert(get_children().filter(func(node)->bool: return node is Pose2D).has(init_pose))
-		change_pose(init_pose.name)
+		assert(
+			get_children().filter(func(node)->bool: return node is Pose2D).has(init_pose)
+		)
+		assert(change_pose(init_pose))
+
+	pose_changed.connect(_pose_changed)
+
+#func _process(delta: float) -> void:
+	#pass
+	
+	
+func _pose_changed() -> void:
+	print(_current.name)
 
 
 func _physics_process(delta: float) -> void:
@@ -32,12 +46,17 @@ func _physics_process(delta: float) -> void:
 
 func _notification(what: int) -> void:
 	if what == NOTIFICATION_CHILD_ORDER_CHANGED:
-		pose.clear()
-		for node: Node in get_children():
-			if node is Pose2D:
-				pose[node.name] = node
+		_updated()
 	elif what == NOTIFICATION_VISIBILITY_CHANGED:
 		_visibility_changed_ev_handler()
+
+
+func _updated() -> void:
+	pose.clear()
+	for node: Node in get_children():
+		if node is Pose2D:
+			pose[node.name] = node
+			node.agent = agent
 
 
 func _visibility_changed_ev_handler() -> void:
@@ -58,6 +77,7 @@ func add_pose(_pose: Pose2D) -> bool:
 		return false
 	
 	pose[_pose.name] = _pose
+	_pose.agent = agent
 	return true
 
 
@@ -83,7 +103,7 @@ func has_pose(pose_name: StringName) -> bool:
 	return pose.has(pose_name)
 
 
-func change_pose(pose_name: StringName) -> bool:
+func change_pose_from_name(pose_name: StringName) -> bool:
 	if !has_pose(pose_name): return false
 	
 	var prev_pose: Pose2D = get_current_pose()
@@ -94,9 +114,26 @@ func change_pose(pose_name: StringName) -> bool:
 	
 	for _pose: Pose2D in get_poses():
 		if next_pose == _pose:
-			_pose.disabled = false
+			_current = next_pose
 			_pose._enter()
-		else:
-			_pose.disabled = true
+	
+	assert(_current != null)
+	pose_changed.emit()
+	return true
 
+
+func change_pose(_pose: Pose2D) -> bool:
+	if !get_children().has(_pose):
+		return false
+	
+	var prev_pose: Pose2D = get_current_pose()
+	
+	if prev_pose != null:
+		prev_pose._exit()
+
+	_current = _pose
+	_pose._enter()
+	
+	assert(_current != null)
+	pose_changed.emit()
 	return true

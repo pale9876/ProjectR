@@ -3,15 +3,29 @@ extends Node2D
 class_name Pose2D
 
 
-@export var disabled: bool = false: set = _set_disabled
+var agent: Node = null
 
 
-var _root: Node = null
+func _notification(what: int) -> void:
+	if what == NOTIFICATION_VISIBILITY_CHANGED:
+		_visible_changed()
+	elif what == NOTIFICATION_PATH_RENAMED:
+		_renamed()
 
 
-func _set_disabled(toggle: bool) -> void:
-	disabled = toggle
-	self.visible = false
+func _renamed() -> void:
+	var parent: Node = get_parent()
+	if parent is PoseController2D:
+		parent._updated()
+
+
+func _visible_changed() -> void:
+	for node: Node in get_children():
+		node.visible = visible
+
+
+func _enter_tree() -> void:
+	assert(get_parent() is PoseController2D)
 
 
 # OVERRIDE
@@ -29,8 +43,5 @@ func _exit() -> void:
 	pass
 
 
-
-func _process(_delta: float) -> void:
-	if _root != null:
-		if _root is Node2D and !disabled:
-			self.visible = _root.visible
+func get_controller() -> PoseController2D:
+	return get_parent() as PoseController2D
