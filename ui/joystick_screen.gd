@@ -14,11 +14,14 @@ class_name ScreenJoystick
 
 
 @export var reset_curve: Curve
+
 @export var stick_color: Color = Color.WHITE
+@export var stick_line_color: Color = Color.YELLOW
 @export var background_color: Color
 
 
 var _pressed: bool = false
+
 var _point: Vector2 = Vector2.ZERO:
 	set(value):
 		_point = value
@@ -44,15 +47,21 @@ func _draw() -> void:
 	draw_circle( # draw background circle
 		_point,
 		radius,
-		stick_color,
+		Color(stick_color, 1.),
 		false
 	)
 	
-	draw_circle( # draw stick circle
+	draw_circle( # draw stick circle fill
 		_inner_point,
 		radius * inner_radius,
 		stick_color,
-		false
+	)
+	
+	draw_circle(
+		_inner_point,
+		radius * inner_radius,
+		Color(stick_line_color, 1.),
+		false, 1.
 	)
 
 
@@ -61,23 +70,6 @@ func _gui_input(event: InputEvent) -> void:
 		touch_ev_handler(event)
 	elif event is InputEventScreenDrag:
 		drag_ev_handler(event)
-#
-	#if event is InputEventMouseButton:
-		#if event.is_pressed():
-			#if event.button_index == MOUSE_BUTTON_LEFT:
-				#_pressed = true
-				#_point = event.position
-		#elif event.is_released():
-			#if event.button_index == MOUSE_BUTTON_LEFT:
-				#_pressed = false
-				#_initialization_inner_point()
-	#elif event is InputEventMouseMotion:
-		#if _pressed:
-			#var dragged_pnt: Vector2 = event.position
-			#var current_dist: float = event.position.distance_squared_to(_point)
-			#if current_dist > radius ** 2:
-				#dragged_pnt = _point + _point.direction_to(dragged_pnt) * radius
-			#_inner_point = dragged_pnt
 
 
 func touch_ev_handler(ev: InputEventScreenTouch) -> void:

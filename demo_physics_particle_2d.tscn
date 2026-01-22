@@ -1,0 +1,48 @@
+[gd_scene format=3 uid="uid://br8b3svh4ojr"]
+
+[ext_resource type="Texture2D" uid="uid://baxiekdre3h1b" path="res://aseprite/object/tree.png" id="2_5i056"]
+[ext_resource type="Script" uid="uid://h4t3476hyyky" path="res://bounce_razor_2d.gd" id="2_b6vrk"]
+[ext_resource type="Script" uid="uid://1rev7iohq18j" path="res://alined_multi_mesh_instance_2d.gd" id="3_5i056"]
+[ext_resource type="Script" uid="uid://cpvaw3605xhvb" path="res://mesh_instance_path_2d.gd" id="4_ggw0e"]
+
+[sub_resource type="Curve2D" id="Curve2D_ggw0e"]
+
+[sub_resource type="QuadMesh" id="QuadMesh_jt5v5"]
+size = Vector2(512, -720)
+
+[sub_resource type="MultiMesh" id="MultiMesh_njts8"]
+instance_count = 15
+visible_instance_count = 15
+mesh = SubResource("QuadMesh_jt5v5")
+buffer = PackedFloat32Array(0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, -2.5156647e-18, 5.82e-43, 0, 0, 0, 0, 0, 0, 7e-45, 0, 0, 0, 0, 0, 0, 10.40625, 0, 0, 0, 8.1e-43, 0, 0, 0, 2.4e-44, 0, 0, 0, 0, 0, 1.15e-43, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 10.40625, nan, nan, 0, 8.37e-43, 0, 0, 0, 0, 2.3694278e-38, 0, 0, 4.5625, 0, 1.15e-43, 2.4e-44, 1.928e-42, 0, 0, 3e-44, 3.1e-44, 9.2196e-41, 0, 0, 0, 0, 1.15e-43, -1786741100000, 0, 0, 0, -3.2449936e-09, 4.591e-41, 0, 0, 0, 0, 0, 0, 4.5e-44, 0, 1, 0)
+
+[node name="scene" type="Node2D" unique_id=1167201472]
+
+[node name="StaticBody2D" type="StaticBody2D" parent="." unique_id=589122172]
+
+[node name="CollisionPolygon2D" type="CollisionPolygon2D" parent="StaticBody2D" unique_id=492243560]
+position = Vector2(-21.797243, -43.504852)
+build_mode = 1
+polygon = PackedVector2Array(-554.20276, 115.50485, -418.20276, -268.49515, 525.79724, -140.49515, 421.79724, 283.50485)
+
+[node name="Camera2D" type="Camera2D" parent="." unique_id=1819389947]
+zoom = Vector2(0.9, 0.9)
+
+[node name="BouncableRazor2D" type="Line2D" parent="." unique_id=172643302]
+position = Vector2(184, 88)
+script = ExtResource("2_b6vrk")
+direction = Vector2(-0.70710677, -0.70710677)
+mask = 1
+
+[node name="MeshInstancePath2D" type="Path2D" parent="." unique_id=352285034]
+position = Vector2(0, -187)
+curve = SubResource("Curve2D_ggw0e")
+script = ExtResource("4_ggw0e")
+
+[node name="AlignedMultiMeshInstance2D" type="MultiMeshInstance2D" parent="MeshInstancePath2D" unique_id=1817156334]
+multimesh = SubResource("MultiMesh_njts8")
+texture = ExtResource("2_5i056")
+script = ExtResource("3_5i056")
+instance_texture = ExtResource("2_5i056")
+instance_scale = Vector2(1.59, 1.63)
+count = 15

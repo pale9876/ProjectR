@@ -1,5 +1,6 @@
 @tool
 extends PhysicsUnit2D
+class_name Player
 
 
 func _ready() -> void:

@@ -1,7 +1,6 @@
 [gd_scene format=3 uid="uid://c3xwqsfprgbn4"]
 
 [ext_resource type="Script" uid="uid://dqgansavg6p5n" path="res://player.gd" id="1_kpjcp"]
-[ext_resource type="Texture2D" uid="uid://b58av82qx4xss" path="res://icon.svg" id="1_xhfnw"]
 [ext_resource type="Script" uid="uid://bl8ms0nmsmbkl" path="res://visible_notification_shape_2d.gd" id="3_kne1u"]
 [ext_resource type="Script" uid="uid://csrwbqy0d4o5e" path="res://stat_handler.gd" id="4_hp6x6"]
 [ext_resource type="Script" uid="uid://cuxvpat0q3ao5" path="res://inventory.gd" id="4_l6ohk"]
@@ -9,11 +8,12 @@
 [ext_resource type="Script" uid="uid://cxckpw1sbak1o" path="res://chara/chara_stat.gd" id="6_d6rpx"]
 [ext_resource type="Script" uid="uid://c342mx8mdc4sm" path="res://hurt_box.gd" id="6_tdg3f"]
 [ext_resource type="Script" uid="uid://dgpate5wpm75e" path="res://pose/pose_controller_2d.gd" id="7_3tkgg"]
+[ext_resource type="Texture2D" uid="uid://bcx1k44j24ime" path="res://store/icon.svg" id="7_d6rpx"]
 [ext_resource type="Script" uid="uid://x7od6vrds4mc" path="res://unit_event_handler.gd" id="7_dtqjt"]
 [ext_resource type="Script" uid="uid://c7f8wtnojavju" path="res://pose/common/idle_pose.gd" id="8_l6ohk"]
 [ext_resource type="Script" uid="uid://ch4rv3vox4xoi" path="res://pose/common/move_pose.gd" id="10_3tkgg"]
-[ext_resource type="Script" uid="uid://cdb4dyqk3exd" path="res://pose/pose_2d.gd" id="11_oudfo"]
 [ext_resource type="Script" uid="uid://brke4wqg4iytx" path="res://pose/common/fall_pose.gd" id="12_oudfo"]
+[ext_resource type="Script" uid="uid://bvtcqfou8eqqb" path="res://jump_pose.gd" id="14_d6rpx"]
 
 [sub_resource type="Resource" id="Resource_oudfo"]
 resource_local_to_scene = true
@@ -53,7 +53,7 @@ stat = SubResource("Resource_r3kul")
 [node name="PlaceHolder" type="Sprite2D" parent="." unique_id=610565242]
 position = Vector2(0, -21)
 scale = Vector2(0.15625, 0.328125)
-texture = ExtResource("1_xhfnw")
+texture = ExtResource("7_d6rpx")
 
 [node name="Idle" type="CollisionShape2D" parent="." unique_id=846775626]
 position = Vector2(0, -21)
@@ -102,5 +102,5 @@ idle_pose = NodePath("../Idle")
 metadata/_custom_type_script = "uid://cdb4dyqk3exd"
 
 [node name="Jump" type="Node2D" parent="PoseController2D" unique_id=2067267275]
-script = ExtResource("11_oudfo")
+script = ExtResource("14_d6rpx")
 metadata/_custom_type_script = "uid://cdb4dyqk3exd"

@@ -18,7 +18,7 @@ class_name SS2D_Shape
 #-DECLARATIONS-#
 ################
 
-const CLICK_RECT_TAG := "__ss2d_click_rect__"
+const CLICK_RECT_TAG: String = "__ss2d_click_rect__"
 
 var _dirty: bool = false
 var _edges: Array[SS2D_Edge] = []
@@ -1305,7 +1305,7 @@ func _handle_material_override_change(_tuple: Vector2i) -> void:
 
 func set_as_dirty() -> void:
 	if not _dirty and is_node_ready():
-		call_deferred("_on_dirty_update")
+		_on_dirty_update.call_deferred()
 	_dirty = true
 
 

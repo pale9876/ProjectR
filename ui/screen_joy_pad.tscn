@@ -1,5 +1,6 @@
 [gd_scene format=3 uid="uid://bk1bnhqoyyuuj"]
 
+[ext_resource type="Script" uid="uid://dfeiuq3xgj3y2" path="res://ui/screen_pad_layer.gd" id="1_1e4th"]
 [ext_resource type="Script" uid="uid://cnv8o6ygj714" path="res://ui/joystick_screen.gd" id="1_pcsbg"]
 
 [sub_resource type="Curve" id="Curve_icap2"]
@@ -7,6 +8,7 @@ _data = [Vector2(0, 0), 0.0, 3.3248022, 0, 0, Vector2(1, 1), 0.0, 0.0, 0, 0]
 point_count = 2
 
 [node name="JoystickCanvasLayer" type="CanvasLayer" unique_id=643330839]
+script = ExtResource("1_1e4th")
 
 [node name="JoystickScreen" type="Control" parent="." unique_id=1019470852]
 layout_mode = 3
@@ -17,3 +19,4 @@ grow_horizontal = 2
 grow_vertical = 2
 script = ExtResource("1_pcsbg")
 reset_curve = SubResource("Curve_icap2")
+stick_line_color = Color(1, 0, 0, 1)
