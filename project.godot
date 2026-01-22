@@ -35,6 +35,10 @@ window/size/viewport_height=720
 
 project/assembly_name="ProjectR"
 
+[editor]
+
+script/templates_search_path="res://template/script"
+
 [editor_plugins]
 
 enabled=PackedStringArray("res://addons/dialogue_manager/plugin.cfg", "res://addons/rmsmartshape/plugin.cfg")

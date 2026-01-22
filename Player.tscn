@@ -14,6 +14,7 @@
 [ext_resource type="Script" uid="uid://ch4rv3vox4xoi" path="res://pose/common/move_pose.gd" id="10_3tkgg"]
 [ext_resource type="Script" uid="uid://brke4wqg4iytx" path="res://pose/common/fall_pose.gd" id="12_oudfo"]
 [ext_resource type="Script" uid="uid://bvtcqfou8eqqb" path="res://jump_pose.gd" id="14_d6rpx"]
+[ext_resource type="Script" uid="uid://dq4ddyr3wyitk" path="res://slide.gd" id="15_r3kul"]
 
 [sub_resource type="Resource" id="Resource_oudfo"]
 resource_local_to_scene = true
@@ -68,7 +69,8 @@ pose = {
 &"Fall": NodePath("Fall"),
 &"Idle": NodePath("Idle"),
 &"Jump": NodePath("Jump"),
-&"Move": NodePath("Move")
+&"Move": NodePath("Move"),
+&"Slide": NodePath("Slide")
 }
 init_pose = NodePath("Idle")
 
@@ -103,4 +105,8 @@ metadata/_custom_type_script = "uid://cdb4dyqk3exd"
 
 [node name="Jump" type="Node2D" parent="PoseController2D" unique_id=2067267275]
 script = ExtResource("14_d6rpx")
+metadata/_custom_type_script = "uid://cdb4dyqk3exd"
+
+[node name="Slide" type="Node2D" parent="PoseController2D" unique_id=1260520246]
+script = ExtResource("15_r3kul")
 metadata/_custom_type_script = "uid://cdb4dyqk3exd"

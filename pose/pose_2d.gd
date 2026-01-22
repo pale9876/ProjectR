@@ -45,3 +45,14 @@ func _exit() -> void:
 
 func get_controller() -> PoseController2D:
 	return get_parent() as PoseController2D
+
+
+func _move_agent() -> bool:
+	if agent is not PhysicsUnit2D: return false
+	
+	
+	
+	return true
+
+func get_agent_information() -> UnitInformation:
+	return agent.get_information() if agent is PhysicsUnit2D else null
