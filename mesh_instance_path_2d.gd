@@ -4,7 +4,7 @@ class_name MeshInstancePath2D
 
 
 func _init() -> void:
-	if curve:
+	if !curve:
 		curve = Curve2D.new()
 	curve.changed.connect(_on_curve_changed)
 

@@ -1,17 +1,19 @@
 [gd_scene format=3 uid="uid://bhiytsvxmox6n"]
 
-[ext_resource type="Script" uid="uid://dtacvaonrcmwg" path="res://physics_unit_2d.gd" id="1_4gyqm"]
 [ext_resource type="Script" uid="uid://bl8ms0nmsmbkl" path="res://visible_notification_shape_2d.gd" id="1_7k104"]
+[ext_resource type="Script" uid="uid://drbj4nearqfgn" path="res://enemy.gd" id="1_iifgy"]
 [ext_resource type="Script" uid="uid://dgpate5wpm75e" path="res://pose/pose_controller_2d.gd" id="3_iifgy"]
 [ext_resource type="Script" uid="uid://cdb4dyqk3exd" path="res://pose/pose_2d.gd" id="4_epg4t"]
 
 [sub_resource type="RectangleShape2D" id="RectangleShape2D_7xaro"]
 size = Vector2(20, 46)
 
-[node name="Enemy" type="CharacterBody2D" unique_id=1164001035 node_paths=PackedStringArray("init_collider")]
+[sub_resource type="BlackboardPlan" id="BlackboardPlan_iifgy"]
+
+[node name="Enemy" type="CharacterBody2D" unique_id=553063981]
 collision_layer = 0
-script = ExtResource("1_4gyqm")
-init_collider = NodePath("Idle")
+script = ExtResource("1_iifgy")
+metadata/_custom_type_script = "uid://dtacvaonrcmwg"
 
 [node name="Idle" type="CollisionShape2D" parent="." unique_id=1939068632]
 position = Vector2(0, -23)
@@ -37,3 +39,6 @@ metadata/_custom_type_script = "uid://cdb4dyqk3exd"
 [node name="Fall" type="Node2D" parent="PoseController2D" unique_id=928962373]
 script = ExtResource("4_epg4t")
 metadata/_custom_type_script = "uid://cdb4dyqk3exd"
+
+[node name="BTPlayer" type="BTPlayer" parent="." unique_id=199586257]
+blackboard_plan = SubResource("BlackboardPlan_iifgy")
