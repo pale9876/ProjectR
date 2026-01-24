@@ -6,7 +6,7 @@ func _enter() -> void:
 	pass
 
 
-func _update(_delta: float) -> void:
+func _fixed_update(_delta: float) -> void:
 	pass
 
 

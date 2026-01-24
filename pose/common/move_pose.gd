@@ -2,16 +2,20 @@
 extends Pose2D
 
 
+enum {
+	WALK,
+	SPRINT,
+}
+
+
 @export var idle_pose: Pose2D
 @export var fall_pose: Pose2D
+@export var jump_pose: Pose2D
 
 
-func _enter() -> void:
-	pass
-
-
-func _update(_delta: float) -> void:
+func _fixed_update(_delta: float) -> void:
 	var input_dir: Vector2 = Vector2.ZERO
+	var is_sprint: bool = Input.is_action_pressed("dash")
 	
 	if agent == InputHandler.player:
 		input_dir = InputHandler.get_input_dir()

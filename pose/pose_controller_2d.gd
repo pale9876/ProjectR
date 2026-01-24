@@ -27,21 +27,23 @@ func _ready() -> void:
 		)
 		assert(change_pose(init_pose))
 
-	pose_changed.connect(_pose_changed)
 
-#func _process(delta: float) -> void:
-	#pass
-	
-	
 func _pose_changed() -> void:
-	print(_current.name)
+	pass
+
+
+func _process(delta: float) -> void:
+	if Engine.is_editor_hint(): return
+	
+	if _current != null:
+		_current._update(delta)
 
 
 func _physics_process(delta: float) -> void:
 	if Engine.is_editor_hint(): return
 	
 	if _current != null:
-		_current._update(delta)
+		_current._fixed_update(delta)
 
 
 func _notification(what: int) -> void:
@@ -132,8 +134,14 @@ func change_pose(_pose: Pose2D) -> bool:
 		prev_pose._exit()
 
 	_current = _pose
-	_pose._enter()
+	if !Engine.is_editor_hint(): _pose._enter()
 	
 	assert(_current != null)
 	pose_changed.emit()
 	return true
+
+
+func pose_is_child(node: Pose2D) -> bool:
+	return get_children().filter(
+		func(_node: Node) -> bool: return _node is Pose2D
+	).has(node)

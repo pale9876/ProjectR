@@ -39,6 +39,11 @@ func _update(_delta: float) -> void:
 
 
 # OVERRIDE
+func _fixed_update(_delta: float) -> void:
+	pass
+
+
+# OVERRIDE
 func _exit() -> void:
 	pass
 

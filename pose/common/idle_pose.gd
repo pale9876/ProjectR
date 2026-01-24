@@ -4,9 +4,10 @@ extends Pose2D
 
 @export var move_pose: Pose2D
 @export var fall_pose: Pose2D
+@export var jump_pose: Pose2D
 
 
-func _update(_delta: float) -> void:
+func _fixed_update(_delta: float) -> void:
 	var input_dir: Vector2 = Vector2.ZERO
 
 	if agent == InputHandler.player:
