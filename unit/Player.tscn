@@ -1,31 +1,24 @@
 [gd_scene format=3 uid="uid://c3xwqsfprgbn4"]
 
 [ext_resource type="Script" uid="uid://dqgansavg6p5n" path="res://player.gd" id="1_kpjcp"]
+[ext_resource type="Resource" uid="uid://d0fhc3kbwh5sj" path="res://chara/red_hood/red_hoot_stat.tres" id="2_eoet1"]
+[ext_resource type="Resource" uid="uid://4ntuwag3k035" path="res://chara/red_hood/red_hood_info.tres" id="2_lel03"]
 [ext_resource type="Script" uid="uid://bl8ms0nmsmbkl" path="res://visible_notification_shape_2d.gd" id="3_kne1u"]
-[ext_resource type="Script" uid="uid://csrwbqy0d4o5e" path="res://stat_handler.gd" id="4_hp6x6"]
 [ext_resource type="Script" uid="uid://cuxvpat0q3ao5" path="res://inventory.gd" id="4_l6ohk"]
-[ext_resource type="Script" uid="uid://cukf7tedk28ls" path="res://chara/unit_information.gd" id="5_l6ohk"]
-[ext_resource type="Script" uid="uid://cxckpw1sbak1o" path="res://chara/chara_stat.gd" id="6_d6rpx"]
+[ext_resource type="Texture2D" uid="uid://cysooqp63xp0h" path="res://aseprite/redhood/red_hood_placeholder.png" id="6_ekjla"]
 [ext_resource type="Script" uid="uid://c342mx8mdc4sm" path="res://hurt_box.gd" id="6_tdg3f"]
 [ext_resource type="Script" uid="uid://dgpate5wpm75e" path="res://pose/pose_controller_2d.gd" id="7_3tkgg"]
-[ext_resource type="Texture2D" uid="uid://bcx1k44j24ime" path="res://store/icon.svg" id="7_d6rpx"]
 [ext_resource type="Script" uid="uid://x7od6vrds4mc" path="res://unit_event_handler.gd" id="7_dtqjt"]
 [ext_resource type="Script" uid="uid://c7f8wtnojavju" path="res://pose/common/idle_pose.gd" id="8_l6ohk"]
 [ext_resource type="Script" uid="uid://ch4rv3vox4xoi" path="res://pose/common/move_pose.gd" id="10_3tkgg"]
 [ext_resource type="Script" uid="uid://brke4wqg4iytx" path="res://pose/common/fall_pose.gd" id="12_oudfo"]
 [ext_resource type="Script" uid="uid://bvtcqfou8eqqb" path="res://jump_pose.gd" id="14_d6rpx"]
 [ext_resource type="Script" uid="uid://dq4ddyr3wyitk" path="res://slide.gd" id="15_r3kul"]
-
-[sub_resource type="Resource" id="Resource_oudfo"]
-resource_local_to_scene = true
-script = ExtResource("5_l6ohk")
-name = "RedHood"
-metadata/_custom_type_script = "uid://cukf7tedk28ls"
-
-[sub_resource type="Resource" id="Resource_r3kul"]
-resource_local_to_scene = true
-script = ExtResource("6_d6rpx")
-metadata/_custom_type_script = "uid://cxckpw1sbak1o"
+[ext_resource type="Script" uid="uid://ca82fhyokguoj" path="res://unit/inner_progress_ui.gd" id="16_lel03"]
+[ext_resource type="Script" uid="uid://5bgh3jgqmfuq" path="res://unit/inner_ui_marker.gd" id="16_smflj"]
+[ext_resource type="Texture2D" uid="uid://bw53vkkeekuxe" path="res://aseprite/ui/health_progress_over.png" id="17_tvasn"]
+[ext_resource type="Texture2D" uid="uid://6worj7stjxkc" path="res://aseprite/ui/health_progress.png" id="18_43kp2"]
+[ext_resource type="Texture2D" uid="uid://cegfid37q12r5" path="res://aseprite/ui/health_progress_under.png" id="19_03by7"]
 
 [sub_resource type="RectangleShape2D" id="RectangleShape2D_0rwas"]
 size = Vector2(20, 42)
@@ -33,11 +26,16 @@ size = Vector2(20, 42)
 [sub_resource type="RectangleShape2D" id="RectangleShape2D_dtqjt"]
 size = Vector2(20, 42)
 
-[node name="Player" type="CharacterBody2D" unique_id=74662124 node_paths=PackedStringArray("pose_controller", "stat_handler", "init_collider")]
+[sub_resource type="Gradient" id="Gradient_ekjla"]
+colors = PackedColorArray(0, 0, 0, 1, 1, 0, 0, 1)
+
+[node name="Player" type="CharacterBody2D" unique_id=74662124 node_paths=PackedStringArray("pose_controller", "init_collider")]
 collision_layer = 0
 script = ExtResource("1_kpjcp")
+character_stat = ExtResource("2_eoet1")
+_information = ExtResource("2_lel03")
+_mask = 1
 pose_controller = NodePath("PoseController2D")
-stat_handler = NodePath("StatHandler")
 init_collider = NodePath("Idle")
 
 [node name="Inventory" type="Node" parent="." unique_id=379199741]
@@ -46,15 +44,9 @@ script = ExtResource("4_l6ohk")
 [node name="UnitEventHandler" type="Node" parent="." unique_id=1569022870]
 script = ExtResource("7_dtqjt")
 
-[node name="StatHandler" type="Node" parent="." unique_id=234917428]
-script = ExtResource("4_hp6x6")
-information = SubResource("Resource_oudfo")
-stat = SubResource("Resource_r3kul")
-
 [node name="PlaceHolder" type="Sprite2D" parent="." unique_id=610565242]
-position = Vector2(0, -21)
-scale = Vector2(0.15625, 0.328125)
-texture = ExtResource("7_d6rpx")
+position = Vector2(0, -64)
+texture = ExtResource("6_ekjla")
 
 [node name="Idle" type="CollisionShape2D" parent="." unique_id=846775626]
 position = Vector2(0, -21)
@@ -74,10 +66,11 @@ pose = {
 }
 init_pose = NodePath("Idle")
 
-[node name="Idle" type="Node2D" parent="PoseController2D" unique_id=1827049041 node_paths=PackedStringArray("move_pose", "fall_pose")]
+[node name="Idle" type="Node2D" parent="PoseController2D" unique_id=1827049041 node_paths=PackedStringArray("move_pose", "fall_pose", "jump_pose")]
 script = ExtResource("8_l6ohk")
 move_pose = NodePath("../Move")
 fall_pose = NodePath("../Fall")
+jump_pose = NodePath("../Jump")
 
 [node name="HurtBox" type="Area2D" parent="PoseController2D/Idle" unique_id=973652727]
 collision_layer = 0
@@ -92,10 +85,11 @@ debug_color = Color(0.81960785, 0, 0, 0.101960786)
 script = ExtResource("3_kne1u")
 metadata/_custom_type_script = "uid://bl8ms0nmsmbkl"
 
-[node name="Move" type="Node2D" parent="PoseController2D" unique_id=651046877 node_paths=PackedStringArray("idle_pose", "fall_pose")]
+[node name="Move" type="Node2D" parent="PoseController2D" unique_id=651046877 node_paths=PackedStringArray("idle_pose", "fall_pose", "jump_pose")]
 script = ExtResource("10_3tkgg")
 idle_pose = NodePath("../Idle")
 fall_pose = NodePath("../Fall")
+jump_pose = NodePath("../Jump")
 metadata/_custom_type_script = "uid://cdb4dyqk3exd"
 
 [node name="Fall" type="Node2D" parent="PoseController2D" unique_id=2130794940 node_paths=PackedStringArray("idle_pose")]
@@ -110,3 +104,28 @@ metadata/_custom_type_script = "uid://cdb4dyqk3exd"
 [node name="Slide" type="Node2D" parent="PoseController2D" unique_id=1260520246]
 script = ExtResource("15_r3kul")
 metadata/_custom_type_script = "uid://cdb4dyqk3exd"
+
+[node name="InnerUIMark" type="Control" parent="." unique_id=8464707]
+layout_mode = 3
+anchors_preset = 8
+anchor_left = 0.5
+anchor_top = 0.5
+anchor_right = 0.5
+anchor_bottom = 0.5
+offset_top = -136.0
+offset_bottom = -136.0
+grow_horizontal = 2
+grow_vertical = 2
+script = ExtResource("16_smflj")
+mark_line = 20.715
+bold = 1.095
+
+[node name="GradientProgress2D" type="Node2D" parent="InnerUIMark" unique_id=45944978]
+script = ExtResource("16_lel03")
+progress_over = ExtResource("17_tvasn")
+progress_texture = ExtResource("18_43kp2")
+progress_under = ExtResource("19_03by7")
+progress_color = Color(1, 0, 0.20000029, 1)
+progress_value = 1.0
+gradient = true
+gradient_value = SubResource("Gradient_ekjla")

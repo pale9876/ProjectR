@@ -1,7 +1,7 @@
 [gd_scene format=3 uid="uid://by30gbtc8btpj"]
 
 [ext_resource type="PackedScene" uid="uid://bhfn1mwn6pof0" path="res://ui/title.tscn" id="1_0f027"]
-[ext_resource type="PackedScene" uid="uid://c3xwqsfprgbn4" path="res://Player.tscn" id="1_2c62f"]
+[ext_resource type="PackedScene" uid="uid://c3xwqsfprgbn4" path="res://unit/Player.tscn" id="1_2c62f"]
 [ext_resource type="PackedScene" uid="uid://cwc50cjdjrhhm" path="res://stage/placeholder.tscn" id="1_d5x1h"]
 [ext_resource type="Script" uid="uid://cukf7tedk28ls" path="res://chara/unit_information.gd" id="2_gyfs4"]
 

@@ -1,5 +1,5 @@
 @tool
-extends PhysicsUnit2D
+extends Character
 class_name Player
 
 

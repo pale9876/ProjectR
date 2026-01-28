@@ -4,6 +4,7 @@
 [ext_resource type="Script" uid="uid://drbj4nearqfgn" path="res://enemy.gd" id="1_iifgy"]
 [ext_resource type="Script" uid="uid://dgpate5wpm75e" path="res://pose/pose_controller_2d.gd" id="3_iifgy"]
 [ext_resource type="Script" uid="uid://cdb4dyqk3exd" path="res://pose/pose_2d.gd" id="4_epg4t"]
+[ext_resource type="BehaviorTree" uid="uid://c6ry0jb6pcsky" path="res://bt/enemy_base_bt.tres" id="5_cpquj"]
 
 [sub_resource type="RectangleShape2D" id="RectangleShape2D_7xaro"]
 size = Vector2(20, 46)
@@ -41,4 +42,5 @@ script = ExtResource("4_epg4t")
 metadata/_custom_type_script = "uid://cdb4dyqk3exd"
 
 [node name="BTPlayer" type="BTPlayer" parent="." unique_id=199586257]
+behavior_tree = ExtResource("5_cpquj")
 blackboard_plan = SubResource("BlackboardPlan_iifgy")

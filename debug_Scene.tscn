@@ -1,11 +1,28 @@
 [gd_scene format=3 uid="uid://2cbinw3drmxd"]
 
 [ext_resource type="PackedScene" uid="uid://cwc50cjdjrhhm" path="res://stage/placeholder.tscn" id="1_7lgay"]
-[ext_resource type="PackedScene" uid="uid://c3xwqsfprgbn4" path="res://Player.tscn" id="2_65mt0"]
+[ext_resource type="PackedScene" uid="uid://c3xwqsfprgbn4" path="res://unit/Player.tscn" id="2_65mt0"]
+[ext_resource type="Script" uid="uid://bv8jgicw64qw7" path="res://main_camera.gd" id="3_bstsi"]
+[ext_resource type="Script" uid="uid://cxckpw1sbak1o" path="res://chara/chara_stat.gd" id="3_rb1vg"]
+[ext_resource type="Script" uid="uid://cp6q8fdtqwrkf" path="res://camera_producer.gd" id="4_1tx2p"]
 [ext_resource type="PackedScene" uid="uid://bhfn1mwn6pof0" path="res://ui/title.tscn" id="4_bncev"]
-[ext_resource type="PackedScene" uid="uid://bhiytsvxmox6n" path="res://enemy.tscn" id="4_xwaqu"]
+[ext_resource type="Script" uid="uid://cukf7tedk28ls" path="res://chara/unit_information.gd" id="4_tl212"]
+[ext_resource type="PackedScene" uid="uid://bhiytsvxmox6n" path="res://unit/enemy.tscn" id="4_xwaqu"]
 [ext_resource type="Script" uid="uid://jr0f7own2t7o" path="res://screen_effect_canvas_layer.gd" id="5_65mt0"]
 [ext_resource type="Shader" uid="uid://c7rlgm1ootd5g" path="res://shader/rain_drop.gdshader" id="6_tkxnt"]
+
+[sub_resource type="Resource" id="Resource_of7eg"]
+resource_local_to_scene = true
+script = ExtResource("3_rb1vg")
+metadata/_custom_type_script = "uid://cxckpw1sbak1o"
+
+[sub_resource type="Resource" id="Resource_8y0th"]
+resource_local_to_scene = true
+script = ExtResource("4_tl212")
+name = "RedHood"
+dash_scale = 1.6
+jump_force = 650.0
+metadata/_custom_type_script = "uid://cukf7tedk28ls"
 
 [sub_resource type="ShaderMaterial" id="ShaderMaterial_bncev"]
 shader = ExtResource("6_tkxnt")
@@ -18,12 +35,21 @@ shader_parameter/blur = 0.426000020235
 [node name="Stage" parent="." unique_id=1100972656 instance=ExtResource("1_7lgay")]
 
 [node name="Player" parent="." unique_id=74662124 instance=ExtResource("2_65mt0")]
-position = Vector2(245, 265)
-
-[node name="MainCamera" type="Camera2D" parent="Player" unique_id=1311757757]
+position = Vector2(173, 384)
+character_stat = SubResource("Resource_of7eg")
+_information = SubResource("Resource_8y0th")
 
 [node name="Enemy" parent="." unique_id=1164001035 instance=ExtResource("4_xwaqu")]
 position = Vector2(686, 207)
+
+[node name="CameraProducer" type="Node2D" parent="." unique_id=137806958 node_paths=PackedStringArray("init_camera")]
+script = ExtResource("4_1tx2p")
+init_camera = NodePath("MainCamera")
+
+[node name="MainCamera" type="Camera2D" parent="CameraProducer" unique_id=1311757757 node_paths=PackedStringArray("target")]
+position = Vector2(245, 265)
+script = ExtResource("3_bstsi")
+target = NodePath("../../Player")
 
 [node name="Title" parent="." unique_id=1264384117 instance=ExtResource("4_bncev")]
 
@@ -31,7 +57,7 @@ position = Vector2(686, 207)
 visible = false
 script = ExtResource("5_65mt0")
 
-[node name="ColorRect2" type="ColorRect" parent="ScreenEffectCanvasLayer" unique_id=558451481]
+[node name="RainDrop" type="ColorRect" parent="ScreenEffectCanvasLayer" unique_id=558451481]
 material = SubResource("ShaderMaterial_bncev")
 anchors_preset = 15
 anchor_right = 1.0

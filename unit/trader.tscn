@@ -1,0 +1,8 @@
+[gd_scene format=3 uid="uid://ccunwptw6v8ns"]
+
+[ext_resource type="Script" uid="uid://dtacvaonrcmwg" path="res://physics_unit_2d.gd" id="1_qx5o7"]
+
+[node name="Trader" type="CharacterBody2D" unique_id=553788824]
+collision_layer = 0
+script = ExtResource("1_qx5o7")
+metadata/_custom_type_script = "uid://dtacvaonrcmwg"

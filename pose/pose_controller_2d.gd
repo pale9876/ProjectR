@@ -7,6 +7,7 @@ signal pose_changed()
 
 
 @export var agent: Node
+@export var blackboard_plan: BlackboardPlan
 
 
 @export var pose: Dictionary[StringName, Pose2D]

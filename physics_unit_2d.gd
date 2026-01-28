@@ -2,7 +2,8 @@
 extends CharacterBody2D
 class_name PhysicsUnit2D
 
-
+@export var _information: UnitInformation
+@export_flags_2d_physics var _mask: int
 @export var pose_controller: PoseController2D
 @export var stat_handler: StatHandler
 @export var init_collider: CollisionShape2D
@@ -18,7 +19,7 @@ var _on_wall: bool = false
 
 
 func get_information() -> UnitInformation:
-	return stat_handler.information
+	return _information
 
 
 func _init() -> void:
@@ -34,6 +35,7 @@ func _enter_tree() -> void:
 
 func _update() -> void:
 	_collider.clear()
+	
 	for node: Node in get_children():
 		if node is CollisionShape2D:
 			_collider[node.name] = node
@@ -45,9 +47,7 @@ func _notification(what: int) -> void:
 
 
 func _physics_process(delta: float) -> void:
-	if Engine.is_editor_hint():
-		#TODO:: WHAT
-		return
+	if Engine.is_editor_hint(): return
 	
 	if !_on_floor:
 		velocity.y += get_gravity().y * delta
@@ -57,13 +57,24 @@ func _physics_process(delta: float) -> void:
 		if collision:
 			var collide_object: Object = collision.get_collider()
 			if collide_object is PhysicsUnit2D:
-				pass
-			
-			var _normal: Vector2 = collision.get_normal()
-			_on_floor = _normal.dot(velocity) == 0.
-			velocity = velocity.slide(_normal)
+				_collide_ev_handler(collision)
+			else:
+				_slide(collision)
 		else:
 			break
+
+
+# OVERRIDE
+func _collide_ev_handler(_collision: KinematicCollision2D) -> void:
+	pass
+
+
+# OVERRIDE
+func _slide(_collision: KinematicCollision2D) -> void:
+	var _normal: Vector2 = _collision.get_normal()
+	_on_floor = _normal.dot(velocity) == 0. and Vector2.DOWN.dot(_normal)
+	_on_wall = _normal.dot(velocity) == 0. and up_direction.dot(_normal)
+	velocity = velocity.slide(_normal)
 
 
 func get_collider_list() -> PackedStringArray:

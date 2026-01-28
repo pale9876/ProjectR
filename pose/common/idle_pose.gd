@@ -14,6 +14,7 @@ func _fixed_update(_delta: float) -> void:
 		input_dir = InputHandler.get_input_dir()
 	
 	if agent is PhysicsUnit2D:
+		
 		var current_speed: float = agent.velocity.x
 		if current_speed != 0.:
 			agent.velocity.x = move_toward (
