@@ -3,7 +3,7 @@ extends Camera2D
 class_name SceneCamera2D
 
 
-@export var mover_per_second: float = 10.
+@export var mover_per_second: float = 330.
 @export var target: Node2D = null
 
 

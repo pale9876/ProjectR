@@ -11,12 +11,12 @@
 [ext_resource type="Script" uid="uid://jr0f7own2t7o" path="res://screen_effect_canvas_layer.gd" id="5_65mt0"]
 [ext_resource type="Shader" uid="uid://c7rlgm1ootd5g" path="res://shader/rain_drop.gdshader" id="6_tkxnt"]
 
-[sub_resource type="Resource" id="Resource_of7eg"]
+[sub_resource type="Resource" id="Resource_rb1vg"]
 resource_local_to_scene = true
 script = ExtResource("3_rb1vg")
 metadata/_custom_type_script = "uid://cxckpw1sbak1o"
 
-[sub_resource type="Resource" id="Resource_8y0th"]
+[sub_resource type="Resource" id="Resource_tl212"]
 resource_local_to_scene = true
 script = ExtResource("4_tl212")
 name = "RedHood"
@@ -35,21 +35,21 @@ shader_parameter/blur = 0.426000020235
 [node name="Stage" parent="." unique_id=1100972656 instance=ExtResource("1_7lgay")]
 
 [node name="Player" parent="." unique_id=74662124 instance=ExtResource("2_65mt0")]
+physics_interpolation_mode = 1
 position = Vector2(173, 384)
-character_stat = SubResource("Resource_of7eg")
-_information = SubResource("Resource_8y0th")
+character_stat = SubResource("Resource_rb1vg")
+_information = SubResource("Resource_tl212")
 
 [node name="Enemy" parent="." unique_id=1164001035 instance=ExtResource("4_xwaqu")]
 position = Vector2(686, 207)
 
-[node name="CameraProducer" type="Node2D" parent="." unique_id=137806958 node_paths=PackedStringArray("init_camera")]
+[node name="CameraProducer" type="Node2D" parent="." unique_id=137806958]
 script = ExtResource("4_1tx2p")
-init_camera = NodePath("MainCamera")
 
-[node name="MainCamera" type="Camera2D" parent="CameraProducer" unique_id=1311757757 node_paths=PackedStringArray("target")]
-position = Vector2(245, 265)
+[node name="SceneCamera2D" type="Camera2D" parent="CameraProducer" unique_id=1403871873 node_paths=PackedStringArray("target")]
 script = ExtResource("3_bstsi")
 target = NodePath("../../Player")
+metadata/_custom_type_script = "uid://bv8jgicw64qw7"
 
 [node name="Title" parent="." unique_id=1264384117 instance=ExtResource("4_bncev")]
 

@@ -14,3 +14,7 @@ func _enter_tree() -> void:
 
 func _change_camera(_next: Camera2D) -> void:
 	pass
+
+
+func add_camera(cam: Camera2D) -> void:
+	pass

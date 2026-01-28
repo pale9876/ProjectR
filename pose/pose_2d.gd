@@ -61,3 +61,7 @@ func _move_agent() -> bool:
 
 func get_agent_information() -> UnitInformation:
 	return agent.get_information() if agent is PhysicsUnit2D else null
+
+
+func _get_act_direciton() -> void:
+	pass

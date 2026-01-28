@@ -5,7 +5,7 @@
 [ext_resource type="Resource" uid="uid://4ntuwag3k035" path="res://chara/red_hood/red_hood_info.tres" id="2_lel03"]
 [ext_resource type="Script" uid="uid://bl8ms0nmsmbkl" path="res://visible_notification_shape_2d.gd" id="3_kne1u"]
 [ext_resource type="Script" uid="uid://cuxvpat0q3ao5" path="res://inventory.gd" id="4_l6ohk"]
-[ext_resource type="Texture2D" uid="uid://cysooqp63xp0h" path="res://aseprite/redhood/red_hood_placeholder.png" id="6_ekjla"]
+[ext_resource type="Texture2D" uid="uid://cysooqp63xp0h" path="res://aseprite/concept/redhood/red_hood_placeholder.png" id="6_ekjla"]
 [ext_resource type="Script" uid="uid://c342mx8mdc4sm" path="res://hurt_box.gd" id="6_tdg3f"]
 [ext_resource type="Script" uid="uid://dgpate5wpm75e" path="res://pose/pose_controller_2d.gd" id="7_3tkgg"]
 [ext_resource type="Script" uid="uid://x7od6vrds4mc" path="res://unit_event_handler.gd" id="7_dtqjt"]
@@ -16,12 +16,12 @@
 [ext_resource type="Script" uid="uid://dq4ddyr3wyitk" path="res://slide.gd" id="15_r3kul"]
 [ext_resource type="Script" uid="uid://ca82fhyokguoj" path="res://unit/inner_progress_ui.gd" id="16_lel03"]
 [ext_resource type="Script" uid="uid://5bgh3jgqmfuq" path="res://unit/inner_ui_marker.gd" id="16_smflj"]
-[ext_resource type="Texture2D" uid="uid://bw53vkkeekuxe" path="res://aseprite/ui/health_progress_over.png" id="17_tvasn"]
-[ext_resource type="Texture2D" uid="uid://6worj7stjxkc" path="res://aseprite/ui/health_progress.png" id="18_43kp2"]
-[ext_resource type="Texture2D" uid="uid://cegfid37q12r5" path="res://aseprite/ui/health_progress_under.png" id="19_03by7"]
+[ext_resource type="Texture2D" uid="uid://bw53vkkeekuxe" path="res://aseprite/concept/ui/health_progress_over.png" id="17_tvasn"]
+[ext_resource type="Texture2D" uid="uid://6worj7stjxkc" path="res://aseprite/concept/ui/health_progress.png" id="18_43kp2"]
+[ext_resource type="Texture2D" uid="uid://cegfid37q12r5" path="res://aseprite/concept/ui/health_progress_under.png" id="19_03by7"]
 
 [sub_resource type="RectangleShape2D" id="RectangleShape2D_0rwas"]
-size = Vector2(20, 42)
+size = Vector2(32, 112)
 
 [sub_resource type="RectangleShape2D" id="RectangleShape2D_dtqjt"]
 size = Vector2(20, 42)
@@ -49,12 +49,12 @@ position = Vector2(0, -64)
 texture = ExtResource("6_ekjla")
 
 [node name="Idle" type="CollisionShape2D" parent="." unique_id=846775626]
-position = Vector2(0, -21)
+position = Vector2(0, -56)
 shape = SubResource("RectangleShape2D_0rwas")
 debug_color = Color(0, 0.7607843, 0.57254905, 0.11764706)
 script = ExtResource("3_kne1u")
 
-[node name="PoseController2D" type="Node2D" parent="." unique_id=296513422 node_paths=PackedStringArray("agent", "pose", "init_pose")]
+[node name="PoseController2D" type="Node2D" parent="." unique_id=296513422 node_paths=PackedStringArray("agent", "pose", "init_pose", "monitor_label")]
 script = ExtResource("7_3tkgg")
 agent = NodePath("..")
 pose = {
@@ -65,6 +65,8 @@ pose = {
 &"Slide": NodePath("Slide")
 }
 init_pose = NodePath("Idle")
+debug = true
+monitor_label = NodePath("../InnerUIMark/Label")
 
 [node name="Idle" type="Node2D" parent="PoseController2D" unique_id=1827049041 node_paths=PackedStringArray("move_pose", "fall_pose", "jump_pose")]
 script = ExtResource("8_l6ohk")
@@ -124,8 +126,24 @@ bold = 1.095
 script = ExtResource("16_lel03")
 progress_over = ExtResource("17_tvasn")
 progress_texture = ExtResource("18_43kp2")
+trauma_progress_texture = ExtResource("18_43kp2")
 progress_under = ExtResource("19_03by7")
 progress_color = Color(1, 0, 0.20000029, 1)
 progress_value = 1.0
 gradient = true
 gradient_value = SubResource("Gradient_ekjla")
+
+[node name="Label" type="Label" parent="InnerUIMark" unique_id=2123176147]
+layout_mode = 1
+anchors_preset = 8
+anchor_left = 0.5
+anchor_top = 0.5
+anchor_right = 0.5
+anchor_bottom = 0.5
+offset_left = -26.0
+offset_top = -40.0
+offset_right = 26.0
+offset_bottom = -17.0
+grow_horizontal = 2
+grow_vertical = 2
+text = "state: "

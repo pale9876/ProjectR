@@ -10,12 +10,13 @@ class_name PhysicsUnit2D
 
 
 var _collider: Dictionary[StringName, CollisionShape2D] = {}
+
+@export_custom(PROPERTY_HINT_NONE, "", PROPERTY_USAGE_READ_ONLY | PROPERTY_USAGE_DEFAULT)
 var _current: CollisionShape2D = null
 
 
 var _on_floor: bool = false
-var _on_wall: bool = false
-
+var _on_ceil: bool = false
 
 
 func get_information() -> UnitInformation:
@@ -48,20 +49,33 @@ func _notification(what: int) -> void:
 
 func _physics_process(delta: float) -> void:
 	if Engine.is_editor_hint(): return
-	
-	if !_on_floor:
-		velocity.y += get_gravity().y * delta
 
-	while true: # move_and_slide
-		var collision: KinematicCollision2D = move_and_collide(velocity * delta)
-		if collision:
-			var collide_object: Object = collision.get_collider()
-			if collide_object is PhysicsUnit2D:
-				_collide_ev_handler(collision)
-			else:
-				_slide(collision)
+	if _current == null: return
+
+	var shape_cast_param: PhysicsShapeQueryParameters2D = PhysicsShapeQueryParameters2D.new()
+	shape_cast_param.collide_with_bodies = true
+	shape_cast_param.collision_mask = _mask
+	shape_cast_param.motion = Vector2(0., floor_snap_length)
+	shape_cast_param.shape = _current.shape
+
+	var result: Array[Dictionary] = get_world_2d().direct_space_state.intersect_shape(
+		shape_cast_param
+	)
+	
+	if result:
+		_on_floor = true
+	else:
+		velocity.y += get_gravity().y * delta
+		_on_floor = false
+
+	var collision: KinematicCollision2D = move_and_collide(velocity * delta)
+
+	if collision:
+		var collide_object: Object = collision.get_collider()
+		if collide_object is PhysicsUnit2D:
+			_collide_ev_handler(collision)
 		else:
-			break
+			_slide(collision, delta)
 
 
 # OVERRIDE
@@ -70,11 +84,13 @@ func _collide_ev_handler(_collision: KinematicCollision2D) -> void:
 
 
 # OVERRIDE
-func _slide(_collision: KinematicCollision2D) -> void:
+func _slide(_collision: KinematicCollision2D, delta: float) -> void:
 	var _normal: Vector2 = _collision.get_normal()
-	_on_floor = _normal.dot(velocity) == 0. and Vector2.DOWN.dot(_normal)
-	_on_wall = _normal.dot(velocity) == 0. and up_direction.dot(_normal)
-	velocity = velocity.slide(_normal)
+	var _remainder: Vector2 = _collision.get_remainder()
+
+	_remainder = velocity.slide(_normal)
+	
+	var _remainder_collision: KinematicCollision2D = move_and_collide(_remainder * delta)
 
 
 func get_collider_list() -> PackedStringArray:

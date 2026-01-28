@@ -3,7 +3,7 @@ extends Node2D
 class_name PoseController2D
 
 
-signal pose_changed()
+signal pose_changed(state_name: StringName)
 
 
 @export var agent: Node
@@ -12,6 +12,11 @@ signal pose_changed()
 
 @export var pose: Dictionary[StringName, Pose2D]
 @export var init_pose: Pose2D = null
+
+
+@export_category("DEBUG")
+@export var debug: bool = false
+@export var monitor_label: Label
 
 
 var _current: Pose2D = null
@@ -138,7 +143,8 @@ func change_pose(_pose: Pose2D) -> bool:
 	if !Engine.is_editor_hint(): _pose._enter()
 	
 	assert(_current != null)
-	pose_changed.emit()
+	
+	pose_changed.emit(_current.name)
 	return true
 
 
