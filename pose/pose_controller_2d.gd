@@ -7,8 +7,8 @@ signal pose_changed(state_name: StringName)
 
 
 @export var agent: Node
-@export var blackboard_plan: BlackboardPlan
-
+@export var blackboard_plan: BlackboardPlan = BlackboardPlan.new()
+var _blackboard: Blackboard = null
 
 @export var pose: Dictionary[StringName, Pose2D]
 @export var init_pose: Pose2D = null
@@ -28,10 +28,10 @@ func _ready() -> void:
 	_updated()
 	
 	if init_pose != null:
-		assert(
-			get_children().filter(func(node)->bool: return node is Pose2D).has(init_pose)
-		)
-		assert(change_pose(init_pose))
+		assert( pose_is_child(init_pose) and change_pose(init_pose) )
+
+	if blackboard_plan:
+		_blackboard = blackboard_plan.create_blackboard(self)
 
 
 func _pose_changed() -> void:
@@ -152,3 +152,6 @@ func pose_is_child(node: Pose2D) -> bool:
 	return get_children().filter(
 		func(_node: Node) -> bool: return _node is Pose2D
 	).has(node)
+
+
+func get_blackboard() -> Blackboard: return _blackboard

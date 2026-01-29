@@ -1,45 +1,48 @@
 extends Node2D
 
 
-var _objs: Array[PhysicsParticle2D] = []
+var _objs: Array[Particle] = []
 
 
 func _ready() -> void:
 	_objs.push_back(
-		PhysicsParticle2D.new(global_position, - Vector2.ONE.normalized() * 1500., get_world_2d())
+		Particle.new(global_position, - Vector2.ONE.normalized() * 1500., get_world_2d())
 	)
 
 
+func _move_particle(obj: Particle, delta: float) -> void:
+	var motion_param: PhysicsTestMotionParameters2D = PhysicsTestMotionParameters2D.new()
+	motion_param.from = Transform2D(0., obj.pos)
+	motion_param.margin = .5
+	motion_param.motion = obj.force * delta
+	
+	var result: PhysicsTestMotionResult2D = PhysicsTestMotionResult2D.new()
+	
+	var collide: bool = PhysicsServer2D.body_test_motion(
+		obj._rid,
+		motion_param,
+		result
+	)
+		
+	if collide:
+		print("-------------------------------------------")
+		print("!!collide!!")
+		print(result.get_collider())
+		print(result.get_collision_point())
+		print(result.get_collision_normal())
+		
+		obj._collided = true
+		
+		obj.pos = result.get_collision_point() + (result.get_collision_normal() * obj._radius)
+		obj.force = obj.force.bounce(result.get_collision_normal())
+			
+	else:
+		obj.pos += motion_param.motion
+
+
 func _physics_process(delta: float) -> void:
-	for obj: PhysicsParticle2D in _objs:
-		
-		var motion_param: PhysicsTestMotionParameters2D = PhysicsTestMotionParameters2D.new()
-		motion_param.from = Transform2D(0., obj.pos)
-		motion_param.margin = .5
-		motion_param.motion = obj.force * delta
-		
-		var result: PhysicsTestMotionResult2D = PhysicsTestMotionResult2D.new()
-		
-		var collide: bool = PhysicsServer2D.body_test_motion(
-			obj._rid,
-			motion_param,
-			result
-		)
-		
-		if collide:
-			print("-------------------------------------------")
-			print("!!collide!!")
-			print(result.get_collider())
-			print(result.get_collision_point())
-			print(result.get_collision_normal())
-			
-			obj._collided = true
-			
-			obj.pos = result.get_collision_point() + (result.get_collision_normal() * obj._radius)
-			obj.force = obj.force.bounce(result.get_collision_normal())
-			
-		else:
-			obj.pos += motion_param.motion
+	for obj: Particle in _objs:
+		_move_particle(obj, delta)
 		
 	queue_redraw()
 
@@ -54,7 +57,7 @@ func _exit_tree() -> void:
 		obj.free.call_deferred()
 
 
-class PhysicsParticle2D extends Object:
+class Particle extends Object:
 
 	var pos: Vector2 = Vector2.ZERO
 	var _rid: RID

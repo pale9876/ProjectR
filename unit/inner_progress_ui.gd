@@ -15,11 +15,14 @@ signal value_changed(_value: float)
 @export var progress_texture: Texture2D
 @export var trauma_progress_texture: Texture2D
 @export var progress_under: Texture2D
+
+@export_group("Color")
 @export var progress_color: Color = Color.RED:
 	set(color):
 		progress_color = color
 		queue_redraw()
-
+@export var progress_under_color: Color = Color.BLACK
+@export var trauma_color: Color = Color.DARK_RED
 
 @export_group("Progress")
 @export_range(0., 1., .001) var progress_value: float:
@@ -27,7 +30,12 @@ signal value_changed(_value: float)
 		progress_value = value
 		value_changed.emit(value)
 		queue_redraw()
-
+@export var value_curve: Curve = Curve.new()
+@export_range(0., 5., .001) var value_trace_scale: float = 1.
+var _trauma_value: float = 1.:
+	set(value):
+		_trauma_value = value
+		queue_redraw()
 
 @export_group("Gradient")
 @export var gradient: bool = false:
@@ -43,6 +51,11 @@ signal value_changed(_value: float)
 
 
 var _gradient_texture: ImageTexture = null
+
+func set_trauma_value(value: float) -> void:
+	var tween: Tween = create_tween()
+	_trauma_value = value
+	
 
 
 func _draw() -> void:

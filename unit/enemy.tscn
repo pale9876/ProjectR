@@ -1,6 +1,6 @@
 [gd_scene format=3 uid="uid://bhiytsvxmox6n"]
 
-[ext_resource type="Script" uid="uid://bl8ms0nmsmbkl" path="res://visible_notification_shape_2d.gd" id="1_7k104"]
+[ext_resource type="Script" uid="uid://bl8ms0nmsmbkl" path="res://notification_shape_2d.gd" id="1_7k104"]
 [ext_resource type="Script" uid="uid://drbj4nearqfgn" path="res://enemy.gd" id="1_iifgy"]
 [ext_resource type="Script" uid="uid://dgpate5wpm75e" path="res://pose/pose_controller_2d.gd" id="3_iifgy"]
 [ext_resource type="Script" uid="uid://cdb4dyqk3exd" path="res://pose/pose_2d.gd" id="4_epg4t"]

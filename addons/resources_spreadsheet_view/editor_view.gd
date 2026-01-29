@@ -39,7 +39,7 @@ var first_row := 0
 var last_row := 0
 
 
-func _ready():
+func _ready() -> void:
 	editor_interface.get_resource_filesystem().filesystem_changed.connect(_on_filesystem_changed)
 	if FileAccess.file_exists(save_data_path):
 		var file := FileAccess.open(save_data_path, FileAccess.READ)

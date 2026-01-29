@@ -47,6 +47,8 @@ position = Vector2(686, 207)
 script = ExtResource("4_1tx2p")
 
 [node name="SceneCamera2D" type="Camera2D" parent="CameraProducer" unique_id=1403871873 node_paths=PackedStringArray("target")]
+position = Vector2(173, 343)
+offset = Vector2(0, -50)
 script = ExtResource("3_bstsi")
 target = NodePath("../../Player")
 metadata/_custom_type_script = "uid://bv8jgicw64qw7"
