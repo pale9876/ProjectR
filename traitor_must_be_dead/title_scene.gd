@@ -15,6 +15,7 @@ extends CanvasLayer
 @onready var option_panel: Control = %OptionPanel
 @onready var background: Node2D = %Background
 
+
 # Called when the node enters the scene tree for the first time.
 func _ready() -> void:
 	background.show()
@@ -32,6 +33,8 @@ func _ready() -> void:
 			option_panel.show()
 			
 	)
+
+	class_predator
 
 
 #func select_class_mode() -> void:

@@ -10,6 +10,7 @@ const NOTIFICATION_MINMAX_CHANGED: int = 1403
 const NOTIFICATION_CREATED: int = 1440
 const NOTIFICATION_KILLED: int = 1441
 
+
 @export_category("Z Layer Range")
 @export var min_z: float = 0.:
 	set(value):

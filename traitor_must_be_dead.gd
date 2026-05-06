@@ -17,17 +17,6 @@ class_name TraitorMustBeDead
 @onready var hp_progress: GradientProgress = %HpProgress
 
 
-# Title
-#@onready var start_btn: Button = %Start
-
-
-# Select Class
-#@onready var main_title: Control = $Title/MainTitle
-#@onready var select_class: Control = %SelectClass
-#@onready var class_predator: TextureButton = %ClassPredator
-#@onready var class_executioner: TextureButton = %ClassExecutioner
-
-
 
 func _ready() -> void:
 	title.show()
@@ -40,25 +29,9 @@ func _ready() -> void:
 	player.transform = Transform2D(0., Vector2(640., 360.) / 2.)
 	character_icon.texture = player.unit_information.icon
 	
-	#start_btn.pressed.connect(select_class_mode)
-	
 	Global.player_health_changed.connect(_on_player_health_changed)
+	Global.start.connect(start)
 
-
-#func select_class_mode() -> void:
-	#main_title.hide()
-	#select_class.show()
-#
-	#class_predator.pressed.connect(select_class_predator)
-	#class_executioner.pressed.connect(select_class_executioner)
-
-
-#func select_class_predator() -> void:
-	#start()
-#
-#
-#func select_class_executioner() -> void:
-	#start()
 
 
 func start() -> void:

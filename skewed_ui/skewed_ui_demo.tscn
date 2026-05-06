@@ -1,0 +1,12 @@
+[gd_scene format=3 uid="uid://n33sn3cnqd1v"]
+
+[ext_resource type="Script" uid="uid://itwevrdrr4iv" path="res://skewed_ui/node.gd" id="1_cj45c"]
+
+[node name="SkewedUIDemo" type="CanvasLayer" unique_id=751406735]
+
+[node name="SkewedPanel" type="Node" parent="." unique_id=1229838506]
+script = ExtResource("1_cj45c")
+size = Vector2(300, 360)
+position = Vector2(571, 180)
+skew = -20.0
+margin = null
