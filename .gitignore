@@ -24,3 +24,6 @@ addons/ibproject/debug/~ibproject.dll
 addons/tarantella/bin/~tarantella.windows.template_debug.x86_64.dll
 /rust_script/ibproject/endeka_renderer/target
 /rust_script/endeka/target
+/addons/ibproject/src/endeka/target
+/addons/ibproject/src/ibproject/target/debug
+/addons/kira_no_koe/target/debug

@@ -17,8 +17,6 @@ struct KiraPlayer
     #[init(val = 0.)]
     #[var(set = set_vol)]
     volume: f32,
-    #[export]
-    stream: Option<Gd<AudioStream>>,
 
     // NON VAR
     audio_manager: Option<AudioManager>,
@@ -56,8 +54,7 @@ impl KiraPlayer
     {
         let mut _manager = AudioManager::<DefaultBackend>::new(AudioManagerSettings::default()).expect("Error");
         
-        _manager.main_track().set_volume(10., Tween::default());
-
+        _manager.main_track().set_volume(self.volume, Tween::default());
         _manager.play(
             self.sound_data.as_ref().unwrap().clone()
         ).expect("Error");
