@@ -1,6 +1,8 @@
 use godot::prelude::*;
 
 
+mod kira_player;
+
 struct KiraNoKoe;
 
 

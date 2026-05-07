@@ -3,6 +3,10 @@ name = "kira_no_koe"
 version = "0.1.0"
 edition = "2024"
 
+
+[lib]
+crate-type = ["cdylib"]
+
 [dependencies]
 godot = "0.5.2"
 kira = "0.12.0"

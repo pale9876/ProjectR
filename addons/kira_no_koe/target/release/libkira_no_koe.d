@@ -1,0 +1,1 @@
+C:\Users\ssh\Documents\GitHub\project_revenant\addons\kira_no_koe\target\release\libkira_no_koe.rlib: C:\Users\ssh\Documents\GitHub\project_revenant\addons\kira_no_koe\src\kira_player.rs C:\Users\ssh\Documents\GitHub\project_revenant\addons\kira_no_koe\src\lib.rs
