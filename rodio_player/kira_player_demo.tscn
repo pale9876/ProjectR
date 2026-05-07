@@ -1,0 +1,7 @@
+[gd_scene format=3 uid="uid://bdsjglcutofyi"]
+
+[ext_resource type="AudioStream" uid="uid://bxsd4pdohjlx4" path="res://audio/AZALI - show me the sky. show me how to live.mp3" id="1_7xcpq"]
+
+[node name="KiraPlayer" type="KiraPlayer" unique_id=1789924545]
+volume = -10.0
+stream = ExtResource("1_7xcpq")

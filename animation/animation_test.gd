@@ -11,6 +11,7 @@ const BGM: AudioStream = preload("uid://bxsd4pdohjlx4")
 
 var _current: AudioStreamPlaybackPolyphonic
 
+
 func play() -> void:
 	var playback: AudioStreamPlaybackPolyphonic = BGM.instantiate_playback() as AudioStreamPlaybackPolyphonic
 	playback.play_stream(

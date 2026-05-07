@@ -8,7 +8,7 @@ mod endeka;
 
 #[gdextension]
 unsafe impl ExtensionLibrary for IBProject {
-    
+
 }
 
 
