@@ -1,0 +1,8 @@
+[configuration]
+entry_symbol = "gdext_rust_init"
+compatibility_minimum = 4.6
+reloadable = false
+
+[libraries]
+windows.debug.x86_64 = "res://addons/kira_no_koe/target/debug/kira_no_koe.dll"
+windows.release.x86_64 = "res://addons/kira_no_koe/target/release/kira_no_koe.dll"

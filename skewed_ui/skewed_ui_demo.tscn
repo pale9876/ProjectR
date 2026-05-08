@@ -9,4 +9,3 @@ script = ExtResource("1_cj45c")
 size = Vector2(300, 360)
 position = Vector2(571, 180)
 skew = -20.0
-margin = null
