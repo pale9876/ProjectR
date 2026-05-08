@@ -1,4 +1,5 @@
 use godot::{prelude::*};
+
 use kira::{
 	AudioManager,
     AudioManagerSettings,
@@ -32,7 +33,7 @@ struct KiraPlayer
 }
 
 
-const SAMPLE_PATH: &str = "C:/Users/fndlt/OneDrive/문서/GitHub/project_revenant/audio/AZALI - show me the sky. show me how to live.mp3";
+const SAMPLE_PATH: &str = "res://audio/AZALI - show me the sky. show me how to live.mp3";
 
 
 #[godot_api]
@@ -40,8 +41,7 @@ impl INode for KiraPlayer
 {
     fn enter_tree(&mut self)
     {
-        let data = StaticSoundData::from_file(SAMPLE_PATH).expect("Static Sound Data Load Error");
-        self.sound_data = Some(data);
+        
     }
 }
 

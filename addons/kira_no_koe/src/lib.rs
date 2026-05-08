@@ -1,10 +1,8 @@
 use godot::prelude::*;
 
-
-mod kira_player;
-
 struct KiraNoKoe;
 
+mod player;
 
 #[gdextension]
 unsafe impl ExtensionLibrary for KiraNoKoe {
