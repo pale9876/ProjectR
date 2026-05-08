@@ -45,3 +45,5 @@ addons/kira_no_koe/target/.rustc_info.json
 /addons/ibproject/target/release/deps
 addons/ibproject/target/debug/~ibpr_0.pdb
 addons/ibproject/target/debug/~ibproject.dll
+addons/ibproject/target/flycheck0/stderr
+addons/ibproject/target/flycheck0/stdout

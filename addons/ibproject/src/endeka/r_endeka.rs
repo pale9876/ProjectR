@@ -1,5 +1,5 @@
 use godot::{
-    classes::{CanvasLayer, ICanvasLayer,RenderingServer},
+    classes::{CanvasLayer, ICanvasLayer, RenderingServer},
     prelude::*,
 };
 
