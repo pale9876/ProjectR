@@ -1,16 +1,14 @@
 [package]
-name = "ibproject" # Part of dynamic library name; we use {YourCrate} placeholder.
-version = "0.1.0"     # You can leave version and edition as-is for now.
+name = "ibproject"
+version = "0.1.0"
 edition = "2021"
 
 
 [lib]
-crate-type = ["cdylib"]  # Compile this crate to a dynamic C library.
+crate-type = ["cdylib"]
 
 
 [dependencies]
 godot = "0.5.1"
-oauth2 = "5.0.0"
 tossicat = "0.8.0"
 endeka = {path = "../endeka"}
-kira = "0.12.0"
