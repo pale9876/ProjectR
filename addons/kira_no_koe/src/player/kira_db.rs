@@ -17,20 +17,21 @@ pub struct KiraDB
     pub cache: HashMap<String, StaticSoundData>,
 }
 
+const DEFAULT_PATH: &str = "res://audio/";
+const exts: [&str; 3] = ["mp3","ogg","wav"];
 
 impl KiraDB
 {
 
-    const DEFAULT_PATH: &str = "res://audio/";
-
     pub fn db_init() -> Self
     {
-        let loaded = Self::load_files_from_folder(&String::from(Self::DEFAULT_PATH));
+        let loaded = Self::load_files_from_folder(&String::from(DEFAULT_PATH));
 
         Self {
             cache : loaded
         }
     }
+
 
     pub fn find_data(&self, name: &String) -> Option<StaticSoundData>
     {
@@ -54,7 +55,6 @@ impl KiraDB
         false
     }
 
-    const exts: [&str; 3] = ["mp3","ogg","wav"];
 
     pub fn load_files_from_folder(path: &String) -> HashMap<String, StaticSoundData>
     {
@@ -67,7 +67,7 @@ impl KiraDB
             let dir_path= dir.unwrap().path();
             let dir_name = dir_path.file_name().unwrap().to_str().unwrap();
             let ext = dir_path.extension().unwrap();
-            if Self::exts.contains(&ext.to_str().unwrap())
+            if exts.contains(&ext.to_str().unwrap())
             {
                 let sound = StaticSoundData::from_file(dir_path.as_path()).unwrap();
                 result.insert(String::from(dir_name), sound);
@@ -76,6 +76,5 @@ impl KiraDB
 
         result
     }
-
 
 }

@@ -1,6 +1,7 @@
+use std::collections::HashMap;
+
 use godot::prelude::*;
-use kira::sound::SoundData;
-use std::{io::Read, *};
+use kira::*;
 
 
 use crate::player::kira_db::KiraDB;
@@ -12,6 +13,8 @@ struct KiraAudioServer
 {
     #[init(val=KiraDB::db_init())]
     db: KiraDB,
+    #[init(val=HashMap::new())]
+    bus: HashMap<String, AudioManager>,
 
     base: Base<Node>,
 }
@@ -50,7 +53,6 @@ impl KiraAudioServer
         }
 
         result
-
     }
 
 }

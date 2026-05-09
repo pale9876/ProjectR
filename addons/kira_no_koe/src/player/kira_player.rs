@@ -37,13 +37,6 @@ const SAMPLE_PATH: &str = "res://audio/AZALI - show me the sky. show me how to l
 
 
 #[godot_api]
-impl INode for KiraPlayer
-{
-
-}
-
-
-#[godot_api]
 impl KiraPlayer
 {
     #[func]
@@ -82,7 +75,9 @@ impl KiraPlayer
             self.audio_manager
                 .as_mut().unwrap()
                 .main_track()
-                .set_volume(value, kira::Tween::default());
+                .set_volume(
+                    value, kira::Tween::default()
+                );
         }
     }
 
