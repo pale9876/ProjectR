@@ -7,7 +7,7 @@ use crate::player::kira_db::KiraDB;
 
 
 #[derive(GodotClass)]
-#[class(base=Node, init)]
+#[class(base=Node, init, singleton)]
 struct KiraAudioServer
 {
     #[init(val=KiraDB::db_init())]
@@ -35,4 +35,22 @@ impl KiraAudioServer
 
         false
     }
+
+    #[func]
+    fn get_list(&self) -> Array<GString>
+    {
+        let mut result: Array<GString> = Array::new();
+
+        let key_arr = self.db.cache.keys();
+
+        for key in key_arr
+        {
+            let sound_name = GString::from(key.as_str());
+            result.push(&GString::from(key.as_str()));
+        }
+
+        result
+
+    }
+
 }

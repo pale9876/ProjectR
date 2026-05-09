@@ -1,5 +1,5 @@
 use std::collections::HashMap;
-use godot::prelude::*;
+use godot::{classes::ProjectSettings, prelude::*};
 
 
 use kira::{
@@ -14,16 +14,21 @@ use kira::{
 #[derive(Debug, Clone)]
 pub struct KiraDB
 {
-    cache: HashMap<String, StaticSoundData>,
+    pub cache: HashMap<String, StaticSoundData>,
 }
 
 
 impl KiraDB
 {
+
+    const DEFAULT_PATH: &str = "res://audio/";
+
     pub fn db_init() -> Self
     {
+        let loaded = Self::load_files_from_folder(&String::from(Self::DEFAULT_PATH));
+
         Self {
-            cache : HashMap::new()
+            cache : loaded
         }
     }
 
@@ -49,20 +54,28 @@ impl KiraDB
         false
     }
 
+    const exts: [&str; 3] = ["mp3","ogg","wav"];
 
-    pub fn load_files_from_folder(&mut self, path: &String)
+    pub fn load_files_from_folder(path: &String) -> HashMap<String, StaticSoundData>
     {
-        let paths = std::fs::read_dir(path).expect("Failed");
+        let mut result = HashMap::<String, StaticSoundData>::new();
+        let g_path = ProjectSettings::singleton().globalize_path(path);
+        let paths = std::fs::read_dir(g_path.to_string()).expect("Failed");
+        
         for dir in paths
         {
             let dir_path= dir.unwrap().path();
             let dir_name = dir_path.file_name().unwrap().to_str().unwrap();
-            if !self.cache.contains_key(dir_name)
+            let ext = dir_path.extension().unwrap();
+            if Self::exts.contains(&ext.to_str().unwrap())
             {
                 let sound = StaticSoundData::from_file(dir_path.as_path()).unwrap();
-                self.cache.insert(String::from(dir_name), sound);
+                result.insert(String::from(dir_name), sound);
             }
         }
+
+        result
     }
+
 
 }

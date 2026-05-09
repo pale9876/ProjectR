@@ -39,10 +39,7 @@ const SAMPLE_PATH: &str = "res://audio/AZALI - show me the sky. show me how to l
 #[godot_api]
 impl INode for KiraPlayer
 {
-    fn enter_tree(&mut self)
-    {
-        
-    }
+
 }
 
 
@@ -71,6 +68,8 @@ impl KiraPlayer
         {
             self.audio_manager = Option::None;
         }
+
+        godot_print!("Stop");
     }
 
     #[func]

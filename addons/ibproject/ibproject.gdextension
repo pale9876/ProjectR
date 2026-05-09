@@ -1,5 +1,5 @@
 [configuration]
-entry_symbol = "gdext_rust_init"
+entry_symbol = "ibproject"
 compatibility_minimum = 4.6
 reloadable = true
 
