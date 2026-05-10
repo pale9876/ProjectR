@@ -2,16 +2,16 @@
 
 importer="texture"
 type="CompressedTexture2D"
-uid="uid://bvsiyrropsass"
-path="res://.godot/imported/longwang.png-5a6e8fbade4a7a25d798d6c39155a650.ctex"
+uid="uid://kf17ie5derdk"
+path="res://.godot/imported/haikui.png-fb3961d27c081065f892dcd1b974eade.ctex"
 metadata={
 "vram_texture": false
 }
 
 [deps]
 
-source_file="res://aseprite/asso_project/longwang.png"
-dest_files=["res://.godot/imported/longwang.png-5a6e8fbade4a7a25d798d6c39155a650.ctex"]
+source_file="res://aseprite/asso_project/haikui.png"
+dest_files=["res://.godot/imported/haikui.png-fb3961d27c081065f892dcd1b974eade.ctex"]
 
 [params]
 

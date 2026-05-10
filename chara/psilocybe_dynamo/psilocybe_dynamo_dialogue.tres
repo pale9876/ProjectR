@@ -1,0 +1,15 @@
+[gd_resource type="Resource" script_class="CharacterBattleDialogue" format=3 uid="uid://b3poa6jxyfp66"]
+
+[ext_resource type="Script" uid="uid://dyr6sxxsybcl6" path="res://chara/character_battle_dialogue.gd" id="1_fel7b"]
+
+[resource]
+script = ExtResource("1_fel7b")
+dialogues = Dictionary[StringName, PackedStringArray]({
+&"도발": PackedStringArray("그 쓸모없는 머리도 부숴줄게."),
+&"베기": PackedStringArray("합!"),
+&"분노": PackedStringArray("전부 죽어버려!", "전부 죽여주마!"),
+&"산탄": PackedStringArray("찢겨라!", "찢겨져라!", "사라져!"),
+&"살해": PackedStringArray("잘 가.", "안녕히."),
+&"획득": PackedStringArray("뭐든 쓸만하겠지.", "좋은 거겠지?")
+})
+metadata/_custom_type_script = "uid://dyr6sxxsybcl6"

@@ -1,11 +1,7 @@
-use godot::{prelude::*};
+use godot::{classes::{AudioListener2D, RefCounted}, prelude::*};
 
 use kira::{
-	AudioManager,
-    AudioManagerSettings,
-    DefaultBackend,
-    Tween,
-    sound::static_sound::StaticSoundData
+	AudioManager, AudioManagerSettings, DefaultBackend, Tween, backend::cpal::CpalBackend, sound::static_sound::StaticSoundData, track::MainTrackBuilder
 };
 
 
@@ -33,16 +29,19 @@ struct KiraPlayer
 }
 
 
-const SAMPLE_PATH: &str = "res://audio/AZALI - show me the sky. show me how to live.mp3";
-
-
 #[godot_api]
 impl KiraPlayer
 {
     #[func]
     fn play(&mut self)
     {
-        let mut _manager = AudioManager::<DefaultBackend>::new(AudioManagerSettings::default()).expect("Error");
+        let settings = AudioManagerSettings::default();
+        let main_track_builder = MainTrackBuilder::new().volume(1.);
+        
+
+        let mut _manager = AudioManager::<CpalBackend>::new(
+            settings
+        ).expect("Error");
         
         _manager.main_track().set_volume(self.volume, Tween::default());
         _manager.play(
@@ -50,6 +49,7 @@ impl KiraPlayer
         ).expect("Error");
         
         self.audio_manager = Some(_manager);
+
         godot_print!("Play");
     }
 
@@ -80,6 +80,28 @@ impl KiraPlayer
                 );
         }
     }
+}
 
+#[derive(GodotClass)]
+#[class(init, base=RefCounted)]
+struct KiraAudioStreamer2D
+{
+    position: Vector2,
+    base: Base<RefCounted>,
+}
+
+
+#[derive(GodotClass)]
+#[class(init, base=RefCounted)]
+struct KiraAudioListner
+{
+    position: Vector2,
+    base: Base<RefCounted>,
+}
+
+
+#[godot_api]
+impl KiraAudioListner
+{
 
 }

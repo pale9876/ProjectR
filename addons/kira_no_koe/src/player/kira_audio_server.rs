@@ -4,7 +4,7 @@ use godot::prelude::*;
 use kira::*;
 
 
-use crate::player::kira_db::KiraDB;
+use crate::player::{kira_db::KiraDB, sound_data::StaticSoundData};
 
 
 #[derive(GodotClass)]
@@ -51,6 +51,16 @@ impl KiraAudioServer
             let sound_name = GString::from(key.as_str());
             result.push(&GString::from(key.as_str()));
         }
+
+        result
+    }
+
+    #[func]
+    fn create_data(&self, name: String) -> Gd<StaticSoundData>
+    {
+        let mut result: Gd<StaticSoundData> = StaticSoundData::new_gd();
+        let data = self.db.find_data(&name);
+        result.bind_mut().data = data;
 
         result
     }

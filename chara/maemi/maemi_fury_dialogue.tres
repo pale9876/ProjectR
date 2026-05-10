@@ -1,0 +1,10 @@
+[gd_resource type="Resource" script_class="CharacterBattleDialogue" format=3 uid="uid://bqefqiii1gme4"]
+
+[ext_resource type="Script" uid="uid://dyr6sxxsybcl6" path="res://chara/character_battle_dialogue.gd" id="1_b7bup"]
+
+[resource]
+script = ExtResource("1_b7bup")
+dialogues = Dictionary[StringName, PackedStringArray]({
+&"전환": PackedStringArray("안돼...")
+})
+metadata/_custom_type_script = "uid://dyr6sxxsybcl6"

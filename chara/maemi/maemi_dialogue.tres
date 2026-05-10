@@ -1,0 +1,14 @@
+[gd_resource type="Resource" script_class="CharacterBattleDialogue" format=3 uid="uid://cra5dud3c5tjs"]
+
+[ext_resource type="Script" uid="uid://dyr6sxxsybcl6" path="res://chara/character_battle_dialogue.gd" id="1_ngpve"]
+
+[resource]
+script = ExtResource("1_ngpve")
+dialogues = Dictionary[StringName, PackedStringArray]({
+&"발견": PackedStringArray("찾았다.", "저기 있었네."),
+&"피격": PackedStringArray("읏.", "이게."),
+&"회피": PackedStringArray("안녕?"),
+&"획득": PackedStringArray("좋아.", "이걸로 할게."),
+&"흡수": PackedStringArray("이상한 느낌이야.", "기분나빠.")
+})
+metadata/_custom_type_script = "uid://dyr6sxxsybcl6"

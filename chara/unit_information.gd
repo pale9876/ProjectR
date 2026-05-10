@@ -18,6 +18,7 @@ class_name UnitInformation
 @export var atk_speed: float = 1.
 @export_range(0., 2., 0.01) var dash_scale: float = 1.5
 
+
 @export_category("Mass")
 @export var weight: float = 1.
 @export var acceleration: float = 3350.

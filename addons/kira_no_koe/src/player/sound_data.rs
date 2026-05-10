@@ -6,10 +6,11 @@ use kira::*;
 #[class(init, base=Resource)]
 pub struct StaticSoundData
 {
-    data: Option<sound::static_sound::StaticSoundData>,
+    #[init(val=Option::None)]
+    pub data: Option<sound::static_sound::StaticSoundData>,
 
-    #[init(val=1.)]
-    vol: f32,
+    #[init(val=SoundOption { volume: 1. })]
+    pub option: SoundOption,
 
     base: Base<Resource>,
 }
@@ -21,4 +22,12 @@ impl StaticSoundData
 
     
 
+}
+
+#[derive(GodotClass)]
+#[class(init, base=RefCounted)]
+struct SoundOption
+{
+    #[init(val=1.)]
+    pub volume: f32
 }
