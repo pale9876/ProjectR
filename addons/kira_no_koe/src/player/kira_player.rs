@@ -1,8 +1,17 @@
 use godot::{classes::{AudioListener2D, RefCounted}, prelude::*};
 
 use kira::{
-	AudioManager, AudioManagerSettings, DefaultBackend, Tween, backend::cpal::CpalBackend, sound::static_sound::StaticSoundData, track::MainTrackBuilder
+	AudioManager,
+    AudioManagerSettings,
+    DefaultBackend,
+    Tween,
+    backend::cpal::CpalBackend,
+    sound::static_sound::StaticSoundData,
+    track::MainTrackBuilder
 };
+
+use mint::*;
+
 
 
 #[derive(GodotClass)]
@@ -99,9 +108,38 @@ struct KiraAudioListner
     base: Base<RefCounted>,
 }
 
+type godotvec2 = godot::prelude::Vector2;
+type mintvec3 = mint::Vector3::<f32>;
+
+
+macro_rules! mint3
+{
+    ($i:ident) => {
+        mint::Vector3::<f32>{x: $i.x, y :$i.y, z:0.}
+    };
+}
+
+
+macro_rules! qt {
+    ($i: tt) => {
+        mint::Quaternion::<f32>::from($i)
+    };
+}
+
 
 #[godot_api]
 impl KiraAudioListner
 {
+    fn add_listner(&self, &pos: godotvec2, &mut manager: AudioManager)
+    {
+        let vec3 = mint3!(pos);
+        let qt = qt!([0., 0., 0., 0.]);
 
+        let result = manager.add_listener(
+            vec3,
+            qt
+        ).expect("Failed");
+    }
+    
 }
+

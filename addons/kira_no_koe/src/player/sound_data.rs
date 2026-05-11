@@ -29,5 +29,5 @@ impl StaticSoundData
 struct SoundOption
 {
     #[init(val=1.)]
-    pub volume: f32
+    pub volume: f32,
 }
