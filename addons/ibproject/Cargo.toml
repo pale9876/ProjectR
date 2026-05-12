@@ -12,3 +12,4 @@ crate-type = ["cdylib"]
 godot = "0.5.1"
 tossicat = "0.8.0"
 endeka = {path = "../endeka"}
+rand = "0.10.1"

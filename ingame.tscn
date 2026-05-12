@@ -8,7 +8,7 @@
 [ext_resource type="Script" uid="uid://di7bi4ybepb0a" path="res://hitbox_information.gd" id="6_j1vk6"]
 [ext_resource type="Script" uid="uid://cotxam656beso" path="res://hurtbox_information/hurtbox_collide_info.gd" id="7_qpcy3"]
 [ext_resource type="Script" uid="uid://bh5hl7parw7s5" path="res://legion/legion_information.gd" id="8_se02q"]
-[ext_resource type="Script" uid="uid://cukf7tedk28ls" path="res://chara/unit_information.gd" id="9_snpes"]
+[ext_resource type="Script" uid="uid://cukf7tedk28ls" path="res://character/unit_information.gd" id="9_snpes"]
 [ext_resource type="Script" uid="uid://chpo875sjp28p" path="res://path_scope/path_scope.gd" id="10_eqgxm"]
 [ext_resource type="Script" uid="uid://d12ai6r2s7nql" path="res://unit/player.gd" id="11_lh3wr"]
 [ext_resource type="Script" uid="uid://cnfkyf0kpxdkb" path="res://skill_module/skill_information.gd" id="12_w07j4"]

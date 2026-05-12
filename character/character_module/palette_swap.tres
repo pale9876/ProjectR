@@ -1,6 +1,6 @@
 [gd_resource type="ShaderMaterial" format=3 uid="uid://befd3ldwkg6u4"]
 
-[ext_resource type="Shader" uid="uid://baoutevnvlg5x" path="res://character_module/palette_swap.gdshader" id="1_6al1h"]
+[ext_resource type="Shader" uid="uid://baoutevnvlg5x" path="res://character/character_module/palette_swap.gdshader" id="1_6al1h"]
 
 [resource]
 resource_local_to_scene = true

@@ -7,6 +7,7 @@ struct IBProject;
 mod test;
 mod endeka;
 mod exchange;
+mod dice;
 
 
 #[gdextension(entry_symbol=ibproject)]

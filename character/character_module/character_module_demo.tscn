@@ -1,9 +1,9 @@
 [gd_scene format=3 uid="uid://b8kljadoh0588"]
 
-[ext_resource type="Script" uid="uid://dejkqrr6tweci" path="res://character_module/character_test.gd" id="1_e8ykt"]
-[ext_resource type="Script" uid="uid://bti6eblcraefs" path="res://character_module/character_module_demo.gd" id="1_ms1c3"]
-[ext_resource type="Script" uid="uid://bdpl4iu0xunsx" path="res://character_module/sprite_information.gd" id="3_ms1c3"]
-[ext_resource type="Texture2D" uid="uid://bmpony0qkqkkf" path="res://character_module/Player Idle 48x48.png" id="4_0p6h6"]
+[ext_resource type="Script" uid="uid://dejkqrr6tweci" path="res://character/character_module/character_test.gd" id="1_e8ykt"]
+[ext_resource type="Script" uid="uid://bti6eblcraefs" path="res://character/character_module/character_module_demo.gd" id="1_ms1c3"]
+[ext_resource type="Script" uid="uid://bdpl4iu0xunsx" path="res://character/character_module/sprite_information.gd" id="3_ms1c3"]
+[ext_resource type="Texture2D" uid="uid://bmpony0qkqkkf" path="res://character/character_module/Player Idle 48x48.png" id="4_0p6h6"]
 
 [sub_resource type="ShaderMaterial" id="ShaderMaterial_0p6h6"]
 
