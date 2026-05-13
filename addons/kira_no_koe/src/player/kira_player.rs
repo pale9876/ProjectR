@@ -10,7 +10,7 @@ use kira::{
     track::MainTrackBuilder
 };
 
-use mint::*;
+use glam::*;
 
 
 
@@ -93,7 +93,7 @@ impl KiraPlayer
 
 #[derive(GodotClass)]
 #[class(init, base=RefCounted)]
-struct KiraAudioStreamer2D
+struct KiraStream
 {
     position: Vector2,
     base: Base<RefCounted>,
@@ -104,42 +104,31 @@ struct KiraAudioStreamer2D
 #[class(init, base=RefCounted)]
 struct KiraAudioListner
 {
-    position: Vector2,
+    position: Vector3,
+    pitch: f32,
+    yaw: f32,
     base: Base<RefCounted>,
 }
-
-type godotvec2 = godot::prelude::Vector2;
-type mintvec3 = mint::Vector3::<f32>;
-
-
-macro_rules! mint3
-{
-    ($i:ident) => {
-        mint::Vector3::<f32>{x: $i.x, y :$i.y, z:0.}
-    };
-}
-
-
-macro_rules! qt {
-    ($i: tt) => {
-        mint::Quaternion::<f32>::from($i)
-    };
-}
-
 
 #[godot_api]
 impl KiraAudioListner
 {
-    fn add_listner(&self, &pos: godotvec2, &mut manager: AudioManager)
+    fn add_listner(&self, &pos: Vector3, &mut manager: AudioManager)
     {
-        let vec3 = mint3!(pos);
-        let qt = qt!([0., 0., 0., 0.]);
-
         let result = manager.add_listener(
-            vec3,
-            qt
+            self.from_godot(pos),
+            self.orientation()
         ).expect("Failed");
     }
     
+    fn from_godot(&self, &pos: Vector3) -> glam::Vec3
+    {
+        glam::vec3(pos.x, pos.y, pos.z)
+    }
+
+    fn orientation(&self) -> Quat
+    {
+        Quat::IDENTITY
+    }
 }
 

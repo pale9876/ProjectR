@@ -1,5 +1,7 @@
-use godot::prelude::*;
-use kira::*;
+use std::thread;
+
+use godot::{classes::{}, prelude::*};
+use kira::{sound::static_sound, *};
 
 
 #[derive(GodotClass)]
@@ -19,8 +21,6 @@ pub struct StaticSoundData
 #[godot_api]
 impl StaticSoundData
 {
-
-    
 
 }
 

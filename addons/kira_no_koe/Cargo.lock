@@ -412,9 +412,9 @@ dependencies = [
 name = "kira_no_koe"
 version = "0.1.0"
 dependencies = [
+ "glam",
  "godot",
  "kira",
- "mint",
 ]
 
 [[package]]

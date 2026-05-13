@@ -3,18 +3,20 @@ use std::collections::HashMap;
 use godot::prelude::*;
 use kira::*;
 
-
-use crate::player::{kira_db::KiraDB, sound_data::StaticSoundData};
+use crate::player::{
+    kira_db::KiraDB, kira_listener::KiraListener, sound_data::StaticSoundData
+};
 
 
 #[derive(GodotClass)]
-#[class(base=Node, init, singleton)]
+#[class(base=Node, tool, init, singleton)]
 struct KiraAudioServer
 {
     #[init(val=KiraDB::db_init())]
     db: KiraDB,
     #[init(val=HashMap::new())]
     bus: HashMap<String, AudioManager>,
+    listener: Option<KiraListener>,
 
     base: Base<Node>,
 }
