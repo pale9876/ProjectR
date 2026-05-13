@@ -15,8 +15,6 @@ pub struct KiraDB
     pub cache: HashMap<String, StaticSoundData>,
 }
 
-
-
 impl KiraDB
 {
     pub const DEFAULT_PATH: &str = "res://audio/";
@@ -96,7 +94,7 @@ impl KiraDB
 
     fn find_res(entry: &DirEntry) -> bool
     {
-        
+        let resource_file = std::fs::File::open(entry.path());
 
         false
     }
@@ -105,8 +103,11 @@ impl KiraDB
     {
         if Self::exts.contains(&entry.path().extension().unwrap().to_str().unwrap())
         {
-            
+            let find_res = Self::find_res(entry);
 
+            if find_res { return }
+
+            // If Cannot Find Resource
             let file = StaticSoundData::from_file(&entry.path());
             
             if !file.is_err()
