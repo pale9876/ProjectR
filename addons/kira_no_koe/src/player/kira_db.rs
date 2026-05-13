@@ -1,14 +1,12 @@
-use std::{collections::HashMap, error::Error, fs::DirEntry, path::PathBuf};
-use godot::{classes::ProjectSettings, prelude::*};
+use std::{collections::HashMap, fs::DirEntry};
+use godot::{classes::{ProjectSettings, ResourceSaver, resource_saver::SaverFlags}, prelude::*};
 
 
 use kira::{
-    AudioManager,
-    AudioManagerSettings,
-    DefaultBackend,
-    Tween,
     sound::static_sound::StaticSoundData
 };
+
+use crate::player::{sound_data::StaticSoundData as GodotStaticSoundData};
 
 
 #[derive(Debug, Clone)]
@@ -17,18 +15,22 @@ pub struct KiraDB
     pub cache: HashMap<String, StaticSoundData>,
 }
 
-const DEFAULT_PATH: &str = "res://audio/";
-const exts: [&str; 3] = ["mp3","ogg","wav"];
 
 
 impl KiraDB
 {
+    pub const DEFAULT_PATH: &str = "res://audio/";
+    pub const exts: [&str; 3] = ["mp3","ogg","wav"];
 
     pub fn db_init() -> Self
     {
-        Self {
+        let mut db = Self {
             cache : HashMap::new()
-        }
+        };
+
+        db.load_files_from_path(&String::from(Self::DEFAULT_PATH));
+
+        db
     }
 
 
@@ -54,10 +56,9 @@ impl KiraDB
         false
     }
 
-
-    pub fn load_files_from_folder(&mut self, path: &String) -> HashMap<String, StaticSoundData>
+    pub fn load_files_from_path(&mut self, path: &String)
     {
-        let mut result = HashMap::<String, StaticSoundData>::new();
+        self.cache.clear();
 
         let g_path = ProjectSettings::singleton().globalize_path(path);
         let read_dir = std::fs::read_dir(g_path.to_string()).expect("Failed");
@@ -66,41 +67,76 @@ impl KiraDB
         {
             if !dir.is_err()
             {
-                self._get_dir_or_file(dir.unwrap());
-            }
-        }
-        result
-    }
+                let entry = dir.unwrap();
 
-    fn _get_dir_or_file(&mut self, dir: DirEntry)
-    {
-        let path = dir.path();
-        
-        // if dir.is_err() { return; }
-        if path.is_dir()
-        {
-            let read_dir = std::fs::read_dir(path).expect("Failed");
-
-            for _d in read_dir
-            {
-                if !_d.is_err()
+                if entry.path().is_dir()
                 {
-                    self._get_dir_or_file(_d.unwrap());
+                    let sub_dir = std::fs::read_dir(&entry.path()).expect("Failed");
+                    for f in sub_dir
+                    {
+                        if !f.is_err()
+                        {
+                            let _file = f.unwrap();
+                            if _file.path().is_file()
+                            {
+                                self.load_from_file(&_file);
+                            }
+                        }
+                    }
+                }
+                else if entry.path().is_file()
+                {
+                    self.load_from_file(&entry);
                 }
             }
         }
-        else if path.is_file()
-        {
-            let ext = path.extension().unwrap();
-            if exts.contains(&ext.to_str().unwrap())
-            {
-                self.cache.insert(
-                    String::from(path.file_name().unwrap().to_str().unwrap()),
-                    StaticSoundData::from_file(path).expect("Failed")
-                );
-            }
-        }
+
+        godot_print!("Audio Data Load Finished");
+    }
+
+    fn find_res(entry: &DirEntry) -> bool
+    {
         
+
+        false
+    }
+
+    fn load_from_file(&mut self, entry: &DirEntry)
+    {
+        if Self::exts.contains(&entry.path().extension().unwrap().to_str().unwrap())
+        {
+            
+
+            let file = StaticSoundData::from_file(&entry.path());
+            
+            if !file.is_err()
+            {
+                let unwraped = file.unwrap();
+                let save_path = String::from(entry.path().to_str().unwrap()) + &String::from(".res");
+
+                godot_print!("SavePath => {:?}", save_path);
+
+                let mut res = GodotStaticSoundData::new_gd();
+
+                res.bind_mut().data = Some(unwraped.clone());
+                ResourceSaver::singleton()
+                    .save_ex(&res)
+                    .flags(SaverFlags::COMPRESS)
+                    .path(&save_path)
+                    .done();
+
+                self.cache.insert(
+                    String::from(entry.file_name().to_str().unwrap()), unwraped.clone()
+                );
+                
+                godot_print!("File Load SUCCESS => {:?}", entry.path())
+            }
+            else
+            {
+                godot_print!("File Load Failed => {:?}", entry.path())
+            }
+            return
+        }
     }
 
 }

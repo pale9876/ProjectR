@@ -12,6 +12,8 @@ use kira::{
 
 use glam::*;
 
+use crate::player::sound_data::{self, StaticSoundData as GodotStaticSoundData};
+
 
 
 #[derive(GodotClass)]
@@ -92,11 +94,12 @@ impl KiraPlayer
 }
 
 #[derive(GodotClass)]
-#[class(init, base=RefCounted)]
+#[class(init, base=Resource)]
 struct KiraStream
 {
     position: Vector2,
-    base: Base<RefCounted>,
+    data: Gd<GodotStaticSoundData>,
+    base: Base<Resource>,
 }
 
 

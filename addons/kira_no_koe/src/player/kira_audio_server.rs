@@ -1,6 +1,6 @@
 use std::collections::HashMap;
 
-use godot::prelude::*;
+use godot::{classes::notify::{NodeNotification, ObjectNotification}, prelude::*};
 use kira::*;
 
 use crate::player::{
@@ -19,6 +19,21 @@ struct KiraAudioServer
     listener: Option<KiraListener>,
 
     base: Base<Node>,
+}
+
+#[godot_api]
+impl INode for KiraAudioServer
+{
+    fn on_notification(&mut self, what: NodeNotification)
+    {
+        if what == NodeNotification::EXTENSION_RELOADED
+        {
+            // self.db.load_files_from_path(
+            //     &String::from(KiraDB::DEFAULT_PATH)
+            // );
+        }
+    }
+
 }
 
 

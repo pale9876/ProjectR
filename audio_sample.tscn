@@ -1,7 +1,7 @@
 [gd_scene format=3 uid="uid://cu30igsh1ui26"]
 
 [ext_resource type="Script" uid="uid://djblngan5cxn" path="res://audio_sample.gd" id="1_xdhra"]
-[ext_resource type="AudioStream" uid="uid://bxsd4pdohjlx4" path="res://audio/AZALI - show me the sky. show me how to live.mp3" id="2_xjjo0"]
+[ext_resource type="AudioStream" uid="uid://bxsd4pdohjlx4" path="res://audio/bgm/AZALI - show me the sky. show me how to live.mp3" id="2_xjjo0"]
 
 [node name="AudioSample" type="Node" unique_id=1875624522]
 script = ExtResource("1_xdhra")
