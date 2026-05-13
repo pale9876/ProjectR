@@ -126,8 +126,10 @@ impl KiraDB
                     .path(&save_path)
                     .done();
 
+                let key = entry.file_name().to_str().unwrap().replace(entry.path().extension().unwrap().to_str().unwrap(), "");
                 self.cache.insert(
-                    String::from(entry.file_name().to_str().unwrap()), unwraped.clone()
+                    key,
+                    unwraped.clone()
                 );
                 
                 godot_print!("File Load SUCCESS => {:?}", entry.path())
