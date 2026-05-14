@@ -1,7 +1,8 @@
-use std::{collections::HashMap, fs::DirEntry};
+use std::{collections::HashMap, fs::DirEntry, io::{Cursor, Read}};
 use godot::{classes::{ProjectSettings, ResourceSaver, resource_saver::SaverFlags}, prelude::*};
+use symphonia::core::{conv::{FromSample, IntoSample}, io::MediaSource};
 
-
+use std::io::{BufReader, BufWriter};
 use kira::sound::{SoundData, static_sound::StaticSoundData};
 
 use crate::player::{sound_data::StaticSoundData as GodotStaticSoundData};
@@ -105,21 +106,24 @@ impl KiraDB
             let file_name = entry_path.file_name().unwrap().to_str().unwrap();
 
             // If Cannot Find Resource
-            let file = StaticSoundData::from_file(&entry.path());
+            let data = StaticSoundData::from_file(&entry.path());
             
-            if !file.is_err()
+            if !data.is_err()
             {
-                let unwraped = file.unwrap();
-
+                let unwraped = data.unwrap();
+                
                 // godot_print!("SavePath => {:?}", save_path);
 
-                let key = entry.file_name().to_str().unwrap().replace(entry.path().extension().unwrap().to_str().unwrap(), "");
+                let key = entry.file_name().to_str().unwrap().replace(
+                    entry.path().extension().unwrap().to_str().unwrap(), ""
+                ).replace(".", "");
+
                 self.cache.insert(
                     key,
                     unwraped.clone()
                 );
                 
-                godot_print!("Load SUCCESS => {:?}", entry.path())
+                godot_print!("Load SUCCESS => {:?}", entry.file_name())
             }
             else
             {
