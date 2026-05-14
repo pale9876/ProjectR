@@ -3,5 +3,4 @@
 [ext_resource type="Script" uid="uid://yhqbgme6cuf0" path="res://kira_audio/kira_player_demo.gd" id="1_7xcpq"]
 
 [node name="KiraPlayer" type="KiraPlayer" unique_id=1789924545]
-volume = -10.0
 script = ExtResource("1_7xcpq")

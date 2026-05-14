@@ -12,3 +12,4 @@ crate-type = ["cdylib"]
 glam = "0.32.1"
 godot = "0.5.2"
 kira = "0.12.0"
+symphonia = "0.5.5"

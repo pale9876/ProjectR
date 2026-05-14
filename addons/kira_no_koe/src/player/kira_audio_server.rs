@@ -28,9 +28,9 @@ impl INode for KiraAudioServer
     {
         if what == NodeNotification::EXTENSION_RELOADED
         {
-            // self.db.load_files_from_path(
-            //     &String::from(KiraDB::DEFAULT_PATH)
-            // );
+            self.db.load_files_from_path(
+                &String::from(KiraDB::DEFAULT_PATH)
+            );
         }
     }
 

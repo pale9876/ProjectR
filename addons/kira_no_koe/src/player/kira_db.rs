@@ -2,9 +2,7 @@ use std::{collections::HashMap, fs::DirEntry};
 use godot::{classes::{ProjectSettings, ResourceSaver, resource_saver::SaverFlags}, prelude::*};
 
 
-use kira::{
-    sound::static_sound::StaticSoundData
-};
+use kira::sound::{SoundData, static_sound::StaticSoundData};
 
 use crate::player::{sound_data::StaticSoundData as GodotStaticSoundData};
 
@@ -92,20 +90,19 @@ impl KiraDB
         godot_print!("Audio Data Load Finished");
     }
 
-    fn find_res(entry: &DirEntry) -> bool
+    fn find_res(path: &String) -> bool
     {
-        let resource_file = std::fs::File::open(entry.path());
-
-        false
+        std::fs::File::open(path).is_ok()
     }
 
     fn load_from_file(&mut self, entry: &DirEntry)
     {
-        if Self::exts.contains(&entry.path().extension().unwrap().to_str().unwrap())
-        {
-            let find_res = Self::find_res(entry);
+        let entry_path = entry.path();
+        let ext = entry_path.extension();
 
-            if find_res { return }
+        if Self::exts.contains(&ext.unwrap().to_str().unwrap())
+        {
+            let file_name = entry_path.file_name().unwrap().to_str().unwrap();
 
             // If Cannot Find Resource
             let file = StaticSoundData::from_file(&entry.path());
@@ -113,18 +110,8 @@ impl KiraDB
             if !file.is_err()
             {
                 let unwraped = file.unwrap();
-                let save_path = String::from(entry.path().to_str().unwrap()) + &String::from(".res");
 
-                godot_print!("SavePath => {:?}", save_path);
-
-                let mut res = GodotStaticSoundData::new_gd();
-
-                res.bind_mut().data = Some(unwraped.clone());
-                ResourceSaver::singleton()
-                    .save_ex(&res)
-                    .flags(SaverFlags::COMPRESS)
-                    .path(&save_path)
-                    .done();
+                // godot_print!("SavePath => {:?}", save_path);
 
                 let key = entry.file_name().to_str().unwrap().replace(entry.path().extension().unwrap().to_str().unwrap(), "");
                 self.cache.insert(
@@ -132,13 +119,12 @@ impl KiraDB
                     unwraped.clone()
                 );
                 
-                godot_print!("File Load SUCCESS => {:?}", entry.path())
+                godot_print!("Load SUCCESS => {:?}", entry.path())
             }
             else
             {
-                godot_print!("File Load Failed => {:?}", entry.path())
+                godot_print!("Load Failed => {:?}", entry.path())
             }
-            return
         }
     }
 

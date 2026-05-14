@@ -5,7 +5,7 @@ use kira::{sound::static_sound, *};
 
 
 #[derive(GodotClass)]
-#[class(init, base=Resource)]
+#[class(tool, init, base=Resource)]
 pub struct StaticSoundData
 {
     #[init(val=Option::None)]
