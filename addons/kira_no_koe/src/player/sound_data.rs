@@ -1,12 +1,12 @@
 use std::thread;
 
-use godot::{classes::{}, prelude::*};
-use kira::{sound::static_sound, *};
+use godot::prelude::*;
+use kira::*;
 
 
 #[derive(GodotClass)]
 #[class(tool, init, base=Resource)]
-pub struct StaticSoundData
+pub struct GodotStaticSoundData
 {
     #[init(val=Option::None)]
     pub data: Option<sound::static_sound::StaticSoundData>,
@@ -17,7 +17,7 @@ pub struct StaticSoundData
 
 
 #[godot_api]
-impl StaticSoundData
+impl GodotStaticSoundData
 {
 
 }

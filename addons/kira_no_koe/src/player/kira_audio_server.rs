@@ -4,7 +4,7 @@ use godot::{classes::notify::{NodeNotification, ObjectNotification}, prelude::*}
 use kira::*;
 
 use crate::player::{
-    kira_db::KiraDB, kira_listener::KiraListener, sound_data::StaticSoundData
+    kira_db::KiraDB, kira_listener::KiraListener, sound_data::GodotStaticSoundData
 };
 
 
@@ -73,9 +73,9 @@ impl KiraAudioServer
     }
 
     #[func]
-    fn create_data(&self, name: String) -> Gd<StaticSoundData>
+    fn create_data(&self, name: String) -> Gd<GodotStaticSoundData>
     {
-        let mut result: Gd<StaticSoundData> = StaticSoundData::new_gd();
+        let mut result: Gd<GodotStaticSoundData> = GodotStaticSoundData::new_gd();
         let data = self.db.find_data(&name);
         result.bind_mut().data = data;
 

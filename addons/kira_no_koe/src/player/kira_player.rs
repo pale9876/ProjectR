@@ -14,7 +14,7 @@ use kira::{
 
 use glam::*;
 
-use crate::player::sound_data::{self, StaticSoundData as GodotStaticSoundData};
+use crate::player::sound_data::{self, GodotStaticSoundData};
 
 
 

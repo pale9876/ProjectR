@@ -1,0 +1,7 @@
+[gd_scene format=3 uid="uid://crjhmtk41nr4j"]
+
+[ext_resource type="Script" uid="uid://66uumfk3alen" path="res://projectiles/projectile_demo.gd" id="1_os62w"]
+
+[node name="ProjectileDemo" type="CanvasLayer" unique_id=1912214160]
+script = ExtResource("1_os62w")
+metadata/_custom_type_script = "uid://d1ld2v885ur2n"

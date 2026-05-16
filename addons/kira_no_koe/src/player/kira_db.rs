@@ -1,11 +1,11 @@
 use std::{collections::HashMap, fs::DirEntry, io::{Cursor, Read}};
-use godot::{classes::{ProjectSettings, ResourceSaver, resource_saver::SaverFlags}, prelude::*};
+use godot::{classes::{ProjectSettings, ResourceSaver, WorkerThreadPool, resource_saver::SaverFlags}, prelude::*};
 use symphonia::core::{conv::{FromSample, IntoSample}, io::MediaSource};
 
 use std::io::{BufReader, BufWriter};
 use kira::sound::{SoundData, static_sound::StaticSoundData};
 
-use crate::player::{sound_data::StaticSoundData as GodotStaticSoundData};
+use crate::player::{sound_data::GodotStaticSoundData};
 
 
 #[derive(Debug, Clone)]
@@ -53,13 +53,22 @@ impl KiraDB
         false
     }
 
+
+    async fn get_file(path: &String) -> Option<StaticSoundData>
+    {
+        match StaticSoundData::from_file(path)
+        {
+            Ok(data) => Some(data),
+            Err(_) => None,
+        }
+    }
+
     pub fn load_files_from_path(&mut self, path: &String)
     {
         self.cache.clear();
 
         let g_path = ProjectSettings::singleton().globalize_path(path);
         let read_dir = std::fs::read_dir(g_path.to_string()).expect("Failed");
-        
         for dir in read_dir
         {
             if !dir.is_err()
@@ -100,12 +109,11 @@ impl KiraDB
     {
         let entry_path = entry.path();
         let ext = entry_path.extension();
+        // let wtp = WorkerThreadPool::singleton();
 
         if Self::exts.contains(&ext.unwrap().to_str().unwrap())
         {
             let file_name = entry_path.file_name().unwrap().to_str().unwrap();
-
-            // If Cannot Find Resource
             let data = StaticSoundData::from_file(&entry.path());
             
             if !data.is_err()

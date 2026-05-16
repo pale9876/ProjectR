@@ -14,6 +14,8 @@ env.Append(CPPPATH=["script/"])
 # Collects all .cpp files in the 'script' folder as compile targets.
 sources = Glob("script/*.cpp")
 sources += Glob("script/example/*.cpp")
+sources += Glob("script/rfxgen/*.cpp")
+
 
 # The filename for the dynamic library for this GDExtension.
 # $SHLIBPREFIX is a platform specific prefix for the dynamic library ('lib' on Unix, '' on Windows).

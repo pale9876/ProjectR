@@ -1,6 +1,5 @@
 @tool
 extends CanvasLayer
-
 class_name Endeka
 
 # INFO
@@ -25,6 +24,7 @@ const NOTIFICATION_KILLED: int = 1441
 			max_z = value
 		notification(NOTIFICATION_MINMAX_CHANGED)
 
+
 @export_category("Option")
 @export var ysorting: bool = false
 @export var auto_init: bool = false
@@ -35,6 +35,7 @@ const NOTIFICATION_KILLED: int = 1441
 @export_tool_button("Draw EEADs", "2D") var _draw_eeads: Callable = draw_eeads
 @warning_ignore("unused_private_class_variable")
 @export_tool_button("Create", "2D") var _create: Callable = create
+
 
 var reserve: bool = false
 var init: bool = false
