@@ -10,10 +10,15 @@ func _process(_delta: float) -> void:
 	pass
 
 
-func add_projectile(from, to, motion) -> void:
+func add_projectile(from: Vector2, to: Vector2, motion: Vector2) -> void:
 	var projectile: Projectile = Projectile.new()
-	projectile.from
-	projectile
+	projectile.from = from
+	projectile.to = to
+	projectile.motion = motion
+	
+	# CID
+	projectile.cid = RenderingServer.canvas_item_create()
+	
 
 
 
