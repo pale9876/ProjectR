@@ -41,6 +41,19 @@ var reserve: bool = false
 var init: bool = false
 
 
+var thread_pool: PackedInt32Array = []
+
+
+func create_pool() -> PackedInt32Array:
+	var pool: PackedInt32Array = PackedInt32Array()
+	
+	WorkerThreadPool.add_group_task(
+		
+	)
+	
+	return pool
+
+
 # OVERRIDE
 func create() -> void:
 	notification(NOTIFICATION_CREATED)
@@ -77,7 +90,12 @@ func _notification(what: int) -> void:
 			sort()
 			reserve = false
 
+
 func _process(_delta: float) -> void:
+	pass
+
+
+func _physics_process(delta: float) -> void:
 	pass
 
 

@@ -94,6 +94,14 @@ func free() -> void:
 		RenderingServer.free_rid(canvas_item)
 
 
+func tick(delta: float) -> void:
+	pass
+
+
+func update(delta: float) -> void:
+	pass
+
+
 func _notification(what: int) -> void:
 	if what == NOTIFICATION_ENTER_TREE:
 		if get_parent() is Endeka:

@@ -1,0 +1,6 @@
+[gd_scene format=3 uid="uid://b2ddcq2vyeel6"]
+
+[ext_resource type="Script" uid="uid://bu0bgixbc0rsf" path="res://thread_test/thread_test.gd" id="1_6emoq"]
+
+[node name="ThreadTest" type="Node" unique_id=1261727320]
+script = ExtResource("1_6emoq")

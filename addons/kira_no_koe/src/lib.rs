@@ -21,10 +21,6 @@ unsafe impl ExtensionLibrary for KiraNoKoe {
         }
     }
 
-    fn on_main_loop_frame() {
-        // Per-frame logic.
-    }
-
     fn on_stage_deinit(stage: InitStage) {
         if stage == InitStage::MainLoop {
             // Cleanup code before shutdown.

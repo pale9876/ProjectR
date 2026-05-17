@@ -25,8 +25,7 @@ impl KiraDB
             cache : HashMap::new()
         };
 
-        db.load_files_from_path(&String::from(Self::DEFAULT_PATH));
-
+        // db.load_files_from_path(&String::from(Self::DEFAULT_PATH));
         db
     }
 

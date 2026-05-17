@@ -6,9 +6,6 @@ var projectiles: Array[Projectile]
 var thread_pool: Array[int]
 
 
-func _process(_delta: float) -> void:
-	pass
-
 
 func add_projectile(from: Vector2, to: Vector2, motion: Vector2) -> void:
 	var projectile: Projectile = Projectile.new()
@@ -18,8 +15,6 @@ func add_projectile(from: Vector2, to: Vector2, motion: Vector2) -> void:
 	
 	# CID
 	projectile.cid = RenderingServer.canvas_item_create()
-	
-
 
 
 class Projectile:
