@@ -3,8 +3,6 @@ extends Endeka
 
 
 var projectiles: Array[Projectile]
-var thread_pool: Array[int]
-
 
 
 func add_projectile(from: Vector2, to: Vector2, motion: Vector2) -> void:

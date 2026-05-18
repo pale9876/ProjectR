@@ -10,13 +10,13 @@ use crate::player::{
 
 #[derive(GodotClass)]
 #[class(base=Node, tool, init, singleton)]
-struct KiraAudioServer
+pub struct KiraAudioServer
 {
     #[init(val=KiraDB::db_init())]
-    db: KiraDB,
+    pub db: KiraDB,
     #[init(val=HashMap::new())]
-    bus: HashMap<String, AudioManager>,
-    listener: Option<KiraListener>,
+    pub bus: HashMap<String, AudioManager>,
+    pub listener: Option<KiraListener>,
 
     base: Base<Node>,
 }
@@ -26,12 +26,7 @@ impl INode for KiraAudioServer
 {
     fn on_notification(&mut self, what: NodeNotification)
     {
-        if what == NodeNotification::EXTENSION_RELOADED
-        {
-            self.db.load_files_from_path(
-                &String::from(KiraDB::DEFAULT_PATH)
-            );
-        }
+        
     }
 
 }

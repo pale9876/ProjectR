@@ -47,9 +47,7 @@ var thread_pool: PackedInt32Array = []
 func create_pool() -> PackedInt32Array:
 	var pool: PackedInt32Array = PackedInt32Array()
 	
-	WorkerThreadPool.add_group_task(
-		
-	)
+
 	
 	return pool
 
