@@ -51,6 +51,7 @@ Global="*uid://d1fcpj0k6kkip"
 WorldTimeApi="*uid://b80knl185v3xh"
 DialogueManager="*uid://c3rodes2l3gxb"
 Chrono="*uid://d0uitimyd55vj"
+MetSys="*uid://c01ibpvrp2wsd"
 
 [debug]
 
@@ -78,7 +79,7 @@ script/templates_search_path="res://template/script"
 
 [editor_plugins]
 
-enabled=PackedStringArray("res://addons/dialogue_manager/plugin.cfg", "res://addons/gdscript_formatter/plugin.cfg")
+enabled=PackedStringArray("res://addons/ActionIcon/plugin.cfg", "res://addons/ControlsRemap/plugin.cfg", "res://addons/MetroidvaniaSystem/EditorExtension/plugin.cfg", "res://addons/MetroidvaniaSystem/plugin.cfg", "res://addons/dialogue_manager/plugin.cfg", "res://addons/gdfxr/plugin.cfg", "res://addons/ropesim/plugin.cfg", "res://addons/sprite_label/plugin.cfg")
 
 [global]
 

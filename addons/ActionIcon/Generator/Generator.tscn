@@ -1,0 +1,176 @@
+[gd_scene format=3 uid="uid://dymwlqo6l32a5"]
+
+[ext_resource type="Script" uid="uid://bjxkwdwy770bi" path="res://addons/ActionIcon/Generator/Generator.gd" id="1_heum6"]
+[ext_resource type="Texture2D" uid="uid://c710k8cui03m2" path="res://addons/ActionIcon/Generator/PreviewBackground.png" id="2_bj8w8"]
+
+[sub_resource type="StyleBoxFlat" id="StyleBoxFlat_heum6"]
+draw_center = false
+border_width_left = 2
+border_width_top = 2
+border_width_right = 2
+border_width_bottom = 2
+border_color = Color(1, 1, 1, 1)
+
+[sub_resource type="StyleBoxFlat" id="StyleBoxFlat_q864x"]
+content_margin_left = 4.0
+content_margin_right = 4.0
+bg_color = Color(0, 0, 0, 1)
+
+[sub_resource type="Theme" id="Theme_bj8w8"]
+VScrollBar/styles/grabber = null
+VScrollBar/styles/scroll = SubResource("StyleBoxFlat_q864x")
+
+[sub_resource type="StyleBoxTexture" id="StyleBoxTexture_q864x"]
+texture = ExtResource("2_bj8w8")
+axis_stretch_horizontal = 1
+axis_stretch_vertical = 1
+
+[sub_resource type="StyleBoxFlat" id="StyleBoxFlat_bj8w8"]
+content_margin_left = 4.0
+content_margin_top = 4.0
+content_margin_right = 4.0
+content_margin_bottom = 4.0
+bg_color = Color(0, 0, 0, 0.5019608)
+
+[sub_resource type="GDScript" id="GDScript_heum6"]
+script/source = "@tool
+extends SubViewport
+
+func print_image() -> Image:
+	render_target_update_mode = SubViewport.UPDATE_ONCE
+	await RenderingServer.frame_post_draw
+	return get_texture().get_image()
+"
+
+[node name="Generator" type="Node" unique_id=1168105251]
+script = ExtResource("1_heum6")
+
+[node name="Dialog" type="ConfirmationDialog" parent="." unique_id=2141239065]
+unique_name_in_owner = true
+oversampling_override = 1.0
+title = "Generate Icon Set"
+position = Vector2i(0, 24)
+size = Vector2i(1022, 600)
+visible = true
+ok_button_text = "Generate"
+
+[node name="VBoxContainer" type="VBoxContainer" parent="Dialog" unique_id=817055088]
+offset_left = 9.0
+offset_top = 9.0
+offset_right = 1013.0
+offset_bottom = 549.0
+
+[node name="PanelContainer" type="PanelContainer" parent="Dialog/VBoxContainer" unique_id=1455163630]
+layout_mode = 2
+size_flags_horizontal = 4
+theme_override_styles/panel = SubResource("StyleBoxFlat_heum6")
+
+[node name="ScrollContainer" type="ScrollContainer" parent="Dialog/VBoxContainer/PanelContainer" unique_id=498020197]
+unique_name_in_owner = true
+custom_minimum_size = Vector2(1000, 300)
+layout_mode = 2
+theme = SubResource("Theme_bj8w8")
+theme_override_styles/panel = SubResource("StyleBoxTexture_q864x")
+horizontal_scroll_mode = 0
+
+[node name="Preview" type="GridContainer" parent="Dialog/VBoxContainer/PanelContainer/ScrollContainer" unique_id=1579665659]
+unique_name_in_owner = true
+layout_mode = 2
+size_flags_horizontal = 3
+size_flags_vertical = 3
+theme_override_constants/h_separation = 0
+theme_override_constants/v_separation = 0
+columns = 10
+
+[node name="PreviewLabel" type="Label" parent="Dialog/VBoxContainer/PanelContainer" unique_id=104101635]
+unique_name_in_owner = true
+layout_mode = 2
+size_flags_horizontal = 4
+theme_override_styles/normal = SubResource("StyleBoxFlat_bj8w8")
+text = "Click 🔍 button to preview a set."
+horizontal_alignment = 1
+
+[node name="CheckBox" type="CheckBox" parent="Dialog/VBoxContainer" unique_id=1386167937]
+layout_mode = 2
+size_flags_horizontal = 4
+tooltip_text = "The generator dialog is always on top."
+text = "Always On Top"
+
+[node name="Label" type="Label" parent="Dialog/VBoxContainer" unique_id=268542453]
+layout_mode = 2
+size_flags_horizontal = 4
+theme_type_variation = &"HeaderLarge"
+text = "Select icon sets to include"
+
+[node name="HSeparator" type="HSeparator" parent="Dialog/VBoxContainer" unique_id=1884700709]
+layout_mode = 2
+theme_override_constants/separation = 0
+
+[node name="ScrollContainer" type="ScrollContainer" parent="Dialog/VBoxContainer" unique_id=587593333]
+layout_mode = 2
+size_flags_vertical = 3
+scroll_hint_mode = 3
+
+[node name="VBoxContainer" type="VBoxContainer" parent="Dialog/VBoxContainer/ScrollContainer" unique_id=693405738]
+layout_mode = 2
+size_flags_horizontal = 3
+size_flags_vertical = 3
+
+[node name="Label" type="Label" parent="Dialog/VBoxContainer/ScrollContainer/VBoxContainer" unique_id=308365666]
+layout_mode = 2
+theme_type_variation = &"HeaderSmall"
+text = "Keyboard Set"
+horizontal_alignment = 1
+
+[node name="KeyboardSets" type="GridContainer" parent="Dialog/VBoxContainer/ScrollContainer/VBoxContainer" unique_id=1596059233]
+unique_name_in_owner = true
+layout_mode = 2
+size_flags_horizontal = 4
+columns = 2
+
+[node name="Label2" type="Label" parent="Dialog/VBoxContainer/ScrollContainer/VBoxContainer" unique_id=685139097]
+layout_mode = 2
+theme_type_variation = &"HeaderSmall"
+text = "Mouse Set"
+horizontal_alignment = 1
+
+[node name="MouseSets" type="GridContainer" parent="Dialog/VBoxContainer/ScrollContainer/VBoxContainer" unique_id=968285904]
+unique_name_in_owner = true
+layout_mode = 2
+size_flags_horizontal = 4
+columns = 2
+
+[node name="Label3" type="Label" parent="Dialog/VBoxContainer/ScrollContainer/VBoxContainer" unique_id=143270695]
+layout_mode = 2
+theme_type_variation = &"HeaderSmall"
+text = "Joypad Sets"
+horizontal_alignment = 1
+
+[node name="JoypadSets" type="GridContainer" parent="Dialog/VBoxContainer/ScrollContainer/VBoxContainer" unique_id=642062505]
+unique_name_in_owner = true
+layout_mode = 2
+size_flags_horizontal = 4
+columns = 2
+
+[node name="ModelList" type="Label" parent="Dialog/VBoxContainer/ScrollContainer/VBoxContainer" unique_id=319898197]
+unique_name_in_owner = true
+layout_mode = 2
+horizontal_alignment = 1
+
+[node name="Viewport" type="SubViewport" parent="." unique_id=540985589]
+unique_name_in_owner = true
+auto_translate_mode = 2
+transparent_bg = true
+size = Vector2i(100, 100)
+script = SubResource("GDScript_heum6")
+
+[node name="ViewportGrid" type="GridContainer" parent="Viewport" unique_id=1655790735]
+unique_name_in_owner = true
+theme_override_constants/h_separation = 0
+theme_override_constants/v_separation = 0
+columns = 10
+
+[connection signal="confirmed" from="Dialog" to="." method="_confirm_generate"]
+[connection signal="focus_entered" from="Dialog" to="." method="_on_dialog_focus_entered"]
+[connection signal="visibility_changed" from="Dialog" to="." method="_on_dialog_visibility_changed"]
+[connection signal="toggled" from="Dialog/VBoxContainer/CheckBox" to="." method="_on_top_toggled"]
