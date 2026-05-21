@@ -12,6 +12,7 @@ func _ready() -> void:
 	WorkerThreadPool.wait_for_group_task_completion(tid)
 
 
+
 func prx(p_idx: int) -> void:
 	print_hello(arr[p_idx])
 
