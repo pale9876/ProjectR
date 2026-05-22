@@ -148,3 +148,9 @@ func create() -> void:
 # OVERRIDE
 func kill() -> void:
 	RenderingServer.canvas_item_clear(get_canvas_item())
+
+
+
+func coordinate() -> Vector3:
+	return Vector3(position.x, - position.y, z_value) / 10.
+	

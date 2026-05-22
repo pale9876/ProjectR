@@ -13,6 +13,8 @@ func _process(delta: float) -> void:
 			if timer.left == 0.:
 				timer.timeout.emit()
 				timers.erase(timer)
+	
+	Anima
 
 
 func create_timer(duration: float = 1.) -> RFTimer:
@@ -25,6 +27,7 @@ func create_timer(duration: float = 1.) -> RFTimer:
 		timers.push_back(timer)
 	
 	return timer
+
 
 class RFTimer:
 	signal timeout()

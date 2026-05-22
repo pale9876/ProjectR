@@ -101,6 +101,7 @@ impl IObject for AnimaObj
 
         obj
     }
+
 }
 
 

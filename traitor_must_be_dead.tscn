@@ -5,7 +5,7 @@
 [ext_resource type="PackedScene" uid="uid://p0bkopss8svy" path="res://ingame.tscn" id="3_578wo"]
 [ext_resource type="PackedScene" uid="uid://raywofrmwiao" path="res://hud.tscn" id="4_5kmjk"]
 [ext_resource type="PackedScene" uid="uid://hohfqjetrwh0" path="res://traitor_must_be_dead/title_scene.tscn" id="5_jwtc5"]
-[ext_resource type="Script" uid="uid://d1ld2v885ur2n" path="res://endeka_module/endeka.gd" id="6_5kmjk"]
+[ext_resource type="PackedScene" uid="uid://dl6tbgpp1sb02" path="res://channel/channel.tscn" id="6_5kmjk"]
 
 [sub_resource type="Environment" id="Environment_1ukh0"]
 background_mode = 3
@@ -28,9 +28,7 @@ script = ExtResource("1_ym5dx")
 [node name="TitleScene" parent="." unique_id=301966686 instance=ExtResource("5_jwtc5")]
 unique_name_in_owner = true
 
-[node name="Endeka" type="CanvasLayer" parent="." unique_id=1740931155]
-script = ExtResource("6_5kmjk")
-metadata/_custom_type_script = "uid://d1ld2v885ur2n"
+[node name="Channel" parent="." unique_id=1461640482 instance=ExtResource("6_5kmjk")]
 
 [node name="WorldEnvironment" type="WorldEnvironment" parent="." unique_id=1678461789]
 environment = SubResource("Environment_1ukh0")

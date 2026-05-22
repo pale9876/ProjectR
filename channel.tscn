@@ -1,7 +1,0 @@
-[gd_scene format=3 uid="uid://dl6tbgpp1sb02"]
-
-[ext_resource type="Script" uid="uid://ivjpqqwe035x" path="res://channel.gd" id="1_qkkds"]
-
-[node name="Channel" type="CanvasLayer" unique_id=1461640482]
-script = ExtResource("1_qkkds")
-metadata/_custom_type_script = "uid://d1ld2v885ur2n"

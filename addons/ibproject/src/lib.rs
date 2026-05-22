@@ -6,7 +6,7 @@ struct IBProject;
 
 mod test;
 mod endeka;
-mod exchange;
+mod anima;
 mod dice;
 
 
@@ -17,7 +17,7 @@ unsafe impl ExtensionLibrary for IBProject
     {
         // let main_loop = ;
 
-        exchange::Anima::singleton().bind_mut()._tick();
+        anima::Anima::singleton().bind_mut()._tick();
     }
 }
 
