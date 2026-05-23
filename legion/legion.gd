@@ -44,7 +44,7 @@ var arr: Array[Instance] = []
 var nav_map: RID
 var scope: Scope
 
-@export var target: Node
+@export var target: EEAD
 
 
 func create() -> void:
@@ -57,9 +57,6 @@ func create() -> void:
 	
 	if legion_information.use_nav:
 		nav_map = get_viewport().find_world_2d().navigation_map
-	
-	
-	
 
 	if !Engine.is_editor_hint():
 		arr.resize(amount)
@@ -74,7 +71,7 @@ func _physics_process(delta: float) -> void:
 	if Engine.is_editor_hint(): return
 	
 	# 변수 애니힐레이션(annihilation)은 배열을 순환하다, _state가 0이고 배열 안의 모든 인스턴스가 해제되었을 때에 true를 돌려준다.
-	var annihilation: bool = true
+	var annihilation: bool = true # 전멸 또는 유닛이 존재하지 않는 상태
 
 	for i: int in range(arr.size()):
 		var instance: Instance = arr[i]
@@ -82,7 +79,7 @@ func _physics_process(delta: float) -> void:
 			annihilation = false
 			
 			if behavior_tree:
-				var direction: Vector2 = instance.position.direction_to(target.global_position)
+				var direction: Vector2 = instance.position.direction_to(target.position)
 				instance.last_direction = direction
 				var execute: BT.Status = instance.bt.get_root_task().execute(delta)
 				if execute == BT.Status.FRESH:
@@ -98,7 +95,7 @@ func _physics_process(delta: float) -> void:
 	if _state != 0:
 		annihilation = false
 	
-	if !annihilation:
+	if !annihilation: # 전멸 상태가 아닐 때,
 		if _interval <= 0:
 			_interval = spawn_interval
 			arr[_state] = spawn_instance(_state)

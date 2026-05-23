@@ -1,5 +1,5 @@
 extends CanvasLayer
-
+class_name TitleScene
 
 # title buttons
 @onready var start: Button = %Start
@@ -14,6 +14,10 @@ extends CanvasLayer
 @onready var select_class: Control = %SelectClass
 @onready var option_panel: Control = %OptionPanel
 @onready var background: Node2D = %Background
+
+
+func _enter_tree() -> void:
+	Global.title = self
 
 
 # Called when the node enters the scene tree for the first time.

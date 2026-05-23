@@ -1,6 +1,6 @@
 [gd_scene format=3 uid="uid://p0bkopss8svy"]
 
-[ext_resource type="Script" uid="uid://d1ld2v885ur2n" path="res://endeka_module/endeka.gd" id="1_gj2at"]
+[ext_resource type="Script" uid="uid://dbxc2edvg45h2" path="res://ingame.gd" id="1_gj2at"]
 [ext_resource type="Script" uid="uid://dc7volit4rbgy" path="res://underpass_module/underpass.gd" id="2_l3vfh"]
 [ext_resource type="Script" uid="uid://bblcw0t5qxk36" path="res://underpass_module/room_information.gd" id="3_lgwd6"]
 [ext_resource type="Script" uid="uid://dfku5xh0yuklb" path="res://legion/legion.gd" id="4_ntnlo"]
@@ -129,9 +129,12 @@ region = Rect2(0, 0, 64, 32)
 script = ExtResource("22_vqwcp")
 metadata/_custom_type_script = "uid://betj1u6dfr7n"
 
-[node name="Ingame" type="CanvasLayer" unique_id=1943845084]
+[node name="Ingame" type="CanvasLayer" unique_id=1943845084 node_paths=PackedStringArray("player", "legion", "camera")]
 follow_viewport_enabled = true
 script = ExtResource("1_gj2at")
+player = NodePath("Player")
+legion = NodePath("Legion")
+camera = NodePath("MultiCamera")
 metadata/_custom_type_script = "uid://d1ld2v885ur2n"
 
 [node name="UnderpassRegion" type="Node" parent="." unique_id=1081337693]
@@ -150,7 +153,7 @@ behavior_tree = SubResource("BehaviorTree_l7pm2")
 target = NodePath("../Player")
 metadata/_custom_type_script = "uid://dfku5xh0yuklb"
 
-[node name="Player" type="Node2D" parent="." unique_id=613175272]
+[node name="Player" type="Node" parent="." unique_id=1235550306]
 script = ExtResource("11_lh3wr")
 mode = 1
 is_player = true
@@ -162,6 +165,7 @@ pose_information = SubResource("Resource_jsaji")
 texture = Dictionary[String, AtlasTexture]({
 "idle_down": SubResource("AtlasTexture_ym5dx")
 })
+metadata/_custom_type_script = "uid://d12ai6r2s7nql"
 
 [node name="MultiCamera" type="Node" parent="." unique_id=116228171]
 script = ExtResource("21_jb3j5")

@@ -37,5 +37,5 @@ class SceneTemplate extends Resource:
 	pass
 
 
-class TitleScene extends SceneTemplate:
-	pass
+#class TitleScene extends SceneTemplate:
+	#pass

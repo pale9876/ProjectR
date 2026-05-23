@@ -3,11 +3,11 @@ extends Node2D
 class_name CanvasScreenPointer
 
 
-@export var target: Node2D
-
+@export var target: EEAD
 
 var cid: RID
 var polygon: PackedVector2Array
+
 var init: bool = false
 
 

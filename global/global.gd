@@ -40,6 +40,16 @@ var os: String = ""
 var player_information: PlayerInformation = PlayerInformation.new()
 
 
+var ingame: Ingame
+var background: Endeka
+var hud: CanvasLayer
+var title: CanvasLayer
+var channel: Channel
+var camera: MultiCamera
+
+var player: Player
+
+
 func _enter_tree() -> void:
 	os = OS.get_name()
 	print("구동환경: ", os)
