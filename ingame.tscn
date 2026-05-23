@@ -151,7 +151,6 @@ target = NodePath("../Player")
 metadata/_custom_type_script = "uid://dfku5xh0yuklb"
 
 [node name="Player" type="Node2D" parent="." unique_id=613175272]
-position = Vector2(127, 82)
 script = ExtResource("11_lh3wr")
 mode = 1
 is_player = true

@@ -14,8 +14,6 @@ func _process(delta: float) -> void:
 				timer.timeout.emit()
 				timers.erase(timer)
 	
-	Anima
-
 
 func create_timer(duration: float = 1.) -> RFTimer:
 	var timer: RFTimer = RFTimer.new()

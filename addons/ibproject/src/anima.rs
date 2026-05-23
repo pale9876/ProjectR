@@ -1,6 +1,6 @@
 use std::{time::Instant};
 
-use godot::{classes::node::ProcessMode, prelude::*};
+use godot::{prelude::*};
 
 
 #[derive(GodotClass)]
@@ -42,12 +42,13 @@ impl Anima
             // Do
             if !self.instances.is_empty()
             {
-                for id in self.instances.iter()
+                for id in self.instances.iter_mut()
                 {
-                    let instance_id = godot::prelude::InstanceId::from_i64(*id);
-                    let mut obj = Gd::<AnimaObj>::from_instance_id(instance_id);
-
-                    obj.bind_mut().tick();
+                    let mut obj = Gd::<AnimaObj>::from_instance_id(InstanceId::from_i64(*id));
+                    if !obj.bind().paused
+                    {
+                        obj.bind_mut().tick();
+                    }
                 }
             }
         }
@@ -57,34 +58,33 @@ impl Anima
     }
 
     #[func]
-    fn init(&mut self, &id: i64)
+    fn obj_init(&mut self, obj: Gd<AnimaObj>)
     {
-        if !self.instances.contains(&id)
-        {
-            self.instances.push(id);
-        }
+        self.instances.push(obj.instance_id().to_i64());
     }
 
     #[func]
-    fn free(&mut self, &id: i64)
+    fn obj_free(&mut self, obj: Gd<AnimaObj>)
     {
-        if let Ok(s) = self.instances.binary_search(&id)
+        if let Ok(val) = self.instances.binary_search(&obj.instance_id().to_i64())
         {
-            let val = self.instances.remove(s);
-            godot_print!("{} has removed", val);
+            self.instances.remove(val);
         }
     }
 
 
     #[func] fn set_fps(&mut self, &value: f32) { self.delta = value; }
     #[func] fn set_paused(&mut self, &toggle: bool) { self.paused = toggle; }
+
 }
 
 
 #[derive(GodotClass)]
-#[class(base=Object)]
+#[class(tool, base=Object)]
 pub struct AnimaObj
 {
+
+    paused: bool,
     base: Base<Object>,
 }
 
@@ -94,20 +94,49 @@ impl IObject for AnimaObj
 {
     fn init(_base:Base<Object>) -> Self
     {
-        let obj = Self {base: _base };
+        let obj = Self {
+            paused: true,
 
-        let instance_id = obj.base().instance_id();
-        Anima::singleton().bind_mut().init(instance_id.to_i64());
+            base: _base,
+        };
 
         obj
     }
-
 }
 
 
 #[godot_api]
 impl AnimaObj
 {
+    #[func]
+    pub fn act(&mut self)
+    {
+        Anima::singleton().bind_mut().obj_init(self.to_gd());
+        self.play();
+    }
+
+
+    #[func]
+    pub fn kill(&mut self)
+    {
+        Anima::singleton().bind_mut().obj_free(self.to_gd());
+    }
+
+
+    #[func]
+    pub fn pause(&mut self)
+    {
+        self.paused = true;
+    }
+
+
+    #[func]
+    pub fn play(&mut self)
+    {
+        self.paused = false;
+    }
+
+
     #[func(virtual)]
     pub fn tick(&mut self)
     {

@@ -2,7 +2,7 @@
 extends AudioListener3D
 
 
-@export var trace: EEAD
+@export var trace: Node
 
 
 func _enter_tree() -> void:

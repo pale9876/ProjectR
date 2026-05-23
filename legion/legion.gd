@@ -44,7 +44,7 @@ var arr: Array[Instance] = []
 var nav_map: RID
 var scope: Scope
 
-@export var target: Node2D
+@export var target: Node
 
 
 func create() -> void:

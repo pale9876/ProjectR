@@ -10,4 +10,4 @@ var cid: RID
 @export var color: Color
 @export var speed: float = 4.5
 
-var target: Node2D
+var target: EEAD

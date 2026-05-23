@@ -43,14 +43,17 @@ const UV_DEFAULT_VERTICAL: PackedVector2Array = [
 		if get_parent() is Endeka or get_parent() is CanvasLayer:
 			if get_parent().ysorting:
 				get_parent().notification(Endeka.NOTIFICATION_EEAD_Z_VALUE_CHANGED)
+
 @export var scale: Vector2 = Vector2.ONE:
 	set(value):
 		scale = value
 		RenderingServer.canvas_item_set_transform(get_canvas_item(), transform)
+
 @export var rotation: float = 0.:
 	set(value):
 		rotation = value
 		RenderingServer.canvas_item_set_transform(get_canvas_item(), transform)
+
 @export var skew: float = 0.:
 	set(value):
 		skew = value
@@ -61,15 +64,15 @@ var transform: Transform2D:
 	get:
 		return Transform2D(deg_to_rad(rotation), scale, deg_to_rad(skew), position)
 
-
 var cached_items: Array[RID]
-
 
 @export var visible: bool = true:
 	set(toggle):
 		visible = toggle
 		RenderingServer.canvas_item_set_visible(canvas_item, toggle)
+
 @export var auto_init: bool = false
+
 @export_tool_button("Create", "2D") var _create: Callable = create
 
 

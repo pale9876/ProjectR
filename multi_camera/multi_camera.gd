@@ -88,7 +88,7 @@ func draw_camera_rect() -> void:
 	init = true
 
 
-func add_cam(camera_name: String, pos: Vector2, zoom: float, target: Node2D = null, color: Color = Color.WHITE) -> void:
+func add_cam(camera_name: String, pos: Vector2, zoom: float, target: EEAD = null, color: Color = Color.WHITE) -> void:
 	if camera.has(camera_name): return
 	
 	var cam: Cam = Cam.new()

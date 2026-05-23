@@ -15,6 +15,7 @@ class_name TraitorMustBeDead
 # Player UI
 @onready var character_icon: CharacterProfile = %CharacterIcon
 @onready var hp_progress: GradientProgress = %HpProgress
+@onready var channel: Channel = $Channel
 
 
 
@@ -31,6 +32,8 @@ func _ready() -> void:
 	
 	Global.player_health_changed.connect(_on_player_health_changed)
 	Global.start.connect(start)
+	
+	channel.listener.trace = player
 
 
 
@@ -42,9 +45,12 @@ func start() -> void:
 	hud.show()
 	
 	# Set Player Camera
-	camera.add_cam(
-		"player", player.global_position, 1.75, player, Color(0.398, 0.428, 0.48, 0.271)
-	)
+	if player is EEAD:
+		camera.add_cam(
+			"player", player.position, 1.75, player, Color(0.398, 0.428, 0.48, 0.271)
+		)
+	
+
 	camera.current = "player"
 	
 	legion.create()
