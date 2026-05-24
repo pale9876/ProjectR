@@ -49,3 +49,8 @@ addons/ibproject/target/flycheck0/stderr
 addons/ibproject/target/flycheck0/stdout
 /addons/kira_no_koe/target/flycheck0
 /addons/kira_no_koe/target/flycheck0
+/addons/oauth/target/debug/.fingerprint
+/addons/oauth/target/debug/build
+/addons/oauth/target/debug/incremental
+/addons/oauth/target/debug/deps
+/addons/oauth/target/flycheck0
