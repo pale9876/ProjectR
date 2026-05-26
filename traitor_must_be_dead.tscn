@@ -20,10 +20,13 @@ glow_bloom = 0.14
 script = ExtResource("1_ym5dx")
 
 [node name="Background" parent="." unique_id=436839414 instance=ExtResource("2_weayq")]
+visible = false
 
 [node name="Ingame" parent="." unique_id=1943845084 instance=ExtResource("3_578wo")]
+visible = false
 
 [node name="HUD" parent="." unique_id=1142909072 instance=ExtResource("4_5kmjk")]
+visible = false
 
 [node name="TitleScene" parent="." unique_id=301966686 instance=ExtResource("5_jwtc5")]
 unique_name_in_owner = true

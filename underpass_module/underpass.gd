@@ -33,7 +33,6 @@ func create() -> void:
 	if init:
 		kill()
 	
-	
 	RenderingServer.canvas_item_set_parent(get_canvas_item(), get_canvas())
 	
 	var navigation_map: RID = get_viewport().world_2d.navigation_map

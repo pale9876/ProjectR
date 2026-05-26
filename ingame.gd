@@ -9,5 +9,10 @@ class_name Ingame
 
 
 func _enter_tree() -> void:
-	Global.player = player
-	Global.camera = camera
+	if !Engine.is_editor_hint():
+		Global.player = player
+		Global.camera = camera
+
+
+func _notification(what: int) -> void:
+	pass

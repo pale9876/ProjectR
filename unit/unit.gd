@@ -94,7 +94,6 @@ func create() -> void:
 		PhysicsServer2D.body_set_state(_body, PhysicsServer2D.BODY_STATE_TRANSFORM, transform)
 		body.rid = _body
 		
-		
 		if !unit_information.collider.is_empty():
 			for collider_name: String in unit_information.collider:
 				var collider: Collider = Collider.new()
@@ -136,6 +135,7 @@ func create() -> void:
 
 	init = true
 
+
 func kill() -> void:
 	if !Engine.is_editor_hint():
 		if body:
@@ -166,12 +166,12 @@ func _exit_tree() -> void:
 func _physics_process(delta: float) -> void:
 	if Engine.is_editor_hint(): return
 
-	PhysicsServer2D.body_set_state(body.rid, PhysicsServer2D.BODY_STATE_TRANSFORM, transform)
-
 	pose_module.tick(delta)
 	skill_module.tick(delta)
 
+	PhysicsServer2D.body_set_state(body.rid, PhysicsServer2D.BODY_STATE_TRANSFORM, transform)
 	PhysicsServer2D.area_set_transform(_hurtbox.rid, transform)
+	
 
 
 func change_collider(collider_name: String) -> void:

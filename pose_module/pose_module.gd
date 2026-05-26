@@ -12,7 +12,13 @@ func has_pose(pose_name: String) -> bool:
 	return cache.has(pose_name)
 
 
-func init_data(info: PoseInformation, _owner: Node = null, enter_data: Dictionary[String, Variant] = {}) -> void:
+func init_data(
+	info: PoseInformation,
+	_owner: Node = null,
+	enter_data: Dictionary[String, Variant] = {}
+) -> void:
+	if info.data.is_empty(): return
+	
 	cache = info.data
 	if _owner: owner = _owner.get_instance_id()
 

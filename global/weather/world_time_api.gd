@@ -12,7 +12,7 @@ var _current: float = 0.
 
 
 func _init() -> void:
-	var sys_time: Dictionary = Time.get_datetime_dict_from_system(true)
+	var sys_time: Dictionary = Time.get_datetime_dict_from_system(false)
 	# year, month, day, weekday, hour, minute, second, and dst (Daylight Savings Time).
 
 	var year: int = sys_time["year"]
@@ -29,7 +29,7 @@ func _init() -> void:
 		year, "년 ",
 		month, "월 ",
 		day, "일 ",
-		hour, "시간 ",
+		hour, "시 ",
 		minute, "분 ",
 		sec, "초",
 	)

@@ -47,6 +47,10 @@ var scope: Scope
 @export var target: EEAD
 
 
+func _enter_tree() -> void:
+	if !Engine.is_editor_hint(): create()
+
+
 func create() -> void:
 	if !legion_information: return
 	

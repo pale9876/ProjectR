@@ -40,43 +40,6 @@ type = 1
 pos = Vector2i(1, 0)
 metadata/_custom_type_script = "uid://bblcw0t5qxk36"
 
-[sub_resource type="Resource" id="Resource_l7pm2"]
-script = ExtResource("5_exjtw")
-radius = 10.0
-metadata/_custom_type_script = "uid://drl2kykjmd5mp"
-
-[sub_resource type="Resource" id="Resource_vec88"]
-script = ExtResource("6_j1vk6")
-metadata/_custom_type_script = "uid://di7bi4ybepb0a"
-
-[sub_resource type="Resource" id="Resource_0mlyx"]
-script = ExtResource("7_qpcy3")
-metadata/_custom_type_script = "uid://cotxam656beso"
-
-[sub_resource type="Resource" id="Resource_xybxg"]
-script = ExtResource("9_snpes")
-metadata/_custom_type_script = "uid://cukf7tedk28ls"
-
-[sub_resource type="Resource" id="Resource_qy11e"]
-script = ExtResource("8_se02q")
-use_nav = true
-unit_information = SubResource("Resource_xybxg")
-hurtbox_information = SubResource("Resource_0mlyx")
-awareness_information = SubResource("Resource_l7pm2")
-hitbox_information = SubResource("Resource_vec88")
-
-[sub_resource type="Resource" id="Resource_fi42c"]
-script = ExtResource("10_eqgxm")
-path_type = 1
-to = Vector2(1280, 720)
-margin = 30.0
-metadata/_custom_type_script = "uid://chpo875sjp28p"
-
-[sub_resource type="NavigationPolygon" id="NavigationPolygon_weayq"]
-baking_rect = Rect2(0, 0, 1280, 720)
-
-[sub_resource type="BehaviorTree" id="BehaviorTree_l7pm2"]
-
 [sub_resource type="Resource" id="Resource_ym5dx"]
 script = ExtResource("9_snpes")
 init_hp = 300
@@ -125,6 +88,43 @@ metadata/_custom_type_script = "uid://chmyv3i5lg6po"
 atlas = ExtResource("20_c86kc")
 region = Rect2(0, 0, 64, 32)
 
+[sub_resource type="Resource" id="Resource_l7pm2"]
+script = ExtResource("5_exjtw")
+radius = 10.0
+metadata/_custom_type_script = "uid://drl2kykjmd5mp"
+
+[sub_resource type="Resource" id="Resource_vec88"]
+script = ExtResource("6_j1vk6")
+metadata/_custom_type_script = "uid://di7bi4ybepb0a"
+
+[sub_resource type="Resource" id="Resource_0mlyx"]
+script = ExtResource("7_qpcy3")
+metadata/_custom_type_script = "uid://cotxam656beso"
+
+[sub_resource type="Resource" id="Resource_xybxg"]
+script = ExtResource("9_snpes")
+metadata/_custom_type_script = "uid://cukf7tedk28ls"
+
+[sub_resource type="Resource" id="Resource_qy11e"]
+script = ExtResource("8_se02q")
+use_nav = true
+unit_information = SubResource("Resource_xybxg")
+hurtbox_information = SubResource("Resource_0mlyx")
+awareness_information = SubResource("Resource_l7pm2")
+hitbox_information = SubResource("Resource_vec88")
+
+[sub_resource type="Resource" id="Resource_fi42c"]
+script = ExtResource("10_eqgxm")
+path_type = 1
+to = Vector2(1280, 720)
+margin = 30.0
+metadata/_custom_type_script = "uid://chpo875sjp28p"
+
+[sub_resource type="NavigationPolygon" id="NavigationPolygon_weayq"]
+baking_rect = Rect2(0, 0, 1280, 720)
+
+[sub_resource type="BehaviorTree" id="BehaviorTree_l7pm2"]
+
 [sub_resource type="Resource" id="Resource_oq44s"]
 script = ExtResource("22_vqwcp")
 metadata/_custom_type_script = "uid://betj1u6dfr7n"
@@ -141,17 +141,8 @@ metadata/_custom_type_script = "uid://d1ld2v885ur2n"
 script = ExtResource("2_l3vfh")
 underpass_line = Array[ExtResource("3_lgwd6")]([SubResource("Resource_v0yr8"), SubResource("Resource_36fc4"), SubResource("Resource_ng2cp")])
 mask = 0
+visible = false
 metadata/_custom_type_script = "uid://dc7volit4rbgy"
-
-[node name="Legion" type="Node" parent="." unique_id=1681334867 node_paths=PackedStringArray("target")]
-script = ExtResource("4_ntnlo")
-legion_information = SubResource("Resource_qy11e")
-amount = 1
-path_scope = SubResource("Resource_fi42c")
-navigation_polygon = SubResource("NavigationPolygon_weayq")
-behavior_tree = SubResource("BehaviorTree_l7pm2")
-target = NodePath("../Player")
-metadata/_custom_type_script = "uid://dfku5xh0yuklb"
 
 [node name="Player" type="Node" parent="." unique_id=1235550306]
 script = ExtResource("11_lh3wr")
@@ -165,7 +156,18 @@ pose_information = SubResource("Resource_jsaji")
 texture = Dictionary[String, AtlasTexture]({
 "idle_down": SubResource("AtlasTexture_ym5dx")
 })
+visible = false
 metadata/_custom_type_script = "uid://d12ai6r2s7nql"
+
+[node name="Legion" type="Node" parent="." unique_id=1681334867 node_paths=PackedStringArray("target")]
+script = ExtResource("4_ntnlo")
+legion_information = SubResource("Resource_qy11e")
+amount = 1
+path_scope = SubResource("Resource_fi42c")
+navigation_polygon = SubResource("NavigationPolygon_weayq")
+behavior_tree = SubResource("BehaviorTree_l7pm2")
+target = NodePath("../Player")
+metadata/_custom_type_script = "uid://dfku5xh0yuklb"
 
 [node name="MultiCamera" type="Node" parent="." unique_id=116228171]
 script = ExtResource("21_jb3j5")

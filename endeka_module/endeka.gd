@@ -47,8 +47,6 @@ var thread_pool: PackedInt32Array = []
 func create_pool() -> PackedInt32Array:
 	var pool: PackedInt32Array = PackedInt32Array()
 	
-
-	
 	return pool
 
 
@@ -100,17 +98,17 @@ func _physics_process(delta: float) -> void:
 func sort() -> Array:
 	var arr: Array = get_eead()
 
-	if ysorting:
+	if ysorting: # 일단 Z소팅을 먼저 합니다.
 		arr.sort_custom(
 			func(a: EEAD, b: EEAD) -> bool:
 				return a.z_value < b.z_value
 		)
-
+		# 다음 Z값이 같은 것은 Y값에 따라 정렬합니다.
 		arr.sort_custom(
 			func(a: EEAD, b: EEAD) -> bool:
 				return (a.z_value == b.z_value) and a.position.y < b.position.y
 		)
-	else:
+	else: # Y소팅이 켜져 있지 않다면 Z값을 기준으로 정렬합니다.
 		arr.sort_custom(
 			func(a: EEAD, b: EEAD) -> bool:
 				return a.z_value < b.z_value
@@ -139,6 +137,18 @@ func draw_eeads() -> void:
 
 func get_eead() -> Array:
 	return get_children().filter(func(node: Node) -> bool: return node is EEAD)
+
+
+func propagate_hide() -> void:
+	visible = false
+	for eead in get_eead():
+		if eead is EEAD: eead.hide()
+
+
+func propagate_show() -> void:
+	visible = true
+	for eead in get_eead():
+		if eead is EEAD: eead.show()
 
 
 func get_global_mouse_position() -> Vector2:

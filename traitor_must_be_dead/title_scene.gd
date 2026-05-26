@@ -1,5 +1,5 @@
 extends CanvasLayer
-class_name TitleScene
+class_name Title
 
 # title buttons
 @onready var start: Button = %Start
@@ -13,7 +13,7 @@ class_name TitleScene
 @onready var main_title: Control = %MainTitle
 @onready var select_class: Control = %SelectClass
 @onready var option_panel: Control = %OptionPanel
-@onready var background: Node2D = %Background
+#@onready var background: Node2D = %Background
 
 
 func _enter_tree() -> void:
@@ -22,7 +22,8 @@ func _enter_tree() -> void:
 
 # Called when the node enters the scene tree for the first time.
 func _ready() -> void:
-	background.show()
+	#background.show()
+	
 	main_title.show()
 	select_class.hide()
 	option_panel.hide()
@@ -37,9 +38,6 @@ func _ready() -> void:
 			option_panel.show()
 			
 	)
-
-	class_predator
-
 
 #func select_class_mode() -> void:
 	#main_title.hide()
