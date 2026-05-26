@@ -79,7 +79,7 @@ script/templates_search_path="res://template/script"
 
 [editor_plugins]
 
-enabled=PackedStringArray("res://addons/ActionIcon/plugin.cfg", "res://addons/ControlsRemap/plugin.cfg", "res://addons/MetroidvaniaSystem/EditorExtension/plugin.cfg", "res://addons/MetroidvaniaSystem/plugin.cfg", "res://addons/dialogue_manager/plugin.cfg", "res://addons/gdfxr/plugin.cfg", "res://addons/global_asset_manager/plugin.cfg", "res://addons/ropesim/plugin.cfg", "res://addons/sprite_label/plugin.cfg")
+enabled=PackedStringArray("res://addons/ActionIcon/plugin.cfg", "res://addons/ControlsRemap/plugin.cfg", "res://addons/MetroidvaniaSystem/EditorExtension/plugin.cfg", "res://addons/MetroidvaniaSystem/plugin.cfg", "res://addons/dialogue_manager/plugin.cfg", "res://addons/gdfxr/plugin.cfg", "res://addons/global_asset_manager/plugin.cfg", "res://addons/sprite_label/plugin.cfg")
 
 [global]
 
