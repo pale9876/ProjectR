@@ -54,3 +54,4 @@ addons/ibproject/target/flycheck0/stdout
 /addons/oauth/target/debug/incremental
 /addons/oauth/target/debug/deps
 /addons/oauth/target/flycheck0
+addons/ropesim/bin/~libropesim.windows.template_debug.x86_64.dll
