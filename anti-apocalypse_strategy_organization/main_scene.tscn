@@ -1,43 +1,6 @@
 [gd_scene format=3 uid="uid://celrixgf5x15q"]
 
 [ext_resource type="Script" uid="uid://i4ng1cjfqvv6" path="res://anti-apocalypse_strategy_organization/main_scene.gd" id="1_lypri"]
-[ext_resource type="Script" uid="uid://d1ld2v885ur2n" path="res://endeka_module/endeka.gd" id="1_onfft"]
-[ext_resource type="Script" uid="uid://d12ai6r2s7nql" path="res://unit/player.gd" id="3_4pkbd"]
-[ext_resource type="Script" uid="uid://cukf7tedk28ls" path="res://character/unit_information.gd" id="4_awa2v"]
-[ext_resource type="Script" uid="uid://cnfkyf0kpxdkb" path="res://skill_module/skill_information.gd" id="5_swrwi"]
-[ext_resource type="Script" uid="uid://dn5ye7nafhkbh" path="res://skill_module/skill.gd" id="6_84ttr"]
-[ext_resource type="Script" uid="uid://cotxam656beso" path="res://hurtbox_information/hurtbox_collide_info.gd" id="7_trx7p"]
-[ext_resource type="Script" uid="uid://b4paed8n75wrv" path="res://pose_module/pose.gd" id="8_addk1"]
-[ext_resource type="Script" uid="uid://chmyv3i5lg6po" path="res://pose_module/pose_information.gd" id="9_8s5pa"]
-[ext_resource type="Script" uid="uid://dc7volit4rbgy" path="res://underpass_module/underpass.gd" id="10_ikn7r"]
-
-[sub_resource type="Resource" id="Resource_ktbxu"]
-script = ExtResource("4_awa2v")
-
-[sub_resource type="Resource" id="Resource_shsrx"]
-script = ExtResource("5_swrwi")
-
-[sub_resource type="Resource" id="Resource_bqxyn"]
-script = ExtResource("7_trx7p")
-
-[sub_resource type="Resource" id="Resource_m81sh"]
-script = ExtResource("9_8s5pa")
 
 [node name="MainScene" type="Node" unique_id=2089699857]
 script = ExtResource("1_lypri")
-
-[node name="Endeka" type="CanvasLayer" parent="." unique_id=1244447799]
-script = ExtResource("1_onfft")
-metadata/_custom_type_script = "uid://d1ld2v885ur2n"
-
-[node name="Underpass" type="Node" parent="Endeka" unique_id=1526873670]
-script = ExtResource("10_ikn7r")
-metadata/_custom_type_script = "uid://dc7volit4rbgy"
-
-[node name="Player" type="Node" parent="Endeka" unique_id=1841996059]
-script = ExtResource("3_4pkbd")
-unit_information = SubResource("Resource_ktbxu")
-skill_information = SubResource("Resource_shsrx")
-hurtbox_information = SubResource("Resource_bqxyn")
-pose_information = SubResource("Resource_m81sh")
-metadata/_custom_type_script = "uid://d12ai6r2s7nql"

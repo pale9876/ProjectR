@@ -1,6 +1,9 @@
 extends Node
 
 
+#const PLAYER_SCENE: PackedScene = preload()
+
+
 enum State {
 	INIT,
 	READY,
@@ -37,17 +40,7 @@ signal default()
 
 
 var os: String = ""
-var player_information: PlayerInformation = PlayerInformation.new()
-
-
-var ingame: Ingame
-var background: Endeka
-var hud: CanvasLayer
-var title: CanvasLayer
-var channel: Channel
-var camera: MultiCamera
-
-var player: Player
+var player: Node
 
 
 func _enter_tree() -> void:
@@ -68,11 +61,6 @@ func process() -> void:
 	pass
 
 
-
-class PlayerInformation extends RefCounted:
-	var character: Resource
-	var character_class: Resource
-	var position: Vector2
 
 
 class SaveData extends Resource:
