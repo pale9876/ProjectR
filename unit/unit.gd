@@ -23,7 +23,7 @@ const FLOAT: Mode = Mode.FLOAT
 
 @export_category("Resources")
 @export var unit_information: UnitInformation = UnitInformation.new()
-@export var skill_information: SkillInformation = SkillInformation.new()
+#@export var skill_information: SkillInformation = SkillInformation.new()
 @export var hurtbox_information: HurtboxInformation = HurtboxInformation.new()
 @export var body_parts: Array[AnimatedPart]
 @export var pose_information: PoseInformation = PoseInformation.new()
@@ -128,7 +128,7 @@ func create() -> void:
 		PhysicsServer2D.shape_set_data(_hurtbox.shape, _hurtbox.size / 2.)
 		
 	skill_module = SkillModule.new()
-	skill_module.init(skill_information, self)
+	#skill_module.init(skill_information, self)
 	
 	pose_module = PoseModule.new()
 	pose_module.init_data(pose_information, self)

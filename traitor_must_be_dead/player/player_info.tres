@@ -1,0 +1,7 @@
+[gd_resource type="Resource" format=3 uid="uid://dl3hnxse5df2r"]
+
+[ext_resource type="Script" uid="uid://duug3d6huidwq" path="res://traitor_must_be_dead/player/player_info.gd" id="1_dagq4"]
+
+[resource]
+script = ExtResource("1_dagq4")
+name = &"Nanami"

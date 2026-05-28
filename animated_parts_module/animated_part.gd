@@ -1,6 +1,6 @@
 @tool
 extends Resource
-class_name AnimatedPart
+#class_name AnimatedPart
 
 
 @export var name: String = ""

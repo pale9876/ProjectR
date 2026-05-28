@@ -1,6 +1,5 @@
 @tool
 extends Resource
-class_name Skill
 
 
 var module: SkillModule

@@ -1,3 +1,3 @@
 @tool
 extends Unit
-class_name Player
+#class_name Player

@@ -1,0 +1,69 @@
+[gd_scene format=3 uid="uid://yvxdyisxykhj"]
+
+[ext_resource type="Script" uid="uid://cnomcgiacqm4e" path="res://traitor_must_be_dead/player/player.gd" id="1_tmxyh"]
+[ext_resource type="Resource" uid="uid://dl3hnxse5df2r" path="res://traitor_must_be_dead/player/player_info.tres" id="2_073p5"]
+[ext_resource type="Texture2D" uid="uid://c6rpceeuhu5eo" path="res://aseprite/traitor_will_be_dead/player.png" id="2_n2iyc"]
+[ext_resource type="Shader" uid="uid://y1man8kgkr73" path="res://character/character_module/outline.gdshader" id="2_thlyd"]
+[ext_resource type="Script" uid="uid://cdfrjic0ld84i" path="res://traitor_must_be_dead/hurtbox.gd" id="3_f1bkm"]
+[ext_resource type="Script" uid="uid://qce0gi6r23ds" path="res://traitor_must_be_dead/hitbox.gd" id="4_pm4ax"]
+[ext_resource type="Script" uid="uid://dh7asg1pp0prq" path="res://traitor_must_be_dead/player/state/idle.gd" id="5_xkn4k"]
+[ext_resource type="Script" uid="uid://cckkjncildw5o" path="res://traitor_must_be_dead/player/state/move.gd" id="6_thlyd"]
+[ext_resource type="Script" uid="uid://kklyjbb1ft6f" path="res://traitor_must_be_dead/skill_shape.gd" id="6_tpj5r"]
+
+[sub_resource type="CapsuleShape2D" id="CapsuleShape2D_guff7"]
+radius = 4.0
+height = 12.0
+
+[sub_resource type="ShaderMaterial" id="ShaderMaterial_thlyd"]
+shader = ExtResource("2_thlyd")
+shader_parameter/line_colour = Color(1, 0, 0, 1)
+shader_parameter/line_thickness = 9
+
+[sub_resource type="CapsuleShape2D" id="CapsuleShape2D_tuwyy"]
+radius = 3.0
+height = 14.0
+
+[sub_resource type="RectangleShape2D" id="RectangleShape2D_guff7"]
+size = Vector2(12, 25)
+
+[node name="Player" type="CharacterBody2D" unique_id=53704936]
+script = ExtResource("1_tmxyh")
+info = ExtResource("2_073p5")
+
+[node name="NavigationObstacle2D" type="NavigationObstacle2D" parent="." unique_id=1485685170]
+position = Vector2(80, 64)
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="." unique_id=326244391]
+position = Vector2(0, -7)
+shape = SubResource("CapsuleShape2D_guff7")
+
+[node name="SpriteGroup" type="CanvasGroup" parent="." unique_id=408668352]
+material = SubResource("ShaderMaterial_thlyd")
+
+[node name="Sprite2D" type="Sprite2D" parent="SpriteGroup" unique_id=1336156472]
+texture = ExtResource("2_n2iyc")
+offset = Vector2(0, -12)
+
+[node name="Hurtbox" type="Area2D" parent="." unique_id=907062895]
+script = ExtResource("3_f1bkm")
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="Hurtbox" unique_id=1762116288]
+position = Vector2(0, -9)
+shape = SubResource("CapsuleShape2D_tuwyy")
+debug_color = Color(0.9764706, 0.47058824, 0.45882353, 0.41960785)
+
+[node name="Hitbox" type="Area2D" parent="." unique_id=619187217]
+script = ExtResource("4_pm4ax")
+
+[node name="SkillShape" type="CollisionShape2D" parent="Hitbox" unique_id=204064130]
+position = Vector2(0, 6)
+shape = SubResource("RectangleShape2D_guff7")
+script = ExtResource("6_tpj5r")
+
+[node name="LimboHSM" type="LimboHSM" parent="." unique_id=438595032]
+
+[node name="Idle" type="LimboState" parent="LimboHSM" unique_id=311543354]
+script = ExtResource("5_xkn4k")
+
+[node name="Move" type="LimboState" parent="LimboHSM" unique_id=1977872063]
+script = ExtResource("6_thlyd")

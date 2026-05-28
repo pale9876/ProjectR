@@ -1,22 +1,18 @@
 shader_type canvas_item;
 
-
-uniform vec4 color: source_color = vec4(1.);
-uniform float thickness: hint_range(0.0, 1.0, 0.01) = .5;
-const float max_line_thickness = 4.;
-
+uniform vec3 line_colour: source_color = vec3(1.0);
+uniform int line_thickness: hint_range(0, 10) = 1;
+uniform sampler2D screen_texture : hint_screen_texture, repeat_disable, filter_nearest;
 
 void fragment() {
-	vec4 _color = texture(TEXTURE, UV);
-	vec2 size = TEXTURE_PIXEL_SIZE * thickness;
-	float _outline = _color.a;
-	
-	_outline += texture(TEXTURE, UV + vec2(size.x, 0.)).a;
-	_outline += texture(TEXTURE, UV - vec2(size.x, 0.)).a;
-	_outline += texture(TEXTURE, UV + vec2(0., size.y)).a;
-	_outline += texture(TEXTURE, UV - vec2(0., size.y)).a;
-	_outline = min(_outline, 1.);
-	
-	COLOR = mix(_color, color, _outline - _color.a);
-	
+	vec2 size = SCREEN_PIXEL_SIZE * float(line_thickness);
+	float line_alpha = 0.0;
+	for (float i = -size.x; i <= size.x; i += SCREEN_PIXEL_SIZE.x) {
+		for (float j = -size.y; j <= size.y; j += SCREEN_PIXEL_SIZE.y) {
+			line_alpha += texture(screen_texture, SCREEN_UV + vec2(i, j)).a;
+		}
+	}
+	vec4 colour = texture(screen_texture, SCREEN_UV);
+	vec4 outline = vec4(line_colour, min(line_alpha, 1.0));
+	COLOR *= mix(outline, colour, colour.a);
 }
