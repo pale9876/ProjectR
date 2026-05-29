@@ -42,7 +42,6 @@ b = Vector2(640, 128)
 script = ExtResource("1_pieak")
 
 [node name="NavigationRegion2D" type="NavigationRegion2D" parent="." unique_id=371721538]
-visible = false
 navigation_polygon = SubResource("NavigationPolygon_guff7")
 
 [node name="GateLeftUp" type="CollisionShape2D" parent="." unique_id=1013340445]

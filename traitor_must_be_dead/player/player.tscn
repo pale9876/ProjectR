@@ -17,7 +17,7 @@ height = 12.0
 [sub_resource type="ShaderMaterial" id="ShaderMaterial_thlyd"]
 shader = ExtResource("2_thlyd")
 shader_parameter/line_colour = Color(1, 0, 0, 1)
-shader_parameter/line_thickness = 9
+shader_parameter/line_thickness = 1
 
 [sub_resource type="CapsuleShape2D" id="CapsuleShape2D_tuwyy"]
 radius = 3.0
@@ -40,9 +40,11 @@ shape = SubResource("CapsuleShape2D_guff7")
 [node name="SpriteGroup" type="CanvasGroup" parent="." unique_id=408668352]
 material = SubResource("ShaderMaterial_thlyd")
 
-[node name="Sprite2D" type="Sprite2D" parent="SpriteGroup" unique_id=1336156472]
+[node name="Head" type="Sprite2D" parent="SpriteGroup" unique_id=1336156472]
 texture = ExtResource("2_n2iyc")
 offset = Vector2(0, -12)
+
+[node name="Eye" type="Sprite2D" parent="SpriteGroup" unique_id=701644665]
 
 [node name="Hurtbox" type="Area2D" parent="." unique_id=907062895]
 script = ExtResource("3_f1bkm")

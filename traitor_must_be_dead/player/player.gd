@@ -44,7 +44,7 @@ func _input(event: InputEvent) -> void:
 
 
 
-func damaged(value: int, duration: float) -> void:
+func damaged(res: Resource) -> void:
 	pass
 
 

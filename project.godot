@@ -36,7 +36,7 @@ Author: Pale9876 (Github, Korean)
 장르: 코스믹 호러, 피카레스크
 등급: 자율적, {만 19세 이상, 한국}, {18 +, 일본, 미국}
 태그: 액션, 전략, 실시간 경영, 폭력성, 신체훼손"
-run/main_scene="uid://dq308iyitlfsu"
+run/main_scene="uid://b8s0yjp2yahxr"
 config/features=PackedStringArray("4.7", "C#", "GL Compatibility")
 boot_splash/show_image=false
 config/icon="res://icon.svg"

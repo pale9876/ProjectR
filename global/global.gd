@@ -1,7 +1,12 @@
 extends Node
 
 
-#const PLAYER_SCENE: PackedScene = preload()
+const AASO_PLAYER: PackedScene = preload("uid://dudg0nhdnm0ou")
+const TMBD_PLAYER: PackedScene = preload("uid://yvxdyisxykhj")
+
+
+const AASO_MAIN_SCENE: Script = preload("uid://i4ng1cjfqvv6")
+const TMBD_MAIN_SCENE: Script = preload("uid://c1eyse278nyf6")
 
 
 enum State {
@@ -59,8 +64,6 @@ func _ready() -> void:
 
 func process() -> void:
 	pass
-
-
 
 
 class SaveData extends Resource:

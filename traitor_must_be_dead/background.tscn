@@ -1,8 +1,0 @@
-[gd_scene format=3 uid="uid://bf31ft61qfa7i"]
-
-[ext_resource type="Script" uid="uid://dbb52ks2bdw4e" path="res://traitor_must_be_dead/background.gd" id="1_te2cd"]
-
-[node name="Background" type="CanvasLayer" unique_id=436839414]
-follow_viewport_enabled = true
-script = ExtResource("1_te2cd")
-metadata/_custom_type_script = "uid://d1ld2v885ur2n"

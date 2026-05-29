@@ -1,0 +1,6 @@
+[gd_scene format=3 uid="uid://dudg0nhdnm0ou"]
+
+[ext_resource type="Script" uid="uid://ban6qofihs2pv" path="res://anti-apocalypse_strategy_organization/player/player.gd" id="1_rpqd7"]
+
+[node name="Player" type="CharacterBody2D" unique_id=770980965]
+script = ExtResource("1_rpqd7")

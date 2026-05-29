@@ -1,0 +1,13 @@
+[gd_scene format=3 uid="uid://b8s0yjp2yahxr"]
+
+[ext_resource type="Script" uid="uid://c1eyse278nyf6" path="res://traitor_must_be_dead/main_scene.gd" id="1_a7mu4"]
+[ext_resource type="PackedScene" uid="uid://dq308iyitlfsu" path="res://traitor_must_be_dead/traitor_must_be_dead.tscn" id="2_y8pkp"]
+[ext_resource type="PackedScene" uid="uid://careyl7unmhn2" path="res://traitor_must_be_dead/title.tscn" id="3_y8pkp"]
+
+[node name="MainScene" type="Node" unique_id=68187787]
+script = ExtResource("1_a7mu4")
+
+[node name="Ingame" parent="." unique_id=1277244981 instance=ExtResource("2_y8pkp")]
+visible = false
+
+[node name="Title" parent="." unique_id=1381366529 instance=ExtResource("3_y8pkp")]

@@ -1,6 +1,6 @@
 extends Area2D
 
-
+const Player: Script = preload("uid://cnomcgiacqm4e")
 const Hitbox: Script = preload("uid://qce0gi6r23ds")
 
 
