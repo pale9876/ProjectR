@@ -40,8 +40,6 @@ func _input(event: InputEvent) -> void:
 		input_state.direction = Input.get_vector("left", "right", "up", "down").normalized()
 		input_state.push_dir()
 		await get_tree().physics_frame
-		print(input_state.key_log)
-
 
 
 func damaged(res: Resource) -> void:
@@ -56,9 +54,17 @@ class CharacterStat:
 
 
 class InputState:
-	var direction: Vector2
+	var direction: Vector2 = Vector2.ZERO:
+		set(value): if !_lock: direction = value
 	var key_log: PackedStringArray
 	var max_log: int = 10
+	var _lock: bool = false
+	
+	func lock() -> void:
+		_lock = true
+	
+	func unlock() -> void:
+		_lock = false
 
 
 	func _init() -> void:
