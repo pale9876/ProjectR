@@ -3,15 +3,15 @@
 importer="texture"
 type="CompressedTexture2D"
 uid="uid://d3b23qhvdr5cd"
-path="res://.godot/imported/shin_yeon_ju.png-5227132e16dfcb16c7b8db810d4a43bf.ctex"
+path="res://.godot/imported/shin_yeon_ju.png-4a9c9ab9a3c91699ea53a6169a22ac60.ctex"
 metadata={
 "vram_texture": false
 }
 
 [deps]
 
-source_file="res://aseprite/asso_project/characters/Yeonju/shin_yeon_ju.png"
-dest_files=["res://.godot/imported/shin_yeon_ju.png-5227132e16dfcb16c7b8db810d4a43bf.ctex"]
+source_file="res://aseprite/asso_project/characters/yeonju/shin_yeon_ju.png"
+dest_files=["res://.godot/imported/shin_yeon_ju.png-4a9c9ab9a3c91699ea53a6169a22ac60.ctex"]
 
 [params]
 

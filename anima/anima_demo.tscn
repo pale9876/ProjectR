@@ -1,6 +1,0 @@
-[gd_scene format=3 uid="uid://rcsfyfk0tweu"]
-
-[ext_resource type="Script" uid="uid://dldagn7wjcaeg" path="res://anima/anima_demo.gd" id="1_vsfwn"]
-
-[node name="AnimaDemo" type="Node2D" unique_id=2071044447]
-script = ExtResource("1_vsfwn")

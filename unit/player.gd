@@ -1,3 +1,2 @@
 @tool
-extends Unit
-#class_name Player
+extends Node2D

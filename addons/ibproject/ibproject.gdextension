@@ -1,8 +1,0 @@
-[configuration]
-entry_symbol = "ibproject"
-compatibility_minimum = 4.6
-reloadable = true
-
-[libraries]
-windows.debug.x86_64 = "res://addons/ibproject/target/debug/ibproject.dll"
-windows.release.x86_64 = "res://addons/ibproject/target/release/ibproject.dll"
