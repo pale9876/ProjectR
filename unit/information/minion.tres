@@ -1,0 +1,7 @@
+[gd_resource type="Resource" format=3 uid="uid://c8qn50dilibqs"]
+
+[ext_resource type="Script" uid="uid://c3ykemf4n3om1" path="res://unit/information/information.gd" id="1_7rvsm"]
+
+[resource]
+script = ExtResource("1_7rvsm")
+name = &"sample_minion"

@@ -1,0 +1,16 @@
+[gd_scene format=3 uid="uid://cvlijmgfo3neh"]
+
+[ext_resource type="Script" uid="uid://dgntyiu05self" path="res://hud/hud.gd" id="1_2gk58"]
+[ext_resource type="PackedScene" uid="uid://cepgohj2xwh2r" path="res://hud/dialog_ui.tscn" id="2_318vg"]
+[ext_resource type="PackedScene" uid="uid://ksgt68ldy02q" path="res://hud/player_ui.tscn" id="2_w8tcp"]
+[ext_resource type="Script" uid="uid://borjea45xky04" path="res://hud/dialog_ui.gd" id="4_w8tcp"]
+
+[node name="HUD" type="CanvasLayer" unique_id=765911860]
+script = ExtResource("1_2gk58")
+
+[node name="PlayerUI" parent="." unique_id=1091700829 instance=ExtResource("2_w8tcp")]
+unique_name_in_owner = true
+
+[node name="DialogUI" parent="." unique_id=524892930 instance=ExtResource("2_318vg")]
+unique_name_in_owner = true
+script = ExtResource("4_w8tcp")

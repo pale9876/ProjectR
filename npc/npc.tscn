@@ -1,0 +1,18 @@
+[gd_scene format=3 uid="uid://b7ya2gtphhn00"]
+
+[ext_resource type="Script" uid="uid://btmmen2m5ofg7" path="res://ingame/npc.gd" id="1_2xp5l"]
+[ext_resource type="Script" uid="uid://cbjdca3iwlx36" path="res://addons/sprouty_dialogs/resources/dialogue_data.gd" id="2_3i1kj"]
+[ext_resource type="Resource" uid="uid://bxvypewv58sbo" path="res://dialogue/greetings.tres" id="2_nhy3c"]
+
+[sub_resource type="CapsuleShape2D" id="CapsuleShape2D_nhy3c"]
+radius = 3.0
+height = 12.0
+
+[node name="NPC" type="CharacterBody2D" unique_id=196787048]
+script = ExtResource("1_2xp5l")
+dialog_data = Dictionary[String, ExtResource("2_3i1kj")]({
+"greeting": ExtResource("2_nhy3c")
+})
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="." unique_id=857331025]
+shape = SubResource("CapsuleShape2D_nhy3c")

@@ -1,0 +1,10 @@
+[gd_scene format=3 uid="uid://qnolbh3cfav8"]
+
+[ext_resource type="Script" uid="uid://bc33hejnp7byc" path="res://channel/channel.gd" id="1_qkkds"]
+
+[node name="Channel" type="CanvasLayer" unique_id=1466334463]
+script = ExtResource("1_qkkds")
+
+[node name="Camera3D" type="Camera3D" parent="." unique_id=620916012]
+
+[node name="AudioListener3D" type="AudioListener3D" parent="Camera3D" unique_id=1803164839]

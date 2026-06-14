@@ -1,0 +1,253 @@
+[gd_scene format=3 uid="uid://c5ewbb0454kjk"]
+
+[ext_resource type="Script" uid="uid://bl84ixx4kubfe" path="res://unit/unit.gd" id="1_3k25b"]
+[ext_resource type="Resource" uid="uid://c8qn50dilibqs" path="res://unit/information/minion.tres" id="2_7oxhv"]
+[ext_resource type="Texture2D" uid="uid://cwc6mwi8w6uj3" path="res://sprite/minion_friend.png" id="2_japly"]
+[ext_resource type="Script" uid="uid://cpsg0ho6132tj" path="res://ai/tasks/set_act_state.gd" id="4_2ul3e"]
+[ext_resource type="Script" uid="uid://dnfln7i10n5lu" path="res://ai/tasks/move_to_random_pos.gd" id="5_a3q01"]
+[ext_resource type="Script" uid="uid://cdpmo1dhtm3s5" path="res://unit/hitbox.gd" id="5_s1ym6"]
+[ext_resource type="Script" uid="uid://dibqva5a64jvq" path="res://ai/tasks/patrol_wait.gd" id="6_4xbu7"]
+[ext_resource type="Script" uid="uid://bdj3moatwduju" path="res://unit/awareness.gd" id="7_2ul3e"]
+[ext_resource type="Script" uid="uid://dmj17w1hipj7o" path="res://ai/tasks/trace_target.gd" id="7_a2j7n"]
+[ext_resource type="Script" uid="uid://bupj3hlvtt67s" path="res://unit/hurtbox.gd" id="8_a3q01"]
+
+[sub_resource type="Gradient" id="Gradient_2ul3e"]
+interpolation_mode = 1
+offsets = PackedFloat32Array(0, 0.85779816)
+colors = PackedColorArray(0, 0, 0, 0.6666667, 1, 1, 1, 0)
+
+[sub_resource type="GradientTexture2D" id="GradientTexture2D_wqsic"]
+gradient = SubResource("Gradient_2ul3e")
+width = 16
+height = 8
+fill = 1
+fill_from = Vector2(0.5, 0.5)
+fill_to = Vector2(0.85, 0.85)
+
+[sub_resource type="CapsuleShape2D" id="CapsuleShape2D_wqsic"]
+radius = 6.0
+height = 14.0
+
+[sub_resource type="BlackboardPlan" id="BlackboardPlan_2ul3e"]
+var/target/name = &"target"
+var/target/type = 24
+var/target/hint = 34
+var/target/hint_string = ""
+var/act/name = &"act"
+var/act/type = 4
+var/act/value = "patrol"
+var/act/hint = 0
+var/act/hint_string = ""
+
+[sub_resource type="BTAction" id="BTAction_a3q01"]
+script = ExtResource("4_2ul3e")
+
+[sub_resource type="BBVariant" id="BBVariant_4xbu7"]
+type = 4
+saved_value = "patrol"
+resource_name = "patrol"
+
+[sub_resource type="BTCheckVar" id="BTCheckVar_a2j7n"]
+variable = &"act"
+value = SubResource("BBVariant_4xbu7")
+
+[sub_resource type="BTConsolePrint" id="BTConsolePrint_a2j7n"]
+text = "순찰 중"
+
+[sub_resource type="BTAction" id="BTAction_4xbu7"]
+script = ExtResource("5_a3q01")
+
+[sub_resource type="BTConsolePrint" id="BTConsolePrint_4xbu7"]
+text = "잠시 쉬는 중"
+
+[sub_resource type="BTWait" id="BTWait_a2j7n"]
+script = ExtResource("6_4xbu7")
+
+[sub_resource type="BTSequence" id="BTSequence_j0e0d"]
+custom_name = "IF :: Act is \"patrol\""
+children = [SubResource("BTCheckVar_a2j7n"), SubResource("BTConsolePrint_a2j7n"), SubResource("BTAction_4xbu7"), SubResource("BTConsolePrint_4xbu7"), SubResource("BTWait_a2j7n")]
+
+[sub_resource type="BBVariant" id="BBVariant_a3q01"]
+type = 4
+saved_value = "trace"
+resource_name = "trace"
+
+[sub_resource type="BTCheckVar" id="BTCheckVar_4xbu7"]
+variable = &"act"
+value = SubResource("BBVariant_a3q01")
+
+[sub_resource type="BTConsolePrint" id="BTConsolePrint_j0e0d"]
+text = "타겟을 발견함."
+
+[sub_resource type="BTAction" id="BTAction_j0e0d"]
+script = ExtResource("7_a2j7n")
+
+[sub_resource type="BTConsolePrint" id="BTConsolePrint_5dfwp"]
+text = "타겟이 인식반경에서 벗어남."
+
+[sub_resource type="BTSequence" id="BTSequence_a2j7n"]
+children = [SubResource("BTCheckVar_4xbu7"), SubResource("BTConsolePrint_j0e0d"), SubResource("BTAction_j0e0d"), SubResource("BTConsolePrint_5dfwp")]
+
+[sub_resource type="BTSelector" id="BTSelector_5dfwp"]
+children = [SubResource("BTSequence_j0e0d"), SubResource("BTSequence_a2j7n")]
+
+[sub_resource type="BTSequence" id="BTSequence_eras8"]
+children = [SubResource("BTAction_a3q01"), SubResource("BTSelector_5dfwp")]
+
+[sub_resource type="BehaviorTree" id="BehaviorTree_2ul3e"]
+blackboard_plan = SubResource("BlackboardPlan_2ul3e")
+root_task = SubResource("BTSequence_eras8")
+
+[sub_resource type="BlackboardPlan" id="BlackboardPlan_ak6ua"]
+
+[sub_resource type="Animation" id="Animation_a3q01"]
+length = 0.001
+tracks/0/type = "bezier"
+tracks/0/imported = false
+tracks/0/enabled = true
+tracks/0/path = NodePath("Sprite2D:position:x")
+tracks/0/interp = 1
+tracks/0/loop_wrap = true
+tracks/0/keys = {
+"handle_modes": PackedInt32Array(0),
+"points": PackedFloat32Array(0, -0.25, 0, 0.25, 0),
+"times": PackedFloat32Array(0)
+}
+tracks/1/type = "bezier"
+tracks/1/imported = false
+tracks/1/enabled = true
+tracks/1/path = NodePath("Sprite2D:position:y")
+tracks/1/interp = 1
+tracks/1/loop_wrap = true
+tracks/1/keys = {
+"handle_modes": PackedInt32Array(0),
+"points": PackedFloat32Array(-15, -0.25, 0, 0.25, 0),
+"times": PackedFloat32Array(0)
+}
+
+[sub_resource type="Animation" id="Animation_hs7ws"]
+resource_name = "idle"
+length = 2.5000000000000004
+loop_mode = 1
+tracks/0/type = "bezier"
+tracks/0/imported = false
+tracks/0/enabled = true
+tracks/0/path = NodePath("Sprite2D:position:x")
+tracks/0/interp = 1
+tracks/0/loop_wrap = true
+tracks/0/keys = {
+"handle_modes": PackedInt32Array(1, 2),
+"points": PackedFloat32Array(0, 0, 0, 0, 0, 0, 0, 0, 0, 0),
+"times": PackedFloat32Array(0, 2.5)
+}
+tracks/1/type = "bezier"
+tracks/1/imported = false
+tracks/1/enabled = true
+tracks/1/path = NodePath("Sprite2D:position:y")
+tracks/1/interp = 1
+tracks/1/loop_wrap = true
+tracks/1/keys = {
+"handle_modes": PackedInt32Array(0, 0),
+"points": PackedFloat32Array(-18, -1, -35, 1, 35.002, -18, -1, -35, 1, 35),
+"times": PackedFloat32Array(0, 2.5)
+}
+
+[sub_resource type="Animation" id="Animation_7oxhv"]
+resource_name = "move"
+length = 3.5000000000000004
+loop_mode = 1
+tracks/0/type = "bezier"
+tracks/0/imported = false
+tracks/0/enabled = true
+tracks/0/path = NodePath("Sprite2D:position:x")
+tracks/0/interp = 1
+tracks/0/loop_wrap = true
+tracks/0/keys = {
+"handle_modes": PackedInt32Array(0, 0),
+"points": PackedFloat32Array(0, 0, 0, 1, 0, 0, 0, 0, 0, 0),
+"times": PackedFloat32Array(0, 3.5)
+}
+tracks/1/type = "bezier"
+tracks/1/imported = false
+tracks/1/enabled = true
+tracks/1/path = NodePath("Sprite2D:position:y")
+tracks/1/interp = 1
+tracks/1/loop_wrap = true
+tracks/1/keys = {
+"handle_modes": PackedInt32Array(0, 0),
+"points": PackedFloat32Array(-15, 0, 0, 1, -10, -15, -1, 10, 0, 0),
+"times": PackedFloat32Array(0, 3.5)
+}
+
+[sub_resource type="AnimationLibrary" id="AnimationLibrary_japly"]
+_data = {
+&"RESET": SubResource("Animation_a3q01"),
+&"idle": SubResource("Animation_hs7ws"),
+&"move": SubResource("Animation_7oxhv")
+}
+
+[sub_resource type="CircleShape2D" id="CircleShape2D_2ul3e"]
+radius = 11.0
+
+[sub_resource type="CapsuleShape2D" id="CapsuleShape2D_2ul3e"]
+radius = 7.0
+height = 26.0
+
+[sub_resource type="CircleShape2D" id="CircleShape2D_wqsic"]
+radius = 49.0
+
+[node name="Unit" type="CharacterBody2D" unique_id=2064536848]
+script = ExtResource("1_3k25b")
+information = ExtResource("2_7oxhv")
+
+[node name="DropShadow" type="Sprite2D" parent="." unique_id=924943166]
+texture = SubResource("GradientTexture2D_wqsic")
+
+[node name="Sprite2D" type="Sprite2D" parent="." unique_id=65572535]
+position = Vector2(0, -15)
+texture = ExtResource("2_japly")
+offset = Vector2(0, -20)
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="." unique_id=54862801]
+position = Vector2(0, -7)
+shape = SubResource("CapsuleShape2D_wqsic")
+debug_color = Color(0, 0.6, 0.69803923, 0.2)
+
+[node name="BTPlayer" type="BTPlayer" parent="." unique_id=415912197]
+behavior_tree = SubResource("BehaviorTree_2ul3e")
+blackboard_plan = SubResource("BlackboardPlan_ak6ua")
+
+[node name="AnimationPlayer" type="AnimationPlayer" parent="." unique_id=1250304981]
+libraries/ = SubResource("AnimationLibrary_japly")
+
+[node name="Hitbox" type="Area2D" parent="." unique_id=403300593]
+monitorable = false
+script = ExtResource("5_s1ym6")
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="Hitbox" unique_id=1875140581]
+position = Vector2(0, -10)
+shape = SubResource("CircleShape2D_2ul3e")
+debug_color = Color(0.93333334, 0.21568628, 0.16078432, 0.41960785)
+
+[node name="Hurbox" type="Area2D" parent="." unique_id=1792069261]
+monitoring = false
+script = ExtResource("8_a3q01")
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="Hurbox" unique_id=296316886]
+position = Vector2(0, -13)
+shape = SubResource("CapsuleShape2D_2ul3e")
+debug_color = Color(0.8509804, 0.8627451, 0.21960784, 0.21176471)
+
+[node name="Awareness" type="Area2D" parent="." unique_id=529311828]
+monitorable = false
+script = ExtResource("7_2ul3e")
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="Awareness" unique_id=2036976206]
+position = Vector2(0, -14)
+shape = SubResource("CircleShape2D_wqsic")
+debug_color = Color(0.8784314, 0.93333334, 0.69803923, 0.023529412)
+
+[node name="NavigationAgent2D" type="NavigationAgent2D" parent="." unique_id=599457071]
+avoidance_enabled = true
+debug_enabled = true
+debug_use_custom = true
