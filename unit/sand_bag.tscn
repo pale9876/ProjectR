@@ -1,13 +1,13 @@
-[gd_scene format=3 uid="uid://c5ewbb0454kjk"]
+[gd_scene format=3 uid="uid://bpojlualakpuu"]
 
-[ext_resource type="Script" uid="uid://bl84ixx4kubfe" path="res://unit/unit.gd" id="1_3k25b"]
-[ext_resource type="Resource" uid="uid://c8qn50dilibqs" path="res://unit/information/minion.tres" id="2_7oxhv"]
-[ext_resource type="Script" uid="uid://cpsg0ho6132tj" path="res://ai/tasks/set_act_state.gd" id="4_2ul3e"]
-[ext_resource type="Script" uid="uid://dnfln7i10n5lu" path="res://ai/tasks/move_to_random_pos.gd" id="5_a3q01"]
-[ext_resource type="Script" uid="uid://cdpmo1dhtm3s5" path="res://unit/hitbox.gd" id="5_s1ym6"]
-[ext_resource type="Script" uid="uid://dibqva5a64jvq" path="res://ai/tasks/patrol_wait.gd" id="6_4xbu7"]
-[ext_resource type="Script" uid="uid://dmj17w1hipj7o" path="res://ai/tasks/trace_target.gd" id="7_a2j7n"]
-[ext_resource type="Script" uid="uid://bupj3hlvtt67s" path="res://unit/hurtbox.gd" id="8_a3q01"]
+[ext_resource type="Script" uid="uid://bl84ixx4kubfe" path="res://unit/unit.gd" id="1_xr0ca"]
+[ext_resource type="Resource" uid="uid://c8qn50dilibqs" path="res://unit/information/minion.tres" id="2_c6cao"]
+[ext_resource type="Script" uid="uid://cpsg0ho6132tj" path="res://ai/tasks/set_act_state.gd" id="3_6c1mr"]
+[ext_resource type="Script" uid="uid://dnfln7i10n5lu" path="res://ai/tasks/move_to_random_pos.gd" id="4_f3vym"]
+[ext_resource type="Script" uid="uid://dibqva5a64jvq" path="res://ai/tasks/patrol_wait.gd" id="5_toejp"]
+[ext_resource type="Script" uid="uid://dmj17w1hipj7o" path="res://ai/tasks/trace_target.gd" id="6_2clmh"]
+[ext_resource type="Script" uid="uid://cdpmo1dhtm3s5" path="res://unit/hitbox.gd" id="7_qh61c"]
+[ext_resource type="Script" uid="uid://bupj3hlvtt67s" path="res://unit/hurtbox.gd" id="8_k7l50"]
 
 [sub_resource type="Gradient" id="Gradient_2ul3e"]
 interpolation_mode = 1
@@ -38,7 +38,7 @@ var/act/hint = 0
 var/act/hint_string = ""
 
 [sub_resource type="BTAction" id="BTAction_a3q01"]
-script = ExtResource("4_2ul3e")
+script = ExtResource("3_6c1mr")
 
 [sub_resource type="BBVariant" id="BBVariant_4xbu7"]
 type = 4
@@ -53,13 +53,13 @@ value = SubResource("BBVariant_4xbu7")
 text = "순찰 중"
 
 [sub_resource type="BTAction" id="BTAction_4xbu7"]
-script = ExtResource("5_a3q01")
+script = ExtResource("4_f3vym")
 
 [sub_resource type="BTConsolePrint" id="BTConsolePrint_4xbu7"]
 text = "잠시 쉬는 중"
 
 [sub_resource type="BTWait" id="BTWait_a2j7n"]
-script = ExtResource("6_4xbu7")
+script = ExtResource("5_toejp")
 
 [sub_resource type="BTSequence" id="BTSequence_j0e0d"]
 custom_name = "IF :: Act is \"patrol\""
@@ -78,7 +78,7 @@ value = SubResource("BBVariant_a3q01")
 text = "타겟을 발견함."
 
 [sub_resource type="BTAction" id="BTAction_j0e0d"]
-script = ExtResource("7_a2j7n")
+script = ExtResource("6_2clmh")
 
 [sub_resource type="BTConsolePrint" id="BTConsolePrint_5dfwp"]
 text = "타겟이 인식반경에서 벗어남."
@@ -191,9 +191,9 @@ size = Vector2(72, 31)
 radius = 8.0
 height = 48.0
 
-[node name="Unit" type="CharacterBody2D" unique_id=2064536848]
-script = ExtResource("1_3k25b")
-information = ExtResource("2_7oxhv")
+[node name="SandBag" type="CharacterBody2D" unique_id=2064536848]
+script = ExtResource("1_xr0ca")
+information = ExtResource("2_c6cao")
 
 [node name="DropShadow" type="Sprite2D" parent="." unique_id=924943166]
 texture = SubResource("GradientTexture2D_wqsic")
@@ -216,7 +216,7 @@ libraries/ = SubResource("AnimationLibrary_japly")
 
 [node name="Hitbox" type="Area2D" parent="." unique_id=403300593]
 monitorable = false
-script = ExtResource("5_s1ym6")
+script = ExtResource("7_qh61c")
 
 [node name="CollisionShape2D" type="CollisionShape2D" parent="Hitbox" unique_id=1875140581]
 position = Vector2(38, -46.5)
@@ -225,7 +225,7 @@ debug_color = Color(0.93333334, 0.21568628, 0.16078432, 0.25490198)
 
 [node name="Hurbox" type="Area2D" parent="." unique_id=1792069261]
 monitoring = false
-script = ExtResource("8_a3q01")
+script = ExtResource("8_k7l50")
 
 [node name="CollisionShape2D" type="CollisionShape2D" parent="Hurbox" unique_id=296316886]
 position = Vector2(0, -24)

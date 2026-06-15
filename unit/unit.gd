@@ -7,12 +7,12 @@ const Player: Script = preload("uid://c2uxhumgng18h")
 
 
 @export var information: Information
+@export var bt: BTPlayer
 
 
 @onready var sprite: Sprite2D = $Sprite2D
 @onready var anim: AnimationPlayer = $AnimationPlayer
 @onready var agent: NavigationAgent2D = $NavigationAgent2D
-@onready var bt: BTPlayer = $BTPlayer
 
 
 var stat: Stat = Stat.new()

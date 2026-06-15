@@ -2,10 +2,13 @@
 .godot/
 /android/
 addons/limboai/bin/~liblimboai.windows.editor.x86_64.dll
+addons/ziva_agent
+.ziva/
 
 # Godot mono / .NET
 .mono/
 *.csproj.DotSettings.user
+bin/
 obj/
 
 # Builds / exports

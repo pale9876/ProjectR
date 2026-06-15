@@ -3,6 +3,7 @@
 [ext_resource type="Script" uid="uid://di5e7qxe7d0dj" path="res://ingame/map/start_map.gd" id="1_muwxp"]
 [ext_resource type="Texture2D" uid="uid://b4igoadpoph1h" path="res://aseprite/tilemap/lab.png" id="2_eun4c"]
 [ext_resource type="Texture2D" uid="uid://cue3j6hcdcy57" path="res://aseprite/tilemap/fireaxe.png" id="3_p2a57"]
+[ext_resource type="PackedScene" uid="uid://bpojlualakpuu" path="res://unit/sand_bag.tscn" id="4_oydke"]
 
 [sub_resource type="TileSetAtlasSource" id="TileSetAtlasSource_eun4c"]
 texture = ExtResource("2_eun4c")
@@ -242,3 +243,5 @@ polygon = PackedVector2Array(0, 0, 0, 264, 1152, 264, 1152, 0)
 
 [node name="StartSpawnPosition" type="Marker2D" parent="." unique_id=1159361734]
 position = Vector2(64, 264)
+
+[node name="Unit" parent="." unique_id=2064536848 instance=ExtResource("4_oydke")]
