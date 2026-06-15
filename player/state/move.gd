@@ -11,8 +11,7 @@ extends PlayerState
 func _update(delta: float) -> void:
 	var player := get_player()
 
-
-	if Input.is_action_just_pressed("jump"):
+	if Input.is_action_just_pressed(&"jump"):
 		player.velocity.y = -450.
 
 	if !is_on_floor():
@@ -23,6 +22,9 @@ func _update(delta: float) -> void:
 			get_hsm().change_active_state(jump_state)
 			return
 	
-	player.velocity.x = move_toward(player.velocity.x, player.input_state.direction.x * 350., 35.)
+	player.velocity.x = move_toward(
+		player.velocity.x, player.input_state.direction.x * 350., 35.
+	)
+	
 	move_and_slide()
 	

@@ -21,7 +21,7 @@ colors = PackedColorArray(0, 0, 0, 0.7411765, 1, 1, 1, 0)
 
 [sub_resource type="GradientTexture2D" id="GradientTexture2D_wqsic"]
 gradient = SubResource("Gradient_yw30f")
-width = 36
+width = 53
 height = 8
 fill = 1
 fill_from = Vector2(0.5, 0.5)
@@ -36,10 +36,142 @@ height = 64.0
 [sub_resource type="RectangleShape2D" id="RectangleShape2D_2ieo8"]
 size = Vector2(18, 56)
 
+[sub_resource type="Animation" id="Animation_boad6"]
+length = 0.001
+tracks/0/type = "value"
+tracks/0/imported = false
+tracks/0/enabled = true
+tracks/0/path = NodePath("CollisionShape2D:shape")
+tracks/0/interp = 1
+tracks/0/loop_wrap = true
+tracks/0/keys = {
+"times": PackedFloat32Array(0),
+"transitions": PackedFloat32Array(1),
+"update": 1,
+"values": [SubResource("CapsuleShape2D_2ieo8")]
+}
+tracks/1/type = "value"
+tracks/1/imported = false
+tracks/1/enabled = true
+tracks/1/path = NodePath("CollisionShape2D:position")
+tracks/1/interp = 1
+tracks/1/loop_wrap = true
+tracks/1/keys = {
+"times": PackedFloat32Array(0),
+"transitions": PackedFloat32Array(1),
+"update": 0,
+"values": [Vector2(0, -32)]
+}
+
+[sub_resource type="Animation" id="Animation_65viv"]
+resource_name = "idle"
+length = 0.16666834202576428
+step = 0.016666668
+tracks/0/type = "value"
+tracks/0/imported = false
+tracks/0/enabled = true
+tracks/0/path = NodePath("CollisionShape2D:shape")
+tracks/0/interp = 1
+tracks/0/loop_wrap = true
+tracks/0/keys = {
+"times": PackedFloat32Array(0),
+"transitions": PackedFloat32Array(1),
+"update": 1,
+"values": [SubResource("CapsuleShape2D_2ieo8")]
+}
+tracks/1/type = "value"
+tracks/1/imported = false
+tracks/1/enabled = true
+tracks/1/path = NodePath("CollisionShape2D:position")
+tracks/1/interp = 1
+tracks/1/loop_wrap = true
+tracks/1/keys = {
+"times": PackedFloat32Array(0),
+"transitions": PackedFloat32Array(1),
+"update": 0,
+"values": [Vector2(0, -32)]
+}
+
+[sub_resource type="RectangleShape2D" id="RectangleShape2D_32hag"]
+size = Vector2(54, 20)
+
+[sub_resource type="Animation" id="Animation_32hag"]
+resource_name = "slide"
+tracks/0/type = "value"
+tracks/0/imported = false
+tracks/0/enabled = true
+tracks/0/path = NodePath("CollisionShape2D:shape")
+tracks/0/interp = 1
+tracks/0/loop_wrap = true
+tracks/0/keys = {
+"times": PackedFloat32Array(0),
+"transitions": PackedFloat32Array(1),
+"update": 1,
+"values": [SubResource("RectangleShape2D_32hag")]
+}
+tracks/1/type = "value"
+tracks/1/imported = false
+tracks/1/enabled = true
+tracks/1/path = NodePath("CollisionShape2D:position")
+tracks/1/interp = 1
+tracks/1/loop_wrap = true
+tracks/1/keys = {
+"times": PackedFloat32Array(0),
+"transitions": PackedFloat32Array(1),
+"update": 0,
+"values": [Vector2(0, -10)]
+}
+
+[sub_resource type="AnimationLibrary" id="AnimationLibrary_boad6"]
+_data = {
+&"RESET": SubResource("Animation_boad6"),
+&"idle": SubResource("Animation_65viv"),
+&"slide": SubResource("Animation_32hag")
+}
+
 [sub_resource type="BlackboardPlan" id="BlackboardPlan_sweqy"]
 
+[sub_resource type="Animation" id="Animation_e7oew"]
+length = 0.001
+tracks/0/type = "value"
+tracks/0/imported = false
+tracks/0/enabled = true
+tracks/0/path = NodePath("../../Hurtbox/CollisionShape2D:shape")
+tracks/0/interp = 1
+tracks/0/loop_wrap = true
+tracks/0/keys = {
+"times": PackedFloat32Array(0),
+"transitions": PackedFloat32Array(1),
+"update": 1,
+"values": [SubResource("RectangleShape2D_2ieo8")]
+}
+
+[sub_resource type="Animation" id="Animation_tqiix"]
+resource_name = "idle"
+length = 0.2666700139079243
+loop_mode = 1
+step = 0.016666668
+tracks/0/type = "value"
+tracks/0/imported = false
+tracks/0/enabled = true
+tracks/0/path = NodePath("../../Hurtbox/CollisionShape2D:shape")
+tracks/0/interp = 1
+tracks/0/loop_wrap = true
+tracks/0/keys = {
+"times": PackedFloat32Array(0),
+"transitions": PackedFloat32Array(1),
+"update": 1,
+"values": [SubResource("RectangleShape2D_2ieo8")]
+}
+
+[sub_resource type="AnimationLibrary" id="AnimationLibrary_e7oew"]
+_data = {
+&"RESET": SubResource("Animation_e7oew"),
+&"idle": SubResource("Animation_tqiix")
+}
+
 [sub_resource type="RectangleShape2D" id="RectangleShape2D_boad6"]
-size = Vector2(59.5, 20)
+size = Vector2(45, 20)
 
 [sub_resource type="Resource" id="Resource_2ieo8"]
 script = ExtResource("11_ebec5")
@@ -60,12 +192,146 @@ size = Vector2(41, 33)
 script = ExtResource("11_ebec5")
 metadata/_custom_type_script = "uid://xw07ofvvtrxk"
 
-[sub_resource type="Animation" id="Animation_boad6"]
+[sub_resource type="Animation" id="Animation_c35mf"]
 length = 0.001
+tracks/0/type = "value"
+tracks/0/imported = false
+tracks/0/enabled = true
+tracks/0/path = NodePath("../../Hurtbox/CollisionShape2D:shape")
+tracks/0/interp = 1
+tracks/0/loop_wrap = true
+tracks/0/keys = {
+"times": PackedFloat32Array(0),
+"transitions": PackedFloat32Array(1),
+"update": 1,
+"values": [SubResource("RectangleShape2D_2ieo8")]
+}
+tracks/1/type = "value"
+tracks/1/imported = false
+tracks/1/enabled = true
+tracks/1/path = NodePath("PunchCombo/Left:visible")
+tracks/1/interp = 1
+tracks/1/loop_wrap = true
+tracks/1/keys = {
+"times": PackedFloat32Array(0),
+"transitions": PackedFloat32Array(1),
+"update": 1,
+"values": [false]
+}
+tracks/2/type = "value"
+tracks/2/imported = false
+tracks/2/enabled = true
+tracks/2/path = NodePath("PunchCombo/Left:disabled")
+tracks/2/interp = 1
+tracks/2/loop_wrap = true
+tracks/2/keys = {
+"times": PackedFloat32Array(0),
+"transitions": PackedFloat32Array(1),
+"update": 1,
+"values": [true]
+}
+tracks/3/type = "value"
+tracks/3/imported = false
+tracks/3/enabled = true
+tracks/3/path = NodePath("PunchCombo/Right:disabled")
+tracks/3/interp = 1
+tracks/3/loop_wrap = true
+tracks/3/keys = {
+"times": PackedFloat32Array(0),
+"transitions": PackedFloat32Array(1),
+"update": 1,
+"values": [true]
+}
+tracks/4/type = "value"
+tracks/4/imported = false
+tracks/4/enabled = true
+tracks/4/path = NodePath("PunchCombo/Right:visible")
+tracks/4/interp = 1
+tracks/4/loop_wrap = true
+tracks/4/keys = {
+"times": PackedFloat32Array(0),
+"transitions": PackedFloat32Array(1),
+"update": 1,
+"values": [true]
+}
 
-[sub_resource type="AnimationLibrary" id="AnimationLibrary_boad6"]
+[sub_resource type="Animation" id="Animation_yllr7"]
+resource_name = "hammer"
+
+[sub_resource type="Animation" id="Animation_kb6p2"]
+resource_name = "left_punch"
+length = 0.13333500695396214
+step = 0.016666668
+tracks/0/type = "value"
+tracks/0/imported = false
+tracks/0/enabled = true
+tracks/0/path = NodePath("../../Hurtbox/CollisionShape2D:shape")
+tracks/0/interp = 1
+tracks/0/loop_wrap = true
+tracks/0/keys = {
+"times": PackedFloat32Array(0),
+"transitions": PackedFloat32Array(1),
+"update": 1,
+"values": [SubResource("RectangleShape2D_2ieo8")]
+}
+tracks/1/type = "value"
+tracks/1/imported = false
+tracks/1/enabled = true
+tracks/1/path = NodePath("PunchCombo/Left:visible")
+tracks/1/interp = 1
+tracks/1/loop_wrap = true
+tracks/1/keys = {
+"times": PackedFloat32Array(0, 0.116666675),
+"transitions": PackedFloat32Array(1, 1),
+"update": 1,
+"values": [true, false]
+}
+tracks/2/type = "value"
+tracks/2/imported = false
+tracks/2/enabled = true
+tracks/2/path = NodePath("PunchCombo/Left:disabled")
+tracks/2/interp = 1
+tracks/2/loop_wrap = true
+tracks/2/keys = {
+"times": PackedFloat32Array(0, 0.06666667, 0.116666675),
+"transitions": PackedFloat32Array(1, 1, 1),
+"update": 1,
+"values": [true, false, true]
+}
+
+[sub_resource type="Animation" id="Animation_wodsf"]
+resource_name = "right_punch"
+tracks/0/type = "value"
+tracks/0/imported = false
+tracks/0/enabled = true
+tracks/0/path = NodePath("PunchCombo/Right:disabled")
+tracks/0/interp = 1
+tracks/0/loop_wrap = true
+tracks/0/keys = {
+"times": PackedFloat32Array(0),
+"transitions": PackedFloat32Array(1),
+"update": 1,
+"values": [true]
+}
+tracks/1/type = "value"
+tracks/1/imported = false
+tracks/1/enabled = true
+tracks/1/path = NodePath("PunchCombo/Right:visible")
+tracks/1/interp = 1
+tracks/1/loop_wrap = true
+tracks/1/keys = {
+"times": PackedFloat32Array(0),
+"transitions": PackedFloat32Array(1),
+"update": 1,
+"values": [false]
+}
+
+[sub_resource type="AnimationLibrary" id="AnimationLibrary_32hag"]
 _data = {
-&"RESET": SubResource("Animation_boad6")
+&"RESET": SubResource("Animation_c35mf"),
+&"hammer": SubResource("Animation_yllr7"),
+&"left_punch": SubResource("Animation_kb6p2"),
+&"right_punch": SubResource("Animation_wodsf")
 }
 
 [node name="Player" type="CharacterBody2D" unique_id=1697822384 node_paths=PackedStringArray("hsm")]
@@ -90,9 +356,16 @@ monitoring = false
 script = ExtResource("6_rgyib")
 
 [node name="CollisionShape2D" type="CollisionShape2D" parent="Hurtbox" unique_id=914198926]
-position = Vector2(0, -31)
+position = Vector2(0, -32)
 shape = SubResource("RectangleShape2D_2ieo8")
 debug_color = Color(0.7921569, 0.8, 0.07450981, 0.41960785)
+
+[node name="AnimationPlayer" type="AnimationPlayer" parent="." unique_id=1781161408]
+libraries/ = SubResource("AnimationLibrary_boad6")
+autoplay = &"idle"
+
+[node name="Camera2D" type="Camera2D" parent="." unique_id=1164297328]
+script = ExtResource("11_2ieo8")
 
 [node name="LimboHSM" type="LimboHSM" parent="." unique_id=2015169286 node_paths=PackedStringArray("label")]
 blackboard_plan = SubResource("BlackboardPlan_sweqy")
@@ -104,6 +377,9 @@ script = ExtResource("4_bvu1k")
 move_state = NodePath("../Move")
 fall_state = NodePath("../Fall")
 jump_state = NodePath("../Jump")
+
+[node name="AnimationPlayer" type="AnimationPlayer" parent="LimboHSM/Idle" unique_id=1075772747]
+libraries/ = SubResource("AnimationLibrary_e7oew")
 
 [node name="Move" type="LimboState" parent="LimboHSM" unique_id=1139494425 node_paths=PackedStringArray("idle_state", "fall_state", "jump_state")]
 script = ExtResource("5_40lky")
@@ -125,14 +401,22 @@ move_state = NodePath("../Move")
 [node name="Knockbacked" type="LimboState" parent="LimboHSM" unique_id=1854945453]
 script = ExtResource("11_yllr7")
 
-[node name="HighPunch" type="LimboState" parent="LimboHSM" unique_id=200341689]
+[node name="HighPunch" type="LimboState" parent="LimboHSM" unique_id=200341689 node_paths=PackedStringArray("anim", "hitbox_shape_lp", "hitbox_shape_rp", "hitbox_shape_hammer")]
 script = ExtResource("9_yllr7")
+anim = NodePath("../../AnimationPlayer")
+hitbox_shape_lp = NodePath("PunchCombo/Left")
+hitbox_shape_rp = NodePath("PunchCombo/Right")
+hitbox_shape_hammer = NodePath("PunchCombo/Hammer")
 
 [node name="PunchCombo" type="Area2D" parent="LimboHSM/HighPunch" unique_id=733181179]
+collision_layer = 0
+collision_mask = 2
+monitorable = false
 script = ExtResource("6_g6k8r")
 
 [node name="Left" type="CollisionShape2D" parent="LimboHSM/HighPunch/PunchCombo" unique_id=183607154]
-position = Vector2(20.25, -48)
+visible = false
+position = Vector2(27.5, -48)
 shape = SubResource("RectangleShape2D_boad6")
 disabled = true
 script = ExtResource("7_boad6")
@@ -156,15 +440,12 @@ hitbox_info = SubResource("Resource_kb6p2")
 metadata/_custom_type_script = "uid://d2ox33o3w3u0r"
 
 [node name="AnimationPlayer" type="AnimationPlayer" parent="LimboHSM/HighPunch" unique_id=1553393577]
+libraries/ = SubResource("AnimationLibrary_32hag")
+
+[node name="Slide" type="LimboState" parent="LimboHSM" unique_id=722206040]
 
 [node name="Label" type="Label" parent="." unique_id=1166794144]
 offset_left = -29.0
 offset_top = -91.0
 offset_right = 29.0
 offset_bottom = -68.0
-
-[node name="AnimationPlayer" type="AnimationPlayer" parent="." unique_id=1781161408]
-libraries/ = SubResource("AnimationLibrary_boad6")
-
-[node name="Camera2D" type="Camera2D" parent="." unique_id=1164297328]
-script = ExtResource("11_2ieo8")

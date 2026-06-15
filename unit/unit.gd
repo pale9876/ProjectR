@@ -1,4 +1,5 @@
 extends CharacterBody2D
+class_name Unit
 
 
 # Import
@@ -12,10 +13,11 @@ const Player: Script = preload("uid://c2uxhumgng18h")
 
 @onready var sprite: Sprite2D = $Sprite2D
 @onready var anim: AnimationPlayer = $AnimationPlayer
-@onready var agent: NavigationAgent2D = $NavigationAgent2D
+#@onready var agent: NavigationAgent2D = $NavigationAgent2D
 
 
 var stat: Stat = Stat.new()
+var state: State = State.new()
 
 
 func _enter_tree() -> void:
@@ -38,9 +40,9 @@ func _resume() -> void:
 	set_physics_process(false)
 
 
-func _ready() -> void:
-	agent.navigation_finished.connect(_agent_navigation_finished)
-	agent.velocity_computed.connect(_agent_velocity_computed)
+#func _ready() -> void:
+	#agent.navigation_finished.connect(_agent_navigation_finished)
+	#agent.velocity_computed.connect(_agent_velocity_computed)
 
 
 func _agent_velocity_computed(_safe: Vector2) -> void:
@@ -66,3 +68,8 @@ class Stat:
 	var max_hp: int
 	var hp: int
 	var speed: float
+
+
+class State:
+	var face: Vector2
+	var motion_direction: Vector2

@@ -1,14 +1,21 @@
 # player/hitbox.gd
 extends Area2D
+class_name PlayerHitbox
 
 
 # Import
 const UnitHurtbox: Script = preload("uid://bupj3hlvtt67s")
-const Unit: Script = preload("uid://bl84ixx4kubfe")
 
 
 func _init() -> void:
 	visible = false
+	monitorable = false
+	monitoring = true
+	
+	set_collision_layer_value(1, false)
+	set_collision_mask_value(1, false)
+	
+	set_collision_mask_value(2, true)
 
 
 func _enter_tree() -> void:

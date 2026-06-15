@@ -25,4 +25,5 @@ func _update(_delta: float) -> void:
 	
 	
 	player.velocity.x = move_toward(player.velocity.x, 0., 25.)
+	print(player.velocity.x)
 	move_and_slide()

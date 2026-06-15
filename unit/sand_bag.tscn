@@ -6,7 +6,6 @@
 [ext_resource type="Script" uid="uid://dnfln7i10n5lu" path="res://ai/tasks/move_to_random_pos.gd" id="4_f3vym"]
 [ext_resource type="Script" uid="uid://dibqva5a64jvq" path="res://ai/tasks/patrol_wait.gd" id="5_toejp"]
 [ext_resource type="Script" uid="uid://dmj17w1hipj7o" path="res://ai/tasks/trace_target.gd" id="6_2clmh"]
-[ext_resource type="Script" uid="uid://cdpmo1dhtm3s5" path="res://unit/hitbox.gd" id="7_qh61c"]
 [ext_resource type="Script" uid="uid://bupj3hlvtt67s" path="res://unit/hurtbox.gd" id="8_k7l50"]
 
 [sub_resource type="Gradient" id="Gradient_2ul3e"]
@@ -84,6 +83,7 @@ script = ExtResource("6_2clmh")
 text = "타겟이 인식반경에서 벗어남."
 
 [sub_resource type="BTSequence" id="BTSequence_a2j7n"]
+custom_name = "IF:: Act is \"Trace\""
 children = [SubResource("BTCheckVar_4xbu7"), SubResource("BTConsolePrint_j0e0d"), SubResource("BTAction_j0e0d"), SubResource("BTConsolePrint_5dfwp")]
 
 [sub_resource type="BTSelector" id="BTSelector_5dfwp"]
@@ -184,9 +184,6 @@ _data = {
 &"move": SubResource("Animation_7oxhv")
 }
 
-[sub_resource type="RectangleShape2D" id="RectangleShape2D_a3q01"]
-size = Vector2(72, 31)
-
 [sub_resource type="CapsuleShape2D" id="CapsuleShape2D_2ul3e"]
 radius = 8.0
 height = 48.0
@@ -213,15 +210,6 @@ blackboard_plan = SubResource("BlackboardPlan_ak6ua")
 
 [node name="AnimationPlayer" type="AnimationPlayer" parent="." unique_id=1250304981]
 libraries/ = SubResource("AnimationLibrary_japly")
-
-[node name="Hitbox" type="Area2D" parent="." unique_id=403300593]
-monitorable = false
-script = ExtResource("7_qh61c")
-
-[node name="CollisionShape2D" type="CollisionShape2D" parent="Hitbox" unique_id=1875140581]
-position = Vector2(38, -46.5)
-shape = SubResource("RectangleShape2D_a3q01")
-debug_color = Color(0.93333334, 0.21568628, 0.16078432, 0.25490198)
 
 [node name="Hurbox" type="Area2D" parent="." unique_id=1792069261]
 monitoring = false

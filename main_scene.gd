@@ -60,6 +60,7 @@ func on_start() -> void:
 	ingame.add_child(start_map)
 	start_map.add_child(Global.player)
 	Global.player.global_position = start_map.start_spawn_position.global_position
+	Global.player.input_state.unlock()
 	
 	is_in_game = true
 

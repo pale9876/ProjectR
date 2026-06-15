@@ -2,16 +2,12 @@
 extends CharacterBody2D
 
 
-
-
-
 @export var info: PlayerInformation
 @export var hsm: LimboHSM
 @export var z_value: float = 0.
 
-var prefix: StringName = &"_down"
-var action: StringName = &"idle"
 
+var prefix: StringName = &"_down"
 
 var input_state: InputState = InputState.new()
 var stat: Stat = Stat.new()
@@ -84,7 +80,6 @@ func _resume() -> void:
 	input_state.unlock()
 
 class Stat:
-	
 	signal damaged()
 	signal dead()
 	
@@ -94,12 +89,6 @@ class Stat:
 	var max_hp: int
 	var speed: float
 	var position: Vector2
-
-	func _update() -> void:
-		if Global.data != null:
-			Global.data["name"] = name
-			Global.data["speed"] = speed
-			Global.data["position"] = position
 
 
 class State:
