@@ -18,7 +18,9 @@ var postpone: int = 4
 var _just: int = 3
 var _pressed: bool = false
 
+
 @onready var anim: AnimationPlayer = $AnimationPlayer
+
 
 func _enter() -> void:
 	anim.play(&"left_punch")
