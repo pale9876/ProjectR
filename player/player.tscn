@@ -13,6 +13,7 @@
 [ext_resource type="Script" uid="uid://b7phyhue4y3yg" path="res://player/player_camera.gd" id="11_2ieo8"]
 [ext_resource type="Script" uid="uid://xw07ofvvtrxk" path="res://hitbox_info.gd" id="11_ebec5"]
 [ext_resource type="Script" uid="uid://brl8ronpyxa3h" path="res://player/knockbacked.gd" id="11_yllr7"]
+[ext_resource type="Script" uid="uid://c2pn8aieo5n42" path="res://player/slide.gd" id="14_kb6p2"]
 
 [sub_resource type="Gradient" id="Gradient_yw30f"]
 interpolation_mode = 1
@@ -254,9 +255,73 @@ tracks/4/keys = {
 "update": 1,
 "values": [true]
 }
+tracks/5/type = "value"
+tracks/5/imported = false
+tracks/5/enabled = true
+tracks/5/path = NodePath("PunchCombo/Hammer:disabled")
+tracks/5/interp = 1
+tracks/5/loop_wrap = true
+tracks/5/keys = {
+"times": PackedFloat32Array(0),
+"transitions": PackedFloat32Array(1),
+"update": 1,
+"values": [true]
+}
+tracks/6/type = "value"
+tracks/6/imported = false
+tracks/6/enabled = true
+tracks/6/path = NodePath("PunchCombo/Hammer:visible")
+tracks/6/interp = 1
+tracks/6/loop_wrap = true
+tracks/6/keys = {
+"times": PackedFloat32Array(0),
+"transitions": PackedFloat32Array(1),
+"update": 1,
+"values": [true]
+}
+tracks/7/type = "value"
+tracks/7/imported = false
+tracks/7/enabled = true
+tracks/7/path = NodePath(".:just_frame")
+tracks/7/interp = 1
+tracks/7/loop_wrap = true
+tracks/7/keys = {
+"times": PackedFloat32Array(0),
+"transitions": PackedFloat32Array(1),
+"update": 1,
+"values": [false]
+}
 
 [sub_resource type="Animation" id="Animation_yllr7"]
 resource_name = "hammer"
+length = 0.40000335419513283
+tracks/0/type = "value"
+tracks/0/imported = false
+tracks/0/enabled = true
+tracks/0/path = NodePath("PunchCombo/Hammer:disabled")
+tracks/0/interp = 1
+tracks/0/loop_wrap = true
+tracks/0/keys = {
+"times": PackedFloat32Array(0, 0.23333335, 0.33333334),
+"transitions": PackedFloat32Array(1, 1, 1),
+"update": 1,
+"values": [true, false, true]
+}
+tracks/1/type = "value"
+tracks/1/imported = false
+tracks/1/enabled = true
+tracks/1/path = NodePath("PunchCombo/Hammer:visible")
+tracks/1/interp = 1
+tracks/1/loop_wrap = true
+tracks/1/keys = {
+"times": PackedFloat32Array(0, 0.40000004),
+"transitions": PackedFloat32Array(1, 1),
+"update": 1,
+"values": [true, false]
+}
+
+[sub_resource type="Animation" id="Animation_x7c3f"]
+resource_name = "hammer_explosion"
 
 [sub_resource type="Animation" id="Animation_kb6p2"]
 resource_name = "left_punch"
@@ -301,6 +366,7 @@ tracks/2/keys = {
 
 [sub_resource type="Animation" id="Animation_wodsf"]
 resource_name = "right_punch"
+length = 0.3666700191233307
 tracks/0/type = "value"
 tracks/0/imported = false
 tracks/0/enabled = true
@@ -308,10 +374,10 @@ tracks/0/path = NodePath("PunchCombo/Right:disabled")
 tracks/0/interp = 1
 tracks/0/loop_wrap = true
 tracks/0/keys = {
-"times": PackedFloat32Array(0),
-"transitions": PackedFloat32Array(1),
+"times": PackedFloat32Array(0, 0.16666667, 0.26666668),
+"transitions": PackedFloat32Array(1, 1, 1),
 "update": 1,
-"values": [true]
+"values": [true, false, true]
 }
 tracks/1/type = "value"
 tracks/1/imported = false
@@ -320,18 +386,72 @@ tracks/1/path = NodePath("PunchCombo/Right:visible")
 tracks/1/interp = 1
 tracks/1/loop_wrap = true
 tracks/1/keys = {
-"times": PackedFloat32Array(0),
-"transitions": PackedFloat32Array(1),
+"times": PackedFloat32Array(0, 0.36666667),
+"transitions": PackedFloat32Array(1, 1),
 "update": 1,
-"values": [false]
+"values": [true, false]
+}
+tracks/2/type = "value"
+tracks/2/imported = false
+tracks/2/enabled = true
+tracks/2/path = NodePath(".:just_frame")
+tracks/2/interp = 1
+tracks/2/loop_wrap = true
+tracks/2/keys = {
+"times": PackedFloat32Array(0, 0.2, 0.3),
+"transitions": PackedFloat32Array(1, 1, 1),
+"update": 1,
+"values": [false, true, false]
 }
 
 [sub_resource type="AnimationLibrary" id="AnimationLibrary_32hag"]
 _data = {
 &"RESET": SubResource("Animation_c35mf"),
 &"hammer": SubResource("Animation_yllr7"),
+&"hammer_explosion": SubResource("Animation_x7c3f"),
 &"left_punch": SubResource("Animation_kb6p2"),
 &"right_punch": SubResource("Animation_wodsf")
+}
+
+[sub_resource type="RectangleShape2D" id="RectangleShape2D_wodsf"]
+size = Vector2(59, 20)
+
+[sub_resource type="Animation" id="Animation_s7qer"]
+length = 0.001
+tracks/0/type = "value"
+tracks/0/imported = false
+tracks/0/enabled = true
+tracks/0/path = NodePath("PlayerHitbox/HitboxShape:disabled")
+tracks/0/interp = 1
+tracks/0/loop_wrap = true
+tracks/0/keys = {
+"times": PackedFloat32Array(0),
+"transitions": PackedFloat32Array(1),
+"update": 1,
+"values": [true]
+}
+
+[sub_resource type="Animation" id="Animation_bjvpn"]
+resource_name = "slide"
+length = 0.25000167970526965
+step = 0.016666668
+tracks/0/type = "value"
+tracks/0/imported = false
+tracks/0/enabled = true
+tracks/0/path = NodePath("PlayerHitbox/HitboxShape:disabled")
+tracks/0/interp = 1
+tracks/0/loop_wrap = true
+tracks/0/keys = {
+"times": PackedFloat32Array(0, 0.033333335, 0.083333336),
+"transitions": PackedFloat32Array(1, 1, 1),
+"update": 1,
+"values": [true, false, true]
+}
+
+[sub_resource type="AnimationLibrary" id="AnimationLibrary_s7qer"]
+_data = {
+&"RESET": SubResource("Animation_s7qer"),
+&"slide": SubResource("Animation_bjvpn")
 }
 
 [node name="Player" type="CharacterBody2D" unique_id=1697822384 node_paths=PackedStringArray("hsm")]
@@ -401,20 +521,16 @@ move_state = NodePath("../Move")
 [node name="Knockbacked" type="LimboState" parent="LimboHSM" unique_id=1854945453]
 script = ExtResource("11_yllr7")
 
-[node name="HighPunch" type="LimboState" parent="LimboHSM" unique_id=200341689 node_paths=PackedStringArray("anim", "hitbox_shape_lp", "hitbox_shape_rp", "hitbox_shape_hammer")]
+[node name="HighPunchCombo" type="LimboState" parent="LimboHSM" unique_id=200341689]
 script = ExtResource("9_yllr7")
-anim = NodePath("../../AnimationPlayer")
-hitbox_shape_lp = NodePath("PunchCombo/Left")
-hitbox_shape_rp = NodePath("PunchCombo/Right")
-hitbox_shape_hammer = NodePath("PunchCombo/Hammer")
 
-[node name="PunchCombo" type="Area2D" parent="LimboHSM/HighPunch" unique_id=733181179]
+[node name="PunchCombo" type="Area2D" parent="LimboHSM/HighPunchCombo" unique_id=733181179]
 collision_layer = 0
 collision_mask = 2
 monitorable = false
 script = ExtResource("6_g6k8r")
 
-[node name="Left" type="CollisionShape2D" parent="LimboHSM/HighPunch/PunchCombo" unique_id=183607154]
+[node name="Left" type="CollisionShape2D" parent="LimboHSM/HighPunchCombo/PunchCombo" unique_id=183607154]
 visible = false
 position = Vector2(27.5, -48)
 shape = SubResource("RectangleShape2D_boad6")
@@ -423,7 +539,7 @@ script = ExtResource("7_boad6")
 hitbox_info = SubResource("Resource_2ieo8")
 metadata/_custom_type_script = "uid://d2ox33o3w3u0r"
 
-[node name="Right" type="CollisionShape2D" parent="LimboHSM/HighPunch/PunchCombo" unique_id=1013508832]
+[node name="Right" type="CollisionShape2D" parent="LimboHSM/HighPunchCombo/PunchCombo" unique_id=1013508832]
 position = Vector2(20, -48)
 shape = SubResource("RectangleShape2D_yllr7")
 disabled = true
@@ -431,7 +547,7 @@ script = ExtResource("7_boad6")
 hitbox_info = SubResource("Resource_yllr7")
 metadata/_custom_type_script = "uid://d2ox33o3w3u0r"
 
-[node name="Hammer" type="CollisionShape2D" parent="LimboHSM/HighPunch/PunchCombo" unique_id=148303365]
+[node name="Hammer" type="CollisionShape2D" parent="LimboHSM/HighPunchCombo/PunchCombo" unique_id=148303365]
 position = Vector2(20.5, -46.5)
 shape = SubResource("RectangleShape2D_kb6p2")
 disabled = true
@@ -439,10 +555,25 @@ script = ExtResource("7_boad6")
 hitbox_info = SubResource("Resource_kb6p2")
 metadata/_custom_type_script = "uid://d2ox33o3w3u0r"
 
-[node name="AnimationPlayer" type="AnimationPlayer" parent="LimboHSM/HighPunch" unique_id=1553393577]
+[node name="AnimationPlayer" type="AnimationPlayer" parent="LimboHSM/HighPunchCombo" unique_id=1553393577]
 libraries/ = SubResource("AnimationLibrary_32hag")
 
 [node name="Slide" type="LimboState" parent="LimboHSM" unique_id=722206040]
+script = ExtResource("14_kb6p2")
+
+[node name="PlayerHitbox" type="Area2D" parent="LimboHSM/Slide" unique_id=846885858]
+script = ExtResource("6_g6k8r")
+metadata/_custom_type_script = "uid://0dw4edo0eshv"
+
+[node name="HitboxShape" type="CollisionShape2D" parent="LimboHSM/Slide/PlayerHitbox" unique_id=1849930391]
+position = Vector2(19.5, -10)
+shape = SubResource("RectangleShape2D_wodsf")
+disabled = true
+script = ExtResource("7_boad6")
+metadata/_custom_type_script = "uid://d2ox33o3w3u0r"
+
+[node name="AnimationPlayer" type="AnimationPlayer" parent="LimboHSM/Slide" unique_id=532858250]
+libraries/ = SubResource("AnimationLibrary_s7qer")
 
 [node name="Label" type="Label" parent="." unique_id=1166794144]
 offset_left = -29.0

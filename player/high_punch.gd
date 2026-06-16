@@ -8,11 +8,7 @@ enum {
 }
 
 
-@export var anim: AnimationPlayer
-
-@export var hitbox_shape_lp: HitboxShape
-@export var hitbox_shape_rp: HitboxShape
-@export var hitbox_shape_hammer: HitboxShape
+@export var just_frame: bool = false
 
 @onready var punch_combo_hitbox: PlayerHitbox = $PunchCombo
 
@@ -20,16 +16,23 @@ enum {
 var state: int = LEFT
 var postpone: int = 4
 var _just: int = 3
+var _pressed: bool = false
 
-
+@onready var anim: AnimationPlayer = $AnimationPlayer
 
 func _enter() -> void:
-	pass
+	anim.play(&"left_punch")
 
 
 
 func _update(delta: float) -> void:
-	pass
+	if Input.is_action_just_pressed(&"attack"):
+		pass
+	
+	
+	postpone -= 1
+	_just -= 1
+
 
 
 func _exit() -> void:

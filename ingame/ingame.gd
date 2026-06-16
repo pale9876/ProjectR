@@ -6,5 +6,5 @@ extends CanvasLayer
 
 
 func _init() -> void:
-	process_mode = Node.PROCESS_MODE_PAUSABLE
+	process_mode = Node.PROCESS_MODE_INHERIT
 	follow_viewport_enabled = true

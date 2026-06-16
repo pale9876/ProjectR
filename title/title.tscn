@@ -13,6 +13,14 @@ anchor_bottom = 1.0
 grow_horizontal = 2
 grow_vertical = 2
 
+[node name="TitleScreen" type="TextureRect" parent="Control" unique_id=708332907]
+layout_mode = 1
+anchors_preset = 15
+anchor_right = 1.0
+anchor_bottom = 1.0
+grow_horizontal = 2
+grow_vertical = 2
+
 [node name="HBoxContainer" type="HBoxContainer" parent="Control" unique_id=1138622615]
 layout_mode = 1
 anchors_preset = 15
@@ -23,7 +31,7 @@ grow_vertical = 2
 
 [node name="MarginContainer2" type="MarginContainer" parent="Control/HBoxContainer" unique_id=1982981467]
 layout_mode = 2
-theme_override_constants/margin_left = 10
+theme_override_constants/margin_left = 50
 theme_override_constants/margin_top = 10
 theme_override_constants/margin_right = 10
 theme_override_constants/margin_bottom = 10
@@ -49,16 +57,26 @@ unique_name_in_owner = true
 layout_mode = 2
 text = "Option"
 
-[node name="MarginContainer" type="MarginContainer" parent="Control/HBoxContainer" unique_id=422328106]
+[node name="MarginContainer3" type="MarginContainer" parent="Control/HBoxContainer" unique_id=617814466]
+layout_mode = 2
+size_flags_horizontal = 3
+theme_override_constants/margin_left = 10
+theme_override_constants/margin_top = 10
+theme_override_constants/margin_right = 10
+theme_override_constants/margin_bottom = 10
+
+[node name="MarginContainer" type="MarginContainer" parent="Control/HBoxContainer/MarginContainer3" unique_id=422328106]
 layout_mode = 2
 size_flags_horizontal = 6
 size_flags_vertical = 4
 
-[node name="CenterContainer" type="CenterContainer" parent="Control/HBoxContainer/MarginContainer" unique_id=1007073550]
+[node name="CenterContainer" type="CenterContainer" parent="Control/HBoxContainer/MarginContainer3/MarginContainer" unique_id=1007073550]
 layout_mode = 2
 size_flags_horizontal = 2
 size_flags_vertical = 0
 
-[node name="Title" type="Label" parent="Control/HBoxContainer/MarginContainer/CenterContainer" unique_id=968861072]
+[node name="Title" type="Label" parent="Control/HBoxContainer/MarginContainer3/MarginContainer/CenterContainer" unique_id=968861072]
 layout_mode = 2
 text = "Anti-Apocalypse Strategy Organization"
+
+[node name="AnimationPlayer" type="AnimationPlayer" parent="." unique_id=597338014]

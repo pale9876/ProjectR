@@ -9,7 +9,7 @@ func _update(delta: float) -> void:
 	var player := get_player()
 	
 	if is_on_floor():
-		if player.velocity.x != 0.:
+		if player.input_state.direction.x != 0.:
 			get_hsm().change_active_state(move_state)
 		else:
 			get_hsm().change_active_state(idle_state)

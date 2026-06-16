@@ -14,16 +14,13 @@ func _update(_delta: float) -> void:
 		player.velocity.y = -450.
 
 	if !is_on_floor():
-		if player.velocity.y > 0.:
+		if player.velocity.y >= 0.:
 			get_hsm().change_active_state(fall_state)
 		elif player.velocity.y < 0.:
 			get_hsm().change_active_state(jump_state)
-		return
 	
 	if player.input_state.direction.x != 0.:
 		get_hsm().change_active_state(move_state)
 	
-	
 	player.velocity.x = move_toward(player.velocity.x, 0., 25.)
-	print(player.velocity.x)
 	move_and_slide()

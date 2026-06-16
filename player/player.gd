@@ -112,9 +112,15 @@ class InputState:
 	var order_duration: float = - 1.
 	var _duration: float = 0.
 	var _lock: bool = false
+	var input_map: Dictionary[PackedStringArray, LimboState] = {}
 
 	func lock() -> void:
 		_lock = true
 	
 	func unlock() -> void:
 		_lock = false
+	
+	func has_key(key: PackedStringArray) -> bool:
+		if input_map.has(key):
+			return true
+		return false
