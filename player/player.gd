@@ -24,6 +24,15 @@ func _init() -> void:
 	set_collision_mask_value(1, true)
 	set_collision_layer_value(1, false)
 
+	state.face_changed.connect(_on_face_changed)
+
+
+func _on_face_changed() -> void:
+	if state.face.x > 0.:
+		sprite.flip_h = false
+	elif state.face.x < 0.:
+		sprite.flip_h = true
+
 
 func _enter_tree() -> void:
 	GSignal.soft_pause.connect(_soft_pause)
@@ -66,6 +75,7 @@ func _process(delta: float) -> void:
 
 func _physics_process(_delta: float) -> void:
 	input_state.direction = Input.get_vector("left", "right", "up", "down")
+	
 
 
 func _soft_pause() -> void:
@@ -93,15 +103,14 @@ class Stat:
 
 
 class State:
+	signal face_changed()
+	
 	var face: Vector2i = Vector2i.DOWN:
 		set(value):
 			if value != face:
 				face = value
-				if !on_face_changed.is_empty():
-					for fn: Callable in on_face_changed:
-						fn.call()
+				face_changed.emit()
 	var mouse_direction: Vector2 = Vector2()
-	var on_face_changed: Array[Callable]
 
 
 class InputState:
@@ -113,9 +122,6 @@ class InputState:
 	var order_duration: float = - 1.
 	var _duration: float = 0.
 	var _lock: bool = false
-
-
-
 
 	func lock() -> void:
 		_lock = true

@@ -13,6 +13,12 @@ var slide_trigger: SkillTrigger = SkillTrigger.new(
 )
 
 
+func _enter() -> void:
+	var player := get_player()
+	player.sprite.play(&"move")
+	player.state.face = player.input_state.direction
+
+
 func _update(_delta: float) -> void:
 	var player := get_player()
 

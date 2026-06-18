@@ -1,0 +1,11 @@
+[gd_scene format=3 uid="uid://mg7nnnpa6oq"]
+
+[ext_resource type="Script" uid="uid://c0ixj3od16m8q" path="res://gyro_demo.gd" id="1_lbgkv"]
+
+[node name="GyroDemo" type="Node3D" unique_id=163723038]
+script = ExtResource("1_lbgkv")
+
+[node name="CSGBox3D" type="CSGBox3D" parent="." unique_id=706514474]
+
+[node name="Camera3D" type="Camera3D" parent="." unique_id=273563660]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, 0, 2.1301148)

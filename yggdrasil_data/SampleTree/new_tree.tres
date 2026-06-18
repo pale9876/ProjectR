@@ -1,0 +1,27 @@
+[gd_resource type="Resource" script_class="YggdrasilTree" format=3 uid="uid://byia6mx7nm8ew"]
+
+[ext_resource type="Script" uid="uid://e7tfsgtpbob6" path="res://addons/yggdrasil/scripts/resources/yggdrasil_tree.gd" id="1_vdjcr"]
+
+[resource]
+script = ExtResource("1_vdjcr")
+id = "new_tree"
+name = "New Tree"
+icon_sizes = {
+0: Vector2(0, 0),
+1: Vector2(0, 0),
+2: Vector2(0, 0)
+}
+icons = {
+0: null,
+1: null,
+2: null
+}
+node_size = {
+0: Vector2(27, 27),
+1: Vector2(48, 48),
+2: Vector2(64, 64)
+}
+nodes = []
+decorations = []
+prefabs = {}
+attributes = {}

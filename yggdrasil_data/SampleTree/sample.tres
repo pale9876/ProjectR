@@ -1,0 +1,41 @@
+[gd_resource type="Resource" script_class="YggdrasilTree" format=3 uid="uid://7o2hyqpu1jsn"]
+
+[ext_resource type="Texture2D" uid="uid://do1occ54m41fj" path="res://addons/yggdrasil/blank_icon.png" id="1_682q6"]
+[ext_resource type="Script" uid="uid://e7tfsgtpbob6" path="res://addons/yggdrasil/scripts/resources/yggdrasil_tree.gd" id="1_bdw68"]
+[ext_resource type="Script" uid="uid://dsrk0byl742tb" path="res://addons/yggdrasil/scripts/resources/yggdrasil_node.gd" id="2_cl78k"]
+
+[sub_resource type="Resource" id="Resource_j5mxw"]
+script = ExtResource("2_cl78k")
+id = 1
+type = 3
+icon = ExtResource("1_682q6")
+position = Vector2(-457, -193)
+line_data = {}
+out_nodes = []
+in_nodes = []
+attributes = {}
+
+[resource]
+script = ExtResource("1_bdw68")
+id = "sample"
+name = "sample"
+id_counter = 1
+icon_sizes = {
+0: Vector2(0, 0),
+1: Vector2(0, 0),
+2: Vector2(0, 0)
+}
+icons = {
+0: null,
+1: null,
+2: null
+}
+node_size = {
+0: Vector2(27, 27),
+1: Vector2(48, 48),
+2: Vector2(64, 64)
+}
+nodes = []
+decorations = [SubResource("Resource_j5mxw")]
+prefabs = {}
+attributes = {}

@@ -1,0 +1,8 @@
+[gd_resource type="Resource" script_class="YggdrasilRegistry" format=3 uid="uid://c5g7ph38pwtx0"]
+
+[ext_resource type="Script" uid="uid://bt8qpikafu7xg" path="res://addons/yggdrasil/scripts/resources/yggdrasil_group.gd" id="1_tvxfb"]
+[ext_resource type="Script" uid="uid://f8j2ty6n8q1d" path="res://addons/yggdrasil/scripts/resources/yggdrasil_registry.gd" id="2_6bk50"]
+[ext_resource type="Resource" uid="uid://dh6rw5wqx7hg7" path="res://yggdrasil_data/SampleTree/sample_tree.tres" id="2_h20lc"]
+
+[resource]
+script = ExtResource("2_6bk50")
