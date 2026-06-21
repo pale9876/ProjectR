@@ -41,7 +41,6 @@ func _ready() -> void:
 func _enter() -> void:
 	var player := get_player()
 	
-	get_player().sprite.play(&"left_punch")
 	anim.play(&"left_punch")
 	_postpone = anim_postpone
 	punch_combo_hitbox.scale.x = player.state.face.x
@@ -56,7 +55,6 @@ func _update(_delta: float) -> void:
 			if Input.is_action_just_pressed(&"attack"):
 				_pressed = true
 				anim.play(&"right_punch")
-				get_player().sprite.play(&"right_punch")
 				state = RIGHT
 				_anim_finished = false
 		RIGHT:
