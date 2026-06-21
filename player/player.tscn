@@ -9,18 +9,17 @@
 [ext_resource type="Script" uid="uid://c4q85mvv6k6wb" path="res://player/state/move.gd" id="5_40lky"]
 [ext_resource type="Texture2D" uid="uid://b7pw6wh1f50rn" path="res://aseprite/asso_project/sample_motions/move.png" id="5_s7qer"]
 [ext_resource type="Texture2D" uid="uid://86ayd8qtfevk" path="res://aseprite/asso_project/sample_motions/right_punch.png" id="6_g4c7l"]
-[ext_resource type="Script" uid="uid://0dw4edo0eshv" path="res://player/hitbox.gd" id="6_g6k8r"]
 [ext_resource type="Script" uid="uid://er84buu2gymf" path="res://player/hurtbox.gd" id="6_rgyib"]
 [ext_resource type="Script" uid="uid://d376evb3whf7e" path="res://player/fall.gd" id="6_yllr7"]
-[ext_resource type="Script" uid="uid://d2ox33o3w3u0r" path="res://unit/hitbox_shape.gd" id="7_boad6"]
 [ext_resource type="Script" uid="uid://bsrhpk5urdhab" path="res://player/high_punch.gd" id="9_yllr7"]
 [ext_resource type="Script" uid="uid://tmgum3lt28ad" path="res://player/state/jump.gd" id="10_8t03j"]
 [ext_resource type="Script" uid="uid://b7phyhue4y3yg" path="res://player/player_camera.gd" id="11_2ieo8"]
-[ext_resource type="Script" uid="uid://xw07ofvvtrxk" path="res://hitbox_info.gd" id="11_ebec5"]
 [ext_resource type="Script" uid="uid://brl8ronpyxa3h" path="res://player/knockbacked.gd" id="11_yllr7"]
 [ext_resource type="Script" uid="uid://c2pn8aieo5n42" path="res://player/slide.gd" id="14_kb6p2"]
 [ext_resource type="Script" uid="uid://bv4sobgleq2ba" path="res://player/guard.gd" id="15_32hag"]
 [ext_resource type="Script" uid="uid://b055wwf4d617f" path="res://player/counter_attack.gd" id="16_32hag"]
+[ext_resource type="PackedScene" uid="uid://c2lkd08i0bolj" path="res://hitboxes/punch_combo.tscn" id="19_65viv"]
+[ext_resource type="PackedScene" uid="uid://bb8kauq734h10" path="res://hitboxes/slide_hitbox.tscn" id="20_x7c3f"]
 
 [sub_resource type="Gradient" id="Gradient_yw30f"]
 interpolation_mode = 1
@@ -93,6 +92,11 @@ region = Rect2(128, 0, 128, 128)
 
 [sub_resource type="SpriteFrames" id="SpriteFrames_qgg7p"]
 animations = [{
+"frames": [],
+"loop": 1,
+"name": &"fall",
+"speed": 5.0
+}, {
 "frames": [{
 "duration": 1.0,
 "texture": SubResource("AtlasTexture_knn7v")
@@ -113,6 +117,11 @@ animations = [{
 }],
 "loop": 1,
 "name": &"idle",
+"speed": 5.0
+}, {
+"frames": [],
+"loop": 1,
+"name": &"jump",
 "speed": 5.0
 }, {
 "frames": [{
@@ -601,45 +610,61 @@ _data = {
 &"slide": SubResource("Animation_bjvpn")
 }
 
+[sub_resource type="Animation" id="Animation_7pqkx"]
+length = 0.001
+tracks/0/type = "value"
+tracks/0/imported = false
+tracks/0/enabled = true
+tracks/0/path = NodePath("../../Hurtbox:state")
+tracks/0/interp = 1
+tracks/0/loop_wrap = true
+tracks/0/keys = {
+"times": PackedFloat32Array(0),
+"transitions": PackedFloat32Array(1),
+"update": 1,
+"values": [0]
+}
+
 [sub_resource type="Animation" id="Animation_g4c7l"]
 resource_name = "guard_down"
-length = 0.08333500434625893
+length = 0.0500016692744568
 step = 0.016666668
+tracks/0/type = "value"
+tracks/0/imported = false
+tracks/0/enabled = true
+tracks/0/path = NodePath("../../Hurtbox:state")
+tracks/0/interp = 1
+tracks/0/loop_wrap = true
+tracks/0/keys = {
+"times": PackedFloat32Array(0.016666668),
+"transitions": PackedFloat32Array(1),
+"update": 1,
+"values": [0]
+}
 
 [sub_resource type="Animation" id="Animation_knn7v"]
 resource_name = "guard_on"
-length = 0.16667000869251786
+length = 0.08333500434625893
+step = 0.016666668
+tracks/0/type = "value"
+tracks/0/imported = false
+tracks/0/enabled = true
+tracks/0/path = NodePath("../../Hurtbox:state")
+tracks/0/interp = 1
+tracks/0/loop_wrap = true
+tracks/0/keys = {
+"times": PackedFloat32Array(0, 0.033333335),
+"transitions": PackedFloat32Array(1, 1),
+"update": 1,
+"values": [0, 2]
+}
 
 [sub_resource type="AnimationLibrary" id="AnimationLibrary_7pqkx"]
 _data = {
+&"RESET": SubResource("Animation_7pqkx"),
 &"guard_down": SubResource("Animation_g4c7l"),
 &"guard_on": SubResource("Animation_knn7v")
 }
-
-[sub_resource type="RectangleShape2D" id="RectangleShape2D_boad6"]
-size = Vector2(45, 20)
-
-[sub_resource type="Resource" id="Resource_2ieo8"]
-script = ExtResource("11_ebec5")
-knockback_force = 20.0
-metadata/_custom_type_script = "uid://xw07ofvvtrxk"
-
-[sub_resource type="RectangleShape2D" id="RectangleShape2D_yllr7"]
-size = Vector2(60, 20)
-
-[sub_resource type="Resource" id="Resource_yllr7"]
-script = ExtResource("11_ebec5")
-metadata/_custom_type_script = "uid://xw07ofvvtrxk"
-
-[sub_resource type="RectangleShape2D" id="RectangleShape2D_kb6p2"]
-size = Vector2(41, 33)
-
-[sub_resource type="Resource" id="Resource_kb6p2"]
-script = ExtResource("11_ebec5")
-metadata/_custom_type_script = "uid://xw07ofvvtrxk"
-
-[sub_resource type="RectangleShape2D" id="RectangleShape2D_wodsf"]
-size = Vector2(59, 20)
 
 [node name="Player" type="CharacterBody2D" unique_id=1697822384 node_paths=PackedStringArray("hsm")]
 collision_layer = 0
@@ -652,7 +677,7 @@ texture = SubResource("GradientTexture2D_wqsic")
 [node name="AnimatedSprite2D" type="AnimatedSprite2D" parent="." unique_id=383934619]
 position = Vector2(0, -16)
 sprite_frames = SubResource("SpriteFrames_qgg7p")
-animation = &"hammer"
+animation = &"fall"
 offset = Vector2(0, -16)
 
 [node name="CollisionShape2D" type="CollisionShape2D" parent="." unique_id=628658269]
@@ -720,8 +745,10 @@ punch_combo_hitbox = NodePath("../../PunchCombo")
 [node name="AnimationPlayer" type="AnimationPlayer" parent="LimboHSM/HighPunchCombo" unique_id=1553393577]
 libraries/ = SubResource("AnimationLibrary_32hag")
 
-[node name="Slide" type="LimboState" parent="LimboHSM" unique_id=722206040]
+[node name="Slide" type="LimboState" parent="LimboHSM" unique_id=722206040 node_paths=PackedStringArray("idle_state", "move_state")]
 script = ExtResource("14_kb6p2")
+idle_state = NodePath("../Idle")
+move_state = NodePath("../Move")
 
 [node name="AnimationPlayer" type="AnimationPlayer" parent="LimboHSM/Slide" unique_id=532858250]
 libraries/ = SubResource("AnimationLibrary_s7qer")
@@ -740,50 +767,17 @@ script = ExtResource("16_32hag")
 
 [node name="JumpHammer" type="LimboState" parent="LimboHSM" unique_id=1275712382]
 
-[node name="PunchCombo" type="Area2D" parent="." unique_id=733181179]
-collision_layer = 0
-collision_mask = 2
-monitorable = false
-script = ExtResource("6_g6k8r")
+[node name="Hitboxes" type="Node2D" parent="." unique_id=1243634124]
 
-[node name="Left" type="CollisionShape2D" parent="PunchCombo" unique_id=183607154]
-visible = false
-position = Vector2(27.5, -48)
-shape = SubResource("RectangleShape2D_boad6")
-disabled = true
-script = ExtResource("7_boad6")
-hitbox_info = SubResource("Resource_2ieo8")
-metadata/_custom_type_script = "uid://d2ox33o3w3u0r"
+[node name="PunchCombo" parent="." unique_id=1815996743 instance=ExtResource("19_65viv")]
 
-[node name="Right" type="CollisionShape2D" parent="PunchCombo" unique_id=1013508832]
-position = Vector2(20, -48)
-shape = SubResource("RectangleShape2D_yllr7")
-disabled = true
-script = ExtResource("7_boad6")
-hitbox_info = SubResource("Resource_yllr7")
-metadata/_custom_type_script = "uid://d2ox33o3w3u0r"
-
-[node name="Hammer" type="CollisionShape2D" parent="PunchCombo" unique_id=148303365]
-position = Vector2(20.5, -46.5)
-shape = SubResource("RectangleShape2D_kb6p2")
-disabled = true
-script = ExtResource("7_boad6")
-hitbox_info = SubResource("Resource_kb6p2")
-metadata/_custom_type_script = "uid://d2ox33o3w3u0r"
-
-[node name="SlideHitbox" type="Area2D" parent="." unique_id=846885858]
-script = ExtResource("6_g6k8r")
-metadata/_custom_type_script = "uid://0dw4edo0eshv"
-
-[node name="HitboxShape" type="CollisionShape2D" parent="SlideHitbox" unique_id=1849930391]
-position = Vector2(19.5, -10)
-shape = SubResource("RectangleShape2D_wodsf")
-disabled = true
-script = ExtResource("7_boad6")
-metadata/_custom_type_script = "uid://d2ox33o3w3u0r"
+[node name="SlideHitbox" parent="." unique_id=227710391 instance=ExtResource("20_x7c3f")]
 
 [node name="Label" type="Label" parent="." unique_id=1166794144]
 offset_left = -29.0
 offset_top = -91.0
 offset_right = 29.0
 offset_bottom = -68.0
+
+[editable path="PunchCombo"]
+[editable path="SlideHitbox"]

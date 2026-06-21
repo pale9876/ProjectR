@@ -1,0 +1,18 @@
+[gd_scene format=3 uid="uid://bb8kauq734h10"]
+
+[ext_resource type="Script" uid="uid://0dw4edo0eshv" path="res://player/hitbox.gd" id="1_rc8wh"]
+[ext_resource type="Script" uid="uid://d2ox33o3w3u0r" path="res://unit/hitbox_shape.gd" id="2_hkq2h"]
+
+[sub_resource type="RectangleShape2D" id="RectangleShape2D_wodsf"]
+size = Vector2(59, 20)
+
+[node name="SlideHitbox" type="Area2D" unique_id=227710391]
+script = ExtResource("1_rc8wh")
+metadata/_custom_type_script = "uid://0dw4edo0eshv"
+
+[node name="HitboxShape" type="CollisionShape2D" parent="." unique_id=853768485]
+position = Vector2(19.5, -10)
+shape = SubResource("RectangleShape2D_wodsf")
+disabled = true
+script = ExtResource("2_hkq2h")
+metadata/_custom_type_script = "uid://d2ox33o3w3u0r"

@@ -6,6 +6,7 @@
 [ext_resource type="Script" uid="uid://cy6xk12udulfh" path="res://npc/visible_on_screen_notifier_2d.gd" id="4_uamtn"]
 [ext_resource type="Script" uid="uid://dxd14gsfsusdx" path="res://ai/tasks/if_target_not_null.gd" id="5_fnhme"]
 [ext_resource type="Script" uid="uid://bs1oqvm6y0hg8" path="res://ai/tasks/go_to_rand_pos.gd" id="5_ldo70"]
+[ext_resource type="Script" uid="uid://cjhrvvp4app32" path="res://ai/tasks/run_in_opposite_direction.gd" id="7_uamtn"]
 
 [sub_resource type="AtlasTexture" id="AtlasTexture_cebga"]
 atlas = ExtResource("2_ldo70")
@@ -20,29 +21,59 @@ animations = [{
 "loop": 1,
 "name": &"idle",
 "speed": 5.0
+}, {
+"frames": [],
+"loop": 1,
+"name": &"move",
+"speed": 5.0
 }]
 
 [sub_resource type="RectangleShape2D" id="RectangleShape2D_guff7"]
 size = Vector2(320, 136)
 
 [sub_resource type="BlackboardPlan" id="BlackboardPlan_oydke"]
+var/target/name = &"target"
+var/target/type = 24
+var/target/hint = 0
+var/target/hint_string = ""
+var/rist_factor/name = &"rist_factor"
+var/rist_factor/type = 28
+var/rist_factor/value = []
+var/rist_factor/hint = 0
+var/rist_factor/hint_string = ""
 
 [sub_resource type="BTAction" id="BTAction_uamtn"]
 script = ExtResource("5_fnhme")
 
+[sub_resource type="BTConsolePrint" id="BTConsolePrint_uamtn"]
+text = "타겟이 없어서 이동"
+
 [sub_resource type="BTAction" id="BTAction_fnhme"]
 script = ExtResource("5_ldo70")
 
+[sub_resource type="BTConsolePrint" id="BTConsolePrint_ocili"]
+text = "휴식 상태에 들어감."
+
 [sub_resource type="BTRandomWait" id="BTRandomWait_fnhme"]
-min_duration = 2.0
-max_duration = 4.0
+min_duration = 5.0
+max_duration = 8.0
 
 [sub_resource type="BTSequence" id="BTSequence_bjcma"]
 custom_name = "Patrol"
-children = [SubResource("BTAction_uamtn"), SubResource("BTAction_fnhme"), SubResource("BTRandomWait_fnhme")]
+children = [SubResource("BTAction_uamtn"), SubResource("BTConsolePrint_uamtn"), SubResource("BTAction_fnhme"), SubResource("BTConsolePrint_ocili"), SubResource("BTRandomWait_fnhme")]
+
+[sub_resource type="BTAction" id="BTAction_ocili"]
+script = ExtResource("7_uamtn")
+
+[sub_resource type="BTConsolePrint" id="BTConsolePrint_phifv"]
+text = "타겟 발견 도주"
+
+[sub_resource type="BTSequence" id="BTSequence_fnhme"]
+custom_name = "Runaway"
+children = [SubResource("BTAction_ocili"), SubResource("BTConsolePrint_phifv")]
 
 [sub_resource type="BTSelector" id="BTSelector_5cnks"]
-children = [SubResource("BTSequence_bjcma")]
+children = [SubResource("BTSequence_bjcma"), SubResource("BTSequence_fnhme")]
 
 [sub_resource type="BehaviorTree" id="BehaviorTree_guff7"]
 blackboard_plan = SubResource("BlackboardPlan_oydke")
@@ -58,7 +89,7 @@ script = ExtResource("1_o6cys")
 
 [node name="AnimatedSprite2D" type="AnimatedSprite2D" parent="." unique_id=194746556]
 sprite_frames = SubResource("SpriteFrames_guff7")
-animation = &"idle"
+animation = &"move"
 offset = Vector2(0, -32)
 
 [node name="Awareness" type="Area2D" parent="." unique_id=75439026]
@@ -75,4 +106,9 @@ script = ExtResource("4_uamtn")
 
 [node name="BTPlayer" type="BTPlayer" parent="." unique_id=169513713]
 behavior_tree = SubResource("BehaviorTree_guff7")
+update_mode = 0
 blackboard_plan = SubResource("BlackboardPlan_ocili")
+
+[node name="LimboHSM" type="LimboHSM" parent="." unique_id=1905532362]
+
+[node name="LimboState" type="LimboState" parent="LimboHSM" unique_id=1366451597]

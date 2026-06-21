@@ -46,6 +46,7 @@ func _enter() -> void:
 	_postpone = anim_postpone
 	punch_combo_hitbox.scale.x = player.state.face.x
 
+
 func _update(_delta: float) -> void:
 	if _postpone == 0:
 		get_hsm().change_active_state(idle_state)
@@ -81,5 +82,5 @@ func _exit() -> void:
 func _animation_finished(anim_name: StringName):
 	if is_active() and (anim_name in anim.get_animation_list()):
 		_anim_finished = true
-		if anim_name in [&"hammer", &"hammer_explosion"]:
+		if anim_name in [&"right_punch", &"left_punch", &"hammer", &"hammer_explosion"]:
 			get_hsm().change_active_state(idle_state)
