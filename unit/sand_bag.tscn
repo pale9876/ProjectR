@@ -2,10 +2,10 @@
 
 [ext_resource type="Script" uid="uid://bl84ixx4kubfe" path="res://unit/unit.gd" id="1_xr0ca"]
 [ext_resource type="Resource" uid="uid://c8qn50dilibqs" path="res://unit/information/minion.tres" id="2_c6cao"]
-[ext_resource type="Script" uid="uid://cpsg0ho6132tj" path="res://ai/tasks/set_act_state.gd" id="3_6c1mr"]
-[ext_resource type="Script" uid="uid://dnfln7i10n5lu" path="res://ai/tasks/move_to_random_pos.gd" id="4_f3vym"]
-[ext_resource type="Script" uid="uid://dibqva5a64jvq" path="res://ai/tasks/patrol_wait.gd" id="5_toejp"]
-[ext_resource type="Script" uid="uid://dmj17w1hipj7o" path="res://ai/tasks/trace_target.gd" id="6_2clmh"]
+[ext_resource type="Script" uid="uid://cpsg0ho6132tj" path="res://ai/tasks/unit/set_act_state.gd" id="3_6c1mr"]
+[ext_resource type="Script" uid="uid://dnfln7i10n5lu" path="res://ai/tasks/unit/move_to_random_pos.gd" id="4_f3vym"]
+[ext_resource type="Script" uid="uid://dibqva5a64jvq" path="res://ai/tasks/unit/patrol_wait.gd" id="5_toejp"]
+[ext_resource type="Script" uid="uid://dmj17w1hipj7o" path="res://ai/tasks/unit/trace_target.gd" id="6_2clmh"]
 [ext_resource type="Script" uid="uid://bupj3hlvtt67s" path="res://unit/hurtbox.gd" id="8_k7l50"]
 
 [sub_resource type="Gradient" id="Gradient_2ul3e"]

@@ -2,12 +2,13 @@
 
 [ext_resource type="Script" uid="uid://bl84ixx4kubfe" path="res://unit/unit.gd" id="1_3k25b"]
 [ext_resource type="Resource" uid="uid://c8qn50dilibqs" path="res://unit/information/minion.tres" id="2_7oxhv"]
-[ext_resource type="Script" uid="uid://cpsg0ho6132tj" path="res://ai/tasks/set_act_state.gd" id="4_2ul3e"]
-[ext_resource type="Script" uid="uid://dnfln7i10n5lu" path="res://ai/tasks/move_to_random_pos.gd" id="5_a3q01"]
+[ext_resource type="Script" uid="uid://cpsg0ho6132tj" path="res://ai/tasks/unit/set_act_state.gd" id="4_2ul3e"]
+[ext_resource type="Script" uid="uid://dnfln7i10n5lu" path="res://ai/tasks/unit/move_to_random_pos.gd" id="5_a3q01"]
 [ext_resource type="Script" uid="uid://cdpmo1dhtm3s5" path="res://unit/hitbox.gd" id="5_s1ym6"]
-[ext_resource type="Script" uid="uid://dibqva5a64jvq" path="res://ai/tasks/patrol_wait.gd" id="6_4xbu7"]
-[ext_resource type="Script" uid="uid://dmj17w1hipj7o" path="res://ai/tasks/trace_target.gd" id="7_a2j7n"]
+[ext_resource type="Script" uid="uid://dibqva5a64jvq" path="res://ai/tasks/unit/patrol_wait.gd" id="6_4xbu7"]
+[ext_resource type="Script" uid="uid://dmj17w1hipj7o" path="res://ai/tasks/unit/trace_target.gd" id="7_a2j7n"]
 [ext_resource type="Script" uid="uid://bupj3hlvtt67s" path="res://unit/hurtbox.gd" id="8_a3q01"]
+[ext_resource type="Script" uid="uid://dcybwuwfqeqr3" path="res://unit/state/state_machine.gd" id="9_4xbu7"]
 
 [sub_resource type="Gradient" id="Gradient_2ul3e"]
 interpolation_mode = 1
@@ -21,6 +22,8 @@ height = 8
 fill = 1
 fill_from = Vector2(0.5, 0.5)
 fill_to = Vector2(0.85, 0.85)
+
+[sub_resource type="SpriteFrames" id="SpriteFrames_guff7"]
 
 [sub_resource type="CapsuleShape2D" id="CapsuleShape2D_wqsic"]
 radius = 13.0
@@ -100,82 +103,16 @@ root_task = SubResource("BTSequence_eras8")
 
 [sub_resource type="Animation" id="Animation_a3q01"]
 length = 0.001
-tracks/0/type = "bezier"
-tracks/0/imported = false
-tracks/0/enabled = true
-tracks/0/path = NodePath("Sprite2D:position:x")
-tracks/0/interp = 1
-tracks/0/loop_wrap = true
-tracks/0/keys = {
-"handle_modes": PackedInt32Array(0),
-"points": PackedFloat32Array(0, -0.25, 0, 0.25, 0),
-"times": PackedFloat32Array(0)
-}
-tracks/1/type = "bezier"
-tracks/1/imported = false
-tracks/1/enabled = true
-tracks/1/path = NodePath("Sprite2D:position:y")
-tracks/1/interp = 1
-tracks/1/loop_wrap = true
-tracks/1/keys = {
-"handle_modes": PackedInt32Array(0),
-"points": PackedFloat32Array(-15, -0.25, 0, 0.25, 0),
-"times": PackedFloat32Array(0)
-}
 
 [sub_resource type="Animation" id="Animation_hs7ws"]
 resource_name = "idle"
 length = 2.5000000000000004
 loop_mode = 1
-tracks/0/type = "bezier"
-tracks/0/imported = false
-tracks/0/enabled = true
-tracks/0/path = NodePath("Sprite2D:position:x")
-tracks/0/interp = 1
-tracks/0/loop_wrap = true
-tracks/0/keys = {
-"handle_modes": PackedInt32Array(1, 2),
-"points": PackedFloat32Array(0, 0, 0, 0, 0, 0, 0, 0, 0, 0),
-"times": PackedFloat32Array(0, 2.5)
-}
-tracks/1/type = "bezier"
-tracks/1/imported = false
-tracks/1/enabled = true
-tracks/1/path = NodePath("Sprite2D:position:y")
-tracks/1/interp = 1
-tracks/1/loop_wrap = true
-tracks/1/keys = {
-"handle_modes": PackedInt32Array(0, 0),
-"points": PackedFloat32Array(-18, -1, -35, 1, 35.002, -18, -1, -35, 1, 35),
-"times": PackedFloat32Array(0, 2.5)
-}
 
 [sub_resource type="Animation" id="Animation_7oxhv"]
 resource_name = "move"
 length = 3.5000000000000004
 loop_mode = 1
-tracks/0/type = "bezier"
-tracks/0/imported = false
-tracks/0/enabled = true
-tracks/0/path = NodePath("Sprite2D:position:x")
-tracks/0/interp = 1
-tracks/0/loop_wrap = true
-tracks/0/keys = {
-"handle_modes": PackedInt32Array(0, 0),
-"points": PackedFloat32Array(0, 0, 0, 1, 0, 0, 0, 0, 0, 0),
-"times": PackedFloat32Array(0, 3.5)
-}
-tracks/1/type = "bezier"
-tracks/1/imported = false
-tracks/1/enabled = true
-tracks/1/path = NodePath("Sprite2D:position:y")
-tracks/1/interp = 1
-tracks/1/loop_wrap = true
-tracks/1/keys = {
-"handle_modes": PackedInt32Array(0, 0),
-"points": PackedFloat32Array(-15, 0, 0, 1, -10, -15, -1, 10, 0, 0),
-"times": PackedFloat32Array(0, 3.5)
-}
 
 [sub_resource type="AnimationLibrary" id="AnimationLibrary_japly"]
 _data = {
@@ -191,16 +128,16 @@ size = Vector2(72, 31)
 radius = 8.0
 height = 48.0
 
-[node name="Unit" type="CharacterBody2D" unique_id=2064536848]
+[node name="Unit" type="CharacterBody2D" unique_id=2064536848 node_paths=PackedStringArray("bt")]
 script = ExtResource("1_3k25b")
 information = ExtResource("2_7oxhv")
+bt = NodePath("BTPlayer")
 
 [node name="DropShadow" type="Sprite2D" parent="." unique_id=924943166]
 texture = SubResource("GradientTexture2D_wqsic")
 
-[node name="Sprite2D" type="Sprite2D" parent="." unique_id=65572535]
-position = Vector2(0, -15)
-offset = Vector2(0, -20)
+[node name="AnimatedSprite2D" type="AnimatedSprite2D" parent="." unique_id=621636092]
+sprite_frames = SubResource("SpriteFrames_guff7")
 
 [node name="CollisionShape2D" type="CollisionShape2D" parent="." unique_id=54862801]
 position = Vector2(0, -34)
@@ -231,3 +168,10 @@ script = ExtResource("8_a3q01")
 position = Vector2(0, -24)
 shape = SubResource("CapsuleShape2D_2ul3e")
 debug_color = Color(0.8509804, 0.8627451, 0.21960784, 0.21176471)
+
+[node name="StateMachine" type="LimboHSM" parent="." unique_id=1105988704]
+script = ExtResource("9_4xbu7")
+
+[node name="Idle" type="LimboState" parent="StateMachine" unique_id=2128241440]
+
+[node name="Move" type="LimboState" parent="StateMachine" unique_id=1993654588]

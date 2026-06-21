@@ -2,7 +2,6 @@ extends Area2D
 
 
 const Player: Script = preload("uid://c2uxhumgng18h")
-const Unit: Script = preload("uid://bl84ixx4kubfe")
 
 
 func _enter_tree() -> void:

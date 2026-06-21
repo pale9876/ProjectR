@@ -52,10 +52,6 @@ func on_start() -> void:
 
 	ingame.process_mode = Node.PROCESS_MODE_INHERIT
 
-	#var game := ingame.game
-	#game.init_player()
-	
-	
 	var start_map := START_MAP.instantiate() as StartMap
 	ingame.add_child(start_map)
 	start_map.add_child(Global.player)

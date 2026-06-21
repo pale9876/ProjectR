@@ -9,9 +9,10 @@ const Player: Script = preload("uid://c2uxhumgng18h")
 
 @export var information: Information
 @export var bt: BTPlayer
+@export var z_value: float = 0.
 
 
-@onready var sprite: Sprite2D = $Sprite2D
+@onready var sprite: AnimatedSprite2D = $AnimatedSprite2D
 @onready var anim: AnimationPlayer = $AnimationPlayer
 #@onready var agent: NavigationAgent2D = $NavigationAgent2D
 
@@ -66,10 +67,15 @@ func get_bb() -> Blackboard:
 
 class Stat:
 	var max_hp: int
-	var hp: int
-	var speed: float
+	var hp: int:
+		set(value):
+			hp = clampi(value, 0, max_hp)
+	var speed: float:
+		set(value):
+			speed = maxf(0., value)
 
 
 class State:
 	var face: Vector2
 	var motion_direction: Vector2
+	var target: Node2D
