@@ -24,6 +24,27 @@ fill_from = Vector2(0.5, 0.5)
 fill_to = Vector2(0.85, 0.85)
 
 [sub_resource type="SpriteFrames" id="SpriteFrames_guff7"]
+animations = [{
+"frames": [],
+"loop": 1,
+"name": &"aerial_blowup",
+"speed": 5.0
+}, {
+"frames": [],
+"loop": 1,
+"name": &"down",
+"speed": 5.0
+}, {
+"frames": [],
+"loop": 1,
+"name": &"idle",
+"speed": 5.0
+}, {
+"frames": [],
+"loop": 1,
+"name": &"move",
+"speed": 5.0
+}]
 
 [sub_resource type="CapsuleShape2D" id="CapsuleShape2D_wqsic"]
 radius = 13.0
@@ -138,6 +159,7 @@ texture = SubResource("GradientTexture2D_wqsic")
 
 [node name="AnimatedSprite2D" type="AnimatedSprite2D" parent="." unique_id=621636092]
 sprite_frames = SubResource("SpriteFrames_guff7")
+animation = &"down"
 
 [node name="CollisionShape2D" type="CollisionShape2D" parent="." unique_id=54862801]
 position = Vector2(0, -34)

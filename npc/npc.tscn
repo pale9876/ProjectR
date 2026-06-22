@@ -2,11 +2,25 @@
 
 [ext_resource type="Script" uid="uid://dqd845y1secly" path="res://npc/pathed_unit.gd" id="1_o6cys"]
 [ext_resource type="Texture2D" uid="uid://dln0gsxdhnads" path="res://aseprite/asso_project/sample_motions/idle.png" id="2_ldo70"]
+[ext_resource type="Shader" uid="uid://b7ev33xt35608" path="res://shaders/pixel_shader_outline.gdshader" id="2_ocili"]
 [ext_resource type="Script" uid="uid://cktpq0kuvmge1" path="res://npc/awareness.gd" id="3_fnhme"]
 [ext_resource type="Script" uid="uid://cy6xk12udulfh" path="res://npc/visible_on_screen_notifier_2d.gd" id="4_uamtn"]
 [ext_resource type="Script" uid="uid://dxd14gsfsusdx" path="res://ai/tasks/if_target_not_null.gd" id="5_fnhme"]
 [ext_resource type="Script" uid="uid://bs1oqvm6y0hg8" path="res://ai/tasks/go_to_rand_pos.gd" id="5_ldo70"]
 [ext_resource type="Script" uid="uid://cjhrvvp4app32" path="res://ai/tasks/run_in_opposite_direction.gd" id="7_uamtn"]
+
+[sub_resource type="ShaderMaterial" id="ShaderMaterial_phifv"]
+shader = ExtResource("2_ocili")
+shader_parameter/top = false
+shader_parameter/left = false
+shader_parameter/right = true
+shader_parameter/bottom = false
+shader_parameter/topleft = false
+shader_parameter/topright = false
+shader_parameter/bottomleft = false
+shader_parameter/bottomright = false
+shader_parameter/color = Color(0.28, 0.0812, 0.0812, 1)
+shader_parameter/inside = false
 
 [sub_resource type="AtlasTexture" id="AtlasTexture_cebga"]
 atlas = ExtResource("2_ldo70")
@@ -81,6 +95,9 @@ root_task = SubResource("BTSelector_5cnks")
 
 [sub_resource type="BlackboardPlan" id="BlackboardPlan_ocili"]
 
+[sub_resource type="RectangleShape2D" id="RectangleShape2D_tuwyy"]
+size = Vector2(16, 56)
+
 [node name="NPC" type="PathFollow2D" unique_id=276246344]
 progress = 229.43999
 rotates = false
@@ -88,8 +105,9 @@ loop = false
 script = ExtResource("1_o6cys")
 
 [node name="AnimatedSprite2D" type="AnimatedSprite2D" parent="." unique_id=194746556]
+material = SubResource("ShaderMaterial_phifv")
 sprite_frames = SubResource("SpriteFrames_guff7")
-animation = &"move"
+animation = &"idle"
 offset = Vector2(0, -32)
 
 [node name="Awareness" type="Area2D" parent="." unique_id=75439026]
@@ -101,7 +119,7 @@ shape = SubResource("RectangleShape2D_guff7")
 debug_color = Color(0.7764706, 0.98039216, 0.03137255, 0.41960785)
 
 [node name="VisibleOnScreenNotifier2D" type="VisibleOnScreenNotifier2D" parent="." unique_id=1467290058]
-rect = Rect2(-35, -72, 70, 104)
+rect = Rect2(-80, -138.85715, 160, 237.7143)
 script = ExtResource("4_uamtn")
 
 [node name="BTPlayer" type="BTPlayer" parent="." unique_id=169513713]
@@ -109,6 +127,9 @@ behavior_tree = SubResource("BehaviorTree_guff7")
 update_mode = 0
 blackboard_plan = SubResource("BlackboardPlan_ocili")
 
-[node name="LimboHSM" type="LimboHSM" parent="." unique_id=1905532362]
+[node name="Hurtbox" type="Area2D" parent="." unique_id=214457877]
 
-[node name="LimboState" type="LimboState" parent="LimboHSM" unique_id=1366451597]
+[node name="CollisionShape2D" type="CollisionShape2D" parent="Hurtbox" unique_id=1090026182]
+position = Vector2(0, -28)
+shape = SubResource("RectangleShape2D_tuwyy")
+debug_color = Color(0.88235295, 0.13333334, 0.3647059, 0.12156863)
