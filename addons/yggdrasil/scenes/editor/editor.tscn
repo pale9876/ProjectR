@@ -1,0 +1,356 @@
+[gd_scene format=3 uid="uid://bunelgkxh0in3"]
+
+[ext_resource type="Script" uid="uid://cxlcuxsnhb3xj" path="res://addons/yggdrasil/scripts/editor/yggdrasil_editor.gd" id="1_fetjk"]
+[ext_resource type="Script" uid="uid://c47h88geyr4n4" path="res://addons/yggdrasil/scripts/editor/yggdrasil_hierarchy.gd" id="2_5h8jn"]
+[ext_resource type="Shortcut" uid="uid://cyvfejtxp7yux" path="res://addons/yggdrasil/shortcuts/save.tres" id="2_u56xs"]
+[ext_resource type="Script" uid="uid://b34ae5gksjq55" path="res://addons/yggdrasil/scripts/editor/ui/icon_button.gd" id="2_whd8v"]
+[ext_resource type="Shortcut" uid="uid://0feopp12keex" path="res://addons/yggdrasil/shortcuts/close.tres" id="3_7r17o"]
+[ext_resource type="Script" uid="uid://ct1qcim0iim5h" path="res://addons/yggdrasil/scripts/editor/yggdrasil_prefabs_bar.gd" id="4_jahc1"]
+[ext_resource type="Shortcut" uid="uid://do5ll41g08v5b" path="res://addons/yggdrasil/shortcuts/duplicate.tres" id="4_u56xs"]
+[ext_resource type="Shortcut" uid="uid://cnnei65hdfjvb" path="res://addons/yggdrasil/shortcuts/delete.tres" id="5_7r17o"]
+[ext_resource type="PackedScene" uid="uid://d3sxdltevewgx" path="res://addons/yggdrasil/scenes/editor/prefab_panel.tscn" id="5_smk3j"]
+[ext_resource type="Script" uid="uid://b6r2wkr625w33" path="res://addons/yggdrasil/scripts/editor/yggdrasil_validator.gd" id="8_u56xs"]
+[ext_resource type="PackedScene" uid="uid://ca3b4jsppsh8k" path="res://addons/yggdrasil/scenes/editor/inspector.tscn" id="9_smk3j"]
+[ext_resource type="PackedScene" uid="uid://bf8n77la50phs" path="res://addons/yggdrasil/scenes/editor/icon_selector.tscn" id="10_5h8jn"]
+[ext_resource type="PackedScene" uid="uid://byshspvnc8l0n" path="res://addons/yggdrasil/scenes/editor/settings.tscn" id="11_7r17o"]
+[ext_resource type="PackedScene" uid="uid://b5mhmng8vbgud" path="res://addons/yggdrasil/scenes/editor/attributes.tscn" id="12_6d86j"]
+[ext_resource type="Script" uid="uid://pctcexogsys" path="res://addons/yggdrasil/scripts/editor/yggdrasil_editor_context.gd" id="15_7r17o"]
+
+[sub_resource type="ButtonGroup" id="ButtonGroup_d07u8"]
+
+[sub_resource type="StyleBoxFlat" id="StyleBoxFlat_fad10"]
+bg_color = Color(0.078431375, 0.078431375, 0.078431375, 1)
+
+[sub_resource type="InputEventKey" id="InputEventKey_whd8v"]
+device = -1
+keycode = 81
+unicode = 113
+
+[sub_resource type="Shortcut" id="Shortcut_whd8v"]
+events = [SubResource("InputEventKey_whd8v")]
+
+[sub_resource type="InputEventKey" id="InputEventKey_jahc1"]
+device = -1
+keycode = 87
+unicode = 119
+
+[sub_resource type="Shortcut" id="Shortcut_tlgcl"]
+events = [SubResource("InputEventKey_jahc1")]
+
+[sub_resource type="InputEventKey" id="InputEventKey_smk3j"]
+device = -1
+shift_pressed = true
+keycode = 71
+unicode = 71
+
+[sub_resource type="Shortcut" id="Shortcut_5h8jn"]
+events = [SubResource("InputEventKey_smk3j")]
+
+[sub_resource type="StyleBoxEmpty" id="StyleBoxEmpty_2eckh"]
+content_margin_left = 10.0
+content_margin_top = 6.0
+content_margin_right = 10.0
+content_margin_bottom = 6.0
+
+[sub_resource type="StyleBoxFlat" id="StyleBoxFlat_nyq4t"]
+content_margin_left = 10.0
+content_margin_top = 6.0
+content_margin_right = 10.0
+content_margin_bottom = 6.0
+bg_color = Color(0.6, 0.6, 0.6, 0.11764706)
+corner_radius_top_left = 3
+corner_radius_top_right = 3
+corner_radius_bottom_right = 3
+corner_radius_bottom_left = 3
+
+[sub_resource type="StyleBoxEmpty" id="StyleBoxEmpty_dm2yv"]
+
+[sub_resource type="StyleBoxEmpty" id="StyleBoxEmpty_3o1sp"]
+
+[node name="Editor" type="Control" unique_id=399912468 node_paths=PackedStringArray("view_parent", "menu_bar", "hierarchy", "prefabs_tab", "inspector", "settings_editor", "attributes_editor", "context_menu", "validator", "select_tool_button", "move_tool_button", "grid_snap_button", "grid_x_input", "grid_y_input", "zoom_label", "zoom_slider")]
+clip_contents = true
+layout_mode = 3
+anchors_preset = 15
+anchor_right = 1.0
+anchor_bottom = 1.0
+grow_horizontal = 2
+grow_vertical = 2
+mouse_filter = 2
+script = ExtResource("1_fetjk")
+view_parent = NodePath("HSplitContainer/VSplitContainer/VBoxContainer2/View")
+menu_bar = NodePath("HSplitContainer/VBoxContainer/MarginContainer/MenuBar")
+hierarchy = NodePath("HSplitContainer/VBoxContainer/Hierarchy")
+prefabs_tab = NodePath("HSplitContainer/VSplitContainer/VBoxContainer/MarginContainer/BottomBar")
+inspector = NodePath("HSplitContainer/TabContainer/Inspector")
+settings_editor = NodePath("HSplitContainer/TabContainer/Settings")
+attributes_editor = NodePath("HSplitContainer/TabContainer/Attributes")
+context_menu = NodePath("ContextMenu")
+validator = NodePath("HSplitContainer/VSplitContainer/VBoxContainer2/View/Validator")
+tools_group = SubResource("ButtonGroup_d07u8")
+select_tool_button = NodePath("HSplitContainer/VSplitContainer/VBoxContainer2/MarginContainer/HBoxContainer/SelectMode")
+move_tool_button = NodePath("HSplitContainer/VSplitContainer/VBoxContainer2/MarginContainer/HBoxContainer/MoveMode")
+grid_snap_button = NodePath("HSplitContainer/VSplitContainer/VBoxContainer2/MarginContainer/HBoxContainer/GridSnap")
+grid_x_input = NodePath("HSplitContainer/VSplitContainer/VBoxContainer2/MarginContainer/HBoxContainer/HBoxContainer2/SnapX")
+grid_y_input = NodePath("HSplitContainer/VSplitContainer/VBoxContainer2/MarginContainer/HBoxContainer/HBoxContainer3/SnapY")
+zoom_label = NodePath("HSplitContainer/VSplitContainer/VBoxContainer2/MarginContainer/HBoxContainer/HBoxContainer/ZoomLabel")
+zoom_slider = NodePath("HSplitContainer/VSplitContainer/VBoxContainer2/MarginContainer/HBoxContainer/HBoxContainer/ZoomSlider")
+save_shortcut = ExtResource("2_u56xs")
+close_shortcut = ExtResource("3_7r17o")
+duplicate_shortcut = ExtResource("4_u56xs")
+delete_shortcut = ExtResource("5_7r17o")
+
+[node name="HSplitContainer" type="HSplitContainer" parent="." unique_id=986635893]
+layout_mode = 1
+anchors_preset = 15
+anchor_right = 1.0
+anchor_bottom = 1.0
+grow_horizontal = 2
+grow_vertical = 2
+size_flags_vertical = 3
+mouse_filter = 2
+theme_override_styles/split_bar_background = SubResource("StyleBoxFlat_fad10")
+split_offsets = PackedInt32Array(-790, -350)
+drag_area_margin_begin = 36
+split_offset = -790
+
+[node name="VBoxContainer" type="VBoxContainer" parent="HSplitContainer" unique_id=1942225567]
+custom_minimum_size = Vector2(300, 0)
+layout_mode = 2
+theme_override_constants/separation = 0
+
+[node name="MarginContainer" type="MarginContainer" parent="HSplitContainer/VBoxContainer" unique_id=1626627251]
+layout_mode = 2
+theme_override_constants/margin_left = 4
+theme_override_constants/margin_right = 4
+
+[node name="MenuBar" type="MenuBar" parent="HSplitContainer/VBoxContainer/MarginContainer" unique_id=117424435]
+layout_mode = 2
+flat = true
+
+[node name="File" type="PopupMenu" parent="HSplitContainer/VBoxContainer/MarginContainer/MenuBar" unique_id=2138041263]
+title = "File"
+
+[node name="Hierarchy" type="Tree" parent="HSplitContainer/VBoxContainer" unique_id=155869743 node_paths=PackedStringArray("editor")]
+layout_mode = 2
+size_flags_vertical = 3
+hide_root = true
+script = ExtResource("2_5h8jn")
+editor = NodePath("../../..")
+
+[node name="VSplitContainer" type="VSplitContainer" parent="HSplitContainer" unique_id=176566005]
+layout_mode = 2
+size_flags_horizontal = 3
+theme_override_styles/split_bar_background = SubResource("StyleBoxFlat_fad10")
+collapsed = true
+
+[node name="VBoxContainer2" type="VBoxContainer" parent="HSplitContainer/VSplitContainer" unique_id=1436378482]
+layout_mode = 2
+size_flags_vertical = 3
+theme_override_constants/separation = 0
+
+[node name="MarginContainer" type="MarginContainer" parent="HSplitContainer/VSplitContainer/VBoxContainer2" unique_id=2136685091]
+layout_mode = 2
+theme_override_constants/margin_left = 4
+theme_override_constants/margin_top = 4
+theme_override_constants/margin_right = 4
+theme_override_constants/margin_bottom = 4
+
+[node name="HBoxContainer" type="HBoxContainer" parent="HSplitContainer/VSplitContainer/VBoxContainer2/MarginContainer" unique_id=868870023]
+custom_minimum_size = Vector2(0, 24)
+layout_mode = 2
+
+[node name="SelectMode" type="Button" parent="HSplitContainer/VSplitContainer/VBoxContainer2/MarginContainer/HBoxContainer" unique_id=1845563291]
+layout_mode = 2
+tooltip_text = "Select Mode (Q - Physical)"
+toggle_mode = true
+button_pressed = true
+button_group = SubResource("ButtonGroup_d07u8")
+shortcut = SubResource("Shortcut_whd8v")
+shortcut_in_tooltip = false
+icon_alignment = 1
+script = ExtResource("2_whd8v")
+icon_name = "ToolSelect"
+
+[node name="MoveMode" type="Button" parent="HSplitContainer/VSplitContainer/VBoxContainer2/MarginContainer/HBoxContainer" unique_id=80443803]
+layout_mode = 2
+tooltip_text = "Move Mode (W - Physical)"
+toggle_mode = true
+button_group = SubResource("ButtonGroup_d07u8")
+shortcut = SubResource("Shortcut_tlgcl")
+shortcut_in_tooltip = false
+icon_alignment = 1
+script = ExtResource("2_whd8v")
+icon_name = "ToolMove"
+
+[node name="VSeparator2" type="VSeparator" parent="HSplitContainer/VSplitContainer/VBoxContainer2/MarginContainer/HBoxContainer" unique_id=469434582]
+layout_mode = 2
+
+[node name="GridSnap" type="Button" parent="HSplitContainer/VSplitContainer/VBoxContainer2/MarginContainer/HBoxContainer" unique_id=1528411534]
+layout_mode = 2
+tooltip_text = "Use Grid Snap (Shift+G - Physical)"
+toggle_mode = true
+shortcut = SubResource("Shortcut_5h8jn")
+shortcut_in_tooltip = false
+icon_alignment = 1
+script = ExtResource("2_whd8v")
+icon_name = "SnapGrid"
+
+[node name="Label" type="Label" parent="HSplitContainer/VSplitContainer/VBoxContainer2/MarginContainer/HBoxContainer" unique_id=1513267845]
+layout_mode = 2
+text = "Grid"
+
+[node name="HBoxContainer2" type="HBoxContainer" parent="HSplitContainer/VSplitContainer/VBoxContainer2/MarginContainer/HBoxContainer" unique_id=1127574839]
+layout_mode = 2
+
+[node name="Label" type="Label" parent="HSplitContainer/VSplitContainer/VBoxContainer2/MarginContainer/HBoxContainer/HBoxContainer2" unique_id=1048301439]
+layout_mode = 2
+text = "X"
+
+[node name="SnapX" type="SpinBox" parent="HSplitContainer/VSplitContainer/VBoxContainer2/MarginContainer/HBoxContainer/HBoxContainer2" unique_id=833265596]
+layout_mode = 2
+value = 16.0
+rounded = true
+allow_greater = true
+
+[node name="HBoxContainer3" type="HBoxContainer" parent="HSplitContainer/VSplitContainer/VBoxContainer2/MarginContainer/HBoxContainer" unique_id=3225506]
+layout_mode = 2
+
+[node name="Label" type="Label" parent="HSplitContainer/VSplitContainer/VBoxContainer2/MarginContainer/HBoxContainer/HBoxContainer3" unique_id=121972127]
+layout_mode = 2
+text = "Y"
+
+[node name="SnapY" type="SpinBox" parent="HSplitContainer/VSplitContainer/VBoxContainer2/MarginContainer/HBoxContainer/HBoxContainer3" unique_id=1173859454]
+layout_mode = 2
+value = 16.0
+rounded = true
+allow_greater = true
+
+[node name="HBoxContainer" type="HBoxContainer" parent="HSplitContainer/VSplitContainer/VBoxContainer2/MarginContainer/HBoxContainer" unique_id=2003631972]
+layout_mode = 2
+size_flags_horizontal = 3
+alignment = 2
+
+[node name="ZoomLabel" type="Label" parent="HSplitContainer/VSplitContainer/VBoxContainer2/MarginContainer/HBoxContainer/HBoxContainer" unique_id=1476547881]
+layout_mode = 2
+text = "100%"
+
+[node name="ZoomSlider" type="HSlider" parent="HSplitContainer/VSplitContainer/VBoxContainer2/MarginContainer/HBoxContainer/HBoxContainer" unique_id=401558635]
+custom_minimum_size = Vector2(80, 0)
+layout_mode = 2
+size_flags_vertical = 4
+min_value = 0.4
+max_value = 1.0
+step = 0.1
+value = 1.0
+
+[node name="View" type="Control" parent="HSplitContainer/VSplitContainer/VBoxContainer2" unique_id=32547789]
+clip_contents = true
+layout_mode = 2
+size_flags_horizontal = 3
+size_flags_vertical = 3
+mouse_filter = 2
+
+[node name="Validator" type="MarginContainer" parent="HSplitContainer/VSplitContainer/VBoxContainer2/View" unique_id=550037939 node_paths=PackedStringArray("editor", "prints_container", "warning_btn", "error_btn")]
+layout_mode = 1
+anchors_preset = 3
+anchor_left = 1.0
+anchor_top = 1.0
+anchor_right = 1.0
+anchor_bottom = 1.0
+offset_left = -32.0
+offset_top = -23.0
+offset_right = -12.0
+offset_bottom = -15.0
+grow_horizontal = 0
+grow_vertical = 0
+script = ExtResource("8_u56xs")
+editor = NodePath("../../../../..")
+prints_container = NodePath("VBoxContainer/Prints")
+warning_btn = NodePath("VBoxContainer/HBoxContainer/Warning")
+error_btn = NodePath("VBoxContainer/HBoxContainer/Error")
+
+[node name="VBoxContainer" type="VBoxContainer" parent="HSplitContainer/VSplitContainer/VBoxContainer2/View/Validator" unique_id=1720712025]
+layout_mode = 2
+
+[node name="Prints" type="VBoxContainer" parent="HSplitContainer/VSplitContainer/VBoxContainer2/View/Validator/VBoxContainer" unique_id=2026204648]
+layout_mode = 2
+theme_override_constants/separation = 0
+
+[node name="HBoxContainer" type="HBoxContainer" parent="HSplitContainer/VSplitContainer/VBoxContainer2/View/Validator/VBoxContainer" unique_id=557920727]
+layout_mode = 2
+alignment = 2
+
+[node name="Warning" type="Button" parent="HSplitContainer/VSplitContainer/VBoxContainer2/View/Validator/VBoxContainer/HBoxContainer" unique_id=1418479321]
+layout_mode = 2
+text = "0"
+script = ExtResource("2_whd8v")
+icon_name = "StatusWarning"
+
+[node name="Error" type="Button" parent="HSplitContainer/VSplitContainer/VBoxContainer2/View/Validator/VBoxContainer/HBoxContainer" unique_id=2139944931]
+layout_mode = 2
+text = "0"
+script = ExtResource("2_whd8v")
+icon_name = "StatusError"
+
+[node name="VBoxContainer" type="VBoxContainer" parent="HSplitContainer/VSplitContainer" unique_id=1251721008]
+layout_mode = 2
+theme_override_constants/separation = 0
+alignment = 2
+
+[node name="Panels" type="MarginContainer" parent="HSplitContainer/VSplitContainer/VBoxContainer" unique_id=208033112]
+visible = false
+custom_minimum_size = Vector2(0, 200)
+layout_mode = 2
+size_flags_vertical = 3
+theme_override_constants/margin_left = 2
+theme_override_constants/margin_top = 2
+theme_override_constants/margin_right = 2
+theme_override_constants/margin_bottom = 2
+
+[node name="MarginContainer" type="MarginContainer" parent="HSplitContainer/VSplitContainer/VBoxContainer" unique_id=1262743233]
+layout_mode = 2
+theme_override_constants/margin_left = 4
+theme_override_constants/margin_top = 4
+theme_override_constants/margin_right = 4
+theme_override_constants/margin_bottom = 4
+
+[node name="BottomBar" type="TabBar" parent="HSplitContainer/VSplitContainer/VBoxContainer/MarginContainer" unique_id=1069999648 node_paths=PackedStringArray("editor", "splitter", "prefabs_panel")]
+layout_mode = 2
+theme_override_constants/tab_separation = 4
+theme_override_styles/tab_unselected = SubResource("StyleBoxEmpty_2eckh")
+theme_override_styles/tab_hovered = SubResource("StyleBoxFlat_nyq4t")
+theme_override_styles/tab_selected = SubResource("StyleBoxFlat_nyq4t")
+theme_override_styles/tab_disabled = SubResource("StyleBoxEmpty_dm2yv")
+theme_override_styles/tab_focus = SubResource("StyleBoxEmpty_3o1sp")
+deselect_enabled = true
+script = ExtResource("4_jahc1")
+editor = NodePath("../../../../..")
+prefab_panel_scene = ExtResource("5_smk3j")
+splitter = NodePath("../../..")
+prefabs_panel = NodePath("../../Panels")
+
+[node name="TabContainer" type="TabContainer" parent="HSplitContainer" unique_id=507056466]
+custom_minimum_size = Vector2(300, 0)
+layout_mode = 2
+current_tab = 0
+
+[node name="Inspector" parent="HSplitContainer/TabContainer" unique_id=839289137 node_paths=PackedStringArray("editor", "icon_selector") instance=ExtResource("9_smk3j")]
+layout_mode = 2
+editor = NodePath("../../..")
+icon_selector = NodePath("../../../IconSelector")
+
+[node name="Settings" parent="HSplitContainer/TabContainer" unique_id=1515994406 node_paths=PackedStringArray("editor") instance=ExtResource("11_7r17o")]
+visible = false
+layout_mode = 2
+editor = NodePath("../../..")
+
+[node name="Attributes" parent="HSplitContainer/TabContainer" unique_id=1021028477 node_paths=PackedStringArray("editor") instance=ExtResource("12_6d86j")]
+layout_mode = 2
+editor = NodePath("../../..")
+
+[node name="ContextMenu" type="PopupMenu" parent="." unique_id=1053181615 node_paths=PackedStringArray("editor")]
+script = ExtResource("15_7r17o")
+editor = NodePath("..")
+
+[node name="IconSelector" parent="." unique_id=932671119 node_paths=PackedStringArray("editor") instance=ExtResource("10_5h8jn")]
+editor = NodePath("..")

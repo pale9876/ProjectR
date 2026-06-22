@@ -25,6 +25,9 @@ buses/default_bus_layout="uid://w8hk2j6ewb5f"
 GSignal="*uid://bjpdnvlv58vit"
 Global="*uid://o1g358yfihj8"
 SproutyDialogs="*uid://c8gxm75j80u8c"
+YggdrasilLoader="*uid://dqbvvuokqq4um"
+YggdrasilSerializer="*uid://g5grx5mhggq2"
+RumblePak="*uid://cf4u12dx32nt7"
 
 [display]
 
@@ -41,7 +44,7 @@ project/assembly_name="Holoverse"
 
 [editor_plugins]
 
-enabled=PackedStringArray("res://addons/ActionIcon/plugin.cfg", "res://addons/sprouty_dialogs/plugin.cfg")
+enabled=PackedStringArray("res://addons/ActionIcon/plugin.cfg", "res://addons/rumblepak/plugin.cfg", "res://addons/sprouty_dialogs/plugin.cfg", "res://addons/yggdrasil/plugin.cfg")
 
 [input]
 

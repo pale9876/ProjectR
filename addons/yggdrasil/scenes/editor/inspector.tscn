@@ -1,0 +1,215 @@
+[gd_scene format=3 uid="uid://ca3b4jsppsh8k"]
+
+[ext_resource type="Script" uid="uid://c2eusj55uin4g" path="res://addons/yggdrasil/scripts/editor/yggdrasil_inspector.gd" id="1_ptw0q"]
+[ext_resource type="PackedScene" uid="uid://b1dx26pr2lql1" path="res://addons/yggdrasil/scenes/editor/connection_entry.tscn" id="2_hsd65"]
+[ext_resource type="PackedScene" uid="uid://b1m5ww2rmlpv4" path="res://addons/yggdrasil/scenes/editor/inspector_texture_input.tscn" id="3_r6hlt"]
+[ext_resource type="Script" uid="uid://dskvw6vx3vest" path="res://addons/yggdrasil/scripts/editor/ui/yggdrasil_tree_ui.gd" id="4_wh5wr"]
+[ext_resource type="Shortcut" uid="uid://8yyn8n7k5cx7" path="res://addons/yggdrasil/shortcuts/rename.tres" id="5_uhjkn"]
+
+[sub_resource type="StyleBoxFlat" id="StyleBoxFlat_jahc1"]
+content_margin_left = 4.0
+content_margin_top = 4.0
+content_margin_right = 4.0
+content_margin_bottom = 4.0
+bg_color = Color(0.1, 0.1, 0.1, 0.6)
+draw_center = false
+border_width_left = 1
+border_width_right = 1
+border_width_bottom = 1
+border_color = Color(0, 0, 0, 0.6)
+corner_detail = 5
+
+[sub_resource type="StyleBoxFlat" id="StyleBoxFlat_smk3j"]
+bg_color = Color(0.105882354, 0.105882354, 0.105882354, 1)
+corner_radius_top_left = 4
+corner_radius_bottom_left = 4
+expand_margin_left = 4.0
+expand_margin_top = 4.0
+expand_margin_right = 8.0
+expand_margin_bottom = 4.0
+
+[node name="Inspector" type="ScrollContainer" unique_id=1161158692 node_paths=PackedStringArray("root_panel", "root_check", "info_panel", "id_input", "name_input", "description_input", "transform_panel", "position_x", "position_y", "visuals_panel", "icon_input", "border_normal_input", "border_intermediate_input", "border_active_input", "attributes_panel", "attributes_tree", "connection_panel")]
+offset_right = 265.0
+offset_bottom = 639.0
+script = ExtResource("1_ptw0q")
+root_panel = NodePath("VBoxContainer/Root")
+root_check = NodePath("VBoxContainer/Root/RootCheck")
+info_panel = NodePath("VBoxContainer/Info")
+id_input = NodePath("VBoxContainer/Info/Index/IndexInput")
+name_input = NodePath("VBoxContainer/Info/Name/NameInput")
+description_input = NodePath("VBoxContainer/Info/Description/DescriptionInput")
+transform_panel = NodePath("VBoxContainer/Transform")
+position_x = NodePath("VBoxContainer/Transform/VBoxContainer/Position/VBoxContainer/HBoxContainer/PositionX")
+position_y = NodePath("VBoxContainer/Transform/VBoxContainer/Position/VBoxContainer/HBoxContainer2/PositionY")
+visuals_panel = NodePath("VBoxContainer/Visuals")
+icon_input = NodePath("VBoxContainer/Visuals/VBoxContainer/Icon")
+border_normal_input = NodePath("VBoxContainer/Visuals/VBoxContainer/BorderNormal")
+border_intermediate_input = NodePath("VBoxContainer/Visuals/VBoxContainer/BorderIntermediate")
+border_active_input = NodePath("VBoxContainer/Visuals/VBoxContainer/BorderActive")
+attributes_panel = NodePath("VBoxContainer/Attributes")
+attributes_tree = NodePath("VBoxContainer/Attributes/Tree")
+connection_panel = NodePath("VBoxContainer/Connections")
+connection_entry_scene = ExtResource("2_hsd65")
+metadata/_tab_index = 0
+
+[node name="VBoxContainer" type="VBoxContainer" parent="." unique_id=292226149]
+layout_mode = 2
+size_flags_horizontal = 3
+
+[node name="Root" type="HBoxContainer" parent="VBoxContainer" unique_id=1317430567]
+visible = false
+layout_mode = 2
+
+[node name="Label" type="Label" parent="VBoxContainer/Root" unique_id=987043186]
+layout_mode = 2
+size_flags_horizontal = 3
+text = "Is Root"
+
+[node name="RootCheck" type="CheckBox" parent="VBoxContainer/Root" unique_id=248071109]
+layout_mode = 2
+size_flags_horizontal = 3
+text = "On"
+
+[node name="Info" type="VBoxContainer" parent="VBoxContainer" unique_id=1532299154]
+visible = false
+layout_mode = 2
+
+[node name="Index" type="HBoxContainer" parent="VBoxContainer/Info" unique_id=2014314274]
+layout_mode = 2
+
+[node name="Label" type="Label" parent="VBoxContainer/Info/Index" unique_id=60054294]
+layout_mode = 2
+size_flags_horizontal = 3
+text = "ID"
+
+[node name="IndexInput" type="LineEdit" parent="VBoxContainer/Info/Index" unique_id=943314869]
+layout_mode = 2
+size_flags_horizontal = 3
+editable = false
+
+[node name="Name" type="HBoxContainer" parent="VBoxContainer/Info" unique_id=644017553]
+layout_mode = 2
+
+[node name="Label" type="Label" parent="VBoxContainer/Info/Name" unique_id=1163505664]
+layout_mode = 2
+size_flags_horizontal = 3
+text = "Name"
+
+[node name="NameInput" type="LineEdit" parent="VBoxContainer/Info/Name" unique_id=1268554280]
+layout_mode = 2
+size_flags_horizontal = 3
+
+[node name="Description" type="HBoxContainer" parent="VBoxContainer/Info" unique_id=694821613]
+layout_mode = 2
+
+[node name="Label" type="Label" parent="VBoxContainer/Info/Description" unique_id=1455134063]
+layout_mode = 2
+size_flags_horizontal = 3
+size_flags_vertical = 0
+text = "Description"
+
+[node name="DescriptionInput" type="TextEdit" parent="VBoxContainer/Info/Description" unique_id=517203091]
+custom_minimum_size = Vector2(0, 60)
+layout_mode = 2
+size_flags_horizontal = 3
+
+[node name="Transform" type="FoldableContainer" parent="VBoxContainer" unique_id=994059703]
+visible = false
+layout_mode = 2
+theme_override_styles/panel = SubResource("StyleBoxFlat_jahc1")
+title = "Transform"
+
+[node name="VBoxContainer" type="VBoxContainer" parent="VBoxContainer/Transform" unique_id=1462651173]
+layout_mode = 2
+
+[node name="Position" type="HBoxContainer" parent="VBoxContainer/Transform/VBoxContainer" unique_id=1955893937]
+layout_mode = 2
+
+[node name="Label" type="Label" parent="VBoxContainer/Transform/VBoxContainer/Position" unique_id=428856933]
+layout_mode = 2
+size_flags_horizontal = 3
+text = "Position"
+
+[node name="VBoxContainer" type="VBoxContainer" parent="VBoxContainer/Transform/VBoxContainer/Position" unique_id=659545076]
+layout_mode = 2
+size_flags_horizontal = 3
+theme_override_constants/separation = 0
+
+[node name="HBoxContainer" type="HBoxContainer" parent="VBoxContainer/Transform/VBoxContainer/Position/VBoxContainer" unique_id=2055788481]
+layout_mode = 2
+
+[node name="Label" type="Label" parent="VBoxContainer/Transform/VBoxContainer/Position/VBoxContainer/HBoxContainer" unique_id=901736133]
+layout_mode = 2
+theme_override_colors/font_color = Color(0.47843137, 0.23921569, 0.28235295, 1)
+theme_override_styles/normal = SubResource("StyleBoxFlat_smk3j")
+text = "X"
+
+[node name="PositionX" type="SpinBox" parent="VBoxContainer/Transform/VBoxContainer/Position/VBoxContainer/HBoxContainer" unique_id=678154907]
+layout_mode = 2
+size_flags_horizontal = 3
+rounded = true
+allow_greater = true
+allow_lesser = true
+
+[node name="HBoxContainer2" type="HBoxContainer" parent="VBoxContainer/Transform/VBoxContainer/Position/VBoxContainer" unique_id=32361739]
+layout_mode = 2
+
+[node name="Label" type="Label" parent="VBoxContainer/Transform/VBoxContainer/Position/VBoxContainer/HBoxContainer2" unique_id=1176394991]
+layout_mode = 2
+theme_override_colors/font_color = Color(0.42352942, 0.5058824, 0.2509804, 1)
+theme_override_styles/normal = SubResource("StyleBoxFlat_smk3j")
+text = "Y"
+
+[node name="PositionY" type="SpinBox" parent="VBoxContainer/Transform/VBoxContainer/Position/VBoxContainer/HBoxContainer2" unique_id=1325444515]
+layout_mode = 2
+size_flags_horizontal = 3
+rounded = true
+allow_greater = true
+allow_lesser = true
+
+[node name="Visuals" type="FoldableContainer" parent="VBoxContainer" unique_id=1503523885]
+visible = false
+layout_mode = 2
+theme_override_styles/panel = SubResource("StyleBoxFlat_jahc1")
+title = "Visuals"
+
+[node name="VBoxContainer" type="VBoxContainer" parent="VBoxContainer/Visuals" unique_id=1109465602]
+layout_mode = 2
+
+[node name="Icon" parent="VBoxContainer/Visuals/VBoxContainer" unique_id=615627613 instance=ExtResource("3_r6hlt")]
+layout_mode = 2
+title = "Icon"
+
+[node name="BorderNormal" parent="VBoxContainer/Visuals/VBoxContainer" unique_id=1176080470 instance=ExtResource("3_r6hlt")]
+layout_mode = 2
+title = "Border Normal"
+
+[node name="BorderIntermediate" parent="VBoxContainer/Visuals/VBoxContainer" unique_id=1295996994 instance=ExtResource("3_r6hlt")]
+layout_mode = 2
+title = "Border Intermediate"
+
+[node name="BorderActive" parent="VBoxContainer/Visuals/VBoxContainer" unique_id=1521259198 instance=ExtResource("3_r6hlt")]
+layout_mode = 2
+title = "Border Active"
+
+[node name="Attributes" type="FoldableContainer" parent="VBoxContainer" unique_id=935531078]
+visible = false
+layout_mode = 2
+theme_override_styles/panel = SubResource("StyleBoxFlat_jahc1")
+title = "Attributes"
+
+[node name="Tree" type="Tree" parent="VBoxContainer/Attributes" unique_id=199365877]
+custom_minimum_size = Vector2(0, 200)
+layout_mode = 2
+hide_root = true
+script = ExtResource("4_wh5wr")
+rename_shortcut = ExtResource("5_uhjkn")
+
+[node name="Connections" type="FoldableContainer" parent="VBoxContainer" unique_id=355182382]
+visible = false
+layout_mode = 2
+theme_override_styles/panel = SubResource("StyleBoxFlat_jahc1")
+title = "Connections"
+
+[node name="VBoxContainer" type="VBoxContainer" parent="VBoxContainer/Connections" unique_id=423275871]
+layout_mode = 2
