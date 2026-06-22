@@ -62,7 +62,7 @@ func _update(_delta: float) -> void:
 				_anim_finished = false
 				_pressed = false
 				get_hsm().label.text = "Right Punch"
-				player.velocity.x = player.state.face.x * 200.
+				player.velocity.x += player.state.face.x * 200.
 			
 		RIGHT:
 			if _postpone > 0 and Input.is_action_just_pressed(&"attack"):
@@ -74,13 +74,13 @@ func _update(_delta: float) -> void:
 				if _just:
 					anim.play(&"hammer_explosion")
 					get_hsm().label.text = "Hammer EX"
+					_just = false
 				else:
 					anim.play(&"hammer")
 					get_hsm().label.text = "Hammer"
 				state = HAMMER
 				_anim_finished = false
 				_pressed = false
-				_just = false
 
 
 	if _anim_finished:

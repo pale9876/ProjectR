@@ -26,7 +26,7 @@ func _update(_delta: float) -> void:
 		player.velocity.y = -450.
 
 	player.velocity.x = move_toward(
-		player.velocity.x, player.input_state.direction.x * 350., 35.
+		player.velocity.x, player.state.face.x * 350., 35.
 	)
 	
 	move_and_slide()
@@ -41,6 +41,9 @@ func _update(_delta: float) -> void:
 			hsm.change_active_state(jump_state)
 			return
 	else:
+		if player.state.face.x != player.input_state.direction.x:
+			player.state.face.x = int(player.input_state.direction.x)
+		
 		if player.input_state.direction.x == 0.:
 			hsm.change_active_state(idle_state)
 		else:
