@@ -22,7 +22,9 @@ func _init() -> void:
 	motion_mode = CharacterBody2D.MOTION_MODE_GROUNDED
 	
 	set_collision_mask_value(1, true)
+	
 	set_collision_layer_value(1, false)
+	set_collision_layer_value(2, true)
 
 	state.face_changed.connect(_on_face_changed)
 
@@ -105,10 +107,10 @@ class Stat:
 class State:
 	signal face_changed()
 	
-	var face: Vector2i = Vector2i.DOWN:
+	var face: Vector2i = Vector2i.RIGHT:
 		set(value):
 			if value != face:
-				face = value
+				face = value if value.x != 0. else Vector2i(face.x, value.y)
 				face_changed.emit()
 	var mouse_direction: Vector2 = Vector2()
 

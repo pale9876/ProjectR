@@ -20,6 +20,9 @@
 [ext_resource type="Script" uid="uid://b055wwf4d617f" path="res://player/counter_attack.gd" id="16_32hag"]
 [ext_resource type="PackedScene" uid="uid://c2lkd08i0bolj" path="res://hitboxes/punch_combo.tscn" id="19_65viv"]
 [ext_resource type="PackedScene" uid="uid://bb8kauq734h10" path="res://hitboxes/slide_hitbox.tscn" id="20_x7c3f"]
+[ext_resource type="Script" uid="uid://0dw4edo0eshv" path="res://player/hitbox.gd" id="21_bjvpn"]
+[ext_resource type="Script" uid="uid://b5n6wklxaj05c" path="res://hit_collision.gd" id="22_bjvpn"]
+[ext_resource type="Script" uid="uid://xw07ofvvtrxk" path="res://hitbox_info.gd" id="23_s7qer"]
 
 [sub_resource type="Gradient" id="Gradient_yw30f"]
 interpolation_mode = 1
@@ -454,6 +457,7 @@ tracks/10/keys = {
 [sub_resource type="Animation" id="Animation_yllr7"]
 resource_name = "hammer"
 length = 0.4000033541951328
+step = 0.016666668
 tracks/0/type = "value"
 tracks/0/imported = false
 tracks/0/enabled = true
@@ -478,10 +482,24 @@ tracks/1/keys = {
 "update": 1,
 "values": [true, false]
 }
+tracks/2/type = "method"
+tracks/2/imported = false
+tracks/2/enabled = true
+tracks/2/path = NodePath(".")
+tracks/2/interp = 1
+tracks/2/loop_wrap = true
+tracks/2/keys = {
+"times": PackedFloat32Array(0.21666667),
+"transitions": PackedFloat32Array(1),
+"values": [{
+"args": [225.0],
+"method": &"propel"
+}]
+}
 
 [sub_resource type="Animation" id="Animation_x7c3f"]
 resource_name = "hammer_explosion"
-length = 0.40000335419513283
+length = 0.4000033541951328
 
 [sub_resource type="Animation" id="Animation_kb6p2"]
 resource_name = "left_punch"
@@ -635,6 +653,20 @@ tracks/5/keys = {
 "update": 1,
 "values": [0, 1]
 }
+tracks/6/type = "method"
+tracks/6/imported = false
+tracks/6/enabled = true
+tracks/6/path = NodePath(".")
+tracks/6/interp = 1
+tracks/6/loop_wrap = true
+tracks/6/keys = {
+"times": PackedFloat32Array(0),
+"transitions": PackedFloat32Array(1),
+"values": [{
+"args": [200.0],
+"method": &"propel"
+}]
+}
 
 [sub_resource type="AnimationLibrary" id="AnimationLibrary_32hag"]
 _data = {
@@ -739,8 +771,13 @@ _data = {
 &"guard_on": SubResource("Animation_knn7v")
 }
 
+[sub_resource type="Resource" id="Resource_bjvpn"]
+script = ExtResource("23_s7qer")
+atk_name = &"Pa!"
+metadata/_custom_type_script = "uid://xw07ofvvtrxk"
+
 [node name="Player" type="CharacterBody2D" unique_id=1697822384 node_paths=PackedStringArray("hsm")]
-collision_layer = 0
+collision_layer = 2
 script = ExtResource("1_bvu1k")
 hsm = NodePath("LimboHSM")
 
@@ -846,6 +883,19 @@ script = ExtResource("16_32hag")
 [node name="PunchCombo" parent="." unique_id=1815996743 instance=ExtResource("19_65viv")]
 
 [node name="SlideHitbox" parent="." unique_id=227710391 instance=ExtResource("20_x7c3f")]
+
+[node name="CounterAttack" type="Area2D" parent="." unique_id=1232055323]
+collision_layer = 0
+collision_mask = 2
+monitorable = false
+script = ExtResource("21_bjvpn")
+metadata/_custom_type_script = "uid://0dw4edo0eshv"
+
+[node name="Pa" type="CollisionPolygon2D" parent="CounterAttack" unique_id=1468070712]
+polygon = PackedVector2Array(0, -57, 1, 0, 45, 0, 45, -57)
+disabled = true
+script = ExtResource("22_bjvpn")
+hitbox_info = SubResource("Resource_bjvpn")
 
 [node name="Label" type="Label" parent="." unique_id=1166794144]
 offset_left = -29.0

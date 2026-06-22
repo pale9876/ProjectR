@@ -62,7 +62,6 @@ func _update(_delta: float) -> void:
 				_anim_finished = false
 				_pressed = false
 				get_hsm().label.text = "Right Punch"
-				player.velocity.x += player.state.face.x * 200.
 			
 		RIGHT:
 			if _postpone > 0 and Input.is_action_just_pressed(&"attack"):
@@ -87,13 +86,19 @@ func _update(_delta: float) -> void:
 		_postpone -= 1
 		if _postpone == 0:
 			get_hsm().change_active_state(idle_state)
-	
+
 
 func _exit() -> void:
 	punch_combo_hitbox.clear()
 	state = LEFT
 	_anim_finished = false
 	_just = false
+
+
+func propel(_force: float) -> void:
+	var player := get_player()
+	print(player.state.face)
+	player.velocity.x += _force * player.state.face.x
 
 
 func _animation_finished(anim_name: StringName):
