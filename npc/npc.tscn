@@ -1,9 +1,9 @@
 [gd_scene format=3 uid="uid://b7ya2gtphhn00"]
 
 [ext_resource type="Script" uid="uid://dqd845y1secly" path="res://npc/pathed_unit.gd" id="1_o6cys"]
-[ext_resource type="Texture2D" uid="uid://dln0gsxdhnads" path="res://aseprite/asso_project/sample_motions/idle.png" id="2_ldo70"]
 [ext_resource type="Shader" uid="uid://b7ev33xt35608" path="res://shaders/pixel_shader_outline.gdshader" id="2_ocili"]
 [ext_resource type="Script" uid="uid://cktpq0kuvmge1" path="res://npc/awareness.gd" id="3_fnhme"]
+[ext_resource type="SpriteFrames" uid="uid://72n3ls5rb05n" path="res://sample_motion_frames.tres" id="3_ocili"]
 [ext_resource type="Script" uid="uid://cy6xk12udulfh" path="res://npc/visible_on_screen_notifier_2d.gd" id="4_uamtn"]
 [ext_resource type="Script" uid="uid://dxd14gsfsusdx" path="res://ai/tasks/if_target_not_null.gd" id="5_fnhme"]
 [ext_resource type="Script" uid="uid://bs1oqvm6y0hg8" path="res://ai/tasks/go_to_rand_pos.gd" id="5_ldo70"]
@@ -21,26 +21,6 @@ shader_parameter/bottomleft = false
 shader_parameter/bottomright = false
 shader_parameter/color = Color(0.28, 0.0812, 0.0812, 1)
 shader_parameter/inside = false
-
-[sub_resource type="AtlasTexture" id="AtlasTexture_cebga"]
-atlas = ExtResource("2_ldo70")
-region = Rect2(0, 0, 128, 128)
-
-[sub_resource type="SpriteFrames" id="SpriteFrames_guff7"]
-animations = [{
-"frames": [{
-"duration": 1.0,
-"texture": SubResource("AtlasTexture_cebga")
-}],
-"loop": 1,
-"name": &"idle",
-"speed": 5.0
-}, {
-"frames": [],
-"loop": 1,
-"name": &"move",
-"speed": 5.0
-}]
 
 [sub_resource type="RectangleShape2D" id="RectangleShape2D_guff7"]
 size = Vector2(320, 136)
@@ -106,7 +86,8 @@ script = ExtResource("1_o6cys")
 
 [node name="AnimatedSprite2D" type="AnimatedSprite2D" parent="." unique_id=194746556]
 material = SubResource("ShaderMaterial_phifv")
-sprite_frames = SubResource("SpriteFrames_guff7")
+position = Vector2(0, -32)
+sprite_frames = ExtResource("3_ocili")
 animation = &"idle"
 offset = Vector2(0, -32)
 

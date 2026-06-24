@@ -12,3 +12,7 @@ class_name HitPolygon
 func _init() -> void:
 	visible = false
 	disabled = true
+
+
+func set_collision() -> void:
+	pass
