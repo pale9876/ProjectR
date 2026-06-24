@@ -46,8 +46,6 @@ func _ready() -> void:
 		stat.name = name
 		stat.hp = info.hp
 		stat.speed = info.speed
-	
-		stat._update()
 
 	if info:
 		sprite.sprite_frames = info.sprite
@@ -58,8 +56,16 @@ func _ready() -> void:
 	input_state.unlock()
 
 
+func get_face() -> float:
+	return state.face.x
+
+
 
 func _process(delta: float) -> void:
+	# Input
+	input_state.direction = Input.get_vector("left", "right", "up", "down")
+	
+	# Shadow
 	var param: PhysicsRayQueryParameters2D = PhysicsRayQueryParameters2D.create(
 		global_position,
 		Vector2(global_position.x, global_position.y + 3000.),
@@ -75,10 +81,7 @@ func _process(delta: float) -> void:
 		drop_shadow.global_position = intersect_point
 
 
-func _physics_process(_delta: float) -> void:
-	input_state.direction = Input.get_vector("left", "right", "up", "down")
-	
-
+#func _physics_process(_delta: float) -> void:
 
 func _soft_pause() -> void:
 	set_process(false)
@@ -124,6 +127,7 @@ class InputState:
 	var order_duration: float = - 1.
 	var _duration: float = 0.
 	var _lock: bool = false
+
 
 	func lock() -> void:
 		_lock = true

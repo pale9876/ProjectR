@@ -20,21 +20,22 @@ var _anim_finished: bool = false
 var _pressed: bool = false
 var _just: bool = true
 
+
 @onready var anim: AnimationPlayer = $AnimationPlayer
 @export var punch_combo_hitbox: PlayerHitbox
 
 
+func _guard() -> bool:
+	if get_state_machine().get_active_state() in [idle_state, move_state]:
+		return true
+	return false
+
+
+func _enter_tree() -> void:
+	init_action()
+
+
 func _ready() -> void:
-	var hsm := get_parent() as LimboHSM
-	
-	hsm.add_transition(
-		hsm.ANYSTATE, self, &"high_punch",
-		func() -> bool:
-			if hsm.get_active_state() in [idle_state, move_state]:
-				return true
-			return false
-	)
-	
 	anim.animation_finished.connect(_animation_finished)
 
 
@@ -43,7 +44,8 @@ func _enter() -> void:
 	
 	anim.play(&"left_punch")
 	punch_combo_hitbox.scale.x = player.state.face.x
-	get_hsm().label.text = ":eft Punch"
+	get_hsm().label.text = "Left Punch"
+
 
 func _update(_delta: float) -> void:
 	var player := get_player()
@@ -89,16 +91,19 @@ func _update(_delta: float) -> void:
 
 
 func _exit() -> void:
+	_clear()
+
+
+func _clear() -> void:
 	punch_combo_hitbox.clear()
 	state = LEFT
 	_anim_finished = false
 	_just = false
 
 
-func propel(_force: float) -> void:
+func _propel(motion: Vector2) -> void:
 	var player := get_player()
-	print(player.state.face)
-	player.velocity.x += _force * player.state.face.x
+	player.velocity.x += motion.x * player.state.face.x
 
 
 func _animation_finished(anim_name: StringName):

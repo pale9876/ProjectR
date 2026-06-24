@@ -10,6 +10,7 @@ const Player: Script = preload("uid://c2uxhumgng18h")
 @export var information: Information
 @export var bt: BTPlayer
 @export var z_value: float = 0.
+@export var rage_mode: bool = true
 
 
 @onready var sprite: AnimatedSprite2D = $AnimatedSprite2D

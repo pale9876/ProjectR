@@ -8,11 +8,6 @@ extends PlayerState
 @export var slide_state: LimboState
 
 
-var slide_trigger: SkillTrigger = SkillTrigger.new(
-	["down", "attack"]
-)
-
-
 func _enter() -> void:
 	var player := get_player()
 	player.sprite.play(&"move")
@@ -46,7 +41,3 @@ func _update(_delta: float) -> void:
 		
 		if player.input_state.direction.x == 0.:
 			hsm.change_active_state(idle_state)
-		else:
-			if slide_trigger.spend():
-				player.velocity.x = player.input_state.direction.x * 525.5
-				hsm.change_active_state(slide_state)

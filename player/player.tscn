@@ -1,6 +1,7 @@
 [gd_scene format=3 uid="uid://br4srsyh160du"]
 
 [ext_resource type="Script" uid="uid://c2uxhumgng18h" path="res://player/player.gd" id="1_bvu1k"]
+[ext_resource type="Script" uid="uid://r11y6g0g5cvx" path="res://player/player_information.gd" id="2_65viv"]
 [ext_resource type="SpriteFrames" uid="uid://72n3ls5rb05n" path="res://sample_motion_frames.tres" id="2_c35mf"]
 [ext_resource type="Script" uid="uid://nmmtety5yvve" path="res://player/state_machine.gd" id="3_2ieo8"]
 [ext_resource type="Script" uid="uid://c08p61o8pw6vo" path="res://player/state/idle.gd" id="4_bvu1k"]
@@ -12,13 +13,21 @@
 [ext_resource type="Script" uid="uid://b7phyhue4y3yg" path="res://player/player_camera.gd" id="11_2ieo8"]
 [ext_resource type="Script" uid="uid://brl8ronpyxa3h" path="res://player/knockbacked.gd" id="11_yllr7"]
 [ext_resource type="Script" uid="uid://c2pn8aieo5n42" path="res://player/slide.gd" id="14_kb6p2"]
-[ext_resource type="Script" uid="uid://bv4sobgleq2ba" path="res://player/guard.gd" id="15_32hag"]
+[ext_resource type="Script" uid="uid://bv4sobgleq2ba" path="res://player/block.gd" id="15_32hag"]
 [ext_resource type="Script" uid="uid://b055wwf4d617f" path="res://player/counter_attack.gd" id="16_32hag"]
+[ext_resource type="Script" uid="uid://b7x8s5btnaxj2" path="res://player/state/player_state.gd" id="16_x7c3f"]
 [ext_resource type="PackedScene" uid="uid://c2lkd08i0bolj" path="res://hitboxes/punch_combo.tscn" id="19_65viv"]
 [ext_resource type="PackedScene" uid="uid://bb8kauq734h10" path="res://hitboxes/slide_hitbox.tscn" id="20_x7c3f"]
 [ext_resource type="Script" uid="uid://0dw4edo0eshv" path="res://player/hitbox.gd" id="21_bjvpn"]
 [ext_resource type="Script" uid="uid://b5n6wklxaj05c" path="res://hit_collision.gd" id="22_bjvpn"]
 [ext_resource type="Script" uid="uid://xw07ofvvtrxk" path="res://hitbox_info.gd" id="23_s7qer"]
+
+[sub_resource type="Resource" id="Resource_4xbu7"]
+script = ExtResource("2_65viv")
+name = &"John Doe"
+speed = 350.0
+sprite = ExtResource("2_c35mf")
+metadata/_custom_type_script = "uid://r11y6g0g5cvx"
 
 [sub_resource type="Gradient" id="Gradient_yw30f"]
 interpolation_mode = 1
@@ -352,9 +361,33 @@ tracks/2/keys = {
 "times": PackedFloat32Array(0.21666667),
 "transitions": PackedFloat32Array(1),
 "values": [{
-"args": [225.0],
-"method": &"propel"
+"args": [Vector2(225, 0)],
+"method": &"_propel"
 }]
+}
+tracks/3/type = "value"
+tracks/3/imported = false
+tracks/3/enabled = true
+tracks/3/path = NodePath("../../AnimatedSprite2D:animation")
+tracks/3/interp = 1
+tracks/3/loop_wrap = true
+tracks/3/keys = {
+"times": PackedFloat32Array(0),
+"transitions": PackedFloat32Array(1),
+"update": 1,
+"values": [&"hammer"]
+}
+tracks/4/type = "value"
+tracks/4/imported = false
+tracks/4/enabled = true
+tracks/4/path = NodePath("../../AnimatedSprite2D:frame")
+tracks/4/interp = 1
+tracks/4/loop_wrap = true
+tracks/4/keys = {
+"times": PackedFloat32Array(0, 0.23333335, 0.33333334),
+"transitions": PackedFloat32Array(1, 1, 1),
+"update": 1,
+"values": [0, 1, 2]
 }
 
 [sub_resource type="Animation" id="Animation_x7c3f"]
@@ -508,10 +541,10 @@ tracks/5/path = NodePath("../../AnimatedSprite2D:frame")
 tracks/5/interp = 1
 tracks/5/loop_wrap = true
 tracks/5/keys = {
-"times": PackedFloat32Array(0, 0.20000002),
-"transitions": PackedFloat32Array(1, 1),
+"times": PackedFloat32Array(0, 0.06666667, 0.16666667),
+"transitions": PackedFloat32Array(1, 1, 1),
 "update": 1,
-"values": [0, 1]
+"values": [0, 1, 2]
 }
 tracks/6/type = "method"
 tracks/6/imported = false
@@ -523,8 +556,8 @@ tracks/6/keys = {
 "times": PackedFloat32Array(0),
 "transitions": PackedFloat32Array(1),
 "values": [{
-"args": [200.0],
-"method": &"propel"
+"args": [Vector2(200, 0)],
+"method": &"_propel"
 }]
 }
 
@@ -551,10 +584,34 @@ tracks/0/keys = {
 "update": 1,
 "values": [true]
 }
+tracks/1/type = "value"
+tracks/1/imported = false
+tracks/1/enabled = true
+tracks/1/path = NodePath("../../AnimatedSprite2D:animation")
+tracks/1/interp = 1
+tracks/1/loop_wrap = true
+tracks/1/keys = {
+"times": PackedFloat32Array(0),
+"transitions": PackedFloat32Array(1),
+"update": 1,
+"values": [&"slide"]
+}
+tracks/2/type = "value"
+tracks/2/imported = false
+tracks/2/enabled = true
+tracks/2/path = NodePath("../../AnimatedSprite2D:frame")
+tracks/2/interp = 1
+tracks/2/loop_wrap = true
+tracks/2/keys = {
+"times": PackedFloat32Array(0),
+"transitions": PackedFloat32Array(1),
+"update": 1,
+"values": [0]
+}
 
 [sub_resource type="Animation" id="Animation_bjvpn"]
 resource_name = "slide"
-length = 0.25000167970526965
+length = 0.5333350278155878
 step = 0.016666668
 tracks/0/type = "value"
 tracks/0/imported = false
@@ -563,10 +620,34 @@ tracks/0/path = NodePath("../../SlideHitbox/HitboxShape:disabled")
 tracks/0/interp = 1
 tracks/0/loop_wrap = true
 tracks/0/keys = {
-"times": PackedFloat32Array(0, 0.033333335, 0.083333336),
+"times": PackedFloat32Array(0, 0.18333334, 0.33333334),
 "transitions": PackedFloat32Array(1, 1, 1),
 "update": 1,
 "values": [true, false, true]
+}
+tracks/1/type = "value"
+tracks/1/imported = false
+tracks/1/enabled = true
+tracks/1/path = NodePath("../../AnimatedSprite2D:animation")
+tracks/1/interp = 1
+tracks/1/loop_wrap = true
+tracks/1/keys = {
+"times": PackedFloat32Array(0),
+"transitions": PackedFloat32Array(1),
+"update": 1,
+"values": [&"slide"]
+}
+tracks/2/type = "value"
+tracks/2/imported = false
+tracks/2/enabled = true
+tracks/2/path = NodePath("../../AnimatedSprite2D:frame")
+tracks/2/interp = 1
+tracks/2/loop_wrap = true
+tracks/2/keys = {
+"times": PackedFloat32Array(0, 0.18333334, 0.45),
+"transitions": PackedFloat32Array(1, 1, 1),
+"update": 1,
+"values": [0, 1, 2]
 }
 
 [sub_resource type="AnimationLibrary" id="AnimationLibrary_s7qer"]
@@ -589,6 +670,18 @@ tracks/0/keys = {
 "update": 1,
 "values": [0]
 }
+tracks/1/type = "value"
+tracks/1/imported = false
+tracks/1/enabled = true
+tracks/1/path = NodePath(".:_just")
+tracks/1/interp = 1
+tracks/1/loop_wrap = true
+tracks/1/keys = {
+"times": PackedFloat32Array(0),
+"transitions": PackedFloat32Array(1),
+"update": 1,
+"values": [true]
+}
 
 [sub_resource type="Animation" id="Animation_g4c7l"]
 resource_name = "guard_down"
@@ -601,7 +694,7 @@ tracks/0/path = NodePath("../../Hurtbox:state")
 tracks/0/interp = 1
 tracks/0/loop_wrap = true
 tracks/0/keys = {
-"times": PackedFloat32Array(0.016666668),
+"times": PackedFloat32Array(0),
 "transitions": PackedFloat32Array(1),
 "update": 1,
 "values": [0]
@@ -623,6 +716,18 @@ tracks/0/keys = {
 "update": 1,
 "values": [0, 2]
 }
+tracks/1/type = "value"
+tracks/1/imported = false
+tracks/1/enabled = true
+tracks/1/path = NodePath(".:_just")
+tracks/1/interp = 1
+tracks/1/loop_wrap = true
+tracks/1/keys = {
+"times": PackedFloat32Array(0.033333335, 0.083333336),
+"transitions": PackedFloat32Array(1, 1),
+"update": 1,
+"values": [true, false]
+}
 
 [sub_resource type="AnimationLibrary" id="AnimationLibrary_7pqkx"]
 _data = {
@@ -639,6 +744,7 @@ metadata/_custom_type_script = "uid://xw07ofvvtrxk"
 [node name="Player" type="CharacterBody2D" unique_id=1697822384 node_paths=PackedStringArray("hsm")]
 collision_layer = 2
 script = ExtResource("1_bvu1k")
+info = SubResource("Resource_4xbu7")
 hsm = NodePath("LimboHSM")
 
 [node name="DropShadow" type="Sprite2D" parent="." unique_id=981265406]
@@ -647,7 +753,7 @@ texture = SubResource("GradientTexture2D_wqsic")
 [node name="AnimatedSprite2D" type="AnimatedSprite2D" parent="." unique_id=383934619]
 position = Vector2(59, -32)
 sprite_frames = ExtResource("2_c35mf")
-animation = &"left_punch"
+animation = &"slide"
 offset = Vector2(-59, -32)
 
 [node name="CollisionShape2D" type="CollisionShape2D" parent="." unique_id=628658269]
@@ -671,11 +777,11 @@ autoplay = &"idle"
 [node name="Camera2D" type="Camera2D" parent="." unique_id=1164297328]
 script = ExtResource("11_2ieo8")
 
-[node name="LimboHSM" type="LimboHSM" parent="." unique_id=2015169286 node_paths=PackedStringArray("label", "high_punch_state")]
+[node name="LimboHSM" type="LimboHSM" parent="." unique_id=2015169286 node_paths=PackedStringArray("label")]
 blackboard_plan = SubResource("BlackboardPlan_sweqy")
 script = ExtResource("3_2ieo8")
 label = NodePath("../Label")
-high_punch_state = NodePath("HighPunchCombo")
+input_postpone = 10
 
 [node name="Idle" type="LimboState" parent="LimboHSM" unique_id=382262949 node_paths=PackedStringArray("move_state", "fall_state", "jump_state")]
 script = ExtResource("4_bvu1k")
@@ -712,6 +818,8 @@ idle_state = NodePath("../Idle")
 move_state = NodePath("../Move")
 anim_postpone = 8
 punch_combo_hitbox = NodePath("../../PunchCombo")
+action_input = PackedStringArray("attack")
+ev_name = &"high_punch"
 
 [node name="AnimationPlayer" type="AnimationPlayer" parent="LimboHSM/HighPunchCombo" unique_id=1553393577]
 libraries/ = SubResource("AnimationLibrary_32hag")
@@ -720,28 +828,45 @@ libraries/ = SubResource("AnimationLibrary_32hag")
 script = ExtResource("14_kb6p2")
 idle_state = NodePath("../Idle")
 move_state = NodePath("../Move")
-force_minmax = Vector2(-60.2, 68.3)
+action_input = PackedStringArray("down", "front", "kick")
+ev_name = &"slide"
 
 [node name="AnimationPlayer" type="AnimationPlayer" parent="LimboHSM/Slide" unique_id=532858250]
 libraries/ = SubResource("AnimationLibrary_s7qer")
 
-[node name="Guard" type="LimboState" parent="LimboHSM" unique_id=1247193361]
+[node name="Block" type="LimboState" parent="LimboHSM" unique_id=1247193361]
 script = ExtResource("15_32hag")
+_just = true
+ev_name = &"block"
 metadata/_custom_type_script = "uid://b7x8s5btnaxj2"
 
-[node name="AnimationPlayer" type="AnimationPlayer" parent="LimboHSM/Guard" unique_id=1446969938]
+[node name="AnimationPlayer" type="AnimationPlayer" parent="LimboHSM/Block" unique_id=1446969938]
 libraries/ = SubResource("AnimationLibrary_7pqkx")
 
 [node name="CounterAttack" type="LimboState" parent="LimboHSM" unique_id=744353454]
 script = ExtResource("16_32hag")
 
-[node name="JumpKick" type="LimboState" parent="LimboHSM" unique_id=921539064]
+[node name="JumpKick" type="LimboState" parent="LimboHSM" unique_id=492539177]
+script = ExtResource("16_x7c3f")
+metadata/_custom_type_script = "uid://b7x8s5btnaxj2"
 
-[node name="JumpHammer" type="LimboState" parent="LimboHSM" unique_id=1275712382]
+[node name="JumpHammer" type="LimboState" parent="LimboHSM" unique_id=1138518008]
+script = ExtResource("16_x7c3f")
+metadata/_custom_type_script = "uid://b7x8s5btnaxj2"
+
+[node name="Dodge" type="LimboState" parent="LimboHSM" unique_id=845458942]
+script = ExtResource("16_x7c3f")
+metadata/_custom_type_script = "uid://b7x8s5btnaxj2"
 
 [node name="Hitboxes" type="Node2D" parent="." unique_id=1243634124]
 
 [node name="PunchCombo" parent="." unique_id=1815996743 instance=ExtResource("19_65viv")]
+
+[node name="Left" parent="PunchCombo" index="0" unique_id=1646723435]
+position = Vector2(32, -74)
+
+[node name="Right" parent="PunchCombo" index="1" unique_id=533587364]
+position = Vector2(40, -74)
 
 [node name="SlideHitbox" parent="." unique_id=227710391 instance=ExtResource("20_x7c3f")]
 

@@ -29,19 +29,25 @@ func _entered(
 	local_idx: int
 ) -> void:
 	if area is UnitHurtbox:
-		var hit_result: HitResult = HitResult.new()
-		var hit_info: HitboxInformation = (get_child(local_idx) as HitboxShape).hitbox_info
+		var hitbox_shape := get_child(local_idx) as HitboxShape
+
+		if hitbox_shape.result == null:
+			var hit_result: HitResult = HitResult.new()
+			var hit_info: HitboxInformation = (get_child(local_idx) as HitboxShape).hitbox_info
+			
+			hit_result.damage = hit_info.damage
+			hit_result.from = self
+			hit_result.to = area.get_parent() as Unit
 		
-		hit_result.damage = hit_info.damage
-		hit_result.from = self
-		hit_result.to = area.get_parent() as Unit
-	
-		area.damaged(hit_info.damage)
-		
-		print("Enemy Hit => damage: {%s}" % hit_info.damage)
+			area.damaged(hit_info.damage)
+			
+			print("Enemy Hit => damage: {%s}" % hit_info.damage)
 
 
 func clear() -> void:
 	for node: Node in get_children():
 		if node is HitboxShape:
-			node.hit_result = null
+			node.visible = false
+			node.result = null
+	
+	hide()
