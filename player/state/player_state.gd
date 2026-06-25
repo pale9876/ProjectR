@@ -2,11 +2,22 @@ extends LimboState
 class_name PlayerState
 
 
+enum Type {
+	IDLE,
+	JUMP,
+}
+
+const IDLE := Type.IDLE
+const JUMP := Type.JUMP
+
+
 # Import
 const Player: Script = preload("uid://c2uxhumgng18h")
 const StateMachine: Script = preload("uid://nmmtety5yvve")
 
+
 # Conditions
+@export var type: Type = IDLE
 @export var action_input: PackedStringArray
 @export var ev_name: StringName
 @export var block_cancel: bool = false
@@ -40,7 +51,7 @@ func init_action() -> void:
 	)
 		
 	var state_machine := get_state_machine()
-	state_machine.input_map[action_input] = ev_name
+	state_machine.input_map[type][action_input] = ev_name
 	state_machine.add_transition(
 		state_machine.ANYSTATE, self, ev_name, _guard
 	)

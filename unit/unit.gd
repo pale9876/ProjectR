@@ -62,7 +62,11 @@ func _refresh_path() -> void:
 	pass
 
 
-func get_bb() -> Blackboard:
+func get_player() -> Player:
+	return Global.player
+
+
+func get_btbb() -> Blackboard:
 	return bt.blackboard
 
 

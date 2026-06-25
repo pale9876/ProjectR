@@ -9,6 +9,9 @@
 [ext_resource type="Script" uid="uid://dmj17w1hipj7o" path="res://ai/tasks/unit/trace_target.gd" id="7_a2j7n"]
 [ext_resource type="Script" uid="uid://bupj3hlvtt67s" path="res://unit/hurtbox.gd" id="8_a3q01"]
 [ext_resource type="Script" uid="uid://dcybwuwfqeqr3" path="res://unit/state/state_machine.gd" id="9_4xbu7"]
+[ext_resource type="Script" uid="uid://8cq3ted0s3ob" path="res://unit/state/idle.gd" id="10_a2j7n"]
+[ext_resource type="Script" uid="uid://bdj3moatwduju" path="res://unit/awareness.gd" id="11_j0e0d"]
+[ext_resource type="Script" uid="uid://b5f86w8q41bvq" path="res://unit/poly_rect.gd" id="12_5dfwp"]
 
 [sub_resource type="Gradient" id="Gradient_2ul3e"]
 interpolation_mode = 1
@@ -195,5 +198,13 @@ debug_color = Color(0.8509804, 0.8627451, 0.21960784, 0.21176471)
 script = ExtResource("9_4xbu7")
 
 [node name="Idle" type="LimboState" parent="StateMachine" unique_id=2128241440]
+script = ExtResource("10_a2j7n")
 
 [node name="Move" type="LimboState" parent="StateMachine" unique_id=1993654588]
+
+[node name="Awareness" type="Area2D" parent="." unique_id=1030328029]
+script = ExtResource("11_j0e0d")
+
+[node name="CollisionPolygon2D" type="CollisionPolygon2D" parent="Awareness" unique_id=262851000]
+polygon = PackedVector2Array(0, 0, 0, -64, 64, -64, 64, 0)
+script = ExtResource("12_5dfwp")

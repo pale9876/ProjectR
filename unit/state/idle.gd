@@ -1,7 +1,4 @@
-extends LimboState
-
-
-const Unit: Script = preload("uid://bl84ixx4kubfe")
+extends UnitState
 
 
 @export var move_state: LimboState

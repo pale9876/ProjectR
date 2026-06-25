@@ -15,14 +15,21 @@ const Player: Script = preload("uid://c2uxhumgng18h")
 # Default States
 @export_category("Default States")
 @export var idle_state: LimboState
-@export var guard_state: LimboState
+@export var block_state: LimboState
 @export var move_state: LimboState
 @export var jump_state: LimboState
 
 
 
 # input_arr : ev_name
-var input_map: Dictionary[PackedStringArray, StringName] = {}
+var input_map: Dictionary[PlayerState.Type, Dictionary] = {
+	PlayerState.Type.IDLE : {
+		
+	},
+	PlayerState.Type.JUMP : {
+		
+	},
+}
 var input_cache: PackedStringArray = PackedStringArray()
 
 var _postpone: int = 0
@@ -40,7 +47,6 @@ func _input(event: InputEvent) -> void:
 			input_cache.push_back("down")
 		elif Input.is_action_just_pressed(&"up"):
 			input_cache.push_back("up")
-			
 		
 		if Input.is_action_just_pressed(&"attack"):
 			input_cache.push_back("attack")
@@ -50,20 +56,27 @@ func _input(event: InputEvent) -> void:
 		_postpone = input_postpone
 
 
-func _physics_process(delta: float) -> void:
+func _physics_process(_delta: float) -> void:
+	var state: PlayerState.Type = get_player_state() # int
+	
 	if "attack" in input_cache or "kick" in input_cache:
-		if input_map.has(input_cache):
-			dispatch(input_map[input_cache])
-			print("Dispatch => ", input_map[input_cache])
+		if input_map[state].has(input_cache):
+			dispatch(input_map[state][input_cache])
+			print("Dispatch => ", input_map[state][input_cache])
 		input_cache.clear()
 	
-	if _postpone == 0:
+	if !input_cache.is_empty() and _postpone == 0:
 		input_cache.clear()
 
 	_postpone = maxi(_postpone - 1, 0)
 
+
 func _exit_tree() -> void:
 	_postpone = 0
+
+
+func get_player_state() -> PlayerState.Type:
+	return PlayerState.IDLE if get_player().is_on_floor() else PlayerState.JUMP
 
 
 func _on_active_state_changed(current: LimboState, prev: LimboState) -> void:
@@ -80,3 +93,15 @@ func get_player() -> Player:
 
 func get_state(state_name: String) -> PlayerState:
 	return get_node(state_name) as PlayerState
+
+
+func inputmap_clear() -> void:
+	input_map = {
+		PlayerState.IDLE : {
+			# PackedStringArray() : StringName(ev_name)
+		},
+		PlayerState.JUMP : {
+			# PackedStringArray() : StringName(ev_name)
+		},
+	}
+	

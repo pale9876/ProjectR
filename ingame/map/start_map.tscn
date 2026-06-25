@@ -244,11 +244,11 @@ tile_set = SubResource("TileSet_wqsic")
 [node name="Stage" type="Node2D" parent="." unique_id=853141072]
 script = ExtResource("7_5cnks")
 
-[node name="NPCPath" type="Path2D" parent="." unique_id=140612759]
+[node name="NPCPath" type="Path2D" parent="Stage" unique_id=140612759]
 curve = SubResource("Curve2D_p2a57")
 script = ExtResource("4_cebga")
 
-[node name="NPC" parent="NPCPath" unique_id=276246344 instance=ExtResource("4_oydke")]
+[node name="NPC" parent="Stage/NPCPath" unique_id=276246344 instance=ExtResource("4_oydke")]
 position = Vector2(720.1505, 264)
 progress = 744.15
 info = SubResource("Resource_cebga")

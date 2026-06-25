@@ -1,5 +1,6 @@
 # npc_path.gd
 extends Path2D
+class_name NPCPath
 
 
 const NPC_TEMPLETE_SCENE: PackedScene = preload("uid://b7ya2gtphhn00")

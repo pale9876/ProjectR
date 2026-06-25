@@ -12,3 +12,7 @@ const Player: Script = preload("uid://c2uxhumgng18h")
 
 func _process(delta: float) -> void:
 	pass
+
+
+func get_npc_path() -> void:
+	pass

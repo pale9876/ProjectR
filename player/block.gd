@@ -2,7 +2,6 @@
 extends PlayerState
 
 
-
 @onready var anim: AnimationPlayer = $AnimationPlayer
 
 
@@ -18,12 +17,16 @@ func _clear() -> void:
 
 func _guard() -> bool:
 	var hsm := get_hsm()
-	var player := get_player()
+	var current_state := hsm.get_active_state() as PlayerState
 	
-	if (hsm.get_active_state() as PlayerState).block_cancel:
+	if current_state.block_cancel or current_state in [idle_state, move_state]:
 		return true
 	
 	return false
+
+
+func _enter_tree() -> void:
+	pass
 
 
 func _ready() -> void:

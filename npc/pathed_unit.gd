@@ -17,6 +17,10 @@ func _ready() -> void:
 	stat.name = info.name
 
 
+func get_root() -> NPCPath:
+	return get_parent() as NPCPath
+
+
 class Stat:
 	var name: StringName
 	var hp: int
