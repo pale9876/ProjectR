@@ -51,7 +51,7 @@ animations = [{
 
 [sub_resource type="CapsuleShape2D" id="CapsuleShape2D_wqsic"]
 radius = 13.0
-height = 68.0
+height = 112.0
 
 [sub_resource type="BlackboardPlan" id="BlackboardPlan_2ul3e"]
 var/target/name = &"target"
@@ -165,7 +165,7 @@ sprite_frames = SubResource("SpriteFrames_guff7")
 animation = &"down"
 
 [node name="CollisionShape2D" type="CollisionShape2D" parent="." unique_id=54862801]
-position = Vector2(0, -34)
+position = Vector2(0, -56)
 shape = SubResource("CapsuleShape2D_wqsic")
 debug_color = Color(0, 0.6, 0.69803923, 0.2)
 
@@ -177,6 +177,8 @@ blackboard_plan = SubResource("BlackboardPlan_ak6ua")
 libraries/ = SubResource("AnimationLibrary_japly")
 
 [node name="Hitbox" type="Area2D" parent="." unique_id=403300593]
+collision_layer = 0
+collision_mask = 2
 monitorable = false
 script = ExtResource("5_s1ym6")
 
@@ -186,6 +188,8 @@ shape = SubResource("RectangleShape2D_a3q01")
 debug_color = Color(0.93333334, 0.21568628, 0.16078432, 0.25490198)
 
 [node name="Hurbox" type="Area2D" parent="." unique_id=1792069261]
+collision_layer = 2
+collision_mask = 0
 monitoring = false
 script = ExtResource("8_a3q01")
 
@@ -203,8 +207,14 @@ script = ExtResource("10_a2j7n")
 [node name="Move" type="LimboState" parent="StateMachine" unique_id=1993654588]
 
 [node name="Awareness" type="Area2D" parent="." unique_id=1030328029]
+collision_layer = 0
+collision_mask = 2
+monitorable = false
 script = ExtResource("11_j0e0d")
+height = 256.0
+dist = 550.0
+x_offset = -30.0
 
 [node name="CollisionPolygon2D" type="CollisionPolygon2D" parent="Awareness" unique_id=262851000]
-polygon = PackedVector2Array(0, 0, 0, -64, 64, -64, 64, 0)
+polygon = PackedVector2Array(-30, -256, -30, 0, 520, 0, 520, -256)
 script = ExtResource("12_5dfwp")
