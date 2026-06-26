@@ -9,6 +9,7 @@
 [ext_resource type="Script" uid="uid://dbcsuysfwo30x" path="res://player/sprite_moduler.gd" id="4_g4c7l"]
 [ext_resource type="Script" uid="uid://c4q85mvv6k6wb" path="res://player/state/move.gd" id="5_40lky"]
 [ext_resource type="Texture2D" uid="uid://cuj2co0pyw8p8" path="res://aseprite/asso_project/sample_motions/move_lower.png" id="5_s7qer"]
+[ext_resource type="Texture2D" uid="uid://cbcd7ip3wfrt6" path="res://aseprite/asso_project/sample_motions/reload.png" id="6_knn7v"]
 [ext_resource type="Script" uid="uid://er84buu2gymf" path="res://player/hurtbox.gd" id="6_rgyib"]
 [ext_resource type="Script" uid="uid://d376evb3whf7e" path="res://player/fall.gd" id="6_yllr7"]
 [ext_resource type="Script" uid="uid://bsrhpk5urdhab" path="res://player/high_punch.gd" id="9_yllr7"]
@@ -69,6 +70,30 @@ region = Rect2(1024, 0, 256, 256)
 atlas = ExtResource("4_bjvpn")
 region = Rect2(1280, 0, 256, 256)
 
+[sub_resource type="AtlasTexture" id="AtlasTexture_q28gw"]
+atlas = ExtResource("6_knn7v")
+region = Rect2(0, 0, 256, 256)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_ge24q"]
+atlas = ExtResource("6_knn7v")
+region = Rect2(256, 0, 256, 256)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_pnw6m"]
+atlas = ExtResource("6_knn7v")
+region = Rect2(512, 0, 256, 256)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_1so5t"]
+atlas = ExtResource("6_knn7v")
+region = Rect2(768, 0, 256, 256)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_55jnj"]
+atlas = ExtResource("6_knn7v")
+region = Rect2(1024, 0, 256, 256)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_dx5ib"]
+atlas = ExtResource("6_knn7v")
+region = Rect2(1280, 0, 256, 256)
+
 [sub_resource type="SpriteFrames" id="SpriteFrames_omjbp"]
 animations = [{
 "frames": [{
@@ -93,6 +118,29 @@ animations = [{
 "loop": 1,
 "name": &"move",
 "speed": 10.0
+}, {
+"frames": [{
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_q28gw")
+}, {
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_ge24q")
+}, {
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_pnw6m")
+}, {
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_1so5t")
+}, {
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_55jnj")
+}, {
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_dx5ib")
+}],
+"loop": 0,
+"name": &"reload",
+"speed": 5.0
 }]
 
 [sub_resource type="AtlasTexture" id="AtlasTexture_r7pn3"]
@@ -834,19 +882,18 @@ position = Vector2(0, -64)
 script = ExtResource("4_g4c7l")
 upper = NodePath("Upper")
 lower = NodePath("Lower")
-animation = null
+sub_anim = &"reload"
 
 [node name="Upper" type="AnimatedSprite2D" parent="SpriteModuler" unique_id=644931657]
 sprite_frames = SubResource("SpriteFrames_omjbp")
-animation = &"move"
-frame_progress = 0.34975642
-flip_h = true
+animation = &"reload"
+frame = 5
+frame_progress = 1.0
 
 [node name="Lower" type="AnimatedSprite2D" parent="SpriteModuler" unique_id=1929254227]
 sprite_frames = SubResource("SpriteFrames_lurft")
 animation = &"move"
-frame_progress = 0.34975642
-flip_h = true
+frame_progress = 0.74364126
 
 [node name="AnimationPlayer" type="AnimationPlayer" parent="SpriteModuler" unique_id=255967310]
 
