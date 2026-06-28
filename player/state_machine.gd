@@ -8,6 +8,10 @@ const Move: Script = preload("uid://c4q85mvv6k6wb")
 const Player: Script = preload("uid://c2uxhumgng18h")
 
 
+# CONST EV
+const EV_REVERT: StringName = &"revert"
+
+
 @export var label: Label
 @export var input_postpone: int = 3
 
@@ -37,6 +41,7 @@ var _postpone: int = 0
 
 func _ready() -> void:
 	active_state_changed.connect(_on_active_state_changed)
+	add_transition(ANYSTATE, get_state(^"Idle"), EV_REVERT)
 
 
 func _input(event: InputEvent) -> void:
@@ -91,7 +96,7 @@ func get_player() -> Player:
 	return get_parent() as Player
 
 
-func get_state(state_name: String) -> PlayerState:
+func get_state(state_name: NodePath) -> PlayerState:
 	return get_node(state_name) as PlayerState
 
 
@@ -104,4 +109,7 @@ func inputmap_clear() -> void:
 			# PackedStringArray() : StringName(ev_name)
 		},
 	}
-	
+
+
+func revert() -> void:
+	dispatch(EV_REVERT)

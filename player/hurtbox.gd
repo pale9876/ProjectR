@@ -13,6 +13,7 @@ enum State
 	DODGE,
 }
 
+
 const IDLE := State.IDLE
 const COUNTER := State.IDLE
 const GUARD := State.GUARD
@@ -25,6 +26,10 @@ signal dodge()
 
 @export var state: State = IDLE
 @export var invincible: bool = false
+
+
+func _enter_tree() -> void:
+	pass
 
 
 func damaged(hit_result: HitResult) -> void:
@@ -43,3 +48,4 @@ func damaged(hit_result: HitResult) -> void:
 	
 	player.stat.hp -= damage
 	player.damaged.emit()
+	

@@ -34,5 +34,5 @@ frame_progress = 0.74364126
 visible = false
 position = Vector2(59, -32)
 sprite_frames = ExtResource("5_12oy4")
-animation = &"left_punch"
+animation = &"dodge"
 offset = Vector2(-59, -32)

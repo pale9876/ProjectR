@@ -905,9 +905,8 @@ libraries/ = SubResource("AnimationLibrary_r7pn3")
 script = ExtResource("16_x7c3f")
 metadata/_custom_type_script = "uid://b7x8s5btnaxj2"
 
-[node name="Dodge" type="LimboState" parent="LimboHSM" unique_id=845458942 node_paths=PackedStringArray("hurtbox")]
+[node name="Dodge" type="LimboState" parent="LimboHSM" unique_id=845458942]
 script = ExtResource("21_uw77l")
-hurtbox = NodePath("../../Hurtbox")
 metadata/_custom_type_script = "uid://b7x8s5btnaxj2"
 
 [node name="AnimationPlayer" type="AnimationPlayer" parent="LimboHSM/Dodge" unique_id=1670971682]

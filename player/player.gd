@@ -5,6 +5,7 @@ extends CharacterBody2D
 # Import
 const SpriteComponent: Script = preload("uid://b0paoljcmbiys")
 const SpriteModuler: Script = preload("uid://dbcsuysfwo30x")
+const Hurtbox: Script = preload("uid://er84buu2gymf")
 
 
 @export var info: PlayerInformation
@@ -21,6 +22,7 @@ var state: State = State.new()
 
 @onready var sprite_component: SpriteComponent = $SpriteComponent
 @onready var drop_shadow: Sprite2D = $DropShadow
+@onready var hurtbox: Hurtbox = $Hurtbox
 
 
 func _init() -> void:
@@ -67,7 +69,7 @@ func get_face() -> float:
 
 
 
-func _process(delta: float) -> void:
+func _process(_delta: float) -> void:
 	# Input
 	input_state.direction = Input.get_vector("left", "right", "up", "down")
 	
@@ -105,6 +107,11 @@ func get_sprite() -> AnimatedSprite2D:
 
 func get_moduler() -> SpriteModuler:
 	return sprite_component.moduler
+
+
+func get_hurtbox() -> Hurtbox:
+	return hurtbox
+
 
 
 class Stat:
