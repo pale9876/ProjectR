@@ -13,7 +13,7 @@ const Player: Script = preload("uid://c2uxhumgng18h")
 @export var rage_mode: bool = true
 
 
-@onready var sprite: AnimatedSprite2D = $AnimatedSprite2D
+@onready var sprite_component: Node2D = $SpriteComponent
 @onready var anim: AnimationPlayer = $AnimationPlayer
 #@onready var agent: NavigationAgent2D = $NavigationAgent2D
 

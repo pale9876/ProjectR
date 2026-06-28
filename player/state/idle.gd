@@ -8,7 +8,7 @@ extends PlayerState
 
 
 func _enter() -> void:
-	get_player().sprite.play(&"idle")
+	get_player().sprite_component.play(&"idle")
 
 
 func _update(_delta: float) -> void:

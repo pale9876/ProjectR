@@ -2,7 +2,14 @@
 extends Area2D
 
 
-const Unit: Script = preload("uid://bl84ixx4kubfe")
+enum {
+	IDLE,
+	COUNTER,
+	
+}
+
+
+signal dodged
 
 
 func damaged(hit_result: HitResult) -> void:

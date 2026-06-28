@@ -9,6 +9,8 @@
 
 [node name="MainScene" type="Node" unique_id=905736948]
 script = ExtResource("1_d5x1h")
+metadata/_edit_vertical_guides_ = [1.0, 7.0]
+metadata/_edit_horizontal_guides_ = [16.0]
 
 [node name="Ingame" parent="." unique_id=906912944 instance=ExtResource("2_8mm7a")]
 visible = false

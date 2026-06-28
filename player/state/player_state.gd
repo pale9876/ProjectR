@@ -7,6 +7,7 @@ enum Type {
 	JUMP,
 }
 
+
 const IDLE := Type.IDLE
 const JUMP := Type.JUMP
 

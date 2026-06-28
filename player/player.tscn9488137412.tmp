@@ -4,9 +4,10 @@
 [ext_resource type="Script" uid="uid://r11y6g0g5cvx" path="res://player/player_information.gd" id="2_65viv"]
 [ext_resource type="SpriteFrames" uid="uid://72n3ls5rb05n" path="res://sample_motion_frames.tres" id="2_c35mf"]
 [ext_resource type="Script" uid="uid://nmmtety5yvve" path="res://player/state_machine.gd" id="3_2ieo8"]
+[ext_resource type="Script" uid="uid://b0paoljcmbiys" path="res://player/sprite_component.gd" id="4_7pqkx"]
 [ext_resource type="Script" uid="uid://c08p61o8pw6vo" path="res://player/state/idle.gd" id="4_bvu1k"]
+[ext_resource type="Script" uid="uid://dbcsuysfwo30x" path="res://player/sprite_moduler.gd" id="4_g4c7l"]
 [ext_resource type="Script" uid="uid://c4q85mvv6k6wb" path="res://player/state/move.gd" id="5_40lky"]
-[ext_resource type="PackedScene" uid="uid://cljktitiy0g50" path="res://component/sprite_component.tscn" id="6_7pqkx"]
 [ext_resource type="SpriteFrames" uid="uid://dhhxgkevom0u8" path="res://sample_upper_motions.tres" id="6_knn7v"]
 [ext_resource type="Script" uid="uid://er84buu2gymf" path="res://player/hurtbox.gd" id="6_rgyib"]
 [ext_resource type="Script" uid="uid://d376evb3whf7e" path="res://player/fall.gd" id="6_yllr7"]
@@ -738,44 +739,6 @@ _data = {
 &"jump_kick": SubResource("Animation_rptt4")
 }
 
-[sub_resource type="Animation" id="Animation_b8hi5"]
-length = 0.001
-tracks/0/type = "value"
-tracks/0/imported = false
-tracks/0/enabled = true
-tracks/0/path = NodePath(".:just_time")
-tracks/0/interp = 1
-tracks/0/loop_wrap = true
-tracks/0/keys = {
-"times": PackedFloat32Array(0),
-"transitions": PackedFloat32Array(1),
-"update": 1,
-"values": [false]
-}
-
-[sub_resource type="Animation" id="Animation_r7pn3"]
-resource_name = "dodge"
-length = 0.13360166656672953
-step = 0.0167
-tracks/0/type = "value"
-tracks/0/imported = false
-tracks/0/enabled = true
-tracks/0/path = NodePath(".:just_time")
-tracks/0/interp = 1
-tracks/0/loop_wrap = true
-tracks/0/keys = {
-"times": PackedFloat32Array(0.016666668, 0.033333335),
-"transitions": PackedFloat32Array(1, 1),
-"update": 1,
-"values": [true, false]
-}
-
-[sub_resource type="AnimationLibrary" id="AnimationLibrary_b8hi5"]
-_data = {
-&"RESET": SubResource("Animation_b8hi5"),
-&"dodge": SubResource("Animation_r7pn3")
-}
-
 [sub_resource type="Resource" id="Resource_bjvpn"]
 script = ExtResource("23_s7qer")
 atk_name = &"Pa!"
@@ -790,7 +753,36 @@ hsm = NodePath("LimboHSM")
 [node name="DropShadow" type="Sprite2D" parent="." unique_id=981265406]
 texture = SubResource("GradientTexture2D_wqsic")
 
-[node name="SpriteComponent" parent="." unique_id=363892716 instance=ExtResource("6_7pqkx")]
+[node name="SpriteComponent" type="Node2D" parent="." unique_id=962663961 node_paths=PackedStringArray("moduler", "sprite")]
+script = ExtResource("4_7pqkx")
+moduler = NodePath("SpriteModuler")
+sprite = NodePath("AnimatedSprite2D")
+
+[node name="SpriteModuler" type="Node2D" parent="SpriteComponent" unique_id=1139822022 node_paths=PackedStringArray("upper", "lower")]
+position = Vector2(0, -64)
+script = ExtResource("4_g4c7l")
+upper = NodePath("Upper")
+lower = NodePath("Lower")
+
+[node name="Upper" type="AnimatedSprite2D" parent="SpriteComponent/SpriteModuler" unique_id=644931657]
+sprite_frames = ExtResource("6_knn7v")
+animation = &"reload"
+frame = 5
+frame_progress = 1.0
+
+[node name="Lower" type="AnimatedSprite2D" parent="SpriteComponent/SpriteModuler" unique_id=1929254227]
+sprite_frames = ExtResource("7_7pqkx")
+animation = &"move"
+frame_progress = 0.74364126
+
+[node name="AnimationPlayer" type="AnimationPlayer" parent="SpriteComponent/SpriteModuler" unique_id=255967310]
+
+[node name="AnimatedSprite2D" type="AnimatedSprite2D" parent="SpriteComponent" unique_id=383934619]
+visible = false
+position = Vector2(59, -32)
+sprite_frames = ExtResource("2_c35mf")
+animation = &"slide"
+offset = Vector2(-59, -32)
 
 [node name="CollisionShape2D" type="CollisionShape2D" parent="." unique_id=628658269]
 position = Vector2(0, -32)
@@ -905,13 +897,9 @@ libraries/ = SubResource("AnimationLibrary_r7pn3")
 script = ExtResource("16_x7c3f")
 metadata/_custom_type_script = "uid://b7x8s5btnaxj2"
 
-[node name="Dodge" type="LimboState" parent="LimboHSM" unique_id=845458942 node_paths=PackedStringArray("hurtbox")]
+[node name="Dodge" type="LimboState" parent="LimboHSM" unique_id=845458942]
 script = ExtResource("21_uw77l")
-hurtbox = NodePath("../../Hurtbox")
 metadata/_custom_type_script = "uid://b7x8s5btnaxj2"
-
-[node name="AnimationPlayer" type="AnimationPlayer" parent="LimboHSM/Dodge" unique_id=1670971682]
-libraries/ = SubResource("AnimationLibrary_b8hi5")
 
 [node name="ShakeOff" type="LimboState" parent="LimboHSM" unique_id=1310801968]
 script = ExtResource("16_x7c3f")

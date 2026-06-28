@@ -1,6 +1,5 @@
 # player/hurtbox.gd
 extends Area2D
-class_name PlayerHurtbox
 
 
 const Player: Script = preload("uid://c2uxhumgng18h")
@@ -30,16 +29,17 @@ signal dodge()
 
 func damaged(hit_result: HitResult) -> void:
 	var player: Player = get_parent() as Player
+	var damage: int = hit_result.damage
 	
 	match state:
 		COUNTER:
-			
 			counter.emit()
 			return
 		GUARD:
-			pass
+			damage = int(damage * .25)
 		DODGE:
-			pass
+			dodge.emit()
+			damage = 0
 	
-	player.stat.hp -= hit_result.damage
+	player.stat.hp -= damage
 	player.damaged.emit()

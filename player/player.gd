@@ -2,6 +2,11 @@
 extends CharacterBody2D
 
 
+# Import
+const SpriteComponent: Script = preload("uid://b0paoljcmbiys")
+const SpriteModuler: Script = preload("uid://dbcsuysfwo30x")
+
+
 @export var info: PlayerInformation
 @export var hsm: LimboHSM
 @export var z_value: float = 0.
@@ -14,7 +19,7 @@ var stat: Stat = Stat.new()
 var state: State = State.new()
 
 
-@onready var sprite: AnimatedSprite2D = $AnimatedSprite2D
+@onready var sprite_component: SpriteComponent = $SpriteComponent
 @onready var drop_shadow: Sprite2D = $DropShadow
 
 
@@ -30,10 +35,8 @@ func _init() -> void:
 
 
 func _on_face_changed() -> void:
-	if state.face.x > 0.:
-		sprite.flip_h = false
-	elif state.face.x < 0.:
-		sprite.flip_h = true
+	if state.face.x != 0:
+		sprite_component.scale.x = state.face.x
 
 
 func _enter_tree() -> void:
@@ -46,9 +49,12 @@ func _ready() -> void:
 		stat.name = name
 		stat.hp = info.hp
 		stat.speed = info.speed
-
-	if info:
-		sprite.sprite_frames = info.sprite
+		
+		sprite_component.init_sprites(
+			info.upper_sprite,
+			info.lower_sprite,
+			info.sprite
+		)
 
 	hsm.initialize(self)
 	hsm.set_active(true)
@@ -81,8 +87,6 @@ func _process(delta: float) -> void:
 		drop_shadow.global_position = intersect_point
 
 
-#func _physics_process(_delta: float) -> void:
-
 func _soft_pause() -> void:
 	set_process(false)
 	set_physics_process(false)
@@ -93,6 +97,14 @@ func _resume() -> void:
 	set_process(true)
 	set_physics_process(true)
 	input_state.unlock()
+
+
+func get_sprite() -> AnimatedSprite2D:
+	return sprite_component.sprite
+
+
+func get_moduler() -> SpriteModuler:
+	return sprite_component.moduler
 
 
 class Stat:

@@ -1,0 +1,6 @@
+[gd_scene format=3 uid="uid://k2014fwnlo6u"]
+
+[ext_resource type="Script" uid="uid://wm0b8ffnf252" path="res://joypad_test.gd" id="1_6ht6l"]
+
+[node name="JoypadTest" type="Node" unique_id=666217379]
+script = ExtResource("1_6ht6l")

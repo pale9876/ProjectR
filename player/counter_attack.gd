@@ -15,3 +15,7 @@ func _guard() -> bool:
 
 func _enter_tree() -> void:
 	init_action()
+
+
+func _enter() -> void:
+	pass

@@ -8,52 +8,42 @@ extends Node2D
 
 
 @export var animation: StringName = &"move"
-@export var sub_anim: StringName = &""
+
 
 @export_tool_button("Play", "AnimatedSprite2D") var _play: Callable = play.bind(animation)
 @export_tool_button("Stop", "AnimatedSprite2D") var _stop: Callable = stop
-@export_tool_button("Flip", "AnimatedSprite2D") var _flip: Callable = (
-	func():
-		upper.flip_h = !upper.flip_h
-		lower.flip_h = !lower.flip_h
-)
 
 
-var reserve: bool = false
-var motion_finished: bool = false
+var _reserve: Dictionary[NodePath, StringName] = {}
+var _motion_finished: Dictionary[NodePath, Dictionary] = {}
 
-@export_tool_button("Test Sub Motion Anim", "CharacterBody2D") var sub_anim_test: Callable = play_sub_motion.bind("reload")
-
-func flip(x: float) -> void:
-	if x == 0.: return
-	
-	var flipped: bool = true if x < 0. else false
-	
-	upper.flip_h = flipped
-	lower.flip_h = flipped
+@export_tool_button("Test Upper Animtion", "CharacterBody2D") var sub_anim_test: Callable = play_part.bind(^"Upper", "reload")
 
 
 func _process(_delta: float) -> void:
-	if reserve:
-		upper.play(sub_anim)
-		reserve = false
-		upper.animation_finished.connect(
-			func(): motion_finished = true, CONNECT_ONE_SHOT
-		)
+	if !_reserve.is_empty():
+		for path: NodePath in _reserve:
+			var _sprite := get_node(path) as AnimatedSprite2D
+			_motion_finished[path] = {"pre_anim": _sprite.animation ,"finished" : false}
+			_sprite.play(_reserve[path])
+			_sprite.animation_finished.connect(
+				(func() -> void: _motion_finished[path]["finished"] = true),
+				CONNECT_ONE_SHOT
+			)
+		_reserve.clear()
 	
-	if motion_finished:
-		upper.play(animation)
-		upper.frame = lower.frame
-		motion_finished = false
+	if !_motion_finished.is_empty():
+		for path: NodePath in _motion_finished:
+			if _motion_finished[path]["finished"] == true:
+				var _sprite := get_node(path) as AnimatedSprite2D
+				_sprite.play(_motion_finished[path]["pre_anim"])
+				_motion_finished.erase(path)
 
 
-func play_sub_motion(anim_name: StringName) -> void:
-	sub_anim = anim_name
-	reserve = true
 
+func play_part(node_path: NodePath, anim_name: StringName) -> void:
+	_reserve[node_path] = anim_name
 
-func play_lower_module(anim_name: StringName) -> void:
-	lower.play(anim_name)
 
 
 func play(anim_name: StringName) -> void:

@@ -10,8 +10,8 @@ extends PlayerState
 
 func _enter() -> void:
 	var player := get_player()
-	player.sprite.play(&"move")
-	player.state.face = player.input_state.direction
+	player.sprite_component.play_modules(&"move")
+	player.state.face = player.input_state.direction.round()
 
 
 func _update(_delta: float) -> void:
@@ -21,7 +21,7 @@ func _update(_delta: float) -> void:
 		player.velocity.y = -450.
 
 	player.velocity.x = move_toward(
-		player.velocity.x, player.state.face.x * 350., 35.
+		player.velocity.x, player.input_state.direction.x * 350., 35.
 	)
 	
 	move_and_slide()
