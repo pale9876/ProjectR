@@ -17,6 +17,7 @@
 [ext_resource type="Script" uid="uid://btf7rckikcpps" path="res://unit/state/hurt.gd" id="12_3b2yn"]
 [ext_resource type="Script" uid="uid://cflyf2esm4eqo" path="res://unit/state/fall.gd" id="13_pvbt4"]
 [ext_resource type="Script" uid="uid://8j24mmna7pmh" path="res://unit/state/jump.gd" id="14_w11yh"]
+[ext_resource type="Script" uid="uid://dmhr7bhy8lgt5" path="res://unit/move.gd" id="18_t3pbd"]
 
 [sub_resource type="Resource" id="Resource_pvbt4"]
 script = ExtResource("3_t3pbd")
@@ -177,8 +178,16 @@ script = ExtResource("10_x1h6o")
 [node name="Idle" type="LimboState" parent="LimboHSM" unique_id=641009354]
 script = ExtResource("11_3b2yn")
 
+[node name="Move" type="LimboState" parent="LimboHSM" unique_id=265379667]
+script = ExtResource("18_t3pbd")
+metadata/_custom_type_script = "uid://im1wyvflgwp0"
+
+[node name="Jump" type="LimboState" parent="LimboHSM" unique_id=1875892619]
+script = ExtResource("14_w11yh")
+
 [node name="Hurt" type="LimboState" parent="LimboHSM" unique_id=1657276727]
 script = ExtResource("12_3b2yn")
+type = 2
 metadata/_custom_type_script = "uid://im1wyvflgwp0"
 
 [node name="AnimationPlayer" type="AnimationPlayer" parent="LimboHSM/Hurt" unique_id=868110392]
@@ -186,8 +195,5 @@ metadata/_custom_type_script = "uid://im1wyvflgwp0"
 [node name="Fall" type="LimboState" parent="LimboHSM" unique_id=1952545241]
 script = ExtResource("13_pvbt4")
 metadata/_custom_type_script = "uid://im1wyvflgwp0"
-
-[node name="Jump" type="LimboState" parent="LimboHSM" unique_id=1875892619]
-script = ExtResource("14_w11yh")
 
 [editable path="SpriteComponent"]

@@ -18,13 +18,16 @@ signal active()
 
 
 @onready var sprite_component: SpriteComponent = $SpriteComponent
-@onready var anim: AnimationPlayer = $AnimationPlayer
 @onready var bt: BTPlayer = $BTPlayer
 #@onready var agent: NavigationAgent2D = $NavigationAgent2D
 
 
 var stat: Stat = Stat.new()
 var state: State = State.new()
+
+
+func _on_face_changed() -> void:
+	sprite_component.scale.x = float(state.face.x)
 
 
 func _enter_tree() -> void:
@@ -93,6 +96,9 @@ class Stat:
 
 
 class State:
-	var face: Vector2
-	var motion_direction: Vector2
-	var target: Node2D
+	signal face_changed()
+	
+	var face: Vector2i:
+		set(value):
+			face = value
+			face_changed.emit()

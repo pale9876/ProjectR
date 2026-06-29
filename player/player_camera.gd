@@ -1,6 +1,7 @@
 # player_camera.gd
 extends Camera2D
 
+
 # Import
 const Player = preload("uid://c2uxhumgng18h")
 
@@ -10,13 +11,6 @@ var time: float
 
 
 @export var time_scale: float = 3.
-
-
-func _process(delta: float) -> void:
-	var player := get_player()
-	
-	if Input.is_action_just_pressed("attack"):
-		shake(Vector2(60., 0.), 1.)
 
 
 func _physics_process(delta: float) -> void:

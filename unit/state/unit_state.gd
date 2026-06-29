@@ -5,6 +5,7 @@ class_name UnitState
 enum Type {
 	IDLE,
 	JUMP,
+	HURT,
 }
 
 

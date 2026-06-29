@@ -26,7 +26,6 @@ func _update(_delta: float) -> void:
 	
 	if player.input_state.direction.x != 0.:
 		hsm.change_active_state(move_state)
-		
 	
 	player.velocity.x = move_toward(player.velocity.x, 0., 25.)
 	move_and_slide()

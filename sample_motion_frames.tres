@@ -179,6 +179,11 @@ region = Rect2(512, 0, 256, 256)
 
 [resource]
 animations = [{
+"frames": [],
+"loop": 1,
+"name": &"aerial",
+"speed": 5.0
+}, {
 "frames": [{
 "duration": 1.0,
 "texture": SubResource("AtlasTexture_nk0pb")
@@ -242,6 +247,16 @@ animations = [{
 "name": &"dodge",
 "speed": 5.0
 }, {
+"frames": [],
+"loop": 1,
+"name": &"down",
+"speed": 5.0
+}, {
+"frames": [],
+"loop": 1,
+"name": &"down_attacked",
+"speed": 5.0
+}, {
 "frames": [{
 "duration": 1.0,
 "texture": SubResource("AtlasTexture_55jnj")
@@ -294,6 +309,11 @@ animations = [{
 "name": &"jump",
 "speed": 5.0
 }, {
+"frames": [],
+"loop": 1,
+"name": &"knockback",
+"speed": 5.0
+}, {
 "frames": [{
 "duration": 1.0,
 "texture": SubResource("AtlasTexture_hr82g")
@@ -333,6 +353,11 @@ animations = [{
 "loop": 1,
 "name": &"move",
 "speed": 10.0
+}, {
+"frames": [],
+"loop": 1,
+"name": &"pushback",
+"speed": 5.0
 }, {
 "frames": [{
 "duration": 1.0,

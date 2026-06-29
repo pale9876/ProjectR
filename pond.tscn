@@ -1,0 +1,140 @@
+[gd_scene format=3 uid="uid://cflkr7ot4song"]
+
+[ext_resource type="Script" uid="uid://d1d0pny6f1e6" path="res://pond.gd" id="1_micnc"]
+[ext_resource type="Script" uid="uid://d2ox33o3w3u0r" path="res://unit/hitbox_shape.gd" id="2_e62h4"]
+[ext_resource type="Script" uid="uid://bh0o5rf34hsj7" path="res://pond_hitbox.gd" id="3_xpml8"]
+[ext_resource type="Script" uid="uid://xw07ofvvtrxk" path="res://hitbox_info.gd" id="3_yrlwy"]
+[ext_resource type="Texture2D" uid="uid://d2aoon8pj35x5" path="res://aseprite/blood_moon_hand_attack.png" id="4_yrlwy"]
+
+[sub_resource type="Gradient" id="Gradient_4uvmm"]
+interpolation_mode = 1
+colors = PackedColorArray(1, 0, 0, 1, 1, 1, 1, 0)
+
+[sub_resource type="GradientTexture2D" id="GradientTexture2D_wqsic"]
+gradient = SubResource("Gradient_4uvmm")
+width = 128
+height = 24
+fill = 1
+fill_from = Vector2(0.5, 0.5)
+fill_to = Vector2(0.92113566, 0.55520505)
+
+[sub_resource type="Animation" id="Animation_4uvmm"]
+length = 0.001
+tracks/0/type = "value"
+tracks/0/imported = false
+tracks/0/enabled = true
+tracks/0/path = NodePath("PondTexture:texture:fill_to")
+tracks/0/interp = 1
+tracks/0/loop_wrap = true
+tracks/0/keys = {
+"times": PackedFloat32Array(0),
+"transitions": PackedFloat32Array(1),
+"update": 0,
+"values": [Vector2(0.92113566, 0.55520505)]
+}
+tracks/1/type = "value"
+tracks/1/imported = false
+tracks/1/enabled = true
+tracks/1/path = NodePath("BloodHand:frame")
+tracks/1/interp = 1
+tracks/1/loop_wrap = true
+tracks/1/keys = {
+"times": PackedFloat32Array(0),
+"transitions": PackedFloat32Array(1),
+"update": 1,
+"values": [0]
+}
+
+[sub_resource type="Animation" id="Animation_e62h4"]
+resource_name = "attack"
+length = 0.5678016554087401
+step = 0.0167
+tracks/0/type = "value"
+tracks/0/imported = false
+tracks/0/enabled = true
+tracks/0/path = NodePath("BloodHand:frame")
+tracks/0/interp = 1
+tracks/0/loop_wrap = true
+tracks/0/keys = {
+"times": PackedFloat32Array(0, 0.033333335, 0.06666668, 0.10000001, 0.13333334, 0.16666667, 0.21666667, 0.26666668, 0.33333334, 0.48333332),
+"transitions": PackedFloat32Array(1, 1, 1, 1, 1, 1, 1, 1, 1, 1),
+"update": 1,
+"values": [0, 1, 2, 3, 4, 5, 6, 7, 8, 9]
+}
+
+[sub_resource type="Animation" id="Animation_yrlwy"]
+resource_name = "despawn"
+length = 0.20040166485011576
+step = 0.0167
+tracks/0/type = "value"
+tracks/0/imported = false
+tracks/0/enabled = true
+tracks/0/path = NodePath("BloodHand:frame")
+tracks/0/interp = 1
+tracks/0/loop_wrap = true
+tracks/0/keys = {
+"times": PackedFloat32Array(0, 0.05, 0.1, 0.15),
+"transitions": PackedFloat32Array(1, 1, 1, 1),
+"update": 1,
+"values": [12, 13, 14, 15]
+}
+
+[sub_resource type="Animation" id="Animation_micnc"]
+resource_name = "spawn"
+length = 0.16700166570842265
+step = 0.0167
+tracks/0/type = "value"
+tracks/0/imported = false
+tracks/0/enabled = true
+tracks/0/path = NodePath("PondTexture:texture:fill_to")
+tracks/0/interp = 1
+tracks/0/loop_wrap = true
+tracks/0/keys = {
+"times": PackedFloat32Array(0, 0.10000001),
+"transitions": PackedFloat32Array(1, 1),
+"update": 0,
+"values": [Vector2(0.5583596, 0.60567826), Vector2(0.9148265, 0.6561514)]
+}
+
+[sub_resource type="AnimationLibrary" id="AnimationLibrary_4uvmm"]
+_data = {
+&"RESET": SubResource("Animation_4uvmm"),
+&"attack": SubResource("Animation_e62h4"),
+&"despawn": SubResource("Animation_yrlwy"),
+&"spawn": SubResource("Animation_micnc")
+}
+
+[sub_resource type="RectangleShape2D" id="RectangleShape2D_xpml8"]
+size = Vector2(48, 48)
+
+[sub_resource type="Resource" id="Resource_wqsic"]
+script = ExtResource("3_yrlwy")
+metadata/_custom_type_script = "uid://xw07ofvvtrxk"
+
+[node name="Pond" type="Node2D" unique_id=346285130]
+script = ExtResource("1_micnc")
+
+[node name="PondTexture" type="Sprite2D" parent="." unique_id=813983911]
+texture = SubResource("GradientTexture2D_wqsic")
+
+[node name="BloodHand" type="Sprite2D" parent="." unique_id=1099836931]
+position = Vector2(0, -32)
+texture = ExtResource("4_yrlwy")
+hframes = 16
+
+[node name="AnimationPlayer" type="AnimationPlayer" parent="." unique_id=2107168062]
+libraries/ = SubResource("AnimationLibrary_4uvmm")
+
+[node name="Hitbox" type="Area2D" parent="." unique_id=2034422593]
+collision_layer = 0
+collision_mask = 2
+monitorable = false
+script = ExtResource("3_xpml8")
+
+[node name="HitboxShape" type="CollisionShape2D" parent="Hitbox" unique_id=1874859918]
+position = Vector2(0, -24)
+shape = SubResource("RectangleShape2D_xpml8")
+disabled = true
+script = ExtResource("2_e62h4")
+hitbox_info = SubResource("Resource_wqsic")
+metadata/_custom_type_script = "uid://d2ox33o3w3u0r"
