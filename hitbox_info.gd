@@ -20,6 +20,10 @@ enum Type {
 @export var blockable: bool = true
 @export var trace: bool = true
 
+@export_category("Camera Effect Strength")
+@export var shake_strength: float = 30. # 공격자 카메라 흔들림 강도
+@export var reverse_shake_strength: float = 45. # 피격자 카메라 흔들림 강도
+
 
 @export_category("When Blocked")
 @export var block_reduction_frame: int = 3

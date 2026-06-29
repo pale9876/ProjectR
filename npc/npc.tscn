@@ -40,7 +40,7 @@ var/rist_factor/hint_string = ""
 script = ExtResource("5_fnhme")
 
 [sub_resource type="BTConsolePrint" id="BTConsolePrint_uamtn"]
-text = "타겟이 없어서 이동"
+text = "패트롤 랜덤 이동"
 
 [sub_resource type="BTAction" id="BTAction_fnhme"]
 script = ExtResource("5_ldo70")

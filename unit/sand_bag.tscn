@@ -8,6 +8,12 @@
 [ext_resource type="Script" uid="uid://dibqva5a64jvq" path="res://ai/tasks/unit/patrol_wait.gd" id="5_toejp"]
 [ext_resource type="Script" uid="uid://dmj17w1hipj7o" path="res://ai/tasks/unit/trace_target.gd" id="6_2clmh"]
 [ext_resource type="Script" uid="uid://bupj3hlvtt67s" path="res://unit/hurtbox.gd" id="8_k7l50"]
+[ext_resource type="Script" uid="uid://bdj3moatwduju" path="res://unit/awareness.gd" id="9_yvxo8"]
+[ext_resource type="Script" uid="uid://dcybwuwfqeqr3" path="res://unit/state/state_machine.gd" id="10_x1h6o"]
+[ext_resource type="Script" uid="uid://8cq3ted0s3ob" path="res://unit/state/idle.gd" id="11_3b2yn"]
+[ext_resource type="Script" uid="uid://btf7rckikcpps" path="res://unit/state/hurt.gd" id="12_3b2yn"]
+[ext_resource type="Script" uid="uid://cflyf2esm4eqo" path="res://unit/state/fall.gd" id="13_pvbt4"]
+[ext_resource type="Script" uid="uid://8j24mmna7pmh" path="res://unit/state/jump.gd" id="14_w11yh"]
 
 [sub_resource type="Gradient" id="Gradient_2ul3e"]
 interpolation_mode = 1
@@ -91,8 +97,11 @@ text = "타겟이 인식반경에서 벗어남."
 custom_name = "IF:: Act is \"Trace\""
 children = [SubResource("BTCheckVar_4xbu7"), SubResource("BTConsolePrint_j0e0d"), SubResource("BTAction_j0e0d"), SubResource("BTConsolePrint_5dfwp")]
 
+[sub_resource type="BTSequence" id="BTSequence_yvxo8"]
+custom_name = "IF :: 이동 명령을 받음."
+
 [sub_resource type="BTSelector" id="BTSelector_5dfwp"]
-children = [SubResource("BTSequence_j0e0d"), SubResource("BTSequence_a2j7n")]
+children = [SubResource("BTSequence_j0e0d"), SubResource("BTSequence_a2j7n"), SubResource("BTSequence_yvxo8")]
 
 [sub_resource type="BTSequence" id="BTSequence_eras8"]
 children = [SubResource("BTAction_a3q01"), SubResource("BTSelector_5dfwp")]
@@ -102,26 +111,6 @@ blackboard_plan = SubResource("BlackboardPlan_2ul3e")
 root_task = SubResource("BTSequence_eras8")
 
 [sub_resource type="BlackboardPlan" id="BlackboardPlan_ak6ua"]
-
-[sub_resource type="Animation" id="Animation_a3q01"]
-length = 0.001
-
-[sub_resource type="Animation" id="Animation_hs7ws"]
-resource_name = "idle"
-length = 2.5000000000000004
-loop_mode = 1
-
-[sub_resource type="Animation" id="Animation_7oxhv"]
-resource_name = "move"
-length = 3.5000000000000004
-loop_mode = 1
-
-[sub_resource type="AnimationLibrary" id="AnimationLibrary_japly"]
-_data = {
-&"RESET": SubResource("Animation_a3q01"),
-&"idle": SubResource("Animation_hs7ws"),
-&"move": SubResource("Animation_7oxhv")
-}
 
 [node name="SandBag" type="CharacterBody2D" unique_id=2064536848]
 script = ExtResource("1_xr0ca")
@@ -150,5 +139,34 @@ debug_color = Color(0, 0.6, 0.69803923, 0.2)
 behavior_tree = SubResource("BehaviorTree_2ul3e")
 blackboard_plan = SubResource("BlackboardPlan_ak6ua")
 
-[node name="AnimationPlayer" type="AnimationPlayer" parent="." unique_id=1250304981]
-libraries/ = SubResource("AnimationLibrary_japly")
+[node name="Awareness" type="Area2D" parent="." unique_id=731958170]
+collision_layer = 0
+collision_mask = 2
+monitorable = false
+script = ExtResource("9_yvxo8")
+dist = 457.0
+x_offset = -30.0
+
+[node name="CollisionPolygon2D" type="CollisionPolygon2D" parent="Awareness" unique_id=1616752916]
+polygon = PackedVector2Array(-30, -228, -30, -28, 427, -28, 427, -228)
+
+[node name="LimboHSM" type="LimboHSM" parent="." unique_id=942695327]
+script = ExtResource("10_x1h6o")
+
+[node name="Idle" type="LimboState" parent="LimboHSM" unique_id=641009354]
+script = ExtResource("11_3b2yn")
+
+[node name="Hurt" type="LimboState" parent="LimboHSM" unique_id=1657276727]
+script = ExtResource("12_3b2yn")
+metadata/_custom_type_script = "uid://im1wyvflgwp0"
+
+[node name="AnimationPlayer" type="AnimationPlayer" parent="LimboHSM/Hurt" unique_id=868110392]
+
+[node name="Fall" type="LimboState" parent="LimboHSM" unique_id=1952545241]
+script = ExtResource("13_pvbt4")
+metadata/_custom_type_script = "uid://im1wyvflgwp0"
+
+[node name="Jump" type="LimboState" parent="LimboHSM" unique_id=1875892619]
+script = ExtResource("14_w11yh")
+
+[editable path="SpriteComponent"]

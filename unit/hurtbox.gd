@@ -2,14 +2,18 @@
 extends Area2D
 
 
-enum {
+enum State {
 	IDLE,
 	COUNTER,
-	
+	BLOCK,
 }
 
 
-signal dodged
+signal dodged()
+signal counter()
+
+
+var state: State = State.IDLE
 
 
 func damaged(hit_result: HitResult) -> void:

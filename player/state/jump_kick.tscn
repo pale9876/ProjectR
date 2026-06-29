@@ -1,0 +1,20 @@
+[gd_scene format=3 uid="uid://c7ovni3xc3aqc"]
+
+[ext_resource type="Script" uid="uid://b7x8s5btnaxj2" path="res://player/state/player_state.gd" id="1_ygc78"]
+
+[sub_resource type="Animation" id="Animation_rptt4"]
+resource_name = "jump_kick"
+step = 0.0167
+
+[sub_resource type="AnimationLibrary" id="AnimationLibrary_r7pn3"]
+_data = {
+&"jump_kick": SubResource("Animation_rptt4")
+}
+
+[node name="JumpKick" type="LimboState" unique_id=1156718825]
+script = ExtResource("1_ygc78")
+ev_name = &"jump_kick"
+metadata/_custom_type_script = "uid://b7x8s5btnaxj2"
+
+[node name="AnimationPlayer" type="AnimationPlayer" parent="." unique_id=160110549]
+libraries/ = SubResource("AnimationLibrary_r7pn3")

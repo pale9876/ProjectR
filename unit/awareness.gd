@@ -43,7 +43,7 @@ func _init() -> void:
 	set_collision_mask_value(1, false)
 	
 	set_collision_mask_value(2, true)
-	
+
 
 
 func set_polygon() -> void:
@@ -62,7 +62,6 @@ func set_polygon() -> void:
 	result.push_back(top_right)
 	
 	polygon.set_polygon(result)
-
 
 
 func _enter_tree() -> void:

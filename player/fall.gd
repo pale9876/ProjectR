@@ -1,8 +1,13 @@
 extends PlayerState
 
 
-@export var idle_state: LimboState
-@export var move_state: LimboState
+var idle_state: LimboState
+var move_state: LimboState
+
+
+func _ready() -> void:
+	idle_state = get_state_machine().get_state(^"Idle")
+	move_state = get_state_machine().get_state(^"Move")
 
 
 func _update(delta: float) -> void:

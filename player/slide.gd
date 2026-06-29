@@ -1,10 +1,10 @@
 extends PlayerState
 
 
-@export var idle_state: LimboState
-@export var move_state: LimboState
 @export_custom(PROPERTY_HINT_RANGE, "-100., 100., .1") var force_minmax: Vector2
 
+var idle_state: LimboState
+var move_state: LimboState
 
 @onready var anim: AnimationPlayer = $AnimationPlayer
 
@@ -22,6 +22,9 @@ func _enter_tree() -> void:
 
 func _ready() -> void:
 	anim.animation_finished.connect(_animation_finished)
+	
+	idle_state = get_state_machine().get_state(^"Idle")
+	move_state = get_state_machine().get_state(^"Move")
 
 
 func _enter() -> void:

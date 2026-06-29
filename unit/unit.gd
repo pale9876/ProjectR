@@ -5,6 +5,7 @@ class_name Unit
 # Import
 const Information: Script = preload("uid://c3ykemf4n3om1")
 const Player: Script = preload("uid://c2uxhumgng18h")
+const SpriteComponent: Script = preload("uid://b0paoljcmbiys")
 
 
 @export var information: Information
@@ -13,7 +14,7 @@ const Player: Script = preload("uid://c2uxhumgng18h")
 @export var rage_mode: bool = true
 
 
-@onready var sprite_component: Node2D = $SpriteComponent
+@onready var sprite_component: SpriteComponent = $SpriteComponent
 @onready var anim: AnimationPlayer = $AnimationPlayer
 #@onready var agent: NavigationAgent2D = $NavigationAgent2D
 
@@ -55,19 +56,16 @@ func _agent_navigation_finished() -> void:
 	pass
 
 
-#func _physics_process(delta: float) -> void:
-	#move_and_slide()
-
 func _refresh_path() -> void:
 	pass
 
 
-func get_player() -> Player:
-	return Global.player
-
-
 func get_btbb() -> Blackboard:
 	return bt.blackboard
+
+
+func get_sprite() -> AnimatedSprite2D:
+	return sprite_component.sprite
 
 
 class Stat:

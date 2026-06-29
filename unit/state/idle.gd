@@ -1,12 +1,13 @@
+# unit/state/idle.gd
 extends UnitState
 
 
-@export var move_state: LimboState
-@export var anim: AnimationPlayer
+var move_state: LimboState
 
 
 func _enter() -> void:
-	anim.play(&"idle")
+	var unit := agent as Unit
+	unit.sprite_component.play(&"idle")
 
 
 func _update(_delta: float) -> void:

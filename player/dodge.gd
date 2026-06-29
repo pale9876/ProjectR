@@ -12,7 +12,7 @@ var _success: bool = false
 
 
 func _ready() -> void:
-	var player := get_player()
+	var player := get_state_machine().get_player()
 	anim.animation_finished.connect(_on_dodge_anim_finsiehd)
 	player.get_hurtbox().dodge.connect(_on_dodge_successed)
 

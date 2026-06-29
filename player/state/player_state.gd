@@ -25,6 +25,7 @@ const StateMachine: Script = preload("uid://nmmtety5yvve")
 @export var dodge_cancel: bool = false
 
 
+## get_root()를 통하여 찾음.
 func get_hsm() -> StateMachine:
 	return get_root() as StateMachine
 
@@ -41,8 +42,21 @@ func move_and_slide() -> bool:
 	return get_player().move_and_slide()
 
 
+## 노드패스를 통해 찾음.
 func get_state_machine() -> StateMachine:
 	return get_parent() as StateMachine
+
+
+func move_and_collide(
+	motion: Vector2, test: bool = false, margin: float = .08
+	) -> KinematicCollision2D:
+	
+	return get_player().move_and_collide(motion, test, margin, false)
+
+
+func is_on_wall() -> bool:
+	return get_player().is_on_wall()
+
 
 
 func init_action() -> void:

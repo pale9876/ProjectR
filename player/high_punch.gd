@@ -7,14 +7,18 @@ enum {
 	HAMMER,
 }
 
-@export var idle_state: LimboState
-@export var move_state: LimboState
+
 @export var just_frame: bool = false
 @export var anim_postpone: int = 3
 
 
 var state: int = LEFT
 var _postpone: int = -1
+
+
+var idle_state: LimboState
+var move_state: LimboState
+var block_state: LimboState
 
 var _anim_finished: bool = false
 var _pressed: bool = false
@@ -37,6 +41,10 @@ func _enter_tree() -> void:
 
 func _ready() -> void:
 	anim.animation_finished.connect(_animation_finished)
+	
+	idle_state = get_state_machine().get_state(^"Idle")
+	move_state = get_state_machine().get_state(^"Move")
+	block_state = get_state_machine().get_state(^"Block")
 
 
 func _enter() -> void:
