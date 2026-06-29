@@ -10,6 +10,11 @@ func _ready() -> void:
 	move_state = get_state_machine().get_state(^"Move")
 
 
+func _enter() -> void:
+	var player := get_player()
+	player.sprite_component.play(&"fall")
+
+
 func _update(delta: float) -> void:
 	var player := get_player()
 	

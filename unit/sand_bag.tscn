@@ -140,6 +140,16 @@ root_task = SubResource("BTSequence_eras8")
 
 [sub_resource type="BlackboardPlan" id="BlackboardPlan_ak6ua"]
 
+[sub_resource type="Animation" id="Animation_2d64t"]
+resource_name = "standup"
+length = 0.4008016597002745
+step = 0.0167
+
+[sub_resource type="AnimationLibrary" id="AnimationLibrary_507e4"]
+_data = {
+&"standup": SubResource("Animation_2d64t")
+}
+
 [node name="SandBag" type="CharacterBody2D" unique_id=2064536848]
 collision_layer = 2
 script = ExtResource("1_xr0ca")
@@ -204,6 +214,7 @@ type = 2
 metadata/_custom_type_script = "uid://im1wyvflgwp0"
 
 [node name="AnimationPlayer" type="AnimationPlayer" parent="LimboHSM/Hurt" unique_id=868110392]
+libraries/ = SubResource("AnimationLibrary_507e4")
 
 [node name="Fall" type="LimboState" parent="LimboHSM" unique_id=1952545241]
 script = ExtResource("13_pvbt4")

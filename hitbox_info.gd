@@ -16,7 +16,6 @@ enum Type {
 @export var damage: int = 10
 @export var damage_frame: int = 9
 @export var force: Vector2 = Vector2(200., 0.)
-@export var stun_time: int = 8
 @export var blockable: bool = true
 @export var trace: bool = true
 @export var max_available_unit_hit_count: int = 1

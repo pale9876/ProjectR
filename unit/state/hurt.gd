@@ -31,12 +31,14 @@ func set_state(value: HitboxInformation.Type) -> void:
 	match value:
 		HitboxInformation.Type.KNOCKBACK:
 			if state in [PUSHBACK, AERIAL]:
+				result = AERIAL
+			else:
 				result = KNOCKBACK
 		HitboxInformation.Type.AERIAL:
 			if state == DOWNED:
 				result = DOWNED
-			else: result = AERIAL
-		
+			else:
+				result = AERIAL
 
 	state = result
 

@@ -16,13 +16,27 @@ size = Vector2(60, 20)
 
 [sub_resource type="Resource" id="Resource_yllr7"]
 script = ExtResource("3_033vm")
+type = 1
 metadata/_custom_type_script = "uid://xw07ofvvtrxk"
 
 [sub_resource type="RectangleShape2D" id="RectangleShape2D_kb6p2"]
-size = Vector2(28, 72)
+size = Vector2(28, 48)
 
 [sub_resource type="Resource" id="Resource_kb6p2"]
 script = ExtResource("3_033vm")
+atk_name = &"Hammer"
+type = 1
+damage_frame = 15
+metadata/_custom_type_script = "uid://xw07ofvvtrxk"
+
+[sub_resource type="RectangleShape2D" id="RectangleShape2D_7jywp"]
+size = Vector2(72, 48)
+
+[sub_resource type="Resource" id="Resource_wqsic"]
+script = ExtResource("3_033vm")
+atk_name = &"HammerEx"
+type = 2
+force = Vector2(200, -100)
 metadata/_custom_type_script = "uid://xw07ofvvtrxk"
 
 [node name="PunchCombo" type="Area2D" unique_id=1815996743]
@@ -48,9 +62,17 @@ hitbox_info = SubResource("Resource_yllr7")
 metadata/_custom_type_script = "uid://d2ox33o3w3u0r"
 
 [node name="Hammer" type="CollisionShape2D" parent="." unique_id=484765877]
-position = Vector2(10, -40)
+position = Vector2(10, -52)
 shape = SubResource("RectangleShape2D_kb6p2")
 disabled = true
 script = ExtResource("2_wgatv")
 hitbox_info = SubResource("Resource_kb6p2")
+metadata/_custom_type_script = "uid://d2ox33o3w3u0r"
+
+[node name="HammerEx" type="CollisionShape2D" parent="." unique_id=1562370842]
+position = Vector2(36, -48)
+shape = SubResource("RectangleShape2D_7jywp")
+disabled = true
+script = ExtResource("2_wgatv")
+hitbox_info = SubResource("Resource_wqsic")
 metadata/_custom_type_script = "uid://d2ox33o3w3u0r"
