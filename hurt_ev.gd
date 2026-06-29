@@ -7,5 +7,6 @@ enum MotionState {
 	KNOCKBACK,
 	AERIAL,
 	PUSHBACK,
-	DOWNED
+	DOWNED,
+	GRABBED,
 }

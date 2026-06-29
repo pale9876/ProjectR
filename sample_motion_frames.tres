@@ -11,6 +11,7 @@
 [ext_resource type="Texture2D" uid="uid://5fw3cvxawlxh" path="res://aseprite/asso_project/sample_motions/left_punch.png" id="5_5by7o"]
 [ext_resource type="Texture2D" uid="uid://b7pw6wh1f50rn" path="res://aseprite/asso_project/sample_motions/move.png" id="6_2e445"]
 [ext_resource type="Texture2D" uid="uid://86ayd8qtfevk" path="res://aseprite/asso_project/sample_motions/right_punch.png" id="7_yge5e"]
+[ext_resource type="Texture2D" uid="uid://jox2lcyw7u70" path="res://aseprite/asso_project/sample_motions/knockback_horz.png" id="9_rkgx6"]
 [ext_resource type="Texture2D" uid="uid://c8ye0j4iecttl" path="res://aseprite/asso_project/sample_motions/slide.png" id="11_5by7o"]
 [ext_resource type="Texture2D" uid="uid://7vf87863ggaa" path="res://aseprite/asso_project/sample_motions/pushback.png" id="11_yge5e"]
 
@@ -112,6 +113,10 @@ region = Rect2(0, 0, 256, 256)
 
 [sub_resource type="AtlasTexture" id="AtlasTexture_dx5ib"]
 atlas = ExtResource("4_hr82g")
+region = Rect2(0, 0, 256, 256)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_klil2"]
+atlas = ExtResource("9_rkgx6")
 region = Rect2(0, 0, 256, 256)
 
 [sub_resource type="AtlasTexture" id="AtlasTexture_hr82g"]
@@ -314,9 +319,22 @@ animations = [{
 "name": &"jump",
 "speed": 5.0
 }, {
-"frames": [],
+"frames": [{
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_klil2")
+}],
 "loop": 1,
 "name": &"knockback",
+"speed": 5.0
+}, {
+"frames": [],
+"loop": 1,
+"name": &"knockback_horz",
+"speed": 5.0
+}, {
+"frames": [],
+"loop": 1,
+"name": &"knockback_vert",
 "speed": 5.0
 }, {
 "frames": [{

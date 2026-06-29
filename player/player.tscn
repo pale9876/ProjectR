@@ -27,6 +27,7 @@
 [ext_resource type="Script" uid="uid://b5n6wklxaj05c" path="res://hit_collision.gd" id="22_bjvpn"]
 [ext_resource type="Script" uid="uid://dr8n2mbhooxjo" path="res://player/hitbox_component.gd" id="22_uw77l"]
 [ext_resource type="Script" uid="uid://xw07ofvvtrxk" path="res://hitbox_info.gd" id="23_s7qer"]
+[ext_resource type="Script" uid="uid://ddv2b0xf2yme3" path="res://player/grab_box.gd" id="28_rptt4"]
 
 [sub_resource type="Resource" id="Resource_4xbu7"]
 script = ExtResource("2_65viv")
@@ -271,12 +272,21 @@ punch_combo_hitbox = NodePath("../../PunchCombo")
 [node name="CounterAttack" parent="LimboHSM" unique_id=893071231 instance=ExtResource("18_rptt4")]
 
 [node name="JumpKick" parent="LimboHSM" unique_id=1156718825 instance=ExtResource("19_r7pn3")]
+type = 1
+action_input = PackedStringArray("kick")
 
 [node name="JumpHammer" type="LimboState" parent="LimboHSM" unique_id=1138518008]
 script = ExtResource("16_x7c3f")
+type = 1
+action_input = PackedStringArray("attack", "kick")
+ev_name = &"jump_hammer"
 metadata/_custom_type_script = "uid://b7x8s5btnaxj2"
 
 [node name="Dodge" parent="LimboHSM" unique_id=1740608329 instance=ExtResource("21_b8hi5")]
+
+[node name="Grab" type="LimboState" parent="LimboHSM" unique_id=1617341275]
+script = ExtResource("16_x7c3f")
+metadata/_custom_type_script = "uid://b7x8s5btnaxj2"
 
 [node name="HitboxComponent" type="Node2D" parent="." unique_id=1243634124]
 script = ExtResource("22_uw77l")
@@ -314,6 +324,12 @@ offset_left = -29.0
 offset_top = -91.0
 offset_right = 29.0
 offset_bottom = -68.0
+
+[node name="GrabBox" type="Area2D" parent="." unique_id=172417262]
+script = ExtResource("28_rptt4")
+
+[node name="CollisionPolygon2D" type="CollisionPolygon2D" parent="GrabBox" unique_id=370562308]
+modulate = Color(1, 1, 1, 0.32941177)
 
 [editable path="SpriteComponent"]
 [editable path="LimboHSM/HighPunchCombo"]

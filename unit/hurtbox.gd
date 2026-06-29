@@ -17,6 +17,7 @@ const DOWNED := HurtEV.MotionState.DOWNED
 enum State {
 	IDLE,
 	EXPOSE,
+	HURT,
 	COUNTER,
 	BLOCK,
 	DODGE,
@@ -26,6 +27,7 @@ enum State {
 const IDLE := State.IDLE
 const EXPOSE := State.EXPOSE
 const COUNTER := State.COUNTER
+const HURT := State.HURT
 const BLOCK := State.BLOCK
 const DODGE := State.DODGE
 
@@ -63,15 +65,11 @@ func damaged(hitbox_info: HitboxInformation, hit_result: HitResult) -> void:
 	var unit: Unit = get_parent() as Unit
 	var atk_type := hitbox_info.type
 	
-	if !has_dodged() and !blocked_attack(hitbox_info, hit_result) and effective(hitbox_info):
+	if !has_dodged() and !blocked_attack(hitbox_info, hit_result) and effective():
 		var state_machine := unit.hsm
 		var hurt_state := unit.hsm.get_state(^"Hurt") as HurtState
 		
-		match atk_type:
-			HitboxInformation.Type.KNOCKBACK:
-				hurt_state.set_state(KNOCKBACK)
-			HitboxInformation.Type.AERIAL:
-				hurt_state.set_state(AERIAL)
+		hurt_state.set_state(hitbox_info.type)
 		
 		hurt_state.damage_frame = hitbox_info.damage_frame
 		hurt_state.motion = hitbox_info.force
@@ -81,13 +79,10 @@ func damaged(hitbox_info: HitboxInformation, hit_result: HitResult) -> void:
 
 
 
-func effective(info: HitboxInformation) -> bool:
+func effective() -> bool:
+	if state in [IDLE, EXPOSE, HURT]: return true
+	
 	match state:
-		IDLE:
-			return true
-		EXPOSE:
-			info.damage = int(info.damage * 1.35)
-			return true
 		COUNTER:
 			counter.emit()
 			return false

@@ -18,6 +18,8 @@
 [ext_resource type="Script" uid="uid://cflyf2esm4eqo" path="res://unit/state/fall.gd" id="13_pvbt4"]
 [ext_resource type="Script" uid="uid://8j24mmna7pmh" path="res://unit/state/jump.gd" id="14_w11yh"]
 [ext_resource type="Script" uid="uid://dmhr7bhy8lgt5" path="res://unit/move.gd" id="18_t3pbd"]
+[ext_resource type="Script" uid="uid://6eubdpqc1rif" path="res://unit/grabbed.gd" id="19_cibo8"]
+[ext_resource type="Script" uid="uid://h6umakp1bcu0" path="res://unit/grab.gd" id="20_2d64t"]
 
 [sub_resource type="Resource" id="Resource_pvbt4"]
 script = ExtResource("3_t3pbd")
@@ -148,6 +150,9 @@ texture = SubResource("GradientTexture2D_wqsic")
 
 [node name="SpriteComponent" parent="." unique_id=363892716 instance=ExtResource("3_k7avp")]
 
+[node name="AnimatedSprite2D" parent="SpriteComponent" index="1" unique_id=152865229]
+animation = &"knockback_horz"
+
 [node name="Hurtbox" type="Area2D" parent="." unique_id=1792069261]
 collision_layer = 2
 collision_mask = 0
@@ -202,6 +207,14 @@ metadata/_custom_type_script = "uid://im1wyvflgwp0"
 
 [node name="Fall" type="LimboState" parent="LimboHSM" unique_id=1952545241]
 script = ExtResource("13_pvbt4")
+metadata/_custom_type_script = "uid://im1wyvflgwp0"
+
+[node name="Grabbed" type="LimboState" parent="LimboHSM" unique_id=1553039524]
+script = ExtResource("19_cibo8")
+metadata/_custom_type_script = "uid://im1wyvflgwp0"
+
+[node name="Grab" type="LimboState" parent="LimboHSM" unique_id=1141453359]
+script = ExtResource("20_2d64t")
 metadata/_custom_type_script = "uid://im1wyvflgwp0"
 
 [editable path="SpriteComponent"]

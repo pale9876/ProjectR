@@ -13,7 +13,6 @@ const DOWNED := HurtEV.MotionState.DOWNED
 
 var idle_state: LimboState
 
-
 var damage_frame: int = 0:
 	set(value):
 		damage_frame = maxi(value, 0)
@@ -26,8 +25,20 @@ var state: HurtEV.MotionState = NONE
 var motion: Vector2 = Vector2()
 
 
-func set_state(value: HurtEV.MotionState) -> void:
-	state = value
+func set_state(value: HitboxInformation.Type) -> void:
+	var result: HurtEV.MotionState
+	
+	match value:
+		HitboxInformation.Type.KNOCKBACK:
+			if state in [PUSHBACK, AERIAL]:
+				result = KNOCKBACK
+		HitboxInformation.Type.AERIAL:
+			if state == DOWNED:
+				result = DOWNED
+			else: result = AERIAL
+		
+
+	state = result
 
 
 func _ready() -> void:

@@ -2,12 +2,12 @@ extends Resource
 class_name HitboxInformation
 
 
-
 enum Type {
 	KNOCKBACK,
 	AERIAL,
 	PUSHBACK,
 	BLOWUP,
+	DOWN_ATTACK,
 }
 
 @export_group("Attack Stat")
