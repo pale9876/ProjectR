@@ -66,11 +66,8 @@ func _update(delta: float) -> void:
 			return
 		
 		get_hsm().change_active_state(idle_state)
-		
 	else:
 		damage_frame -= 1
-	
-	
 
 
 func _exit() -> void:

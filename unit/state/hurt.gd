@@ -1,30 +1,23 @@
 extends UnitState
 
 
-enum MotionState {
-	NONE,
-	KNOCKBACK,
-	AERIAL,
-	PUSHBACK,
-}
+# Import
+const HurtEv: Script = preload("uid://cpbogpcwj4utb")
 
-
-const NONE := MotionState.NONE
-const KNOCKBACK := MotionState.KNOCKBACK
-const AERIAL := MotionState.AERIAL
-const PUSHBACK := MotionState.PUSHBACK
 
 
 var idle_state: LimboState
 
 
-var damage_frame: int = 0
+var damage_frame: int = 0:
+	set(value):
+		damage_frame = maxi(value, 0)
 
 
 @onready var anim: AnimationPlayer = $AnimationPlayer
 
 
-var _state: MotionState = MotionState.NONE
+var _state := HurtEv.NONE
 var _motion: Vector2 = Vector2()
 
 
@@ -36,20 +29,20 @@ func _update(_delta: float) -> void:
 	var unit := _get_unit()
 	
 	match _state:
-		KNOCKBACK:
-			unit.velocity.x = move_toward(_motion.x, 0., 7.25)
-			var collide: KinematicCollision2D = move_and_collide(unit.velocity)
-		AERIAL:
-			pass
-	
-	
-	
-	
-	
+		HurtEv.KNOCKBACK:
+			_motion.x = move_toward(_motion.x, 0., 7.25)
+			unit.velocity = _motion
+			move_and_slide()
 
-	damage_frame -= 1
+		HurtEv.AERIAL:
+			pass
+
+	if damage_frame == 0:
+		pass
+	else:
+		damage_frame -= 1
 	
 
 
 func _exit() -> void:
-	pass
+	damage_frame = 0

@@ -3,19 +3,23 @@ class_name Unit
 
 
 # Import
-const Information: Script = preload("uid://c3ykemf4n3om1")
 const Player: Script = preload("uid://c2uxhumgng18h")
 const SpriteComponent: Script = preload("uid://b0paoljcmbiys")
+const Awareness: Script = preload("uid://bdj3moatwduju")
 
 
-@export var information: Information
-@export var bt: BTPlayer
+signal deactive()
+signal active()
+
+
+@export var info: UnitInformation
 @export var z_value: float = 0.
 @export var rage_mode: bool = true
 
 
 @onready var sprite_component: SpriteComponent = $SpriteComponent
 @onready var anim: AnimationPlayer = $AnimationPlayer
+@onready var bt: BTPlayer = $BTPlayer
 #@onready var agent: NavigationAgent2D = $NavigationAgent2D
 
 
@@ -28,9 +32,14 @@ func _enter_tree() -> void:
 	GSignal.resume.connect(_resume)
 	
 	# init hp
-	stat.max_hp = information.hp
+	stat.name = info.name
+	stat.max_hp = info.hp
 	stat.hp = stat.max_hp
-	stat.speed = information.speed
+	stat.speed = info.speed
+
+
+func _ready() -> void:
+	bt.active = false
 
 
 func _soft_paused() -> void:
@@ -41,6 +50,10 @@ func _soft_paused() -> void:
 func _resume() -> void:
 	set_process(false)
 	set_physics_process(false)
+
+
+func get_awareness_area() -> Awareness:
+	return get_node(^"Awareness")
 
 
 #func _ready() -> void:
@@ -69,6 +82,7 @@ func get_sprite() -> AnimatedSprite2D:
 
 
 class Stat:
+	var name: StringName
 	var max_hp: int
 	var hp: int:
 		set(value):

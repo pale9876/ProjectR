@@ -1,7 +1,7 @@
 @tool
 extends Area2D
 
-
+# Import
 const Player: Script = preload("uid://c2uxhumgng18h")
 
 

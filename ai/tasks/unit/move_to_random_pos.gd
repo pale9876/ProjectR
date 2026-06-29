@@ -18,8 +18,8 @@ var _destination_pos: Vector2
 func _enter() -> void:
 	var unit: Unit = agent as Unit
 	_destination_pos = unit.global_position + (move_distance * get_rand_dir())
-	unit.anim.play(&"move")
 	_duration = duration
+
 
 func _tick(_delta: float) -> Status:
 	var unit: Unit = agent as Unit

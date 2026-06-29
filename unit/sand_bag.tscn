@@ -1,12 +1,15 @@
 [gd_scene format=3 uid="uid://bpojlualakpuu"]
 
 [ext_resource type="Script" uid="uid://bl84ixx4kubfe" path="res://unit/unit.gd" id="1_xr0ca"]
-[ext_resource type="Resource" uid="uid://c8qn50dilibqs" path="res://unit/information/minion.tres" id="2_c6cao"]
+[ext_resource type="SpriteFrames" uid="uid://dhmvj5bwddbin" path="res://sample_lower_motions.tres" id="2_w2uev"]
 [ext_resource type="Script" uid="uid://cpsg0ho6132tj" path="res://ai/tasks/unit/set_act_state.gd" id="3_6c1mr"]
 [ext_resource type="PackedScene" uid="uid://cljktitiy0g50" path="res://component/sprite_component.tscn" id="3_k7avp"]
-[ext_resource type="Script" uid="uid://dnfln7i10n5lu" path="res://ai/tasks/unit/move_to_random_pos.gd" id="4_f3vym"]
+[ext_resource type="Script" uid="uid://c3ykemf4n3om1" path="res://unit/information/information.gd" id="3_t3pbd"]
+[ext_resource type="SpriteFrames" uid="uid://72n3ls5rb05n" path="res://sample_motion_frames.tres" id="4_cibo8"]
+[ext_resource type="SpriteFrames" uid="uid://dhhxgkevom0u8" path="res://sample_upper_motions.tres" id="5_2d64t"]
 [ext_resource type="Script" uid="uid://dibqva5a64jvq" path="res://ai/tasks/unit/patrol_wait.gd" id="5_toejp"]
 [ext_resource type="Script" uid="uid://dmj17w1hipj7o" path="res://ai/tasks/unit/trace_target.gd" id="6_2clmh"]
+[ext_resource type="Script" uid="uid://cdbxf87eqivir" path="res://ai/tasks/set_target_position.gd" id="8_1kauj"]
 [ext_resource type="Script" uid="uid://bupj3hlvtt67s" path="res://unit/hurtbox.gd" id="8_k7l50"]
 [ext_resource type="Script" uid="uid://bdj3moatwduju" path="res://unit/awareness.gd" id="9_yvxo8"]
 [ext_resource type="Script" uid="uid://dcybwuwfqeqr3" path="res://unit/state/state_machine.gd" id="10_x1h6o"]
@@ -14,6 +17,14 @@
 [ext_resource type="Script" uid="uid://btf7rckikcpps" path="res://unit/state/hurt.gd" id="12_3b2yn"]
 [ext_resource type="Script" uid="uid://cflyf2esm4eqo" path="res://unit/state/fall.gd" id="13_pvbt4"]
 [ext_resource type="Script" uid="uid://8j24mmna7pmh" path="res://unit/state/jump.gd" id="14_w11yh"]
+
+[sub_resource type="Resource" id="Resource_pvbt4"]
+script = ExtResource("3_t3pbd")
+name = &"SampleUnit"
+upper_motions = ExtResource("5_2d64t")
+lower_motions = ExtResource("2_w2uev")
+sprite_frames = ExtResource("4_cibo8")
+metadata/_custom_type_script = "uid://c3ykemf4n3om1"
 
 [sub_resource type="Gradient" id="Gradient_2ul3e"]
 interpolation_mode = 1
@@ -62,8 +73,8 @@ value = SubResource("BBVariant_4xbu7")
 [sub_resource type="BTConsolePrint" id="BTConsolePrint_a2j7n"]
 text = "순찰 중"
 
-[sub_resource type="BTAction" id="BTAction_4xbu7"]
-script = ExtResource("4_f3vym")
+[sub_resource type="BTAction" id="BTAction_n0aob"]
+script = ExtResource("8_1kauj")
 
 [sub_resource type="BTConsolePrint" id="BTConsolePrint_4xbu7"]
 text = "잠시 쉬는 중"
@@ -73,7 +84,7 @@ script = ExtResource("5_toejp")
 
 [sub_resource type="BTSequence" id="BTSequence_j0e0d"]
 custom_name = "IF :: Act is \"patrol\""
-children = [SubResource("BTCheckVar_a2j7n"), SubResource("BTConsolePrint_a2j7n"), SubResource("BTAction_4xbu7"), SubResource("BTConsolePrint_4xbu7"), SubResource("BTWait_a2j7n")]
+children = [SubResource("BTCheckVar_a2j7n"), SubResource("BTConsolePrint_a2j7n"), SubResource("BTAction_n0aob"), SubResource("BTConsolePrint_4xbu7"), SubResource("BTWait_a2j7n")]
 
 [sub_resource type="BBVariant" id="BBVariant_a3q01"]
 type = 4
@@ -97,8 +108,18 @@ text = "타겟이 인식반경에서 벗어남."
 custom_name = "IF:: Act is \"Trace\""
 children = [SubResource("BTCheckVar_4xbu7"), SubResource("BTConsolePrint_j0e0d"), SubResource("BTAction_j0e0d"), SubResource("BTConsolePrint_5dfwp")]
 
+[sub_resource type="BBVariant" id="BBVariant_w11yh"]
+type = 4
+saved_value = "move"
+resource_name = "move"
+
+[sub_resource type="BTCheckVar" id="BTCheckVar_1kauj"]
+variable = &"act"
+value = SubResource("BBVariant_w11yh")
+
 [sub_resource type="BTSequence" id="BTSequence_yvxo8"]
-custom_name = "IF :: 이동 명령을 받음."
+custom_name = "IF :: Act is \"move\""
+children = [SubResource("BTCheckVar_1kauj")]
 
 [sub_resource type="BTSelector" id="BTSelector_5dfwp"]
 children = [SubResource("BTSequence_j0e0d"), SubResource("BTSequence_a2j7n"), SubResource("BTSequence_yvxo8")]
@@ -114,7 +135,7 @@ root_task = SubResource("BTSequence_eras8")
 
 [node name="SandBag" type="CharacterBody2D" unique_id=2064536848]
 script = ExtResource("1_xr0ca")
-information = ExtResource("2_c6cao")
+info = SubResource("Resource_pvbt4")
 
 [node name="DropShadow" type="Sprite2D" parent="." unique_id=924943166]
 texture = SubResource("GradientTexture2D_wqsic")
