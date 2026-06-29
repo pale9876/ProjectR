@@ -3,17 +3,14 @@ extends RefCounted
 class_name HitResult
 
 
-enum {
-	KNOCKBACK,
-	AERIAL,
-	BLOWUP,
-	PUSHBACK,
-}
-
-var type: int
 var from: Node2D
 var to: Node2D
-var damage: int
-var force: float
-var effect_time: float
-var cargo: Dictionary = {}
+
+
+static func create(_from: Node2D, _to: Node2D) -> HitResult:
+	var result := HitResult.new()
+	
+	result.from = _from
+	result.to = _to
+	
+	return result

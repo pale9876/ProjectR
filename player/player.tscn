@@ -25,6 +25,7 @@
 [ext_resource type="PackedScene" uid="uid://cd03qmykfoaw7" path="res://player/state/dodge.tscn" id="21_b8hi5"]
 [ext_resource type="Script" uid="uid://0dw4edo0eshv" path="res://player/hitbox.gd" id="21_bjvpn"]
 [ext_resource type="Script" uid="uid://b5n6wklxaj05c" path="res://hit_collision.gd" id="22_bjvpn"]
+[ext_resource type="Script" uid="uid://dr8n2mbhooxjo" path="res://player/hitbox_component.gd" id="22_uw77l"]
 [ext_resource type="Script" uid="uid://xw07ofvvtrxk" path="res://hitbox_info.gd" id="23_s7qer"]
 
 [sub_resource type="Resource" id="Resource_4xbu7"]
@@ -242,11 +243,8 @@ jump_state = NodePath("../Jump")
 [node name="AnimationPlayer" type="AnimationPlayer" parent="LimboHSM/Idle" unique_id=1075772747]
 libraries/ = SubResource("AnimationLibrary_e7oew")
 
-[node name="Move" type="LimboState" parent="LimboHSM" unique_id=1139494425 node_paths=PackedStringArray("idle_state", "fall_state", "jump_state")]
+[node name="Move" type="LimboState" parent="LimboHSM" unique_id=1139494425]
 script = ExtResource("5_40lky")
-idle_state = NodePath("../Idle")
-fall_state = NodePath("../Fall")
-jump_state = NodePath("../Jump")
 
 [node name="Fall" type="LimboState" parent="LimboHSM" unique_id=216460520]
 script = ExtResource("6_yllr7")
@@ -280,7 +278,8 @@ metadata/_custom_type_script = "uid://b7x8s5btnaxj2"
 
 [node name="Dodge" parent="LimboHSM" unique_id=1740608329 instance=ExtResource("21_b8hi5")]
 
-[node name="Hitboxes" type="Node2D" parent="." unique_id=1243634124]
+[node name="HitboxComponent" type="Node2D" parent="." unique_id=1243634124]
+script = ExtResource("22_uw77l")
 
 [node name="PunchCombo" parent="." unique_id=1815996743 instance=ExtResource("19_65viv")]
 

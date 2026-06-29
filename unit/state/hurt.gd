@@ -1,8 +1,13 @@
+# unit/state/hurt.gd
 extends UnitState
 
 
-# Import
-const HurtEv: Script = preload("uid://cpbogpcwj4utb")
+
+const NONE := HurtEV.MotionState.NONE
+const KNOCKBACK := HurtEV.MotionState.KNOCKBACK
+const AERIAL := HurtEV.MotionState.AERIAL
+const PUSHBACK := HurtEV.MotionState.PUSHBACK
+const DOWNED := HurtEV.MotionState.DOWNED
 
 
 
@@ -17,28 +22,53 @@ var damage_frame: int = 0:
 @onready var anim: AnimationPlayer = $AnimationPlayer
 
 
-var _state := HurtEv.NONE
-var _motion: Vector2 = Vector2()
+var state: HurtEV.MotionState = NONE
+var motion: Vector2 = Vector2()
+
+
+func set_state(value: HurtEV.MotionState) -> void:
+	state = value
 
 
 func _ready() -> void:
+	get_state_machine()
+	
 	idle_state = get_state_machine().get_state(^"Idle")
+
+
+func _enter() -> void:
+	assert(state != NONE)
+	
+	match state:
+		KNOCKBACK:
+			get_sprite().play(&"knockback")
+		AERIAL:
+			get_sprite().play(&"aerial")
 
 
 func _update(_delta: float) -> void:
 	var unit := _get_unit()
 	
-	match _state:
-		HurtEv.KNOCKBACK:
-			_motion.x = move_toward(_motion.x, 0., 7.25)
-			unit.velocity = _motion
+	match state:
+		KNOCKBACK:
+			motion.x = move_toward(motion.x, 0., 7.25)
+			unit.velocity = motion
 			move_and_slide()
 
-		HurtEv.AERIAL:
-			pass
+		AERIAL:
+			if is_on_floor():
+				unit.sprite_component.play(&"down")
+				state = DOWNED
+		
+		DOWNED:
+			if !is_on_floor():
+				state = AERIAL
 
 	if damage_frame == 0:
-		pass
+		if state == DOWNED:
+			unit.sprite_component.play(&"standup")
+		else:
+			_get_hsm().change_active_state(idle_state)
 	else:
 		damage_frame -= 1
 	
@@ -46,3 +76,10 @@ func _update(_delta: float) -> void:
 
 func _exit() -> void:
 	damage_frame = 0
+
+
+func _on_animation_finished(anim_name: StringName) -> void:
+	if anim_name == &"standup":
+		var unit := _get_unit()
+		unit.get_hurtbox().invincible_frame += 10
+		_get_hsm().change_active_state(idle_state)

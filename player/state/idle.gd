@@ -24,7 +24,7 @@ func _update(_delta: float) -> void:
 		elif player.velocity.y < 0.:
 			hsm.change_active_state(jump_state)
 	
-	if player.input_state.direction.x != 0.:
+	if absf(player.input_state.direction.x) > .3:
 		hsm.change_active_state(move_state)
 	
 	player.velocity.x = move_toward(player.velocity.x, 0., 25.)

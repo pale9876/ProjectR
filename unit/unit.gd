@@ -6,6 +6,8 @@ class_name Unit
 const Player: Script = preload("uid://c2uxhumgng18h")
 const SpriteComponent: Script = preload("uid://b0paoljcmbiys")
 const Awareness: Script = preload("uid://bdj3moatwduju")
+const StateMachine: Script = preload("uid://dcybwuwfqeqr3")
+const Hurtbox: Script = preload("uid://bupj3hlvtt67s")
 
 
 signal deactive()
@@ -19,6 +21,7 @@ signal active()
 
 @onready var sprite_component: SpriteComponent = $SpriteComponent
 @onready var bt: BTPlayer = $BTPlayer
+@onready var hsm: StateMachine = $LimboHSM
 #@onready var agent: NavigationAgent2D = $NavigationAgent2D
 
 
@@ -28,6 +31,13 @@ var state: State = State.new()
 
 func _on_face_changed() -> void:
 	sprite_component.scale.x = float(state.face.x)
+
+
+func _init() -> void:
+	motion_mode = CharacterBody2D.MOTION_MODE_GROUNDED
+	
+	set_collision_layer_value(1, false)
+	set_collision_layer_value(2, true)
 
 
 func _enter_tree() -> void:
@@ -43,6 +53,15 @@ func _enter_tree() -> void:
 
 func _ready() -> void:
 	bt.active = false
+	
+	sprite_component.init_sprites(
+		info.upper_motions,
+		info.lower_motions,
+		info.sprite_frames
+	)
+	
+	hsm.initialize(self)
+	hsm.set_active(true)
 
 
 func _soft_paused() -> void:
@@ -82,6 +101,10 @@ func get_btbb() -> Blackboard:
 
 func get_sprite() -> AnimatedSprite2D:
 	return sprite_component.sprite
+
+
+func get_hurtbox() -> Hurtbox:
+	return get_node(^"Hurtbox")
 
 
 class Stat:

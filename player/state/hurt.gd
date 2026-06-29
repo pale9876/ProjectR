@@ -3,14 +3,13 @@ extends PlayerState
 
 
 # Import
-const HurtEv: Script = preload("uid://cpbogpcwj4utb")
 
 
 # Consts
-const NONE := HurtEv.NONE
-const KNOCKBACK := HurtEv.KNOCKBACK
-const AERIAL := HurtEv.AERIAL
-const PUSHBACK := HurtEv.PUSHBACK
+const NONE := HurtEV.MotionState.NONE
+const KNOCKBACK := HurtEV.MotionState.KNOCKBACK
+const AERIAL := HurtEV.MotionState.AERIAL
+const PUSHBACK := HurtEV.MotionState.PUSHBACK
 
 
 # States

@@ -7,6 +7,8 @@ const SpriteComponent: Script = preload("uid://b0paoljcmbiys")
 const SpriteModuler: Script = preload("uid://dbcsuysfwo30x")
 const Hurtbox: Script = preload("uid://er84buu2gymf")
 const PlayerCamera: Script = preload("uid://b7phyhue4y3yg")
+const HitboxComponent: Script = preload("uid://dr8n2mbhooxjo")
+
 
 
 @export var info: PlayerInformation
@@ -14,14 +16,13 @@ const PlayerCamera: Script = preload("uid://b7phyhue4y3yg")
 @export var z_value: float = 0.
 
 
-var prefix: StringName = &"_down"
-
 var input_state: InputState = InputState.new()
 var stat: Stat = Stat.new()
 var state: State = State.new()
 
 
 @onready var sprite_component: SpriteComponent = $SpriteComponent
+@onready var hitbox_component: HitboxComponent = $HitboxComponent
 @onready var drop_shadow: Sprite2D = $DropShadow
 
 

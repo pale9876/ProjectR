@@ -22,8 +22,16 @@ func _get_unit() -> Unit:
 	return agent as Unit
 
 
+func _get_hsm() -> LimboHSM:
+	return get_root() as LimboHSM
+
+
 func _get_target() -> Node2D:
 	return _get_unit().get_btbb().get_var(&"target") as Node2D
+
+
+func move_order_received() -> Array[Dictionary]:
+	return _get_unit().get_btbb().get_var(&"target_position") as Array[Dictionary]
 
 
 func is_on_floor() -> bool:

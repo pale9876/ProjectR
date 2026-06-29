@@ -1,11 +1,20 @@
+# player/state/move.gd
 extends PlayerState
 
 
 # state
-@export var idle_state: LimboState
-@export var fall_state: LimboState
-@export var jump_state: LimboState
-@export var slide_state: LimboState
+var idle_state: LimboState
+var fall_state: LimboState
+var jump_state: LimboState
+var slide_state: LimboState
+
+
+func _ready() -> void:
+	var state_machine := get_state_machine()
+	idle_state = state_machine.get_state(^"Idle")
+	jump_state = state_machine.get_state(^"Jump")
+	slide_state = state_machine.get_state(^"Slide")
+	fall_state = state_machine.get_state(^"Fall")
 
 
 func _enter() -> void:
@@ -29,12 +38,8 @@ func _update(_delta: float) -> void:
 	var hsm := get_hsm()
 	
 	if !is_on_floor():
-		if player.velocity.y > 0.:
-			hsm.change_active_state(fall_state)
-			return
-		elif player.velocity.y < 0.:
-			hsm.change_active_state(jump_state)
-			return
+		hsm.change_active_state(fall_state)
+		return
 	else:
 		if player.state.face.x != player.input_state.direction.x:
 			player.state.face.x = int(player.input_state.direction.x)

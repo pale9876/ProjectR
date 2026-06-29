@@ -40,12 +40,11 @@ fill = 1
 fill_from = Vector2(0.5, 0.5)
 fill_to = Vector2(0.85, 0.85)
 
-[sub_resource type="CapsuleShape2D" id="CapsuleShape2D_2ul3e"]
-radius = 8.0
-height = 48.0
+[sub_resource type="RectangleShape2D" id="RectangleShape2D_t3pbd"]
+size = Vector2(32, 88)
 
 [sub_resource type="CapsuleShape2D" id="CapsuleShape2D_wqsic"]
-radius = 13.0
+radius = 8.0
 height = 68.0
 
 [sub_resource type="BlackboardPlan" id="BlackboardPlan_2ul3e"]
@@ -58,6 +57,11 @@ var/act/type = 4
 var/act/value = "patrol"
 var/act/hint = 0
 var/act/hint_string = ""
+var/move_order/name = &"move_order"
+var/move_order/type = 27
+var/move_order/value = {}
+var/move_order/hint = 0
+var/move_order/hint_string = ""
 
 [sub_resource type="BTAction" id="BTAction_a3q01"]
 script = ExtResource("3_6c1mr")
@@ -135,6 +139,7 @@ root_task = SubResource("BTSequence_eras8")
 [sub_resource type="BlackboardPlan" id="BlackboardPlan_ak6ua"]
 
 [node name="SandBag" type="CharacterBody2D" unique_id=2064536848]
+collision_layer = 2
 script = ExtResource("1_xr0ca")
 info = SubResource("Resource_pvbt4")
 
@@ -143,14 +148,16 @@ texture = SubResource("GradientTexture2D_wqsic")
 
 [node name="SpriteComponent" parent="." unique_id=363892716 instance=ExtResource("3_k7avp")]
 
-[node name="Hurbox" type="Area2D" parent="." unique_id=1792069261]
+[node name="Hurtbox" type="Area2D" parent="." unique_id=1792069261]
+collision_layer = 2
+collision_mask = 0
 monitoring = false
 script = ExtResource("8_k7l50")
 
-[node name="CollisionShape2D" type="CollisionShape2D" parent="Hurbox" unique_id=296316886]
-position = Vector2(0, -24)
-shape = SubResource("CapsuleShape2D_2ul3e")
-debug_color = Color(0.8509804, 0.8627451, 0.21960784, 0.21176471)
+[node name="CollisionShape2D" type="CollisionShape2D" parent="Hurtbox" unique_id=296316886]
+position = Vector2(0, -44)
+shape = SubResource("RectangleShape2D_t3pbd")
+debug_color = Color(0.8509804, 0.03529412, 0.21960784, 0.39607844)
 
 [node name="CollisionShape2D" type="CollisionShape2D" parent="." unique_id=54862801]
 position = Vector2(0, -34)
@@ -170,6 +177,7 @@ dist = 457.0
 x_offset = -30.0
 
 [node name="CollisionPolygon2D" type="CollisionPolygon2D" parent="Awareness" unique_id=1616752916]
+modulate = Color(1, 1, 1, 0.16078432)
 polygon = PackedVector2Array(-30, -228, -30, -28, 427, -28, 427, -228)
 
 [node name="LimboHSM" type="LimboHSM" parent="." unique_id=942695327]

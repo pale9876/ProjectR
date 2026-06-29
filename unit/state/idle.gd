@@ -11,4 +11,8 @@ func _enter() -> void:
 
 
 func _update(_delta: float) -> void:
-	pass
+	var unit := _get_unit()
+	
+	unit.velocity.x = move_toward(unit.velocity.x, 0., 15.5)
+	
+	move_and_slide()

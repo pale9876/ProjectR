@@ -2,6 +2,7 @@
 
 [ext_resource type="Script" uid="uid://dtu3imugbu0pm" path="res://title/title.gd" id="1_y7k74"]
 [ext_resource type="Texture2D" uid="uid://c1kdqekuqw0nx" path="res://aseprite/asso_project/title/MainTitle2.png" id="2_crako"]
+[ext_resource type="Script" uid="uid://bbn2mtp6yjek8" path="res://title/control.gd" id="2_nx56k"]
 
 [node name="Title" type="CanvasLayer" unique_id=419323065]
 script = ExtResource("1_y7k74")
@@ -13,21 +14,23 @@ anchor_right = 1.0
 anchor_bottom = 1.0
 grow_horizontal = 2
 grow_vertical = 2
+script = ExtResource("2_nx56k")
 
 [node name="TitleScreen" type="TextureRect" parent="Control" unique_id=708332907]
 layout_mode = 1
 anchors_preset = 15
 anchor_right = 1.0
 anchor_bottom = 1.0
-offset_left = 639.0
-offset_top = -172.0
-offset_right = 639.0
-offset_bottom = 172.0
+offset_left = 703.0
+offset_top = -213.0
+offset_right = 703.0
+offset_bottom = 131.0
 grow_horizontal = 2
 grow_vertical = 2
 scale = Vector2(-1, 1)
 texture = ExtResource("2_crako")
 stretch_mode = 2
+flip_h = true
 
 [node name="HBoxContainer" type="HBoxContainer" parent="Control" unique_id=1138622615]
 layout_mode = 1

@@ -3,10 +3,10 @@ class_name HitboxShape
 
 
 
-
 @export var hitbox_info: HitboxInformation
-var result: HitResult = null
 
+
+var result: Array[HitResult] = []
 
 
 func _init() -> void:
@@ -14,5 +14,10 @@ func _init() -> void:
 	visible = false
 
 
-func result_free() -> void:
-	result = null
+func push_result(_result: HitResult) -> void:
+	if hitbox_info.max_available_unit_hit_count < result.size():
+		result.push_back(_result)
+
+
+func clear() -> void:
+	result.clear()
