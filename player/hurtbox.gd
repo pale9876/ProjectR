@@ -25,11 +25,23 @@ signal dodge()
 
 
 @export var state: State = IDLE
-@export var invincible: bool = false
+
+var invincible_frame: int = 0:
+	set(value):
+		invincible_frame = maxi(0, value)
+
+@export var is_invincible: bool:
+	get:
+		return invincible_frame > 0
 
 
-func _enter_tree() -> void:
-	pass
+func _init() -> void:
+	state = IDLE
+
+
+func _physics_process(delta: float) -> void:
+	if invincible_frame > 0:
+		invincible_frame -= 1
 
 
 func damaged(hit_result: HitResult) -> void:

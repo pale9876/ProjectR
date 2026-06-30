@@ -9,6 +9,7 @@ size = Vector2(45, 20)
 
 [sub_resource type="Resource" id="Resource_2ieo8"]
 script = ExtResource("3_033vm")
+atk_name = &"LeftPunch"
 metadata/_custom_type_script = "uid://xw07ofvvtrxk"
 
 [sub_resource type="RectangleShape2D" id="RectangleShape2D_yllr7"]
@@ -16,7 +17,7 @@ size = Vector2(60, 20)
 
 [sub_resource type="Resource" id="Resource_yllr7"]
 script = ExtResource("3_033vm")
-type = 1
+atk_name = &"RightPunch"
 metadata/_custom_type_script = "uid://xw07ofvvtrxk"
 
 [sub_resource type="RectangleShape2D" id="RectangleShape2D_kb6p2"]
@@ -26,7 +27,9 @@ size = Vector2(28, 48)
 script = ExtResource("3_033vm")
 atk_name = &"Hammer"
 type = 1
+damage = 30
 damage_frame = 15
+force = Vector2(200, -300)
 metadata/_custom_type_script = "uid://xw07ofvvtrxk"
 
 [sub_resource type="RectangleShape2D" id="RectangleShape2D_7jywp"]
@@ -35,8 +38,9 @@ size = Vector2(72, 48)
 [sub_resource type="Resource" id="Resource_wqsic"]
 script = ExtResource("3_033vm")
 atk_name = &"HammerEx"
-type = 2
-force = Vector2(200, -100)
+type = 1
+force = Vector2(400, -100)
+blockable = false
 metadata/_custom_type_script = "uid://xw07ofvvtrxk"
 
 [node name="PunchCombo" type="Area2D" unique_id=1815996743]

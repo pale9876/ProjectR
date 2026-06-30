@@ -10,8 +10,8 @@ const PUSHBACK := HurtEV.MotionState.PUSHBACK
 const DOWNED := HurtEV.MotionState.DOWNED
 
 
-
 var idle_state: LimboState
+
 
 var damage_frame: int = 0:
 	set(value):
@@ -32,31 +32,31 @@ func set_state(value: HitboxInformation.Type) -> void:
 		HitboxInformation.Type.KNOCKBACK:
 			if state in [PUSHBACK, AERIAL]:
 				result = AERIAL
+			elif state == DOWNED:
+				result = DOWNED
 			else:
 				result = KNOCKBACK
 		HitboxInformation.Type.AERIAL:
-			if state == DOWNED:
-				result = DOWNED
-			else:
-				result = AERIAL
+			result = AERIAL
 
 	state = result
 
 
 func _ready() -> void:
-	get_state_machine()
+	var state_machine := get_state_machine()
 	
-	idle_state = get_state_machine().get_state(^"Idle")
+	idle_state = state_machine.get_state(^"Idle")
 
 
 func _enter() -> void:
 	assert(state != NONE)
+	var unit := _get_unit()
 	
 	match state:
 		KNOCKBACK:
-			get_sprite().play(&"knockback")
+			unit.sprite_component.play(&"knockback")
 		AERIAL:
-			get_sprite().play(&"aerial")
+			unit.sprite_component.play(&"aerial")
 
 
 func _update(_delta: float) -> void:
@@ -69,17 +69,24 @@ func _update(_delta: float) -> void:
 			move_and_slide()
 
 		AERIAL:
-			if is_on_floor():
+			unit.velocity = motion
+			
+			move_and_slide()
+			
+			if !is_on_floor():
+				motion.y = move_toward(motion.y, 970., 23.25)
+			else:
 				unit.sprite_component.play(&"down")
 				state = DOWNED
-		
-		DOWNED:
-			if !is_on_floor():
-				state = AERIAL
+
 
 	if damage_frame == 0:
+		if state == AERIAL:
+			return
+		
 		if state == DOWNED:
-			unit.sprite_component.play(&"standup")
+			state = NONE
+			anim.play(&"standup")
 		else:
 			_get_hsm().change_active_state(idle_state)
 	else:
@@ -88,11 +95,12 @@ func _update(_delta: float) -> void:
 
 
 func _exit() -> void:
+	state = NONE
 	damage_frame = 0
 
 
 func _on_animation_finished(anim_name: StringName) -> void:
 	if anim_name == &"standup":
 		var unit := _get_unit()
-		unit.get_hurtbox().invincible_frame += 10
+		unit.get_hurtbox().invincible_frame = 10
 		_get_hsm().change_active_state(idle_state)

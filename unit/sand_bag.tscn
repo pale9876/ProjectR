@@ -140,13 +140,65 @@ root_task = SubResource("BTSequence_eras8")
 
 [sub_resource type="BlackboardPlan" id="BlackboardPlan_ak6ua"]
 
+[sub_resource type="Animation" id="Animation_507e4"]
+length = 0.001
+tracks/0/type = "value"
+tracks/0/imported = false
+tracks/0/enabled = true
+tracks/0/path = NodePath("../../SpriteComponent/AnimatedSprite2D:animation")
+tracks/0/interp = 1
+tracks/0/loop_wrap = true
+tracks/0/keys = {
+"times": PackedFloat32Array(0),
+"transitions": PackedFloat32Array(1),
+"update": 1,
+"values": [&"standup"]
+}
+tracks/1/type = "value"
+tracks/1/imported = false
+tracks/1/enabled = true
+tracks/1/path = NodePath("../../SpriteComponent/AnimatedSprite2D:frame")
+tracks/1/interp = 1
+tracks/1/loop_wrap = true
+tracks/1/keys = {
+"times": PackedFloat32Array(0),
+"transitions": PackedFloat32Array(1),
+"update": 1,
+"values": [0]
+}
+
 [sub_resource type="Animation" id="Animation_2d64t"]
 resource_name = "standup"
-length = 0.4008016597002745
+length = 0.25050166356265546
 step = 0.0167
+tracks/0/type = "value"
+tracks/0/imported = false
+tracks/0/enabled = true
+tracks/0/path = NodePath("../../SpriteComponent/AnimatedSprite2D:animation")
+tracks/0/interp = 1
+tracks/0/loop_wrap = true
+tracks/0/keys = {
+"times": PackedFloat32Array(0),
+"transitions": PackedFloat32Array(1),
+"update": 1,
+"values": [&"standup"]
+}
+tracks/1/type = "value"
+tracks/1/imported = false
+tracks/1/enabled = true
+tracks/1/path = NodePath("../../SpriteComponent/AnimatedSprite2D:frame")
+tracks/1/interp = 1
+tracks/1/loop_wrap = true
+tracks/1/keys = {
+"times": PackedFloat32Array(0, 0.033333335, 0.06666667, 0.1, 0.15, 0.18333334, 0.21666667),
+"transitions": PackedFloat32Array(1, 1, 1, 1, 1, 1, 1),
+"update": 1,
+"values": [0, 1, 2, 3, 4, 5, 6]
+}
 
 [sub_resource type="AnimationLibrary" id="AnimationLibrary_507e4"]
 _data = {
+&"RESET": SubResource("Animation_507e4"),
 &"standup": SubResource("Animation_2d64t")
 }
 
@@ -161,7 +213,7 @@ texture = SubResource("GradientTexture2D_wqsic")
 [node name="SpriteComponent" parent="." unique_id=363892716 instance=ExtResource("3_k7avp")]
 
 [node name="AnimatedSprite2D" parent="SpriteComponent" index="1" unique_id=152865229]
-animation = &"knockback_horz"
+animation = &"standup"
 
 [node name="Hurtbox" type="Area2D" parent="." unique_id=1792069261]
 collision_layer = 2
@@ -207,6 +259,7 @@ metadata/_custom_type_script = "uid://im1wyvflgwp0"
 
 [node name="Jump" type="LimboState" parent="LimboHSM" unique_id=1875892619]
 script = ExtResource("14_w11yh")
+type = 1
 
 [node name="Hurt" type="LimboState" parent="LimboHSM" unique_id=1657276727]
 script = ExtResource("12_3b2yn")

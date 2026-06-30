@@ -63,7 +63,6 @@ func _physics_process(_delta: float) -> void:
 
 func damaged(hitbox_info: HitboxInformation, hit_result: HitResult) -> void:
 	var unit: Unit = get_parent() as Unit
-	var atk_type := hitbox_info.type
 	
 	if !has_dodged() and !blocked_attack(hitbox_info, hit_result) and effective():
 		var state_machine := unit.hsm

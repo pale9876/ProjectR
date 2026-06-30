@@ -41,5 +41,4 @@ func clear() -> void:
 	for node: Node in get_children():
 		if node is HitboxShape:
 			node.clear()
-	
 	hide()

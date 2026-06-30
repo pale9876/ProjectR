@@ -72,7 +72,6 @@ func _update(_delta: float) -> void:
 				_anim_finished = false
 				_pressed = false
 				get_hsm().label.text = "Right Punch"
-			
 		RIGHT:
 			if _postpone > 0 and Input.is_action_just_pressed(&"attack"):
 				_pressed = true
