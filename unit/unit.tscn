@@ -1,7 +1,6 @@
 [gd_scene format=3 uid="uid://c5ewbb0454kjk"]
 
 [ext_resource type="Script" uid="uid://bl84ixx4kubfe" path="res://unit/unit.gd" id="1_3k25b"]
-[ext_resource type="Resource" uid="uid://c8qn50dilibqs" path="res://unit/information/minion.tres" id="2_7oxhv"]
 [ext_resource type="Script" uid="uid://cpsg0ho6132tj" path="res://ai/tasks/unit/set_act_state.gd" id="4_2ul3e"]
 [ext_resource type="Script" uid="uid://dnfln7i10n5lu" path="res://ai/tasks/unit/move_to_random_pos.gd" id="5_a3q01"]
 [ext_resource type="Script" uid="uid://cdpmo1dhtm3s5" path="res://unit/hitbox.gd" id="5_s1ym6"]
@@ -152,10 +151,8 @@ size = Vector2(72, 31)
 radius = 8.0
 height = 48.0
 
-[node name="Unit" type="CharacterBody2D" unique_id=2064536848 node_paths=PackedStringArray("bt")]
+[node name="Unit" type="CharacterBody2D" unique_id=2064536848]
 script = ExtResource("1_3k25b")
-information = ExtResource("2_7oxhv")
-bt = NodePath("BTPlayer")
 
 [node name="DropShadow" type="Sprite2D" parent="." unique_id=924943166]
 texture = SubResource("GradientTexture2D_wqsic")
@@ -187,13 +184,13 @@ position = Vector2(38, -46.5)
 shape = SubResource("RectangleShape2D_a3q01")
 debug_color = Color(0.93333334, 0.21568628, 0.16078432, 0.25490198)
 
-[node name="Hurbox" type="Area2D" parent="." unique_id=1792069261]
+[node name="Hurtbox" type="Area2D" parent="." unique_id=1792069261]
 collision_layer = 2
 collision_mask = 0
 monitoring = false
 script = ExtResource("8_a3q01")
 
-[node name="CollisionShape2D" type="CollisionShape2D" parent="Hurbox" unique_id=296316886]
+[node name="CollisionShape2D" type="CollisionShape2D" parent="Hurtbox" unique_id=296316886]
 position = Vector2(0, -24)
 shape = SubResource("CapsuleShape2D_2ul3e")
 debug_color = Color(0.8509804, 0.8627451, 0.21960784, 0.21176471)

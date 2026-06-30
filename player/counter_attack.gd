@@ -2,6 +2,9 @@
 extends PlayerState
 
 
+@export var anim: AnimationPlayer
+
+
 func _guard() -> bool:
 	var state_macine := get_state_machine()
 	
@@ -18,4 +21,13 @@ func _enter_tree() -> void:
 
 
 func _enter() -> void:
+	
+	var player := get_player()
+	var hurtbox := player.get_hurtbox()
+	
+	hurtbox.state = hurtbox.COUNTER
+	anim.play(&"ready")
+
+
+func _update(delta: float) -> void:
 	pass

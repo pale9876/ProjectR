@@ -41,6 +41,7 @@ var _postpone: int = 0
 
 func _ready() -> void:
 	active_state_changed.connect(_on_active_state_changed)
+	
 	add_transition(ANYSTATE, get_state(^"Idle"), EV_REVERT)
 
 

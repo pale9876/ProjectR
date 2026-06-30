@@ -6,6 +6,7 @@ extends Area2D
 const StateMachine: Script = preload("uid://dcybwuwfqeqr3")
 const HurtState: Script = preload("uid://btf7rckikcpps")
 
+
 # Const
 const NONE := HurtEV.MotionState.NONE
 const KNOCKBACK := HurtEV.MotionState.KNOCKBACK
@@ -39,12 +40,12 @@ signal counter()
 
 @export var state: State = State.IDLE
 
+
 var invincible_frame: int:
 	set(value):
 		invincible_frame = maxi(value, 0)
-var is_invincible: bool:
-	get:
-		return invincible_frame > 0
+
+var is_invincible: bool = false
 
 
 func _init() -> void:
@@ -62,6 +63,9 @@ func _physics_process(_delta: float) -> void:
 
 
 func damaged(hitbox_info: HitboxInformation, hit_result: HitResult) -> void:
+	if is_invincible:
+		return
+	
 	var unit: Unit = get_parent() as Unit
 	
 	if !has_dodged() and !blocked_attack(hitbox_info, hit_result) and effective():
@@ -79,7 +83,6 @@ func damaged(hitbox_info: HitboxInformation, hit_result: HitResult) -> void:
 		unit.stat.hp -= hitbox_info.damage
 		
 		state_machine.change_active_state(hurt_state)
-
 
 
 func effective() -> bool:

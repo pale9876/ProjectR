@@ -19,11 +19,14 @@
 [ext_resource type="PackedScene" uid="uid://f6fubhe2evfi" path="res://player/state/block.tscn" id="17_uw77l"]
 [ext_resource type="PackedScene" uid="uid://bbevlftsygn0c" path="res://player/state/counter_attack.tscn" id="18_rptt4"]
 [ext_resource type="PackedScene" uid="uid://c7ovni3xc3aqc" path="res://player/state/jump_kick.tscn" id="19_r7pn3"]
+[ext_resource type="Script" uid="uid://c78eee8r755ls" path="res://player/state/jump_kick.gd" id="20_2uvqg"]
 [ext_resource type="PackedScene" uid="uid://bb8kauq734h10" path="res://hitboxes/slide_hitbox.tscn" id="20_x7c3f"]
+[ext_resource type="Script" uid="uid://b47c71dwqb34p" path="res://player/state/jump_hammer.gd" id="21_1s1yo"]
 [ext_resource type="Script" uid="uid://dy213jtrv5eb7" path="res://player/state/hurt.gd" id="21_7pqkx"]
 [ext_resource type="PackedScene" uid="uid://cd03qmykfoaw7" path="res://player/state/dodge.tscn" id="21_b8hi5"]
 [ext_resource type="Script" uid="uid://0dw4edo0eshv" path="res://player/hitbox.gd" id="21_bjvpn"]
 [ext_resource type="Script" uid="uid://b5n6wklxaj05c" path="res://hit_collision.gd" id="22_bjvpn"]
+[ext_resource type="Script" uid="uid://cuoebdxrbtlye" path="res://player/state/blowkick.gd" id="22_r7pn3"]
 [ext_resource type="Script" uid="uid://dr8n2mbhooxjo" path="res://player/hitbox_component.gd" id="22_uw77l"]
 [ext_resource type="Script" uid="uid://xw07ofvvtrxk" path="res://hitbox_info.gd" id="23_s7qer"]
 [ext_resource type="Script" uid="uid://d2ox33o3w3u0r" path="res://unit/hitbox_shape.gd" id="24_rptt4"]
@@ -768,16 +771,18 @@ libraries/ = SubResource("AnimationLibrary_32hag")
 
 [node name="Block" parent="LimboHSM" unique_id=1514818620 instance=ExtResource("17_uw77l")]
 
-[node name="CounterAttack" parent="LimboHSM" unique_id=893071231 instance=ExtResource("18_rptt4")]
+[node name="CounterAttack" parent="LimboHSM" unique_id=893071231 node_paths=PackedStringArray("anim") instance=ExtResource("18_rptt4")]
+anim = NodePath("AnimationPlayer")
 
 [node name="JumpKick" parent="LimboHSM" unique_id=1156718825 instance=ExtResource("19_r7pn3")]
+script = ExtResource("20_2uvqg")
 type = 1
 action_input = PackedStringArray("kick")
 
 [node name="JumpHammer" type="LimboState" parent="LimboHSM" unique_id=1138518008]
-script = ExtResource("16_x7c3f")
+script = ExtResource("21_1s1yo")
 type = 1
-action_input = PackedStringArray("attack", "kick")
+action_input = PackedStringArray("attack")
 ev_name = &"jump_hammer"
 metadata/_custom_type_script = "uid://b7x8s5btnaxj2"
 
@@ -785,6 +790,10 @@ metadata/_custom_type_script = "uid://b7x8s5btnaxj2"
 
 [node name="Grab" type="LimboState" parent="LimboHSM" unique_id=1617341275]
 script = ExtResource("16_x7c3f")
+metadata/_custom_type_script = "uid://b7x8s5btnaxj2"
+
+[node name="Blowkick" type="LimboState" parent="LimboHSM" unique_id=1713774209]
+script = ExtResource("22_r7pn3")
 metadata/_custom_type_script = "uid://b7x8s5btnaxj2"
 
 [node name="HitboxComponent" type="Node2D" parent="." unique_id=1243634124]
