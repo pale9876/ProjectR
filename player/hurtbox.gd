@@ -47,6 +47,7 @@ func _physics_process(delta: float) -> void:
 func damaged(hit_result: HitResult) -> void:
 	var player: Player = get_parent() as Player
 	var damage: int = hit_result.damage
+	var hurtbox := player.get_hurtbox()
 	
 	match state:
 		COUNTER:
@@ -59,5 +60,6 @@ func damaged(hit_result: HitResult) -> void:
 			damage = 0
 	
 	player.stat.hp -= damage
+	
 	player.damaged.emit()
 	

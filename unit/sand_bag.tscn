@@ -167,6 +167,34 @@ tracks/1/keys = {
 "values": [0]
 }
 
+[sub_resource type="Animation" id="Animation_4sfit"]
+resource_name = "down_attacked"
+length = 0.40000335419513283
+tracks/0/type = "value"
+tracks/0/imported = false
+tracks/0/enabled = true
+tracks/0/path = NodePath("../../SpriteComponent/AnimatedSprite2D:animation")
+tracks/0/interp = 1
+tracks/0/loop_wrap = true
+tracks/0/keys = {
+"times": PackedFloat32Array(0),
+"transitions": PackedFloat32Array(1),
+"update": 1,
+"values": [&"down_attacked"]
+}
+tracks/1/type = "value"
+tracks/1/imported = false
+tracks/1/enabled = true
+tracks/1/path = NodePath("../../SpriteComponent/AnimatedSprite2D:frame")
+tracks/1/interp = 1
+tracks/1/loop_wrap = true
+tracks/1/keys = {
+"times": PackedFloat32Array(0, 0.23333333),
+"transitions": PackedFloat32Array(1, 1),
+"update": 1,
+"values": [0, 1]
+}
+
 [sub_resource type="Animation" id="Animation_2d64t"]
 resource_name = "standup"
 length = 0.4008016597002745
@@ -199,6 +227,7 @@ tracks/1/keys = {
 [sub_resource type="AnimationLibrary" id="AnimationLibrary_507e4"]
 _data = {
 &"RESET": SubResource("Animation_507e4"),
+&"down_attacked": SubResource("Animation_4sfit"),
 &"standup": SubResource("Animation_2d64t")
 }
 

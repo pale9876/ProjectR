@@ -76,7 +76,7 @@ func damaged(hitbox_info: HitboxInformation, hit_result: HitResult) -> void:
 			hit_result.from.global_position.direction_to(hit_result.to.global_position).x
 		)
 		
-		hurt_state.set_state(hitbox_info.type)
+		hurt_state.reserve_state(hitbox_info.type)
 		
 		hurt_state.damage_frame = hitbox_info.damage_frame
 		hurt_state.motion = Vector2(hitbox_info.force.x * attack_direction, hitbox_info.force.y)

@@ -35,6 +35,7 @@ func _enter() -> void:
 
 
 func _update(delta: float) -> void:
+	assert(_state != NONE)
 	var player := get_player()
 	
 	match _state:
