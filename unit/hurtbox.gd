@@ -68,10 +68,14 @@ func damaged(hitbox_info: HitboxInformation, hit_result: HitResult) -> void:
 		var state_machine := unit.hsm
 		var hurt_state := unit.hsm.get_state(^"Hurt") as HurtState
 		
+		var attack_direction: float = roundi(
+			hit_result.from.global_position.direction_to(hit_result.to.global_position).x
+		)
+		
 		hurt_state.set_state(hitbox_info.type)
 		
 		hurt_state.damage_frame = hitbox_info.damage_frame
-		hurt_state.motion = hitbox_info.force
+		hurt_state.motion = Vector2(hitbox_info.force.x * attack_direction, hitbox_info.force.y)
 		unit.stat.hp -= hitbox_info.damage
 		
 		state_machine.change_active_state(hurt_state)
