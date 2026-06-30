@@ -338,7 +338,7 @@ animations = [{
 }],
 "loop": 1,
 "name": &"blowkick",
-"speed": 5.0
+"speed": 15.0
 }, {
 "frames": [{
 "duration": 1.0,
@@ -418,7 +418,7 @@ animations = [{
 "duration": 1.0,
 "texture": SubResource("AtlasTexture_khj1n")
 }],
-"loop": 1,
+"loop": 0,
 "name": &"down_attacked",
 "speed": 5.0
 }, {

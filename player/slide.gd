@@ -1,3 +1,4 @@
+# slide.gd
 extends PlayerState
 
 
@@ -6,8 +7,8 @@ extends PlayerState
 var idle_state: LimboState
 var move_state: LimboState
 
-@onready var anim: AnimationPlayer = $AnimationPlayer
 
+@onready var anim: AnimationPlayer = $AnimationPlayer
 
 
 func _guard() -> bool:

@@ -14,6 +14,7 @@ signal deactive()
 signal active()
 
 
+
 @export var info: UnitInformation
 @export var z_value: float = 0.
 @export var rage_mode: bool = true
@@ -116,7 +117,9 @@ class Stat:
 	var speed: float:
 		set(value):
 			speed = maxf(0., value)
-
+	var is_dead: bool:
+		get:
+			return hp == 0
 
 class State:
 	signal face_changed()

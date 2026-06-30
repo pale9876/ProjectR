@@ -5,10 +5,12 @@ class_name PlayerHitbox
 
 # Import
 const UnitHurtbox: Script = preload("uid://bupj3hlvtt67s")
+const Player: Script = preload("uid://c2uxhumgng18h")
 
 
 func _init() -> void:
 	visible = false
+	
 	monitorable = false
 	monitoring = true
 	
@@ -25,10 +27,11 @@ func _enter_tree() -> void:
 func _entered(_rid: RID, area: Area2D, _area_idx: int, local_idx: int) -> void:
 	if area is UnitHurtbox:
 		var _shape := get_child(local_idx) as HitboxShape
-		
+		var player := get_parent() as Player
 		var hitbox_info: HitboxInformation = _shape.hitbox_info
+		
 		var hit_result: HitResult = HitResult.create(
-			self, area.get_parent() as Unit
+			player, area.get_parent() as Unit, player.state.face
 		)
 		
 		area.damaged(hitbox_info, hit_result)

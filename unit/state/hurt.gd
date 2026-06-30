@@ -40,7 +40,6 @@ func reserve_state(value: HitboxInformation.Type) -> void:
 			match state:
 				DOWNED:
 					result = DOWN_ATTACKED
-					print("Down Attacked")
 				_:
 					result = KNOCKBACK
 
@@ -53,8 +52,6 @@ func reserve_state(value: HitboxInformation.Type) -> void:
 		HitboxInformation.Type.PUSHBACK:
 			result = AERIAL
 
-	print(HurtEV.MotionState.keys()[result])
-	
 	if state != NONE:
 		reserve = result
 	else:
@@ -92,28 +89,24 @@ func _update(_delta: float) -> void:
 	match state:
 		KNOCKBACK:
 			motion.x = move_toward(motion.x, 0., 7.25)
-			unit.velocity = motion
-			move_and_slide()
+
 		AERIAL:
-			unit.velocity = motion
-			
-			move_and_slide()
-			
-			if !is_on_floor():
-				motion.y = move_toward(motion.y, 970., 23.25)
-			else:
+			if is_on_floor():
 				unit.sprite_component.play(&"down")
+				unit.velocity.y = 0.
 				state = DOWNED
+
 		DOWNED:
 			motion.x = move_toward(motion.x, 0., 7.25)
-			unit.velocity = motion
-			move_and_slide()
-			
+
 		DOWN_ATTACKED:
 			motion.x = move_toward(motion.x, 0., 12.25)
-			unit.velocity = motion
-			move_and_slide()
 
+	unit.velocity = motion
+	move_and_slide()
+	
+	if !is_on_floor():
+		motion.y = move_toward(motion.y, 970., 23.25)
 
 	if damage_frame == 0:
 		if state in [AERIAL, PUSHBACK, DOWN_ATTACKED]:
@@ -123,9 +116,11 @@ func _update(_delta: float) -> void:
 			anim.play(&"standup")
 			unit.get_hurtbox().is_invincible = true
 			return
+		elif state == DOWN_ATTACKED:
+			pass
 		elif state == KNOCKBACK:
 			_get_hsm().change_active_state(idle_state)
-		
+
 	else:
 		damage_frame -= 1
 
@@ -140,9 +135,10 @@ func _on_animation_finished(anim_name: StringName) -> void:
 	var unit := _get_unit()
 	var hsm := _get_hsm()
 	
-	if anim_name == &"standup":
-		hsm.change_active_state(idle_state)
-		unit.get_hurtbox().is_invincible = false
-	elif anim_name == &"down_attacked":
-		unit.sprite_component.play(&"down")
-		state = DOWNED
+	match anim_name:
+		&"standup":
+			hsm.change_active_state(idle_state)
+			unit.get_hurtbox().is_invincible = false
+		&"down_attacked":
+			unit.sprite_component.play(&"down")
+			state = DOWNED

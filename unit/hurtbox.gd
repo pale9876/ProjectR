@@ -5,6 +5,7 @@ extends Area2D
 # Import
 const StateMachine: Script = preload("uid://dcybwuwfqeqr3")
 const HurtState: Script = preload("uid://btf7rckikcpps")
+const Player: Script = preload("uid://c2uxhumgng18h")
 
 
 # Const
@@ -72,14 +73,10 @@ func damaged(hitbox_info: HitboxInformation, hit_result: HitResult) -> void:
 		var state_machine := unit.hsm
 		var hurt_state := unit.hsm.get_state(^"Hurt") as HurtState
 		
-		var attack_direction: float = roundi(
-			hit_result.from.global_position.direction_to(hit_result.to.global_position).x
-		)
-		
 		hurt_state.reserve_state(hitbox_info.type)
 		
 		hurt_state.damage_frame = hitbox_info.damage_frame
-		hurt_state.motion = Vector2(hitbox_info.force.x * attack_direction, hitbox_info.force.y)
+		hurt_state.motion = Vector2(hitbox_info.force.x * hit_result.attack_direction.x, hitbox_info.force.y)
 		unit.stat.hp -= hitbox_info.damage
 		
 		state_machine.change_active_state(hurt_state)
@@ -109,7 +106,9 @@ func has_dodged() -> bool:
 
 func blocked_attack(info: HitboxInformation, result: HitResult) -> bool:
 	var unit := get_parent() as Unit
-	var attack_direction: float = ceili(result.from.global_position.direction_to(result.to.global_position).x)
+	var attack_direction: float = ceili(
+		result.from.global_position.direction_to(result.to.global_position).x
+	)
 	var unit_face: float = ceili(float((get_parent() as Unit).state.face.x))
 	var damage: int = info.damage
 	

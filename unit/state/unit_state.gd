@@ -53,6 +53,10 @@ func get_state_machine() -> StateMachine:
 	return get_parent() as StateMachine
 
 
+func get_state(node_path: NodePath) -> UnitState:
+	return get_state_machine().get_state(node_path)
+
+
 func get_bb_var(var_name: StringName) -> Variant:
 	return get_bb().get_var(var_name)
 

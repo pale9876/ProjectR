@@ -677,6 +677,12 @@ script = ExtResource("23_s7qer")
 atk_name = &"Pa!"
 metadata/_custom_type_script = "uid://xw07ofvvtrxk"
 
+[sub_resource type="CapsuleShape2D" id="CapsuleShape2D_greoi"]
+
+[sub_resource type="Resource" id="Resource_7jywp"]
+script = ExtResource("23_s7qer")
+metadata/_custom_type_script = "uid://xw07ofvvtrxk"
+
 [node name="Player" type="CharacterBody2D" unique_id=1697822384 node_paths=PackedStringArray("hsm")]
 collision_layer = 2
 script = ExtResource("1_bvu1k")
@@ -794,17 +800,22 @@ metadata/_custom_type_script = "uid://b7x8s5btnaxj2"
 
 [node name="Blowkick" type="LimboState" parent="LimboHSM" unique_id=1713774209]
 script = ExtResource("22_r7pn3")
+action_input = PackedStringArray("down", "kick")
+ev_name = &"slide"
 metadata/_custom_type_script = "uid://b7x8s5btnaxj2"
+
+[node name="AnimationPlayer" type="AnimationPlayer" parent="LimboHSM/Blowkick" unique_id=935428058]
 
 [node name="HitboxComponent" type="Node2D" parent="." unique_id=1243634124]
 script = ExtResource("22_uw77l")
 
-[node name="PunchCombo" type="Area2D" parent="." unique_id=1815996743]
+[node name="PunchCombo" type="Area2D" parent="." unique_id=776727955]
 collision_layer = 0
 collision_mask = 2
 input_pickable = false
 monitorable = false
 script = ExtResource("21_bjvpn")
+metadata/_custom_type_script = "uid://0dw4edo0eshv"
 
 [node name="Left" type="CollisionShape2D" parent="PunchCombo" unique_id=1646723435]
 visible = false
@@ -866,6 +877,19 @@ script = ExtResource("28_rptt4")
 
 [node name="CollisionPolygon2D" type="CollisionPolygon2D" parent="GrabBox" unique_id=370562308]
 modulate = Color(1, 1, 1, 0.32941177)
+
+[node name="Blowkick" type="Area2D" parent="." unique_id=2122655193]
+collision_layer = 0
+collision_mask = 2
+monitorable = false
+script = ExtResource("21_bjvpn")
+metadata/_custom_type_script = "uid://0dw4edo0eshv"
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="Blowkick" unique_id=1839622102]
+shape = SubResource("CapsuleShape2D_greoi")
+script = ExtResource("24_rptt4")
+hitbox_info = SubResource("Resource_7jywp")
+metadata/_custom_type_script = "uid://d2ox33o3w3u0r"
 
 [editable path="SpriteComponent"]
 [editable path="LimboHSM/Slide"]
