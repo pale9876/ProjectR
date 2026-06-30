@@ -21,7 +21,8 @@ func init_sprites(
 
 
 func _ready() -> void:
-	for child: Node in get_children(): if child is Node2D: child.visible = false
+	sprite.show()
+	moduler.hide()
 
 
 func play_modules(anim_name: StringName) -> void:

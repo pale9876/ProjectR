@@ -8,7 +8,7 @@ var idle_state: LimboState
 var move_state: LimboState
 
 
-@onready var anim: AnimationPlayer = $AnimationPlayer
+#@onready var anim: AnimationPlayer = $AnimationPlayer
 
 
 func _guard() -> bool:
@@ -22,7 +22,7 @@ func _enter_tree() -> void:
 
 
 func _ready() -> void:
-	anim.animation_finished.connect(_animation_finished)
+	#anim.animation_finished.connect(_animation_finished)
 	
 	idle_state = get_state_machine().get_state(^"Idle")
 	move_state = get_state_machine().get_state(^"Move")
@@ -31,7 +31,7 @@ func _ready() -> void:
 func _enter() -> void:
 	var player := get_player()
 	player.velocity.x = player.get_face() * 455.
-	anim.play(&"slide")
+	#anim.play(&"slide")
 
 
 func _update(_delta: float) -> void:

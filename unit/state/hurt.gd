@@ -19,8 +19,6 @@ var damage_frame: int = 0:
 		damage_frame = maxi(value, 0)
 
 
-@onready var anim: AnimationPlayer = $AnimationPlayer
-
 
 var state: HurtEV.MotionState = NONE
 var prev_state := NONE
@@ -62,7 +60,7 @@ func _ready() -> void:
 	var state_machine := get_state_machine()
 	
 	idle_state = state_machine.get_state(^"Idle")
-	anim.animation_finished.connect(_on_animation_finished)
+	#anim.animation_finished.connect(_on_animation_finished)
 
 
 func _enter() -> void:
@@ -76,11 +74,14 @@ func _enter() -> void:
 	
 	match state:
 		KNOCKBACK:
-			unit.sprite_component.play(&"knockback")
+			#unit.sprite_component.play(&"knockback")
+			pass
 		AERIAL:
-			unit.sprite_component.play(&"aerial")
+			#unit.sprite_component.play(&"aerial")
+			pass
 		DOWN_ATTACKED:
-			anim.play(&"down_attacked")
+			#anim.play(&"down_attacked")
+			pass
 
 
 func _update(_delta: float) -> void:
@@ -113,7 +114,7 @@ func _update(_delta: float) -> void:
 			return
 		elif state == DOWNED:
 			state = NONE
-			anim.play(&"standup")
+			#anim.play(&"standup")
 			unit.get_hurtbox().is_invincible = true
 			return
 		elif state == DOWN_ATTACKED:

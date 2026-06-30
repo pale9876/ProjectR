@@ -24,10 +24,25 @@ const StateMachine: Script = preload("uid://nmmtety5yvve")
 @export var block_cancel: bool = false
 @export var dodge_cancel: bool = false
 
+@export_category("State Animation")
+@export var anim_library: AnimationLibrary
+
 
 ## get_root()를 통하여 찾음.
 func get_hsm() -> StateMachine:
 	return get_root() as StateMachine
+
+
+func get_anim() -> AnimationPlayer:
+	return (get_state_machine().get_parent() as Player).get_anim()
+
+
+func add_library(lib_name: StringName) -> void:
+	get_anim().add_animation_library(lib_name, anim_library)
+
+
+func play(anim_name: StringName) -> void:
+	get_anim().play(anim_name)
 
 
 func get_player() -> Player:

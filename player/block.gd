@@ -2,7 +2,7 @@
 extends PlayerState
 
 
-@onready var anim: AnimationPlayer = $AnimationPlayer
+#@onready var anim: AnimationPlayer = $AnimationPlayer
 
 
 var idle_state: PlayerState
@@ -37,7 +37,8 @@ func _ready() -> void:
 
 
 func _enter() -> void:
-	anim.play(&"guard_on")
+	#anim.play(&"guard_on")
+	pass
 
 
 func _update(_delta: float) -> void:

@@ -3,7 +3,7 @@ extends PlayerState
 
 var idle_state: PlayerState
 
-@onready var anim: AnimationPlayer = $AnimationPlayer
+#@onready var anim: AnimationPlayer = $AnimationPlayer
 
 
 func _ready() -> void:

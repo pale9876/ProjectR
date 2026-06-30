@@ -6,9 +6,13 @@ extends PlayerState
 @export var move_state: LimboState
 
 
+func _enter_tree() -> void:
+	add_library(&"jump")
+
+
 func _enter() -> void:
-	var player := get_player()
-	player.sprite_component.play(&"jump")
+	#var player := get_player()
+	play(&"jump/jump")
 
 
 func _update(delta: float) -> void:

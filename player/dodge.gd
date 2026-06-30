@@ -5,7 +5,8 @@ extends PlayerState
 @export var just_time: bool = false
 @export var slow_duration: float = .45
 
-@onready var anim: AnimationPlayer = $AnimationPlayer
+
+#@onready var anim: AnimationPlayer = $AnimationPlayer
 
 
 var _success: bool = false
@@ -13,7 +14,7 @@ var _success: bool = false
 
 func _ready() -> void:
 	var player := get_state_machine().get_player()
-	anim.animation_finished.connect(_on_dodge_anim_finsiehd)
+	#anim.animation_finished.connect(_on_dodge_anim_finsiehd)
 	player.get_hurtbox().dodge.connect(_on_dodge_successed)
 
 
@@ -21,7 +22,7 @@ func _enter() -> void:
 	var hurtbox := get_player().get_hurtbox()
 	hurtbox.state = hurtbox.DODGE
 	
-	anim.play(&"dodge")
+	play(&"dodge/dodge")
 
 
 func _exit() -> void:

@@ -28,8 +28,6 @@ sprite_frames = ExtResource("4_mg4jq")
 animation = &"move"
 frame_progress = 0.74364126
 
-[node name="AnimationPlayer" type="AnimationPlayer" parent="SpriteModuler" unique_id=550763570]
-
 [node name="AnimatedSprite2D" type="AnimatedSprite2D" parent="." unique_id=152865229]
 visible = false
 position = Vector2(59, -32)

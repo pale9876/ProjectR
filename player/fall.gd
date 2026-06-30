@@ -5,14 +5,18 @@ var idle_state: LimboState
 var move_state: LimboState
 
 
+func _enter_tree() -> void:
+	get_anim().add_animation_library(&"fall", anim_library)
+
+
 func _ready() -> void:
 	idle_state = get_state_machine().get_state(^"Idle")
 	move_state = get_state_machine().get_state(^"Move")
 
 
 func _enter() -> void:
-	var player := get_player()
-	player.sprite_component.play(&"fall")
+	#var player := get_player()
+	play(&"fall/fall")
 
 
 func _update(delta: float) -> void:

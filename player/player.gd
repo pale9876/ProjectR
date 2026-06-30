@@ -10,9 +10,12 @@ const PlayerCamera: Script = preload("uid://b7phyhue4y3yg")
 const HitboxComponent: Script = preload("uid://dr8n2mbhooxjo")
 
 
-
-@export var info: PlayerInformation
+@export_category("NodePath")
+@export var animation_player: NodePath
 @export var hsm: LimboHSM
+
+@export_category("Data")
+@export var info: PlayerInformation
 @export var z_value: float = 0.
 
 
@@ -117,6 +120,9 @@ func get_hurtbox() -> Hurtbox:
 func get_camera() -> PlayerCamera:
 	return get_node(^"Camera2D") as PlayerCamera
 
+
+func get_anim() -> AnimationPlayer:
+	return get_node(animation_player) as AnimationPlayer
 
 
 class Stat:

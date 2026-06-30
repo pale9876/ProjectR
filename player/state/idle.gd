@@ -7,8 +7,12 @@ extends PlayerState
 @export var jump_state: LimboState
 
 
+func _enter_tree() -> void:
+	get_anim().add_animation_library(&"idle", anim_library)
+
+
 func _enter() -> void:
-	get_player().sprite_component.play(&"idle")
+	play(&"idle/idle")
 
 
 func _update(_delta: float) -> void:
@@ -17,15 +21,18 @@ func _update(_delta: float) -> void:
 
 	if Input.is_action_just_pressed("jump"):
 		player.velocity.y = -450.
+	
+	player.velocity.x = move_toward(player.velocity.x, 0., 25.)
+	
+	move_and_slide()
+
+	if absf(player.input_state.direction.x) > .3:
+		hsm.change_active_state(move_state)
+		return
 
 	if !is_on_floor():
 		if player.velocity.y >= 0.:
 			hsm.change_active_state(fall_state)
 		elif player.velocity.y < 0.:
 			hsm.change_active_state(jump_state)
-	
-	if absf(player.input_state.direction.x) > .3:
-		hsm.change_active_state(move_state)
-	
-	player.velocity.x = move_toward(player.velocity.x, 0., 25.)
-	move_and_slide()
+		return

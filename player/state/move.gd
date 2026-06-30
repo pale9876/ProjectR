@@ -9,6 +9,10 @@ var jump_state: LimboState
 var slide_state: LimboState
 
 
+func _enter_tree() -> void:
+	get_anim().add_animation_library(&"move", anim_library)
+
+
 func _ready() -> void:
 	var state_machine := get_state_machine()
 	
@@ -20,7 +24,8 @@ func _ready() -> void:
 
 func _enter() -> void:
 	var player := get_player()
-	player.sprite_component.play(&"move")
+	
+	play(&"move/move")
 	player.state.face = player.input_state.direction.round()
 
 

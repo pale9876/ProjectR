@@ -5,15 +5,13 @@ extends UnitState
 var move_state: UnitState
 var fall_state: UnitState
 
-@onready var anim: AnimationPlayer = $AnimationPlayer
-
 
 func _enter() -> void:
 	#var unit := agent as Unit
 	move_state = get_state(^"Move")
 	fall_state = get_state(^"Fall")
 	
-	anim.play(&"idle")
+	#anim.play(&"idle")
 
 
 func _update(_delta: float) -> void:
