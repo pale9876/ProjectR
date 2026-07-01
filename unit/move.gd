@@ -5,8 +5,12 @@ extends UnitState
 var idle_state: UnitState
 
 
+func _enter_tree() -> void:
+	add_library()
+
+
 func _ready() -> void:
-	idle_state = get_state_machine().get_state(^"Idle")
+	idle_state = get_state(^"Idle")
 
 
 func _enter() -> void:

@@ -125,6 +125,11 @@ func get_anim() -> AnimationPlayer:
 	return get_node(animation_player) as AnimationPlayer
 
 
+# OVERRIDE
+func _propel(motion: Vector2) -> void:
+	pass
+
+
 class Stat:
 	signal damaged()
 	signal dead()

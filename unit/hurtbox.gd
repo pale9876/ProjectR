@@ -4,8 +4,15 @@ extends Area2D
 
 # Import
 const StateMachine: Script = preload("uid://dcybwuwfqeqr3")
-const HurtState: Script = preload("uid://btf7rckikcpps")
 const Player: Script = preload("uid://c2uxhumgng18h")
+
+const KnockbackState: Script = preload("uid://b1m4oejiu7ume")
+const AerialState: Script = preload("uid://dsjnx0cxf2gu1")
+const PushbackState: Script = preload("uid://8rj1txp84awx")
+const WallhitState: Script = preload("uid://cqhhjr6ob8477")
+const GrabbedState: Script = preload("uid://6eubdpqc1rif")
+const DownState = preload("uid://cattor5p0ysjp")
+
 
 
 # Const
@@ -64,43 +71,83 @@ func _physics_process(_delta: float) -> void:
 
 
 func damaged(hitbox_info: HitboxInformation, hit_result: HitResult) -> void:
-	if is_invincible:
-		return
+	if is_invincible: return
 	
 	var unit: Unit = get_parent() as Unit
 	
 	if !has_dodged() and !blocked_attack(hitbox_info, hit_result) and effective():
 		var state_machine := unit.hsm
-		var hurt_state := unit.hsm.get_state(^"Hurt") as HurtState
+		var current_state: LimboState = state_machine.get_active_state()
+		var grabbed := state_machine.get_state(^"Grabbed") as GrabbedState
 		
-		hurt_state.reserve_state(hitbox_info.type)
-		
-		hurt_state.damage_frame = hitbox_info.damage_frame
-		hurt_state.motion = Vector2(hitbox_info.force.x * hit_result.attack_direction.x, hitbox_info.force.y)
-		unit.stat.hp -= hitbox_info.damage
-		
-		state_machine.change_active_state(hurt_state)
+		if !blocked_attack(hitbox_info, hit_result) and effective() and !has_dodged() and !parried():
+			set_hurt_state(hitbox_info.type)
+
+func set_hurt_state(attack_type: HitboxInformation.Type) -> void:
+	var state_machine := (get_parent() as Unit).hsm
+	var current_state := state_machine.get_active_state() as UnitState
+	
+	if !current_state in get_hurt_states():
+		match attack_type:
+			HitboxInformation.KNOCKBACK:
+				state_machine.change_active_state(get_knockback_state())
+			HitboxInformation.AERIAL:
+				state_machine.change_active_state(get_aerial_state())
+			HitboxInformation.PUSHBACK:
+				state_machine.change_active_state(get_pushback_state())
+	else:
+		current_state.event(attack_type)
+
+
+func get_hurt_states() -> Array[UnitState]:
+	return [
+		get_knockback_state(),
+		get_aerial_state(),
+		get_pushback_state(),
+		get_wallhit_state(),
+		get_down_state(),
+	]
+
+
+func get_knockback_state() -> KnockbackState:
+	return (get_parent() as Unit).hsm.get_state(^"Knockback") as KnockbackState
+
+
+func get_aerial_state() -> AerialState:
+	return (get_parent() as Unit).hsm.get_state(^"Aerial") as AerialState
+
+
+func get_pushback_state() -> PushbackState:
+	return (get_parent() as Unit).hsm.get_state(^"Pushback") as PushbackState
+
+
+func get_wallhit_state() -> WallhitState:
+	return (get_parent() as Unit).hsm.get_state(^"Wallhit") as WallhitState
+
+
+func get_down_state() -> DownState:
+	return (get_parent() as Unit).hsm.get_state(^"Down") as DownState
+
 
 
 func effective() -> bool:
 	if state in [IDLE, EXPOSE, HURT]: return true
 	
-	match state:
-		COUNTER:
-			counter.emit()
-			return false
-		DODGE:
-			dodged.emit()
-			return false
-	
 	return false
-
 
 
 func has_dodged() -> bool:
 	if state == DODGE:
+		dodged.emit()
 		return true
 	
+	return false
+
+
+func parried() -> bool:
+	if state == COUNTER:
+		counter.emit()
+		return true
 	return false
 
 

@@ -24,8 +24,9 @@ const StateMachine: Script = preload("uid://nmmtety5yvve")
 @export var block_cancel: bool = false
 @export var dodge_cancel: bool = false
 
-@export_category("State Animation")
+@export_category("Animations")
 @export var anim_library: AnimationLibrary
+@export var library_name: StringName
 
 
 ## get_root()를 통하여 찾음.
@@ -37,12 +38,20 @@ func get_anim() -> AnimationPlayer:
 	return (get_state_machine().get_parent() as Player).get_anim()
 
 
-func add_library(lib_name: StringName) -> void:
-	get_anim().add_animation_library(lib_name, anim_library)
+func add_library() -> void:
+	get_anim().add_animation_library(library_name, anim_library)
+
+
+func create_library() -> void:
+	get_anim().add_animation_library(library_name, AnimationLibrary.new())
+	
+
+func add_animation(anim_name: StringName, anim: Animation) -> void:
+	get_anim().get_animation_library(library_name).add_animation(anim_name, anim)
 
 
 func play(anim_name: StringName) -> void:
-	get_anim().play(anim_name)
+	get_anim().play(library_name + &"/" + anim_name)
 
 
 func get_player() -> Player:
@@ -94,11 +103,6 @@ func _guard() -> bool:
 
 # OVERRIDE
 func _clear() -> void:
-	pass
-
-
-# OVERRIDE
-func _propel(motion: Vector2) -> void:
 	pass
 
 

@@ -10,7 +10,7 @@ var slide_state: LimboState
 
 
 func _enter_tree() -> void:
-	get_anim().add_animation_library(&"move", anim_library)
+	add_library()
 
 
 func _ready() -> void:
@@ -25,7 +25,7 @@ func _ready() -> void:
 func _enter() -> void:
 	var player := get_player()
 	
-	play(&"move/move")
+	play(&"move")
 	player.state.face = player.input_state.direction.round()
 
 

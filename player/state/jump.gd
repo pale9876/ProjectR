@@ -7,12 +7,12 @@ extends PlayerState
 
 
 func _enter_tree() -> void:
-	add_library(&"jump")
+	add_library()
 
 
 func _enter() -> void:
 	#var player := get_player()
-	play(&"jump/jump")
+	play(&"jump")
 
 
 func _update(delta: float) -> void:

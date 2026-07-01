@@ -36,6 +36,7 @@ func _guard() -> bool:
 
 func _enter_tree() -> void:
 	init_action()
+	get_anim().animation_finished.connect(_animation_finished)
 
 
 func _ready() -> void:
@@ -49,7 +50,7 @@ func _ready() -> void:
 func _enter() -> void:
 	var player := get_player()
 	
-	#anim.play(&"left_punch")
+	play(&"left_punch")
 	punch_combo_hitbox.scale.x = player.state.face.x
 	get_hsm().label.text = "Left Punch"
 
@@ -66,7 +67,7 @@ func _update(_delta: float) -> void:
 				_pressed = true
 			
 			if _pressed and _anim_finished:
-				#anim.play(&"right_punch")
+				play(&"right_punch")
 				state = RIGHT
 				_anim_finished = false
 				_pressed = false
@@ -79,11 +80,11 @@ func _update(_delta: float) -> void:
 			
 			if _pressed and _anim_finished:
 				if _just:
-					#anim.play(&"hammer_explosion")
+					play(&"hammer_ex")
 					get_hsm().label.text = "Hammer EX"
 					_just = false
 				else:
-					#anim.play(&"hammer")
+					play(&"hammer")
 					get_hsm().label.text = "Hammer"
 				state = HAMMER
 				_anim_finished = false
@@ -113,7 +114,6 @@ func _propel(motion: Vector2) -> void:
 
 
 func _animation_finished(anim_name: StringName):
-	pass
-	#if is_active() and (anim_name in anim.get_animation_list()):
-		#_anim_finished = true
-		#_postpone = anim_postpone
+	if is_active() and (anim_name in get_anim().get_animation_list()):
+		_anim_finished = true
+		_postpone = anim_postpone

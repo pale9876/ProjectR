@@ -10,6 +10,14 @@ enum Type {
 	DOWN_ATTACK,
 }
 
+const KNOCKBACK := Type.KNOCKBACK
+const AERIAL := Type.AERIAL
+const PUSHBACK := Type.PUSHBACK
+const BLOWUP := Type.BLOWUP
+const DOWN_ATTACK := Type.DOWN_ATTACK
+
+
+
 @export_group("Attack Stat")
 @export var atk_name: StringName = &""
 @export var type: Type = Type.KNOCKBACK

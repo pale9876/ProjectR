@@ -8,11 +8,11 @@ extends PlayerState
 
 
 func _enter_tree() -> void:
-	get_anim().add_animation_library(&"idle", anim_library)
+	add_library()
 
 
 func _enter() -> void:
-	play(&"idle/idle")
+	play(&"idle")
 
 
 func _update(_delta: float) -> void:

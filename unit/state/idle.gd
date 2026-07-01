@@ -6,10 +6,15 @@ var move_state: UnitState
 var fall_state: UnitState
 
 
+func _enter_tree() -> void:
+	add_library()
+
+
 func _enter() -> void:
 	#var unit := agent as Unit
 	move_state = get_state(^"Move")
 	fall_state = get_state(^"Fall")
+	play(&"idle")
 	
 	#anim.play(&"idle")
 

@@ -24,6 +24,10 @@ func _enter_tree() -> void:
 	area_shape_entered.connect(_entered)
 
 
+func _exit_tree() -> void:
+	area_shape_entered.disconnect(_entered)
+
+
 func _entered(_rid: RID, area: Area2D, _area_idx: int, local_idx: int) -> void:
 	if area is UnitHurtbox:
 		var _shape := get_child(local_idx) as HitboxShape
@@ -42,6 +46,6 @@ func _entered(_rid: RID, area: Area2D, _area_idx: int, local_idx: int) -> void:
 
 func clear() -> void:
 	for node: Node in get_children():
-		if node is HitboxShape:
+		if node is HitboxShape or node is HitShapePolygon:
 			node.clear()
 	hide()

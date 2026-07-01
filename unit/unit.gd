@@ -30,6 +30,10 @@ var stat: Stat = Stat.new()
 var state: State = State.new()
 
 
+func get_anim() -> AnimationPlayer:
+	return get_node(^"AnimationPlayer") as AnimationPlayer
+
+
 func _on_face_changed() -> void:
 	sprite_component.scale.x = float(state.face.x)
 
