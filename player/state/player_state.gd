@@ -82,6 +82,19 @@ func is_on_wall() -> bool:
 	return get_player().is_on_wall()
 
 
+func _propel(motion: Vector2) -> void:
+	var player := get_player()
+	var face: float = player.get_face()
+	var input: float = player.input_state.direction.x
+	var is_positive: bool = face > 0. and input > 0.
+	var is_negative: bool = face < 0. and input < 0.
+	var is_conflict: bool = !is_positive and !is_negative
+	var is_eq: bool = is_positive or is_negative
+	
+	
+	var input_force := face * (.45 if input == 0. else 1. if is_eq else 0. )
+	player.velocity = motion * input_force
+
 
 func init_action() -> void:
 	assert(

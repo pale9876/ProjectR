@@ -12,6 +12,7 @@
 [ext_resource type="Script" uid="uid://d376evb3whf7e" path="res://player/fall.gd" id="6_yllr7"]
 [ext_resource type="SpriteFrames" uid="uid://dhmvj5bwddbin" path="res://sample_lower_motions.tres" id="7_7pqkx"]
 [ext_resource type="AnimationLibrary" uid="uid://cyo676p46aw5v" path="res://motion/fall.res" id="9_1so5t"]
+[ext_resource type="Script" uid="uid://chb5h0vw5lpvq" path="res://player/animation_player.gd" id="9_55jnj"]
 [ext_resource type="Script" uid="uid://bsrhpk5urdhab" path="res://player/high_punch.gd" id="9_yllr7"]
 [ext_resource type="Script" uid="uid://tmgum3lt28ad" path="res://player/state/jump.gd" id="10_8t03j"]
 [ext_resource type="Script" uid="uid://b7phyhue4y3yg" path="res://player/player_camera.gd" id="11_2ieo8"]
@@ -61,7 +62,7 @@ fill_from = Vector2(0.5, 0.5)
 fill_to = Vector2(0.9583333, 0.6025641)
 
 [sub_resource type="RectangleShape2D" id="RectangleShape2D_32hag"]
-size = Vector2(20, 91)
+size = Vector2(20, 92)
 
 [sub_resource type="RectangleShape2D" id="RectangleShape2D_2ieo8"]
 size = Vector2(30, 92)
@@ -138,7 +139,7 @@ tracks/5/keys = {
 "times": PackedFloat32Array(0),
 "transitions": PackedFloat32Array(1),
 "update": 1,
-"values": [Vector2(20, 91)]
+"values": [Vector2(20, 92)]
 }
 tracks/6/type = "value"
 tracks/6/imported = false
@@ -369,11 +370,14 @@ height = 132.0
 script = ExtResource("23_s7qer")
 metadata/_custom_type_script = "uid://xw07ofvvtrxk"
 
-[node name="Player" type="CharacterBody2D" unique_id=1697822384 node_paths=PackedStringArray("hsm")]
+[sub_resource type="Resource" id="Resource_greoi"]
+script = ExtResource("23_s7qer")
+metadata/_custom_type_script = "uid://xw07ofvvtrxk"
+
+[node name="Player" type="CharacterBody2D" unique_id=1697822384]
 collision_layer = 2
 script = ExtResource("1_bvu1k")
 animation_player = NodePath("AnimationPlayer")
-hsm = NodePath("LimboHSM")
 info = SubResource("Resource_4xbu7")
 
 [node name="DropShadow" type="Sprite2D" parent="." unique_id=981265406]
@@ -407,16 +411,16 @@ shape = SubResource("RectangleShape2D_2ieo8")
 debug_color = Color(0.7921569, 0, 0.07450981, 0.41960785)
 
 [node name="AnimationPlayer" type="AnimationPlayer" parent="." unique_id=1781161408]
-callback_mode_process = 0
 callback_mode_discrete = 0
 libraries/ = SubResource("AnimationLibrary_boad6")
 libraries/high_punch_combo = ExtResource("20_pnw6m")
+script = ExtResource("9_55jnj")
 
 [node name="Camera2D" type="Camera2D" parent="." unique_id=1164297328]
 position = Vector2(0, -76)
 script = ExtResource("11_2ieo8")
 
-[node name="LimboHSM" type="LimboHSM" parent="." unique_id=2015169286 node_paths=PackedStringArray("label", "idle_state", "move_state", "jump_state")]
+[node name="StateMachine" type="LimboHSM" parent="." unique_id=2015169286 node_paths=PackedStringArray("label", "idle_state", "move_state", "jump_state")]
 blackboard_plan = SubResource("BlackboardPlan_sweqy")
 script = ExtResource("3_2ieo8")
 label = NodePath("../StateLabel")
@@ -425,7 +429,7 @@ idle_state = NodePath("Idle")
 move_state = NodePath("Move")
 jump_state = NodePath("Jump")
 
-[node name="Idle" type="LimboState" parent="LimboHSM" unique_id=382262949 node_paths=PackedStringArray("move_state", "fall_state", "jump_state")]
+[node name="Idle" type="LimboState" parent="StateMachine" unique_id=382262949 node_paths=PackedStringArray("move_state", "fall_state", "jump_state")]
 script = ExtResource("4_bvu1k")
 move_state = NodePath("../Move")
 fall_state = NodePath("../Fall")
@@ -433,17 +437,17 @@ jump_state = NodePath("../Jump")
 anim_library = ExtResource("12_pnw6m")
 library_name = &"idle"
 
-[node name="Move" type="LimboState" parent="LimboHSM" unique_id=1139494425]
+[node name="Move" type="LimboState" parent="StateMachine" unique_id=1139494425]
 script = ExtResource("5_40lky")
 anim_library = ExtResource("12_dx5ib")
 library_name = &"move"
 
-[node name="Fall" type="LimboState" parent="LimboHSM" unique_id=216460520]
+[node name="Fall" type="LimboState" parent="StateMachine" unique_id=216460520]
 script = ExtResource("6_yllr7")
 anim_library = ExtResource("9_1so5t")
 library_name = &"fall"
 
-[node name="Jump" type="LimboState" parent="LimboHSM" unique_id=736184237 node_paths=PackedStringArray("fall_state", "idle_state", "move_state")]
+[node name="Jump" type="LimboState" parent="StateMachine" unique_id=736184237 node_paths=PackedStringArray("fall_state", "idle_state", "move_state")]
 script = ExtResource("10_8t03j")
 fall_state = NodePath("../Fall")
 idle_state = NodePath("../Idle")
@@ -451,10 +455,10 @@ move_state = NodePath("../Move")
 anim_library = ExtResource("11_55jnj")
 library_name = &"jump"
 
-[node name="Knockback" type="LimboState" parent="LimboHSM" unique_id=1004344550]
+[node name="Knockback" type="LimboState" parent="StateMachine" unique_id=1004344550]
 script = ExtResource("18_q28gw")
 
-[node name="HighPunchCombo" type="LimboState" parent="LimboHSM" unique_id=662588822 node_paths=PackedStringArray("punch_combo_hitbox")]
+[node name="HighPunchCombo" type="LimboState" parent="StateMachine" unique_id=662588822 node_paths=PackedStringArray("punch_combo_hitbox")]
 script = ExtResource("9_yllr7")
 anim_postpone = 8
 punch_combo_hitbox = NodePath("../../PunchCombo")
@@ -463,31 +467,31 @@ ev_name = &"high_punch_combo"
 anim_library = ExtResource("20_pnw6m")
 library_name = &"high_punch_combo"
 
-[node name="Slide" parent="LimboHSM" unique_id=591192304 instance=ExtResource("16_uw77l")]
+[node name="Slide" parent="StateMachine" unique_id=591192304 instance=ExtResource("16_uw77l")]
 
-[node name="Block" parent="LimboHSM" unique_id=1514818620 instance=ExtResource("17_uw77l")]
+[node name="Block" parent="StateMachine" unique_id=1514818620 instance=ExtResource("17_uw77l")]
 
-[node name="CounterAttack" parent="LimboHSM" unique_id=893071231 instance=ExtResource("18_rptt4")]
+[node name="CounterAttack" parent="StateMachine" unique_id=893071231 instance=ExtResource("18_rptt4")]
 
-[node name="JumpKick" parent="LimboHSM" unique_id=1156718825 instance=ExtResource("19_r7pn3")]
+[node name="JumpKick" parent="StateMachine" unique_id=1156718825 instance=ExtResource("19_r7pn3")]
 script = ExtResource("20_2uvqg")
 type = 1
 action_input = PackedStringArray("kick")
 
-[node name="JumpHammer" type="LimboState" parent="LimboHSM" unique_id=1138518008]
+[node name="JumpHammer" type="LimboState" parent="StateMachine" unique_id=1138518008]
 script = ExtResource("21_1s1yo")
 type = 1
 action_input = PackedStringArray("attack")
 ev_name = &"jump_hammer"
 metadata/_custom_type_script = "uid://b7x8s5btnaxj2"
 
-[node name="Dodge" parent="LimboHSM" unique_id=1740608329 instance=ExtResource("21_b8hi5")]
+[node name="Dodge" parent="StateMachine" unique_id=1740608329 instance=ExtResource("21_b8hi5")]
 
-[node name="Grab" type="LimboState" parent="LimboHSM" unique_id=1617341275]
+[node name="Grab" type="LimboState" parent="StateMachine" unique_id=1617341275]
 script = ExtResource("16_x7c3f")
 metadata/_custom_type_script = "uid://b7x8s5btnaxj2"
 
-[node name="Blowkick" type="LimboState" parent="LimboHSM" unique_id=1713774209]
+[node name="Blowkick" type="LimboState" parent="StateMachine" unique_id=1713774209]
 script = ExtResource("22_r7pn3")
 action_input = PackedStringArray("down", "kick")
 ev_name = &"slide"
@@ -596,10 +600,19 @@ script = ExtResource("24_rptt4")
 hitbox_info = SubResource("Resource_7jywp")
 metadata/_custom_type_script = "uid://d2ox33o3w3u0r"
 
+[node name="JumpHammer" type="Area2D" parent="." unique_id=276204299]
+script = ExtResource("21_bjvpn")
+metadata/_custom_type_script = "uid://0dw4edo0eshv"
+
+[node name="HitboxShape" type="CollisionShape2D" parent="JumpHammer" unique_id=1723227909]
+script = ExtResource("24_rptt4")
+hitbox_info = SubResource("Resource_greoi")
+metadata/_custom_type_script = "uid://d2ox33o3w3u0r"
+
 [editable path="SpriteComponent"]
-[editable path="LimboHSM/Slide"]
-[editable path="LimboHSM/Block"]
-[editable path="LimboHSM/CounterAttack"]
-[editable path="LimboHSM/JumpKick"]
-[editable path="LimboHSM/Dodge"]
+[editable path="StateMachine/Slide"]
+[editable path="StateMachine/Block"]
+[editable path="StateMachine/CounterAttack"]
+[editable path="StateMachine/JumpKick"]
+[editable path="StateMachine/Dodge"]
 [editable path="SlideHitbox"]

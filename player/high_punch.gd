@@ -37,6 +37,7 @@ func _guard() -> bool:
 func _enter_tree() -> void:
 	init_action()
 	get_anim().animation_finished.connect(_animation_finished)
+	add_library()
 
 
 func _ready() -> void:
@@ -63,7 +64,7 @@ func _update(_delta: float) -> void:
 	
 	match state:
 		LEFT:
-			if _postpone > 0 and Input.is_action_just_pressed(&"attack"):
+			if Input.is_action_just_pressed(&"attack"):
 				_pressed = true
 			
 			if _pressed and _anim_finished:
@@ -73,7 +74,7 @@ func _update(_delta: float) -> void:
 				_pressed = false
 				get_hsm().label.text = "Right Punch"
 		RIGHT:
-			if _postpone > 0 and Input.is_action_just_pressed(&"attack"):
+			if Input.is_action_just_pressed(&"attack"):
 				_pressed = true
 				if just_frame:
 					_just = true
@@ -92,9 +93,7 @@ func _update(_delta: float) -> void:
 
 
 	if _anim_finished:
-		_postpone -= 1
-		if _postpone == 0:
-			get_hsm().change_active_state(idle_state)
+		get_hsm().change_active_state(idle_state)
 
 
 func _exit() -> void:
@@ -106,11 +105,6 @@ func _clear() -> void:
 	state = LEFT
 	_anim_finished = false
 	_just = false
-
-
-func _propel(motion: Vector2) -> void:
-	var player := get_player()
-	player.velocity.x += motion.x * player.state.face.x
 
 
 func _animation_finished(anim_name: StringName):

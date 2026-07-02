@@ -20,12 +20,11 @@ func _enter() -> void:
 
 
 func _update(_delta: float) -> void:
-	var unit := _get_unit()
+	var unit := get_unit()
 	
 	unit.velocity.x = move_toward(unit.velocity.x, 0., 15.5)
 
 	if !is_on_floor():
-		_get_hsm().change_active_state(fall_state)
-
+		get_hsm().change_active_state(fall_state)
 
 	move_and_slide()

@@ -2,6 +2,10 @@ extends LimboState
 class_name UnitState
 
 
+# Import
+const StateMachine: Script = preload("uid://dcybwuwfqeqr3")
+
+
 enum Type {
 	IDLE,
 	JUMP,
@@ -12,43 +16,41 @@ enum Type {
 const IDLE := Type.IDLE
 const JUMP := Type.JUMP
 
+
 @export var type: Type = IDLE
 @export var anim_lib_name: StringName
 @export var anim_lib: AnimationLibrary
 
-# Import
-const StateMachine: Script = preload("uid://dcybwuwfqeqr3")
 
-
-func _get_unit() -> Unit:
+func get_unit() -> Unit:
 	return agent as Unit
 
 
-func _get_hsm() -> LimboHSM:
+func get_hsm() -> LimboHSM:
 	return get_root() as LimboHSM
 
 
 func _get_target() -> Node2D:
-	return _get_unit().get_btbb().get_var(&"target") as Node2D
+	return get_unit().get_btbb().get_var(&"target") as Node2D
 
 
 func move_order_received() -> Array[Dictionary]:
-	return _get_unit().get_btbb().get_var(&"target_position") as Array[Dictionary]
+	return get_unit().get_btbb().get_var(&"target_position") as Array[Dictionary]
 
 
 func is_on_floor() -> bool:
-	return _get_unit().is_on_floor()
+	return get_unit().is_on_floor()
 
 
 func move_and_slide() -> bool:
-	return _get_unit().move_and_slide()
+	return get_unit().move_and_slide()
 
 
 func move_and_collide(
 	motion: Vector2, test: bool = false, margin: float = .08
 	) -> KinematicCollision2D:
 	
-	return _get_unit().move_and_collide(motion, test, margin, false)
+	return get_unit().move_and_collide(motion, test, margin, false)
 
 
 func get_state_machine() -> StateMachine:
@@ -64,8 +66,20 @@ func play(anim_name: StringName) -> void:
 
 
 # OVERRIDE
-func event(ev: HitboxInformation.Type) -> void:
+func event(ev: HitboxInformation) -> void:
 	pass
+
+
+# OVERRIDE
+func set_data(info: Resource) -> void:
+	pass
+
+
+
+func _propel(motion: Vector2) -> void:
+	var unit := get_unit()
+	unit.velocity = motion
+
 
 
 func create_animlib() -> void:

@@ -81,22 +81,23 @@ func damaged(hitbox_info: HitboxInformation, hit_result: HitResult) -> void:
 		var grabbed := state_machine.get_state(^"Grabbed") as GrabbedState
 		
 		if !blocked_attack(hitbox_info, hit_result) and effective() and !has_dodged() and !parried():
-			set_hurt_state(hitbox_info.type)
+			set_hurt_state(hitbox_info)
 
-func set_hurt_state(attack_type: HitboxInformation.Type) -> void:
+func set_hurt_state(hitbox_info: HitboxInformation) -> void:
 	var state_machine := (get_parent() as Unit).hsm
 	var current_state := state_machine.get_active_state() as UnitState
+	var next_state: UnitState
 	
 	if !current_state in get_hurt_states():
-		match attack_type:
+		match hitbox_info.type:
 			HitboxInformation.KNOCKBACK:
-				state_machine.change_active_state(get_knockback_state())
+				next_state = get_knockback_state()
 			HitboxInformation.AERIAL:
-				state_machine.change_active_state(get_aerial_state())
+				next_state = get_aerial_state()
 			HitboxInformation.PUSHBACK:
-				state_machine.change_active_state(get_pushback_state())
+				next_state = get_pushback_state()
 	else:
-		current_state.event(attack_type)
+		current_state.event(hitbox_info)
 
 
 func get_hurt_states() -> Array[UnitState]:

@@ -21,6 +21,7 @@
 [ext_resource type="Texture2D" uid="uid://c8ye0j4iecttl" path="res://aseprite/asso_project/sample_motions/slide.png" id="11_5by7o"]
 [ext_resource type="Texture2D" uid="uid://7vf87863ggaa" path="res://aseprite/asso_project/sample_motions/pushback.png" id="11_yge5e"]
 [ext_resource type="Texture2D" uid="uid://dnjwbiwriy5uu" path="res://aseprite/asso_project/sample_motions/standup.png" id="20_gw8al"]
+[ext_resource type="Texture2D" uid="uid://did8i67svyifq" path="res://aseprite/asso_project/sample_motions/wallcrash.png" id="22_eq8e5"]
 
 [sub_resource type="AtlasTexture" id="AtlasTexture_r6jh2"]
 atlas = ExtResource("1_u8uph")
@@ -281,6 +282,10 @@ region = Rect2(1280, 0, 256, 256)
 [sub_resource type="AtlasTexture" id="AtlasTexture_mcoba"]
 atlas = ExtResource("20_gw8al")
 region = Rect2(1536, 0, 256, 256)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_f2bmi"]
+atlas = ExtResource("22_eq8e5")
+region = Rect2(0, 0, 256, 256)
 
 [resource]
 animations = [{
@@ -592,5 +597,13 @@ animations = [{
 }],
 "loop": 0,
 "name": &"standup",
+"speed": 5.0
+}, {
+"frames": [{
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_f2bmi")
+}],
+"loop": 1,
+"name": &"wallhit",
 "speed": 5.0
 }]

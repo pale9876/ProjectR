@@ -29,6 +29,9 @@
 [ext_resource type="Script" uid="uid://cattor5p0ysjp" path="res://unit/down.gd" id="27_74sws"]
 [ext_resource type="Script" uid="uid://8rj1txp84awx" path="res://unit/pushback.gd" id="28_njs1s"]
 [ext_resource type="Script" uid="uid://cqhhjr6ob8477" path="res://unit/wallhit.gd" id="29_a8ovg"]
+[ext_resource type="AnimationLibrary" uid="uid://docog8qdv8rj1" path="res://motion/aerial.res" id="30_njs1s"]
+[ext_resource type="AnimationLibrary" uid="uid://c4rqs4fs1eal4" path="res://motion/pushback.res" id="31_a8ovg"]
+[ext_resource type="AnimationLibrary" uid="uid://bvq7ynb3u3a8p" path="res://motion/wallhit.res" id="32_qjbny"]
 
 [sub_resource type="Resource" id="Resource_pvbt4"]
 script = ExtResource("3_t3pbd")
@@ -52,10 +55,10 @@ fill_from = Vector2(0.5, 0.5)
 fill_to = Vector2(0.85, 0.85)
 
 [sub_resource type="RectangleShape2D" id="RectangleShape2D_2d64t"]
-size = Vector2(48, 91)
+size = Vector2(36, 91)
 
 [sub_resource type="RectangleShape2D" id="RectangleShape2D_t3pbd"]
-size = Vector2(52, 95)
+size = Vector2(27, 90)
 
 [sub_resource type="BlackboardPlan" id="BlackboardPlan_2ul3e"]
 var/target/name = &"target"
@@ -148,6 +151,98 @@ root_task = SubResource("BTSequence_eras8")
 
 [sub_resource type="BlackboardPlan" id="BlackboardPlan_ak6ua"]
 
+[sub_resource type="Animation" id="Animation_njs1s"]
+length = 0.001
+tracks/0/type = "value"
+tracks/0/imported = false
+tracks/0/enabled = true
+tracks/0/path = NodePath("UnitCollision:shape:size")
+tracks/0/interp = 1
+tracks/0/loop_wrap = true
+tracks/0/keys = {
+"times": PackedFloat32Array(0),
+"transitions": PackedFloat32Array(1),
+"update": 1,
+"values": [Vector2(36, 91)]
+}
+tracks/1/type = "value"
+tracks/1/imported = false
+tracks/1/enabled = true
+tracks/1/path = NodePath("Hurtbox/HurtboxShape:shape:size")
+tracks/1/interp = 1
+tracks/1/loop_wrap = true
+tracks/1/keys = {
+"times": PackedFloat32Array(0),
+"transitions": PackedFloat32Array(1),
+"update": 1,
+"values": [Vector2(27, 90)]
+}
+tracks/2/type = "value"
+tracks/2/imported = false
+tracks/2/enabled = true
+tracks/2/path = NodePath("Hurtbox/HurtboxShape:position")
+tracks/2/interp = 1
+tracks/2/loop_wrap = true
+tracks/2/keys = {
+"times": PackedFloat32Array(0),
+"transitions": PackedFloat32Array(1),
+"update": 1,
+"values": [Vector2(-0.5, -46)]
+}
+tracks/3/type = "value"
+tracks/3/imported = false
+tracks/3/enabled = true
+tracks/3/path = NodePath("UnitCollision:position")
+tracks/3/interp = 1
+tracks/3/loop_wrap = true
+tracks/3/keys = {
+"times": PackedFloat32Array(0),
+"transitions": PackedFloat32Array(1),
+"update": 1,
+"values": [Vector2(0, -46)]
+}
+tracks/4/type = "value"
+tracks/4/imported = false
+tracks/4/enabled = true
+tracks/4/path = NodePath("Hurtbox/HurtboxShape:disabled")
+tracks/4/interp = 1
+tracks/4/loop_wrap = true
+tracks/4/keys = {
+"times": PackedFloat32Array(0),
+"transitions": PackedFloat32Array(1),
+"update": 1,
+"values": [false]
+}
+tracks/5/type = "value"
+tracks/5/imported = false
+tracks/5/enabled = true
+tracks/5/path = NodePath("SpriteComponent/AnimatedSprite2D:animation")
+tracks/5/interp = 1
+tracks/5/loop_wrap = true
+tracks/5/keys = {
+"times": PackedFloat32Array(0),
+"transitions": PackedFloat32Array(1),
+"update": 1,
+"values": [&"standup"]
+}
+tracks/6/type = "value"
+tracks/6/imported = false
+tracks/6/enabled = true
+tracks/6/path = NodePath("SpriteComponent/AnimatedSprite2D:frame")
+tracks/6/interp = 1
+tracks/6/loop_wrap = true
+tracks/6/keys = {
+"times": PackedFloat32Array(0),
+"transitions": PackedFloat32Array(1),
+"update": 1,
+"values": [0]
+}
+
+[sub_resource type="AnimationLibrary" id="AnimationLibrary_a8ovg"]
+_data = {
+&"RESET": SubResource("Animation_njs1s")
+}
+
 [node name="SandBag" type="CharacterBody2D" unique_id=2064536848]
 collision_layer = 2
 script = ExtResource("1_xr0ca")
@@ -166,7 +261,7 @@ visible = false
 
 [node name="AnimatedSprite2D" parent="SpriteComponent" index="1" unique_id=152865229]
 visible = true
-animation = &"knockback"
+animation = &"standup"
 
 [node name="UnitCollision" type="CollisionShape2D" parent="." unique_id=54862801]
 position = Vector2(0, -46)
@@ -180,7 +275,7 @@ monitoring = false
 script = ExtResource("8_k7l50")
 
 [node name="HurtboxShape" type="CollisionShape2D" parent="Hurtbox" unique_id=296316886]
-position = Vector2(0, -48.5)
+position = Vector2(-0.5, -46)
 shape = SubResource("RectangleShape2D_t3pbd")
 debug_color = Color(0.8509804, 0.03529412, 0.21960784, 0.39607844)
 
@@ -200,62 +295,76 @@ x_offset = -30.0
 modulate = Color(1, 1, 1, 0.16078432)
 polygon = PackedVector2Array(-30, -228, -30, -28, 427, -28, 427, -228)
 
-[node name="LimboHSM" type="LimboHSM" parent="." unique_id=942695327]
+[node name="StateMachine" type="LimboHSM" parent="." unique_id=942695327]
 script = ExtResource("10_x1h6o")
 
-[node name="Idle" type="LimboState" parent="LimboHSM" unique_id=641009354]
+[node name="Idle" type="LimboState" parent="StateMachine" unique_id=641009354]
 script = ExtResource("11_3b2yn")
 anim_lib_name = &"idle"
 anim_lib = ExtResource("15_507e4")
 
-[node name="Move" type="LimboState" parent="LimboHSM" unique_id=265379667]
+[node name="Move" type="LimboState" parent="StateMachine" unique_id=265379667]
 script = ExtResource("18_t3pbd")
 anim_lib_name = &"move"
 anim_lib = ExtResource("17_4sfit")
 metadata/_custom_type_script = "uid://im1wyvflgwp0"
 
-[node name="Jump" type="LimboState" parent="LimboHSM" unique_id=1875892619]
+[node name="Jump" type="LimboState" parent="StateMachine" unique_id=1875892619]
 script = ExtResource("14_w11yh")
 type = 1
 anim_lib_name = &"jump"
 anim_lib = ExtResource("19_0awm1")
 
-[node name="Fall" type="LimboState" parent="LimboHSM" unique_id=1952545241]
+[node name="Fall" type="LimboState" parent="StateMachine" unique_id=1952545241]
 script = ExtResource("13_pvbt4")
 anim_lib_name = &"fakk"
 anim_lib = ExtResource("21_wp6bj")
 metadata/_custom_type_script = "uid://im1wyvflgwp0"
 
-[node name="Grabbed" type="LimboState" parent="LimboHSM" unique_id=1553039524]
+[node name="Grabbed" type="LimboState" parent="StateMachine" unique_id=1553039524]
 script = ExtResource("19_cibo8")
 metadata/_custom_type_script = "uid://im1wyvflgwp0"
 
-[node name="Grab" type="LimboState" parent="LimboHSM" unique_id=1141453359]
+[node name="Grab" type="LimboState" parent="StateMachine" unique_id=1141453359]
 script = ExtResource("20_2d64t")
 metadata/_custom_type_script = "uid://im1wyvflgwp0"
 
-[node name="Knockback" type="LimboState" parent="LimboHSM" unique_id=1168315294]
+[node name="Knockback" type="LimboState" parent="StateMachine" unique_id=1168315294]
 script = ExtResource("21_bnltu")
+type = 2
 anim_lib_name = &"knockback"
 anim_lib = ExtResource("25_p42cd")
 metadata/_custom_type_script = "uid://im1wyvflgwp0"
 
-[node name="Aerial" type="LimboState" parent="LimboHSM" unique_id=1444982]
+[node name="Aerial" type="LimboState" parent="StateMachine" unique_id=1444982]
 script = ExtResource("26_itvhm")
+type = 2
+anim_lib_name = &"aerial"
+anim_lib = ExtResource("30_njs1s")
 metadata/_custom_type_script = "uid://im1wyvflgwp0"
 
-[node name="Down" type="LimboState" parent="LimboHSM" unique_id=1321983700]
+[node name="Down" type="LimboState" parent="StateMachine" unique_id=1321983700]
 script = ExtResource("27_74sws")
+type = 2
+anim_lib_name = &"down"
+anim_lib = ExtResource("21_wp6bj")
 metadata/_custom_type_script = "uid://im1wyvflgwp0"
 
-[node name="Pushback" type="LimboState" parent="LimboHSM" unique_id=1879459923]
+[node name="Pushback" type="LimboState" parent="StateMachine" unique_id=1879459923]
 script = ExtResource("28_njs1s")
+type = 2
+anim_lib_name = &"pushback"
+anim_lib = ExtResource("31_a8ovg")
 metadata/_custom_type_script = "uid://im1wyvflgwp0"
 
-[node name="Wallhit" type="LimboState" parent="LimboHSM" unique_id=1048343805]
+[node name="Wallhit" type="LimboState" parent="StateMachine" unique_id=1048343805]
 script = ExtResource("29_a8ovg")
+type = 2
+anim_lib_name = &"wallhit"
+anim_lib = ExtResource("32_qjbny")
 metadata/_custom_type_script = "uid://im1wyvflgwp0"
 
 [node name="AnimationPlayer" type="AnimationPlayer" parent="." unique_id=1268957844]
+libraries/ = SubResource("AnimationLibrary_a8ovg")
 
 [editable path="SpriteComponent"]

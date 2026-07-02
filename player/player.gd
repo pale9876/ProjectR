@@ -8,11 +8,11 @@ const SpriteModuler: Script = preload("uid://dbcsuysfwo30x")
 const Hurtbox: Script = preload("uid://er84buu2gymf")
 const PlayerCamera: Script = preload("uid://b7phyhue4y3yg")
 const HitboxComponent: Script = preload("uid://dr8n2mbhooxjo")
+const StateMachine: Script = preload("uid://nmmtety5yvve")
 
 
 @export_category("NodePath")
 @export var animation_player: NodePath
-@export var hsm: LimboHSM
 
 @export_category("Data")
 @export var info: PlayerInformation
@@ -27,6 +27,7 @@ var state: State = State.new()
 @onready var sprite_component: SpriteComponent = $SpriteComponent
 @onready var hitbox_component: HitboxComponent = $HitboxComponent
 @onready var drop_shadow: Sprite2D = $DropShadow
+@onready var hsm: StateMachine = $StateMachine
 
 
 func _init() -> void:
@@ -69,8 +70,7 @@ func _ready() -> void:
 
 
 func get_face() -> float:
-	return state.face.x
-
+	return float(state.face.x)
 
 
 func _process(_delta: float) -> void:
@@ -123,11 +123,6 @@ func get_camera() -> PlayerCamera:
 
 func get_anim() -> AnimationPlayer:
 	return get_node(animation_player) as AnimationPlayer
-
-
-# OVERRIDE
-func _propel(motion: Vector2) -> void:
-	pass
 
 
 class Stat:

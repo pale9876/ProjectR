@@ -2,6 +2,31 @@
 extends LimboHSM
 
 
+
+var locked_frame: int = 0:
+	set(value):
+		locked_frame = maxi(value, 0)
+
+
+func _ready() -> void:
+	add_transition(ANYSTATE, get_state(^"Idle"), &"revert")
+
+
+func init_hurt_state(info: HitboxInformation, state: LimboState) -> void:
+	set_lock_frame(info.damage_frame)
+	change_active_state(state)
+
+
+func revert() -> void:
+	if (get_active_state() as UnitState).type != IDLE:
+		pass
+	dispatch(&"revert")
+
+
+func unlocked() -> bool:
+	return locked_frame == 0
+
+
 func get_anim() -> AnimationPlayer:
 	return (get_parent() as Unit).get_anim()
 
@@ -12,3 +37,15 @@ func get_state(node_path: NodePath) -> UnitState:
 
 func get_unit() -> Unit:
 	return get_parent() as Unit
+
+
+func set_lock_frame(value: int) -> void:
+	locked_frame = value
+
+
+func init_lock() -> void:
+	locked_frame = 0
+
+
+func tick() -> void:
+	locked_frame -= 1

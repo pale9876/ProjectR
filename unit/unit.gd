@@ -22,7 +22,7 @@ signal active()
 
 @onready var sprite_component: SpriteComponent = $SpriteComponent
 @onready var bt: BTPlayer = $BTPlayer
-@onready var hsm: StateMachine = $LimboHSM
+@onready var hsm: StateMachine = $StateMachine
 #@onready var agent: NavigationAgent2D = $NavigationAgent2D
 
 
@@ -81,11 +81,6 @@ func _resume() -> void:
 
 func get_awareness_area() -> Awareness:
 	return get_node(^"Awareness")
-
-
-#func _ready() -> void:
-	#agent.navigation_finished.connect(_agent_navigation_finished)
-	#agent.velocity_computed.connect(_agent_velocity_computed)
 
 
 func _agent_velocity_computed(_safe: Vector2) -> void:

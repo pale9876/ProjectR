@@ -8,4 +8,9 @@ func _enter() -> void:
 
 
 func _update(_delta: float) -> void:
-	pass
+	var unit := get_unit()
+	
+	if is_on_floor():
+		unit.velocity.y = move_toward(unit.velocity.y, 970., 12.25)
+	
+	move_and_slide()
