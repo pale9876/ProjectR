@@ -73,6 +73,7 @@ func _update(_delta: float) -> void:
 				_anim_finished = false
 				_pressed = false
 				get_hsm().label.text = "Right Punch"
+				return
 		RIGHT:
 			if Input.is_action_just_pressed(&"attack"):
 				_pressed = true
@@ -90,6 +91,7 @@ func _update(_delta: float) -> void:
 				state = HAMMER
 				_anim_finished = false
 				_pressed = false
+				return
 
 
 	if _anim_finished:

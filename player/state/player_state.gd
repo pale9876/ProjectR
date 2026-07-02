@@ -88,7 +88,7 @@ func _propel(motion: Vector2) -> void:
 	var input: float = player.input_state.direction.x
 	var is_positive: bool = face > 0. and input > 0.
 	var is_negative: bool = face < 0. and input < 0.
-	var is_conflict: bool = !is_positive and !is_negative
+	#var is_conflict: bool = !is_positive and !is_negative
 	var is_eq: bool = is_positive or is_negative
 	
 	
@@ -125,3 +125,7 @@ func _lock() -> void:
 
 func _unlock() -> void:
 	get_player().input_state.unlock()
+
+
+func change_state(state: LimboState) -> void:
+	get_hsm().change_active_state(state)

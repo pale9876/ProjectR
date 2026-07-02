@@ -20,6 +20,7 @@
 [ext_resource type="Texture2D" uid="uid://jox2lcyw7u70" path="res://aseprite/asso_project/sample_motions/knockback_horz.png" id="9_rkgx6"]
 [ext_resource type="Texture2D" uid="uid://c8ye0j4iecttl" path="res://aseprite/asso_project/sample_motions/slide.png" id="11_5by7o"]
 [ext_resource type="Texture2D" uid="uid://7vf87863ggaa" path="res://aseprite/asso_project/sample_motions/pushback.png" id="11_yge5e"]
+[ext_resource type="Texture2D" uid="uid://b5hbk6tfjs2om" path="res://aseprite/asso_project/sample_motions/jump_hammer.png" id="15_6j8o8"]
 [ext_resource type="Texture2D" uid="uid://dnjwbiwriy5uu" path="res://aseprite/asso_project/sample_motions/standup.png" id="20_gw8al"]
 [ext_resource type="Texture2D" uid="uid://did8i67svyifq" path="res://aseprite/asso_project/sample_motions/wallcrash.png" id="22_eq8e5"]
 
@@ -181,6 +182,22 @@ region = Rect2(0, 0, 256, 256)
 
 [sub_resource type="AtlasTexture" id="AtlasTexture_dx5ib"]
 atlas = ExtResource("4_hr82g")
+region = Rect2(0, 0, 256, 256)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_2u02t"]
+atlas = ExtResource("15_6j8o8")
+region = Rect2(512, 0, 256, 256)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_w4nr0"]
+atlas = ExtResource("15_6j8o8")
+region = Rect2(768, 0, 256, 256)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_wwkh3"]
+atlas = ExtResource("15_6j8o8")
+region = Rect2(256, 0, 256, 256)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_5n02q"]
+atlas = ExtResource("15_6j8o8")
 region = Rect2(0, 0, 256, 256)
 
 [sub_resource type="AtlasTexture" id="AtlasTexture_klil2"]
@@ -477,6 +494,33 @@ animations = [{
 }],
 "loop": 1,
 "name": &"jump",
+"speed": 5.0
+}, {
+"frames": [{
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_2u02t")
+}, {
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_w4nr0")
+}],
+"loop": 0,
+"name": &"jump_hammer_delay",
+"speed": 5.0
+}, {
+"frames": [{
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_wwkh3")
+}],
+"loop": 0,
+"name": &"jump_hammer_down",
+"speed": 5.0
+}, {
+"frames": [{
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_5n02q")
+}],
+"loop": 0,
+"name": &"jump_hammer_ready",
 "speed": 5.0
 }, {
 "frames": [{
