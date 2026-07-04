@@ -1,11 +1,30 @@
 extends PlayerState
 
 
-# Called when the node enters the scene tree for the first time.
+var idle: PlayerState
+
+
+func _enter_tree() -> void:
+	init_action()
+	add_library()
+
+
 func _ready() -> void:
-	pass # Replace with function body.
+	idle = get_state(^"Idle")
 
 
-# Called every frame. 'delta' is the elapsed time since the previous frame.
-func _process(delta: float) -> void:
+func _enter() -> void:
+	play(&"jump_kick")
+	
+
+func _update(delta: float) -> void:
+	move_and_slide()
+	
+	if !is_on_floor():
+		get_gravity(970., 12.25)
+	else:
+		change_state(idle)
+
+
+func _exit() -> void:
 	pass

@@ -35,20 +35,28 @@ var input_map: Dictionary[PlayerState.Type, Dictionary] = {
 	},
 }
 var input_cache: PackedStringArray = PackedStringArray()
-
+var prev_input_dir: int = 0
 var _postpone: int = 0
 
 
 func _ready() -> void:
 	active_state_changed.connect(_on_active_state_changed)
-	
 	add_transition(ANYSTATE, get_state(^"Idle"), EV_REVERT)
 
 
 func _input(event: InputEvent) -> void:
 	if event.is_pressed() and !event.is_echo():
 		if Input.is_action_just_pressed(&"left") or Input.is_action_just_pressed(&"right"):
-			input_cache.push_back("front")
+			var input_dir_x: int = int(Input.get_action_strength("right") - Input.get_action_strength("left"))
+			if prev_input_dir == input_dir_x:
+				input_cache.push_back("front")
+				print("push back front")
+			else:
+				prev_input_dir = input_dir_x
+				input_cache.clear()
+				input_cache.push_back("front")
+				print("cache clear and push back front")
+			
 		elif Input.is_action_just_pressed(&"down"):
 			input_cache.push_back("down")
 		elif Input.is_action_just_pressed(&"up"):
@@ -65,16 +73,23 @@ func _input(event: InputEvent) -> void:
 func _physics_process(_delta: float) -> void:
 	var state: PlayerState.Type = get_player_state() # int
 	
-	if "attack" in input_cache or "kick" in input_cache:
+	_postpone = maxi(_postpone - 1, 0)
+	
+	if ("attack" in input_cache) or ("kick" in input_cache):
 		if input_map[state].has(input_cache):
 			dispatch(input_map[state][input_cache])
 			print("Dispatch => ", input_map[state][input_cache])
 		input_cache.clear()
+		return
+
+	if input_map[state].has(input_cache):
+		dispatch(input_map[state][input_cache])
+		input_cache.clear()
+		return
 	
 	if !input_cache.is_empty() and _postpone == 0:
 		input_cache.clear()
 
-	_postpone = maxi(_postpone - 1, 0)
 
 
 func _exit_tree() -> void:

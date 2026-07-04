@@ -32,6 +32,7 @@
 [ext_resource type="AnimationLibrary" uid="uid://docog8qdv8rj1" path="res://motion/aerial.res" id="30_njs1s"]
 [ext_resource type="AnimationLibrary" uid="uid://c4rqs4fs1eal4" path="res://motion/pushback.res" id="31_a8ovg"]
 [ext_resource type="AnimationLibrary" uid="uid://bvq7ynb3u3a8p" path="res://motion/wallhit.res" id="32_qjbny"]
+[ext_resource type="Script" uid="uid://im1wyvflgwp0" path="res://unit/state/unit_state.gd" id="33_qjbny"]
 
 [sub_resource type="Resource" id="Resource_pvbt4"]
 script = ExtResource("3_t3pbd")
@@ -362,6 +363,10 @@ script = ExtResource("29_a8ovg")
 type = 2
 anim_lib_name = &"wallhit"
 anim_lib = ExtResource("32_qjbny")
+metadata/_custom_type_script = "uid://im1wyvflgwp0"
+
+[node name="Pound" type="LimboState" parent="StateMachine" unique_id=1635532512]
+script = ExtResource("33_qjbny")
 metadata/_custom_type_script = "uid://im1wyvflgwp0"
 
 [node name="AnimationPlayer" type="AnimationPlayer" parent="." unique_id=1268957844]

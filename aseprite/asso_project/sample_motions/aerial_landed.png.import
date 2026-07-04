@@ -2,16 +2,16 @@
 
 importer="texture"
 type="CompressedTexture2D"
-uid="uid://dylbi6kcvr7md"
-path="res://.godot/imported/left_punch2.png-30024d640515dab1a203bd5a2582bf72.ctex"
+uid="uid://chbm5xxhheovr"
+path="res://.godot/imported/aerial_landed.png-7f55f198e550084a73c159a49d745edf.ctex"
 metadata={
 "vram_texture": false
 }
 
 [deps]
 
-source_file="res://aseprite/asso_project/sample_motions/left_punch2.png"
-dest_files=["res://.godot/imported/left_punch2.png-30024d640515dab1a203bd5a2582bf72.ctex"]
+source_file="res://aseprite/asso_project/sample_motions/aerial_landed.png"
+dest_files=["res://.godot/imported/aerial_landed.png-7f55f198e550084a73c159a49d745edf.ctex"]
 
 [params]
 

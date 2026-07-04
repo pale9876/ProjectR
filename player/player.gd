@@ -30,6 +30,9 @@ var state: State = State.new()
 @onready var hsm: StateMachine = $StateMachine
 
 
+var _prefix: StringName = &""
+
+
 func _init() -> void:
 	motion_mode = CharacterBody2D.MOTION_MODE_GROUNDED
 	
@@ -155,7 +158,9 @@ class InputState:
 				direction = value
 	var reserve_action: String
 	var order_duration: float = - 1.
-	var _duration: float = 0.
+	var _duration: float = 0.:
+		set(value):
+			_duration = maxf(0., value)
 	var _lock: bool = false
 
 
@@ -165,3 +170,7 @@ class InputState:
 
 	func unlock() -> void:
 		_lock = false
+
+
+	func locked() -> bool:
+		return _duration > 0.

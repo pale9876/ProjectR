@@ -13,7 +13,9 @@ enum {
 
 
 var state: int = LEFT
-var _postpone: int = -1
+var _postpone: int = 0:
+	set(value):
+		_postpone = maxi(0, value)
 
 
 var idle_state: LimboState
@@ -54,17 +56,17 @@ func _enter() -> void:
 	play(&"left_punch")
 	punch_combo_hitbox.scale.x = player.state.face.x
 	get_hsm().label.text = "Left Punch"
+	_postpone = 2
 
 
 func _update(_delta: float) -> void:
-	var player := get_player()
+	get_friction(10.25)
 	
-	player.velocity.x = move_toward(player.velocity.x, 0., 15.)
 	move_and_slide()
 	
 	match state:
 		LEFT:
-			if Input.is_action_just_pressed(&"attack"):
+			if Input.is_action_just_pressed(&"attack") and _postpone == 0:
 				_pressed = true
 			
 			if _pressed and _anim_finished:
@@ -97,6 +99,9 @@ func _update(_delta: float) -> void:
 	if _anim_finished:
 		get_hsm().change_active_state(idle_state)
 
+	if _postpone > 0:
+		_postpone -= 1
+
 
 func _exit() -> void:
 	_clear()
@@ -112,4 +117,3 @@ func _clear() -> void:
 func _animation_finished(anim_name: StringName):
 	if is_active() and (anim_name in get_anim().get_animation_list()):
 		_anim_finished = true
-		_postpone = anim_postpone

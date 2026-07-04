@@ -70,7 +70,7 @@ func _enter() -> void:
 	
 	assert(state != NONE, "피격 상태가 정해지지 않았습니다.")
 
-	var unit := _get_unit()
+	var unit := get_unit()
 	
 	match state:
 		KNOCKBACK:
@@ -85,7 +85,7 @@ func _enter() -> void:
 
 
 func _update(_delta: float) -> void:
-	var unit := _get_unit()
+	var unit := get_unit()
 	
 	match state:
 		KNOCKBACK:
@@ -120,7 +120,7 @@ func _update(_delta: float) -> void:
 		elif state == DOWN_ATTACKED:
 			pass
 		elif state == KNOCKBACK:
-			_get_hsm().change_active_state(idle_state)
+			get_hsm().change_active_state(idle_state)
 
 	else:
 		damage_frame -= 1
@@ -133,8 +133,8 @@ func _exit() -> void:
 
 
 func _on_animation_finished(anim_name: StringName) -> void:
-	var unit := _get_unit()
-	var hsm := _get_hsm()
+	var unit := get_unit()
+	var hsm := get_hsm()
 	
 	match anim_name:
 		&"standup":

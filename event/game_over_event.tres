@@ -1,0 +1,12 @@
+[gd_resource type="Resource" format=3 uid="uid://cl0gpxocxyxsn"]
+
+[ext_resource type="Script" uid="uid://c4cyify4buqc8" path="res://event/game_over_event.gd" id="1_um4lu"]
+
+[resource]
+script = ExtResource("1_um4lu")
+event = Dictionary[StringName, PackedStringArray]({
+&"hachi_dead": PackedStringArray("하치가 살해당했습니다.", "하치가 죽었습니다."),
+&"overload_dead": PackedStringArray("관리자가 자살하였습니다.", "관리자가 살해당했습니다."),
+&"overwheming": PackedStringArray(),
+&"unstoppable": PackedStringArray()
+})

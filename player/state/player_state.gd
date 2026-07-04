@@ -30,6 +30,10 @@ const StateMachine: Script = preload("uid://nmmtety5yvve")
 
 
 ## get_root()를 통하여 찾음.
+func get_state(node_path: NodePath) -> PlayerState:
+	return get_state_machine().get_state(node_path)
+
+
 func get_hsm() -> StateMachine:
 	return get_root() as StateMachine
 
@@ -64,6 +68,33 @@ func is_on_floor() -> bool:
 
 func move_and_slide() -> bool:
 	return get_player().move_and_slide()
+
+
+func get_gravity(max_y: float = 970., delta: float = 12.25) -> void:
+	var player := get_player()
+	player.velocity.y = move_toward(player.velocity.y, max_y, delta)
+
+
+func get_friction(delta: float = 12.25) -> void:
+	var player := get_player()
+	player.velocity.x = move_toward(player.velocity.x, 0., delta)
+
+
+func take_force(motion: Vector2) -> void:
+	var player := get_player()
+	
+	var shape_param := PhysicsShapeQueryParameters2D.new()
+	shape_param.shape = (player.get_node(^"UnitCollision") as CollisionShape2D).shape
+	shape_param.transform = player.get_global_transform()
+	shape_param.motion = Vector2(motion.x * player.input_state.direction.x, motion.y)
+	shape_param.collision_mask = 1
+	shape_param.exclude = [player.get_rid()]
+	
+	var direct_state := player.get_world_2d().direct_space_state
+	var result := direct_state.cast_motion(shape_param)
+	var unsafe_propotion: float = result[1]
+	
+	move_and_collide(unsafe_propotion * shape_param.motion)
 
 
 ## 노드패스를 통해 찾음.

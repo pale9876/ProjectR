@@ -21,6 +21,7 @@
 [ext_resource type="Texture2D" uid="uid://c8ye0j4iecttl" path="res://aseprite/asso_project/sample_motions/slide.png" id="11_5by7o"]
 [ext_resource type="Texture2D" uid="uid://7vf87863ggaa" path="res://aseprite/asso_project/sample_motions/pushback.png" id="11_yge5e"]
 [ext_resource type="Texture2D" uid="uid://b5hbk6tfjs2om" path="res://aseprite/asso_project/sample_motions/jump_hammer.png" id="15_6j8o8"]
+[ext_resource type="Texture2D" uid="uid://dfalkg2hwd5tl" path="res://aseprite/asso_project/sample_motions/jump_kick.png" id="16_hs0ge"]
 [ext_resource type="Texture2D" uid="uid://dnjwbiwriy5uu" path="res://aseprite/asso_project/sample_motions/standup.png" id="20_gw8al"]
 [ext_resource type="Texture2D" uid="uid://did8i67svyifq" path="res://aseprite/asso_project/sample_motions/wallcrash.png" id="22_eq8e5"]
 
@@ -199,6 +200,22 @@ region = Rect2(256, 0, 256, 256)
 [sub_resource type="AtlasTexture" id="AtlasTexture_5n02q"]
 atlas = ExtResource("15_6j8o8")
 region = Rect2(0, 0, 256, 256)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_g282n"]
+atlas = ExtResource("16_hs0ge")
+region = Rect2(0, 0, 256, 256)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_5iuue"]
+atlas = ExtResource("16_hs0ge")
+region = Rect2(256, 0, 256, 256)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_ped2w"]
+atlas = ExtResource("16_hs0ge")
+region = Rect2(512, 0, 256, 256)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_lvvhf"]
+atlas = ExtResource("16_hs0ge")
+region = Rect2(768, 0, 256, 256)
 
 [sub_resource type="AtlasTexture" id="AtlasTexture_klil2"]
 atlas = ExtResource("9_rkgx6")
@@ -522,6 +539,23 @@ animations = [{
 "loop": 0,
 "name": &"jump_hammer_ready",
 "speed": 5.0
+}, {
+"frames": [{
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_g282n")
+}, {
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_5iuue")
+}, {
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_ped2w")
+}, {
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_lvvhf")
+}],
+"loop": 0,
+"name": &"jump_kick",
+"speed": 10.0
 }, {
 "frames": [{
 "duration": 1.0,
