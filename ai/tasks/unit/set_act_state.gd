@@ -2,12 +2,15 @@
 extends BTAction
 
 
+@export var force_state: String
+
+
 func _generate_name() -> String:
 	return "행동 상태를 설정"
 
 
 func _enter() -> void:
-	blackboard.set_var(&"act", "patrol")
+	pass
 
 
 func _tick(_delta: float) -> Status:

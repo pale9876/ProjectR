@@ -14,6 +14,7 @@
 [ext_resource type="Script" uid="uid://bdj3moatwduju" path="res://unit/awareness.gd" id="9_yvxo8"]
 [ext_resource type="Script" uid="uid://dcybwuwfqeqr3" path="res://unit/state/state_machine.gd" id="10_x1h6o"]
 [ext_resource type="Script" uid="uid://8cq3ted0s3ob" path="res://unit/state/idle.gd" id="11_3b2yn"]
+[ext_resource type="Script" uid="uid://ditjbaamrfw0k" path="res://unit/dynamic_collision.gd" id="13_k0h15"]
 [ext_resource type="Script" uid="uid://cflyf2esm4eqo" path="res://unit/state/fall.gd" id="13_pvbt4"]
 [ext_resource type="Script" uid="uid://8j24mmna7pmh" path="res://unit/state/jump.gd" id="14_w11yh"]
 [ext_resource type="AnimationLibrary" uid="uid://c2lftjcgk3lp4" path="res://motion/idle.res" id="15_507e4"]
@@ -79,6 +80,7 @@ var/move_order/hint_string = ""
 
 [sub_resource type="BTAction" id="BTAction_a3q01"]
 script = ExtResource("3_6c1mr")
+force_state = null
 
 [sub_resource type="BBVariant" id="BBVariant_4xbu7"]
 type = 4
@@ -91,12 +93,14 @@ value = SubResource("BBVariant_4xbu7")
 
 [sub_resource type="BTConsolePrint" id="BTConsolePrint_a2j7n"]
 text = "순찰 중"
+_enabled = false
 
 [sub_resource type="BTAction" id="BTAction_n0aob"]
 script = ExtResource("8_1kauj")
 
 [sub_resource type="BTConsolePrint" id="BTConsolePrint_4xbu7"]
 text = "잠시 쉬는 중"
+_enabled = false
 
 [sub_resource type="BTWait" id="BTWait_a2j7n"]
 script = ExtResource("5_toejp")
@@ -116,12 +120,14 @@ value = SubResource("BBVariant_a3q01")
 
 [sub_resource type="BTConsolePrint" id="BTConsolePrint_j0e0d"]
 text = "타겟을 발견함."
+_enabled = false
 
 [sub_resource type="BTAction" id="BTAction_j0e0d"]
 script = ExtResource("6_2clmh")
 
 [sub_resource type="BTConsolePrint" id="BTConsolePrint_5dfwp"]
 text = "타겟이 인식반경에서 벗어남."
+_enabled = false
 
 [sub_resource type="BTSequence" id="BTSequence_a2j7n"]
 custom_name = "IF:: Act is \"Trace\""
@@ -151,6 +157,18 @@ blackboard_plan = SubResource("BlackboardPlan_2ul3e")
 root_task = SubResource("BTSequence_eras8")
 
 [sub_resource type="BlackboardPlan" id="BlackboardPlan_ak6ua"]
+
+[sub_resource type="BlackboardPlan" id="BlackboardPlan_k0h15"]
+var/prefix/name = &"prefix"
+var/prefix/type = 21
+var/prefix/value = &""
+var/prefix/hint = 0
+var/prefix/hint_string = ""
+var/suffix/name = &"suffix"
+var/suffix/type = 21
+var/suffix/value = &""
+var/suffix/hint = 0
+var/suffix/hint_string = ""
 
 [sub_resource type="Animation" id="Animation_njs1s"]
 length = 0.001
@@ -289,15 +307,24 @@ collision_layer = 0
 collision_mask = 2
 monitorable = false
 script = ExtResource("9_yvxo8")
-dist = 457.0
-x_offset = -30.0
 
-[node name="CollisionPolygon2D" type="CollisionPolygon2D" parent="Awareness" unique_id=1616752916]
+[node name="DynamicCollision" type="CollisionPolygon2D" parent="Awareness" unique_id=1616752916]
 modulate = Color(1, 1, 1, 0.16078432)
-polygon = PackedVector2Array(-30, -228, -30, -28, 427, -28, 427, -228)
+polygon = PackedVector2Array(-10, -215.5, -10, -40.5, 710, -40.5, 710, -215.5)
+script = ExtResource("13_k0h15")
+offset = Vector2(-10, -128)
+height = 175.0
+dist = 720.0
+
+[node name="AwarenessTimer" type="Timer" parent="Awareness" unique_id=361304879]
+wait_time = 4.0
 
 [node name="StateMachine" type="LimboHSM" parent="." unique_id=942695327]
+blackboard_plan = SubResource("BlackboardPlan_k0h15")
 script = ExtResource("10_x1h6o")
+
+[node name="#Default" type="LimboState" parent="StateMachine" unique_id=1756849474]
+process_mode = 4
 
 [node name="Idle" type="LimboState" parent="StateMachine" unique_id=641009354]
 script = ExtResource("11_3b2yn")
@@ -322,12 +349,15 @@ anim_lib_name = &"fakk"
 anim_lib = ExtResource("21_wp6bj")
 metadata/_custom_type_script = "uid://im1wyvflgwp0"
 
-[node name="Grabbed" type="LimboState" parent="StateMachine" unique_id=1553039524]
-script = ExtResource("19_cibo8")
-metadata/_custom_type_script = "uid://im1wyvflgwp0"
-
 [node name="Grab" type="LimboState" parent="StateMachine" unique_id=1141453359]
 script = ExtResource("20_2d64t")
+metadata/_custom_type_script = "uid://im1wyvflgwp0"
+
+[node name="#HurtState" type="LimboState" parent="StateMachine" unique_id=175340375]
+process_mode = 4
+
+[node name="Grabbed" type="LimboState" parent="StateMachine" unique_id=1553039524]
+script = ExtResource("19_cibo8")
 metadata/_custom_type_script = "uid://im1wyvflgwp0"
 
 [node name="Knockback" type="LimboState" parent="StateMachine" unique_id=1168315294]

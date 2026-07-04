@@ -3,6 +3,7 @@ extends CollisionPolygon2D
 class_name HitShapePolygon
 
 
+
 @export var offset: Vector2 = Vector2():
 	set(value):
 		offset = value
@@ -15,6 +16,11 @@ class_name HitShapePolygon
 	set(value):
 		hit_range = maxf(value, 0.)
 		set_collision()
+@export_range(0., 1., .001) var ratio: float = 1.:
+	set(value):
+		ratio = clampf(value, 0., 1.)
+		set_collision()
+
 
 @export var hitbox_info: HitboxInformation
 
@@ -41,7 +47,7 @@ func set_collision() -> void:
 	var top_right: Vector2 = Vector2(top_left.x + hit_range, top_left.y)
 	
 	polygon = [top_left, bottom_left, bottom_right, top_right]
-	
+
 
 
 func clear() -> void:

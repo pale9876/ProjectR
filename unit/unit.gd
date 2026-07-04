@@ -14,7 +14,6 @@ signal deactive()
 signal active()
 
 
-
 @export var info: UnitInformation
 @export var z_value: float = 0.
 @export var rage_mode: bool = true
@@ -28,6 +27,19 @@ signal active()
 
 var stat: Stat = Stat.new()
 var state: State = State.new()
+
+
+var _prefix: StringName = &""
+
+
+func set_prefix(prefix: StringName) -> void:
+	_prefix = prefix
+
+
+func get_prefix() -> StringName:
+	var pf: StringName = _prefix
+	_prefix = &""
+	return pf
 
 
 func get_anim() -> AnimationPlayer:
@@ -65,6 +77,7 @@ func _ready() -> void:
 		info.sprite_frames
 	)
 	
+	hsm.initial_state = hsm.get_state(^"Idle")
 	hsm.initialize(self)
 	hsm.set_active(true)
 
@@ -106,6 +119,18 @@ func get_sprite() -> AnimatedSprite2D:
 func get_hurtbox() -> Hurtbox:
 	return get_node(^"Hurtbox")
 
+
+
+func get_target() -> Node2D:
+	return get_btbb().get_var(&"target")
+
+
+func set_target(node: Node2D) -> void:
+	return get_btbb().set_var(&"target", node)
+
+
+func default() -> void:
+	set_target(null)
 
 class Stat:
 	var name: StringName

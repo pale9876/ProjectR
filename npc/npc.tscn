@@ -41,12 +41,14 @@ script = ExtResource("5_fnhme")
 
 [sub_resource type="BTConsolePrint" id="BTConsolePrint_uamtn"]
 text = "패트롤 랜덤 이동"
+_enabled = false
 
 [sub_resource type="BTAction" id="BTAction_fnhme"]
 script = ExtResource("5_ldo70")
 
 [sub_resource type="BTConsolePrint" id="BTConsolePrint_ocili"]
 text = "휴식 상태에 들어감."
+_enabled = false
 
 [sub_resource type="BTRandomWait" id="BTRandomWait_fnhme"]
 min_duration = 5.0
@@ -61,6 +63,7 @@ script = ExtResource("7_uamtn")
 
 [sub_resource type="BTConsolePrint" id="BTConsolePrint_phifv"]
 text = "타겟 발견 도주"
+_enabled = false
 
 [sub_resource type="BTSequence" id="BTSequence_fnhme"]
 custom_name = "Runaway"

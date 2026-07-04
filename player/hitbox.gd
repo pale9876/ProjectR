@@ -49,3 +49,26 @@ func clear() -> void:
 		if node is HitboxShape or node is HitShapePolygon:
 			node.clear()
 	hide()
+
+
+func get_hitbox(node_path: NodePath) -> HitboxShape:
+	return get_node(node_path) as HitboxShape
+
+
+func get_hitshape_polygon(node_path: NodePath) -> HitShapePolygon:
+	return get_node(node_path) as HitShapePolygon
+
+
+func set_dynamic(node_path: NodePath, offset: Vector2, height: float, range: float, ratio: float) -> void:
+	var hit_polygon: HitShapePolygon = get_hitshape_polygon(node_path)
+	hit_polygon.offset = offset
+	hit_polygon.height = height
+	hit_polygon.hit_range = range
+	hit_polygon.ratio = ratio
+
+
+func set_radius(node_path: NodePath, rad: float) -> void:
+	var hit_shape: HitboxShape = get_hitbox(node_path)
+	(hit_shape.shape as CircleShape2D).set_radius(rad)
+
+	

@@ -22,6 +22,7 @@
 [ext_resource type="AnimationLibrary" uid="uid://c2h4k66ayh87g" path="res://motion/jump.res" id="11_55jnj"]
 [ext_resource type="AnimationLibrary" uid="uid://d3445833nuf3o" path="res://motion/move.res" id="12_dx5ib"]
 [ext_resource type="AnimationLibrary" uid="uid://c2lftjcgk3lp4" path="res://motion/idle.res" id="12_pnw6m"]
+[ext_resource type="Script" uid="uid://c1823275u0dxi" path="res://player/state/comment.gd" id="15_fjxoa"]
 [ext_resource type="PackedScene" uid="uid://rcr22hd12ue1" path="res://player/state/slide.tscn" id="16_uw77l"]
 [ext_resource type="PackedScene" uid="uid://f6fubhe2evfi" path="res://player/state/block.tscn" id="17_uw77l"]
 [ext_resource type="Script" uid="uid://bksr64dd5dok4" path="res://player/knockback.gd" id="18_q28gw"]
@@ -37,6 +38,7 @@
 [ext_resource type="Script" uid="uid://cuoebdxrbtlye" path="res://player/state/blowkick.gd" id="22_r7pn3"]
 [ext_resource type="Script" uid="uid://dr8n2mbhooxjo" path="res://player/hitbox_component.gd" id="22_uw77l"]
 [ext_resource type="Script" uid="uid://xw07ofvvtrxk" path="res://hitbox_info.gd" id="23_s7qer"]
+[ext_resource type="Script" uid="uid://b7x8s5btnaxj2" path="res://player/state/player_state.gd" id="24_art4l"]
 [ext_resource type="Script" uid="uid://d2ox33o3w3u0r" path="res://unit/hitbox_shape.gd" id="24_rptt4"]
 [ext_resource type="Script" uid="uid://ddv2b0xf2yme3" path="res://player/grab_box.gd" id="28_rptt4"]
 [ext_resource type="Script" uid="uid://35l83ykfhcht" path="res://player/grab.gd" id="32_a2xo5"]
@@ -576,6 +578,10 @@ idle_state = NodePath("Idle")
 move_state = NodePath("Move")
 jump_state = NodePath("Jump")
 
+[node name="#Default" type="LimboState" parent="StateMachine" unique_id=1422560660]
+process_mode = 4
+script = ExtResource("15_fjxoa")
+
 [node name="Idle" type="LimboState" parent="StateMachine" unique_id=382262949 node_paths=PackedStringArray("move_state", "fall_state", "jump_state")]
 script = ExtResource("4_bvu1k")
 move_state = NodePath("../Move")
@@ -602,8 +608,34 @@ move_state = NodePath("../Move")
 anim_library = ExtResource("11_55jnj")
 library_name = &"jump"
 
+[node name="Block" parent="StateMachine" unique_id=1514818620 instance=ExtResource("17_uw77l")]
+
+[node name="Dodge" parent="StateMachine" unique_id=1740608329 instance=ExtResource("21_b8hi5")]
+action_input = PackedStringArray("down", "front")
+ev_name = &"dodge"
+anim_library = ExtResource("8_a2xo5")
+library_name = &"dodge"
+
+[node name="#HurtState" type="LimboState" parent="StateMachine" unique_id=1837165163]
+process_mode = 4
+script = ExtResource("15_fjxoa")
+metadata/_custom_type_script = "uid://c1823275u0dxi"
+
 [node name="Knockback" type="LimboState" parent="StateMachine" unique_id=1004344550]
 script = ExtResource("18_q28gw")
+
+[node name="Aerial" type="LimboState" parent="StateMachine" unique_id=1728554025]
+script = ExtResource("24_art4l")
+metadata/_custom_type_script = "uid://b7x8s5btnaxj2"
+
+[node name="#Attack" type="LimboState" parent="StateMachine" unique_id=1682804032]
+process_mode = 4
+script = ExtResource("15_fjxoa")
+metadata/_custom_type_script = "uid://c1823275u0dxi"
+
+[node name="Grab" type="LimboState" parent="StateMachine" unique_id=1617341275]
+script = ExtResource("32_a2xo5")
+metadata/_custom_type_script = "uid://b7x8s5btnaxj2"
 
 [node name="HighPunchCombo" type="LimboState" parent="StateMachine" unique_id=662588822 node_paths=PackedStringArray("punch_combo_hitbox")]
 script = ExtResource("9_yllr7")
@@ -615,8 +647,6 @@ anim_library = ExtResource("20_pnw6m")
 library_name = &"high_punch_combo"
 
 [node name="Slide" parent="StateMachine" unique_id=591192304 instance=ExtResource("16_uw77l")]
-
-[node name="Block" parent="StateMachine" unique_id=1514818620 instance=ExtResource("17_uw77l")]
 
 [node name="CounterAttack" parent="StateMachine" unique_id=893071231 instance=ExtResource("18_rptt4")]
 
@@ -634,16 +664,6 @@ action_input = PackedStringArray("attack")
 ev_name = &"jump_hammer"
 anim_library = ExtResource("9_dx5ib")
 library_name = &"jump_hammer"
-metadata/_custom_type_script = "uid://b7x8s5btnaxj2"
-
-[node name="Dodge" parent="StateMachine" unique_id=1740608329 instance=ExtResource("21_b8hi5")]
-action_input = PackedStringArray("down", "front")
-ev_name = &"dodge"
-anim_library = ExtResource("8_a2xo5")
-library_name = &"dodge"
-
-[node name="Grab" type="LimboState" parent="StateMachine" unique_id=1617341275]
-script = ExtResource("32_a2xo5")
 metadata/_custom_type_script = "uid://b7x8s5btnaxj2"
 
 [node name="Blowkick" type="LimboState" parent="StateMachine" unique_id=1713774209]
@@ -713,12 +733,12 @@ script = ExtResource("21_bjvpn")
 metadata/_custom_type_script = "uid://0dw4edo0eshv"
 
 [node name="Pa" type="CollisionPolygon2D" parent="CounterAttack" unique_id=1468070712]
-visible = false
 polygon = PackedVector2Array(0, -79.495, 0, -35.905003, 300, -35.905003, 300, -79.495)
 disabled = true
 script = ExtResource("22_bjvpn")
 offset = Vector2(0, -57.7)
 height = 43.59
+ratio = null
 hitbox_info = SubResource("Resource_bjvpn")
 
 [node name="StateLabel" type="Label" parent="." unique_id=1166794144]
@@ -728,10 +748,10 @@ offset_right = 29.0
 offset_bottom = -68.0
 
 [node name="GrabBox" type="Area2D" parent="." unique_id=172417262]
+visible = false
 script = ExtResource("28_rptt4")
 
 [node name="GrabCollision" type="CollisionShape2D" parent="GrabBox" unique_id=1783036628]
-visible = false
 modulate = Color(1, 1, 1, 0.32941177)
 position = Vector2(30, -62)
 shape = SubResource("CircleShape2D_ch6w5")
@@ -749,7 +769,6 @@ script = ExtResource("21_bjvpn")
 metadata/_custom_type_script = "uid://0dw4edo0eshv"
 
 [node name="CollisionShape2D" type="CollisionShape2D" parent="Blowkick" unique_id=1839622102]
-visible = false
 position = Vector2(25, -66)
 shape = SubResource("CapsuleShape2D_greoi")
 disabled = true
@@ -782,9 +801,9 @@ hitbox_info = SubResource("Resource_ch6w5")
 metadata/_custom_type_script = "uid://d2ox33o3w3u0r"
 
 [editable path="SpriteComponent"]
-[editable path="StateMachine/Slide"]
 [editable path="StateMachine/Block"]
+[editable path="StateMachine/Dodge"]
+[editable path="StateMachine/Slide"]
 [editable path="StateMachine/CounterAttack"]
 [editable path="StateMachine/JumpKick"]
-[editable path="StateMachine/Dodge"]
 [editable path="SlideHitbox"]

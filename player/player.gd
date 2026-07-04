@@ -148,7 +148,10 @@ class State:
 			if value != face:
 				face = value if value.x != 0. else Vector2i(face.x, value.y)
 				face_changed.emit()
-	var mouse_direction: Vector2 = Vector2()
+	var mouse_direction: Vector2 = Vector2():
+		set(value):
+			if mouse_direction != value:
+				mouse_direction = value
 
 
 class InputState:

@@ -30,7 +30,7 @@ func get_hsm() -> LimboHSM:
 	return get_root() as LimboHSM
 
 
-func _get_target() -> Node2D:
+func get_target() -> Node2D:
 	return get_unit().get_btbb().get_var(&"target") as Node2D
 
 
@@ -74,12 +74,26 @@ func event(ev: HitboxInformation) -> void:
 func set_data(info: Resource) -> void:
 	pass
 
+func take_force(motion: Vector2) -> void:
+	var unit := get_unit()
+	
+	var shape_param := PhysicsShapeQueryParameters2D.new()
+	shape_param.shape = (unit.get_node(^"UnitCollision") as CollisionShape2D).shape
+	shape_param.transform = unit.get_global_transform()
+	shape_param.motion = Vector2(motion.x * unit.input_state.direction.x, motion.y)
+	shape_param.collision_mask = 1
+	shape_param.exclude = [unit.get_rid()]
+	
+	var direct_state := unit.get_world_2d().direct_space_state
+	var result := direct_state.cast_motion(shape_param)
+	var unsafe_propotion: float = result[1]
+	
+	move_and_collide(unsafe_propotion * shape_param.motion)
 
 
 func _propel(motion: Vector2) -> void:
 	var unit := get_unit()
 	unit.velocity = motion
-
 
 
 func create_animlib() -> void:
@@ -118,3 +132,17 @@ func get_bb() -> Blackboard:
 
 func get_sprite() -> AnimatedSprite2D:
 	return get_state_machine().get_unit().get_sprite()
+
+
+func set_suffix(value: StringName) -> void:
+	set_bb_var(&"suffix", value)
+
+
+func get_suffix() -> StringName:
+	var result := get_bb_var(&"suffix") as StringName
+	set_bb_var(&"suffix", &"")
+	return result
+
+
+
+	

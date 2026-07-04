@@ -7,15 +7,17 @@ enum Type {
 	AERIAL,
 	PUSHBACK,
 	BLOWUP,
+	POUND,
 	DOWN_ATTACK,
 }
+
 
 const KNOCKBACK := Type.KNOCKBACK
 const AERIAL := Type.AERIAL
 const PUSHBACK := Type.PUSHBACK
 const BLOWUP := Type.BLOWUP
+const POUND := Type.POUND
 const DOWN_ATTACK := Type.DOWN_ATTACK
-
 
 
 @export_group("Attack Stat")
