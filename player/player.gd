@@ -7,7 +7,6 @@ const SpriteComponent: Script = preload("uid://b0paoljcmbiys")
 const SpriteModuler: Script = preload("uid://dbcsuysfwo30x")
 const Hurtbox: Script = preload("uid://er84buu2gymf")
 const PlayerCamera: Script = preload("uid://b7phyhue4y3yg")
-const HitboxComponent: Script = preload("uid://dr8n2mbhooxjo")
 const StateMachine: Script = preload("uid://nmmtety5yvve")
 
 
@@ -19,9 +18,9 @@ const StateMachine: Script = preload("uid://nmmtety5yvve")
 @export var z_value: float = 0.
 
 
-var input_state: InputState = InputState.new()
 var stat: Stat = Stat.new()
 var state: State = State.new()
+var input_state
 
 
 @onready var sprite_component: SpriteComponent = $SpriteComponent
@@ -34,9 +33,11 @@ var _prefix: StringName = &""
 
 
 func _init() -> void:
+	input_state = InputState
 	motion_mode = CharacterBody2D.MOTION_MODE_GROUNDED
 	
 	set_collision_mask_value(1, true)
+	set_collision_mask_value(2, false)
 	
 	set_collision_layer_value(1, false)
 	set_collision_layer_value(2, true)
@@ -71,8 +72,6 @@ func _ready() -> void:
 	hsm.initialize(self)
 	hsm.set_active(true)
 
-	input_state.unlock()
-
 
 func get_face() -> float:
 	return float(state.face.x)
@@ -101,13 +100,13 @@ func _process(_delta: float) -> void:
 func _soft_pause() -> void:
 	set_process(false)
 	set_physics_process(false)
-	input_state.lock()
+	InputState.lock()
 
 
 func _resume() -> void:
 	set_process(true)
 	set_physics_process(true)
-	input_state.unlock()
+	InputState.unlock()
 
 
 func get_state_machine() -> LimboHSM:
@@ -124,6 +123,10 @@ func get_moduler() -> SpriteModuler:
 
 func get_hurtbox() -> Hurtbox:
 	return get_node(^"Hurtbox") as Hurtbox
+
+
+func get_collider() -> CollisionShape2D:
+	return get_node(^"UnitCollision") as CollisionShape2D
 
 
 func get_camera() -> PlayerCamera:
@@ -162,28 +165,3 @@ class State:
 		set(value):
 			if mouse_direction != value:
 				mouse_direction = value
-
-
-class InputState:
-	var direction: Vector2 = Vector2.ZERO:
-		set(value):
-			if !_lock:
-				direction = value
-	var reserve_action: String
-	var order_duration: float = - 1.
-	var _duration: float = 0.:
-		set(value):
-			_duration = maxf(0., value)
-	var _lock: bool = false
-
-
-	func lock() -> void:
-		_lock = true
-
-
-	func unlock() -> void:
-		_lock = false
-
-
-	func locked() -> bool:
-		return _duration > 0.

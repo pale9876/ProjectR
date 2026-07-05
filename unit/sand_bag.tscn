@@ -272,6 +272,7 @@ info = SubResource("Resource_pvbt4")
 texture = SubResource("GradientTexture2D_wqsic")
 
 [node name="SpriteComponent" parent="." unique_id=363892716 instance=ExtResource("3_k7avp")]
+modulate = Color(1, 0, 0, 1)
 
 [node name="Upper" parent="SpriteComponent/SpriteModuler" parent_id_path=PackedInt32Array(363892716, 657174181) index="0" unique_id=12327840]
 visible = false
@@ -319,6 +320,8 @@ wait_time = 4.0
 [node name="AnimationPlayer" type="AnimationPlayer" parent="." unique_id=1268957844]
 libraries/ = SubResource("AnimationLibrary_a8ovg")
 libraries/aerial = ExtResource("30_njs1s")
+libraries/down = ExtResource("21_wp6bj")
+libraries/idle = ExtResource("15_507e4")
 script = ExtResource("36_yeahc")
 
 [node name="BTPlayer" type="BTPlayer" parent="." unique_id=415912197]

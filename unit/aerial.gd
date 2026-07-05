@@ -21,7 +21,7 @@ func _update(delta: float) -> void:
 		hsm.set_lock_frame(30)
 		hsm.change_active_state(get_state(^"Down"))
 	else:
-		get_gravity()
+		get_gravity(2250., 25.25)
 
 func event(info: HitboxInformation, result: HitResult) -> void:
 	match info.type:

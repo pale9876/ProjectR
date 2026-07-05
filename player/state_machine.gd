@@ -23,16 +23,13 @@ var locked_frame: int = 0:
 
 # input_arr : ev_name
 var input_map: Dictionary[PlayerState.Type, Dictionary] = {
-	PlayerState.Type.IDLE : {
+	PlayerState.IDLE : {
 		
 	},
-	PlayerState.Type.JUMP : {
+	PlayerState.JUMP : {
 		
 	},
 }
-var input_cache: PackedStringArray = PackedStringArray()
-var prev_input_dir: int = 0
-var _postpone: int = 0
 
 
 func _ready() -> void:
@@ -44,64 +41,48 @@ func _ready() -> void:
 			label.text = current.name
 	)
 
-func _input(event: InputEvent) -> void:
-	if event.is_pressed() and !event.is_echo():
-		if Input.is_action_just_pressed(&"left") or Input.is_action_just_pressed(&"right"):
-			var input_dir_x: int = int(Input.get_action_strength("right") - Input.get_action_strength("left"))
-			if prev_input_dir == input_dir_x:
-				input_cache.push_back("front")
-				#print("push back front")
-			else:
-				prev_input_dir = input_dir_x
-				input_cache.clear()
-				input_cache.push_back("front")
-				#print("cache clear and push back front")
-			
-		elif Input.is_action_just_pressed(&"down"):
-			input_cache.push_back("down")
-		elif Input.is_action_just_pressed(&"up"):
-			input_cache.push_back("up")
-		
-		if Input.is_action_just_pressed(&"attack"):
-			input_cache.push_back("attack")
-		if Input.is_action_just_pressed(&"kick"):
-			input_cache.push_back("kick")
-		
-		_postpone = input_postpone
-
-
 func _physics_process(_delta: float) -> void:
-	var state: PlayerState.Type = get_player_state() # int
+	var state: PlayerState.Type = get_current_type()
+	var input_cached := InputState.get_cached()
 	
-	_postpone = maxi(_postpone - 1, 0)
-	
-	if ("attack" in input_cache) or ("kick" in input_cache):
-		if input_map[state].has(input_cache):
-			dispatch(input_map[state][input_cache])
+	if ("attack" in input_cached) or ("kick" in input_cached):
+		if input_map[state].has(input_cached):
+			dispatch(input_map[state][input_cached])
 			#print("Dispatch => ", input_map[state][input_cache])
-		input_cache.clear()
+		InputState.clear()
 		return
 
-	if input_map[state].has(input_cache):
-		dispatch(input_map[state][input_cache])
-		input_cache.clear()
+	if input_map[state].has(input_cached):
+		dispatch(input_map[state][input_cached])
+		InputState.clear()
 		return
+
+	var active_states := get_active_states()
+	for active: PlayerActive in active_states:
+		if !active.cooldowned():
+			active.tick()
+
+
+func get_current_type() -> PlayerState.Type:
+	return current_state().type
+
+
+func current_state() -> PlayerState:
+	return get_active_state() as PlayerState
+
+
+func get_active_states() -> Array[PlayerActive]:
+	var result: Array[PlayerActive] = []
+	var category: LimboState = get_node(^"#ActState")
+	var start_idx: int = category.get_index() + 1
+	var last_idx: int = get_children().size()
 	
-	if !input_cache.is_empty() and _postpone == 0:
-		input_cache.clear()
+	result.resize(last_idx - start_idx)
+	
+	for i: int in range(last_idx - start_idx):
+		result[i] = get_child(start_idx + i) as PlayerActive
 
-
-
-func _exit_tree() -> void:
-	_postpone = 0
-
-
-func get_player_state() -> PlayerState.Type:
-	return PlayerState.IDLE if get_player().is_on_floor() else PlayerState.JUMP
-
-
-func get_action_input_map_list() -> PackedStringArray:
-	return input_map.keys()
+	return result
 
 
 func get_player() -> Player:
@@ -110,6 +91,10 @@ func get_player() -> Player:
 
 func get_state(state_name: NodePath) -> PlayerState:
 	return get_node(state_name) as PlayerState
+
+
+func get_action_input_map_list() -> PackedStringArray:
+	return input_map.keys()
 
 
 func inputmap_clear() -> void:

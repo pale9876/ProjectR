@@ -15,7 +15,7 @@ func _init() -> void:
 
 
 func push_result(_result: HitResult) -> void:
-	if hitbox_info.max_available_unit_hit_count < result.size():
+	if result.size() < hitbox_info.max_available_unit_hit_count:
 		result.push_back(_result)
 
 

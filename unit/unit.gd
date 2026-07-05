@@ -92,12 +92,16 @@ func _resume() -> void:
 	set_physics_process(false)
 
 
+func get_collider() -> CollisionShape2D:
+	return get_node(^"UnitCollision") as CollisionShape2D
+
+
 func get_awareness_area() -> Awareness:
-	return get_node(^"Awareness")
+	return get_node(^"Awareness") as Awareness
 
 
 func get_state_machine() -> LimboHSM:
-	return get_node(^"StateMachine")
+	return get_node(^"StateMachine") as LimboHSM
 
 
 func get_btbb() -> Blackboard:
@@ -109,7 +113,7 @@ func get_sprite() -> AnimatedSprite2D:
 
 
 func get_hurtbox() -> Hurtbox:
-	return get_node(^"Hurtbox")
+	return get_node(^"Hurtbox") as Hurtbox
 
 
 func get_target() -> Node2D:
@@ -122,6 +126,7 @@ func set_target(node: Node2D) -> void:
 
 func default() -> void:
 	set_target(null)
+
 
 class Stat:
 	var name: StringName

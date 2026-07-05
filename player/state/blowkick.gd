@@ -1,18 +1,25 @@
-extends PlayerState
+extends PlayerActive
 
 
-var idle_state: PlayerState
+var idle: PlayerState
 
-#@onready var anim: AnimationPlayer = $AnimationPlayer
+
+func _enter_tree() -> void:
+	idle = get_state(^"Idle")
 
 
 func _ready() -> void:
-	idle_state = get_state_machine().get_state(^"Idle")
+	get_anim().animation_finished.connect(_animation_finished)
 
 
 func _enter() -> void:
-	pass
+	play(&"blowkick")
 
 
 func _update(_delta: float) -> void:
-	pass
+	execute_move()
+
+
+func _animation_finished(_anim_name: StringName) -> void:
+	if _anim_name == anim_name(&"blowkick"):
+		get_hsm().revert()

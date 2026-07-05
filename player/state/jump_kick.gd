@@ -1,12 +1,7 @@
-extends PlayerState
+extends PlayerActive
 
 
 var idle: PlayerState
-
-
-func _enter_tree() -> void:
-	init_action()
-	add_library()
 
 
 func _ready() -> void:

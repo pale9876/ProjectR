@@ -1,4 +1,4 @@
-extends PlayerState
+extends PlayerActive
 
 
 
@@ -8,8 +8,6 @@ var idle_state: PlayerState
 var jump_state: PlayerState
 var fall_state: PlayerState
 
-
-var _anim_finished: bool = false
 
 
 func approved_position() -> bool:
@@ -31,14 +29,9 @@ func approved_position() -> bool:
 
 
 func _guard() -> bool:
-	if (get_state_machine().get_active_state() in [jump_state, fall_state]) and approved_position():
+	if get_state_machine().get_active_state() in [jump_state, fall_state] and approved_position():
 		return true
 	return false
-
-
-func _enter_tree() -> void:
-	init_action()
-	add_library()
 
 
 func _ready() -> void:

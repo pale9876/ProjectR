@@ -1,8 +1,9 @@
 # slide.gd
-extends PlayerState
+extends PlayerActive
 
 
 @export_custom(PROPERTY_HINT_RANGE, "-100., 100., .1") var force_minmax: Vector2
+
 
 var idle_state: LimboState
 var move_state: LimboState
@@ -15,10 +16,6 @@ func _guard() -> bool:
 	if is_on_floor() and get_state_machine().get_active_state() == move_state:
 		return true
 	return false
-
-
-func _enter_tree() -> void:
-	init_action()
 
 
 func _ready() -> void:

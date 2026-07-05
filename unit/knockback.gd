@@ -17,10 +17,10 @@ func _update(delta: float) -> void:
 	
 	unit.velocity.x = move_toward(unit.velocity.x, 0., 15.25)
 	
+	move_and_slide()
+
 	if !is_on_floor():
 		unit.velocity.y = move_toward(unit.velocity.y, 970., 15.25)
-	
-	move_and_slide()
 	
 	if state_machine.unlocked():
 		state_machine.dispatch(&"revert")

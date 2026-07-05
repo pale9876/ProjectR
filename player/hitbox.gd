@@ -22,25 +22,55 @@ func _init() -> void:
 
 func _enter_tree() -> void:
 	area_shape_entered.connect(_entered)
+	var player := get_parent() as Player
+	player.state.face_changed.connect(_on_face_changed)
+
+func _on_face_changed() -> void:
+	var player := get_parent() as Player
+	scale.x = player.get_face()
 
 
 func _exit_tree() -> void:
 	area_shape_entered.disconnect(_entered)
 
 
-func _entered(_rid: RID, area: Area2D, _area_idx: int, local_idx: int) -> void:
+func _entered(_rid: RID, area: Area2D, area_idx: int, local_idx: int) -> void:
 	if area is UnitHurtbox:
 		var _shape := get_child(local_idx) as HitboxShape
-		var player := get_parent() as Player
 		var hitbox_info: HitboxInformation = _shape.hitbox_info
+		var unit := area.get_parent() as Unit
+		var collider := unit.get_collider()
 		
+		if _shape.result.size() >= hitbox_info.max_available_unit_hit_count:
+			return
+		
+		if !check_collide(collider): return
+		
+		var player := get_parent() as Player
 		var hit_result: HitResult = HitResult.create(
-			player, area.get_parent() as Unit, player.get_face()
+			player, unit, player.get_face()
 		)
 		
 		area.damaged(hitbox_info, hit_result)
 		EventHorizon.player_hit(hitbox_info)
 		_shape.push_result(hit_result)
+
+
+func check_collide(to: Node2D) -> bool:
+	var player := get_parent() as Player
+	var param := PhysicsRayQueryParameters2D.create(
+		player.get_collider().global_position, to.global_position,
+		3, [player.get_rid()]
+	)
+	param.collide_with_areas = true
+	var result: Dictionary = get_world_2d().direct_space_state.intersect_ray(param)
+	if !result.is_empty():
+		if result.has("collider"):
+			var obj: Object = result["collider"]
+			if obj is StaticBody2D:
+				return false
+	
+	return true
 
 
 func clear() -> void:
@@ -50,7 +80,11 @@ func clear() -> void:
 	hide()
 
 
-func get_hitbox(node_path: NodePath) -> HitboxShape:
+func is_hit(node_path: NodePath) -> bool:
+	return !get_hitshape(node_path).result.is_empty()
+
+
+func get_hitshape(node_path: NodePath) -> HitboxShape:
 	return get_node(node_path) as HitboxShape
 
 
@@ -67,7 +101,7 @@ func set_dynamic(node_path: NodePath, offset: Vector2, height: float, range: flo
 
 
 func set_radius(node_path: NodePath, rad: float) -> void:
-	var hit_shape: HitboxShape = get_hitbox(node_path)
+	var hit_shape: HitboxShape = get_hitshape(node_path)
 	(hit_shape.shape as CircleShape2D).set_radius(rad)
 
 	

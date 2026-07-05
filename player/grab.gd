@@ -1,4 +1,4 @@
-extends PlayerState
+extends PlayerActive
 
 
 var grabbed: Node2D

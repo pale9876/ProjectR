@@ -1,5 +1,5 @@
 # counter_attack.gd
-extends PlayerState
+extends PlayerActive
 
 
 @export var anim: AnimationPlayer

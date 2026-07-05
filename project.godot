@@ -22,6 +22,7 @@ buses/default_bus_layout="uid://w8hk2j6ewb5f"
 
 [autoload]
 
+InputState="*uid://dv50hrkfe2ifw"
 GSignal="*uid://bjpdnvlv58vit"
 Global="*uid://o1g358yfihj8"
 SproutyDialogs="*uid://c8gxm75j80u8c"
