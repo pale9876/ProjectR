@@ -66,6 +66,8 @@ func _ready() -> void:
 			info.sprite
 		)
 
+	var idle_state := hsm.get_state(^"Idle")
+	hsm.initial_state = idle_state
 	hsm.initialize(self)
 	hsm.set_active(true)
 
@@ -108,6 +110,10 @@ func _resume() -> void:
 	input_state.unlock()
 
 
+func get_state_machine() -> LimboHSM:
+	return get_node(^"StateMachine")
+
+
 func get_sprite() -> AnimatedSprite2D:
 	return sprite_component.sprite
 
@@ -126,6 +132,10 @@ func get_camera() -> PlayerCamera:
 
 func get_anim() -> AnimationPlayer:
 	return get_node(animation_player) as AnimationPlayer
+
+
+func get_stage() -> Stage:
+	return get_parent() as Stage
 
 
 class Stat:

@@ -35,13 +35,12 @@ func _entered(_rid: RID, area: Area2D, _area_idx: int, local_idx: int) -> void:
 		var hitbox_info: HitboxInformation = _shape.hitbox_info
 		
 		var hit_result: HitResult = HitResult.create(
-			player, area.get_parent() as Unit, player.state.face
+			player, area.get_parent() as Unit, player.get_face()
 		)
 		
 		area.damaged(hitbox_info, hit_result)
+		EventHorizon.player_hit(hitbox_info)
 		_shape.push_result(hit_result)
-
-		print("Enemy Hit => damage: {%s}" % hitbox_info.damage)
 
 
 func clear() -> void:

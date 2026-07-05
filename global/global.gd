@@ -6,13 +6,11 @@ const PATH: String = "user://"
 
 # Import
 const Player: Script = preload("uid://c2uxhumgng18h")
-const NPC: Script = preload("uid://btmmen2m5ofg7")
 const MainScene: Script = preload("uid://cplgj2iixr7f6")
 
 
 # Scene
 const PLAYER_SCENE: PackedScene = preload("uid://br4srsyh160du")
-
 
 
 var data: Data
@@ -69,6 +67,10 @@ func start_dialog(
 		
 		player_dialog_parent.queue_free()
 		npc_dialog_parent.queue_free()
+
+
+func get_ingame_scene() -> Node:
+	return main_scene.ingame
 
 
 class Data extends Resource:

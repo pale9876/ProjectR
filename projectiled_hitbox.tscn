@@ -1,0 +1,12 @@
+[gd_scene format=3 uid="uid://chex0hq7pum6u"]
+
+[ext_resource type="Script" uid="uid://ulkqaypwpn2f" path="res://projectiled_hitbox.gd" id="1_5elg0"]
+
+[sub_resource type="CircleShape2D" id="CircleShape2D_wqsic"]
+radius = 26.172504
+
+[node name="ProjectiledHitbox" type="Area2D" unique_id=366485248]
+script = ExtResource("1_5elg0")
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="." unique_id=193690632]
+shape = SubResource("CircleShape2D_wqsic")

@@ -17,6 +17,7 @@
 [ext_resource type="Script" uid="uid://ditjbaamrfw0k" path="res://unit/dynamic_collision.gd" id="13_k0h15"]
 [ext_resource type="Script" uid="uid://cflyf2esm4eqo" path="res://unit/state/fall.gd" id="13_pvbt4"]
 [ext_resource type="Script" uid="uid://8j24mmna7pmh" path="res://unit/state/jump.gd" id="14_w11yh"]
+[ext_resource type="Script" uid="uid://c1823275u0dxi" path="res://player/state/comment.gd" id="15_4fp7c"]
 [ext_resource type="AnimationLibrary" uid="uid://c2lftjcgk3lp4" path="res://motion/idle.res" id="15_507e4"]
 [ext_resource type="AnimationLibrary" uid="uid://d3445833nuf3o" path="res://motion/move.res" id="17_4sfit"]
 [ext_resource type="Script" uid="uid://dmhr7bhy8lgt5" path="res://unit/move.gd" id="18_t3pbd"]
@@ -34,6 +35,7 @@
 [ext_resource type="AnimationLibrary" uid="uid://c4rqs4fs1eal4" path="res://motion/pushback.res" id="31_a8ovg"]
 [ext_resource type="AnimationLibrary" uid="uid://bvq7ynb3u3a8p" path="res://motion/wallhit.res" id="32_qjbny"]
 [ext_resource type="Script" uid="uid://im1wyvflgwp0" path="res://unit/state/unit_state.gd" id="33_qjbny"]
+[ext_resource type="Script" uid="uid://chb5h0vw5lpvq" path="res://player/animation_player.gd" id="36_yeahc"]
 
 [sub_resource type="Resource" id="Resource_pvbt4"]
 script = ExtResource("3_t3pbd")
@@ -61,114 +63,6 @@ size = Vector2(36, 91)
 
 [sub_resource type="RectangleShape2D" id="RectangleShape2D_t3pbd"]
 size = Vector2(27, 90)
-
-[sub_resource type="BlackboardPlan" id="BlackboardPlan_2ul3e"]
-var/target/name = &"target"
-var/target/type = 24
-var/target/hint = 34
-var/target/hint_string = ""
-var/act/name = &"act"
-var/act/type = 4
-var/act/value = "patrol"
-var/act/hint = 0
-var/act/hint_string = ""
-var/move_order/name = &"move_order"
-var/move_order/type = 27
-var/move_order/value = {}
-var/move_order/hint = 0
-var/move_order/hint_string = ""
-
-[sub_resource type="BTAction" id="BTAction_a3q01"]
-script = ExtResource("3_6c1mr")
-force_state = null
-
-[sub_resource type="BBVariant" id="BBVariant_4xbu7"]
-type = 4
-saved_value = "patrol"
-resource_name = "patrol"
-
-[sub_resource type="BTCheckVar" id="BTCheckVar_a2j7n"]
-variable = &"act"
-value = SubResource("BBVariant_4xbu7")
-
-[sub_resource type="BTConsolePrint" id="BTConsolePrint_a2j7n"]
-text = "순찰 중"
-_enabled = false
-
-[sub_resource type="BTAction" id="BTAction_n0aob"]
-script = ExtResource("8_1kauj")
-
-[sub_resource type="BTConsolePrint" id="BTConsolePrint_4xbu7"]
-text = "잠시 쉬는 중"
-_enabled = false
-
-[sub_resource type="BTWait" id="BTWait_a2j7n"]
-script = ExtResource("5_toejp")
-
-[sub_resource type="BTSequence" id="BTSequence_j0e0d"]
-custom_name = "IF :: Act is \"patrol\""
-children = [SubResource("BTCheckVar_a2j7n"), SubResource("BTConsolePrint_a2j7n"), SubResource("BTAction_n0aob"), SubResource("BTConsolePrint_4xbu7"), SubResource("BTWait_a2j7n")]
-
-[sub_resource type="BBVariant" id="BBVariant_a3q01"]
-type = 4
-saved_value = "trace"
-resource_name = "trace"
-
-[sub_resource type="BTCheckVar" id="BTCheckVar_4xbu7"]
-variable = &"act"
-value = SubResource("BBVariant_a3q01")
-
-[sub_resource type="BTConsolePrint" id="BTConsolePrint_j0e0d"]
-text = "타겟을 발견함."
-_enabled = false
-
-[sub_resource type="BTAction" id="BTAction_j0e0d"]
-script = ExtResource("6_2clmh")
-
-[sub_resource type="BTConsolePrint" id="BTConsolePrint_5dfwp"]
-text = "타겟이 인식반경에서 벗어남."
-_enabled = false
-
-[sub_resource type="BTSequence" id="BTSequence_a2j7n"]
-custom_name = "IF:: Act is \"Trace\""
-children = [SubResource("BTCheckVar_4xbu7"), SubResource("BTConsolePrint_j0e0d"), SubResource("BTAction_j0e0d"), SubResource("BTConsolePrint_5dfwp")]
-
-[sub_resource type="BBVariant" id="BBVariant_w11yh"]
-type = 4
-saved_value = "move"
-resource_name = "move"
-
-[sub_resource type="BTCheckVar" id="BTCheckVar_1kauj"]
-variable = &"act"
-value = SubResource("BBVariant_w11yh")
-
-[sub_resource type="BTSequence" id="BTSequence_yvxo8"]
-custom_name = "IF :: Act is \"move\""
-children = [SubResource("BTCheckVar_1kauj")]
-
-[sub_resource type="BTSelector" id="BTSelector_5dfwp"]
-children = [SubResource("BTSequence_j0e0d"), SubResource("BTSequence_a2j7n"), SubResource("BTSequence_yvxo8")]
-
-[sub_resource type="BTSequence" id="BTSequence_eras8"]
-children = [SubResource("BTAction_a3q01"), SubResource("BTSelector_5dfwp")]
-
-[sub_resource type="BehaviorTree" id="BehaviorTree_2ul3e"]
-blackboard_plan = SubResource("BlackboardPlan_2ul3e")
-root_task = SubResource("BTSequence_eras8")
-
-[sub_resource type="BlackboardPlan" id="BlackboardPlan_ak6ua"]
-
-[sub_resource type="BlackboardPlan" id="BlackboardPlan_k0h15"]
-var/prefix/name = &"prefix"
-var/prefix/type = 21
-var/prefix/value = &""
-var/prefix/hint = 0
-var/prefix/hint_string = ""
-var/suffix/name = &"suffix"
-var/suffix/type = 21
-var/suffix/value = &""
-var/suffix/hint = 0
-var/suffix/hint_string = ""
 
 [sub_resource type="Animation" id="Animation_njs1s"]
 length = 0.001
@@ -262,6 +156,113 @@ _data = {
 &"RESET": SubResource("Animation_njs1s")
 }
 
+[sub_resource type="BlackboardPlan" id="BlackboardPlan_2ul3e"]
+var/target/name = &"target"
+var/target/type = 24
+var/target/hint = 34
+var/target/hint_string = ""
+var/act/name = &"act"
+var/act/type = 4
+var/act/value = "patrol"
+var/act/hint = 0
+var/act/hint_string = ""
+var/move_order/name = &"move_order"
+var/move_order/type = 27
+var/move_order/value = {}
+var/move_order/hint = 0
+var/move_order/hint_string = ""
+
+[sub_resource type="BTAction" id="BTAction_a3q01"]
+script = ExtResource("3_6c1mr")
+
+[sub_resource type="BBVariant" id="BBVariant_4xbu7"]
+type = 4
+saved_value = "patrol"
+resource_name = "patrol"
+
+[sub_resource type="BTCheckVar" id="BTCheckVar_a2j7n"]
+variable = &"act"
+value = SubResource("BBVariant_4xbu7")
+
+[sub_resource type="BTConsolePrint" id="BTConsolePrint_a2j7n"]
+text = "순찰 중"
+_enabled = false
+
+[sub_resource type="BTAction" id="BTAction_n0aob"]
+script = ExtResource("8_1kauj")
+
+[sub_resource type="BTConsolePrint" id="BTConsolePrint_4xbu7"]
+text = "잠시 쉬는 중"
+_enabled = false
+
+[sub_resource type="BTWait" id="BTWait_a2j7n"]
+script = ExtResource("5_toejp")
+
+[sub_resource type="BTSequence" id="BTSequence_j0e0d"]
+custom_name = "IF :: Act is \"patrol\""
+children = [SubResource("BTCheckVar_a2j7n"), SubResource("BTConsolePrint_a2j7n"), SubResource("BTAction_n0aob"), SubResource("BTConsolePrint_4xbu7"), SubResource("BTWait_a2j7n")]
+
+[sub_resource type="BBVariant" id="BBVariant_a3q01"]
+type = 4
+saved_value = "trace"
+resource_name = "trace"
+
+[sub_resource type="BTCheckVar" id="BTCheckVar_4xbu7"]
+variable = &"act"
+value = SubResource("BBVariant_a3q01")
+
+[sub_resource type="BTConsolePrint" id="BTConsolePrint_j0e0d"]
+text = "타겟을 발견함."
+_enabled = false
+
+[sub_resource type="BTAction" id="BTAction_j0e0d"]
+script = ExtResource("6_2clmh")
+
+[sub_resource type="BTConsolePrint" id="BTConsolePrint_5dfwp"]
+text = "타겟이 인식반경에서 벗어남."
+_enabled = false
+
+[sub_resource type="BTSequence" id="BTSequence_a2j7n"]
+custom_name = "IF:: Act is \"Trace\""
+children = [SubResource("BTCheckVar_4xbu7"), SubResource("BTConsolePrint_j0e0d"), SubResource("BTAction_j0e0d"), SubResource("BTConsolePrint_5dfwp")]
+
+[sub_resource type="BBVariant" id="BBVariant_w11yh"]
+type = 4
+saved_value = "move"
+resource_name = "move"
+
+[sub_resource type="BTCheckVar" id="BTCheckVar_1kauj"]
+variable = &"act"
+value = SubResource("BBVariant_w11yh")
+
+[sub_resource type="BTSequence" id="BTSequence_yvxo8"]
+custom_name = "IF :: Act is \"move\""
+children = [SubResource("BTCheckVar_1kauj")]
+
+[sub_resource type="BTSelector" id="BTSelector_5dfwp"]
+children = [SubResource("BTSequence_j0e0d"), SubResource("BTSequence_a2j7n"), SubResource("BTSequence_yvxo8")]
+
+[sub_resource type="BTSequence" id="BTSequence_eras8"]
+children = [SubResource("BTAction_a3q01"), SubResource("BTSelector_5dfwp")]
+
+[sub_resource type="BehaviorTree" id="BehaviorTree_2ul3e"]
+blackboard_plan = SubResource("BlackboardPlan_2ul3e")
+root_task = SubResource("BTSequence_eras8")
+
+[sub_resource type="BlackboardPlan" id="BlackboardPlan_ak6ua"]
+
+[sub_resource type="BlackboardPlan" id="BlackboardPlan_k0h15"]
+var/prefix/name = &"prefix"
+var/prefix/type = 21
+var/prefix/value = &""
+var/prefix/hint = 0
+var/prefix/hint_string = ""
+var/suffix/name = &"suffix"
+var/suffix/type = 21
+var/suffix/value = &""
+var/suffix/hint = 0
+var/suffix/hint_string = ""
+
 [node name="SandBag" type="CharacterBody2D" unique_id=2064536848]
 collision_layer = 2
 script = ExtResource("1_xr0ca")
@@ -298,10 +299,6 @@ position = Vector2(-0.5, -46)
 shape = SubResource("RectangleShape2D_t3pbd")
 debug_color = Color(0.8509804, 0.03529412, 0.21960784, 0.39607844)
 
-[node name="BTPlayer" type="BTPlayer" parent="." unique_id=415912197]
-behavior_tree = SubResource("BehaviorTree_2ul3e")
-blackboard_plan = SubResource("BlackboardPlan_ak6ua")
-
 [node name="Awareness" type="Area2D" parent="." unique_id=731958170]
 collision_layer = 0
 collision_mask = 2
@@ -319,12 +316,23 @@ dist = 720.0
 [node name="AwarenessTimer" type="Timer" parent="Awareness" unique_id=361304879]
 wait_time = 4.0
 
+[node name="AnimationPlayer" type="AnimationPlayer" parent="." unique_id=1268957844]
+libraries/ = SubResource("AnimationLibrary_a8ovg")
+libraries/aerial = ExtResource("30_njs1s")
+script = ExtResource("36_yeahc")
+
+[node name="BTPlayer" type="BTPlayer" parent="." unique_id=415912197]
+behavior_tree = SubResource("BehaviorTree_2ul3e")
+blackboard_plan = SubResource("BlackboardPlan_ak6ua")
+
 [node name="StateMachine" type="LimboHSM" parent="." unique_id=942695327]
 blackboard_plan = SubResource("BlackboardPlan_k0h15")
 script = ExtResource("10_x1h6o")
 
-[node name="#Default" type="LimboState" parent="StateMachine" unique_id=1756849474]
+[node name="#Default" type="LimboState" parent="StateMachine" unique_id=1906376363]
 process_mode = 4
+script = ExtResource("15_4fp7c")
+metadata/_custom_type_script = "uid://c1823275u0dxi"
 
 [node name="Idle" type="LimboState" parent="StateMachine" unique_id=641009354]
 script = ExtResource("11_3b2yn")
@@ -353,12 +361,10 @@ metadata/_custom_type_script = "uid://im1wyvflgwp0"
 script = ExtResource("20_2d64t")
 metadata/_custom_type_script = "uid://im1wyvflgwp0"
 
-[node name="#HurtState" type="LimboState" parent="StateMachine" unique_id=175340375]
+[node name="#HurtState" type="LimboState" parent="StateMachine" unique_id=231535512]
 process_mode = 4
-
-[node name="Grabbed" type="LimboState" parent="StateMachine" unique_id=1553039524]
-script = ExtResource("19_cibo8")
-metadata/_custom_type_script = "uid://im1wyvflgwp0"
+script = ExtResource("15_4fp7c")
+metadata/_custom_type_script = "uid://c1823275u0dxi"
 
 [node name="Knockback" type="LimboState" parent="StateMachine" unique_id=1168315294]
 script = ExtResource("21_bnltu")
@@ -397,9 +403,17 @@ metadata/_custom_type_script = "uid://im1wyvflgwp0"
 
 [node name="Pound" type="LimboState" parent="StateMachine" unique_id=1635532512]
 script = ExtResource("33_qjbny")
+type = 2
 metadata/_custom_type_script = "uid://im1wyvflgwp0"
 
-[node name="AnimationPlayer" type="AnimationPlayer" parent="." unique_id=1268957844]
-libraries/ = SubResource("AnimationLibrary_a8ovg")
+[node name="Grabbed" type="LimboState" parent="StateMachine" unique_id=1553039524]
+script = ExtResource("19_cibo8")
+type = 2
+metadata/_custom_type_script = "uid://im1wyvflgwp0"
+
+[node name="#AttackState" type="LimboState" parent="StateMachine" unique_id=31685021]
+process_mode = 4
+script = ExtResource("15_4fp7c")
+metadata/_custom_type_script = "uid://c1823275u0dxi"
 
 [editable path="SpriteComponent"]

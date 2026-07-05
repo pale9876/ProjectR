@@ -5,10 +5,10 @@ class_name HitResult
 
 var from: Node2D
 var to: Node2D
-var attack_direction: Vector2
+var attack_direction: float
 
 
-static func create(_from: Node2D, _to: Node2D, dir: Vector2) -> HitResult:
+static func create(_from: Node2D, _to: Node2D, dir: float) -> HitResult:
 	var result := HitResult.new()
 	
 	result.from = _from

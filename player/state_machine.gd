@@ -16,13 +16,9 @@ const EV_REVERT: StringName = &"revert"
 @export var input_postpone: int = 3
 
 
-# Default States
-@export_category("Default States")
-@export var idle_state: LimboState
-@export var block_state: LimboState
-@export var move_state: LimboState
-@export var jump_state: LimboState
-
+var locked_frame: int = 0:
+	set(value):
+		locked_frame = maxi(value, 0)
 
 
 # input_arr : ev_name
@@ -40,9 +36,13 @@ var _postpone: int = 0
 
 
 func _ready() -> void:
-	active_state_changed.connect(_on_active_state_changed)
-	add_transition(ANYSTATE, get_state(^"Idle"), EV_REVERT)
+	var idle_state := get_state(^"Idle")
+	add_transition(ANYSTATE, idle_state, EV_REVERT)
 
+	active_state_changed.connect(
+		func(current: LimboState, _prev: LimboState) -> void:
+			label.text = current.name
+	)
 
 func _input(event: InputEvent) -> void:
 	if event.is_pressed() and !event.is_echo():
@@ -50,12 +50,12 @@ func _input(event: InputEvent) -> void:
 			var input_dir_x: int = int(Input.get_action_strength("right") - Input.get_action_strength("left"))
 			if prev_input_dir == input_dir_x:
 				input_cache.push_back("front")
-				print("push back front")
+				#print("push back front")
 			else:
 				prev_input_dir = input_dir_x
 				input_cache.clear()
 				input_cache.push_back("front")
-				print("cache clear and push back front")
+				#print("cache clear and push back front")
 			
 		elif Input.is_action_just_pressed(&"down"):
 			input_cache.push_back("down")
@@ -78,7 +78,7 @@ func _physics_process(_delta: float) -> void:
 	if ("attack" in input_cache) or ("kick" in input_cache):
 		if input_map[state].has(input_cache):
 			dispatch(input_map[state][input_cache])
-			print("Dispatch => ", input_map[state][input_cache])
+			#print("Dispatch => ", input_map[state][input_cache])
 		input_cache.clear()
 		return
 
@@ -98,10 +98,6 @@ func _exit_tree() -> void:
 
 func get_player_state() -> PlayerState.Type:
 	return PlayerState.IDLE if get_player().is_on_floor() else PlayerState.JUMP
-
-
-func _on_active_state_changed(current: LimboState, prev: LimboState) -> void:
-	label.text = current.name
 
 
 func get_action_input_map_list() -> PackedStringArray:

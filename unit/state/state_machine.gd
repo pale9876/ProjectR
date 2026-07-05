@@ -2,7 +2,6 @@
 extends LimboHSM
 
 
-
 var locked_frame: int = 0:
 	set(value):
 		locked_frame = maxi(value, 0)
@@ -12,8 +11,15 @@ func _ready() -> void:
 	add_transition(ANYSTATE, get_state(^"Idle"), &"revert")
 
 
-func init_hurt_state(info: HitboxInformation, state: LimboState) -> void:
+func _physics_process(delta: float) -> void:
+	if locked_frame > 0:
+		locked_frame -= 1
+
+
+func init_hurt_state(info: HitboxInformation, hit_result: HitResult, state: LimboState) -> void:
 	set_lock_frame(info.damage_frame)
+	var unit := get_unit()
+	unit.velocity = Vector2(info.force.x * hit_result.attack_direction, info.force.y ) 
 	change_active_state(state)
 
 

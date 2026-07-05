@@ -73,20 +73,14 @@ func _physics_process(_delta: float) -> void:
 func damaged(hitbox_info: HitboxInformation, hit_result: HitResult) -> void:
 	if is_invincible: return
 	
-	var unit: Unit = get_parent() as Unit
-	
 	if !has_dodged() and !blocked_attack(hitbox_info, hit_result) and effective():
-		var state_machine := unit.hsm
-		var current_state: LimboState = state_machine.get_active_state()
-		var grabbed := state_machine.get_state(^"Grabbed") as GrabbedState
-		
-		if !blocked_attack(hitbox_info, hit_result) and effective() and !has_dodged() and !parried():
-			set_hurt_state(hitbox_info)
+		set_hurt_state(hitbox_info, hit_result)
 
-func set_hurt_state(hitbox_info: HitboxInformation) -> void:
+
+func set_hurt_state(hitbox_info: HitboxInformation, hit_result: HitResult) -> void:
 	var state_machine := (get_parent() as Unit).hsm
 	var current_state := state_machine.get_active_state() as UnitState
-	var next_state: UnitState
+	var next_state: UnitState = null
 	
 	if !current_state in get_hurt_states():
 		match hitbox_info.type:
@@ -96,8 +90,11 @@ func set_hurt_state(hitbox_info: HitboxInformation) -> void:
 				next_state = get_aerial_state()
 			HitboxInformation.PUSHBACK:
 				next_state = get_pushback_state()
+			HitboxInformation.POUND:
+				next_state = get_pound_state()
+		state_machine.init_hurt_state(hitbox_info, hit_result, next_state)
 	else:
-		current_state.event(hitbox_info)
+		current_state.event(hitbox_info, hit_result)
 
 
 func get_hurt_states() -> Array[UnitState]:
@@ -108,6 +105,10 @@ func get_hurt_states() -> Array[UnitState]:
 		get_wallhit_state(),
 		get_down_state(),
 	]
+
+
+func get_pound_state() -> UnitState:
+	return (get_parent() as Unit).hsm.get_state(^"Pound")
 
 
 func get_knockback_state() -> KnockbackState:
@@ -167,3 +168,25 @@ func blocked_attack(info: HitboxInformation, result: HitResult) -> bool:
 		return true
 	
 	return false
+
+
+func check_collide(to: Node2D) -> bool:
+	var unit := get_parent() as Unit
+	var param := PhysicsRayQueryParameters2D.create(
+		unit.global_position, to.global_position
+	)
+	
+	param.collision_mask = 1
+	param.exclude = [unit.get_rid()]
+	
+	var result: Dictionary = get_world_2d().direct_space_state.intersect_ray(param)
+	
+	if !result.is_empty():
+		var collider: Object = result["collider"]
+		if collider is StaticBody2D:
+			return false
+	
+	return true
+
+
+	

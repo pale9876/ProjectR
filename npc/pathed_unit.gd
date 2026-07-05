@@ -1,11 +1,14 @@
 extends PathFollow2D
+class_name NPC
 
 
 @export var info: UnitInformation
 @export var z_value: float = 0.
 
+
 @onready var sprite: AnimatedSprite2D = $AnimatedSprite2D
 @onready var bt: BTPlayer = $BTPlayer
+@onready var hsm: LimboHSM = $LimboHSM
 
 
 var stat: Stat = Stat.new()
@@ -17,8 +20,8 @@ func _ready() -> void:
 	stat.name = info.name
 
 
-func get_root() -> NPCPath:
-	return get_parent() as NPCPath
+func get_stage() -> Stage:
+	return get_parent() as Stage
 
 
 class Stat:

@@ -96,16 +96,8 @@ func get_awareness_area() -> Awareness:
 	return get_node(^"Awareness")
 
 
-func _agent_velocity_computed(_safe: Vector2) -> void:
-	pass
-
-
-func _agent_navigation_finished() -> void:
-	pass
-
-
-func _refresh_path() -> void:
-	pass
+func get_state_machine() -> LimboHSM:
+	return get_node(^"StateMachine")
 
 
 func get_btbb() -> Blackboard:
@@ -118,7 +110,6 @@ func get_sprite() -> AnimatedSprite2D:
 
 func get_hurtbox() -> Hurtbox:
 	return get_node(^"Hurtbox")
-
 
 
 func get_target() -> Node2D:

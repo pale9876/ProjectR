@@ -42,6 +42,16 @@ func is_on_floor() -> bool:
 	return get_unit().is_on_floor()
 
 
+func get_gravity(max: float = 970., delta: float = 12.25) -> void:
+	var unit := get_unit()
+	unit.velocity.y = move_toward(unit.velocity.y, max, delta)
+
+
+func get_friction(delta: float = 12.25) -> void:
+	var unit := get_unit()
+	unit.velocity.x = move_toward(unit.velocity.x, 0., 12.25)
+
+
 func move_and_slide() -> bool:
 	return get_unit().move_and_slide()
 
@@ -57,6 +67,10 @@ func get_state_machine() -> StateMachine:
 	return get_parent() as StateMachine
 
 
+func change_state(state: LimboState) -> void:
+	get_hsm().change_active_state(state)
+
+
 func get_anim() -> AnimationPlayer:
 	return get_state_machine().get_anim()
 
@@ -66,13 +80,14 @@ func play(anim_name: StringName) -> void:
 
 
 # OVERRIDE
-func event(ev: HitboxInformation) -> void:
+func event(ev: HitboxInformation, _result: HitResult) -> void:
 	pass
 
 
 # OVERRIDE
-func set_data(info: Resource) -> void:
+func set_hurt_data(info: HitboxInformation) -> void:
 	pass
+
 
 func take_force(motion: Vector2) -> void:
 	var unit := get_unit()
@@ -142,7 +157,3 @@ func get_suffix() -> StringName:
 	var result := get_bb_var(&"suffix") as StringName
 	set_bb_var(&"suffix", &"")
 	return result
-
-
-
-	

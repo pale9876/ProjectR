@@ -9,6 +9,14 @@ const SpriteModuler: Script = preload("uid://dbcsuysfwo30x")
 @export var sprite: AnimatedSprite2D
 
 
+var force: Vector2
+var time: float:
+	set(value):
+		time = maxf(0., value)
+var time_scale: float:
+	set(value):
+		time_scale = maxf(0., value)
+
 
 func init_sprites(
 	_upper: SpriteFrames,
@@ -25,6 +33,15 @@ func _ready() -> void:
 	moduler.hide()
 
 
+func _physics_process(delta: float) -> void:
+	if time > 0.:
+		force = - force
+		
+		position = position.lerp(force, randf_range(.125, .225))
+		force = force.lerp(Vector2(), randf_range(.095, .225))
+		time -= delta * time_scale
+
+
 func play_modules(anim_name: StringName) -> void:
 	moduler.play(anim_name)
 	moduler.show()
@@ -38,5 +55,6 @@ func play(anim_name: StringName) -> void:
 	sprite.show()
 
 
-func shake() -> void:
-	pass
+func shake(_force: Vector2, _duration: float, _scale: float) -> void:
+	force = _force
+	time = _duration

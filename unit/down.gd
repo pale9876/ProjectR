@@ -1,11 +1,20 @@
+# unit/state/down.gd
 extends UnitState
 
 
-# Called when the node enters the scene tree for the first time.
-func _ready() -> void:
-	pass # Replace with function body.
+func _enter_tree() -> void:
+	add_library()
 
 
-# Called every frame. 'delta' is the elapsed time since the previous frame.
-func _process(delta: float) -> void:
-	pass
+func _enter() -> void:
+	play(&"down")
+
+
+func _update(delta: float) -> void:
+	var hsm := get_state_machine()
+	
+	get_friction()
+	move_and_slide()
+	
+	if hsm.unlocked():
+		hsm.revert()

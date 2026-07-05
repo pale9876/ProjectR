@@ -111,6 +111,8 @@ behavior_tree = SubResource("BehaviorTree_guff7")
 update_mode = 0
 blackboard_plan = SubResource("BlackboardPlan_ocili")
 
+[node name="LimboHSM" type="LimboHSM" parent="." unique_id=1397483233]
+
 [node name="Hurtbox" type="Area2D" parent="." unique_id=214457877]
 
 [node name="CollisionShape2D" type="CollisionShape2D" parent="Hurtbox" unique_id=1090026182]

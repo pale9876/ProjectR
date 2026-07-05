@@ -7,8 +7,8 @@ func _enter_tree() -> void:
 
 
 func _enter() -> void:
-	pass
-
+	#get_unit().velocity.y = 0.
+	play(&"knockback")
 
 
 func _update(delta: float) -> void:
@@ -22,16 +22,21 @@ func _update(delta: float) -> void:
 	
 	move_and_slide()
 	
-	
 	if state_machine.unlocked():
 		state_machine.dispatch(&"revert")
+		print("unlocked")
 
 
-
-func event(info: HitboxInformation) -> void:
+func event(info: HitboxInformation, _result: HitResult) -> void:
 	var hsm := get_state_machine()
-	if info.type == HitboxInformation.AERIAL:
-		get_hsm().change_active_state(get_state(^"Aerial"))
+	
+	match info.type:
+		HitboxInformation.AERIAL:
+			var aerial := get_state(^"Aerial")
+			hsm.init_hurt_state(info, _result, aerial)
+		HitboxInformation.KNOCKBACK:
+			hsm.init_hurt_state(info, _result, self)
+		
 
 
 func _exit() -> void:

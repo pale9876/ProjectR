@@ -60,6 +60,7 @@ func _enter() -> void:
 
 
 func _update(_delta: float) -> void:
+	var hsm := get_hsm() as StateMachine
 	get_friction(10.25)
 	
 	move_and_slide()
@@ -74,7 +75,7 @@ func _update(_delta: float) -> void:
 				state = RIGHT
 				_anim_finished = false
 				_pressed = false
-				get_hsm().label.text = "Right Punch"
+				hsm.label.text = "Right Punch"
 				return
 		RIGHT:
 			if Input.is_action_just_pressed(&"attack"):
@@ -85,11 +86,11 @@ func _update(_delta: float) -> void:
 			if _pressed and _anim_finished:
 				if _just:
 					play(&"hammer_ex")
-					get_hsm().label.text = "Hammer EX"
+					hsm.label.text = "Hammer EX"
 					_just = false
 				else:
 					play(&"hammer")
-					get_hsm().label.text = "Hammer"
+					hsm.label.text = "Hammer"
 				state = HAMMER
 				_anim_finished = false
 				_pressed = false

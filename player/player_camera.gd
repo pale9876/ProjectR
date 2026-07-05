@@ -6,11 +6,11 @@ extends Camera2D
 const Player = preload("uid://c2uxhumgng18h")
 
 
+@export var time_scale: float = 3.
+
+
 var force: Vector2
 var time: float
-
-
-@export var time_scale: float = 3.
 
 
 func _physics_process(delta: float) -> void:
