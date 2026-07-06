@@ -35,6 +35,7 @@ window/size/viewport_width=640
 window/size/viewport_height=360
 window/size/window_width_override=1280
 window/size/window_height_override=720
+window/subwindows/embed_subwindows=false
 window/stretch/mode="viewport"
 window/vsync/vsync_mode=0
 
@@ -188,3 +189,5 @@ translation/localization/locales=["en_US", "ko_KR"]
 internal/play_dialog_path="res://dialogue/sample.tres"
 internal/play_start_id="HELLO"
 general/input/save_sprouty_only=true
+internal/last_opened_files=[]
+internal/last_selected_file_index=-1

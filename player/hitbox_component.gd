@@ -8,5 +8,5 @@ func get_hitbox(node_path: NodePath) -> PlayerHitbox:
 
 
 func add_projectile(hitbox_scene: PackedScene) -> void:
-	var _projectile := hitbox_scene.instantiate() as ProjectiledHitbox
+	var _projectile := hitbox_scene.instantiate() as PlayerProjectiledHitbox
 	add_child(_projectile)

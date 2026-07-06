@@ -1,12 +1,21 @@
 [gd_scene format=3 uid="uid://chex0hq7pum6u"]
 
 [ext_resource type="Script" uid="uid://ulkqaypwpn2f" path="res://projectiled_hitbox.gd" id="1_5elg0"]
+[ext_resource type="Script" uid="uid://d2ox33o3w3u0r" path="res://unit/hitbox_shape.gd" id="2_uuk2o"]
+[ext_resource type="Script" uid="uid://xw07ofvvtrxk" path="res://hitbox_info.gd" id="3_bw3e0"]
 
-[sub_resource type="CircleShape2D" id="CircleShape2D_wqsic"]
-radius = 26.172504
+[sub_resource type="RectangleShape2D" id="RectangleShape2D_uuk2o"]
+size = Vector2(42, 16)
+
+[sub_resource type="Resource" id="Resource_wqsic"]
+script = ExtResource("3_bw3e0")
+metadata/_custom_type_script = "uid://xw07ofvvtrxk"
 
 [node name="ProjectiledHitbox" type="Area2D" unique_id=366485248]
 script = ExtResource("1_5elg0")
 
-[node name="CollisionShape2D" type="CollisionShape2D" parent="." unique_id=193690632]
-shape = SubResource("CircleShape2D_wqsic")
+[node name="HitboxShape" type="CollisionShape2D" parent="." unique_id=894651472]
+shape = SubResource("RectangleShape2D_uuk2o")
+script = ExtResource("2_uuk2o")
+hitbox_info = SubResource("Resource_wqsic")
+metadata/_custom_type_script = "uid://d2ox33o3w3u0r"

@@ -1,0 +1,22 @@
+[gd_scene format=3 uid="uid://dyi2rrrxgabsy"]
+
+[ext_resource type="Script" uid="uid://djdmi4rsrlbx7" path="res://map_editor/maptile.gd" id="1_sirjq"]
+
+[sub_resource type="StyleBoxFlat" id="StyleBoxFlat_g77rs"]
+
+[node name="Tile" type="PanelContainer" unique_id=1250108154]
+custom_minimum_size = Vector2(20, 20)
+offset_right = 20.0
+offset_bottom = 20.0
+size_flags_horizontal = 3
+size_flags_vertical = 3
+theme_override_styles/panel = SubResource("StyleBoxFlat_g77rs")
+script = ExtResource("1_sirjq")
+
+[node name="TextureRect" type="TextureRect" parent="." unique_id=1217525936]
+layout_mode = 2
+expand_mode = 1
+stretch_mode = 3
+
+[node name="Button" type="Button" parent="." unique_id=300087497]
+layout_mode = 2

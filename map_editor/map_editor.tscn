@@ -1,0 +1,194 @@
+[gd_scene format=3 uid="uid://dk2cx80kejb7y"]
+
+[ext_resource type="Script" uid="uid://dh7o2hk7gte68" path="res://map_editor/map_editor.gd" id="1_3wi22"]
+[ext_resource type="Script" uid="uid://b2wn5idfki8e3" path="res://map_editor/map_grid.gd" id="2_un4jc"]
+[ext_resource type="Script" uid="uid://cwphc46lnkhgf" path="res://map_editor/init_settings.gd" id="3_qkagh"]
+[ext_resource type="Script" uid="uid://b7mynrh8bxsyr" path="res://map_editor/settings_file_dialog.gd" id="4_fsb40"]
+[ext_resource type="Script" uid="uid://bith0lvumu244" path="res://map_editor/scene_file_dialog.gd" id="5_wu3br"]
+
+[node name="MapEditor" type="CanvasLayer" unique_id=1642305168]
+script = ExtResource("1_3wi22")
+
+[node name="ScrollContainer" type="ScrollContainer" parent="." unique_id=2013941697]
+anchors_preset = 15
+anchor_right = 1.0
+anchor_bottom = 1.0
+grow_horizontal = 2
+grow_vertical = 2
+
+[node name="Grid" type="GridContainer" parent="ScrollContainer" unique_id=1511641251]
+layout_mode = 2
+size_flags_horizontal = 3
+size_flags_vertical = 3
+columns = 256
+script = ExtResource("2_un4jc")
+
+[node name="InitSettings" type="PanelContainer" parent="." unique_id=148454914]
+visible = false
+anchors_preset = 15
+anchor_right = 1.0
+anchor_bottom = 1.0
+grow_horizontal = 2
+grow_vertical = 2
+script = ExtResource("3_qkagh")
+
+[node name="MarginContainer" type="MarginContainer" parent="InitSettings" unique_id=268955328]
+layout_mode = 2
+theme_override_constants/margin_left = 100
+theme_override_constants/margin_top = 100
+theme_override_constants/margin_right = 100
+theme_override_constants/margin_bottom = 100
+
+[node name="VBoxContainer" type="VBoxContainer" parent="InitSettings/MarginContainer" unique_id=709218419]
+layout_mode = 2
+
+[node name="HBoxContainer2" type="HBoxContainer" parent="InitSettings/MarginContainer/VBoxContainer" unique_id=731612550]
+layout_mode = 2
+
+[node name="Label" type="Label" parent="InitSettings/MarginContainer/VBoxContainer/HBoxContainer2" unique_id=1326525107]
+layout_mode = 2
+size_flags_horizontal = 3
+text = "Map Name :"
+horizontal_alignment = 1
+
+[node name="MapTitle" type="LineEdit" parent="InitSettings/MarginContainer/VBoxContainer/HBoxContainer2" unique_id=1316934165]
+unique_name_in_owner = true
+layout_mode = 2
+size_flags_horizontal = 3
+placeholder_text = "Title"
+
+[node name="HBoxContainer" type="HBoxContainer" parent="InitSettings/MarginContainer/VBoxContainer" unique_id=907097921]
+layout_mode = 2
+
+[node name="MarginContainer" type="MarginContainer" parent="InitSettings/MarginContainer/VBoxContainer/HBoxContainer" unique_id=702348758]
+layout_mode = 2
+size_flags_horizontal = 3
+theme_override_constants/margin_left = 5
+theme_override_constants/margin_top = 5
+theme_override_constants/margin_right = 5
+theme_override_constants/margin_bottom = 5
+
+[node name="VBoxContainer2" type="VBoxContainer" parent="InitSettings/MarginContainer/VBoxContainer/HBoxContainer/MarginContainer" unique_id=1373940014]
+layout_mode = 2
+size_flags_horizontal = 3
+alignment = 1
+
+[node name="Label" type="Label" parent="InitSettings/MarginContainer/VBoxContainer/HBoxContainer/MarginContainer/VBoxContainer2" unique_id=767886530]
+layout_mode = 2
+text = "MapSize"
+horizontal_alignment = 1
+
+[node name="HBoxContainer" type="HBoxContainer" parent="InitSettings/MarginContainer/VBoxContainer/HBoxContainer/MarginContainer/VBoxContainer2" unique_id=1282742265]
+layout_mode = 2
+
+[node name="Label" type="Label" parent="InitSettings/MarginContainer/VBoxContainer/HBoxContainer/MarginContainer/VBoxContainer2/HBoxContainer" unique_id=877023521]
+layout_mode = 2
+size_flags_horizontal = 3
+text = "x"
+horizontal_alignment = 1
+
+[node name="MapSizeX" type="LineEdit" parent="InitSettings/MarginContainer/VBoxContainer/HBoxContainer/MarginContainer/VBoxContainer2/HBoxContainer" unique_id=224606991]
+unique_name_in_owner = true
+layout_mode = 2
+size_flags_horizontal = 3
+placeholder_text = "256"
+
+[node name="HBoxContainer2" type="HBoxContainer" parent="InitSettings/MarginContainer/VBoxContainer/HBoxContainer/MarginContainer/VBoxContainer2" unique_id=1709184861]
+layout_mode = 2
+
+[node name="Label" type="Label" parent="InitSettings/MarginContainer/VBoxContainer/HBoxContainer/MarginContainer/VBoxContainer2/HBoxContainer2" unique_id=294586663]
+layout_mode = 2
+size_flags_horizontal = 3
+text = "y"
+horizontal_alignment = 1
+
+[node name="MapSizeY" type="LineEdit" parent="InitSettings/MarginContainer/VBoxContainer/HBoxContainer/MarginContainer/VBoxContainer2/HBoxContainer2" unique_id=12177583]
+unique_name_in_owner = true
+layout_mode = 2
+size_flags_horizontal = 3
+placeholder_text = "256"
+
+[node name="MarginContainer2" type="MarginContainer" parent="InitSettings/MarginContainer/VBoxContainer/HBoxContainer" unique_id=118954935]
+layout_mode = 2
+size_flags_horizontal = 3
+theme_override_constants/margin_left = 5
+theme_override_constants/margin_top = 5
+theme_override_constants/margin_right = 5
+theme_override_constants/margin_bottom = 5
+
+[node name="VBoxContainer" type="VBoxContainer" parent="InitSettings/MarginContainer/VBoxContainer/HBoxContainer/MarginContainer2" unique_id=1691787559]
+layout_mode = 2
+size_flags_horizontal = 3
+alignment = 1
+
+[node name="Label2" type="Label" parent="InitSettings/MarginContainer/VBoxContainer/HBoxContainer/MarginContainer2/VBoxContainer" unique_id=1779551719]
+layout_mode = 2
+text = "TileSize"
+horizontal_alignment = 1
+
+[node name="HBoxContainer2" type="HBoxContainer" parent="InitSettings/MarginContainer/VBoxContainer/HBoxContainer/MarginContainer2/VBoxContainer" unique_id=1752926109]
+layout_mode = 2
+
+[node name="Label" type="Label" parent="InitSettings/MarginContainer/VBoxContainer/HBoxContainer/MarginContainer2/VBoxContainer/HBoxContainer2" unique_id=1000436170]
+layout_mode = 2
+size_flags_horizontal = 3
+text = "x"
+horizontal_alignment = 1
+
+[node name="TileSizeX" type="LineEdit" parent="InitSettings/MarginContainer/VBoxContainer/HBoxContainer/MarginContainer2/VBoxContainer/HBoxContainer2" unique_id=1652327081]
+unique_name_in_owner = true
+layout_mode = 2
+size_flags_horizontal = 3
+placeholder_text = "20"
+
+[node name="HBoxContainer3" type="HBoxContainer" parent="InitSettings/MarginContainer/VBoxContainer/HBoxContainer/MarginContainer2/VBoxContainer" unique_id=783021753]
+layout_mode = 2
+
+[node name="Label" type="Label" parent="InitSettings/MarginContainer/VBoxContainer/HBoxContainer/MarginContainer2/VBoxContainer/HBoxContainer3" unique_id=328920308]
+layout_mode = 2
+size_flags_horizontal = 3
+text = "y"
+horizontal_alignment = 1
+
+[node name="TileSizeY" type="LineEdit" parent="InitSettings/MarginContainer/VBoxContainer/HBoxContainer/MarginContainer2/VBoxContainer/HBoxContainer3" unique_id=552892841]
+unique_name_in_owner = true
+layout_mode = 2
+size_flags_horizontal = 3
+placeholder_text = "20"
+
+[node name="Submit" type="Button" parent="InitSettings/MarginContainer/VBoxContainer" unique_id=1788429101]
+unique_name_in_owner = true
+layout_mode = 2
+size_flags_horizontal = 4
+text = "Enter"
+
+[node name="EditorEntry" type="PanelContainer" parent="." unique_id=550916484]
+visible = false
+anchors_preset = 15
+anchor_right = 1.0
+anchor_bottom = 1.0
+grow_horizontal = 2
+grow_vertical = 2
+
+[node name="SettingsFileDialog" type="FileDialog" parent="." unique_id=627223040]
+oversampling_override = 1.0
+title = "Open a File"
+initial_position = 1
+popup_window = true
+file_mode = 0
+display_mode = 1
+access = 1
+filters = PackedStringArray("*.tscn")
+favorites_enabled = false
+script = ExtResource("4_fsb40")
+
+[node name="SceneFileDialog" type="FileDialog" parent="." unique_id=43168370]
+oversampling_override = 1.0
+title = "Open a File"
+initial_position = 1
+popup_window = true
+file_mode = 0
+display_mode = 1
+access = 1
+filters = PackedStringArray("*.tscn")
+script = ExtResource("5_wu3br")
