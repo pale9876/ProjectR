@@ -746,6 +746,12 @@ anim_library = ExtResource("9_gswnw")
 library_name = &"blowkick"
 metadata/_custom_type_script = "uid://b7x8s5btnaxj2"
 
+[node name="StateLabel" type="Label" parent="." unique_id=1166794144]
+offset_left = -29.0
+offset_top = -91.0
+offset_right = 29.0
+offset_bottom = -68.0
+
 [node name="HitboxComponent" type="Node2D" parent="." unique_id=1243634124]
 script = ExtResource("22_uw77l")
 
@@ -814,12 +820,6 @@ script = ExtResource("22_bjvpn")
 offset = Vector2(0, -57.7)
 height = 43.59
 hitbox_info = SubResource("Resource_bjvpn")
-
-[node name="StateLabel" type="Label" parent="." unique_id=1166794144]
-offset_left = -29.0
-offset_top = -91.0
-offset_right = 29.0
-offset_bottom = -68.0
 
 [node name="GrabBox" type="Area2D" parent="." unique_id=172417262]
 visible = false

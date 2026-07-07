@@ -75,6 +75,8 @@ func damaged(hitbox_info: HitboxInformation, hit_result: HitResult) -> void:
 	
 	if !has_dodged() and !blocked_attack(hitbox_info, hit_result) and effective():
 		set_hurt_state(hitbox_info, hit_result)
+		if hit_result.from is Player:
+			EventHorizon.player_hit(hitbox_info)
 
 
 func set_hurt_state(hitbox_info: HitboxInformation, hit_result: HitResult) -> void:

@@ -52,7 +52,7 @@ func _entered(_rid: RID, area: Area2D, area_idx: int, local_idx: int) -> void:
 		)
 		
 		area.damaged(hitbox_info, hit_result)
-		EventHorizon.player_hit(hitbox_info)
+		# EventHorizon.player_hit(hitbox_info)
 		_shape.push_result(hit_result)
 
 

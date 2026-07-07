@@ -1,7 +1,10 @@
 extends GridContainer
 
 
-const MAPTILE: PackedScene = preload("uid://dyi2rrrxgabsy")
+const MAP_TILE_SCENE: PackedScene = preload("uid://dyi2rrrxgabsy")
+
+
+var map_size: Vector2i = Vector2i(128, 128)
 
 
 func _init() -> void:
@@ -14,3 +17,12 @@ func get_editor_canvas() -> CanvasLayer:
 
 func _ready() -> void:
 	pass
+
+
+func set_tile(sz: Vector2i) -> void:
+	for y: int in range(sz.y):
+		for x: int in range(sz.x):
+			var tile := MAP_TILE_SCENE.instantiate() as MapTile
+			add_child(tile)
+
+	map_size = sz

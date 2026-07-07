@@ -6,4 +6,6 @@ func _init() -> void:
 
 
 func _file_selected(path: String) -> void:
-	pass
+	var res: Resource = ResourceLoader.load(path)
+	if res is MapInfo:
+		pass

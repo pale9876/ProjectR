@@ -2,7 +2,7 @@
 extends LimboHSM
 
 
-# Global States
+# Import
 const Idle: Script = preload("uid://c08p61o8pw6vo")
 const Move: Script = preload("uid://c4q85mvv6k6wb")
 const Player: Script = preload("uid://c2uxhumgng18h")

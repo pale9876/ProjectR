@@ -20,7 +20,7 @@ const StateMachine: Script = preload("uid://nmmtety5yvve")
 
 var stat: Stat = Stat.new()
 var state: State = State.new()
-var input_state
+var input_state: InputState
 
 
 @onready var sprite_component: SpriteComponent = $SpriteComponent

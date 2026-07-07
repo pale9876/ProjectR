@@ -2,9 +2,15 @@
 extends CanvasLayer
 
 
+# Import
+const MapGrid: Script = preload("uid://b2wn5idfki8e3")
+const Entry: Script = preload("uid://xhpxarx6fs8a")
+
+
 # Path
 const DEFAULT_PATH: String = "user://"
-const EXT: String = ".mapsettings"
+const DEFAULT_SETTINGS_PATH: String = "user://mapeditor.settings"
+const EXT: String = ".settings"
 
 
 # Nodes
@@ -19,11 +25,29 @@ const EXT: String = ".mapsettings"
 @onready var scene_file_dialog: FileDialog = $SceneFileDialog
 
 
+var settings: MapEditorDefaultSettings
 var _data: MapData = null
 
 
+func get_grid() -> MapGrid:
+	return get_node(^"%Grid") as MapGrid
+
+
+func get_entry() -> Entry:
+	return get_node(^"EditorEntry") as Entry
+
+
 func _init() -> void:
-	pass
+	if !ResourceLoader.exists(DEFAULT_SETTINGS_PATH, "Resource"):
+		var _res := MapEditorDefaultSettings.new()
+		var err := ResourceSaver.save(_res, DEFAULT_SETTINGS_PATH)
+		if err != OK:
+			print("Err => ", err)
+		settings = _res
+		return
+
+	var _settings: Resource = ResourceLoader.load(DEFAULT_SETTINGS_PATH)
+	settings = _settings
 
 
 func _enter_tree() -> void:
@@ -112,5 +136,5 @@ class MapData extends Resource:
 	}
 
 
-class MapEditorSettings extends Resource:
+class MapEditorDefaultSettings extends Resource:
 	var default_path: String

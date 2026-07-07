@@ -1,0 +1,30 @@
+[gd_scene format=3 uid="uid://bo8ycxs8p6qua"]
+
+[ext_resource type="Script" uid="uid://b6h03yvmmqll3" path="res://addons/expression_property/expression_container.gd" id="1_s7ws3"]
+[ext_resource type="PackedScene" uid="uid://bnyv2bfyo3w2i" path="res://addons/expression_property/property_container.tscn" id="2_63eor"]
+
+[node name="ExpressionProperty" type="PanelContainer" unique_id=1753148103]
+offset_right = 227.0
+offset_bottom = 72.0
+script = ExtResource("1_s7ws3")
+
+[node name="MarginContainer" type="MarginContainer" parent="." unique_id=2011351907]
+layout_mode = 2
+size_flags_horizontal = 0
+size_flags_vertical = 0
+theme_override_constants/margin_left = 3
+theme_override_constants/margin_top = 3
+theme_override_constants/margin_right = 3
+theme_override_constants/margin_bottom = 3
+
+[node name="VBoxContainer" type="VBoxContainer" parent="MarginContainer" unique_id=1356676946]
+layout_mode = 2
+
+[node name="PropertyContainer" parent="MarginContainer/VBoxContainer" unique_id=2125262084 instance=ExtResource("2_63eor")]
+layout_mode = 2
+
+[node name="AddExpression" type="Button" parent="MarginContainer/VBoxContainer" unique_id=596442732]
+unique_name_in_owner = true
+layout_mode = 2
+size_flags_horizontal = 4
+text = "Add Expression"

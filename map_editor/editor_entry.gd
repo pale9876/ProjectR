@@ -2,4 +2,4 @@ extends PanelContainer
 
 
 func _init() -> void:
-	visible = false
+	visible = true
