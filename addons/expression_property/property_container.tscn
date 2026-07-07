@@ -3,25 +3,35 @@
 [ext_resource type="Script" uid="uid://gl0bfptm2fsy" path="res://addons/expression_property/property_container.gd" id="1_vup16"]
 
 [node name="PropertyContainer" type="HBoxContainer" unique_id=2125262084]
+anchors_preset = 10
+anchor_right = 1.0
+offset_bottom = 31.0
+grow_horizontal = 2
+size_flags_horizontal = 3
 script = ExtResource("1_vup16")
 
-[node name="LeftVariable" type="LineEdit" parent="." unique_id=433386637]
+[node name="Left" type="LineEdit" parent="." unique_id=1808051530]
 unique_name_in_owner = true
 layout_mode = 2
+size_flags_horizontal = 3
+placeholder_text = "ActiveState"
 
-[node name="OptionButton" type="OptionButton" parent="." unique_id=523155347]
+[node name="Operator" type="OptionButton" parent="." unique_id=523155347]
 unique_name_in_owner = true
 layout_mode = 2
+size_flags_horizontal = 3
 selected = 0
 item_count = 3
-popup/item_0/text = "Is"
+popup/item_0/text = "=="
 popup/item_0/id = 0
-popup/item_1/text = "Equal"
+popup/item_1/text = "!="
 popup/item_1/id = 1
-popup/item_2/text = "In"
+popup/item_2/text = "in"
 popup/item_2/id = 2
 popup/item_2/disabled = true
 
-[node name="RightVariable" type="LineEdit" parent="." unique_id=1958106164]
+[node name="Right" type="LineEdit" parent="." unique_id=782481146]
 unique_name_in_owner = true
 layout_mode = 2
+size_flags_horizontal = 3
+placeholder_text = "^\"State Name\" or Value"
