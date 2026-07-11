@@ -22,9 +22,3 @@ func _ready() -> void:
 
 func get_stage() -> Stage:
 	return get_parent() as Stage
-
-
-class Stat:
-	var name: StringName
-	var hp: int
-	var speed: float

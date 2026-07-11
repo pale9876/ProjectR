@@ -1,3 +1,4 @@
+# guard_expression/plugin.gd
 @tool
 extends EditorPlugin
 

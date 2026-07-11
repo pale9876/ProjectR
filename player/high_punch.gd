@@ -16,8 +16,6 @@ func _ready() -> void:
 
 
 func _enter() -> void:
-	var player := get_player()
-	
 	play(&"left_punch")
 	get_hsm().label.text = "Left Punch"
 
@@ -32,7 +30,7 @@ func _update(_delta: float) -> void:
 		LEFT:
 			var left_punch_hit: bool = hitbox.is_hit(^"Left")
 			
-			if _punched and left_punch_hit:
+			if _punched and (left_punch_hit or _anim_finished):
 				play(&"right_punch")
 				state = RIGHT
 				hitbox.get_hitshape(^"Left").disabled = true
@@ -43,7 +41,7 @@ func _update(_delta: float) -> void:
 		RIGHT:
 			var right_punch_hit: bool = hitbox.is_hit(^"Right")
 			
-			if _punched and right_punch_hit:
+			if _punched and (right_punch_hit or _anim_finished):
 				if _just:
 					play(&"hammer_ex")
 					hsm.label.text = "Hammer EX"

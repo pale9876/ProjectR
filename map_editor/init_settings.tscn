@@ -2,7 +2,8 @@
 
 [ext_resource type="Script" uid="uid://cwphc46lnkhgf" path="res://map_editor/init_settings.gd" id="1_1g2yb"]
 
-[node name="InitSettings" type="PanelContainer" unique_id=622302673]
+[node name="InitSettings" type="PanelContainer" unique_id=1799898184]
+visible = false
 anchors_preset = 15
 anchor_right = 1.0
 anchor_bottom = 1.0
@@ -10,35 +11,35 @@ grow_horizontal = 2
 grow_vertical = 2
 script = ExtResource("1_1g2yb")
 
-[node name="MarginContainer" type="MarginContainer" parent="." unique_id=1250837146]
+[node name="MarginContainer" type="MarginContainer" parent="." unique_id=1796089643]
 layout_mode = 2
 theme_override_constants/margin_left = 100
 theme_override_constants/margin_top = 100
 theme_override_constants/margin_right = 100
 theme_override_constants/margin_bottom = 100
 
-[node name="VBoxContainer" type="VBoxContainer" parent="MarginContainer" unique_id=1471654100]
+[node name="VBoxContainer" type="VBoxContainer" parent="MarginContainer" unique_id=1822028841]
 layout_mode = 2
 
-[node name="HBoxContainer2" type="HBoxContainer" parent="MarginContainer/VBoxContainer" unique_id=129588386]
+[node name="HBoxContainer2" type="HBoxContainer" parent="MarginContainer/VBoxContainer" unique_id=1418882552]
 layout_mode = 2
 
-[node name="Label" type="Label" parent="MarginContainer/VBoxContainer/HBoxContainer2" unique_id=1888809742]
+[node name="Label" type="Label" parent="MarginContainer/VBoxContainer/HBoxContainer2" unique_id=1287126193]
 layout_mode = 2
 size_flags_horizontal = 3
 text = "Map Name :"
 horizontal_alignment = 1
 
-[node name="MapTitle" type="LineEdit" parent="MarginContainer/VBoxContainer/HBoxContainer2" unique_id=368178123]
+[node name="MapTitle" type="LineEdit" parent="MarginContainer/VBoxContainer/HBoxContainer2" unique_id=1810000613]
 unique_name_in_owner = true
 layout_mode = 2
 size_flags_horizontal = 3
 placeholder_text = "Title"
 
-[node name="HBoxContainer" type="HBoxContainer" parent="MarginContainer/VBoxContainer" unique_id=1295592732]
+[node name="HBoxContainer" type="HBoxContainer" parent="MarginContainer/VBoxContainer" unique_id=326572541]
 layout_mode = 2
 
-[node name="MarginContainer" type="MarginContainer" parent="MarginContainer/VBoxContainer/HBoxContainer" unique_id=1730159992]
+[node name="MarginContainer" type="MarginContainer" parent="MarginContainer/VBoxContainer/HBoxContainer" unique_id=718023221]
 layout_mode = 2
 size_flags_horizontal = 3
 theme_override_constants/margin_left = 5
@@ -46,47 +47,47 @@ theme_override_constants/margin_top = 5
 theme_override_constants/margin_right = 5
 theme_override_constants/margin_bottom = 5
 
-[node name="VBoxContainer2" type="VBoxContainer" parent="MarginContainer/VBoxContainer/HBoxContainer/MarginContainer" unique_id=397618846]
+[node name="VBoxContainer2" type="VBoxContainer" parent="MarginContainer/VBoxContainer/HBoxContainer/MarginContainer" unique_id=1631942635]
 layout_mode = 2
 size_flags_horizontal = 3
 alignment = 1
 
-[node name="Label" type="Label" parent="MarginContainer/VBoxContainer/HBoxContainer/MarginContainer/VBoxContainer2" unique_id=1066705173]
+[node name="Label" type="Label" parent="MarginContainer/VBoxContainer/HBoxContainer/MarginContainer/VBoxContainer2" unique_id=878776503]
 layout_mode = 2
 text = "MapSize"
 horizontal_alignment = 1
 
-[node name="HBoxContainer" type="HBoxContainer" parent="MarginContainer/VBoxContainer/HBoxContainer/MarginContainer/VBoxContainer2" unique_id=1818003588]
+[node name="HBoxContainer" type="HBoxContainer" parent="MarginContainer/VBoxContainer/HBoxContainer/MarginContainer/VBoxContainer2" unique_id=1690580624]
 layout_mode = 2
 
-[node name="Label" type="Label" parent="MarginContainer/VBoxContainer/HBoxContainer/MarginContainer/VBoxContainer2/HBoxContainer" unique_id=1585790954]
+[node name="Label" type="Label" parent="MarginContainer/VBoxContainer/HBoxContainer/MarginContainer/VBoxContainer2/HBoxContainer" unique_id=2023279024]
 layout_mode = 2
 size_flags_horizontal = 3
 text = "x"
 horizontal_alignment = 1
 
-[node name="MapSizeX" type="LineEdit" parent="MarginContainer/VBoxContainer/HBoxContainer/MarginContainer/VBoxContainer2/HBoxContainer" unique_id=41076188]
+[node name="MapSizeX" type="LineEdit" parent="MarginContainer/VBoxContainer/HBoxContainer/MarginContainer/VBoxContainer2/HBoxContainer" unique_id=1187373990]
 unique_name_in_owner = true
 layout_mode = 2
 size_flags_horizontal = 3
 placeholder_text = "256"
 
-[node name="HBoxContainer2" type="HBoxContainer" parent="MarginContainer/VBoxContainer/HBoxContainer/MarginContainer/VBoxContainer2" unique_id=521504603]
+[node name="HBoxContainer2" type="HBoxContainer" parent="MarginContainer/VBoxContainer/HBoxContainer/MarginContainer/VBoxContainer2" unique_id=863243718]
 layout_mode = 2
 
-[node name="Label" type="Label" parent="MarginContainer/VBoxContainer/HBoxContainer/MarginContainer/VBoxContainer2/HBoxContainer2" unique_id=992261180]
+[node name="Label" type="Label" parent="MarginContainer/VBoxContainer/HBoxContainer/MarginContainer/VBoxContainer2/HBoxContainer2" unique_id=1980775226]
 layout_mode = 2
 size_flags_horizontal = 3
 text = "y"
 horizontal_alignment = 1
 
-[node name="MapSizeY" type="LineEdit" parent="MarginContainer/VBoxContainer/HBoxContainer/MarginContainer/VBoxContainer2/HBoxContainer2" unique_id=1668465995]
+[node name="MapSizeY" type="LineEdit" parent="MarginContainer/VBoxContainer/HBoxContainer/MarginContainer/VBoxContainer2/HBoxContainer2" unique_id=1317941881]
 unique_name_in_owner = true
 layout_mode = 2
 size_flags_horizontal = 3
 placeholder_text = "256"
 
-[node name="MarginContainer2" type="MarginContainer" parent="MarginContainer/VBoxContainer/HBoxContainer" unique_id=392631939]
+[node name="MarginContainer2" type="MarginContainer" parent="MarginContainer/VBoxContainer/HBoxContainer" unique_id=3812204]
 layout_mode = 2
 size_flags_horizontal = 3
 theme_override_constants/margin_left = 5
@@ -94,47 +95,47 @@ theme_override_constants/margin_top = 5
 theme_override_constants/margin_right = 5
 theme_override_constants/margin_bottom = 5
 
-[node name="VBoxContainer" type="VBoxContainer" parent="MarginContainer/VBoxContainer/HBoxContainer/MarginContainer2" unique_id=400398872]
+[node name="VBoxContainer" type="VBoxContainer" parent="MarginContainer/VBoxContainer/HBoxContainer/MarginContainer2" unique_id=1028295413]
 layout_mode = 2
 size_flags_horizontal = 3
 alignment = 1
 
-[node name="Label2" type="Label" parent="MarginContainer/VBoxContainer/HBoxContainer/MarginContainer2/VBoxContainer" unique_id=560122697]
+[node name="Label2" type="Label" parent="MarginContainer/VBoxContainer/HBoxContainer/MarginContainer2/VBoxContainer" unique_id=1954411672]
 layout_mode = 2
 text = "TileSize"
 horizontal_alignment = 1
 
-[node name="HBoxContainer2" type="HBoxContainer" parent="MarginContainer/VBoxContainer/HBoxContainer/MarginContainer2/VBoxContainer" unique_id=1226766164]
+[node name="HBoxContainer2" type="HBoxContainer" parent="MarginContainer/VBoxContainer/HBoxContainer/MarginContainer2/VBoxContainer" unique_id=634360011]
 layout_mode = 2
 
-[node name="Label" type="Label" parent="MarginContainer/VBoxContainer/HBoxContainer/MarginContainer2/VBoxContainer/HBoxContainer2" unique_id=495252449]
+[node name="Label" type="Label" parent="MarginContainer/VBoxContainer/HBoxContainer/MarginContainer2/VBoxContainer/HBoxContainer2" unique_id=1152647773]
 layout_mode = 2
 size_flags_horizontal = 3
 text = "x"
 horizontal_alignment = 1
 
-[node name="TileSizeX" type="LineEdit" parent="MarginContainer/VBoxContainer/HBoxContainer/MarginContainer2/VBoxContainer/HBoxContainer2" unique_id=231171440]
+[node name="TileSizeX" type="LineEdit" parent="MarginContainer/VBoxContainer/HBoxContainer/MarginContainer2/VBoxContainer/HBoxContainer2" unique_id=1876138372]
 unique_name_in_owner = true
 layout_mode = 2
 size_flags_horizontal = 3
 placeholder_text = "20"
 
-[node name="HBoxContainer3" type="HBoxContainer" parent="MarginContainer/VBoxContainer/HBoxContainer/MarginContainer2/VBoxContainer" unique_id=621070609]
+[node name="HBoxContainer3" type="HBoxContainer" parent="MarginContainer/VBoxContainer/HBoxContainer/MarginContainer2/VBoxContainer" unique_id=908472512]
 layout_mode = 2
 
-[node name="Label" type="Label" parent="MarginContainer/VBoxContainer/HBoxContainer/MarginContainer2/VBoxContainer/HBoxContainer3" unique_id=1868748618]
+[node name="Label" type="Label" parent="MarginContainer/VBoxContainer/HBoxContainer/MarginContainer2/VBoxContainer/HBoxContainer3" unique_id=1240832707]
 layout_mode = 2
 size_flags_horizontal = 3
 text = "y"
 horizontal_alignment = 1
 
-[node name="TileSizeY" type="LineEdit" parent="MarginContainer/VBoxContainer/HBoxContainer/MarginContainer2/VBoxContainer/HBoxContainer3" unique_id=1574066100]
+[node name="TileSizeY" type="LineEdit" parent="MarginContainer/VBoxContainer/HBoxContainer/MarginContainer2/VBoxContainer/HBoxContainer3" unique_id=1372408901]
 unique_name_in_owner = true
 layout_mode = 2
 size_flags_horizontal = 3
 placeholder_text = "20"
 
-[node name="Submit" type="Button" parent="MarginContainer/VBoxContainer" unique_id=804714129]
+[node name="Submit" type="Button" parent="MarginContainer/VBoxContainer" unique_id=658514987]
 unique_name_in_owner = true
 layout_mode = 2
 size_flags_horizontal = 4

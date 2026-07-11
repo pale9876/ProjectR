@@ -14,10 +14,8 @@ const EXT: String = ".settings"
 
 
 # Nodes
-@onready var map_title: LineEdit = %MapTitle
-@onready var submit: Button = %Submit
+@onready var grid: MapGrid = $ScrollContainer/Grid
 @onready var init_settings: PanelContainer = $InitSettings
-@onready var grid: GridContainer = $ScrollContainer/Grid
 
 
 # File Dialogs
@@ -62,12 +60,12 @@ func _enter_tree() -> void:
 			load_from_data(_data)
 
 
-func _ready() -> void:
-	submit.button_up.connect(
-		func() -> void:
-			create_data()
-			init_settings.hide()
-	)
+#func _ready() -> void:
+	#submit.button_up.connect(
+		#func() -> void:
+			#create_data()
+			#init_settings.hide()
+	#)
 
 
 func create_data() -> void:
@@ -120,8 +118,7 @@ func get_int_value_from_edit(node_path: NodePath) -> int:
 
 
 func clear() -> void:
-	for node: Node in grid.get_children():
-		node.queue_free()
+	grid.clear()
 
 
 class MapData extends Resource:

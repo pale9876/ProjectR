@@ -4,6 +4,7 @@
 [ext_resource type="Shader" uid="uid://b7ev33xt35608" path="res://shaders/pixel_shader_outline.gdshader" id="2_ocili"]
 [ext_resource type="Script" uid="uid://cktpq0kuvmge1" path="res://npc/awareness.gd" id="3_fnhme"]
 [ext_resource type="SpriteFrames" uid="uid://72n3ls5rb05n" path="res://sample_motion_frames.tres" id="3_ocili"]
+[ext_resource type="Script" uid="uid://daj72rw34sd0j" path="res://npc/npc_collider.gd" id="4_phifv"]
 [ext_resource type="Script" uid="uid://cy6xk12udulfh" path="res://npc/visible_on_screen_notifier_2d.gd" id="4_uamtn"]
 [ext_resource type="Script" uid="uid://dxd14gsfsusdx" path="res://ai/tasks/if_target_not_null.gd" id="5_fnhme"]
 [ext_resource type="Script" uid="uid://bs1oqvm6y0hg8" path="res://ai/tasks/go_to_rand_pos.gd" id="5_ldo70"]
@@ -21,6 +22,9 @@ shader_parameter/bottomleft = false
 shader_parameter/bottomright = false
 shader_parameter/color = Color(0.28, 0.0812, 0.0812, 1)
 shader_parameter/inside = false
+
+[sub_resource type="RectangleShape2D" id="RectangleShape2D_wqsic"]
+size = Vector2(48, 96)
 
 [sub_resource type="RectangleShape2D" id="RectangleShape2D_guff7"]
 size = Vector2(320, 136)
@@ -93,6 +97,13 @@ position = Vector2(0, -32)
 sprite_frames = ExtResource("3_ocili")
 animation = &"idle"
 offset = Vector2(0, -32)
+
+[node name="Collider" type="Area2D" parent="." unique_id=1503715288]
+script = ExtResource("4_phifv")
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="Collider" unique_id=694924862]
+position = Vector2(0, -48)
+shape = SubResource("RectangleShape2D_wqsic")
 
 [node name="Awareness" type="Area2D" parent="." unique_id=75439026]
 script = ExtResource("3_fnhme")

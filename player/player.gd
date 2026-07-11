@@ -32,6 +32,10 @@ var input_state: InputState
 var _prefix: StringName = &""
 
 
+func get_stat() -> Stat:
+	return stat
+
+
 func _init() -> void:
 	input_state = InputState
 	motion_mode = CharacterBody2D.MOTION_MODE_GROUNDED
@@ -109,6 +113,10 @@ func _resume() -> void:
 	InputState.unlock()
 
 
+func get_hitbox_component() -> HitboxComponent:
+	return get_node(^"HitboxComponent") as HitboxComponent
+
+
 func get_state_machine() -> LimboHSM:
 	return get_node(^"StateMachine")
 
@@ -130,7 +138,7 @@ func get_collider() -> CollisionShape2D:
 
 
 func get_camera() -> PlayerCamera:
-	return get_node(^"Camera2D") as PlayerCamera
+	return Global.player_camera
 
 
 func get_anim() -> AnimationPlayer:
@@ -139,18 +147,6 @@ func get_anim() -> AnimationPlayer:
 
 func get_stage() -> Stage:
 	return get_parent() as Stage
-
-
-class Stat:
-	signal damaged()
-	signal dead()
-	
-	var name: StringName = &""
-	var level: int = 0
-	var hp: int
-	var max_hp: int
-	var speed: float
-	var position: Vector2
 
 
 class State:

@@ -37,7 +37,6 @@ window/size/window_width_override=1280
 window/size/window_height_override=720
 window/subwindows/embed_subwindows=false
 window/stretch/mode="viewport"
-window/per_pixel_transparency/allowed=true
 window/vsync/vsync_mode=0
 
 [dotnet]
@@ -148,6 +147,7 @@ locale/translations_pot_files=PackedStringArray("res://dialogue/sample.dialogue"
 
 2d_physics/layer_1="Terrian"
 2d_physics/layer_2="Unit"
+2d_physics/layer_3="Floor"
 
 [physics]
 
@@ -190,5 +190,21 @@ translation/localization/locales=["en_US", "ko_KR"]
 internal/play_dialog_path="res://dialogue/sample.tres"
 internal/play_start_id="HELLO"
 general/input/save_sprouty_only=true
-internal/last_opened_files=[]
-internal/last_selected_file_index=-1
+internal/last_opened_files=[{
+"path": "res://dialogue/character/sample_npc.tres",
+"uid": 6666429090745130053,
+"view_state": {
+"portrait_search": "",
+"portrait_tree_state": {
+"selected_path": "",
+"tree_items": {}
+},
+"section_visibility": {
+"dialog_box_settings": true,
+"portrait_list": true,
+"portrait_settings": true
+},
+"selected_portrait_path": ""
+}
+}]
+internal/last_selected_file_index=0

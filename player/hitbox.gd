@@ -22,11 +22,13 @@ func _init() -> void:
 
 func _enter_tree() -> void:
 	area_shape_entered.connect(_entered)
-	var player := get_parent() as Player
+	
+	var player := get_player()
 	player.state.face_changed.connect(_on_face_changed)
 
+
 func _on_face_changed() -> void:
-	var player := get_parent() as Player
+	var player := get_player()
 	scale.x = player.get_face()
 
 
@@ -46,7 +48,7 @@ func _entered(_rid: RID, area: Area2D, area_idx: int, local_idx: int) -> void:
 		
 		if !check_collide(collider): return
 		
-		var player := get_parent() as Player
+		var player := get_player()
 		var hit_result: HitResult = HitResult.create(
 			player, unit, player.get_face()
 		)
@@ -57,7 +59,7 @@ func _entered(_rid: RID, area: Area2D, area_idx: int, local_idx: int) -> void:
 
 
 func check_collide(to: Node2D) -> bool:
-	var player := get_parent() as Player
+	var player := get_player()
 	var param := PhysicsRayQueryParameters2D.create(
 		player.get_collider().global_position, to.global_position,
 		3, [player.get_rid()]
@@ -75,25 +77,13 @@ func check_collide(to: Node2D) -> bool:
 
 func clear() -> void:
 	for node: Node in get_children():
-		if node is HitboxShape or node is HitShapePolygon:
+		if node is HitboxShape:
 			node.clear()
 	hide()
 
 
-func is_hit(node_path: NodePath) -> bool:
-	return !get_hitshape(node_path).result.is_empty()
-
-
-func get_hitshape(node_path: NodePath) -> HitboxShape:
-	return get_node(node_path) as HitboxShape
-
-
-func get_hitshape_polygon(node_path: NodePath) -> HitShapePolygon:
-	return get_node(node_path) as HitShapePolygon
-
-
 func set_dynamic(node_path: NodePath, offset: Vector2, height: float, range: float, ratio: float) -> void:
-	var hit_polygon: HitShapePolygon = get_hitshape_polygon(node_path)
+	var hit_polygon: HitPolygon = get_hitshape(node_path) as HitPolygon
 	hit_polygon.offset = offset
 	hit_polygon.height = height
 	hit_polygon.hit_range = range
@@ -103,5 +93,26 @@ func set_dynamic(node_path: NodePath, offset: Vector2, height: float, range: flo
 func set_radius(node_path: NodePath, rad: float) -> void:
 	var hit_shape: HitboxShape = get_hitshape(node_path)
 	(hit_shape.shape as CircleShape2D).set_radius(rad)
+
+
+func is_hit(node_path: NodePath) -> bool:
+	return !(get_node(node_path) as CollisionObject2D).result.is_empty()
+
+
+func get_hitshape(node_path: NodePath) -> HitboxShape:
+	return get_node(node_path) as HitboxShape
+
+#
+#func get_hitshape_polygon(node_path: NodePath) -> HitboxShape:
+	#return get_node(node_path) as HitboxShape
+
+
+func get_player() -> Player:
+	return get_component().get_parent() as Player
+
+
+func get_component() -> HitboxComponent:
+	return get_parent() as HitboxComponent
+
 
 	

@@ -103,7 +103,6 @@ func take_force(_motion: Vector2, duration: int) -> void:
 	
 	motion = Vector2(_motion.x * player.get_face(), _motion.y)
 	force_duration = duration
-	
 
 
 ## 노드패스를 통해 찾음.
@@ -112,10 +111,10 @@ func get_state_machine() -> StateMachine:
 
 
 func move_and_collide(
-	motion: Vector2, test: bool = false, margin: float = .08
+	_motion: Vector2, test: bool = false, margin: float = .08
 	) -> KinematicCollision2D:
 	
-	return get_player().move_and_collide(motion, test, margin, false)
+	return get_player().move_and_collide(_motion, test, margin, false)
 
 
 func is_on_wall() -> bool:

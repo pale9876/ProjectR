@@ -54,6 +54,8 @@ func on_start() -> void:
 
 	var start_map := START_MAP.instantiate() as StartMap
 	ingame.add_child(start_map)
+	ingame.add_child(Global.player_camera)
+	Global.player_camera.target = Global.player
 	start_map.add_unit(Global.player)
 	Global.player.global_position = start_map.start_spawn_position.global_position
 	Global.player.input_state.unlock()

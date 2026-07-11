@@ -36,6 +36,7 @@
 [ext_resource type="AnimationLibrary" uid="uid://bvq7ynb3u3a8p" path="res://motion/wallhit.res" id="32_qjbny"]
 [ext_resource type="Script" uid="uid://im1wyvflgwp0" path="res://unit/state/unit_state.gd" id="33_qjbny"]
 [ext_resource type="Script" uid="uid://chb5h0vw5lpvq" path="res://player/animation_player.gd" id="36_yeahc"]
+[ext_resource type="Script" uid="uid://dr8n2mbhooxjo" path="res://player/hitbox_component.gd" id="37_v2yrs"]
 
 [sub_resource type="Resource" id="Resource_pvbt4"]
 script = ExtResource("3_t3pbd")
@@ -136,7 +137,7 @@ tracks/5/keys = {
 "times": PackedFloat32Array(0),
 "transitions": PackedFloat32Array(1),
 "update": 1,
-"values": [&"standup"]
+"values": [&"idle"]
 }
 tracks/6/type = "value"
 tracks/6/imported = false
@@ -282,7 +283,7 @@ visible = false
 
 [node name="AnimatedSprite2D" parent="SpriteComponent" index="1" unique_id=152865229]
 visible = true
-animation = &"standup"
+animation = &"idle"
 
 [node name="UnitCollision" type="CollisionShape2D" parent="." unique_id=54862801]
 position = Vector2(0, -46)
@@ -316,6 +317,10 @@ dist = 720.0
 
 [node name="AwarenessTimer" type="Timer" parent="Awareness" unique_id=361304879]
 wait_time = 4.0
+
+[node name="HitboxComponent" type="Node2D" parent="." unique_id=1346051445]
+script = ExtResource("37_v2yrs")
+metadata/_custom_type_script = "uid://dr8n2mbhooxjo"
 
 [node name="AnimationPlayer" type="AnimationPlayer" parent="." unique_id=1268957844]
 libraries/ = SubResource("AnimationLibrary_a8ovg")

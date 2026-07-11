@@ -1,7 +1,5 @@
 @tool
 extends CollisionPolygon2D
-class_name HitShapePolygon
-
 
 
 @export var offset: Vector2 = Vector2():

@@ -2,11 +2,16 @@ extends Node
 
 # Save Path
 const PATH: String = "user://"
+const DEFAULT_SAVE_FOLDER_PATH: String = "user://save/"
 
 
 # Import
 const Player: Script = preload("uid://c2uxhumgng18h")
 const MainScene: Script = preload("uid://cplgj2iixr7f6")
+const PlayerCamera: Script = preload("uid://b7phyhue4y3yg")
+const Hud: Script = preload("uid://dgntyiu05self")
+const Ingame: Script = preload("uid://lf1g8r7wbov3")
+const Channel: Script = preload("uid://bc33hejnp7byc")
 
 
 # Scene
@@ -15,6 +20,7 @@ const PLAYER_SCENE: PackedScene = preload("uid://br4srsyh160du")
 
 var data: Data
 var player: Player
+var player_camera: PlayerCamera
 
 var current_data_name: String
 
@@ -24,16 +30,14 @@ var main_scene: MainScene
 func _init() -> void:
 	process_mode = Node.PROCESS_MODE_ALWAYS
 	player = PLAYER_SCENE.instantiate() as Player
+	player_camera = PlayerCamera.new()
 
 
-func _enter_tree() -> void:
-	#player = PLAYER_SCENE.instantiate(PackedScene.GEN_EDIT_STATE_INSTANCE)
-	pass
+func load_data(save_file_name: String = "autosave") -> void:
+	var save_path: String = DEFAULT_SAVE_FOLDER_PATH + save_file_name
+	var exist: bool = ResourceLoader.exists(save_path)
+	var res := ResourceLoader.load(save_path, "Data")
 
-
-func _process(delta: float) -> void:
-	#ResourceLoader.load_threaded_get_status(PATH + current_data_name + ".tres", [])
-	pass
 
 
 func start_dialog(
@@ -69,8 +73,16 @@ func start_dialog(
 		npc_dialog_parent.queue_free()
 
 
-func get_ingame_scene() -> Node:
+func get_channel() -> Channel:
+	return main_scene.channel
+
+
+func get_ingame_scene() -> Ingame:
 	return main_scene.ingame
+
+
+func get_hud() -> Hud:
+	return main_scene.hud
 
 
 class Data extends Resource:

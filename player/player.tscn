@@ -20,7 +20,6 @@
 [ext_resource type="Script" uid="uid://bsrhpk5urdhab" path="res://player/high_punch.gd" id="9_yllr7"]
 [ext_resource type="Script" uid="uid://tmgum3lt28ad" path="res://player/state/jump.gd" id="10_8t03j"]
 [ext_resource type="AnimationLibrary" uid="uid://bmdete26y3pbf" path="res://motion/jump_kick.res" id="10_dx5ib"]
-[ext_resource type="Script" uid="uid://b7phyhue4y3yg" path="res://player/player_camera.gd" id="11_2ieo8"]
 [ext_resource type="AnimationLibrary" uid="uid://c2h4k66ayh87g" path="res://motion/jump.res" id="11_55jnj"]
 [ext_resource type="AnimationLibrary" uid="uid://c1pb3jf5amgyl" path="res://motion/counter_attack.res" id="11_jfgyi"]
 [ext_resource type="AnimationLibrary" uid="uid://d3445833nuf3o" path="res://motion/move.res" id="12_dx5ib"]
@@ -39,7 +38,6 @@
 [ext_resource type="AnimationLibrary" uid="uid://b5pittsqyeeq3" path="res://motion/knockback.res" id="21_7crtr"]
 [ext_resource type="PackedScene" uid="uid://cd03qmykfoaw7" path="res://player/state/dodge.tscn" id="21_b8hi5"]
 [ext_resource type="Script" uid="uid://0dw4edo0eshv" path="res://player/hitbox.gd" id="21_bjvpn"]
-[ext_resource type="Script" uid="uid://b5n6wklxaj05c" path="res://hit_collision.gd" id="22_bjvpn"]
 [ext_resource type="Script" uid="uid://cuoebdxrbtlye" path="res://player/state/blowkick.gd" id="22_r7pn3"]
 [ext_resource type="Script" uid="uid://dr8n2mbhooxjo" path="res://player/hitbox_component.gd" id="22_uw77l"]
 [ext_resource type="Script" uid="uid://xw07ofvvtrxk" path="res://hitbox_info.gd" id="23_s7qer"]
@@ -49,7 +47,16 @@
 [ext_resource type="Script" uid="uid://d2ox33o3w3u0r" path="res://unit/hitbox_shape.gd" id="24_rptt4"]
 [ext_resource type="AnimationLibrary" uid="uid://bvq7ynb3u3a8p" path="res://motion/wallhit.res" id="25_3dxkp"]
 [ext_resource type="Script" uid="uid://ddv2b0xf2yme3" path="res://player/grab_box.gd" id="28_rptt4"]
+[ext_resource type="AudioStream" uid="uid://dx55wb37m6lso" path="res://audio/sfx/footstep/Footstep_CONCRETE_barefoot_run_01.wav" id="30_vgvch"]
+[ext_resource type="AudioStream" uid="uid://be6ehfo1lss2b" path="res://audio/sfx/footstep/Footstep_CONCRETE_barefoot_run_02.wav" id="31_a1u5o"]
+[ext_resource type="AudioStream" uid="uid://dcfwb7ybfp6ht" path="res://audio/sfx/footstep/Footstep_CONCRETE_barefoot_run_03.wav" id="32_3dxkp"]
+[ext_resource type="AudioStream" uid="uid://dfg4rq0g51nrc" path="res://audio/sfx/footstep/Footstep_CONCRETE_barefoot_run_04.wav" id="33_6wior"]
+[ext_resource type="AudioStream" uid="uid://s2f5opa84uh5" path="res://audio/sfx/footstep/Footstep_CONCRETE_barefoot_run_05.wav" id="34_p5tca"]
+[ext_resource type="AudioStream" uid="uid://b8fuxgnql4k3p" path="res://audio/sfx/footstep/Footstep_CONCRETE_barefoot_run_06.wav" id="35_jbx34"]
 [ext_resource type="Script" uid="uid://b7b1r6qslt248" path="res://grab_collision.gd" id="36_ge24q"]
+[ext_resource type="Script" uid="uid://crcp2uhoaap08" path="res://player/hit_polygon.gd" id="49_n0b8q"]
+[ext_resource type="Script" uid="uid://sjqmjeqxy8nt" path="res://player/health.gd" id="51_w7j2h"]
+[ext_resource type="Script" uid="uid://ckdpjvr4t2w8l" path="res://player/gunshot.gd" id="52_n0b8q"]
 
 [sub_resource type="Resource" id="Resource_4xbu7"]
 script = ExtResource("2_65viv")
@@ -156,7 +163,7 @@ tracks/5/keys = {
 tracks/6/type = "value"
 tracks/6/imported = false
 tracks/6/enabled = true
-tracks/6/path = NodePath("SlideHitbox:visible")
+tracks/6/path = NodePath("HitboxComponent/SlideHitbox:visible")
 tracks/6/interp = 1
 tracks/6/loop_wrap = true
 tracks/6/keys = {
@@ -168,7 +175,7 @@ tracks/6/keys = {
 tracks/7/type = "value"
 tracks/7/imported = false
 tracks/7/enabled = true
-tracks/7/path = NodePath("SlideHitbox/HitboxShape:disabled")
+tracks/7/path = NodePath("HitboxComponent/SlideHitbox/HitboxShape:disabled")
 tracks/7/interp = 1
 tracks/7/loop_wrap = true
 tracks/7/keys = {
@@ -180,7 +187,7 @@ tracks/7/keys = {
 tracks/8/type = "value"
 tracks/8/imported = false
 tracks/8/enabled = true
-tracks/8/path = NodePath("Blowkick:visible")
+tracks/8/path = NodePath("HitboxComponent/Blowkick:visible")
 tracks/8/interp = 1
 tracks/8/loop_wrap = true
 tracks/8/keys = {
@@ -192,7 +199,7 @@ tracks/8/keys = {
 tracks/9/type = "value"
 tracks/9/imported = false
 tracks/9/enabled = true
-tracks/9/path = NodePath("Blowkick/CollisionShape2D:disabled")
+tracks/9/path = NodePath("HitboxComponent/Blowkick/CollisionShape2D:disabled")
 tracks/9/interp = 1
 tracks/9/loop_wrap = true
 tracks/9/keys = {
@@ -204,7 +211,7 @@ tracks/9/keys = {
 tracks/10/type = "value"
 tracks/10/imported = false
 tracks/10/enabled = true
-tracks/10/path = NodePath("PunchCombo:visible")
+tracks/10/path = NodePath("HitboxComponent/PunchCombo:visible")
 tracks/10/interp = 1
 tracks/10/loop_wrap = true
 tracks/10/keys = {
@@ -216,7 +223,7 @@ tracks/10/keys = {
 tracks/11/type = "value"
 tracks/11/imported = false
 tracks/11/enabled = true
-tracks/11/path = NodePath("PunchCombo/Left:visible")
+tracks/11/path = NodePath("HitboxComponent/PunchCombo/Left:visible")
 tracks/11/interp = 1
 tracks/11/loop_wrap = true
 tracks/11/keys = {
@@ -228,7 +235,7 @@ tracks/11/keys = {
 tracks/12/type = "value"
 tracks/12/imported = false
 tracks/12/enabled = true
-tracks/12/path = NodePath("PunchCombo/Left:disabled")
+tracks/12/path = NodePath("HitboxComponent/PunchCombo/Left:disabled")
 tracks/12/interp = 1
 tracks/12/loop_wrap = true
 tracks/12/keys = {
@@ -240,7 +247,7 @@ tracks/12/keys = {
 tracks/13/type = "value"
 tracks/13/imported = false
 tracks/13/enabled = true
-tracks/13/path = NodePath("PunchCombo/Right:visible")
+tracks/13/path = NodePath("HitboxComponent/PunchCombo/Right:visible")
 tracks/13/interp = 1
 tracks/13/loop_wrap = true
 tracks/13/keys = {
@@ -252,7 +259,7 @@ tracks/13/keys = {
 tracks/14/type = "value"
 tracks/14/imported = false
 tracks/14/enabled = true
-tracks/14/path = NodePath("PunchCombo/Right:disabled")
+tracks/14/path = NodePath("HitboxComponent/PunchCombo/Right:disabled")
 tracks/14/interp = 1
 tracks/14/loop_wrap = true
 tracks/14/keys = {
@@ -264,7 +271,7 @@ tracks/14/keys = {
 tracks/15/type = "value"
 tracks/15/imported = false
 tracks/15/enabled = true
-tracks/15/path = NodePath("PunchCombo/Hammer:visible")
+tracks/15/path = NodePath("HitboxComponent/PunchCombo/Hammer:visible")
 tracks/15/interp = 1
 tracks/15/loop_wrap = true
 tracks/15/keys = {
@@ -276,7 +283,7 @@ tracks/15/keys = {
 tracks/16/type = "value"
 tracks/16/imported = false
 tracks/16/enabled = true
-tracks/16/path = NodePath("PunchCombo/Hammer:disabled")
+tracks/16/path = NodePath("HitboxComponent/PunchCombo/Hammer:disabled")
 tracks/16/interp = 1
 tracks/16/loop_wrap = true
 tracks/16/keys = {
@@ -288,7 +295,7 @@ tracks/16/keys = {
 tracks/17/type = "value"
 tracks/17/imported = false
 tracks/17/enabled = true
-tracks/17/path = NodePath("PunchCombo/HammerEx:disabled")
+tracks/17/path = NodePath("HitboxComponent/PunchCombo/HammerEx:disabled")
 tracks/17/interp = 1
 tracks/17/loop_wrap = true
 tracks/17/keys = {
@@ -300,7 +307,7 @@ tracks/17/keys = {
 tracks/18/type = "value"
 tracks/18/imported = false
 tracks/18/enabled = true
-tracks/18/path = NodePath("PunchCombo/HammerEx:visible")
+tracks/18/path = NodePath("HitboxComponent/PunchCombo/HammerEx:visible")
 tracks/18/interp = 1
 tracks/18/loop_wrap = true
 tracks/18/keys = {
@@ -312,7 +319,7 @@ tracks/18/keys = {
 tracks/19/type = "value"
 tracks/19/imported = false
 tracks/19/enabled = true
-tracks/19/path = NodePath("JumpHammer/JumpHammerHitbox:position")
+tracks/19/path = NodePath("HitboxComponent/JumpHammer/JumpHammerHitbox:position")
 tracks/19/interp = 1
 tracks/19/loop_wrap = true
 tracks/19/keys = {
@@ -324,7 +331,7 @@ tracks/19/keys = {
 tracks/20/type = "value"
 tracks/20/imported = false
 tracks/20/enabled = true
-tracks/20/path = NodePath("JumpHammer/JumpHammerHitbox:shape:size")
+tracks/20/path = NodePath("HitboxComponent/JumpHammer/JumpHammerHitbox:shape:size")
 tracks/20/interp = 1
 tracks/20/loop_wrap = true
 tracks/20/keys = {
@@ -336,7 +343,7 @@ tracks/20/keys = {
 tracks/21/type = "value"
 tracks/21/imported = false
 tracks/21/enabled = true
-tracks/21/path = NodePath("JumpHammer/JumpHammerHitbox:disabled")
+tracks/21/path = NodePath("HitboxComponent/JumpHammer/JumpHammerHitbox:disabled")
 tracks/21/interp = 1
 tracks/21/loop_wrap = true
 tracks/21/keys = {
@@ -348,7 +355,7 @@ tracks/21/keys = {
 tracks/22/type = "value"
 tracks/22/imported = false
 tracks/22/enabled = true
-tracks/22/path = NodePath("JumpHammer:visible")
+tracks/22/path = NodePath("HitboxComponent/JumpHammer:visible")
 tracks/22/interp = 1
 tracks/22/loop_wrap = true
 tracks/22/keys = {
@@ -360,7 +367,7 @@ tracks/22/keys = {
 tracks/23/type = "value"
 tracks/23/imported = false
 tracks/23/enabled = true
-tracks/23/path = NodePath("PlayerHitbox/HitboxShape:shape:size")
+tracks/23/path = NodePath("HitboxComponent/PlayerHitbox/HitboxShape:shape:size")
 tracks/23/interp = 1
 tracks/23/loop_wrap = true
 tracks/23/keys = {
@@ -372,7 +379,7 @@ tracks/23/keys = {
 tracks/24/type = "value"
 tracks/24/imported = false
 tracks/24/enabled = true
-tracks/24/path = NodePath("PlayerHitbox/HitboxShape:position")
+tracks/24/path = NodePath("HitboxComponent/PlayerHitbox/HitboxShape:position")
 tracks/24/interp = 1
 tracks/24/loop_wrap = true
 tracks/24/keys = {
@@ -384,7 +391,7 @@ tracks/24/keys = {
 tracks/25/type = "value"
 tracks/25/imported = false
 tracks/25/enabled = true
-tracks/25/path = NodePath("PlayerHitbox/HitboxShape:disabled")
+tracks/25/path = NodePath("HitboxComponent/PlayerHitbox/HitboxShape:disabled")
 tracks/25/interp = 1
 tracks/25/loop_wrap = true
 tracks/25/keys = {
@@ -396,7 +403,7 @@ tracks/25/keys = {
 tracks/26/type = "value"
 tracks/26/imported = false
 tracks/26/enabled = true
-tracks/26/path = NodePath("PlayerHitbox/HitboxShape:visible")
+tracks/26/path = NodePath("HitboxComponent/PlayerHitbox/HitboxShape:visible")
 tracks/26/interp = 1
 tracks/26/loop_wrap = true
 tracks/26/keys = {
@@ -475,6 +482,16 @@ var/move_list/value = {}
 var/move_list/hint = 0
 var/move_list/hint_string = ""
 
+[sub_resource type="AudioStreamRandomizer" id="AudioStreamRandomizer_w7j2h"]
+playback_mode = 1
+streams_count = 6
+stream_0/stream = ExtResource("30_vgvch")
+stream_1/stream = ExtResource("31_a1u5o")
+stream_2/stream = ExtResource("32_3dxkp")
+stream_3/stream = ExtResource("33_6wior")
+stream_4/stream = ExtResource("34_p5tca")
+stream_5/stream = ExtResource("35_jbx34")
+
 [sub_resource type="RectangleShape2D" id="RectangleShape2D_boad6"]
 size = Vector2(45, 20)
 
@@ -524,10 +541,8 @@ metadata/_custom_type_script = "uid://xw07ofvvtrxk"
 script = ExtResource("23_s7qer")
 metadata/_custom_type_script = "uid://xw07ofvvtrxk"
 
-[sub_resource type="Resource" id="Resource_bjvpn"]
-script = ExtResource("23_s7qer")
-atk_name = &"Pa!"
-metadata/_custom_type_script = "uid://xw07ofvvtrxk"
+[sub_resource type="ConvexPolygonShape2D" id="ConvexPolygonShape2D_vgvch"]
+points = PackedVector2Array(0, -31, 0, 31, 300, 31, 300, -31)
 
 [sub_resource type="CircleShape2D" id="CircleShape2D_ch6w5"]
 radius = 32.140316
@@ -559,6 +574,14 @@ damage_frame = 37
 force = Vector2(0, -325)
 max_available_unit_hit_count = 3
 metadata/_custom_type_script = "uid://xw07ofvvtrxk"
+
+[sub_resource type="Curve" id="Curve_jfgyi"]
+_data = [Vector2(0, 0), 0.0, 2.8824024, 0, 0, Vector2(1, 1), 0.0, 0.0, 0, 0]
+point_count = 2
+
+[sub_resource type="Gradient" id="Gradient_n0b8q"]
+offsets = PackedFloat32Array(0, 0.692)
+colors = PackedColorArray(0, 0, 0, 0, 1, 1, 1, 1)
 
 [node name="Player" type="CharacterBody2D" unique_id=1697822384]
 collision_layer = 2
@@ -596,11 +619,6 @@ state = 3
 position = Vector2(0, -46)
 shape = SubResource("RectangleShape2D_2ieo8")
 debug_color = Color(0.7921569, 0, 0.07450981, 0.41960785)
-
-[node name="Camera2D" type="Camera2D" parent="." unique_id=1164297328]
-process_mode = 3
-position = Vector2(0, -76)
-script = ExtResource("11_2ieo8")
 
 [node name="AnimationPlayer" type="AnimationPlayer" parent="." unique_id=1781161408]
 callback_mode_discrete = 0
@@ -646,6 +664,7 @@ library_name = &"idle"
 
 [node name="Move" type="LimboState" parent="StateMachine" unique_id=1139494425]
 script = ExtResource("5_40lky")
+footstep_sound = SubResource("AudioStreamRandomizer_w7j2h")
 anim_library = ExtResource("12_dx5ib")
 library_name = &"move"
 
@@ -705,14 +724,15 @@ metadata/_custom_type_script = "uid://c1823275u0dxi"
 
 [node name="HighPunchCombo" type="LimboState" parent="StateMachine" unique_id=662588822 node_paths=PackedStringArray("hitbox")]
 script = ExtResource("9_yllr7")
-hitbox = NodePath("../../PunchCombo")
+cooltime_frame = 6
+hitbox = NodePath("../../HitboxComponent/PunchCombo")
 action_input = PackedStringArray("attack")
 ev_name = &"high_punch_combo"
 anim_library = ExtResource("20_pnw6m")
 library_name = &"high_punch_combo"
 
 [node name="Slide" parent="StateMachine" unique_id=591192304 node_paths=PackedStringArray("hitbox") instance=ExtResource("16_uw77l")]
-hitbox = NodePath("../../SlideHitbox")
+hitbox = NodePath("../../HitboxComponent/SlideHitbox")
 action_input = PackedStringArray("down", "down", "kick")
 anim_library = ExtResource("24_a1u5o")
 library_name = &"slide"
@@ -739,7 +759,7 @@ metadata/_custom_type_script = "uid://b7x8s5btnaxj2"
 [node name="Blowkick" type="LimboState" parent="StateMachine" unique_id=1713774209 node_paths=PackedStringArray("hitbox")]
 script = ExtResource("22_r7pn3")
 cooltime_frame = 12
-hitbox = NodePath("../../Blowkick")
+hitbox = NodePath("../../HitboxComponent/Blowkick")
 action_input = PackedStringArray("down", "front", "kick")
 ev_name = &"blowkick"
 anim_library = ExtResource("9_gswnw")
@@ -752,10 +772,25 @@ offset_top = -91.0
 offset_right = 29.0
 offset_bottom = -68.0
 
+[node name="ProgressBar" type="ProgressBar" parent="." unique_id=1367097236]
+anchors_preset = 8
+anchor_left = 0.5
+anchor_top = 0.5
+anchor_right = 0.5
+anchor_bottom = 0.5
+offset_left = -40.0
+offset_top = -118.0
+offset_right = 40.0
+offset_bottom = -103.0
+grow_horizontal = 2
+grow_vertical = 2
+show_percentage = false
+script = ExtResource("51_w7j2h")
+
 [node name="HitboxComponent" type="Node2D" parent="." unique_id=1243634124]
 script = ExtResource("22_uw77l")
 
-[node name="PunchCombo" type="Area2D" parent="." unique_id=776727955]
+[node name="PunchCombo" type="Area2D" parent="HitboxComponent" unique_id=776727955]
 collision_layer = 0
 collision_mask = 2
 input_pickable = false
@@ -763,7 +798,7 @@ monitorable = false
 script = ExtResource("21_bjvpn")
 metadata/_custom_type_script = "uid://0dw4edo0eshv"
 
-[node name="Left" type="CollisionShape2D" parent="PunchCombo" unique_id=1646723435]
+[node name="Left" type="CollisionShape2D" parent="HitboxComponent/PunchCombo" unique_id=1646723435]
 position = Vector2(32, -74)
 shape = SubResource("RectangleShape2D_boad6")
 disabled = true
@@ -771,7 +806,7 @@ script = ExtResource("24_rptt4")
 hitbox_info = SubResource("Resource_2ieo8")
 metadata/_custom_type_script = "uid://d2ox33o3w3u0r"
 
-[node name="Right" type="CollisionShape2D" parent="PunchCombo" unique_id=533587364]
+[node name="Right" type="CollisionShape2D" parent="HitboxComponent/PunchCombo" unique_id=533587364]
 position = Vector2(40, -74)
 shape = SubResource("RectangleShape2D_yllr7")
 disabled = true
@@ -779,7 +814,7 @@ script = ExtResource("24_rptt4")
 hitbox_info = SubResource("Resource_yllr7")
 metadata/_custom_type_script = "uid://d2ox33o3w3u0r"
 
-[node name="Hammer" type="CollisionShape2D" parent="PunchCombo" unique_id=484765877]
+[node name="Hammer" type="CollisionShape2D" parent="HitboxComponent/PunchCombo" unique_id=484765877]
 position = Vector2(14, -56)
 shape = SubResource("RectangleShape2D_kb6p2")
 disabled = true
@@ -787,7 +822,7 @@ script = ExtResource("24_rptt4")
 hitbox_info = SubResource("Resource_kb6p2")
 metadata/_custom_type_script = "uid://d2ox33o3w3u0r"
 
-[node name="HammerEx" type="CollisionShape2D" parent="PunchCombo" unique_id=1562370842]
+[node name="HammerEx" type="CollisionShape2D" parent="HitboxComponent/PunchCombo" unique_id=1562370842]
 position = Vector2(40.5, -66)
 shape = SubResource("RectangleShape2D_7jywp")
 disabled = true
@@ -795,37 +830,33 @@ script = ExtResource("24_rptt4")
 hitbox_info = SubResource("Resource_wqsic")
 metadata/_custom_type_script = "uid://d2ox33o3w3u0r"
 
-[node name="SlideHitbox" parent="." unique_id=227710391 instance=ExtResource("20_x7c3f")]
+[node name="SlideHitbox" parent="HitboxComponent" unique_id=227710391 instance=ExtResource("20_x7c3f")]
 collision_layer = 0
 collision_mask = 2
 input_pickable = false
 monitorable = false
 
-[node name="HitboxShape" parent="SlideHitbox" index="0" unique_id=853768485]
+[node name="HitboxShape" parent="HitboxComponent/SlideHitbox" index="0" unique_id=853768485]
 hitbox_info = SubResource("Resource_pbsf6")
 
-[node name="CounterAttack" type="Area2D" parent="." unique_id=1232055323]
-visible = false
+[node name="CounterAttack" type="Area2D" parent="HitboxComponent" unique_id=1232055323]
 collision_layer = 0
 collision_mask = 2
 monitorable = false
 script = ExtResource("21_bjvpn")
 metadata/_custom_type_script = "uid://0dw4edo0eshv"
 
-[node name="Pa" type="CollisionPolygon2D" parent="CounterAttack" unique_id=1468070712]
+[node name="CollisionShape2D" type="CollisionShape2D" parent="HitboxComponent/CounterAttack" unique_id=525022277]
 visible = false
-polygon = PackedVector2Array(0, -79.495, 0, -35.905003, 300, -35.905003, 300, -79.495)
+shape = SubResource("ConvexPolygonShape2D_vgvch")
 disabled = true
-script = ExtResource("22_bjvpn")
-offset = Vector2(0, -57.7)
-height = 43.59
-hitbox_info = SubResource("Resource_bjvpn")
+script = ExtResource("49_n0b8q")
 
-[node name="GrabBox" type="Area2D" parent="." unique_id=172417262]
+[node name="GrabBox" type="Area2D" parent="HitboxComponent" unique_id=172417262]
 visible = false
 script = ExtResource("28_rptt4")
 
-[node name="GrabCollision" type="CollisionShape2D" parent="GrabBox" unique_id=1783036628]
+[node name="GrabCollision" type="CollisionShape2D" parent="HitboxComponent/GrabBox" unique_id=1783036628]
 modulate = Color(1, 1, 1, 0.32941177)
 position = Vector2(30, -62)
 shape = SubResource("CircleShape2D_ch6w5")
@@ -833,16 +864,16 @@ disabled = true
 debug_color = Color(0.7336318, 0.3267715, 0.85413134, 0.41960785)
 script = ExtResource("36_ge24q")
 
-[node name="GrabPoint" type="Marker2D" parent="GrabBox" unique_id=1471553841]
+[node name="GrabPoint" type="Marker2D" parent="HitboxComponent/GrabBox" unique_id=1471553841]
 
-[node name="Blowkick" type="Area2D" parent="." unique_id=2122655193]
+[node name="Blowkick" type="Area2D" parent="HitboxComponent" unique_id=2122655193]
 collision_layer = 0
 collision_mask = 2
 monitorable = false
 script = ExtResource("21_bjvpn")
 metadata/_custom_type_script = "uid://0dw4edo0eshv"
 
-[node name="CollisionShape2D" type="CollisionShape2D" parent="Blowkick" unique_id=1839622102]
+[node name="CollisionShape2D" type="CollisionShape2D" parent="HitboxComponent/Blowkick" unique_id=1839622102]
 position = Vector2(25, -66)
 shape = SubResource("CapsuleShape2D_greoi")
 disabled = true
@@ -850,34 +881,43 @@ script = ExtResource("24_rptt4")
 hitbox_info = SubResource("Resource_7jywp")
 metadata/_custom_type_script = "uid://d2ox33o3w3u0r"
 
-[node name="JumpHammer" type="Area2D" parent="." unique_id=276204299]
+[node name="JumpHammer" type="Area2D" parent="HitboxComponent" unique_id=276204299]
 visible = false
 input_pickable = false
 script = ExtResource("21_bjvpn")
 metadata/_custom_type_script = "uid://0dw4edo0eshv"
 
-[node name="JumpHammerHitbox" type="CollisionShape2D" parent="JumpHammer" unique_id=1723227909]
+[node name="JumpHammerHitbox" type="CollisionShape2D" parent="HitboxComponent/JumpHammer" unique_id=1723227909]
 position = Vector2(25, -24)
 shape = SubResource("RectangleShape2D_hcada")
 script = ExtResource("24_rptt4")
 hitbox_info = SubResource("Resource_greoi")
 metadata/_custom_type_script = "uid://d2ox33o3w3u0r"
 
-[node name="PlayerHitbox" type="Area2D" parent="." unique_id=2021337172]
+[node name="PlayerHitbox" type="Area2D" parent="HitboxComponent" unique_id=2021337172]
 visible = false
 script = ExtResource("21_bjvpn")
 metadata/_custom_type_script = "uid://0dw4edo0eshv"
 
-[node name="HitboxShape" type="CollisionShape2D" parent="PlayerHitbox" unique_id=319082244]
+[node name="HitboxShape" type="CollisionShape2D" parent="HitboxComponent/PlayerHitbox" unique_id=319082244]
 position = Vector2(18, -43)
 shape = SubResource("RectangleShape2D_dbhqi")
 script = ExtResource("24_rptt4")
 hitbox_info = SubResource("Resource_ch6w5")
 metadata/_custom_type_script = "uid://d2ox33o3w3u0r"
 
+[node name="Gunshot" type="Line2D" parent="HitboxComponent" unique_id=1425692736]
+points = PackedVector2Array(0, -65, 372, -65)
+width = 15.0
+width_curve = SubResource("Curve_jfgyi")
+gradient = SubResource("Gradient_n0b8q")
+begin_cap_mode = 1
+end_cap_mode = 2
+script = ExtResource("52_n0b8q")
+
 [editable path="SpriteComponent"]
 [editable path="StateMachine/Block"]
 [editable path="StateMachine/Dodge"]
 [editable path="StateMachine/Slide"]
 [editable path="StateMachine/JumpKick"]
-[editable path="SlideHitbox"]
+[editable path="HitboxComponent/SlideHitbox"]

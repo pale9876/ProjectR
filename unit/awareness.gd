@@ -27,6 +27,12 @@ func _enter_tree() -> void:
 	
 	body_entered.connect(_entered)
 	body_exited.connect(_exited)
+	
+	var unit := get_parent() as Unit
+	unit.state.face_changed.connect(
+		func() -> void:
+			scale.x = unit.get_face()
+	)
 
 
 func _ready() -> void:
@@ -37,11 +43,16 @@ func _ready() -> void:
 	)
 
 
+func _process(_delta: float) -> void:
+	var unit := get_parent() as Unit
+	
+
+
 func _entered(body: Node2D) -> void:
 	if get_target() == body:
 		if timer.time_left > 0.:
 			timer.stop()
-
+		print("found")
 		found.emit()
 
 

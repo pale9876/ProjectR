@@ -64,8 +64,11 @@ func _clear() -> void:
 
 func add_hitbox() -> void:
 	hitbox = hitbox_scene.instantiate()
+	
 	var player := get_state_machine().get_parent() as Player
-	player.add_child(hitbox)
+	var component: HitboxComponent = player.get_hitbox_component()
+	if !component.has_hitbox(NodePath(hitbox.name)):
+		component.add_hitbox(hitbox)
 
 
 func cooldowned() -> bool:
@@ -82,3 +85,8 @@ func heat() -> void:
 
 func revert() -> void:
 	get_hsm().revert()
+
+
+func is_hit(node_path: NodePath) -> bool:
+	
+	return false

@@ -1,0 +1,43 @@
+[gd_scene format=3 uid="uid://dvwitqofqorvt"]
+
+[ext_resource type="Script" uid="uid://xhpxarx6fs8a" path="res://map_editor/editor_entry.gd" id="1_78tk1"]
+
+[node name="EditorEntry" type="PanelContainer" unique_id=602129915]
+anchors_preset = 15
+anchor_right = 1.0
+anchor_bottom = 1.0
+grow_horizontal = 2
+grow_vertical = 2
+script = ExtResource("1_78tk1")
+
+[node name="MarginContainer" type="MarginContainer" parent="." unique_id=1499316341]
+layout_mode = 2
+theme_override_constants/margin_left = 100
+theme_override_constants/margin_top = 100
+theme_override_constants/margin_right = 100
+theme_override_constants/margin_bottom = 100
+
+[node name="VBoxContainer" type="VBoxContainer" parent="MarginContainer" unique_id=164729231]
+layout_mode = 2
+
+[node name="ItemList" type="ItemList" parent="MarginContainer/VBoxContainer" unique_id=1471909764]
+layout_mode = 2
+size_flags_vertical = 3
+item_count = 1
+item_0/text = "Empty"
+item_0/disabled = true
+
+[node name="HFlowContainer" type="HFlowContainer" parent="MarginContainer/VBoxContainer" unique_id=1811418781]
+layout_mode = 2
+alignment = 1
+
+[node name="Create" type="Button" parent="MarginContainer/VBoxContainer/HFlowContainer" unique_id=1194804636]
+unique_name_in_owner = true
+layout_mode = 2
+size_flags_horizontal = 4
+text = "Create"
+
+[node name="Exit" type="Button" parent="MarginContainer/VBoxContainer/HFlowContainer" unique_id=971501239]
+unique_name_in_owner = true
+layout_mode = 2
+text = "Exit"

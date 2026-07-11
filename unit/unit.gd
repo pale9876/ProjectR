@@ -42,6 +42,10 @@ func get_prefix() -> StringName:
 	return pf
 
 
+func get_face() -> float:
+	return float(state.face.x)
+
+
 func get_anim() -> AnimationPlayer:
 	return get_node(^"AnimationPlayer") as AnimationPlayer
 
@@ -127,19 +131,6 @@ func set_target(node: Node2D) -> void:
 func default() -> void:
 	set_target(null)
 
-
-class Stat:
-	var name: StringName
-	var max_hp: int
-	var hp: int:
-		set(value):
-			hp = clampi(value, 0, max_hp)
-	var speed: float:
-		set(value):
-			speed = maxf(0., value)
-	var is_dead: bool:
-		get:
-			return hp == 0
 
 class State:
 	signal face_changed()
