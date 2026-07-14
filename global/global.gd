@@ -18,6 +18,9 @@ const Channel: Script = preload("uid://bc33hejnp7byc")
 const PLAYER_SCENE: PackedScene = preload("uid://br4srsyh160du")
 
 
+signal debug_toggled()
+
+
 var data: Data
 var player: Player
 var player_camera: PlayerCamera
@@ -31,6 +34,12 @@ func _init() -> void:
 	process_mode = Node.PROCESS_MODE_ALWAYS
 	player = PLAYER_SCENE.instantiate() as Player
 	player_camera = PlayerCamera.new()
+
+
+func _process(delta: float) -> void:
+	if Input.is_action_just_pressed("toggle_debug"):
+		debug_toggled.emit()
+
 
 
 func load_data(save_file_name: String = "autosave") -> void:

@@ -295,7 +295,6 @@ collision_layer = 2
 collision_mask = 0
 monitoring = false
 script = ExtResource("8_k7l50")
-state = null
 
 [node name="HurtboxShape" type="CollisionShape2D" parent="Hurtbox" unique_id=296316886]
 position = Vector2(-0.5, -46)
@@ -420,7 +419,7 @@ script = ExtResource("19_cibo8")
 type = 2
 metadata/_custom_type_script = "uid://im1wyvflgwp0"
 
-[node name="#AttackState" type="LimboState" parent="StateMachine" unique_id=31685021]
+[node name="#ActState" type="LimboState" parent="StateMachine" unique_id=31685021]
 process_mode = 4
 script = ExtResource("15_4fp7c")
 metadata/_custom_type_script = "uid://c1823275u0dxi"

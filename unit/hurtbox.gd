@@ -1,26 +1,9 @@
-# unit/hurtbox.gd
 extends Area2D
+class_name Hurtbox
 
 
 # Import
-const StateMachine: Script = preload("uid://dcybwuwfqeqr3")
 const Player: Script = preload("uid://c2uxhumgng18h")
-
-const KnockbackState: Script = preload("uid://b1m4oejiu7ume")
-const AerialState: Script = preload("uid://dsjnx0cxf2gu1")
-const PushbackState: Script = preload("uid://8rj1txp84awx")
-const WallhitState: Script = preload("uid://cqhhjr6ob8477")
-const GrabbedState: Script = preload("uid://6eubdpqc1rif")
-const DownState: Script = preload("uid://cattor5p0ysjp")
-
-
-
-# Const
-const NONE := HurtEV.MotionState.NONE
-const KNOCKBACK := HurtEV.MotionState.KNOCKBACK
-const AERIAL := HurtEV.MotionState.AERIAL
-const PUSHBACK := HurtEV.MotionState.PUSHBACK
-const DOWNED := HurtEV.MotionState.DOWNED
 
 
 enum State {
@@ -33,6 +16,15 @@ enum State {
 }
 
 
+# Const (HurtEV)
+const NONE := HurtEV.MotionState.NONE
+const KNOCKBACK := HurtEV.MotionState.KNOCKBACK
+const AERIAL := HurtEV.MotionState.AERIAL
+const PUSHBACK := HurtEV.MotionState.PUSHBACK
+const DOWNED := HurtEV.MotionState.DOWNED
+
+
+# Const (State)
 const IDLE := State.IDLE
 const EXPOSE := State.EXPOSE
 const COUNTER := State.COUNTER
@@ -47,13 +39,16 @@ signal counter()
 
 
 @export var state: State = State.IDLE
+@export var invincible: bool = false
 
 
 var invincible_frame: int:
 	set(value):
 		invincible_frame = maxi(value, 0)
 
-var is_invincible: bool = false
+var is_invincible: bool:
+	get:
+		return invincible_frame > 0 or invincible
 
 
 func _init() -> void:
@@ -62,7 +57,7 @@ func _init() -> void:
 	set_collision_layer_value(1, false)
 	set_collision_mask_value(1, false)
 	
-	set_collision_layer_value(1, true)
+	set_collision_layer_value(2, true)
 
 
 func _physics_process(_delta: float) -> void:
@@ -84,54 +79,36 @@ func set_hurt_state(hitbox_info: HitboxInformation, hit_result: HitResult) -> vo
 	var current_state := state_machine.get_active_state() as UnitState
 	var next_state: NodePath = ^""
 	
-	if !current_state in get_hurt_states():
-		match hitbox_info.type:
-			HitboxInformation.KNOCKBACK:
-				next_state = ^"Knockback"
-			HitboxInformation.AERIAL:
-				next_state = ^"Aerial"
-			HitboxInformation.PUSHBACK:
-				next_state = ^"Pushback"
-			HitboxInformation.POUND:
-				next_state = ^"Pound"
+	if !current_state.name in get_hurt_states():
+		next_state = get_state_from_type(hitbox_info.type)
 		state_machine.init_hurt_state(hitbox_info, hit_result, next_state)
 	else:
 		current_state.event(hitbox_info, hit_result)
 
-#
-#func get_hurt_states() -> Array[UnitState]:
-	#return [
-		#get_knockback_state(),
-		#get_aerial_state(),
-		#get_pushback_state(),
-		#get_wallhit_state(),
-		#get_down_state(),
-	#]
-#
-#
-#func get_pound_state() -> UnitState:
-	#return (get_parent() as Unit).hsm.get_state(^"Pound")
-#
-#
-#func get_knockback_state() -> KnockbackState:
-	#return (get_parent() as Unit).hsm.get_state(^"Knockback") as KnockbackState
-#
-#
-#func get_aerial_state() -> AerialState:
-	#return (get_parent() as Unit).hsm.get_state(^"Aerial") as AerialState
-#
-#
-#func get_pushback_state() -> PushbackState:
-	#return (get_parent() as Unit).hsm.get_state(^"Pushback") as PushbackState
-#
-#
-#func get_wallhit_state() -> WallhitState:
-	#return (get_parent() as Unit).hsm.get_state(^"Wallhit") as WallhitState
-#
-#
-#func get_down_state() -> DownState:
-	#return (get_parent() as Unit).hsm.get_state(^"Down") as DownState
 
+func get_state_from_type(type: HitboxInformation.Type) -> NodePath:
+	var result: NodePath
+	match type:
+		HitboxInformation.KNOCKBACK:
+			result = ^"Knockback"
+		HitboxInformation.AERIAL:
+			result = ^"Aerial"
+		HitboxInformation.PUSHBACK:
+			result = ^"Pushback"
+		HitboxInformation.POUND:
+			result = ^"Pound"
+	return result
+
+func get_hurt_states() -> Array[StringName]:
+	return [
+		&"Knockback",
+		&"Aerial",
+		&"Pushback",
+		&"Wallhit",
+		&"Pound",
+		&"Grabbed",
+		&"Down",
+	]
 
 
 func effective() -> bool:

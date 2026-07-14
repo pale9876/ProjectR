@@ -16,7 +16,7 @@ func _enter_tree() -> void:
 
 func _ready() -> void:
 	var player := get_state_machine().get_player()
-	player.get_hurtbox().dodge.connect(_on_dodge_successed)
+	player.get_hurtbox().dodged.connect(_on_dodge_successed)
 	player.get_anim().animation_finished.connect(_on_dodge_anim_finsiehd)
 
 

@@ -61,4 +61,3 @@ func damaged(hit_result: HitResult) -> void:
 	
 	player.stat.hp -= damage
 	player.damaged.emit()
-	

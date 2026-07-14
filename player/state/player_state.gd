@@ -51,6 +51,8 @@ func get_anim() -> AnimationPlayer:
 
 
 func add_library() -> void:
+	assert(!library_name.is_empty(), "%s => 라이브러리 이름이 비어있습니다." % [name])
+	assert(anim_library != null, "%s => 모션이 비어있습니다." % [name])
 	get_anim().add_animation_library(library_name, anim_library)
 
 

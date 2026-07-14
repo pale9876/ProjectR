@@ -16,6 +16,8 @@ const EV_REVERT: StringName = &"revert"
 @export var input_postpone: int = 3
 
 
+
+
 var locked_frame: int = 0:
 	set(value):
 		locked_frame = maxi(value, 0)
@@ -40,6 +42,23 @@ func _ready() -> void:
 		func(current: LimboState, _prev: LimboState) -> void:
 			label.text = current.name
 	)
+
+
+func get_states_from_category(category_path: NodePath) -> Array[LimboState]:
+	assert(get_node(category_path) is CategoryComment)
+	var result: Array[LimboState] = []
+	var category: LimboState = get_node(category_path)
+	
+	var idx: int = category.get_index() + 1
+	var _state := get_child(idx) as LimboState
+	
+	while _state is not CategoryComment:
+		result.push_back(_state)
+		idx += 1
+		_state = get_child(idx) as LimboState
+	
+	return result
+
 
 func _physics_process(_delta: float) -> void:
 	var state: PlayerState.Type = get_current_type()

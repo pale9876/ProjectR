@@ -9,6 +9,11 @@ var locked_frame: int = 0:
 
 func _ready() -> void:
 	add_transition(ANYSTATE, get_state(^"Idle"), &"revert")
+	
+	var hurt_states: Array[LimboState] = get_category(
+		get_node("#HurtState")
+	)
+	print(hurt_states)
 
 
 func _physics_process(delta: float) -> void:
@@ -57,3 +62,19 @@ func init_lock() -> void:
 
 func tick() -> void:
 	locked_frame -= 1
+
+
+func get_category(cat: CategoryComment) -> Array[LimboState]:
+	assert(cat is CategoryComment)
+	
+	var result: Array[LimboState] = []
+	
+	var idx: int = cat.get_index() + 1
+	var _state := get_child(idx) as LimboState
+	
+	while _state is not CategoryComment:
+		result.push_back(_state)
+		idx += 1
+		_state = get_child(idx) as LimboState
+	
+	return result

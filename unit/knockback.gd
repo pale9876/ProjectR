@@ -33,9 +33,11 @@ func event(info: HitboxInformation, _result: HitResult) -> void:
 	match info.type:
 		HitboxInformation.AERIAL:
 			var aerial := get_state(^"Aerial")
-			hsm.init_hurt_state(info, _result, aerial)
+			#hsm.init_hurt_state(info, _result, aerial)
+			pass
 		HitboxInformation.KNOCKBACK:
-			hsm.init_hurt_state(info, _result, self)
+			#hsm.init_hurt_state(info, _result, self)
+			pass
 		
 
 
