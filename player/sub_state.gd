@@ -12,10 +12,6 @@ func _init() -> void:
 	set_physics_process(false)
 
 
-func _enter_tree() -> void:
-	pass
-
-
 func _physics_process(delta: float) -> void:
 	if is_active():
 		pass
@@ -23,6 +19,7 @@ func _physics_process(delta: float) -> void:
 
 func get_anim() -> AnimationPlayer:
 	return get_state().get_anim()
+
 
 func play(anim_name: StringName) -> void:
 	pass

@@ -42,11 +42,14 @@ func get_sub_states() -> Array[LimboSubState]:
 func get_hsm() -> LimboHSM:
 	return get_parent() as LimboHSM
 
-#
-#func get_anim() -> AnimationPlayer:
-	#return get_hsm().get_parent().get_node(^"AnimationPlayer")
-#
+
+func get_replicator() -> Replicator:
+	return get_hsm().get_parent() as Replicator
 
 
+func get_hurtbox() -> Hurtbox:
+	return get_replicator().get_hurtbox()
 
-	
+
+func get_anim() -> AnimationPlayer:
+	return get_replicator().get_anim()

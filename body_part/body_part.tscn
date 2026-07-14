@@ -1,0 +1,30 @@
+[gd_scene format=3 uid="uid://d351e4a1wx67d"]
+
+[ext_resource type="Script" uid="uid://c4ma143wnovjq" path="res://body_part/body_part.gd" id="1_rbh5q"]
+[ext_resource type="Script" uid="uid://xbuenvvr1rrg" path="res://body_part/onfloor.gd" id="2_nrgac"]
+[ext_resource type="SpriteFrames" uid="uid://bwceg85437jba" path="res://body_part/sample_body_part.tres" id="2_ysgey"]
+[ext_resource type="Script" uid="uid://dshp0gaed8vqg" path="res://body_part/flyaway.gd" id="4_awt4o"]
+
+[sub_resource type="CircleShape2D" id="CircleShape2D_wqsic"]
+radius = 8.0
+
+[node name="BodyPart" type="CharacterBody2D" unique_id=1841459599]
+script = ExtResource("1_rbh5q")
+
+[node name="AnimatedSprite2D" type="AnimatedSprite2D" parent="." unique_id=486656532]
+sprite_frames = ExtResource("2_ysgey")
+animation = &"roll"
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="." unique_id=1845363958]
+position = Vector2(0, -8)
+shape = SubResource("CircleShape2D_wqsic")
+
+[node name="AnimationPlayer" type="AnimationPlayer" parent="." unique_id=1347396556]
+
+[node name="LimboHSM" type="LimboHSM" parent="." unique_id=1205576080]
+
+[node name="Onfloor" type="LimboState" parent="LimboHSM" unique_id=62095119]
+script = ExtResource("2_nrgac")
+
+[node name="Flyaway" type="LimboState" parent="LimboHSM" unique_id=1912136110]
+script = ExtResource("4_awt4o")

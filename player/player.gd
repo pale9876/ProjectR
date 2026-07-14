@@ -65,13 +65,13 @@ func _ready() -> void:
 	state_machine.set_active(true)
 
 
-func get_face() -> float:
-	return float(state.face.x)
-
-
 func _process(_delta: float) -> void:
 	# Input
 	input_state.direction = Input.get_vector("left", "right", "up", "down")
+
+
+func get_face() -> float:
+	return float(state.face.x)
 
 
 func get_camera() -> PlayerCamera:

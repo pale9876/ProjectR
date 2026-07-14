@@ -23,6 +23,7 @@
 [ext_resource type="AnimationLibrary" uid="uid://bmdete26y3pbf" path="res://motion/jump_kick.res" id="10_dx5ib"]
 [ext_resource type="AnimationLibrary" uid="uid://c2h4k66ayh87g" path="res://motion/jump.res" id="11_55jnj"]
 [ext_resource type="AnimationLibrary" uid="uid://c1pb3jf5amgyl" path="res://motion/counter_attack.res" id="11_jfgyi"]
+[ext_resource type="AnimationLibrary" uid="uid://cwq3jkxmr5ask" path="res://motion/brutal_slicer.res" id="11_s3g0c"]
 [ext_resource type="AnimationLibrary" uid="uid://d3445833nuf3o" path="res://motion/move.res" id="12_dx5ib"]
 [ext_resource type="AnimationLibrary" uid="uid://c2lftjcgk3lp4" path="res://motion/idle.res" id="12_pnw6m"]
 [ext_resource type="AnimationLibrary" uid="uid://cofr330818v1e" path="res://motion/down.res" id="13_237xx"]
@@ -62,6 +63,7 @@
 [ext_resource type="Script" uid="uid://0kxmhttvge4l" path="res://player/sub_state.gd" id="51_jbx34"]
 [ext_resource type="Script" uid="uid://car8b8r8j83qa" path="res://player/brutal_slicer.gd" id="51_p5tca"]
 [ext_resource type="Script" uid="uid://sjqmjeqxy8nt" path="res://player/health.gd" id="51_w7j2h"]
+[ext_resource type="Script" uid="uid://xbjs4cvnl1lm" path="res://player/spawn_shot.gd" id="64_35wys"]
 
 [sub_resource type="Resource" id="Resource_4xbu7"]
 script = ExtResource("2_65viv")
@@ -84,7 +86,7 @@ fill_from = Vector2(0.5, 0.5)
 fill_to = Vector2(0.789, 0.789)
 
 [sub_resource type="RectangleShape2D" id="RectangleShape2D_32hag"]
-size = Vector2(42, 92)
+size = Vector2(42, 93)
 
 [sub_resource type="RectangleShape2D" id="RectangleShape2D_2ieo8"]
 size = Vector2(30, 92)
@@ -149,7 +151,7 @@ tracks/4/keys = {
 "times": PackedFloat32Array(0),
 "transitions": PackedFloat32Array(1),
 "update": 1,
-"values": [Vector2(0, -46)]
+"values": [Vector2(0, -46.5)]
 }
 tracks/5/type = "value"
 tracks/5/imported = false
@@ -161,7 +163,7 @@ tracks/5/keys = {
 "times": PackedFloat32Array(0),
 "transitions": PackedFloat32Array(1),
 "update": 1,
-"values": [Vector2(42, 92)]
+"values": [Vector2(42, 93)]
 }
 tracks/6/type = "value"
 tracks/6/imported = false
@@ -469,16 +471,6 @@ _data = {
 &"RESET": SubResource("Animation_boad6")
 }
 
-[sub_resource type="Animation" id="Animation_3dxkp"]
-
-[sub_resource type="Animation" id="Animation_6wior"]
-
-[sub_resource type="AnimationLibrary" id="AnimationLibrary_p5tca"]
-_data = {
-&"shot": SubResource("Animation_3dxkp"),
-&"slice_attack": SubResource("Animation_6wior")
-}
-
 [sub_resource type="Animation" id="Animation_a2xo5"]
 
 [sub_resource type="AnimationLibrary" id="AnimationLibrary_art4l"]
@@ -620,7 +612,7 @@ visible = true
 animation = &"idle"
 
 [node name="UnitCollision" type="CollisionShape2D" parent="." unique_id=628658269]
-position = Vector2(0, -46)
+position = Vector2(0, -46.5)
 shape = SubResource("RectangleShape2D_32hag")
 debug_color = Color(0, 0.6, 0.69803923, 0.14509805)
 
@@ -641,7 +633,7 @@ callback_mode_discrete = 0
 libraries/ = SubResource("AnimationLibrary_boad6")
 libraries/aerial = ExtResource("9_n0b8q")
 libraries/blowkick = ExtResource("9_gswnw")
-libraries/brutal_slicer = SubResource("AnimationLibrary_p5tca")
+libraries/brutal_slicer = ExtResource("11_s3g0c")
 libraries/counter_attack = ExtResource("11_jfgyi")
 libraries/dodge = ExtResource("8_a2xo5")
 libraries/down = ExtResource("13_237xx")
@@ -955,6 +947,9 @@ disabled = true
 script = ExtResource("24_rptt4")
 hitbox_info = SubResource("Resource_p5tca")
 metadata/_custom_type_script = "uid://d2ox33o3w3u0r"
+
+[node name="SpawnShot" type="Node2D" parent="HitboxComponent/BrutalSlicer" unique_id=1295598764]
+script = ExtResource("64_35wys")
 
 [editable path="SpriteComponent"]
 [editable path="StateMachine/Block"]
