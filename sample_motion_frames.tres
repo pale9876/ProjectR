@@ -23,6 +23,7 @@
 [ext_resource type="Texture2D" uid="uid://b5hbk6tfjs2om" path="res://aseprite/asso_project/sample_motions/jump_hammer.png" id="15_6j8o8"]
 [ext_resource type="Texture2D" uid="uid://dfalkg2hwd5tl" path="res://aseprite/asso_project/sample_motions/jump_kick.png" id="16_hs0ge"]
 [ext_resource type="Texture2D" uid="uid://dnjwbiwriy5uu" path="res://aseprite/asso_project/sample_motions/standup.png" id="20_gw8al"]
+[ext_resource type="Texture2D" uid="uid://b0ktqofgqjl4l" path="res://aseprite/asso_project/sample_motions/pound_try.png" id="20_h1mci"]
 [ext_resource type="Texture2D" uid="uid://did8i67svyifq" path="res://aseprite/asso_project/sample_motions/wallcrash.png" id="22_eq8e5"]
 
 [sub_resource type="AtlasTexture" id="AtlasTexture_r6jh2"]
@@ -260,6 +261,18 @@ region = Rect2(1536, 0, 256, 256)
 [sub_resource type="AtlasTexture" id="AtlasTexture_1so5t"]
 atlas = ExtResource("6_2e445")
 region = Rect2(1792, 0, 256, 256)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_2exqg"]
+atlas = ExtResource("20_h1mci")
+region = Rect2(0, 0, 256, 256)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_vrhfn"]
+atlas = ExtResource("20_h1mci")
+region = Rect2(256, 0, 256, 256)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_6etoc"]
+atlas = ExtResource("20_h1mci")
+region = Rect2(512, 0, 256, 256)
 
 [sub_resource type="AtlasTexture" id="AtlasTexture_47ffb"]
 atlas = ExtResource("11_yge5e")
@@ -614,6 +627,20 @@ animations = [{
 "loop": 1,
 "name": &"move",
 "speed": 10.0
+}, {
+"frames": [{
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_2exqg")
+}, {
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_vrhfn")
+}, {
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_6etoc")
+}],
+"loop": 1,
+"name": &"pound_try",
+"speed": 5.0
 }, {
 "frames": [{
 "duration": 1.0,

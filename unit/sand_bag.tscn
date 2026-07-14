@@ -295,6 +295,7 @@ collision_layer = 2
 collision_mask = 0
 monitoring = false
 script = ExtResource("8_k7l50")
+state = null
 
 [node name="HurtboxShape" type="CollisionShape2D" parent="Hurtbox" unique_id=296316886]
 position = Vector2(-0.5, -46)

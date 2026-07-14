@@ -1,3 +1,4 @@
+@icon("uid://beciwjrmhkiw6")
 extends CollisionShape2D
 class_name HitboxShape
 

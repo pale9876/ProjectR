@@ -1,4 +1,5 @@
 # player/hitbox.gd
+@icon("uid://3njfw3qgjcnf")
 extends Area2D
 class_name PlayerHitbox
 
@@ -96,15 +97,11 @@ func set_radius(node_path: NodePath, rad: float) -> void:
 
 
 func is_hit(node_path: NodePath) -> bool:
-	return !(get_node(node_path) as CollisionObject2D).result.is_empty()
+	return !(get_node(node_path) as HitboxShape).result.is_empty()
 
 
 func get_hitshape(node_path: NodePath) -> HitboxShape:
 	return get_node(node_path) as HitboxShape
-
-#
-#func get_hitshape_polygon(node_path: NodePath) -> HitboxShape:
-	#return get_node(node_path) as HitboxShape
 
 
 func get_player() -> Player:
@@ -113,6 +110,3 @@ func get_player() -> Player:
 
 func get_component() -> HitboxComponent:
 	return get_parent() as HitboxComponent
-
-
-	

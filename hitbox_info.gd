@@ -1,3 +1,4 @@
+@icon("uid://cph5y7calh2m")
 extends Resource
 class_name HitboxInformation
 
@@ -32,17 +33,16 @@ const DOWN_ATTACK := Type.DOWN_ATTACK
 
 
 @export_group("Camera Effect Strength")
-@export_range(0., 1., .001) var shake_strength: float = .1 # 공격자 카메라 흔들림 강도
-@export var reverse_shake_strength: float = 45. # 피격자 카메라 흔들림 강도
+@export var camera_effect: CameraEffect
 
 
 @export_group("When Blocked")
-@export var block_reduction_frame: int = 3
-@export_range(0., 1., .01) var blocked_reduction_force_ratio: float = .55
+@export var block_effect: BlockEffect
 
 
 @export_group("When Downed")
-@export var when_downed_will_received_atk_type: Type = Type.KNOCKBACK
-@export_range(0., 1., .01) var downed_damage_reduction_ratio: float = .75
-@export var additional_frame: int = 5
-@export var downed_reduction_force_ratio: Vector2 = Vector2(.75, .5)
+@export var downed_effect: DownAttackedEffect
+
+
+
+	

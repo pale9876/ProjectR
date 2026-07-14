@@ -1,0 +1,31 @@
+[gd_scene format=3 uid="uid://dilvfresgr4yw"]
+
+[ext_resource type="Script" uid="uid://ckdpjvr4t2w8l" path="res://player/gunshot.gd" id="1_aqa1o"]
+[ext_resource type="Script" uid="uid://xw07ofvvtrxk" path="res://hitbox_info.gd" id="2_ioj4e"]
+
+[sub_resource type="Curve" id="Curve_jfgyi"]
+_data = [Vector2(0, 0), 0.0, 2.8824024, 0, 0, Vector2(1, 1), 0.0, 0.0, 0, 0]
+point_count = 2
+
+[sub_resource type="Gradient" id="Gradient_n0b8q"]
+offsets = PackedFloat32Array(0, 0.692)
+colors = PackedColorArray(0, 0, 0, 0, 1, 1, 1, 1)
+
+[sub_resource type="CircleShape2D" id="CircleShape2D_6wior"]
+
+[sub_resource type="Resource" id="Resource_3dxkp"]
+script = ExtResource("2_ioj4e")
+metadata/_custom_type_script = "uid://xw07ofvvtrxk"
+
+[node name="Gunshot" type="Line2D" unique_id=1995644749]
+points = PackedVector2Array(0, -65, 372, -65)
+width = 15.0
+width_curve = SubResource("Curve_jfgyi")
+gradient = SubResource("Gradient_n0b8q")
+begin_cap_mode = 1
+end_cap_mode = 2
+script = ExtResource("1_aqa1o")
+shape = SubResource("CircleShape2D_6wior")
+hitbox_info = SubResource("Resource_3dxkp")
+
+[node name="CartoonParticle" type="Node2D" parent="." unique_id=1816283817]

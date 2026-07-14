@@ -11,7 +11,7 @@ const AerialState: Script = preload("uid://dsjnx0cxf2gu1")
 const PushbackState: Script = preload("uid://8rj1txp84awx")
 const WallhitState: Script = preload("uid://cqhhjr6ob8477")
 const GrabbedState: Script = preload("uid://6eubdpqc1rif")
-const DownState = preload("uid://cattor5p0ysjp")
+const DownState: Script = preload("uid://cattor5p0ysjp")
 
 
 
@@ -82,55 +82,55 @@ func damaged(hitbox_info: HitboxInformation, hit_result: HitResult) -> void:
 func set_hurt_state(hitbox_info: HitboxInformation, hit_result: HitResult) -> void:
 	var state_machine := (get_parent() as Unit).hsm
 	var current_state := state_machine.get_active_state() as UnitState
-	var next_state: UnitState = null
+	var next_state: NodePath = ^""
 	
 	if !current_state in get_hurt_states():
 		match hitbox_info.type:
 			HitboxInformation.KNOCKBACK:
-				next_state = get_knockback_state()
+				next_state = ^"Knockback"
 			HitboxInformation.AERIAL:
-				next_state = get_aerial_state()
+				next_state = ^"Aerial"
 			HitboxInformation.PUSHBACK:
-				next_state = get_pushback_state()
+				next_state = ^"Pushback"
 			HitboxInformation.POUND:
-				next_state = get_pound_state()
+				next_state = ^"Pound"
 		state_machine.init_hurt_state(hitbox_info, hit_result, next_state)
 	else:
 		current_state.event(hitbox_info, hit_result)
 
-
-func get_hurt_states() -> Array[UnitState]:
-	return [
-		get_knockback_state(),
-		get_aerial_state(),
-		get_pushback_state(),
-		get_wallhit_state(),
-		get_down_state(),
-	]
-
-
-func get_pound_state() -> UnitState:
-	return (get_parent() as Unit).hsm.get_state(^"Pound")
-
-
-func get_knockback_state() -> KnockbackState:
-	return (get_parent() as Unit).hsm.get_state(^"Knockback") as KnockbackState
-
-
-func get_aerial_state() -> AerialState:
-	return (get_parent() as Unit).hsm.get_state(^"Aerial") as AerialState
-
-
-func get_pushback_state() -> PushbackState:
-	return (get_parent() as Unit).hsm.get_state(^"Pushback") as PushbackState
-
-
-func get_wallhit_state() -> WallhitState:
-	return (get_parent() as Unit).hsm.get_state(^"Wallhit") as WallhitState
-
-
-func get_down_state() -> DownState:
-	return (get_parent() as Unit).hsm.get_state(^"Down") as DownState
+#
+#func get_hurt_states() -> Array[UnitState]:
+	#return [
+		#get_knockback_state(),
+		#get_aerial_state(),
+		#get_pushback_state(),
+		#get_wallhit_state(),
+		#get_down_state(),
+	#]
+#
+#
+#func get_pound_state() -> UnitState:
+	#return (get_parent() as Unit).hsm.get_state(^"Pound")
+#
+#
+#func get_knockback_state() -> KnockbackState:
+	#return (get_parent() as Unit).hsm.get_state(^"Knockback") as KnockbackState
+#
+#
+#func get_aerial_state() -> AerialState:
+	#return (get_parent() as Unit).hsm.get_state(^"Aerial") as AerialState
+#
+#
+#func get_pushback_state() -> PushbackState:
+	#return (get_parent() as Unit).hsm.get_state(^"Pushback") as PushbackState
+#
+#
+#func get_wallhit_state() -> WallhitState:
+	#return (get_parent() as Unit).hsm.get_state(^"Wallhit") as WallhitState
+#
+#
+#func get_down_state() -> DownState:
+	#return (get_parent() as Unit).hsm.get_state(^"Down") as DownState
 
 
 

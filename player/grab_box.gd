@@ -1,3 +1,4 @@
+@icon("uid://baxmkbmm1hw0h")
 extends Area2D
 class_name GrabBox
 

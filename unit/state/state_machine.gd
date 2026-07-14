@@ -16,11 +16,13 @@ func _physics_process(delta: float) -> void:
 		locked_frame -= 1
 
 
-func init_hurt_state(info: HitboxInformation, hit_result: HitResult, state: LimboState) -> void:
-	set_lock_frame(info.damage_frame)
+func init_hurt_state(info: HitboxInformation, hit_result: HitResult, init_state: NodePath) -> void:
 	var unit := get_unit()
-	unit.velocity = Vector2(info.force.x * hit_result.attack_direction, info.force.y ) 
-	change_active_state(state)
+	var next_state := get_state(init_state)
+	
+	unit.velocity = Vector2(info.force.x * hit_result.attack_direction, info.force.y)
+	set_lock_frame(info.damage_frame)
+	change_active_state(next_state)
 
 
 func revert() -> void:

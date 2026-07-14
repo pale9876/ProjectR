@@ -28,6 +28,7 @@ const StateMachine: Script = preload("uid://nmmtety5yvve")
 @export var anim_library: AnimationLibrary
 @export var library_name: StringName
 
+
 var motion: Vector2 = Vector2()
 var force_duration: int = 0:
 	set(value):
@@ -103,6 +104,18 @@ func take_force(_motion: Vector2, duration: int) -> void:
 	
 	motion = Vector2(_motion.x * player.get_face(), _motion.y)
 	force_duration = duration
+
+
+func take_motion(_motion: Vector2, duration: float) -> void:
+	var player := get_player()
+	#var shape_param := PhysicsShapeQueryParameters2D.new()
+	#shape_param.shape_rid = player.get_collider().shape.get_rid()
+	#shape_param.motion = _motion
+	#shape_param.exclude = [player.get_rid()]
+	#shape_param.transform = player.get_transform()
+	#player.get_world_2d().direct_space_state.cast_motion(shape_param)
+	var collider := move_and_collide(_motion, true)
+	var _destination: Vector2 = collider.get_position()
 
 
 ## 노드패스를 통해 찾음.

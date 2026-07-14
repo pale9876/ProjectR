@@ -1,0 +1,35 @@
+[gd_scene format=3 uid="uid://cgjxkmo53vf01"]
+
+[ext_resource type="Script" uid="uid://o348jlsiq2tc" path="res://ingame/map/map_keikai.gd" id="1_3t5c2"]
+
+[sub_resource type="SegmentShape2D" id="SegmentShape2D_3t5c2"]
+b = Vector2(768, 0)
+
+[sub_resource type="SegmentShape2D" id="SegmentShape2D_hwa2f"]
+b = Vector2(0, 256)
+
+[sub_resource type="SegmentShape2D" id="SegmentShape2D_jjjrp"]
+a = Vector2(768, 0)
+b = Vector2(768, 256)
+
+[sub_resource type="SegmentShape2D" id="SegmentShape2D_wqsic"]
+a = Vector2(0, 256)
+b = Vector2(768, 256)
+
+[node name="Keikai" type="StaticBody2D" unique_id=1292865989]
+input_pickable = true
+script = ExtResource("1_3t5c2")
+width = 768.0
+height = 256.0
+
+[node name="Top" type="CollisionShape2D" parent="." unique_id=1235105182]
+shape = SubResource("SegmentShape2D_3t5c2")
+
+[node name="Left" type="CollisionShape2D" parent="." unique_id=1183346508]
+shape = SubResource("SegmentShape2D_hwa2f")
+
+[node name="Right" type="CollisionShape2D" parent="." unique_id=10413331]
+shape = SubResource("SegmentShape2D_jjjrp")
+
+[node name="Bottom" type="CollisionShape2D" parent="." unique_id=2031275978]
+shape = SubResource("SegmentShape2D_wqsic")

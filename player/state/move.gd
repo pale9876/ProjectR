@@ -60,17 +60,23 @@ func _update(_delta: float) -> void:
 func play_footstep() -> void:
 	var player := get_player()
 	var channel := Global.get_channel()
+	
+	# Create PhysicsPointQueryParameters2D
 	var point_param := PhysicsPointQueryParameters2D.new()
 	point_param.position = player.global_position
 	point_param.collide_with_bodies = true
 	point_param.collision_mask = 4
+	
 	var result: Array[Dictionary]= player.get_world_2d().direct_space_state.intersect_point(point_param, 1)
 	if !result.is_empty():
 		var object := result[0]["collider"] as Object
 		if object is Floor:
 			if object.type == Floor.Type.CONCRETE:
 				channel.play(
-					footstep_sound, player.global_position, player
+					footstep_sound,
+					player.global_position,
+					&"SFX",
+					player
 				)
 			
 	#var param := PhysicsRayQueryParameters2D.create(

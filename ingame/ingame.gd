@@ -9,7 +9,13 @@ extends CanvasLayer
 # Enum
 enum Calamity { # 재앙, 인게임 내에 고정 및 분위
 	DAILY, # 일상 ( 미구현 )
+	# 내부 NPC 비중이 높음
+	# 외부 NPC 없음.
+	# 적 유닛이 없음.
+	
 	TRAINING, # 연습 (튜토리얼)
+	# 
+	
 	
 	
 	POSSESSION, # 집단적인 빙의

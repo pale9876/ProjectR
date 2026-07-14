@@ -1,7 +1,15 @@
 [gd_scene format=3 uid="uid://dv5bn46oy0fst"]
 
 [ext_resource type="Script" uid="uid://lf1g8r7wbov3" path="res://ingame/ingame.gd" id="1_wnhdf"]
+[ext_resource type="Script" uid="uid://dpn1opeegcme2" path="res://ingame/world.gd" id="2_xvj36"]
+[ext_resource type="Script" uid="uid://oxsm8uvgi23h" path="res://ingame/spectre.gd" id="5_qq5f4"]
 
 [node name="Ingame" type="CanvasLayer" unique_id=906912944]
 follow_viewport_enabled = true
 script = ExtResource("1_wnhdf")
+
+[node name="World" type="Node2D" parent="." unique_id=147203913]
+script = ExtResource("2_xvj36")
+
+[node name="Spectre" type="Camera2D" parent="." unique_id=274469220]
+script = ExtResource("5_qq5f4")
