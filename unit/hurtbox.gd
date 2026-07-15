@@ -75,7 +75,7 @@ func damaged(hitbox_info: HitboxInformation, hit_result: HitResult) -> void:
 
 
 func set_hurt_state(hitbox_info: HitboxInformation, hit_result: HitResult) -> void:
-	var state_machine := (get_parent() as Unit).hsm
+	var state_machine := (get_parent() as Unit).get_state_machine()
 	var current_state := state_machine.get_active_state() as UnitState
 	var next_state: NodePath = ^""
 	

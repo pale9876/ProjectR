@@ -1,13 +1,19 @@
 extends PlayerState
 
 
-@export var fall_state: LimboState
-@export var idle_state: LimboState
-@export var move_state: LimboState
+var idle_state: LimboState
+var move_state: LimboState
+var fall_state: LimboState
 
 
 func _enter_tree() -> void:
 	add_library()
+
+
+func _ready() -> void:
+	idle_state = get_state(^"Idle")
+	move_state = get_state(^"Move")
+	fall_state = get_state(^"Fall")
 
 
 func _enter() -> void:

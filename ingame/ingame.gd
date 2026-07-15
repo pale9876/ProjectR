@@ -3,7 +3,7 @@ extends CanvasLayer
 
 
 # Import
-
+const MapKeikai: Script = preload("uid://o348jlsiq2tc")
 
 
 # Enum
@@ -165,6 +165,9 @@ func set_lev_with_cal(_lev: Leviathan, _cal: Calamity) -> void:
 	leviathan = _lev
 	calamity = _cal
 
+
+func get_keikai() -> MapKeikai:
+	return get_node(^"Keikai") as MapKeikai
 
 
 

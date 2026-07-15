@@ -1,19 +1,7 @@
-extends LimboState
+extends DefaultUnitFormState
 class_name PlayerState
 
 
-enum Type {
-	IDLE,
-	JUMP,
-}
-
-
-const IDLE := Type.IDLE
-const JUMP := Type.JUMP
-
-
-# Import
-const Player: Script = preload("uid://c2uxhumgng18h")
 const StateMachine: Script = preload("uid://nmmtety5yvve")
 
 
@@ -60,8 +48,8 @@ func create_library() -> void:
 	get_anim().add_animation_library(library_name, AnimationLibrary.new())
 	
 
-func add_animation(anim_name: StringName, anim: Animation) -> void:
-	get_anim().get_animation_library(library_name).add_animation(anim_name, anim)
+func add_animation(_anim_name: StringName, anim: Animation) -> void:
+	get_anim().get_animation_library(library_name).add_animation(_anim_name, anim)
 
 
 func play(anim_name: StringName) -> void:

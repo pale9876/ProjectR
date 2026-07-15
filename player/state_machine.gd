@@ -16,8 +16,6 @@ const EV_REVERT: StringName = &"revert"
 @export var input_postpone: int = 3
 
 
-
-
 var locked_frame: int = 0:
 	set(value):
 		locked_frame = maxi(value, 0)

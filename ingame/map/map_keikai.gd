@@ -2,90 +2,96 @@
 extends StaticBody2D
 
 
-@export var width: float = 0.:
+@export var _left: int = -1:
 	set(value):
-		width = maxf(0., value)
-		if is_node_ready():
-			set_keikai()
-@export var height: float = 0.:
+		_left = mini(_right, value)
+		if Engine.is_editor_hint():
+			set_keikai(get_values())
+@export var _right: int = 1:
 	set(value):
-		height = maxf(0., value)
-		if is_node_ready():
-			set_keikai()
+		_right = maxi(_left, value)
+		if Engine.is_editor_hint():
+			set_keikai(get_values())
+@export var _ceil: int = - 1:
+	set(value):
+		_ceil = mini(value, _floor)
+		if Engine.is_editor_hint():
+			set_keikai(get_values())
+@export var _floor: int = 1:
+	set(value):
+		_floor = maxi(value, _ceil)
+		if Engine.is_editor_hint():
+			set_keikai(get_values())
+
+# Editor
+@export var color: Color = Color(0.529, 1.0, 0.901, 0.118)
 
 
 func _init() -> void:
 	set_collision_layer_value(1, true)
 	set_collision_mask_value(1, true)
 
-	input_pickable = true
+	input_pickable = false
 
 
-func set_keikai() -> void:
-	var top_left: Vector2 = Vector2()
-	var top_right: Vector2 = Vector2(width, 0.)
-	var bottom_left: Vector2 = Vector2(0., height)
-	var bottom_right: Vector2 = Vector2(width, height)
+func _enter_tree() -> void:
+	global_position = Vector2()
+
+
+func _draw() -> void:
+	if Engine.is_editor_hint():
+		draw_rect(
+			get_region(),
+			color, true
+		)
+
+func get_region() -> Rect2:
+	var val: Vector4 = get_values()
+	var width: float = val.y - val.x
+	var height: float = val.w - val.z
 	
+	return Rect2(Vector2(val.x, val.z), Vector2(width, height))
+
+
+func set_values(value: Vector4i) -> void:
+	_left = value.x
+	_right = value.y
+	_ceil = value.z
+	_floor = value.w
 	
-	var top := get_top()
-	var left := get_left()
-	var right := get_right()
-	var bottom := get_bottom()
+	if !Engine.is_editor_hint():
+		set_keikai(Vector4(value))
+
+
+func set_keikai(value: Vector4) -> void:
+	if !is_node_ready(): return
 	
-	top.a = top_left
-	top.b = top_right
+	get_left().global_position = Vector2(value.x, 0.)
+	get_right().global_position = Vector2(value.y, 0.)
+	get_ceil().global_position = Vector2(0., value.z)
+	get_floor().global_position = Vector2(0., value.w)
 	
-	left.a = top_left
-	left.b = bottom_left
-	
-	right.a = top_right
-	right.b = bottom_right
-	
-	bottom.a = bottom_left
-	bottom.b = bottom_right
+	if Engine.is_editor_hint():
+		queue_redraw()
 
 
-func close() -> void:
-	for node: Node in get_children():
-		if node is CollisionShape2D:
-			node.disabled = true
-
-
-func open_left() -> void:
-	get_segment(^"Left").disabled = true
-
-
-func open_right() -> void:
-	get_segment(^"Right").disabled = true
-
-
-func open_bottom() -> void:
-	get_segment(^"Bottom").disabled = true
-
-
-func get_keikai() -> Rect2:
-	return Rect2(
-		global_position,
-		global_position + Vector2(width, height)
+func get_values() -> Vector4:
+	return Vector4(
+		float(_left), float(_right), float(_ceil), float(_floor)
 	)
 
 
-func get_segment(node_path: NodePath) -> CollisionShape2D:
-	return get_node(node_path) as CollisionShape2D
+func get_ceil() -> CollisionShape2D:
+	return get_node(^"Ceil") as CollisionShape2D
 
 
-func get_top() -> SegmentShape2D:
-	return get_segment(^"Top").shape as SegmentShape2D
+func get_left() -> CollisionShape2D:
+	return get_node(^"Left") as CollisionShape2D
 
 
-func get_left() -> SegmentShape2D:
-	return get_segment(^"Left").shape as SegmentShape2D
+func get_right() -> CollisionShape2D:
+	return get_node(^"Right") as CollisionShape2D
 
 
-func get_right() -> SegmentShape2D:
-	return get_segment(^"Right").shape as SegmentShape2D
-
-
-func get_bottom() -> SegmentShape2D:
-	return get_segment(^"Bottom").shape as SegmentShape2D
+func get_floor() -> CollisionShape2D:
+	return get_node(^"Floor") as CollisionShape2D

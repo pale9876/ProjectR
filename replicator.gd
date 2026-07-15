@@ -28,13 +28,11 @@ func _init() -> void:
 func soft_pause() -> void:
 	set_process(false)
 	set_physics_process(false)
-	InputState.lock()
 
 
 func resume() -> void:
 	set_process(true)
 	set_physics_process(true)
-	InputState.unlock()
 
 
 func get_hitbox_component() -> HitboxComponent:
@@ -71,6 +69,11 @@ func get_anim() -> AnimationPlayer:
 
 func get_stage() -> Stage:
 	return get_parent() as Stage
+
+
+func is_in_stage() -> bool:
+	global_position
+	return false
 
 
 class State:

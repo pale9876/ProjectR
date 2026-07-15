@@ -39,6 +39,14 @@ func get_sub_states() -> Array[LimboSubState]:
 	return result
 
 
+func get_sub_state(node_path: NodePath) -> LimboSubState:
+	return get_node(node_path) as LimboSubState
+
+
+func get_state(node_path: NodePath) -> LimboState:
+	return get_hsm().get_node(node_path) as LimboState
+
+
 func get_hsm() -> LimboHSM:
 	return get_parent() as LimboHSM
 
@@ -53,3 +61,33 @@ func get_hurtbox() -> Hurtbox:
 
 func get_anim() -> AnimationPlayer:
 	return get_replicator().get_anim()
+
+
+# OVERRIDE
+func _guard() -> bool:
+	return true
+
+
+# OVERRIDE
+func _clear() -> void:
+	pass
+
+
+func get_player() -> Player:
+	return get_replicator() as Player
+
+
+#func get_unit() -> Unit:
+	#return get_replicator() as Unit
+
+
+#func _lock() -> void:
+	#get_player().input_state.lock()
+#
+#
+#func _unlock() -> void:
+	#get_player().input_state.unlock()
+
+
+func change_state(state: LimboState) -> void:
+	get_hsm().change_active_state(state)

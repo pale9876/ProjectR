@@ -8,6 +8,20 @@
 [sub_resource type="CircleShape2D" id="CircleShape2D_wqsic"]
 radius = 8.0
 
+[sub_resource type="Animation" id="Animation_awt4o"]
+resource_name = "flyaway"
+step = 0.0167
+
+[sub_resource type="Animation" id="Animation_gqwjd"]
+resource_name = "idle"
+step = 0.0167
+
+[sub_resource type="AnimationLibrary" id="AnimationLibrary_eiris"]
+_data = {
+&"flyaway": SubResource("Animation_awt4o"),
+&"idle": SubResource("Animation_gqwjd")
+}
+
 [node name="BodyPart" type="CharacterBody2D" unique_id=1841459599]
 script = ExtResource("1_rbh5q")
 
@@ -20,6 +34,7 @@ position = Vector2(0, -8)
 shape = SubResource("CircleShape2D_wqsic")
 
 [node name="AnimationPlayer" type="AnimationPlayer" parent="." unique_id=1347396556]
+libraries/ = SubResource("AnimationLibrary_eiris")
 
 [node name="LimboHSM" type="LimboHSM" parent="." unique_id=1205576080]
 

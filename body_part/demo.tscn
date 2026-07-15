@@ -1,0 +1,11 @@
+[gd_scene format=3 uid="uid://1h3cjd3pmhky"]
+
+[ext_resource type="PackedScene" uid="uid://cgjxkmo53vf01" path="res://ingame/map/keikai.tscn" id="1_8rp0s"]
+
+[node name="Demo" type="Node2D" unique_id=378684637]
+
+[node name="Keikai" parent="." unique_id=1292865989 instance=ExtResource("1_8rp0s")]
+left = 0
+right = 640
+ceil = 0
+floor = 360

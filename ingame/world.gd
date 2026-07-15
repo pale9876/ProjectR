@@ -6,6 +6,7 @@ extends Node2D
 
 
 var guidance: Dictionary[Rect2i, Map] = {}
+var current: Map = null
 
 
 func _enter_tree() -> void:
@@ -46,5 +47,5 @@ func get_map(_loc: Vector2i) -> Map:
 	return null
 
 
-
-	
+func change_map(map: Map) -> void:
+	current = map

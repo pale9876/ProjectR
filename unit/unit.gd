@@ -1,45 +1,14 @@
-extends CharacterBody2D
+extends Replicator
 class_name Unit
 
 
 # Import
 const Player: Script = preload("uid://c2uxhumgng18h")
-const SpriteComponent: Script = preload("uid://b0paoljcmbiys")
 const Awareness: Script = preload("uid://bdj3moatwduju")
-const StateMachine: Script = preload("uid://dcybwuwfqeqr3")
-const Hurtbox: Script = preload("uid://bupj3hlvtt67s")
-
-
-signal deactive()
-signal active()
 
 
 @export var info: UnitInformation
-@export var z_value: float = 0.
 @export var rage_mode: bool = true
-
-
-@onready var sprite_component: SpriteComponent = $SpriteComponent
-@onready var bt: BTPlayer = $BTPlayer
-@onready var hsm: StateMachine = $StateMachine
-#@onready var agent: NavigationAgent2D = $NavigationAgent2D
-
-
-var stat: Stat = Stat.new()
-var state: State = State.new()
-
-
-var _prefix: StringName = &""
-
-
-func set_prefix(prefix: StringName) -> void:
-	_prefix = prefix
-
-
-func get_prefix() -> StringName:
-	var pf: StringName = _prefix
-	_prefix = &""
-	return pf
 
 
 func get_face() -> float:
@@ -51,19 +20,12 @@ func get_anim() -> AnimationPlayer:
 
 
 func _on_face_changed() -> void:
-	sprite_component.scale.x = float(state.face.x)
-
-
-func _init() -> void:
-	motion_mode = CharacterBody2D.MOTION_MODE_GROUNDED
-	
-	set_collision_layer_value(1, false)
-	set_collision_layer_value(2, true)
+	get_sprite_component().scale.x = float(state.face.x)
 
 
 func _enter_tree() -> void:
-	GSignal.soft_pause.connect(_soft_paused)
-	GSignal.resume.connect(_resume)
+	GSignal.soft_pause.connect(soft_pause)
+	GSignal.resume.connect(resume)
 	
 	# init hp
 	stat.name = info.name
@@ -73,27 +35,20 @@ func _enter_tree() -> void:
 
 
 func _ready() -> void:
-	bt.active = false
+	var hsm := get_state_machine()
 	
-	sprite_component.init_sprites(
+	get_bt().active = false
+	
+	get_sprite_component().init_sprites(
 		info.upper_motions,
 		info.lower_motions,
 		info.sprite_frames
 	)
 	
-	hsm.initial_state = hsm.get_state(^"Idle")
+	hsm.initial_state = hsm.get_node(^"Idle") as LimboState
 	hsm.initialize(self)
 	hsm.set_active(true)
 
-
-func _soft_paused() -> void:
-	set_process(false)
-	set_physics_process(false)
-
-
-func _resume() -> void:
-	set_process(false)
-	set_physics_process(false)
 
 
 func get_collider() -> CollisionShape2D:
@@ -109,11 +64,11 @@ func get_state_machine() -> LimboHSM:
 
 
 func get_btbb() -> Blackboard:
-	return bt.blackboard
+	return get_bt().blackboard
 
 
 func get_sprite() -> AnimatedSprite2D:
-	return sprite_component.sprite
+	return get_sprite_component().sprite
 
 
 func get_hurtbox() -> Hurtbox:
@@ -128,14 +83,9 @@ func set_target(node: Node2D) -> void:
 	return get_btbb().set_var(&"target", node)
 
 
+func get_bt() -> BTPlayer:
+	return get_node(^"BTPlayer") as BTPlayer
+
+
 func default() -> void:
 	set_target(null)
-
-
-class State:
-	signal face_changed()
-	
-	var face: Vector2i:
-		set(value):
-			face = value
-			face_changed.emit()
