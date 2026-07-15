@@ -1,3 +1,4 @@
+# spectre.gd
 extends Camera2D
 
 

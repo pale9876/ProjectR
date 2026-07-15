@@ -765,16 +765,16 @@ script = ExtResource("20_2uvqg")
 cooltime_frame = 8
 just_frame = false
 hitbox_scene = null
-type = 1
 action_input = PackedStringArray("kick")
+type = 1
 anim_library = ExtResource("10_dx5ib")
 library_name = &"jump_kick"
 
 [node name="JumpHammer" type="LimboState" parent="StateMachine" unique_id=1138518008]
 script = ExtResource("21_1s1yo")
-type = 1
 action_input = PackedStringArray("attack")
 ev_name = &"jump_hammer"
+type = 1
 anim_library = ExtResource("9_dx5ib")
 library_name = &"jump_hammer"
 metadata/_custom_type_script = "uid://b7x8s5btnaxj2"

@@ -6,23 +6,10 @@ const StateMachine: Script = preload("uid://nmmtety5yvve")
 
 
 # Conditions
-@export var type: Type = IDLE
 @export var action_input: PackedStringArray
 @export var ev_name: StringName
 @export var block_cancel: bool = false
 @export var dodge_cancel: bool = false
-
-@export_category("Animations")
-@export var anim_library: AnimationLibrary
-@export var library_name: StringName
-
-
-var motion: Vector2 = Vector2()
-var force_duration: int = 0:
-	set(value):
-		force_duration = maxi(value, 0)
-		if force_duration == 0:
-			motion = Vector2()
 
 
 ## get_root()를 통하여 찾음.
@@ -39,8 +26,8 @@ func get_anim() -> AnimationPlayer:
 
 
 func add_library() -> void:
-	assert(!library_name.is_empty(), "%s => 라이브러리 이름이 비어있습니다." % [name])
-	assert(anim_library != null, "%s => 모션이 비어있습니다." % [name])
+	#assert(!library_name.is_empty(), "%s => 라이브러리 이름이 비어있습니다." % [name])
+	#assert(anim_library != null, "%s => 모션이 비어있습니다." % [name])
 	get_anim().add_animation_library(library_name, anim_library)
 
 
@@ -143,10 +130,10 @@ func anim_name(_name: StringName) -> StringName:
 
 
 func init_action() -> void:
-	assert(
-		!action_input.is_empty() and !ev_name.is_empty(),
-		"액션 인풋이 비어있거나, 디스패치 이벤트 이름이 존재하지 않음."
-	)
+	#assert(
+		#!action_input.is_empty() and !ev_name.is_empty(),
+		#"액션 인풋이 비어있거나, 디스패치 이벤트 이름이 존재하지 않음."
+	#)
 		
 	var state_machine := get_state_machine()
 	state_machine.input_map[type][action_input] = ev_name

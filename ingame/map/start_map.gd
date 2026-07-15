@@ -3,22 +3,15 @@ extends Node2D
 class_name Map
 
 
-
-
-signal location_changed()
-
-
 @export var start_spawn_position: Marker2D
 @export var stage: Stage
+@export var size: Vector2i = Vector2i.ONE:
+	set(value):
+		size = value.maxi(0)
+@export var location: Vector2i:
+	set(value):
+		location = value.maxi(0)
 
-
-var location: Vector2i:
-	set = set_location
-
-
-func set_location(to: Vector2i) -> void:
-	location = to
-	location_changed.emit()
 
 
 func add_unit(node: Node2D) -> void:

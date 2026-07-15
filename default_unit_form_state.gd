@@ -18,7 +18,25 @@ const IDLE := Type.IDLE
 const JUMP := Type.JUMP
 
 
+@export_group("State Type")
+@export var type: Type = IDLE
+
+
+@export_group("Animations")
+@export var anim_library: AnimationLibrary
+@export var library_name: StringName
+
+
+var motion: Vector2 = Vector2()
+var force_duration: int = 0:
+	set(value):
+		force_duration = maxi(value, 0)
+		if force_duration == 0:
+			motion = Vector2()
+
+
 var current: LimboSubState
+
 
 
 func _notification(what: int) -> void:
@@ -28,6 +46,17 @@ func _notification(what: int) -> void:
 		
 			if !substates.is_empty():
 				current = get_sub_states()[0]
+
+
+
+# OVERRIDE
+func _guard() -> bool:
+	return true
+
+
+# OVERRIDE
+func _clear() -> void:
+	pass
 
 
 func get_sub_states() -> Array[LimboSubState]:
@@ -63,30 +92,8 @@ func get_anim() -> AnimationPlayer:
 	return get_replicator().get_anim()
 
 
-# OVERRIDE
-func _guard() -> bool:
-	return true
-
-
-# OVERRIDE
-func _clear() -> void:
-	pass
-
-
 func get_player() -> Player:
 	return get_replicator() as Player
-
-
-#func get_unit() -> Unit:
-	#return get_replicator() as Unit
-
-
-#func _lock() -> void:
-	#get_player().input_state.lock()
-#
-#
-#func _unlock() -> void:
-	#get_player().input_state.unlock()
 
 
 func change_state(state: LimboState) -> void:
