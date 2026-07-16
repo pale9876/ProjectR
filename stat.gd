@@ -2,12 +2,14 @@
 extends RefCounted
 class_name Stat
 
+
 signal expanded()
 signal reduced()
 signal damaged()
 signal dead()
 signal healed()
-	
+
+
 var _class: StringName = &""
 var name: StringName = &""
 var level: int = 0
@@ -16,6 +18,9 @@ var hp: int:
 		hp = maxi(value, 0)
 		if hp == 0:
 			dead.emit()
+var blood: float = 1.:
+	set(val):
+		blood = clampf(val, 0., 1.)
 var max_hp: int
 var speed: float
 

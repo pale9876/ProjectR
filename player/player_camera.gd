@@ -18,9 +18,13 @@ var within: Array[Node2D] = []
 
 
 func _enter_tree() -> void:
+	Global.player_camera = self
+	
 	var player := get_player()
 	target = player
 	global_position = player.global_position
+	
+	make_current()
 
 
 func _process(_delta: float) -> void:

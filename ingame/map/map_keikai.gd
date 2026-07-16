@@ -5,22 +5,22 @@ extends StaticBody2D
 @export var _left: int = -1:
 	set(value):
 		_left = mini(_right, value)
-		if Engine.is_editor_hint():
+		if Engine.is_editor_hint() and is_node_ready():
 			set_keikai(get_values())
 @export var _right: int = 1:
 	set(value):
 		_right = maxi(_left, value)
-		if Engine.is_editor_hint():
+		if Engine.is_editor_hint() and is_node_ready():
 			set_keikai(get_values())
 @export var _ceil: int = - 1:
 	set(value):
 		_ceil = mini(value, _floor)
-		if Engine.is_editor_hint():
+		if Engine.is_editor_hint() and is_node_ready():
 			set_keikai(get_values())
 @export var _floor: int = 1:
 	set(value):
 		_floor = maxi(value, _ceil)
-		if Engine.is_editor_hint():
+		if Engine.is_editor_hint() and is_node_ready():
 			set_keikai(get_values())
 
 # Editor
@@ -64,8 +64,6 @@ func set_values(value: Vector4i) -> void:
 
 
 func set_keikai(value: Vector4) -> void:
-	if !is_node_ready(): return
-	
 	get_left().global_position = Vector2(value.x, 0.)
 	get_right().global_position = Vector2(value.y, 0.)
 	get_ceil().global_position = Vector2(0., value.z)

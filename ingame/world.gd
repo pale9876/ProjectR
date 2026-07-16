@@ -10,7 +10,9 @@ const Ingame: Script = preload("uid://lf1g8r7wbov3")
 @export var tile_size: int = 16
 
 
-var guidance: Dictionary[Rect2i, Map] = {}
+var guidance: Dictionary[Rect2i, Map] = {
+	
+}
 var current: Map = null
 
 
@@ -20,10 +22,14 @@ func get_current_map() -> Map:
 
 func _ready() -> void:
 	for node: Node in get_children():
-		if node is Map:
-			if !current:
-				current = node
-				break
+		if (node is Map):
+			if !guidance.values().has(node):
+				var rect: Rect2i = node.get_region()
+				guidance[rect] = node
+			
+			if current == null:
+				change_map(node)
+				print("Map Init")
 
 
 func add(_guide: MapGuidance) -> void:
@@ -74,10 +80,13 @@ func set_keikai(map: Map) -> void:
 	var height: int = map.location.y + map.size.y
 	
 	var value := Vector4i(
-		map.location.x, map.size.x, tile_size * width, tile_size * height
+		map.location.x * tile_size, # Left
+		tile_size * width, # Right
+		map.location.y * tile_size, # Ceil
+		tile_size * height # Floor
 	)
 	
 	var keikai := get_ingame().get_keikai()
 	keikai.set_keikai(value)
 	
-	
+	print(value)

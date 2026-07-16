@@ -33,7 +33,7 @@ var main_scene: MainScene
 func _init() -> void:
 	process_mode = Node.PROCESS_MODE_ALWAYS
 	player = PLAYER_SCENE.instantiate() as Player
-	player_camera = PlayerCamera.new()
+	#player_camera = PlayerCamera.new()
 
 
 func _process(delta: float) -> void:

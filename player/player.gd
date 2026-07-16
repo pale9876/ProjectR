@@ -5,6 +5,7 @@ extends Replicator
 # Import
 const PlayerCamera: Script = preload("uid://b7phyhue4y3yg")
 
+
 @export_category("Data")
 @export var info: PlayerInformation
 
@@ -22,6 +23,14 @@ var _prefix: StringName = &""
 
 func get_stat() -> Stat:
 	return stat
+
+
+func get_blood() -> float:
+	return stat.blood
+
+
+func get_hp_progress() -> float:
+	return float(stat.hp) / float(stat.max_hp)
 
 
 func _init() -> void:

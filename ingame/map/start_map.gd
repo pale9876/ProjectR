@@ -3,6 +3,7 @@ extends Node2D
 class_name Map
 
 
+@export var guidance: MapGuidance
 @export var start_spawn_position: Marker2D
 @export var stage: Stage
 @export var size: Vector2i = Vector2i.ONE:
@@ -12,6 +13,15 @@ class_name Map
 	set(value):
 		location = value.maxi(0)
 
+
+func _enter_tree() -> void:
+	if guidance:
+		location = guidance.location
+		size = guidance.size
+
+
+func get_region() -> Rect2i:
+	return Rect2i(location, size)
 
 
 func add_unit(node: Node2D) -> void:

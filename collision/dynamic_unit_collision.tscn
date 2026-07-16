@@ -1,0 +1,11 @@
+[gd_scene format=3 uid="uid://cpwhjx70wq4p2"]
+
+[ext_resource type="Script" uid="uid://bhhy483vjefa1" path="res://collision/dynamic_unit_collision.gd" id="1_cewci"]
+
+[sub_resource type="ConvexPolygonShape2D" id="ConvexPolygonShape2D_cewci"]
+points = PackedVector2Array(-16, -64, 16, -64, 16, 0, -16, 0)
+
+[node name="DynamicUnitCollision" type="CollisionShape2D" unique_id=1794958952]
+shape = SubResource("ConvexPolygonShape2D_cewci")
+script = ExtResource("1_cewci")
+width = 32

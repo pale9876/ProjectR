@@ -3,8 +3,16 @@
 [ext_resource type="Script" uid="uid://lf1g8r7wbov3" path="res://ingame/ingame.gd" id="1_wnhdf"]
 [ext_resource type="Script" uid="uid://dpn1opeegcme2" path="res://ingame/world.gd" id="2_xvj36"]
 [ext_resource type="PackedScene" uid="uid://ccd41t1qrjttn" path="res://ingame/map/start_map.tscn" id="3_qq5f4"]
+[ext_resource type="Script" uid="uid://c6w0iyaft7ljo" path="res://map_guidance.gd" id="4_jcudw"]
 [ext_resource type="PackedScene" uid="uid://cgjxkmo53vf01" path="res://ingame/map/keikai.tscn" id="4_v424x"]
 [ext_resource type="Script" uid="uid://oxsm8uvgi23h" path="res://ingame/spectre.gd" id="5_qq5f4"]
+[ext_resource type="Script" uid="uid://b7phyhue4y3yg" path="res://player/player_camera.gd" id="7_mm3qa"]
+
+[sub_resource type="Resource" id="Resource_jcudw"]
+script = ExtResource("4_jcudw")
+scene = ExtResource("3_qq5f4")
+size = Vector2i(72, 16)
+metadata/_custom_type_script = "uid://c6w0iyaft7ljo"
 
 [node name="Ingame" type="CanvasLayer" unique_id=906912944]
 follow_viewport_enabled = true
@@ -14,10 +22,16 @@ script = ExtResource("1_wnhdf")
 script = ExtResource("2_xvj36")
 
 [node name="StartMap" parent="World" unique_id=806471253 instance=ExtResource("3_qq5f4")]
+guidance = SubResource("Resource_jcudw")
+
+[node name="Keikai" parent="." unique_id=1292865989 instance=ExtResource("4_v424x")]
+_left = 0
+_right = 1151
+_ceil = 0
+_floor = 266
+
+[node name="PlayerCamera" type="Camera2D" parent="." unique_id=2130834982]
+script = ExtResource("7_mm3qa")
 
 [node name="Spectre" type="Camera2D" parent="." unique_id=274469220]
 script = ExtResource("5_qq5f4")
-
-[node name="Keikai" parent="." unique_id=1292865989 instance=ExtResource("4_v424x")]
-_right = 1153
-_floor = 263

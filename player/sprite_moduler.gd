@@ -40,10 +40,8 @@ func _process(_delta: float) -> void:
 				_motion_finished.erase(path)
 
 
-
 func play_part(node_path: NodePath, anim_name: StringName) -> void:
 	_reserve[node_path] = anim_name
-
 
 
 func play(anim_name: StringName) -> void:
@@ -54,3 +52,6 @@ func play(anim_name: StringName) -> void:
 func stop() -> void:
 	upper.stop()
 	lower.stop()
+
+
+	
