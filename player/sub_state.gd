@@ -12,6 +12,11 @@ func _init() -> void:
 	set_physics_process(false)
 
 
+func _enter_tree() -> void:
+	pass
+
+
+
 func _physics_process(delta: float) -> void:
 	if is_active():
 		pass
@@ -20,10 +25,14 @@ func _physics_process(delta: float) -> void:
 func enter() -> void:
 	pass
 
-
+# OVERRIDE:
 func update(delta: float) -> void:
 	pass
 
+
+# OVERRIDE:
+func exit() -> void:
+	pass
 
 
 func get_anim() -> AnimationPlayer:
@@ -31,7 +40,11 @@ func get_anim() -> AnimationPlayer:
 
 
 func play(anim_name: StringName) -> void:
-	get_state().get_anim().play(anim_name)
+	get_state().get_anim().play(get_anim_lib() + &"/" + anim_name)
+
+
+func get_anim_lib() -> StringName:
+	return get_state().library_name
 
 
 func is_active() -> bool:
@@ -56,8 +69,6 @@ func get_unit() -> Unit:
 
 func get_player() -> Player:
 	return get_state().agent as Player
-
-
 
 
 

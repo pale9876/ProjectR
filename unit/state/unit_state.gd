@@ -1,4 +1,4 @@
-extends LimboState
+extends DefaultUnitFormState
 class_name UnitState
 
 
@@ -6,18 +6,6 @@ class_name UnitState
 const StateMachine: Script = preload("uid://dcybwuwfqeqr3")
 
 
-enum Type {
-	IDLE,
-	JUMP,
-	HURT,
-}
-
-
-const IDLE := Type.IDLE
-const JUMP := Type.JUMP
-
-
-@export var type: Type = IDLE
 @export var anim_lib_name: StringName
 @export var anim_lib: AnimationLibrary
 
@@ -25,9 +13,6 @@ const JUMP := Type.JUMP
 func get_unit() -> Unit:
 	return agent as Unit
 
-
-func get_hsm() -> LimboHSM:
-	return get_root() as LimboHSM
 
 
 func get_target() -> Node2D:
@@ -66,13 +51,6 @@ func move_and_collide(
 func get_state_machine() -> StateMachine:
 	return get_parent() as StateMachine
 
-
-func change_state(state: LimboState) -> void:
-	get_hsm().change_active_state(state)
-
-
-func get_anim() -> AnimationPlayer:
-	return get_state_machine().get_anim()
 
 
 func play(anim_name: StringName) -> void:
@@ -127,10 +105,6 @@ func add_animation(anim_name: StringName, anim: Animation) -> void:
 	assert(anim_lib_name)
 	var _lib := get_anim().get_animation_library(anim_lib_name)
 	_lib.add_animation(anim_name, anim)
-
-
-func get_state(node_path: NodePath) -> UnitState:
-	return get_state_machine().get_state(node_path)
 
 
 func get_bb_var(var_name: StringName) -> Variant:

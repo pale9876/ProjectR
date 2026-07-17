@@ -9,6 +9,7 @@
 [ext_resource type="SpriteFrames" uid="uid://dhhxgkevom0u8" path="res://sample_upper_motions.tres" id="5_2d64t"]
 [ext_resource type="Script" uid="uid://dibqva5a64jvq" path="res://ai/tasks/unit/patrol_wait.gd" id="5_toejp"]
 [ext_resource type="Script" uid="uid://dmj17w1hipj7o" path="res://ai/tasks/unit/trace_target.gd" id="6_2clmh"]
+[ext_resource type="Script" uid="uid://bhhy483vjefa1" path="res://collision/dynamic_unit_collision.gd" id="7_gjkc3"]
 [ext_resource type="Script" uid="uid://cdbxf87eqivir" path="res://ai/tasks/set_target_position.gd" id="8_1kauj"]
 [ext_resource type="Script" uid="uid://bupj3hlvtt67s" path="res://unit/hurtbox.gd" id="8_k7l50"]
 [ext_resource type="Script" uid="uid://bdj3moatwduju" path="res://unit/awareness.gd" id="9_yvxo8"]
@@ -60,96 +61,108 @@ fill_from = Vector2(0.5, 0.5)
 fill_to = Vector2(0.85, 0.85)
 
 [sub_resource type="RectangleShape2D" id="RectangleShape2D_2d64t"]
-size = Vector2(36, 91)
+size = Vector2(38, 92)
 
 [sub_resource type="RectangleShape2D" id="RectangleShape2D_t3pbd"]
-size = Vector2(27, 90)
+size = Vector2(38, 92)
 
 [sub_resource type="Animation" id="Animation_njs1s"]
 length = 0.001
 tracks/0/type = "value"
 tracks/0/imported = false
 tracks/0/enabled = true
-tracks/0/path = NodePath("UnitCollision:shape:size")
+tracks/0/path = NodePath("Hurtbox/HurtboxShape:disabled")
 tracks/0/interp = 1
 tracks/0/loop_wrap = true
 tracks/0/keys = {
 "times": PackedFloat32Array(0),
 "transitions": PackedFloat32Array(1),
 "update": 1,
-"values": [Vector2(36, 91)]
+"values": [false]
 }
 tracks/1/type = "value"
 tracks/1/imported = false
 tracks/1/enabled = true
-tracks/1/path = NodePath("Hurtbox/HurtboxShape:shape:size")
+tracks/1/path = NodePath("SpriteComponent/AnimatedSprite2D:animation")
 tracks/1/interp = 1
 tracks/1/loop_wrap = true
 tracks/1/keys = {
 "times": PackedFloat32Array(0),
 "transitions": PackedFloat32Array(1),
 "update": 1,
-"values": [Vector2(27, 90)]
+"values": [&"idle"]
 }
 tracks/2/type = "value"
 tracks/2/imported = false
 tracks/2/enabled = true
-tracks/2/path = NodePath("Hurtbox/HurtboxShape:position")
+tracks/2/path = NodePath("SpriteComponent/AnimatedSprite2D:frame")
 tracks/2/interp = 1
 tracks/2/loop_wrap = true
 tracks/2/keys = {
 "times": PackedFloat32Array(0),
 "transitions": PackedFloat32Array(1),
 "update": 1,
-"values": [Vector2(-0.5, -46)]
+"values": [0]
 }
 tracks/3/type = "value"
 tracks/3/imported = false
 tracks/3/enabled = true
-tracks/3/path = NodePath("UnitCollision:position")
+tracks/3/path = NodePath("Hurtbox/HurtboxShape:height")
 tracks/3/interp = 1
 tracks/3/loop_wrap = true
 tracks/3/keys = {
 "times": PackedFloat32Array(0),
 "transitions": PackedFloat32Array(1),
 "update": 1,
-"values": [Vector2(0, -46)]
+"values": [92]
 }
 tracks/4/type = "value"
 tracks/4/imported = false
 tracks/4/enabled = true
-tracks/4/path = NodePath("Hurtbox/HurtboxShape:disabled")
+tracks/4/path = NodePath("Hurtbox/HurtboxShape:width")
 tracks/4/interp = 1
 tracks/4/loop_wrap = true
 tracks/4/keys = {
 "times": PackedFloat32Array(0),
 "transitions": PackedFloat32Array(1),
 "update": 1,
-"values": [false]
+"values": [38]
 }
 tracks/5/type = "value"
 tracks/5/imported = false
 tracks/5/enabled = true
-tracks/5/path = NodePath("SpriteComponent/AnimatedSprite2D:animation")
+tracks/5/path = NodePath("Hurtbox/HurtboxShape:offset_y")
 tracks/5/interp = 1
 tracks/5/loop_wrap = true
 tracks/5/keys = {
 "times": PackedFloat32Array(0),
 "transitions": PackedFloat32Array(1),
 "update": 1,
-"values": [&"idle"]
+"values": [0]
 }
 tracks/6/type = "value"
 tracks/6/imported = false
 tracks/6/enabled = true
-tracks/6/path = NodePath("SpriteComponent/AnimatedSprite2D:frame")
+tracks/6/path = NodePath("UnitCollision:width")
 tracks/6/interp = 1
 tracks/6/loop_wrap = true
 tracks/6/keys = {
 "times": PackedFloat32Array(0),
 "transitions": PackedFloat32Array(1),
 "update": 1,
-"values": [0]
+"values": [38]
+}
+tracks/7/type = "value"
+tracks/7/imported = false
+tracks/7/enabled = true
+tracks/7/path = NodePath("UnitCollision:height")
+tracks/7/interp = 1
+tracks/7/loop_wrap = true
+tracks/7/keys = {
+"times": PackedFloat32Array(0),
+"transitions": PackedFloat32Array(1),
+"update": 1,
+"values": [92]
 }
 
 [sub_resource type="AnimationLibrary" id="AnimationLibrary_a8ovg"]
@@ -285,10 +298,12 @@ visible = false
 visible = true
 animation = &"idle"
 
-[node name="UnitCollision" type="CollisionShape2D" parent="." unique_id=54862801]
+[node name="UnitCollision" type="CollisionShape2D" parent="." unique_id=2120811417]
 position = Vector2(0, -46)
 shape = SubResource("RectangleShape2D_2d64t")
 debug_color = Color(0, 0.6, 0.69803923, 0.2)
+script = ExtResource("7_gjkc3")
+metadata/_custom_type_script = "uid://bhhy483vjefa1"
 
 [node name="Hurtbox" type="Area2D" parent="." unique_id=1792069261]
 collision_layer = 2
@@ -296,10 +311,12 @@ collision_mask = 0
 monitoring = false
 script = ExtResource("8_k7l50")
 
-[node name="HurtboxShape" type="CollisionShape2D" parent="Hurtbox" unique_id=296316886]
+[node name="HurtboxShape" type="CollisionShape2D" parent="Hurtbox" unique_id=1180949192]
 position = Vector2(-0.5, -46)
 shape = SubResource("RectangleShape2D_t3pbd")
 debug_color = Color(0.8509804, 0.03529412, 0.21960784, 0.39607844)
+script = ExtResource("7_gjkc3")
+metadata/_custom_type_script = "uid://bhhy483vjefa1"
 
 [node name="Awareness" type="Area2D" parent="." unique_id=731958170]
 collision_layer = 0
@@ -355,9 +372,9 @@ metadata/_custom_type_script = "uid://im1wyvflgwp0"
 
 [node name="Jump" type="LimboState" parent="StateMachine" unique_id=1875892619]
 script = ExtResource("14_w11yh")
-type = 1
 anim_lib_name = &"jump"
 anim_lib = ExtResource("19_0awm1")
+type = 1
 
 [node name="Fall" type="LimboState" parent="StateMachine" unique_id=1952545241]
 script = ExtResource("13_pvbt4")
@@ -376,37 +393,37 @@ metadata/_custom_type_script = "uid://c1823275u0dxi"
 
 [node name="Knockback" type="LimboState" parent="StateMachine" unique_id=1168315294]
 script = ExtResource("21_bnltu")
-type = 2
 anim_lib_name = &"knockback"
 anim_lib = ExtResource("25_p42cd")
+type = 2
 metadata/_custom_type_script = "uid://im1wyvflgwp0"
 
 [node name="Aerial" type="LimboState" parent="StateMachine" unique_id=1444982]
 script = ExtResource("26_itvhm")
-type = 2
 anim_lib_name = &"aerial"
 anim_lib = ExtResource("30_njs1s")
+type = 2
 metadata/_custom_type_script = "uid://im1wyvflgwp0"
 
 [node name="Down" type="LimboState" parent="StateMachine" unique_id=1321983700]
 script = ExtResource("27_74sws")
-type = 2
 anim_lib_name = &"down"
 anim_lib = ExtResource("21_wp6bj")
+type = 2
 metadata/_custom_type_script = "uid://im1wyvflgwp0"
 
 [node name="Pushback" type="LimboState" parent="StateMachine" unique_id=1879459923]
 script = ExtResource("28_njs1s")
-type = 2
 anim_lib_name = &"pushback"
 anim_lib = ExtResource("31_a8ovg")
+type = 2
 metadata/_custom_type_script = "uid://im1wyvflgwp0"
 
 [node name="Wallhit" type="LimboState" parent="StateMachine" unique_id=1048343805]
 script = ExtResource("29_a8ovg")
-type = 2
 anim_lib_name = &"wallhit"
 anim_lib = ExtResource("32_qjbny")
+type = 2
 metadata/_custom_type_script = "uid://im1wyvflgwp0"
 
 [node name="Pound" type="LimboState" parent="StateMachine" unique_id=1635532512]

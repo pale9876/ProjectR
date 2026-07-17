@@ -35,18 +35,13 @@ var force_duration: int = 0:
 			motion = Vector2()
 
 
-var current: LimboSubState
+var _substate: LimboSubState
 
 
-
-func _notification(what: int) -> void:
-	match what:
-		NOTIFICATION_READY:
-			var substates: Array[LimboSubState] = get_sub_states()
-		
-			if !substates.is_empty():
-				current = get_sub_states()[0]
-
+func change_sub_state(sub_state: LimboSubState) -> void:
+	_substate.exit()
+	_substate = sub_state
+	sub_state.enter()
 
 
 # OVERRIDE

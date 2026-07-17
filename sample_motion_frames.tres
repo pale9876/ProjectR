@@ -524,7 +524,7 @@ animations = [{
 "duration": 1.0,
 "texture": SubResource("AtlasTexture_pe4tc")
 }],
-"loop": 1,
+"loop": 0,
 "name": &"brutal_slicer",
 "speed": 12.0
 }, {

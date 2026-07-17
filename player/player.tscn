@@ -59,8 +59,11 @@
 [ext_resource type="Script" uid="uid://b7b1r6qslt248" path="res://grab_collision.gd" id="36_ge24q"]
 [ext_resource type="Script" uid="uid://cwinkgf223ccj" path="res://player/pound_grab.gd" id="42_3dxkp"]
 [ext_resource type="Script" uid="uid://bqd5pwu72n67y" path="res://player/pound.gd" id="42_6wior"]
+[ext_resource type="Script" uid="uid://b3wmxu8rx8ed5" path="res://player/state/sub_state/left_punch.gd" id="48_hggc2"]
+[ext_resource type="Script" uid="uid://b5qf8ve045qug" path="res://player/state/sub_state/right_punch.gd" id="49_b2j0d"]
 [ext_resource type="Script" uid="uid://crcp2uhoaap08" path="res://player/hit_polygon.gd" id="49_n0b8q"]
 [ext_resource type="Script" uid="uid://blmlpb3bgobd7" path="res://player/charging_counter.gd" id="50_6wior"]
+[ext_resource type="Script" uid="uid://egqrhqmhmgjs" path="res://player/state/sub_state/hammer.gd" id="50_7l6ig"]
 [ext_resource type="Script" uid="uid://0kxmhttvge4l" path="res://player/sub_state.gd" id="51_jbx34"]
 [ext_resource type="Script" uid="uid://car8b8r8j83qa" path="res://player/brutal_slicer.gd" id="51_p5tca"]
 [ext_resource type="Script" uid="uid://sjqmjeqxy8nt" path="res://player/health.gd" id="51_w7j2h"]
@@ -75,22 +78,22 @@ lower_sprite = ExtResource("7_7pqkx")
 sprite = ExtResource("2_c35mf")
 metadata/_custom_type_script = "uid://r11y6g0g5cvx"
 
-[sub_resource type="Gradient" id="Gradient_pjwc4"]
+[sub_resource type="Gradient" id="Gradient_hggc2"]
 interpolation_mode = 1
 colors = PackedColorArray(0.77870363, 0.01541409, 2.8878452e-07, 1, 1, 1, 1, 0)
 
-[sub_resource type="GradientTexture2D" id="GradientTexture2D_or4qq"]
-gradient = SubResource("Gradient_pjwc4")
+[sub_resource type="GradientTexture2D" id="GradientTexture2D_b2j0d"]
+gradient = SubResource("Gradient_hggc2")
 height = 10
 fill = 1
 fill_from = Vector2(0.5, 0.5)
 fill_to = Vector2(0.789, 0.789)
 
-[sub_resource type="RectangleShape2D" id="RectangleShape2D_hggc2"]
+[sub_resource type="RectangleShape2D" id="RectangleShape2D_7l6ig"]
 size = Vector2(38, 92)
 
-[sub_resource type="RectangleShape2D" id="RectangleShape2D_2ieo8"]
-size = Vector2(30, 92)
+[sub_resource type="RectangleShape2D" id="RectangleShape2D_j3r50"]
+size = Vector2(34, 92)
 
 [sub_resource type="Animation" id="Animation_boad6"]
 length = 0.001
@@ -121,31 +124,31 @@ tracks/1/keys = {
 tracks/2/type = "value"
 tracks/2/imported = false
 tracks/2/enabled = true
-tracks/2/path = NodePath("Hurtbox/HurtboxShape:shape:size")
+tracks/2/path = NodePath("HitboxComponent/SlideHitbox:visible")
 tracks/2/interp = 1
 tracks/2/loop_wrap = true
 tracks/2/keys = {
 "times": PackedFloat32Array(0),
 "transitions": PackedFloat32Array(1),
 "update": 1,
-"values": [Vector2(30, 92)]
+"values": [true]
 }
 tracks/3/type = "value"
 tracks/3/imported = false
 tracks/3/enabled = true
-tracks/3/path = NodePath("Hurtbox/HurtboxShape:position")
+tracks/3/path = NodePath("HitboxComponent/SlideHitbox/HitboxShape:disabled")
 tracks/3/interp = 1
 tracks/3/loop_wrap = true
 tracks/3/keys = {
 "times": PackedFloat32Array(0),
 "transitions": PackedFloat32Array(1),
 "update": 1,
-"values": [Vector2(0, -46)]
+"values": [true]
 }
 tracks/4/type = "value"
 tracks/4/imported = false
 tracks/4/enabled = true
-tracks/4/path = NodePath("HitboxComponent/SlideHitbox:visible")
+tracks/4/path = NodePath("HitboxComponent/Blowkick:visible")
 tracks/4/interp = 1
 tracks/4/loop_wrap = true
 tracks/4/keys = {
@@ -157,7 +160,7 @@ tracks/4/keys = {
 tracks/5/type = "value"
 tracks/5/imported = false
 tracks/5/enabled = true
-tracks/5/path = NodePath("HitboxComponent/SlideHitbox/HitboxShape:disabled")
+tracks/5/path = NodePath("HitboxComponent/Blowkick/CollisionShape2D:disabled")
 tracks/5/interp = 1
 tracks/5/loop_wrap = true
 tracks/5/keys = {
@@ -169,7 +172,7 @@ tracks/5/keys = {
 tracks/6/type = "value"
 tracks/6/imported = false
 tracks/6/enabled = true
-tracks/6/path = NodePath("HitboxComponent/Blowkick:visible")
+tracks/6/path = NodePath("HitboxComponent/PunchCombo:visible")
 tracks/6/interp = 1
 tracks/6/loop_wrap = true
 tracks/6/keys = {
@@ -181,7 +184,7 @@ tracks/6/keys = {
 tracks/7/type = "value"
 tracks/7/imported = false
 tracks/7/enabled = true
-tracks/7/path = NodePath("HitboxComponent/Blowkick/CollisionShape2D:disabled")
+tracks/7/path = NodePath("HitboxComponent/PunchCombo/Left:visible")
 tracks/7/interp = 1
 tracks/7/loop_wrap = true
 tracks/7/keys = {
@@ -193,7 +196,7 @@ tracks/7/keys = {
 tracks/8/type = "value"
 tracks/8/imported = false
 tracks/8/enabled = true
-tracks/8/path = NodePath("HitboxComponent/PunchCombo:visible")
+tracks/8/path = NodePath("HitboxComponent/PunchCombo/Left:disabled")
 tracks/8/interp = 1
 tracks/8/loop_wrap = true
 tracks/8/keys = {
@@ -205,7 +208,7 @@ tracks/8/keys = {
 tracks/9/type = "value"
 tracks/9/imported = false
 tracks/9/enabled = true
-tracks/9/path = NodePath("HitboxComponent/PunchCombo/Left:visible")
+tracks/9/path = NodePath("HitboxComponent/PunchCombo/Right:visible")
 tracks/9/interp = 1
 tracks/9/loop_wrap = true
 tracks/9/keys = {
@@ -217,7 +220,7 @@ tracks/9/keys = {
 tracks/10/type = "value"
 tracks/10/imported = false
 tracks/10/enabled = true
-tracks/10/path = NodePath("HitboxComponent/PunchCombo/Left:disabled")
+tracks/10/path = NodePath("HitboxComponent/PunchCombo/Right:disabled")
 tracks/10/interp = 1
 tracks/10/loop_wrap = true
 tracks/10/keys = {
@@ -229,7 +232,7 @@ tracks/10/keys = {
 tracks/11/type = "value"
 tracks/11/imported = false
 tracks/11/enabled = true
-tracks/11/path = NodePath("HitboxComponent/PunchCombo/Right:visible")
+tracks/11/path = NodePath("HitboxComponent/PunchCombo/Hammer:visible")
 tracks/11/interp = 1
 tracks/11/loop_wrap = true
 tracks/11/keys = {
@@ -241,7 +244,7 @@ tracks/11/keys = {
 tracks/12/type = "value"
 tracks/12/imported = false
 tracks/12/enabled = true
-tracks/12/path = NodePath("HitboxComponent/PunchCombo/Right:disabled")
+tracks/12/path = NodePath("HitboxComponent/PunchCombo/Hammer:disabled")
 tracks/12/interp = 1
 tracks/12/loop_wrap = true
 tracks/12/keys = {
@@ -253,7 +256,7 @@ tracks/12/keys = {
 tracks/13/type = "value"
 tracks/13/imported = false
 tracks/13/enabled = true
-tracks/13/path = NodePath("HitboxComponent/PunchCombo/Hammer:visible")
+tracks/13/path = NodePath("HitboxComponent/PunchCombo/HammerEx:disabled")
 tracks/13/interp = 1
 tracks/13/loop_wrap = true
 tracks/13/keys = {
@@ -265,7 +268,7 @@ tracks/13/keys = {
 tracks/14/type = "value"
 tracks/14/imported = false
 tracks/14/enabled = true
-tracks/14/path = NodePath("HitboxComponent/PunchCombo/Hammer:disabled")
+tracks/14/path = NodePath("HitboxComponent/PunchCombo/HammerEx:visible")
 tracks/14/interp = 1
 tracks/14/loop_wrap = true
 tracks/14/keys = {
@@ -277,103 +280,103 @@ tracks/14/keys = {
 tracks/15/type = "value"
 tracks/15/imported = false
 tracks/15/enabled = true
-tracks/15/path = NodePath("HitboxComponent/PunchCombo/HammerEx:disabled")
+tracks/15/path = NodePath("HitboxComponent/JumpHammer/JumpHammerHitbox:position")
 tracks/15/interp = 1
 tracks/15/loop_wrap = true
 tracks/15/keys = {
 "times": PackedFloat32Array(0),
 "transitions": PackedFloat32Array(1),
 "update": 1,
-"values": [true]
+"values": [Vector2(25, -24)]
 }
 tracks/16/type = "value"
 tracks/16/imported = false
 tracks/16/enabled = true
-tracks/16/path = NodePath("HitboxComponent/PunchCombo/HammerEx:visible")
+tracks/16/path = NodePath("HitboxComponent/JumpHammer/JumpHammerHitbox:shape:size")
 tracks/16/interp = 1
 tracks/16/loop_wrap = true
 tracks/16/keys = {
 "times": PackedFloat32Array(0),
 "transitions": PackedFloat32Array(1),
 "update": 1,
-"values": [true]
+"values": [Vector2(47, 67)]
 }
 tracks/17/type = "value"
 tracks/17/imported = false
 tracks/17/enabled = true
-tracks/17/path = NodePath("HitboxComponent/JumpHammer/JumpHammerHitbox:position")
+tracks/17/path = NodePath("HitboxComponent/JumpHammer/JumpHammerHitbox:disabled")
 tracks/17/interp = 1
 tracks/17/loop_wrap = true
 tracks/17/keys = {
 "times": PackedFloat32Array(0),
 "transitions": PackedFloat32Array(1),
 "update": 1,
-"values": [Vector2(25, -24)]
+"values": [false]
 }
 tracks/18/type = "value"
 tracks/18/imported = false
 tracks/18/enabled = true
-tracks/18/path = NodePath("HitboxComponent/JumpHammer/JumpHammerHitbox:shape:size")
+tracks/18/path = NodePath("HitboxComponent/JumpHammer:visible")
 tracks/18/interp = 1
 tracks/18/loop_wrap = true
 tracks/18/keys = {
 "times": PackedFloat32Array(0),
 "transitions": PackedFloat32Array(1),
 "update": 1,
-"values": [Vector2(47, 67)]
+"values": [false]
 }
 tracks/19/type = "value"
 tracks/19/imported = false
 tracks/19/enabled = true
-tracks/19/path = NodePath("HitboxComponent/JumpHammer/JumpHammerHitbox:disabled")
+tracks/19/path = NodePath("HitboxComponent/PlayerHitbox/HitboxShape:shape:size")
 tracks/19/interp = 1
 tracks/19/loop_wrap = true
 tracks/19/keys = {
 "times": PackedFloat32Array(0),
 "transitions": PackedFloat32Array(1),
-"update": 1,
-"values": [false]
+"update": 0,
+"values": [Vector2(44, 63)]
 }
 tracks/20/type = "value"
 tracks/20/imported = false
 tracks/20/enabled = true
-tracks/20/path = NodePath("HitboxComponent/JumpHammer:visible")
+tracks/20/path = NodePath("HitboxComponent/PlayerHitbox/HitboxShape:position")
 tracks/20/interp = 1
 tracks/20/loop_wrap = true
 tracks/20/keys = {
 "times": PackedFloat32Array(0),
 "transitions": PackedFloat32Array(1),
-"update": 1,
-"values": [false]
+"update": 0,
+"values": [Vector2(18, -43)]
 }
 tracks/21/type = "value"
 tracks/21/imported = false
 tracks/21/enabled = true
-tracks/21/path = NodePath("HitboxComponent/PlayerHitbox/HitboxShape:shape:size")
+tracks/21/path = NodePath("HitboxComponent/PlayerHitbox/HitboxShape:disabled")
 tracks/21/interp = 1
 tracks/21/loop_wrap = true
 tracks/21/keys = {
 "times": PackedFloat32Array(0),
 "transitions": PackedFloat32Array(1),
-"update": 0,
-"values": [Vector2(44, 63)]
+"update": 1,
+"values": [false]
 }
 tracks/22/type = "value"
 tracks/22/imported = false
 tracks/22/enabled = true
-tracks/22/path = NodePath("HitboxComponent/PlayerHitbox/HitboxShape:position")
+tracks/22/path = NodePath("HitboxComponent/PlayerHitbox/HitboxShape:visible")
 tracks/22/interp = 1
 tracks/22/loop_wrap = true
 tracks/22/keys = {
 "times": PackedFloat32Array(0),
 "transitions": PackedFloat32Array(1),
-"update": 0,
-"values": [Vector2(18, -43)]
+"update": 1,
+"values": [true]
 }
 tracks/23/type = "value"
 tracks/23/imported = false
 tracks/23/enabled = true
-tracks/23/path = NodePath("HitboxComponent/PlayerHitbox/HitboxShape:disabled")
+tracks/23/path = NodePath("StateMachine/Dodge:just_time")
 tracks/23/interp = 1
 tracks/23/loop_wrap = true
 tracks/23/keys = {
@@ -385,19 +388,19 @@ tracks/23/keys = {
 tracks/24/type = "value"
 tracks/24/imported = false
 tracks/24/enabled = true
-tracks/24/path = NodePath("HitboxComponent/PlayerHitbox/HitboxShape:visible")
+tracks/24/path = NodePath("Hurtbox:state")
 tracks/24/interp = 1
 tracks/24/loop_wrap = true
 tracks/24/keys = {
 "times": PackedFloat32Array(0),
 "transitions": PackedFloat32Array(1),
 "update": 1,
-"values": [true]
+"values": [3]
 }
 tracks/25/type = "value"
 tracks/25/imported = false
 tracks/25/enabled = true
-tracks/25/path = NodePath("StateMachine/Dodge:just_time")
+tracks/25/path = NodePath("StateMachine/HighPunchCombo:just_frame")
 tracks/25/interp = 1
 tracks/25/loop_wrap = true
 tracks/25/keys = {
@@ -409,55 +412,55 @@ tracks/25/keys = {
 tracks/26/type = "value"
 tracks/26/imported = false
 tracks/26/enabled = true
-tracks/26/path = NodePath("Hurtbox:state")
+tracks/26/path = NodePath(".:collision_mask")
 tracks/26/interp = 1
 tracks/26/loop_wrap = true
 tracks/26/keys = {
 "times": PackedFloat32Array(0),
 "transitions": PackedFloat32Array(1),
 "update": 1,
-"values": [3]
+"values": [1]
 }
 tracks/27/type = "value"
 tracks/27/imported = false
 tracks/27/enabled = true
-tracks/27/path = NodePath("StateMachine/HighPunchCombo:just_frame")
+tracks/27/path = NodePath("UnitCollision:width")
 tracks/27/interp = 1
 tracks/27/loop_wrap = true
 tracks/27/keys = {
 "times": PackedFloat32Array(0),
 "transitions": PackedFloat32Array(1),
 "update": 1,
-"values": [false]
+"values": [38]
 }
 tracks/28/type = "value"
 tracks/28/imported = false
 tracks/28/enabled = true
-tracks/28/path = NodePath(".:collision_mask")
+tracks/28/path = NodePath("UnitCollision:height")
 tracks/28/interp = 1
 tracks/28/loop_wrap = true
 tracks/28/keys = {
 "times": PackedFloat32Array(0),
 "transitions": PackedFloat32Array(1),
 "update": 1,
-"values": [1]
+"values": [92]
 }
 tracks/29/type = "value"
 tracks/29/imported = false
 tracks/29/enabled = true
-tracks/29/path = NodePath("UnitCollision:width")
+tracks/29/path = NodePath("Hurtbox/HurtboxShape:width")
 tracks/29/interp = 1
 tracks/29/loop_wrap = true
 tracks/29/keys = {
 "times": PackedFloat32Array(0),
 "transitions": PackedFloat32Array(1),
 "update": 1,
-"values": [38]
+"values": [34]
 }
 tracks/30/type = "value"
 tracks/30/imported = false
 tracks/30/enabled = true
-tracks/30/path = NodePath("UnitCollision:height")
+tracks/30/path = NodePath("Hurtbox/HurtboxShape:height")
 tracks/30/interp = 1
 tracks/30/loop_wrap = true
 tracks/30/keys = {
@@ -465,6 +468,18 @@ tracks/30/keys = {
 "transitions": PackedFloat32Array(1),
 "update": 1,
 "values": [92]
+}
+tracks/31/type = "value"
+tracks/31/imported = false
+tracks/31/enabled = true
+tracks/31/path = NodePath("Hurtbox/HurtboxShape:offset_y")
+tracks/31/interp = 1
+tracks/31/loop_wrap = true
+tracks/31/keys = {
+"times": PackedFloat32Array(0),
+"transitions": PackedFloat32Array(1),
+"update": 1,
+"values": [0]
 }
 
 [sub_resource type="AnimationLibrary" id="AnimationLibrary_boad6"]
@@ -547,8 +562,8 @@ metadata/_custom_type_script = "uid://xw07ofvvtrxk"
 script = ExtResource("23_s7qer")
 metadata/_custom_type_script = "uid://xw07ofvvtrxk"
 
-[sub_resource type="ConvexPolygonShape2D" id="ConvexPolygonShape2D_b2j0d"]
-points = PackedVector2Array(0, -95, 0, -33, 300, -33, 300, -95)
+[sub_resource type="ConvexPolygonShape2D" id="ConvexPolygonShape2D_utr5e"]
+points = PackedVector2Array(0, -95, 0, -33, 0, -33, 0, -95)
 
 [sub_resource type="CircleShape2D" id="CircleShape2D_ch6w5"]
 radius = 32.140316
@@ -597,14 +612,14 @@ info = SubResource("Resource_4xbu7")
 toggles = [NodePath("StateLabel")]
 
 [node name="DropShadow" type="Sprite2D" parent="." unique_id=981265406]
-texture = SubResource("GradientTexture2D_or4qq")
+texture = SubResource("GradientTexture2D_b2j0d")
 script = ExtResource("6_jbx34")
 colors = PackedColorArray(0.77870363, 0.01541409, 2.8878452e-07, 1, 1, 1, 1, 0)
 mask = 4
 
 [node name="UnitCollision" type="CollisionShape2D" parent="." unique_id=1250735462]
 position = Vector2(0, -46)
-shape = SubResource("RectangleShape2D_hggc2")
+shape = SubResource("RectangleShape2D_7l6ig")
 script = ExtResource("8_pjwc4")
 metadata/_custom_type_script = "uid://bhhy483vjefa1"
 
@@ -628,10 +643,13 @@ monitoring = false
 script = ExtResource("7_3dxkp")
 state = 3
 
-[node name="HurtboxShape" type="CollisionShape2D" parent="Hurtbox" unique_id=914198926]
+[node name="HurtboxShape" type="CollisionShape2D" parent="Hurtbox" unique_id=78373728]
 position = Vector2(0, -46)
-shape = SubResource("RectangleShape2D_2ieo8")
+shape = SubResource("RectangleShape2D_j3r50")
 debug_color = Color(0.7921569, 0, 0.07450981, 0.41960785)
+script = ExtResource("8_pjwc4")
+width = 34
+metadata/_custom_type_script = "uid://bhhy483vjefa1"
 
 [node name="AnimationPlayer" type="AnimationPlayer" parent="." unique_id=1781161408]
 callback_mode_discrete = 0
@@ -745,15 +763,16 @@ ev_name = &"high_punch_combo"
 anim_library = ExtResource("20_pnw6m")
 library_name = &"high_punch_combo"
 
-[node name="LeftPunch" type="Node" parent="StateMachine/HighPunchCombo" unique_id=1425076811]
-script = ExtResource("51_jbx34")
+[node name="LeftPunch" type="Node" parent="StateMachine/HighPunchCombo" unique_id=1731762629]
+script = ExtResource("48_hggc2")
+metadata/_custom_type_script = "uid://0kxmhttvge4l"
 
 [node name="RightPunch" type="Node" parent="StateMachine/HighPunchCombo" unique_id=234511514]
-script = ExtResource("51_jbx34")
+script = ExtResource("49_b2j0d")
 metadata/_custom_type_script = "uid://0kxmhttvge4l"
 
 [node name="Hammer" type="Node" parent="StateMachine/HighPunchCombo" unique_id=2012358226]
-script = ExtResource("51_jbx34")
+script = ExtResource("50_7l6ig")
 metadata/_custom_type_script = "uid://0kxmhttvge4l"
 
 [node name="Slide" parent="StateMachine" unique_id=591192304 node_paths=PackedStringArray("hitbox") instance=ExtResource("16_uw77l")]
@@ -801,6 +820,14 @@ metadata/_custom_type_script = "uid://brhdt8mkevudv"
 script = ExtResource("51_p5tca")
 action_input = PackedStringArray("none")
 metadata/_custom_type_script = "uid://brhdt8mkevudv"
+
+[node name="Slice" type="Node" parent="StateMachine/BrutalSlicer" unique_id=1919473890]
+script = ExtResource("51_jbx34")
+metadata/_custom_type_script = "uid://0kxmhttvge4l"
+
+[node name="Shot" type="Node" parent="StateMachine/BrutalSlicer" unique_id=1439085821]
+script = ExtResource("51_jbx34")
+metadata/_custom_type_script = "uid://0kxmhttvge4l"
 
 [node name="StateLabel" type="Label" parent="." unique_id=1166794144]
 offset_left = -29.0
@@ -876,7 +903,6 @@ monitorable = false
 hitbox_info = SubResource("Resource_pbsf6")
 
 [node name="ChargingCounter" type="Area2D" parent="HitboxComponent" unique_id=1232055323]
-visible = false
 collision_layer = 0
 collision_mask = 2
 monitorable = false
@@ -885,10 +911,11 @@ metadata/_custom_type_script = "uid://0dw4edo0eshv"
 
 [node name="CollisionShape2D" type="CollisionShape2D" parent="HitboxComponent/ChargingCounter" unique_id=525022277]
 visible = false
-shape = SubResource("ConvexPolygonShape2D_b2j0d")
+shape = SubResource("ConvexPolygonShape2D_utr5e")
 disabled = true
 script = ExtResource("49_n0b8q")
 offset = Vector2(0, -64)
+hit_range = 0.0
 
 [node name="PoundGrab" type="Area2D" parent="HitboxComponent" unique_id=172417262]
 visible = false

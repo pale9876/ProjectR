@@ -1,23 +1,15 @@
 extends PlayerActive
 
 
-enum {
-	LEFT,
-	RIGHT,
-	HAMMER,
-}
-
-
-var state: int = LEFT
-
-
 func _ready() -> void:
-	get_anim().animation_finished.connect(_animation_finished)
+	pass
+	#get_anim().animation_finished.connect(_animation_finished)
 
 
 func _enter() -> void:
-	play(&"left_punch")
-	get_hsm().label.text = "Left Punch"
+	#get_hsm().label.text = "Left Punch"
+	var left_punch := get_sub_state(^"LeftPunch")
+	change_sub_state(left_punch)
 
 
 func _update(_delta: float) -> void:
@@ -26,46 +18,13 @@ func _update(_delta: float) -> void:
 	
 	move_and_slide()
 
-	#match state:
-		#LEFT:
-			#var left_punch_hit: bool = hitbox.is_hit(^"Left")
-			#
-			#if _punched and (left_punch_hit or _anim_finished):
-				#play(&"right_punch")
-				#state = RIGHT
-				#hitbox.get_hitshape(^"Left").disabled = true
-				#_anim_finished = false
-				#_punched = false
-				#hsm.label.text = "Right Punch"
-				#return
-		#RIGHT:
-			#var right_punch_hit: bool = hitbox.is_hit(^"Right")
-			#
-			#if _punched and (right_punch_hit or _anim_finished):
-				#if _just:
-					#play(&"hammer_ex")
-					#hsm.label.text = "Hammer EX"
-					#_just = false
-				#else:
-					#play(&"hammer")
-					#hsm.label.text = "Hammer"
-				#state = HAMMER
-				#hitbox.get_hitshape(^"Right").disabled = true
-				#_anim_finished = false
-				#_punched = false
-				#return
-
-
 	if _anim_finished:
 		hsm.revert()
 
 
-func _exit() -> void:
-	super()
-	state = LEFT
-
-
-
-func _animation_finished(anim_name: StringName):
-	if is_active() and (anim_name in get_anim().get_animation_list()):
-		_anim_finished = true
+#func _exit() -> void:
+	#super()
+#
+#func _animation_finished(anim_name: StringName):
+	#if is_active() and (anim_name in get_anim().get_animation_list()):
+		#_anim_finished = true

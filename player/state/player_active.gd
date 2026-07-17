@@ -49,13 +49,12 @@ func _notification(what: int) -> void:
 					if is_active():
 						_kicked = true
 			)
-			
-			
 
 
 func _exit() -> void:
 	_clear()
 	heat()
+	_substate = null
 
 
 func _clear() -> void:

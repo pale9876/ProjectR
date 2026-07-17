@@ -11,6 +11,11 @@ class_name DynamicUnitCollision
 	set(value):
 		height = maxi(0, value)
 		changed()
+@export var offset_y: int = 0:
+	set(val):
+		offset_y = val
+		changed()
+
 
 
 func _init() -> void:
@@ -21,7 +26,7 @@ func _init() -> void:
 
 func changed() -> void:
 	(shape as RectangleShape2D).size = get_width_height()
-	position.y = - get_width_height().y / 2.
+	position.y = - get_width_height().y / 2. - offset_y
 
 
 func get_width_height() -> Vector2:
