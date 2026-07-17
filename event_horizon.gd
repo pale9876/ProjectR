@@ -16,7 +16,7 @@ func player_dodged_ev(duration: float) -> void:
 	Engine.time_scale = 1.
 
 
-func player_hit(hit_info: HitboxInformation) -> void:
+func hit(hit_info: HitboxInformation) -> void:
 	var player := Global.player
 	await get_tree().physics_frame
 	Global.get_ingame_scene().process_mode = Node.PROCESS_MODE_DISABLED

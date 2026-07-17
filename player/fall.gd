@@ -19,16 +19,23 @@ func _enter() -> void:
 	play(&"fall")
 
 
-func _update(delta: float) -> void:
+func _update(_delta: float) -> void:
 	var player := get_player()
+
+	player.velocity.x = move_toward(
+		player.velocity.x, player.input_state.direction.x * 350., 15.
+	)
+	player.velocity.y = move_toward(player.velocity.y, 3100., 17.5)
+	
+	move_and_slide()
 	
 	if is_on_floor():
 		if player.input_state.direction.x != 0.:
 			change_state(move_state)
 		else:
 			change_state(idle_state)
+
+
+func _exit() -> void:
+	var player := get_player()
 	
-	player.velocity.x = move_toward(player.velocity.x, player.input_state.direction.x * 350., 15.)
-	player.velocity.y = move_toward(player.velocity.y, 3100., 17.5)
-	
-	move_and_slide()

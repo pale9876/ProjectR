@@ -26,34 +26,34 @@ func _update(_delta: float) -> void:
 	
 	move_and_slide()
 
-	match state:
-		LEFT:
-			var left_punch_hit: bool = hitbox.is_hit(^"Left")
-			
-			if _punched and (left_punch_hit or _anim_finished):
-				play(&"right_punch")
-				state = RIGHT
-				hitbox.get_hitshape(^"Left").disabled = true
-				_anim_finished = false
-				_punched = false
-				hsm.label.text = "Right Punch"
-				return
-		RIGHT:
-			var right_punch_hit: bool = hitbox.is_hit(^"Right")
-			
-			if _punched and (right_punch_hit or _anim_finished):
-				if _just:
-					play(&"hammer_ex")
-					hsm.label.text = "Hammer EX"
-					_just = false
-				else:
-					play(&"hammer")
-					hsm.label.text = "Hammer"
-				state = HAMMER
-				hitbox.get_hitshape(^"Right").disabled = true
-				_anim_finished = false
-				_punched = false
-				return
+	#match state:
+		#LEFT:
+			#var left_punch_hit: bool = hitbox.is_hit(^"Left")
+			#
+			#if _punched and (left_punch_hit or _anim_finished):
+				#play(&"right_punch")
+				#state = RIGHT
+				#hitbox.get_hitshape(^"Left").disabled = true
+				#_anim_finished = false
+				#_punched = false
+				#hsm.label.text = "Right Punch"
+				#return
+		#RIGHT:
+			#var right_punch_hit: bool = hitbox.is_hit(^"Right")
+			#
+			#if _punched and (right_punch_hit or _anim_finished):
+				#if _just:
+					#play(&"hammer_ex")
+					#hsm.label.text = "Hammer EX"
+					#_just = false
+				#else:
+					#play(&"hammer")
+					#hsm.label.text = "Hammer"
+				#state = HAMMER
+				#hitbox.get_hitshape(^"Right").disabled = true
+				#_anim_finished = false
+				#_punched = false
+				#return
 
 
 	if _anim_finished:

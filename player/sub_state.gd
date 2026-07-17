@@ -16,13 +16,22 @@ func _physics_process(delta: float) -> void:
 	if is_active():
 		pass
 
+# OVERRIDE:
+func enter() -> void:
+	pass
+
+
+func update(delta: float) -> void:
+	pass
+
+
 
 func get_anim() -> AnimationPlayer:
 	return get_state().get_anim()
 
 
 func play(anim_name: StringName) -> void:
-	pass
+	get_state().get_anim().play(anim_name)
 
 
 func is_active() -> bool:

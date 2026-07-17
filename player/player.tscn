@@ -86,8 +86,8 @@ fill = 1
 fill_from = Vector2(0.5, 0.5)
 fill_to = Vector2(0.789, 0.789)
 
-[sub_resource type="ConvexPolygonShape2D" id="ConvexPolygonShape2D_hggc2"]
-points = PackedVector2Array(-19, -92, 19, -92, 19, 0, -19, 0)
+[sub_resource type="RectangleShape2D" id="RectangleShape2D_hggc2"]
+size = Vector2(38, 92)
 
 [sub_resource type="RectangleShape2D" id="RectangleShape2D_2ieo8"]
 size = Vector2(30, 92)
@@ -466,18 +466,6 @@ tracks/30/keys = {
 "update": 1,
 "values": [92]
 }
-tracks/31/type = "value"
-tracks/31/imported = false
-tracks/31/enabled = true
-tracks/31/path = NodePath("UnitCollision:position")
-tracks/31/interp = 1
-tracks/31/loop_wrap = true
-tracks/31/keys = {
-"times": PackedFloat32Array(0),
-"transitions": PackedFloat32Array(1),
-"update": 0,
-"values": [Vector2(0, 0)]
-}
 
 [sub_resource type="AnimationLibrary" id="AnimationLibrary_boad6"]
 _data = {
@@ -602,6 +590,8 @@ metadata/_custom_type_script = "uid://xw07ofvvtrxk"
 
 [node name="Player" type="CharacterBody2D" unique_id=1697822384 node_paths=PackedStringArray("toggles")]
 collision_layer = 2
+input_pickable = true
+floor_snap_length = 10.0
 script = ExtResource("1_bvu1k")
 info = SubResource("Resource_4xbu7")
 toggles = [NodePath("StateLabel")]
@@ -610,6 +600,13 @@ toggles = [NodePath("StateLabel")]
 texture = SubResource("GradientTexture2D_or4qq")
 script = ExtResource("6_jbx34")
 colors = PackedColorArray(0.77870363, 0.01541409, 2.8878452e-07, 1, 1, 1, 1, 0)
+mask = 4
+
+[node name="UnitCollision" type="CollisionShape2D" parent="." unique_id=1250735462]
+position = Vector2(0, -46)
+shape = SubResource("RectangleShape2D_hggc2")
+script = ExtResource("8_pjwc4")
+metadata/_custom_type_script = "uid://bhhy483vjefa1"
 
 [node name="SpriteComponent" parent="." unique_id=363892716 instance=ExtResource("6_7pqkx")]
 process_mode = 3
@@ -623,14 +620,6 @@ visible = false
 [node name="AnimatedSprite2D" parent="SpriteComponent" index="1" unique_id=152865229]
 visible = true
 animation = &"idle"
-
-[node name="UnitCollision" type="CollisionShape2D" parent="." unique_id=344293479]
-shape = SubResource("ConvexPolygonShape2D_hggc2")
-debug_color = Color(0, 0.6, 0.69803923, 0.14509805)
-script = ExtResource("8_pjwc4")
-width = 38
-height = 92
-metadata/_custom_type_script = "uid://bhhy483vjefa1"
 
 [node name="Hurtbox" type="Area2D" parent="." unique_id=1484439855]
 collision_layer = 2
@@ -679,11 +668,8 @@ input_postpone = 6
 process_mode = 4
 script = ExtResource("15_fjxoa")
 
-[node name="Idle" type="LimboState" parent="StateMachine" unique_id=382262949 node_paths=PackedStringArray("move_state", "fall_state", "jump_state")]
+[node name="Idle" type="LimboState" parent="StateMachine" unique_id=382262949]
 script = ExtResource("4_bvu1k")
-move_state = NodePath("../Move")
-fall_state = NodePath("../Fall")
-jump_state = NodePath("../Jump")
 anim_library = ExtResource("12_pnw6m")
 library_name = &"idle"
 
@@ -813,6 +799,7 @@ metadata/_custom_type_script = "uid://brhdt8mkevudv"
 
 [node name="BrutalSlicer" type="LimboState" parent="StateMachine" unique_id=1202620398]
 script = ExtResource("51_p5tca")
+action_input = PackedStringArray("none")
 metadata/_custom_type_script = "uid://brhdt8mkevudv"
 
 [node name="StateLabel" type="Label" parent="." unique_id=1166794144]

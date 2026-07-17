@@ -43,6 +43,26 @@ func _init() -> void:
 	texture = gradient_texture_2d
 
 
+func _process(_delta: float) -> void:
+	if Engine.is_editor_hint(): return
+
+	# Shadow
+	var unit := get_unit()
+	var param: PhysicsRayQueryParameters2D = PhysicsRayQueryParameters2D.create(
+		unit.global_position,
+		unit.global_position + Vector2(0., 3000.),
+		mask
+	)
+	
+	var result: Dictionary = get_world_2d().direct_space_state.intersect_ray(param)
+	
+	if !result.is_empty():
+		var intersect_point := result["position"] as Vector2
+		var scale_progress: float = unit.global_position.distance_to(intersect_point) / 3000.
+		scale = Vector2((1. - scale_progress), (1. - scale_progress))
+		global_position = intersect_point
+
+
 func fill_to() -> Vector2:
 	return Vector2(radius, radius)
 
@@ -53,27 +73,6 @@ func create_blob_shadow() -> Gradient:
 	gradient.colors = colors
 	
 	return gradient
-
-
-func _process(delta: float) -> void:
-	if Engine.is_editor_hint(): return
-
-	# Shadow
-	var unit := get_unit()
-	var param: PhysicsRayQueryParameters2D = PhysicsRayQueryParameters2D.create(
-		global_position,
-		Vector2(global_position.x, global_position.y + 3000.),
-		1, [unit.get_rid()]
-	)
-	
-	var result: Dictionary = get_world_2d().direct_space_state.intersect_ray(param)
-	
-	if !result.is_empty():
-		var intersect_point := result["position"] as Vector2
-		var scale_progress: float = global_position.distance_to(intersect_point) / 3000.
-		scale = Vector2((1. - scale_progress), (1. - scale_progress))
-		global_position = intersect_point
-
 
 
 func get_unit() -> CharacterBody2D:

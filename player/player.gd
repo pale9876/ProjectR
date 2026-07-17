@@ -15,22 +15,10 @@ const PlayerCamera: Script = preload("uid://b7phyhue4y3yg")
 
 var input_state: InputState
 
-@onready var drop_shadow: Sprite2D = $DropShadow
 
 
 var _prefix: StringName = &""
 
-
-func get_stat() -> Stat:
-	return stat
-
-
-func get_blood() -> float:
-	return stat.blood
-
-
-func get_hp_progress() -> float:
-	return float(stat.hp) / float(stat.max_hp)
 
 
 func _init() -> void:
@@ -38,11 +26,6 @@ func _init() -> void:
 	
 	input_state = InputState
 	state.face_changed.connect(_on_face_changed)
-
-
-func _on_face_changed() -> void:
-	if state.face.x != 0:
-		get_sprite_component().scale.x = state.face.x
 
 
 func _enter_tree() -> void:
@@ -55,6 +38,7 @@ func _enter_tree() -> void:
 				if node is Node2D or node is Control:
 					node.hide()
 	)
+
 
 func _ready() -> void:
 	if info:
@@ -80,9 +64,34 @@ func _process(_delta: float) -> void:
 	input_state.direction = Input.get_vector("left", "right", "up", "down")
 
 
+func _on_face_changed() -> void:
+	if state.face.x != 0:
+		get_sprite_component().scale.x = state.face.x
+
+
+func get_input_direction() -> Vector2:
+	return input_state.direction.round()
+
+
 func get_face() -> float:
 	return float(state.face.x)
 
 
 func get_camera() -> PlayerCamera:
 	return Global.player_camera
+
+
+func get_stat() -> Stat:
+	return stat
+
+
+func get_blood() -> float:
+	return stat.blood
+
+
+func get_shadow() -> Sprite2D:
+	return get_node(^"DropShadow") as Sprite2D
+
+
+func get_hp_progress() -> float:
+	return float(stat.hp) / float(stat.max_hp)

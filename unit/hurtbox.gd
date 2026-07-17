@@ -60,18 +60,29 @@ func _init() -> void:
 	set_collision_layer_value(2, true)
 
 
+func _enter_tree() -> void:
+	owner = get_parent() as Replicator
+
+
 func _physics_process(_delta: float) -> void:
 	if invincible_frame > 0:
 		invincible_frame -= 1
 
 
+func get_unit() -> Replicator:
+	return get_parent() as Replicator
+
+
 func damaged(hitbox_info: HitboxInformation, hit_result: HitResult) -> void:
 	if is_invincible: return
+	
+	var unit := get_unit()
 	
 	if !has_dodged() and !blocked_attack(hitbox_info, hit_result) and effective():
 		set_hurt_state(hitbox_info, hit_result)
 		if hit_result.from is Player:
-			EventHorizon.player_hit(hitbox_info)
+			EventHorizon.hit(hitbox_info)
+		
 
 
 func set_hurt_state(hitbox_info: HitboxInformation, hit_result: HitResult) -> void:
@@ -98,6 +109,7 @@ func get_state_from_type(type: HitboxInformation.Type) -> NodePath:
 		HitboxInformation.POUND:
 			result = ^"Pound"
 	return result
+
 
 func get_hurt_states() -> Array[StringName]:
 	return [

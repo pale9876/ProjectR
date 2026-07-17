@@ -5,7 +5,6 @@ class_name PlayerHitbox
 
 
 # Import
-const UnitHurtbox: Script = preload("uid://bupj3hlvtt67s")
 const Player: Script = preload("uid://c2uxhumgng18h")
 
 
@@ -25,6 +24,7 @@ func _enter_tree() -> void:
 	area_shape_entered.connect(_entered)
 	
 	var player := get_player()
+	
 	player.state.face_changed.connect(_on_face_changed)
 
 
@@ -37,8 +37,11 @@ func _exit_tree() -> void:
 	area_shape_entered.disconnect(_entered)
 
 
+
 func _entered(_rid: RID, area: Area2D, area_idx: int, local_idx: int) -> void:
-	if area is UnitHurtbox:
+	if area is Hurtbox:
+		if area.get_owner() == get_component().get_owner(): return
+		
 		var _shape := get_child(local_idx) as HitboxShape
 		var hitbox_info: HitboxInformation = _shape.hitbox_info
 		var unit := area.get_parent() as Unit
