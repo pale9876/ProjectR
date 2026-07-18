@@ -7,15 +7,17 @@ class_name DefaultUnitFormState
 const Player: Script = preload("uid://c2uxhumgng18h")
 
 
-enum Type {
-	IDLE,
-	JUMP,
+enum Type { # 커맨드 버스 타입
+	IDLE, # 통상, 이동
+	JUMP, # 공중에서의 통상 모션
+	HURT, # 피격 모션 중 회피기동할 때 사용
 }
 
 
 # const (Type)
 const IDLE := Type.IDLE
 const JUMP := Type.JUMP
+const HURT := Type.HURT
 
 
 @export_group("State Type")
@@ -52,6 +54,16 @@ func _guard() -> bool:
 # OVERRIDE
 func _clear() -> void:
 	pass
+	
+	
+# OVERRIDE
+func event(_ev: HitboxInformation, _result: HitResult) -> void:
+	pass
+
+
+# OVERRIDE
+func set_hurt_data(_info: HitboxInformation) -> void:
+	pass
 
 
 func get_sub_states() -> Array[LimboSubState]:
@@ -87,9 +99,77 @@ func get_anim() -> AnimationPlayer:
 	return get_replicator().get_anim()
 
 
+func play(anim_name: StringName) -> void:
+	get_anim().play(library_name + &"/" + anim_name)
+
+
 func get_player() -> Player:
 	return get_replicator() as Player
 
 
+func is_on_floor() -> bool:
+	return get_replicator().is_on_floor()
+
+func move_and_slide() -> bool:
+	return get_replicator().move_and_slide()
+
+
+func move_and_collide(
+	_motion: Vector2, test: bool = false, margin: float = .08
+	) -> KinematicCollision2D:
+	
+	return get_replicator().move_and_collide(_motion, test, margin, false)
+
 func change_state(state: LimboState) -> void:
 	get_hsm().change_active_state(state)
+
+
+func _propel(_motion: Vector2) -> void:
+	var unit := get_replicator()
+	unit.velocity = _motion
+
+
+func create_animlib() -> void:
+	assert(library_name)
+	get_anim().add_animation_library(library_name, AnimationLibrary.new())
+
+
+func add_library() -> void:
+	assert(library_name)
+	assert(anim_library)
+	get_anim().add_animation_library(library_name, anim_library)
+
+
+func add_animation(anim_name: StringName, anim: Animation) -> void:
+	assert(library_name)
+	assert(anim_library)
+	var _lib := get_anim().get_animation_library(library_name)
+	_lib.add_animation(anim_name, anim)
+
+
+func get_target() -> Node2D:
+	return get_unit().get_btbb().get_var(&"target") as Node2D
+
+
+func move_order_received() -> Array[Dictionary]:
+	return get_unit().get_btbb().get_var(&"target_position") as Array[Dictionary]
+
+
+func get_gravity(_max: float = 970., delta: float = 12.25) -> void:
+	var unit := get_unit()
+	unit.velocity.y = move_toward(unit.velocity.y, _max, delta)
+
+
+func get_friction(delta: float = 12.25) -> void:
+	var unit := get_unit()
+	unit.velocity.x = move_toward(unit.velocity.x, 0., delta)
+
+
+func get_unit() -> Unit:
+	return agent as Unit
+
+
+
+
+
+	

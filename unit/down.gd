@@ -27,5 +27,5 @@ func _update(delta: float) -> void:
 
 
 func _animation_finished(anim_name: StringName) -> void:
-	if anim_name == anim_lib_name + &"/standup":
+	if anim_name == library_name + &"/standup":
 		get_state_machine().revert()

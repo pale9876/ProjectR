@@ -725,18 +725,22 @@ script = ExtResource("18_q28gw")
 
 [node name="Aerial" type="LimboState" parent="StateMachine" unique_id=1728554025]
 script = ExtResource("24_art4l")
+type = 2
 metadata/_custom_type_script = "uid://b7x8s5btnaxj2"
 
 [node name="Down" type="LimboState" parent="StateMachine" unique_id=1834641522]
 script = ExtResource("24_art4l")
+type = 2
 metadata/_custom_type_script = "uid://b7x8s5btnaxj2"
 
 [node name="Pushback" type="LimboState" parent="StateMachine" unique_id=1213373009]
 script = ExtResource("24_art4l")
+type = 2
 metadata/_custom_type_script = "uid://b7x8s5btnaxj2"
 
 [node name="Wallhit" type="LimboState" parent="StateMachine" unique_id=765613142]
 script = ExtResource("24_art4l")
+type = 2
 metadata/_custom_type_script = "uid://b7x8s5btnaxj2"
 
 [node name="Pound" type="LimboState" parent="StateMachine" unique_id=832705334]

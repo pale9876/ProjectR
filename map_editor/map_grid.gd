@@ -1,28 +1,40 @@
-extends GridContainer
+# map_grid.gd
+extends Node2D
 
 
-const MAP_TILE_SCENE: PackedScene = preload("uid://dyi2rrrxgabsy")
+# Import
+const CursorTile: Script = preload("uid://c347castjr8h1")
+const EditorCamera: Script = preload("uid://c17vpmahfebd0")
 
 
-@export var map_size: Vector2i = Vector2i(128, 128)
+# Const
+const DEFAULT_TILE_SIZE: int = 16
+var tile_size: int = DEFAULT_TILE_SIZE
 
 
-func _init() -> void:
-	columns = 256
+func awake() -> void:
+	Input.mouse_mode = Input.MOUSE_MODE_CONFINED
 
 
-func get_editor_canvas() -> CanvasLayer:
-	return get_parent() as CanvasLayer
+func _ready() -> void:
+	get_editor_camera().reset()
+	get_cursor().cursor_pressed.connect(
+		func(point: Vector2i) -> void:
+			print(point)
+	)
 
 
-func set_tile(sz: Vector2i) -> void:
-	for y: int in range(sz.y):
-		for x: int in range(sz.x):
-			var tile := MAP_TILE_SCENE.instantiate() as MapTile
-			add_child(tile)
-
-	map_size = sz
+func _exit_tree() -> void:
+	Input.mouse_mode = Input.MOUSE_MODE_VISIBLE
 
 
-func clear() -> void:
-	for node in get_children(): node.queue_free()
+func get_tile() -> TileMapLayer:
+	return get_node(^"MapTile") as TileMapLayer
+
+
+func get_cursor() -> CursorTile:
+	return get_node(^"CursorTile") as CursorTile
+
+
+func get_editor_camera() -> EditorCamera:
+	return get_node(^"EditorCamera") as EditorCamera

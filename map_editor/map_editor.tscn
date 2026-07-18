@@ -1,36 +1,23 @@
 [gd_scene format=3 uid="uid://dk2cx80kejb7y"]
 
 [ext_resource type="Script" uid="uid://dh7o2hk7gte68" path="res://map_editor/map_editor.gd" id="1_3wi22"]
-[ext_resource type="Script" uid="uid://b2wn5idfki8e3" path="res://map_editor/map_grid.gd" id="2_un4jc"]
+[ext_resource type="PackedScene" uid="uid://cw0oiv5lkypvm" path="res://map_editor/map_grid.tscn" id="2_wu3br"]
 [ext_resource type="PackedScene" uid="uid://dk61v46pkajvn" path="res://map_editor/init_settings.tscn" id="3_wu3br"]
-[ext_resource type="Script" uid="uid://b7mynrh8bxsyr" path="res://map_editor/settings_file_dialog.gd" id="4_fsb40"]
 [ext_resource type="PackedScene" uid="uid://dvwitqofqorvt" path="res://map_editor/editor_entry.tscn" id="4_gjvg8"]
-[ext_resource type="Script" uid="uid://bith0lvumu244" path="res://map_editor/scene_file_dialog.gd" id="5_wu3br"]
+[ext_resource type="Script" uid="uid://dbci2v2xkthhv" path="res://map_editor/load_map_fd.gd" id="5_fsb40"]
 
 [node name="MapEditor" type="CanvasLayer" unique_id=1642305168]
 script = ExtResource("1_3wi22")
 
-[node name="ScrollContainer" type="ScrollContainer" parent="." unique_id=2013941697]
-anchors_preset = 15
-anchor_right = 1.0
-anchor_bottom = 1.0
-grow_horizontal = 2
-grow_vertical = 2
-
-[node name="Grid" type="GridContainer" parent="ScrollContainer" unique_id=1511641251]
-unique_name_in_owner = true
-layout_mode = 2
-size_flags_horizontal = 3
-size_flags_vertical = 3
-columns = 256
-script = ExtResource("2_un4jc")
+[node name="MapGrid" parent="." unique_id=1319264100 instance=ExtResource("2_wu3br")]
 
 [node name="InitSettings" parent="." unique_id=1799898184 instance=ExtResource("3_wu3br")]
+visible = false
 
 [node name="EditorEntry" parent="." unique_id=602129915 instance=ExtResource("4_gjvg8")]
 visible = false
 
-[node name="MapDataFileDialog" type="FileDialog" parent="." unique_id=627223040]
+[node name="LoadMapFD" type="FileDialog" parent="." unique_id=627223040]
 oversampling_override = 1.0
 title = "Open a File"
 initial_position = 1
@@ -38,17 +25,5 @@ popup_window = true
 file_mode = 0
 display_mode = 1
 access = 1
-filters = PackedStringArray("*.tscn")
-favorites_enabled = false
-script = ExtResource("4_fsb40")
-
-[node name="SceneFileDialog" type="FileDialog" parent="." unique_id=43168370]
-oversampling_override = 1.0
-title = "Open a File"
-initial_position = 1
-popup_window = true
-file_mode = 0
-display_mode = 1
-access = 1
-filters = PackedStringArray("*.tscn")
-script = ExtResource("5_wu3br")
+filters = PackedStringArray("*.res")
+script = ExtResource("5_fsb40")

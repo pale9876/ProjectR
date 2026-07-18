@@ -1,13 +1,14 @@
 # world.gd
+@tool
 extends Node2D
 
 
 # Import
 const Ingame: Script = preload("uid://lf1g8r7wbov3")
+const TILE_SIZE: int = 16
 
 
-
-@export var tile_size: int = 16
+@export var tile_size: int = TILE_SIZE
 
 
 var guidance: Dictionary[Rect2i, Map] = {
@@ -21,6 +22,9 @@ func get_current_map() -> Map:
 
 
 func _ready() -> void:
+	if Engine.is_editor_hint():
+		return
+	
 	for node: Node in get_children():
 		if (node is Map):
 			if !guidance.values().has(node):
@@ -90,3 +94,9 @@ func set_keikai(map: Map) -> void:
 	keikai.set_keikai(value)
 	
 	print(value)
+	
+	
+	
+	
+	
+	

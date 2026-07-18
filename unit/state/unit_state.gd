@@ -6,105 +6,14 @@ class_name UnitState
 const StateMachine: Script = preload("uid://dcybwuwfqeqr3")
 
 
-@export var anim_lib_name: StringName
-@export var anim_lib: AnimationLibrary
-
-
-func get_unit() -> Unit:
-	return agent as Unit
-
-
-
-func get_target() -> Node2D:
-	return get_unit().get_btbb().get_var(&"target") as Node2D
-
-
-func move_order_received() -> Array[Dictionary]:
-	return get_unit().get_btbb().get_var(&"target_position") as Array[Dictionary]
-
-
-func is_on_floor() -> bool:
-	return get_unit().is_on_floor()
-
-
-func get_gravity(max: float = 970., delta: float = 12.25) -> void:
-	var unit := get_unit()
-	unit.velocity.y = move_toward(unit.velocity.y, max, delta)
-
-
-func get_friction(delta: float = 12.25) -> void:
-	var unit := get_unit()
-	unit.velocity.x = move_toward(unit.velocity.x, 0., 12.25)
-
-
-func move_and_slide() -> bool:
-	return get_unit().move_and_slide()
-
-
-func move_and_collide(
-	motion: Vector2, test: bool = false, margin: float = .08
-	) -> KinematicCollision2D:
-	
-	return get_unit().move_and_collide(motion, test, margin, false)
-
 
 func get_state_machine() -> StateMachine:
 	return get_parent() as StateMachine
 
 
-
-func play(anim_name: StringName) -> void:
-	return get_anim().play(anim_lib_name + &"/" + anim_name)
-
-
-# OVERRIDE
-func event(ev: HitboxInformation, _result: HitResult) -> void:
-	pass
-
-
-# OVERRIDE
-func set_hurt_data(info: HitboxInformation) -> void:
-	pass
-
-
-func take_force(motion: Vector2) -> void:
-	var unit := get_unit()
-	
-	var shape_param := PhysicsShapeQueryParameters2D.new()
-	shape_param.shape = (unit.get_node(^"UnitCollision") as CollisionShape2D).shape
-	shape_param.transform = unit.get_global_transform()
-	shape_param.motion = Vector2(motion.x * unit.input_state.direction.x, motion.y)
-	shape_param.collision_mask = 1
-	shape_param.exclude = [unit.get_rid()]
-	
-	var direct_state := unit.get_world_2d().direct_space_state
-	var result := direct_state.cast_motion(shape_param)
-	var unsafe_propotion: float = result[1]
-	
-	move_and_collide(unsafe_propotion * shape_param.motion)
-
-
-func _propel(motion: Vector2) -> void:
-	var unit := get_unit()
-	unit.velocity = motion
-
-
-func create_animlib() -> void:
-	assert(anim_lib_name)
-	get_anim().add_animation_library(anim_lib_name, AnimationLibrary.new())
-
-
-func add_library() -> void:
-	assert(anim_lib)
-	assert(anim_lib_name)
-	get_anim().add_animation_library(anim_lib_name, anim_lib)
-
-
-func add_animation(anim_name: StringName, anim: Animation) -> void:
-	assert(anim_lib)
-	assert(anim_lib_name)
-	var _lib := get_anim().get_animation_library(anim_lib_name)
-	_lib.add_animation(anim_name, anim)
+func take_force(_motion: Vector2) -> KinematicCollision2D:
+	var collide: KinematicCollision2D = move_and_collide(_motion)
+	return collide
 
 
 func get_bb_var(var_name: StringName) -> Variant:

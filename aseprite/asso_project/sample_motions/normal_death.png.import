@@ -2,12 +2,16 @@
 
 importer="texture"
 type="CompressedTexture2D"
-uid="uid://d0sks1g665tme"
-valid=false
+uid="uid://c4vbfr8dx26rm"
+path="res://.godot/imported/normal_death.png-9426d39ca3dc075d6d1e2f3596f4be6e.ctex"
+metadata={
+"vram_texture": false
+}
 
 [deps]
 
-source_file="res://aseprite/asso_project/aseprite/map/wall_line.aseprite"
+source_file="res://aseprite/asso_project/sample_motions/normal_death.png"
+dest_files=["res://.godot/imported/normal_death.png-9426d39ca3dc075d6d1e2f3596f4be6e.ctex"]
 
 [params]
 

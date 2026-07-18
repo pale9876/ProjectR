@@ -1,0 +1,30 @@
+[gd_scene format=3 uid="uid://cw0oiv5lkypvm"]
+
+[ext_resource type="Script" uid="uid://b2wn5idfki8e3" path="res://map_editor/map_grid.gd" id="1_7rtvo"]
+[ext_resource type="TileSet" uid="uid://bx7dh07c7pr2f" path="res://map_editor/base_tile.tres" id="2_uuk6o"]
+[ext_resource type="Script" uid="uid://c347castjr8h1" path="res://map_editor/cursor_tile.gd" id="3_41ytc"]
+[ext_resource type="Script" uid="uid://c17vpmahfebd0" path="res://map_editor/editor_camera.gd" id="3_uuk6o"]
+
+[node name="MapGrid" type="Node2D" unique_id=1319264100]
+script = ExtResource("1_7rtvo")
+
+[node name="BackgroundWall" type="TileMapLayer" parent="." unique_id=1433421341]
+
+[node name="Floor" type="TileMapLayer" parent="." unique_id=844266896]
+
+[node name="Border" type="TileMapLayer" parent="." unique_id=1326296057]
+
+[node name="MapTile" type="TileMapLayer" parent="." unique_id=183110456]
+tile_set = ExtResource("2_uuk6o")
+
+[node name="IconTile" type="TileMapLayer" parent="." unique_id=748100600]
+tile_set = ExtResource("2_uuk6o")
+
+[node name="CursorTile" type="TileMapLayer" parent="." unique_id=1216665563]
+tile_set = ExtResource("2_uuk6o")
+script = ExtResource("3_41ytc")
+
+[node name="EditorCamera" type="Camera2D" parent="." unique_id=846648757]
+position = Vector2(320, 180)
+script = ExtResource("3_uuk6o")
+margin = 10

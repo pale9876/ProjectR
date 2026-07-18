@@ -2,12 +2,16 @@
 
 importer="texture"
 type="CompressedTexture2D"
-uid="uid://bpk8q37mquclv"
-valid=false
+uid="uid://cabhr8ux02765"
+path="res://.godot/imported/headless_death.png-76e95f50f583d92811df84944a028e7b.ctex"
+metadata={
+"vram_texture": false
+}
 
 [deps]
 
-source_file="res://aseprite/asso_project/aseprite/map/wall_texture.aseprite"
+source_file="res://aseprite/asso_project/sample_motions/headless_death.png"
+dest_files=["res://.godot/imported/headless_death.png-76e95f50f583d92811df84944a028e7b.ctex"]
 
 [params]
 

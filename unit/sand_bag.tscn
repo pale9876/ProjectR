@@ -20,21 +20,16 @@
 [ext_resource type="Script" uid="uid://8j24mmna7pmh" path="res://unit/state/jump.gd" id="14_w11yh"]
 [ext_resource type="Script" uid="uid://c1823275u0dxi" path="res://player/state/comment.gd" id="15_4fp7c"]
 [ext_resource type="AnimationLibrary" uid="uid://c2lftjcgk3lp4" path="res://motion/idle.res" id="15_507e4"]
-[ext_resource type="AnimationLibrary" uid="uid://d3445833nuf3o" path="res://motion/move.res" id="17_4sfit"]
 [ext_resource type="Script" uid="uid://dmhr7bhy8lgt5" path="res://unit/move.gd" id="18_t3pbd"]
-[ext_resource type="AnimationLibrary" uid="uid://c2h4k66ayh87g" path="res://motion/jump.res" id="19_0awm1"]
 [ext_resource type="Script" uid="uid://6eubdpqc1rif" path="res://unit/grabbed.gd" id="19_cibo8"]
 [ext_resource type="Script" uid="uid://h6umakp1bcu0" path="res://unit/grab.gd" id="20_2d64t"]
 [ext_resource type="Script" uid="uid://b1m4oejiu7ume" path="res://unit/knockback.gd" id="21_bnltu"]
 [ext_resource type="AnimationLibrary" uid="uid://cofr330818v1e" path="res://motion/down.res" id="21_wp6bj"]
-[ext_resource type="AnimationLibrary" uid="uid://b5pittsqyeeq3" path="res://motion/knockback.res" id="25_p42cd"]
 [ext_resource type="Script" uid="uid://dsjnx0cxf2gu1" path="res://unit/aerial.gd" id="26_itvhm"]
 [ext_resource type="Script" uid="uid://cattor5p0ysjp" path="res://unit/down.gd" id="27_74sws"]
 [ext_resource type="Script" uid="uid://8rj1txp84awx" path="res://unit/pushback.gd" id="28_njs1s"]
 [ext_resource type="Script" uid="uid://cqhhjr6ob8477" path="res://unit/wallhit.gd" id="29_a8ovg"]
 [ext_resource type="AnimationLibrary" uid="uid://docog8qdv8rj1" path="res://motion/aerial.res" id="30_njs1s"]
-[ext_resource type="AnimationLibrary" uid="uid://c4rqs4fs1eal4" path="res://motion/pushback.res" id="31_a8ovg"]
-[ext_resource type="AnimationLibrary" uid="uid://bvq7ynb3u3a8p" path="res://motion/wallhit.res" id="32_qjbny"]
 [ext_resource type="Script" uid="uid://im1wyvflgwp0" path="res://unit/state/unit_state.gd" id="33_qjbny"]
 [ext_resource type="Script" uid="uid://chb5h0vw5lpvq" path="res://player/animation_player.gd" id="36_yeahc"]
 [ext_resource type="Script" uid="uid://dr8n2mbhooxjo" path="res://player/hitbox_component.gd" id="37_v2yrs"]
@@ -60,109 +55,110 @@ fill = 1
 fill_from = Vector2(0.5, 0.5)
 fill_to = Vector2(0.85, 0.85)
 
-[sub_resource type="RectangleShape2D" id="RectangleShape2D_2d64t"]
+[sub_resource type="RectangleShape2D" id="RectangleShape2D_gjkc3"]
 size = Vector2(38, 92)
 
-[sub_resource type="RectangleShape2D" id="RectangleShape2D_t3pbd"]
+[sub_resource type="RectangleShape2D" id="RectangleShape2D_2e5g1"]
 size = Vector2(38, 92)
 
 [sub_resource type="Animation" id="Animation_njs1s"]
 length = 0.001
+step = 0.016666668
 tracks/0/type = "value"
 tracks/0/imported = false
 tracks/0/enabled = true
-tracks/0/path = NodePath("Hurtbox/HurtboxShape:disabled")
+tracks/0/path = NodePath("SpriteComponent/AnimatedSprite2D:animation")
 tracks/0/interp = 1
 tracks/0/loop_wrap = true
 tracks/0/keys = {
 "times": PackedFloat32Array(0),
 "transitions": PackedFloat32Array(1),
 "update": 1,
-"values": [false]
+"values": [&"idle"]
 }
 tracks/1/type = "value"
 tracks/1/imported = false
 tracks/1/enabled = true
-tracks/1/path = NodePath("SpriteComponent/AnimatedSprite2D:animation")
+tracks/1/path = NodePath("SpriteComponent/AnimatedSprite2D:frame")
 tracks/1/interp = 1
 tracks/1/loop_wrap = true
 tracks/1/keys = {
 "times": PackedFloat32Array(0),
 "transitions": PackedFloat32Array(1),
 "update": 1,
-"values": [&"idle"]
+"values": [0]
 }
 tracks/2/type = "value"
 tracks/2/imported = false
 tracks/2/enabled = true
-tracks/2/path = NodePath("SpriteComponent/AnimatedSprite2D:frame")
+tracks/2/path = NodePath("Hurtbox/HurtboxShape:height")
 tracks/2/interp = 1
 tracks/2/loop_wrap = true
 tracks/2/keys = {
 "times": PackedFloat32Array(0),
 "transitions": PackedFloat32Array(1),
 "update": 1,
-"values": [0]
+"values": [92]
 }
 tracks/3/type = "value"
 tracks/3/imported = false
 tracks/3/enabled = true
-tracks/3/path = NodePath("Hurtbox/HurtboxShape:height")
+tracks/3/path = NodePath("Hurtbox/HurtboxShape:width")
 tracks/3/interp = 1
 tracks/3/loop_wrap = true
 tracks/3/keys = {
 "times": PackedFloat32Array(0),
 "transitions": PackedFloat32Array(1),
 "update": 1,
-"values": [92]
+"values": [38]
 }
 tracks/4/type = "value"
 tracks/4/imported = false
 tracks/4/enabled = true
-tracks/4/path = NodePath("Hurtbox/HurtboxShape:width")
+tracks/4/path = NodePath("Hurtbox/HurtboxShape:offset_y")
 tracks/4/interp = 1
 tracks/4/loop_wrap = true
 tracks/4/keys = {
 "times": PackedFloat32Array(0),
 "transitions": PackedFloat32Array(1),
 "update": 1,
-"values": [38]
+"values": [0]
 }
 tracks/5/type = "value"
 tracks/5/imported = false
 tracks/5/enabled = true
-tracks/5/path = NodePath("Hurtbox/HurtboxShape:offset_y")
+tracks/5/path = NodePath("UnitCollision:width")
 tracks/5/interp = 1
 tracks/5/loop_wrap = true
 tracks/5/keys = {
 "times": PackedFloat32Array(0),
 "transitions": PackedFloat32Array(1),
 "update": 1,
-"values": [0]
+"values": [38]
 }
 tracks/6/type = "value"
 tracks/6/imported = false
 tracks/6/enabled = true
-tracks/6/path = NodePath("UnitCollision:width")
+tracks/6/path = NodePath("UnitCollision:height")
 tracks/6/interp = 1
 tracks/6/loop_wrap = true
 tracks/6/keys = {
 "times": PackedFloat32Array(0),
 "transitions": PackedFloat32Array(1),
 "update": 1,
-"values": [38]
+"values": [92]
 }
 tracks/7/type = "value"
 tracks/7/imported = false
 tracks/7/enabled = true
-tracks/7/path = NodePath("UnitCollision:height")
+tracks/7/path = NodePath("UnitCollision:offset_y")
 tracks/7/interp = 1
 tracks/7/loop_wrap = true
 tracks/7/keys = {
 "times": PackedFloat32Array(0),
 "transitions": PackedFloat32Array(1),
 "update": 1,
-"values": [92]
+"values": [0]
 }
 
 [sub_resource type="AnimationLibrary" id="AnimationLibrary_a8ovg"]
@@ -300,7 +296,7 @@ animation = &"idle"
 
 [node name="UnitCollision" type="CollisionShape2D" parent="." unique_id=2120811417]
 position = Vector2(0, -46)
-shape = SubResource("RectangleShape2D_2d64t")
+shape = SubResource("RectangleShape2D_gjkc3")
 debug_color = Color(0, 0.6, 0.69803923, 0.2)
 script = ExtResource("7_gjkc3")
 metadata/_custom_type_script = "uid://bhhy483vjefa1"
@@ -312,8 +308,8 @@ monitoring = false
 script = ExtResource("8_k7l50")
 
 [node name="HurtboxShape" type="CollisionShape2D" parent="Hurtbox" unique_id=1180949192]
-position = Vector2(-0.5, -46)
-shape = SubResource("RectangleShape2D_t3pbd")
+position = Vector2(0, -46)
+shape = SubResource("RectangleShape2D_2e5g1")
 debug_color = Color(0.8509804, 0.03529412, 0.21960784, 0.39607844)
 script = ExtResource("7_gjkc3")
 metadata/_custom_type_script = "uid://bhhy483vjefa1"
@@ -361,29 +357,18 @@ metadata/_custom_type_script = "uid://c1823275u0dxi"
 
 [node name="Idle" type="LimboState" parent="StateMachine" unique_id=641009354]
 script = ExtResource("11_3b2yn")
-anim_lib_name = &"idle"
-anim_lib = ExtResource("15_507e4")
 
 [node name="Move" type="LimboState" parent="StateMachine" unique_id=265379667]
 script = ExtResource("18_t3pbd")
-anim_lib_name = &"move"
-anim_lib = ExtResource("17_4sfit")
 metadata/_custom_type_script = "uid://im1wyvflgwp0"
 
 [node name="Jump" type="LimboState" parent="StateMachine" unique_id=1875892619]
 script = ExtResource("14_w11yh")
-anim_lib_name = &"jump"
-anim_lib = ExtResource("19_0awm1")
 type = 1
 
 [node name="Fall" type="LimboState" parent="StateMachine" unique_id=1952545241]
 script = ExtResource("13_pvbt4")
-anim_lib_name = &"fakk"
-anim_lib = ExtResource("21_wp6bj")
-metadata/_custom_type_script = "uid://im1wyvflgwp0"
-
-[node name="Grab" type="LimboState" parent="StateMachine" unique_id=1141453359]
-script = ExtResource("20_2d64t")
+type = 1
 metadata/_custom_type_script = "uid://im1wyvflgwp0"
 
 [node name="#HurtState" type="LimboState" parent="StateMachine" unique_id=231535512]
@@ -393,36 +378,26 @@ metadata/_custom_type_script = "uid://c1823275u0dxi"
 
 [node name="Knockback" type="LimboState" parent="StateMachine" unique_id=1168315294]
 script = ExtResource("21_bnltu")
-anim_lib_name = &"knockback"
-anim_lib = ExtResource("25_p42cd")
 type = 2
 metadata/_custom_type_script = "uid://im1wyvflgwp0"
 
 [node name="Aerial" type="LimboState" parent="StateMachine" unique_id=1444982]
 script = ExtResource("26_itvhm")
-anim_lib_name = &"aerial"
-anim_lib = ExtResource("30_njs1s")
 type = 2
 metadata/_custom_type_script = "uid://im1wyvflgwp0"
 
 [node name="Down" type="LimboState" parent="StateMachine" unique_id=1321983700]
 script = ExtResource("27_74sws")
-anim_lib_name = &"down"
-anim_lib = ExtResource("21_wp6bj")
 type = 2
 metadata/_custom_type_script = "uid://im1wyvflgwp0"
 
 [node name="Pushback" type="LimboState" parent="StateMachine" unique_id=1879459923]
 script = ExtResource("28_njs1s")
-anim_lib_name = &"pushback"
-anim_lib = ExtResource("31_a8ovg")
 type = 2
 metadata/_custom_type_script = "uid://im1wyvflgwp0"
 
 [node name="Wallhit" type="LimboState" parent="StateMachine" unique_id=1048343805]
 script = ExtResource("29_a8ovg")
-anim_lib_name = &"wallhit"
-anim_lib = ExtResource("32_qjbny")
 type = 2
 metadata/_custom_type_script = "uid://im1wyvflgwp0"
 
@@ -440,5 +415,9 @@ metadata/_custom_type_script = "uid://im1wyvflgwp0"
 process_mode = 4
 script = ExtResource("15_4fp7c")
 metadata/_custom_type_script = "uid://c1823275u0dxi"
+
+[node name="Grab" type="LimboState" parent="StateMachine" unique_id=1141453359]
+script = ExtResource("20_2d64t")
+metadata/_custom_type_script = "uid://im1wyvflgwp0"
 
 [editable path="SpriteComponent"]

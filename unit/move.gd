@@ -20,6 +20,7 @@ func _enter_tree() -> void:
 
 func _ready() -> void:
 	idle_state = get_state(^"Idle")
+	
 	var unit := get_state_machine().get_parent() as Unit
 	var awareness := unit.get_awareness_area()
 	

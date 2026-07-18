@@ -5,13 +5,14 @@
 [ext_resource type="PackedScene" uid="uid://ccd41t1qrjttn" path="res://ingame/map/start_map.tscn" id="3_qq5f4"]
 [ext_resource type="Script" uid="uid://c6w0iyaft7ljo" path="res://map_guidance.gd" id="4_jcudw"]
 [ext_resource type="PackedScene" uid="uid://cgjxkmo53vf01" path="res://ingame/map/keikai.tscn" id="4_v424x"]
+[ext_resource type="Script" uid="uid://di5e7qxe7d0dj" path="res://ingame/map/start_map.gd" id="5_nnooo"]
 [ext_resource type="Script" uid="uid://oxsm8uvgi23h" path="res://ingame/spectre.gd" id="5_qq5f4"]
 [ext_resource type="Script" uid="uid://b7phyhue4y3yg" path="res://player/player_camera.gd" id="7_mm3qa"]
 
 [sub_resource type="Resource" id="Resource_jcudw"]
 script = ExtResource("4_jcudw")
 scene = ExtResource("3_qq5f4")
-size = Vector2i(72, 16)
+size = Vector2i(72, 17)
 metadata/_custom_type_script = "uid://c6w0iyaft7ljo"
 
 [node name="Ingame" type="CanvasLayer" unique_id=906912944]
@@ -23,6 +24,26 @@ script = ExtResource("2_xvj36")
 
 [node name="StartMap" parent="World" unique_id=806471253 instance=ExtResource("3_qq5f4")]
 guidance = SubResource("Resource_jcudw")
+size = Vector2i(72, 16)
+floor_breakable = false
+wall_breakable = 0
+wall_opened = 0
+
+[node name="Underpass" type="TileMapLayer" parent="World" unique_id=376171961]
+position = Vector2(0, 272)
+script = ExtResource("5_nnooo")
+location = Vector2i(0, 17)
+size = Vector2i(72, 17)
+floor_offset = 8.0
+debug_color = Color(0, 1, 0.84705883, 0.15686275)
+metadata/_custom_type_script = "uid://di5e7qxe7d0dj"
+
+[node name="Metro" type="TileMapLayer" parent="World" unique_id=1474241770]
+position = Vector2(1152, 0)
+script = ExtResource("5_nnooo")
+location = Vector2i(72, 0)
+size = Vector2i(89, 34)
+metadata/_custom_type_script = "uid://di5e7qxe7d0dj"
 
 [node name="Keikai" parent="." unique_id=1292865989 instance=ExtResource("4_v424x")]
 _left = 0

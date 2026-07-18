@@ -2,12 +2,16 @@
 
 importer="texture"
 type="CompressedTexture2D"
-uid="uid://krult4ycnyy0"
-valid=false
+uid="uid://lvtus5t1loy3"
+path="res://.godot/imported/standing.png-90adf0ea4338e0dc6713a7702fec4956.ctex"
+metadata={
+"vram_texture": false
+}
 
 [deps]
 
-source_file="res://aseprite/asso_project/aseprite/map/platform.aseprite"
+source_file="res://aseprite/asso_project/sample_motions/standing.png"
+dest_files=["res://.godot/imported/standing.png-90adf0ea4338e0dc6713a7702fec4956.ctex"]
 
 [params]
 

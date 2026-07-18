@@ -1,9 +1,4 @@
 # border.gd
-@tool extends TileMapLayer
-
-
-
-
-
-func _init() -> void:
-	pass
+@tool
+extends TileMapLayer
+class_name Border
