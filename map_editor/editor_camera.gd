@@ -11,12 +11,15 @@ const MapGrid: Script = preload("uid://b2wn5idfki8e3")
 
 
 
+
+
+
 func _enter_tree() -> void:
 	make_current()
 
 
 func _process(_delta: float) -> void:
-	if !is_current(): return
+	if !is_current() or !get_grid().is_cursor_inside_window(): return
 	
 	var input_dir: Vector2 = Input.get_vector(
 		"left", "right", "up", "down"
@@ -30,6 +33,17 @@ func _process(_delta: float) -> void:
 	
 	if Input.is_action_just_pressed("jump"):
 		reset()
+
+
+func _unhandled_input(_event: InputEvent) -> void:
+	if !get_grid().is_cursor_inside_window():
+		return
+	
+	if Input.is_mouse_button_pressed(MOUSE_BUTTON_WHEEL_UP):
+		zoom = (zoom + Vector2(.1, .1)).clampf(.1, 5.)
+	elif Input.is_mouse_button_pressed(MOUSE_BUTTON_WHEEL_DOWN):
+		zoom = (zoom - Vector2(.1, .1)).clampf(.1, 5.)
+
 
 func relation() -> Vector2:
 	var result: Vector2 = Vector2()

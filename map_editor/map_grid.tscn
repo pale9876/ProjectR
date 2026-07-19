@@ -3,7 +3,10 @@
 [ext_resource type="Script" uid="uid://b2wn5idfki8e3" path="res://map_editor/map_grid.gd" id="1_7rtvo"]
 [ext_resource type="TileSet" uid="uid://bx7dh07c7pr2f" path="res://map_editor/base_tile.tres" id="2_uuk6o"]
 [ext_resource type="Script" uid="uid://c347castjr8h1" path="res://map_editor/cursor_tile.gd" id="3_41ytc"]
+[ext_resource type="Texture2D" uid="uid://btm6sfpgxylt2" path="res://aseprite/tilemap/icons.png" id="3_787ee"]
+[ext_resource type="Script" uid="uid://2l6nlafl6cnq" path="res://map_editor/icon_map.gd" id="3_gut7u"]
 [ext_resource type="Script" uid="uid://c17vpmahfebd0" path="res://map_editor/editor_camera.gd" id="3_uuk6o"]
+[ext_resource type="Script" uid="uid://byx4j5csndsem" path="res://map_editor/icon.gd" id="5_gut7u"]
 
 [node name="MapGrid" type="Node2D" unique_id=1319264100]
 script = ExtResource("1_7rtvo")
@@ -17,8 +20,16 @@ script = ExtResource("1_7rtvo")
 [node name="MapTile" type="TileMapLayer" parent="." unique_id=183110456]
 tile_set = ExtResource("2_uuk6o")
 
-[node name="IconTile" type="TileMapLayer" parent="." unique_id=748100600]
-tile_set = ExtResource("2_uuk6o")
+[node name="IconMap" type="Node2D" parent="." unique_id=1158917566]
+script = ExtResource("3_gut7u")
+
+[node name="Icon" type="Sprite2D" parent="IconMap" unique_id=2000464216]
+texture = ExtResource("3_787ee")
+offset = Vector2(0, -10)
+hframes = 16
+vframes = 16
+frame = 1
+script = ExtResource("5_gut7u")
 
 [node name="CursorTile" type="TileMapLayer" parent="." unique_id=1216665563]
 tile_set = ExtResource("2_uuk6o")

@@ -1,3 +1,4 @@
+# init_settings.gd
 extends PanelContainer
 
 

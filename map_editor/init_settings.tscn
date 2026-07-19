@@ -123,6 +123,7 @@ size_flags_horizontal = 3
 max_value = 64.0
 step = 8.0
 value = 16.0
+editable = false
 
 [node name="HBoxContainer3" type="HBoxContainer" parent="MarginContainer/VBoxContainer/HBoxContainer/MarginContainer2/VBoxContainer" unique_id=908472512]
 layout_mode = 2
@@ -140,6 +141,7 @@ size_flags_horizontal = 3
 max_value = 64.0
 step = 8.0
 value = 16.0
+editable = false
 
 [node name="Submit" type="Button" parent="MarginContainer/VBoxContainer" unique_id=658514987]
 unique_name_in_owner = true
