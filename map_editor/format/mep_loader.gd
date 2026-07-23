@@ -32,7 +32,7 @@ func _load(
 	var mep: MapEditorProject = MapEditorProject.new()
 	
 	mep.title = StringName(file.get_pascal_string())
-	mep.map_size.x = file.get_32()
-	mep.map_size.y = file.get_32()
+	mep.size = file.get_var() as Vector2i
+	
 	
 	return mep

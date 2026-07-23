@@ -1,8 +1,10 @@
 [gd_scene format=3 uid="uid://c2agrq1i4pbt2"]
 
 [ext_resource type="Script" uid="uid://dtu3imugbu0pm" path="res://title/title.gd" id="1_y7k74"]
+[ext_resource type="Theme" uid="uid://cyev5gnpugequ" path="res://title_theme.tres" id="2_6s8lb"]
 [ext_resource type="Texture2D" uid="uid://c1kdqekuqw0nx" path="res://aseprite/asso_project/title/MainTitle2.png" id="2_crako"]
 [ext_resource type="Script" uid="uid://bbn2mtp6yjek8" path="res://title/control.gd" id="2_nx56k"]
+[ext_resource type="PackedScene" uid="uid://h46mjm4dsjnx" path="res://title/title_ui_button.tscn" id="5_0tjwc"]
 
 [node name="Title" type="CanvasLayer" unique_id=419323065]
 script = ExtResource("1_y7k74")
@@ -14,6 +16,7 @@ anchor_right = 1.0
 anchor_bottom = 1.0
 grow_horizontal = 2
 grow_vertical = 2
+theme = ExtResource("2_6s8lb")
 script = ExtResource("2_nx56k")
 
 [node name="TitleScreen" type="TextureRect" parent="Control" unique_id=708332907]
@@ -56,17 +59,51 @@ size_flags_vertical = 4
 custom_minimum_size = Vector2(125, 0)
 layout_mode = 2
 size_flags_horizontal = 3
-theme_override_constants/separation = 6
+theme_override_constants/separation = 10
 
-[node name="Start" type="Button" parent="Control/HBoxContainer/MarginContainer2/CenterContainer2/VBoxContainer" unique_id=1372266073]
-unique_name_in_owner = true
+[node name="Control" type="Control" parent="Control/HBoxContainer/MarginContainer2/CenterContainer2/VBoxContainer" unique_id=658253900]
+custom_minimum_size = Vector2(100, 30)
 layout_mode = 2
-text = "Enter"
+size_flags_vertical = 3
 
-[node name="Option" type="Button" parent="Control/HBoxContainer/MarginContainer2/CenterContainer2/VBoxContainer" unique_id=1910228582]
+[node name="Start" parent="Control/HBoxContainer/MarginContainer2/CenterContainer2/VBoxContainer/Control" unique_id=938715085 instance=ExtResource("5_0tjwc")]
 unique_name_in_owner = true
+layout_mode = 1
+anchors_preset = 15
+anchor_right = 1.0
+anchor_bottom = 1.0
+grow_horizontal = 2
+grow_vertical = 2
+
+[node name="Control2" type="Control" parent="Control/HBoxContainer/MarginContainer2/CenterContainer2/VBoxContainer" unique_id=1534087175]
+custom_minimum_size = Vector2(100, 30)
 layout_mode = 2
+size_flags_vertical = 3
+
+[node name="Option" parent="Control/HBoxContainer/MarginContainer2/CenterContainer2/VBoxContainer/Control2" unique_id=926642094 instance=ExtResource("5_0tjwc")]
+unique_name_in_owner = true
+layout_mode = 1
+anchors_preset = 15
+anchor_right = 1.0
+anchor_bottom = 1.0
+grow_horizontal = 2
+grow_vertical = 2
 text = "Option"
+
+[node name="Control3" type="Control" parent="Control/HBoxContainer/MarginContainer2/CenterContainer2/VBoxContainer" unique_id=1304454826]
+custom_minimum_size = Vector2(100, 30)
+layout_mode = 2
+size_flags_vertical = 3
+
+[node name="MapEditor" parent="Control/HBoxContainer/MarginContainer2/CenterContainer2/VBoxContainer/Control3" unique_id=75221255 instance=ExtResource("5_0tjwc")]
+unique_name_in_owner = true
+layout_mode = 1
+anchors_preset = 15
+anchor_right = 1.0
+anchor_bottom = 1.0
+grow_horizontal = 2
+grow_vertical = 2
+text = "Map Editor"
 
 [node name="MarginContainer3" type="MarginContainer" parent="Control/HBoxContainer" unique_id=617814466]
 layout_mode = 2

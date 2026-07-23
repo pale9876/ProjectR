@@ -2,6 +2,7 @@ extends DefaultUnitFormState
 class_name PlayerState
 
 
+# Import
 const StateMachine: Script = preload("uid://nmmtety5yvve")
 
 
@@ -26,9 +27,11 @@ func get_anim() -> AnimationPlayer:
 
 
 func add_library() -> void:
-	#assert(!library_name.is_empty(), "%s => 라이브러리 이름이 비어있습니다." % [name])
-	#assert(anim_library != null, "%s => 모션이 비어있습니다." % [name])
-	get_anim().add_animation_library(library_name, anim_library)
+	assert(!library_name.is_empty(), "%s => 라이브러리 이름이 비어있습니다." % [name])
+	assert(anim_library != null, "%s => 모션이 비어있습니다." % [name])
+	var _anim := get_anim()
+	if !_anim.has_animation_library(library_name):
+		_anim.add_animation_library(library_name, anim_library)
 
 
 func create_library() -> void:
@@ -39,8 +42,8 @@ func add_animation(_anim_name: StringName, anim: Animation) -> void:
 	get_anim().get_animation_library(library_name).add_animation(_anim_name, anim)
 
 
-func play(anim_name: StringName) -> void:
-	get_anim().play(library_name + &"/" + anim_name)
+func play(_anim_name: StringName) -> void:
+	get_anim().play(library_name + &"/" + _anim_name)
 
 
 func get_player() -> Player:
@@ -111,7 +114,7 @@ func is_on_wall() -> bool:
 	return get_player().is_on_wall()
 
 
-func _propel(motion: Vector2) -> void:
+func _propel(_motion: Vector2) -> void:
 	var player := get_player()
 	var face: float = player.get_face()
 	var input: float = player.input_state.direction.x
@@ -122,7 +125,7 @@ func _propel(motion: Vector2) -> void:
 	
 	
 	var input_force := face * (.45 if input == 0. else 1. if is_eq else 0. )
-	player.velocity = motion * input_force
+	player.velocity = _motion * input_force
 
 
 func anim_name(_name: StringName) -> StringName:
@@ -130,16 +133,9 @@ func anim_name(_name: StringName) -> StringName:
 
 
 func init_action() -> void:
-	#assert(
-		#!action_input.is_empty() and !ev_name.is_empty(),
-		#"액션 인풋이 비어있거나, 디스패치 이벤트 이름이 존재하지 않음."
-	#)
-		
 	var state_machine := get_state_machine()
-	state_machine.input_map[type][action_input] = ev_name
-	
-	state_machine.add_transition(
-		state_machine.ANYSTATE, self, ev_name, _guard
+	state_machine.type_set_action(
+		type, action_input, self, ev_name, _guard
 	)
 
 
@@ -159,6 +155,10 @@ func _lock() -> void:
 
 func _unlock() -> void:
 	get_player().input_state.unlock()
+
+
+func revert() -> bool:
+	return get_state_machine().revert()
 
 
 func change_state(state: LimboState) -> void:

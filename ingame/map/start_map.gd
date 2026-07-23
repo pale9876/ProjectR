@@ -8,10 +8,11 @@ class_name Map
 const World: Script = preload("uid://dpn1opeegcme2")
 
 
+
 @export_group("Guidance")
 @export var guidance: MapGuidance
-@export var start_spawn_position: Marker2D
-@export var stage: Stage
+#@export var start_spawn_position: Marker2D
+#@export var stage: Stage
 
 
 @export_group("Location")
@@ -36,9 +37,9 @@ const World: Script = preload("uid://dpn1opeegcme2")
 	set(val):
 		wall_breakable = val
 		#print(val)
-@export_flags("Right", "Left") var wall_opened: int:
+@export_flags("Right", "Left") var opened: int:
 	set(val):
-		wall_opened = val
+		opened = val
 		print(val)
 
 
@@ -47,6 +48,11 @@ const World: Script = preload("uid://dpn1opeegcme2")
 	set(val):
 		debug_color = val
 		queue_redraw()
+
+
+
+func disabled() -> bool:
+	return self in get_world().current_map
 
 
 func _enter_tree() -> void:
@@ -67,7 +73,7 @@ func get_region() -> Rect2i:
 
 
 func add_unit(node: Node2D) -> void:
-	stage.add_child(node)
+	get_stage().add_child(node)
 
 
 func get_stage() -> Stage:
@@ -84,4 +90,7 @@ func get_keikai():
 
 func get_tile_size() -> float:
 	return float(get_world().tile_size)
-	
+
+
+func get_start_spawn_position() -> Marker2D:
+	return get_node(^"StartSpawnPosition") as Marker2D

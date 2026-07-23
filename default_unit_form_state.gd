@@ -5,6 +5,10 @@ class_name DefaultUnitFormState
 
 # Import
 const Player: Script = preload("uid://c2uxhumgng18h")
+const NitraAnime: Script = preload("uid://chb5h0vw5lpvq")
+
+# PlaceHolder
+const ANIM_LIB_PLACEHOLDER := preload("uid://h2rfntctgomi") as AnimationLibrary
 
 
 enum Type { # 커맨드 버스 타입
@@ -38,6 +42,11 @@ var force_duration: int = 0:
 
 
 var _substate: LimboSubState
+
+
+func _init() -> void:
+	anim_library = ANIM_LIB_PLACEHOLDER
+	library_name = &"placeholder"
 
 
 func change_sub_state(sub_state: LimboSubState) -> void:
@@ -135,8 +144,8 @@ func create_animlib() -> void:
 
 
 func add_library() -> void:
-	assert(library_name)
-	assert(anim_library)
+	assert(library_name, "%s에 애니메이션 라이브러리 이름을 기입해야 합니다.." % [self.name])
+	assert(anim_library, "%s에 애니메이션 라이브러리 파일을 추가하세요." % [self.name])
 	get_anim().add_animation_library(library_name, anim_library)
 
 

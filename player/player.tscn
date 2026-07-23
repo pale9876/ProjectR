@@ -15,7 +15,7 @@
 [ext_resource type="AnimationLibrary" uid="uid://cfh2duwf6fnm6" path="res://motion/dodge.res" id="8_a2xo5"]
 [ext_resource type="Script" uid="uid://bhhy483vjefa1" path="res://collision/dynamic_unit_collision.gd" id="8_pjwc4"]
 [ext_resource type="AnimationLibrary" uid="uid://cyo676p46aw5v" path="res://motion/fall.res" id="9_1so5t"]
-[ext_resource type="Script" uid="uid://chb5h0vw5lpvq" path="res://player/animation_player.gd" id="9_55jnj"]
+[ext_resource type="Script" uid="uid://chb5h0vw5lpvq" path="res://player/nitra_anime.gd" id="9_55jnj"]
 [ext_resource type="AnimationLibrary" uid="uid://dpx01h1c5dyn4" path="res://motion/jump_hammer.res" id="9_dx5ib"]
 [ext_resource type="AnimationLibrary" uid="uid://dg8bnd42k7kv8" path="res://motion/blowkick.res" id="9_gswnw"]
 [ext_resource type="AnimationLibrary" uid="uid://docog8qdv8rj1" path="res://motion/aerial.res" id="9_n0b8q"]
@@ -49,6 +49,7 @@
 [ext_resource type="Script" uid="uid://b7x8s5btnaxj2" path="res://player/state/player_state.gd" id="24_art4l"]
 [ext_resource type="Script" uid="uid://d2ox33o3w3u0r" path="res://unit/hitbox_shape.gd" id="24_rptt4"]
 [ext_resource type="AnimationLibrary" uid="uid://bvq7ynb3u3a8p" path="res://motion/wallhit.res" id="25_3dxkp"]
+[ext_resource type="AnimationLibrary" uid="uid://h2rfntctgomi" path="res://motion/placeholder.res" id="25_7l6ig"]
 [ext_resource type="Script" uid="uid://ddv2b0xf2yme3" path="res://player/grab_box.gd" id="28_rptt4"]
 [ext_resource type="AudioStream" uid="uid://dx55wb37m6lso" path="res://audio/sfx/footstep/Footstep_CONCRETE_barefoot_run_01.wav" id="30_vgvch"]
 [ext_resource type="AudioStream" uid="uid://be6ehfo1lss2b" path="res://audio/sfx/footstep/Footstep_CONCRETE_barefoot_run_02.wav" id="31_a1u5o"]
@@ -78,21 +79,21 @@ lower_sprite = ExtResource("7_7pqkx")
 sprite = ExtResource("2_c35mf")
 metadata/_custom_type_script = "uid://r11y6g0g5cvx"
 
-[sub_resource type="Gradient" id="Gradient_hggc2"]
+[sub_resource type="Gradient" id="Gradient_7l6ig"]
 interpolation_mode = 1
 colors = PackedColorArray(0.77870363, 0.01541409, 2.8878452e-07, 1, 1, 1, 1, 0)
 
-[sub_resource type="GradientTexture2D" id="GradientTexture2D_b2j0d"]
-gradient = SubResource("Gradient_hggc2")
+[sub_resource type="GradientTexture2D" id="GradientTexture2D_j3r50"]
+gradient = SubResource("Gradient_7l6ig")
 height = 10
 fill = 1
 fill_from = Vector2(0.5, 0.5)
 fill_to = Vector2(0.789, 0.789)
 
-[sub_resource type="RectangleShape2D" id="RectangleShape2D_7l6ig"]
+[sub_resource type="RectangleShape2D" id="RectangleShape2D_utr5e"]
 size = Vector2(38, 92)
 
-[sub_resource type="RectangleShape2D" id="RectangleShape2D_j3r50"]
+[sub_resource type="RectangleShape2D" id="RectangleShape2D_kewli"]
 size = Vector2(34, 92)
 
 [sub_resource type="Animation" id="Animation_boad6"]
@@ -562,7 +563,7 @@ metadata/_custom_type_script = "uid://xw07ofvvtrxk"
 script = ExtResource("23_s7qer")
 metadata/_custom_type_script = "uid://xw07ofvvtrxk"
 
-[sub_resource type="ConvexPolygonShape2D" id="ConvexPolygonShape2D_utr5e"]
+[sub_resource type="ConvexPolygonShape2D" id="ConvexPolygonShape2D_do7qw"]
 points = PackedVector2Array(0, -95, 0, -33, 0, -33, 0, -95)
 
 [sub_resource type="CircleShape2D" id="CircleShape2D_ch6w5"]
@@ -612,14 +613,14 @@ info = SubResource("Resource_4xbu7")
 toggles = [NodePath("StateLabel")]
 
 [node name="DropShadow" type="Sprite2D" parent="." unique_id=981265406]
-texture = SubResource("GradientTexture2D_b2j0d")
+texture = SubResource("GradientTexture2D_j3r50")
 script = ExtResource("6_jbx34")
 colors = PackedColorArray(0.77870363, 0.01541409, 2.8878452e-07, 1, 1, 1, 1, 0)
 mask = 4
 
 [node name="UnitCollision" type="CollisionShape2D" parent="." unique_id=1250735462]
 position = Vector2(0, -46)
-shape = SubResource("RectangleShape2D_7l6ig")
+shape = SubResource("RectangleShape2D_utr5e")
 script = ExtResource("8_pjwc4")
 metadata/_custom_type_script = "uid://bhhy483vjefa1"
 
@@ -645,13 +646,13 @@ state = 3
 
 [node name="HurtboxShape" type="CollisionShape2D" parent="Hurtbox" unique_id=78373728]
 position = Vector2(0, -46)
-shape = SubResource("RectangleShape2D_j3r50")
+shape = SubResource("RectangleShape2D_kewli")
 debug_color = Color(0.7921569, 0, 0.07450981, 0.41960785)
 script = ExtResource("8_pjwc4")
 width = 34
 metadata/_custom_type_script = "uid://bhhy483vjefa1"
 
-[node name="AnimationPlayer" type="AnimationPlayer" parent="." unique_id=1781161408]
+[node name="NitraAnime" type="AnimationPlayer" parent="." unique_id=1781161408]
 callback_mode_discrete = 0
 libraries/ = SubResource("AnimationLibrary_boad6")
 libraries/aerial = ExtResource("9_n0b8q")
@@ -669,6 +670,7 @@ libraries/jump_hammer = ExtResource("9_dx5ib")
 libraries/jump_kick = ExtResource("10_dx5ib")
 libraries/knockback = ExtResource("21_7crtr")
 libraries/move = ExtResource("12_dx5ib")
+libraries/placeholder = ExtResource("25_7l6ig")
 libraries/pushback = ExtResource("23_vgvch")
 libraries/slide = ExtResource("24_a1u5o")
 libraries/standup = SubResource("AnimationLibrary_art4l")
@@ -708,6 +710,8 @@ anim_library = ExtResource("11_55jnj")
 library_name = &"jump"
 
 [node name="Block" parent="StateMachine" unique_id=1514818620 instance=ExtResource("17_uw77l")]
+anim_library = ExtResource("25_7l6ig")
+library_name = &"placeholder"
 
 [node name="Dodge" parent="StateMachine" unique_id=1740608329 instance=ExtResource("21_b8hi5")]
 action_input = PackedStringArray("front", "front")
@@ -725,22 +729,42 @@ script = ExtResource("18_q28gw")
 
 [node name="Aerial" type="LimboState" parent="StateMachine" unique_id=1728554025]
 script = ExtResource("24_art4l")
+action_input = null
+ev_name = null
+block_cancel = null
+dodge_cancel = null
 type = 2
+library_name = null
 metadata/_custom_type_script = "uid://b7x8s5btnaxj2"
 
 [node name="Down" type="LimboState" parent="StateMachine" unique_id=1834641522]
 script = ExtResource("24_art4l")
+action_input = null
+ev_name = null
+block_cancel = null
+dodge_cancel = null
 type = 2
+library_name = null
 metadata/_custom_type_script = "uid://b7x8s5btnaxj2"
 
 [node name="Pushback" type="LimboState" parent="StateMachine" unique_id=1213373009]
 script = ExtResource("24_art4l")
+action_input = null
+ev_name = null
+block_cancel = null
+dodge_cancel = null
 type = 2
+library_name = null
 metadata/_custom_type_script = "uid://b7x8s5btnaxj2"
 
 [node name="Wallhit" type="LimboState" parent="StateMachine" unique_id=765613142]
 script = ExtResource("24_art4l")
+action_input = null
+ev_name = null
+block_cancel = null
+dodge_cancel = null
 type = 2
+library_name = null
 metadata/_custom_type_script = "uid://b7x8s5btnaxj2"
 
 [node name="Pound" type="LimboState" parent="StateMachine" unique_id=832705334]
@@ -915,7 +939,7 @@ metadata/_custom_type_script = "uid://0dw4edo0eshv"
 
 [node name="CollisionShape2D" type="CollisionShape2D" parent="HitboxComponent/ChargingCounter" unique_id=525022277]
 visible = false
-shape = SubResource("ConvexPolygonShape2D_utr5e")
+shape = SubResource("ConvexPolygonShape2D_do7qw")
 disabled = true
 script = ExtResource("49_n0b8q")
 offset = Vector2(0, -64)

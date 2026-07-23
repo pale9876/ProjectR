@@ -24,7 +24,7 @@ var state: HurtEV.MotionState = NONE
 var prev_state := NONE
 var reserve:= NONE
 
-var motion: Vector2 = Vector2()
+#var motion: Vector2 = Vector2()
 
 
 func reserve_state(value: HitboxInformation.Type) -> void:

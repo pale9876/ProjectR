@@ -21,7 +21,7 @@ func _recognize_path(res: Resource, path: String) -> bool:
 	return false
 
 
-func _save(res: Resource, path: String, flags: int) -> Error:
+func _save(res: Resource, path: String, _flags: int) -> Error:
 	if !_recognize(res):
 		return Error.FAILED
 	
@@ -29,10 +29,14 @@ func _save(res: Resource, path: String, flags: int) -> Error:
 	var err: Error = file.get_error()
 	if err != OK:
 		return err
-		
+	
 	var map_info: MapEditorProject = res as MapEditorProject
+	
+	# Store Map Title (StrginName)
 	file.store_pascal_string(map_info.title)
-	file.store_32(map_info.map_size.x)
-	file.store_32(map_info.map_size.y)
+	
+	# Store Map Size (Vector2i)
+	file.store_var(map_info.size)
+	
 	
 	return Error.OK

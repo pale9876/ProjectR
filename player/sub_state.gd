@@ -5,6 +5,7 @@ class_name LimboSubState
 
 # Import
 const Player: Script = preload("uid://c2uxhumgng18h")
+const NitraAnime: Script = preload("uid://chb5h0vw5lpvq")
 
 
 func _init() -> void:
@@ -12,18 +13,15 @@ func _init() -> void:
 	set_physics_process(false)
 
 
-func _enter_tree() -> void:
-	pass
-
-
-
 func _physics_process(delta: float) -> void:
 	if is_active():
-		pass
+		update(delta)
+
 
 # OVERRIDE:
 func enter() -> void:
 	pass
+
 
 # OVERRIDE:
 func update(delta: float) -> void:
@@ -35,7 +33,11 @@ func exit() -> void:
 	pass
 
 
-func get_anim() -> AnimationPlayer:
+func move_and_slite() -> bool:
+	return get_unit().move_and_slide()
+
+
+func get_anim() -> NitraAnime:
 	return get_state().get_anim()
 
 
@@ -48,7 +50,7 @@ func get_anim_lib() -> StringName:
 
 
 func is_active() -> bool:
-	return get_state().current == self and get_state().is_active()
+	return get_state()._substate == self and get_state().is_active()
 
 
 func get_state() -> DefaultUnitFormState:
@@ -61,6 +63,10 @@ func get_body() -> CharacterBody2D:
 
 func get_state_machine() -> LimboHSM:
 	return get_state().get_parent() as LimboHSM
+
+
+func get_replicator() -> Replicator:
+	return get_state().get_replicator()
 
 
 func get_unit() -> Unit:

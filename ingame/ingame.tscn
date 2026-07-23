@@ -19,15 +19,15 @@ metadata/_custom_type_script = "uid://c6w0iyaft7ljo"
 follow_viewport_enabled = true
 script = ExtResource("1_wnhdf")
 
-[node name="World" type="Node2D" parent="." unique_id=147203913]
+[node name="World" type="Node2D" parent="." unique_id=147203913 node_paths=PackedStringArray("init_map")]
 script = ExtResource("2_xvj36")
+init_map = NodePath("StartMap")
 
 [node name="StartMap" parent="World" unique_id=806471253 instance=ExtResource("3_qq5f4")]
 guidance = SubResource("Resource_jcudw")
 size = Vector2i(72, 16)
 floor_breakable = false
 wall_breakable = 0
-wall_opened = 0
 
 [node name="Underpass" type="TileMapLayer" parent="World" unique_id=376171961]
 position = Vector2(0, 272)
@@ -39,10 +39,10 @@ debug_color = Color(0, 1, 0.84705883, 0.15686275)
 metadata/_custom_type_script = "uid://di5e7qxe7d0dj"
 
 [node name="Metro" type="TileMapLayer" parent="World" unique_id=1474241770]
-position = Vector2(1152, 0)
+position = Vector2(1152, 272)
 script = ExtResource("5_nnooo")
-location = Vector2i(72, 0)
-size = Vector2i(89, 34)
+location = Vector2i(72, 17)
+size = Vector2i(89, 17)
 metadata/_custom_type_script = "uid://di5e7qxe7d0dj"
 
 [node name="Keikai" parent="." unique_id=1292865989 instance=ExtResource("4_v424x")]

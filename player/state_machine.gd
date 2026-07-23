@@ -23,6 +23,7 @@ var locked_frame: int = 0:
 
 # input_arr : ev_name
 var input_map: Dictionary[PlayerState.Type, Dictionary] = {
+	# Dictionary[PlayerState.Type, Dictionary[PackedStringArray, StringName]]
 	PlayerState.IDLE : {
 		
 	},
@@ -30,6 +31,26 @@ var input_map: Dictionary[PlayerState.Type, Dictionary] = {
 		
 	},
 }
+
+
+func type_has_input_action(type: PlayerState.Type, input_act: PackedStringArray) -> bool:
+	return input_map[type].has(input_act)
+
+
+func type_set_action(
+	type: PlayerState.Type,
+	input_act: PackedStringArray,
+	_state: LimboState,
+	ev: StringName,
+	_guard: Callable
+) -> void:
+	if ev.is_empty():
+		printerr("%s => 이벤트 이름이 비어 있습니다." % [_state.name])
+		return
+	
+	input_map[type][input_act] = ev
+	add_transition(ANYSTATE, _state, ev, _guard)
+
 
 
 func _ready() -> void:
@@ -125,5 +146,5 @@ func inputmap_clear() -> void:
 	}
 
 
-func revert() -> void:
-	dispatch(EV_REVERT)
+func revert() -> bool:
+	return dispatch(EV_REVERT)

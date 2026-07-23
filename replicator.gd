@@ -6,6 +6,7 @@ class_name Replicator
 const SpriteComponent: Script = preload("uid://b0paoljcmbiys")
 const SpriteModuler: Script = preload("uid://dbcsuysfwo30x")
 const StateMachine: Script = preload("uid://nmmtety5yvve")
+const NitraAnime: Script = preload("uid://chb5h0vw5lpvq")
 
 
 @export var z_value: float = 0.
@@ -63,8 +64,8 @@ func get_collider() -> CollisionShape2D:
 	return get_node(^"UnitCollision") as CollisionShape2D
 
 
-func get_anim() -> AnimationPlayer:
-	return get_node(^"AnimationPlayer") as AnimationPlayer
+func get_anim() -> NitraAnime:
+	return get_node(^"NitraAnime") as NitraAnime
 
 
 func get_stage() -> Stage:

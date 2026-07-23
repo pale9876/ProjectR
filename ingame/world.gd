@@ -9,16 +9,24 @@ const TILE_SIZE: int = 16
 
 
 @export var tile_size: int = TILE_SIZE
+@export var init_map: Map
 
 
 var guidance: Dictionary[Rect2i, Map] = {
 	
 }
-var current: Map = null
 
 
-func get_current_map() -> Map:
-	return current
+var current_map: Array[Map] = []
+
+
+func append_map(map: Map) -> void:
+	current_map.push_back(map)
+	set_keikai()
+
+
+func map_disable(map: Map) -> void:
+	current_map.erase(map)
 
 
 func _ready() -> void:
@@ -26,14 +34,13 @@ func _ready() -> void:
 		return
 	
 	for node: Node in get_children():
-		if (node is Map):
+		if node is Map:
 			if !guidance.values().has(node):
 				var rect: Rect2i = node.get_region()
 				guidance[rect] = node
-			
-			if current == null:
-				change_map(node)
-				print("Map Init")
+	
+	append_map(init_map)
+
 
 
 func add(_guide: MapGuidance) -> void:
@@ -70,31 +77,38 @@ func get_map(_loc: Vector2i) -> Map:
 	return null
 
 
-func change_map(map: Map) -> void:
-	current = map
-	set_keikai(map)
+func clear() -> void:
+	current_map.clear()
 
 
 func get_ingame() -> Ingame:
 	return get_parent() as Ingame
 
 
-func set_keikai(map: Map) -> void:
-	var width: int = map.location.x + map.size.x
-	var height: int = map.location.y + map.size.y
+func set_keikai() -> void:
+	var locs: PackedVector2Array = PackedVector2Array()
+	var dests: PackedVector2Array = PackedVector2Array()
+	locs.resize(current_map.size())
+	dests.resize(current_map.size())
 	
-	var value := Vector4i(
-		map.location.x * tile_size, # Left
-		tile_size * width, # Right
-		map.location.y * tile_size, # Ceil
-		tile_size * height # Floor
-	)
+	for i: int in range(current_map.size()):
+		var _map: Map = current_map[i]
+		locs[i] = Vector2(_map.location)
+		dests[i] = Vector2(_map.location + _map.size)
 	
-	var keikai := get_ingame().get_keikai()
-	keikai.set_keikai(value)
+	locs.sort()
+	dests.sort()
 	
-	print(value)
+	var min_point: Vector2 = locs[0]
+	var max_point: Vector2 = dests[0]
 	
+	var _left: int = int(min_point.x * tile_size)
+	var _right: int = int(max_point.x * tile_size)
+	var _ceil: int = int(min_point.y * tile_size)
+	var _floor: int = int(max_point.y * tile_size)
+	
+	var val: Vector4i = Vector4i(_left, _right, _ceil, _floor)
+	get_ingame().get_keikai().set_keikai(val)
 	
 	
 	

@@ -12,15 +12,16 @@ const DEFAULT_TILE_SIZE: int = 16
 
 var tile_size: int = DEFAULT_TILE_SIZE
 
-
 var _edit: Node2D = null
 var theme: StringName = &""
 
 var _wm_entered: bool = false
 
+
 func awake() -> void:
+	process_mode = Node.PROCESS_MODE_INHERIT
+	visible = true
 	Input.mouse_mode = Input.MOUSE_MODE_CONFINED
-	_edit
 
 
 func get_edit() -> Node2D:
@@ -39,6 +40,19 @@ func prev() -> void:
 	pass
 
 
+func create_map_guidance() -> MapGuidance:
+	var guide: MapGuidance = MapGuidance.new()
+	# Do Something
+	guide.location
+	guide.size
+	return guide
+
+
+func _enter_tree() -> void:
+	visible = false
+	process_mode = Node.PROCESS_MODE_DISABLED
+
+
 func _ready() -> void:
 	get_editor_camera().reset()
 	get_cursor().cursor_pressed.connect(
@@ -48,9 +62,9 @@ func _ready() -> void:
 	)
 	#awake()
 
+
 func _exit_tree() -> void:
 	Input.mouse_mode = Input.MOUSE_MODE_VISIBLE
-
 
 
 func _notification(what: int) -> void:

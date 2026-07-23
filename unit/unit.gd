@@ -14,9 +14,9 @@ const Awareness: Script = preload("uid://bdj3moatwduju")
 func get_face() -> float:
 	return float(state.face.x)
 
-
-func get_anim() -> AnimationPlayer:
-	return get_node(^"AnimationPlayer") as AnimationPlayer
+#
+#func get_anim() -> AnimationPlayer:
+	#return get_node(^"AnimationPlayer") as AnimationPlayer
 
 
 func _on_face_changed() -> void:

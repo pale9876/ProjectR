@@ -17,7 +17,7 @@ visible = false
 [node name="EditorEntry" parent="." unique_id=602129915 instance=ExtResource("4_gjvg8")]
 visible = false
 
-[node name="LoadMapFD" type="FileDialog" parent="." unique_id=627223040]
+[node name="SaveMapFD" type="FileDialog" parent="." unique_id=627223040]
 oversampling_override = 1.0
 title = "Open a File"
 initial_position = 1
@@ -25,5 +25,7 @@ popup_window = true
 file_mode = 0
 display_mode = 1
 access = 1
-filters = PackedStringArray("*.res")
+filters = PackedStringArray("*.mep")
 script = ExtResource("5_fsb40")
+
+[node name="SelectDirFD" type="FileDialog" parent="." unique_id=2039152064]

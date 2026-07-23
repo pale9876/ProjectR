@@ -1,0 +1,107 @@
+[gd_scene format=3 uid="uid://plj4pbs5rbjv"]
+
+[ext_resource type="Shader" uid="uid://bnjyvse04828e" path="res://slide_fade.gdshader" id="1_cgr6h"]
+[ext_resource type="Texture2D" uid="uid://c6rpceeuhu5eo" path="res://aseprite/traitor_will_be_dead/player.png" id="1_r2ijw"]
+
+[sub_resource type="ShaderMaterial" id="ShaderMaterial_icmt4"]
+shader = ExtResource("1_cgr6h")
+shader_parameter/direction = Vector2(1, 0)
+shader_parameter/offset = 0.1050000049875
+shader_parameter/strip = 1.25
+shader_parameter/factor = 0.094000004465
+
+[sub_resource type="Animation" id="Animation_cgr6h"]
+length = 0.001
+tracks/0/type = "value"
+tracks/0/imported = false
+tracks/0/enabled = true
+tracks/0/path = NodePath(".:material:shader_parameter/offset")
+tracks/0/interp = 1
+tracks/0/loop_wrap = true
+tracks/0/keys = {
+"times": PackedFloat32Array(0),
+"transitions": PackedFloat32Array(1),
+"update": 0,
+"values": [0.1050000049875]
+}
+tracks/1/type = "value"
+tracks/1/imported = false
+tracks/1/enabled = true
+tracks/1/path = NodePath(".:material:shader_parameter/strip")
+tracks/1/interp = 1
+tracks/1/loop_wrap = true
+tracks/1/keys = {
+"times": PackedFloat32Array(0),
+"transitions": PackedFloat32Array(1),
+"update": 0,
+"values": [1.25]
+}
+tracks/2/type = "value"
+tracks/2/imported = false
+tracks/2/enabled = true
+tracks/2/path = NodePath(".:material:shader_parameter/factor")
+tracks/2/interp = 1
+tracks/2/loop_wrap = true
+tracks/2/keys = {
+"times": PackedFloat32Array(0),
+"transitions": PackedFloat32Array(1),
+"update": 0,
+"values": [0.094000004465]
+}
+
+[sub_resource type="Animation" id="Animation_dyops"]
+resource_name = "fade_out"
+loop_mode = 2
+step = 0.0167
+tracks/0/type = "value"
+tracks/0/imported = false
+tracks/0/enabled = true
+tracks/0/path = NodePath(".:material:shader_parameter/offset")
+tracks/0/interp = 1
+tracks/0/loop_wrap = true
+tracks/0/keys = {
+"times": PackedFloat32Array(0),
+"transitions": PackedFloat32Array(1),
+"update": 1,
+"values": [0.09600000456]
+}
+tracks/1/type = "value"
+tracks/1/imported = false
+tracks/1/enabled = true
+tracks/1/path = NodePath(".:material:shader_parameter/strip")
+tracks/1/interp = 1
+tracks/1/loop_wrap = true
+tracks/1/keys = {
+"times": PackedFloat32Array(0, 0.75),
+"transitions": PackedFloat32Array(0.041234802, 1),
+"update": 0,
+"values": [5.0, 0.01]
+}
+tracks/2/type = "value"
+tracks/2/imported = false
+tracks/2/enabled = true
+tracks/2/path = NodePath(".:material:shader_parameter/factor")
+tracks/2/interp = 1
+tracks/2/loop_wrap = true
+tracks/2/keys = {
+"times": PackedFloat32Array(0, 0.76666665),
+"transitions": PackedFloat32Array(0.0583147, 1),
+"update": 0,
+"values": [0.0, 0.1210000057475]
+}
+
+[sub_resource type="AnimationLibrary" id="AnimationLibrary_jaurq"]
+_data = {
+&"RESET": SubResource("Animation_cgr6h"),
+&"fade_out": SubResource("Animation_dyops")
+}
+
+[node name="Node2D" type="Node2D" unique_id=1207285239]
+
+[node name="Player" type="Sprite2D" parent="." unique_id=1197203763]
+material = SubResource("ShaderMaterial_icmt4")
+position = Vector2(20, 18)
+texture = ExtResource("1_r2ijw")
+
+[node name="AnimationPlayer" type="AnimationPlayer" parent="Player" unique_id=1460927445]
+libraries/ = SubResource("AnimationLibrary_jaurq")

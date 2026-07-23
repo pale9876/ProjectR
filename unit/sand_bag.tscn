@@ -25,13 +25,18 @@
 [ext_resource type="Script" uid="uid://h6umakp1bcu0" path="res://unit/grab.gd" id="20_2d64t"]
 [ext_resource type="Script" uid="uid://b1m4oejiu7ume" path="res://unit/knockback.gd" id="21_bnltu"]
 [ext_resource type="AnimationLibrary" uid="uid://cofr330818v1e" path="res://motion/down.res" id="21_wp6bj"]
+[ext_resource type="AnimationLibrary" uid="uid://d3445833nuf3o" path="res://motion/move.res" id="24_k0h15"]
+[ext_resource type="AnimationLibrary" uid="uid://c2h4k66ayh87g" path="res://motion/jump.res" id="26_4fp7c"]
 [ext_resource type="Script" uid="uid://dsjnx0cxf2gu1" path="res://unit/aerial.gd" id="26_itvhm"]
 [ext_resource type="Script" uid="uid://cattor5p0ysjp" path="res://unit/down.gd" id="27_74sws"]
 [ext_resource type="Script" uid="uid://8rj1txp84awx" path="res://unit/pushback.gd" id="28_njs1s"]
+[ext_resource type="AnimationLibrary" uid="uid://cyo676p46aw5v" path="res://motion/fall.res" id="28_yeahc"]
 [ext_resource type="Script" uid="uid://cqhhjr6ob8477" path="res://unit/wallhit.gd" id="29_a8ovg"]
 [ext_resource type="AnimationLibrary" uid="uid://docog8qdv8rj1" path="res://motion/aerial.res" id="30_njs1s"]
+[ext_resource type="AnimationLibrary" uid="uid://b5pittsqyeeq3" path="res://motion/knockback.res" id="30_v2yrs"]
 [ext_resource type="Script" uid="uid://im1wyvflgwp0" path="res://unit/state/unit_state.gd" id="33_qjbny"]
-[ext_resource type="Script" uid="uid://chb5h0vw5lpvq" path="res://player/animation_player.gd" id="36_yeahc"]
+[ext_resource type="AnimationLibrary" uid="uid://c4rqs4fs1eal4" path="res://motion/pushback.res" id="34_gjkc3"]
+[ext_resource type="Script" uid="uid://chb5h0vw5lpvq" path="res://player/nitra_anime.gd" id="36_yeahc"]
 [ext_resource type="Script" uid="uid://dr8n2mbhooxjo" path="res://player/hitbox_component.gd" id="37_v2yrs"]
 
 [sub_resource type="Resource" id="Resource_pvbt4"]
@@ -55,10 +60,10 @@ fill = 1
 fill_from = Vector2(0.5, 0.5)
 fill_to = Vector2(0.85, 0.85)
 
-[sub_resource type="RectangleShape2D" id="RectangleShape2D_gjkc3"]
+[sub_resource type="RectangleShape2D" id="RectangleShape2D_qjbny"]
 size = Vector2(38, 92)
 
-[sub_resource type="RectangleShape2D" id="RectangleShape2D_2e5g1"]
+[sub_resource type="RectangleShape2D" id="RectangleShape2D_k0h15"]
 size = Vector2(38, 92)
 
 [sub_resource type="Animation" id="Animation_njs1s"]
@@ -296,7 +301,7 @@ animation = &"idle"
 
 [node name="UnitCollision" type="CollisionShape2D" parent="." unique_id=2120811417]
 position = Vector2(0, -46)
-shape = SubResource("RectangleShape2D_gjkc3")
+shape = SubResource("RectangleShape2D_qjbny")
 debug_color = Color(0, 0.6, 0.69803923, 0.2)
 script = ExtResource("7_gjkc3")
 metadata/_custom_type_script = "uid://bhhy483vjefa1"
@@ -309,7 +314,7 @@ script = ExtResource("8_k7l50")
 
 [node name="HurtboxShape" type="CollisionShape2D" parent="Hurtbox" unique_id=1180949192]
 position = Vector2(0, -46)
-shape = SubResource("RectangleShape2D_2e5g1")
+shape = SubResource("RectangleShape2D_k0h15")
 debug_color = Color(0.8509804, 0.03529412, 0.21960784, 0.39607844)
 script = ExtResource("7_gjkc3")
 metadata/_custom_type_script = "uid://bhhy483vjefa1"
@@ -335,7 +340,7 @@ wait_time = 4.0
 script = ExtResource("37_v2yrs")
 metadata/_custom_type_script = "uid://dr8n2mbhooxjo"
 
-[node name="AnimationPlayer" type="AnimationPlayer" parent="." unique_id=1268957844]
+[node name="NitraAnime" type="AnimationPlayer" parent="." unique_id=1268957844]
 libraries/ = SubResource("AnimationLibrary_a8ovg")
 libraries/aerial = ExtResource("30_njs1s")
 libraries/down = ExtResource("21_wp6bj")
@@ -357,18 +362,26 @@ metadata/_custom_type_script = "uid://c1823275u0dxi"
 
 [node name="Idle" type="LimboState" parent="StateMachine" unique_id=641009354]
 script = ExtResource("11_3b2yn")
+anim_library = ExtResource("15_507e4")
+library_name = &"idle"
 
 [node name="Move" type="LimboState" parent="StateMachine" unique_id=265379667]
 script = ExtResource("18_t3pbd")
+anim_library = ExtResource("24_k0h15")
+library_name = &"move"
 metadata/_custom_type_script = "uid://im1wyvflgwp0"
 
 [node name="Jump" type="LimboState" parent="StateMachine" unique_id=1875892619]
 script = ExtResource("14_w11yh")
 type = 1
+anim_library = ExtResource("26_4fp7c")
+library_name = &"jump"
 
 [node name="Fall" type="LimboState" parent="StateMachine" unique_id=1952545241]
 script = ExtResource("13_pvbt4")
 type = 1
+anim_library = ExtResource("28_yeahc")
+library_name = &"fall"
 metadata/_custom_type_script = "uid://im1wyvflgwp0"
 
 [node name="#HurtState" type="LimboState" parent="StateMachine" unique_id=231535512]
@@ -379,21 +392,29 @@ metadata/_custom_type_script = "uid://c1823275u0dxi"
 [node name="Knockback" type="LimboState" parent="StateMachine" unique_id=1168315294]
 script = ExtResource("21_bnltu")
 type = 2
+anim_library = ExtResource("30_v2yrs")
+library_name = &"knockback"
 metadata/_custom_type_script = "uid://im1wyvflgwp0"
 
 [node name="Aerial" type="LimboState" parent="StateMachine" unique_id=1444982]
 script = ExtResource("26_itvhm")
 type = 2
+anim_library = ExtResource("30_njs1s")
+library_name = &"aerial"
 metadata/_custom_type_script = "uid://im1wyvflgwp0"
 
 [node name="Down" type="LimboState" parent="StateMachine" unique_id=1321983700]
 script = ExtResource("27_74sws")
 type = 2
+anim_library = ExtResource("21_wp6bj")
+library_name = &"down"
 metadata/_custom_type_script = "uid://im1wyvflgwp0"
 
 [node name="Pushback" type="LimboState" parent="StateMachine" unique_id=1879459923]
 script = ExtResource("28_njs1s")
 type = 2
+anim_library = ExtResource("34_gjkc3")
+library_name = &"pushback"
 metadata/_custom_type_script = "uid://im1wyvflgwp0"
 
 [node name="Wallhit" type="LimboState" parent="StateMachine" unique_id=1048343805]

@@ -8,13 +8,12 @@ const Option: Script = preload("uid://b6wu325meysae")
 const Title: Script = preload("uid://dtu3imugbu0pm")
 const Hud: Script = preload("uid://dgntyiu05self")
 const DialogUI: Script = preload("uid://borjea45xky04")
-const StartMap: Script = preload("uid://di5e7qxe7d0dj")
+#const StartMap: Script = preload("uid://di5e7qxe7d0dj")
+const World = preload("uid://dpn1opeegcme2")
 
 
 # Scenes
-const START_MAP: PackedScene = preload("uid://ccd41t1qrjttn")
-
-
+#const START_MAP: PackedScene = preload("uid://ccd41t1qrjttn")
 
 @onready var ingame: Ingame = $Ingame
 @onready var hud: Hud = $HUD
@@ -51,16 +50,22 @@ func on_start() -> void:
 	channel.hide()
 
 	ingame.process_mode = Node.PROCESS_MODE_INHERIT
-
-	var start_map := START_MAP.instantiate() as StartMap
-	ingame.add_child(start_map)
+	
+	
+	#var start_map := START_MAP.instantiate() as StartMap
+	#ingame.add_child(start_map)
 	#ingame.add_child(Global.player_camera)
 	Global.player_camera.target = Global.player
-	start_map.add_unit(Global.player)
-	Global.player.global_position = start_map.start_spawn_position.global_position
+	var init_map: Map = ingame.get_world().init_map
+	init_map.add_unit(Global.player)
+	Global.player.global_position = init_map.get_start_spawn_position().global_position
 	Global.player.input_state.unlock()
 	
 	is_in_game = true
+
+
+func get_world() -> World:
+	return ingame.get_world()
 
 
 func _option_close() -> void:
