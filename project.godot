@@ -29,6 +29,7 @@ SproutyDialogs="*uid://c8gxm75j80u8c"
 RumblePak="*uid://cf4u12dx32nt7"
 EventHorizon="*uid://bwlhcpcfc837b"
 SpawningPool="*uid://dj84j0yu4jr3v"
+UnitGenerator="*uid://cxglnv6na8ms4"
 
 [display]
 
@@ -38,6 +39,7 @@ window/size/window_width_override=1280
 window/size/window_height_override=720
 window/subwindows/embed_subwindows=false
 window/stretch/mode="viewport"
+window/per_pixel_transparency/allowed=true
 window/vsync/vsync_mode=0
 
 [dotnet]

@@ -6,7 +6,7 @@ class_name Hurtbox
 const Player: Script = preload("uid://c2uxhumgng18h")
 
 
-enum State {
+enum Econ {
 	IDLE,
 	EXPOSE,
 	HURT,
@@ -24,13 +24,13 @@ const PUSHBACK := HurtEV.MotionState.PUSHBACK
 const DOWNED := HurtEV.MotionState.DOWNED
 
 
-# Const (State)
-const IDLE := State.IDLE
-const EXPOSE := State.EXPOSE
-const COUNTER := State.COUNTER
-const HURT := State.HURT
-const BLOCK := State.BLOCK
-const DODGE := State.DODGE
+# Const (Econ)
+const IDLE := Econ.IDLE
+const EXPOSE := Econ.EXPOSE
+const COUNTER := Econ.COUNTER
+const HURT := Econ.HURT
+const BLOCK := Econ.BLOCK
+const DODGE := Econ.DODGE
 
 
 signal blocked()
@@ -38,7 +38,7 @@ signal dodged()
 signal counter()
 
 
-@export var state: State = State.IDLE
+@export var state: Econ = IDLE
 @export var invincible: bool = false
 
 

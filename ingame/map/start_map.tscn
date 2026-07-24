@@ -166,10 +166,8 @@ point_count = 2
 
 [node name="StartMap" type="TileMapLayer" unique_id=160920806]
 script = ExtResource("1_muwxp")
-size = Vector2i(72, 17)
-floor_breakable = null
-wall_breakable = null
-wall_opened = null
+size = Vector2i(72, 16)
+floor_offset = 8.0
 metadata/_custom_type_script = "uid://di5e7qxe7d0dj"
 
 [node name="Wall" type="TileMapLayer" parent="." unique_id=1126300222]

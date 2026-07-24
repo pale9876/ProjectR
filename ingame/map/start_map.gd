@@ -40,7 +40,7 @@ const World: Script = preload("uid://dpn1opeegcme2")
 @export_flags("Right", "Left") var opened: int:
 	set(val):
 		opened = val
-		print(val)
+		#print(val)
 
 
 @export_group("DEBUG")
@@ -65,7 +65,9 @@ func _enter_tree() -> void:
 
 func _draw() -> void:
 	if Engine.is_editor_hint() and get_world() != null:
-		draw_rect(Rect2(Vector2(), Vector2(size * get_tile_size())), debug_color)
+		draw_rect(
+			Rect2(Vector2(), Vector2(size * get_tile_size())), debug_color
+		)
 
 
 func get_region() -> Rect2i:

@@ -9,7 +9,11 @@ const StateMachine: Script = preload("uid://nmmtety5yvve")
 const NitraAnime: Script = preload("uid://chb5h0vw5lpvq")
 
 
-@export var z_value: float = 0.
+@export var z_value: float = 0.:
+	set(val):
+		if is_in_stage():
+			var stage := get_stage()
+			z_value = clampf(val, stage.z_min, stage.z_max)
 
 
 var stat: Stat = Stat.new()
@@ -73,19 +77,4 @@ func get_stage() -> Stage:
 
 
 func is_in_stage() -> bool:
-	global_position
-	return false
-
-
-class State:
-	signal face_changed()
-	
-	var face: Vector2i = Vector2i.RIGHT:
-		set(value):
-			if value != face:
-				face = value if value.x != 0. else Vector2i(face.x, value.y)
-				face_changed.emit()
-	var direction: Vector2 = Vector2():
-		set(value):
-			if direction != value:
-				direction = value
+	return get_parent() is Stage

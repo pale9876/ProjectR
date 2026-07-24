@@ -5,19 +5,94 @@ extends CanvasLayer
 const TitleUiButton: Script = preload("uid://chmqpyka2hi81")
 
 
-@onready var start: Button = %Start
-@onready var option: Button = %Option
-@onready var map_editor: Button = %MapEditor
-
 
 func _ready() -> void:
-	start.button_up.connect(on_start_btn_pressed)
-	map_editor.button_up.connect(
+	var _first_page := first_page()
+	var _second_page := second_page()
+	
+	_first_page.show()
+	_second_page.hide()
+	
+	get_chara_settings().hide()
+	title_ui().show()
+	
+	get_start_btn().button_up.connect(
+		func() -> void:
+			GSignal.start.emit()
+	)
+	
+	get_map_editor_btn().button_up.connect(
 		func() -> void:
 			pass
 	)
+	
+	get_profile_btn().button_up.connect(
+		func() -> void:
+			_first_page.hide()
+			_second_page.show()
+	)
+	
+	get_class_btn().button_up.connect(
+		func() -> void:
+			get_chara_settings().show()
+			get_main_ui().hide()
+	)
+	
+	get_class()
+
+
+func get_main_ui() -> Control:
+	return get_node(^"%MainUI") as Control
+
+
+func _input(event: InputEvent) -> void:
+	if event.is_action_pressed(&"ui_cancel"):
+		if second_page().visible:
+			first_page().show()
+			second_page().hide()
+
+
+func first_page() -> Control:
+	return get_node(^"%FirstPage") as Control
+
+
+func get_start_btn() -> Button:
+	return get_node(^"%Start") as Button
+
+
+func get_option_btn() -> Button:
+	return get_node(^"%Option") as Button
+
+
+func get_profile_btn() -> Button:
+	return get_node(^"%Profile") as Button
+
+
+func get_achievement_btn() -> Button:
+	return get_node(^"%Achievement") as Button
+
+
+func get_map_editor_btn() -> Button:
+	return get_node(^"%MapEditor") as Button
+
+
+func get_class_btn() -> Button:
+	return get_node(^"%Class") as Button
+
+
+func get_chara_settings() -> Control:
+	return get_node(^"%CharacterSettings") as Control
+
+
+func title_ui() -> Control:
+	return get_node(^"%TitleUI") as Control
+
+
+func second_page() -> Control:
+	return get_node(^"%SecondPage") as Control
+	
 
 
 
-func on_start_btn_pressed() -> void:
-	GSignal.start.emit()
+
+	

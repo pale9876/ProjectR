@@ -30,10 +30,10 @@ func init_hurt_state(info: HitboxInformation, hit_result: HitResult, init_state:
 	change_active_state(next_state)
 
 
-func revert() -> void:
+func revert() -> bool:
 	if (get_active_state() as UnitState).type != IDLE:
 		pass
-	dispatch(&"revert")
+	return dispatch(&"revert")
 
 
 func unlocked() -> bool:

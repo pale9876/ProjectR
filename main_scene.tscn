@@ -9,8 +9,16 @@
 
 [node name="MainScene" type="Node" unique_id=905736948]
 script = ExtResource("1_d5x1h")
-metadata/_edit_vertical_guides_ = [1.0, 7.0]
-metadata/_edit_horizontal_guides_ = [16.0]
+
+[node name="Background" type="CanvasLayer" parent="." unique_id=416058432]
+
+[node name="ColorRect" type="ColorRect" parent="Background" unique_id=1910507285]
+anchors_preset = 15
+anchor_right = 1.0
+anchor_bottom = 1.0
+grow_horizontal = 2
+grow_vertical = 2
+color = Color(0, 0, 0, 1)
 
 [node name="Ingame" parent="." unique_id=906912944 instance=ExtResource("2_8mm7a")]
 visible = false

@@ -785,11 +785,12 @@ metadata/_custom_type_script = "uid://b7x8s5btnaxj2"
 [node name="HighPunchCombo" type="LimboState" parent="StateMachine" unique_id=662588822 node_paths=PackedStringArray("hitbox")]
 script = ExtResource("9_yllr7")
 cooltime_frame = 6
-hitbox = NodePath("../../HitboxComponent/PunchCombo")
 action_input = PackedStringArray("attack")
 ev_name = &"high_punch_combo"
 anim_library = ExtResource("20_pnw6m")
 library_name = &"high_punch_combo"
+hitbox = NodePath("../../HitboxComponent/PunchCombo")
+just_frame = false
 
 [node name="LeftPunch" type="Node" parent="StateMachine/HighPunchCombo" unique_id=1731762629]
 script = ExtResource("48_hggc2")
@@ -804,20 +805,20 @@ script = ExtResource("50_7l6ig")
 metadata/_custom_type_script = "uid://0kxmhttvge4l"
 
 [node name="Slide" parent="StateMachine" unique_id=591192304 node_paths=PackedStringArray("hitbox") instance=ExtResource("16_uw77l")]
-hitbox = NodePath("../../HitboxComponent/SlideHitbox")
 action_input = PackedStringArray("down", "down", "kick")
 anim_library = ExtResource("24_a1u5o")
 library_name = &"slide"
+hitbox = NodePath("../../HitboxComponent/SlideHitbox")
 
 [node name="JumpKick" parent="StateMachine" unique_id=1156718825 instance=ExtResource("19_r7pn3")]
 script = ExtResource("20_2uvqg")
-cooltime_frame = 8
-just_frame = false
-hitbox_scene = null
 action_input = PackedStringArray("kick")
 type = 1
 anim_library = ExtResource("10_dx5ib")
 library_name = &"jump_kick"
+cooltime_frame = 8
+just_frame = false
+hitbox_scene = null
 
 [node name="JumpHammer" type="LimboState" parent="StateMachine" unique_id=1138518008]
 script = ExtResource("21_1s1yo")
@@ -831,11 +832,11 @@ metadata/_custom_type_script = "uid://b7x8s5btnaxj2"
 [node name="Blowkick" type="LimboState" parent="StateMachine" unique_id=1713774209 node_paths=PackedStringArray("hitbox")]
 script = ExtResource("22_r7pn3")
 cooltime_frame = 12
-hitbox = NodePath("../../HitboxComponent/Blowkick")
 action_input = PackedStringArray("down", "front", "kick")
 ev_name = &"blowkick"
 anim_library = ExtResource("9_gswnw")
 library_name = &"blowkick"
+hitbox = NodePath("../../HitboxComponent/Blowkick")
 metadata/_custom_type_script = "uid://b7x8s5btnaxj2"
 
 [node name="ChargingCounter" type="LimboState" parent="StateMachine" unique_id=1052840880]

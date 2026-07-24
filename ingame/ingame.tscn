@@ -12,7 +12,7 @@
 [sub_resource type="Resource" id="Resource_jcudw"]
 script = ExtResource("4_jcudw")
 scene = ExtResource("3_qq5f4")
-size = Vector2i(72, 17)
+size = Vector2i(72, 16)
 metadata/_custom_type_script = "uid://c6w0iyaft7ljo"
 
 [node name="Ingame" type="CanvasLayer" unique_id=906912944]
@@ -25,9 +25,6 @@ init_map = NodePath("StartMap")
 
 [node name="StartMap" parent="World" unique_id=806471253 instance=ExtResource("3_qq5f4")]
 guidance = SubResource("Resource_jcudw")
-size = Vector2i(72, 16)
-floor_breakable = false
-wall_breakable = 0
 
 [node name="Underpass" type="TileMapLayer" parent="World" unique_id=376171961]
 position = Vector2(0, 272)

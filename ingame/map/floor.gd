@@ -7,4 +7,5 @@ enum Type {
 	CONCRETE,
 }
 
+
 @export var type := Type.CONCRETE

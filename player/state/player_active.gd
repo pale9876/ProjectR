@@ -85,8 +85,8 @@ func heat() -> void:
 	_cooldown = cooltime_frame
 
 
-func revert() -> void:
-	get_hsm().revert()
+#func revert() -> bool:
+	#return get_hsm().revert()
 
 
 func is_hit(node_path: NodePath) -> bool:

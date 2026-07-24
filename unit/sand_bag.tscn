@@ -60,10 +60,10 @@ fill = 1
 fill_from = Vector2(0.5, 0.5)
 fill_to = Vector2(0.85, 0.85)
 
-[sub_resource type="RectangleShape2D" id="RectangleShape2D_qjbny"]
+[sub_resource type="RectangleShape2D" id="RectangleShape2D_gjkc3"]
 size = Vector2(38, 92)
 
-[sub_resource type="RectangleShape2D" id="RectangleShape2D_k0h15"]
+[sub_resource type="RectangleShape2D" id="RectangleShape2D_2e5g1"]
 size = Vector2(38, 92)
 
 [sub_resource type="Animation" id="Animation_njs1s"]
@@ -301,7 +301,7 @@ animation = &"idle"
 
 [node name="UnitCollision" type="CollisionShape2D" parent="." unique_id=2120811417]
 position = Vector2(0, -46)
-shape = SubResource("RectangleShape2D_qjbny")
+shape = SubResource("RectangleShape2D_gjkc3")
 debug_color = Color(0, 0.6, 0.69803923, 0.2)
 script = ExtResource("7_gjkc3")
 metadata/_custom_type_script = "uid://bhhy483vjefa1"
@@ -314,7 +314,7 @@ script = ExtResource("8_k7l50")
 
 [node name="HurtboxShape" type="CollisionShape2D" parent="Hurtbox" unique_id=1180949192]
 position = Vector2(0, -46)
-shape = SubResource("RectangleShape2D_k0h15")
+shape = SubResource("RectangleShape2D_2e5g1")
 debug_color = Color(0.8509804, 0.03529412, 0.21960784, 0.39607844)
 script = ExtResource("7_gjkc3")
 metadata/_custom_type_script = "uid://bhhy483vjefa1"
