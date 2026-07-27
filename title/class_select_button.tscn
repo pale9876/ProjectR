@@ -3,14 +3,15 @@
 [ext_resource type="Script" uid="uid://ptibopjrd7sc" path="res://title/class_select_button.gd" id="1_7fkaa"]
 [ext_resource type="Texture2D" uid="uid://b6ok0k0n7uqot" path="res://placeholder/23_cheesecake_dish.png" id="2_nd8ba"]
 [ext_resource type="Texture2D" uid="uid://clf6um28evr5d" path="res://placeholder/maid_03.png" id="2_tckvd"]
+[ext_resource type="Texture2D" uid="uid://be84rj42egw0r" path="res://portrait/icon/chimera.png" id="4_nd8ba"]
 
 [sub_resource type="StyleBoxFlat" id="StyleBoxFlat_8xu2e"]
-bg_color = Color(0.9162307, 0.9427874, 0.9671342, 1)
+bg_color = Color(0, 0, 0, 1)
 border_width_left = 2
 border_width_top = 2
 border_width_right = 2
 border_width_bottom = 2
-border_color = Color(1, 0.76862746, 0.3019608, 1)
+border_color = Color(1, 1, 1, 1)
 
 [sub_resource type="StyleBoxFlat" id="StyleBoxFlat_0tjwc"]
 bg_color = Color(0.91764706, 0.9411765, 0.96862745, 1)
@@ -66,7 +67,7 @@ layout_mode = 2
 unique_name_in_owner = true
 custom_minimum_size = Vector2(32, 32)
 layout_mode = 2
-texture = ExtResource("2_nd8ba")
+texture = ExtResource("4_nd8ba")
 expand_mode = 1
 stretch_mode = 5
 
@@ -74,5 +75,6 @@ stretch_mode = 5
 unique_name_in_owner = true
 layout_mode = 2
 size_flags_horizontal = 3
-theme_override_colors/font_color = Color(0, 0, 0, 1)
+theme_override_font_sizes/font_size = 16
 text = "Sample"
+horizontal_alignment = 1

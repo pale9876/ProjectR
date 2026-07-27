@@ -1,4 +1,5 @@
-extends CanvasLayer
+# option_menu.gd
+extends Control
 
 
 const resolutions: PackedVector2Array = [

@@ -3,7 +3,6 @@
 [ext_resource type="Script" uid="uid://cplgj2iixr7f6" path="res://main_scene.gd" id="1_d5x1h"]
 [ext_resource type="PackedScene" uid="uid://dv5bn46oy0fst" path="res://ingame/ingame.tscn" id="2_8mm7a"]
 [ext_resource type="PackedScene" uid="uid://cvlijmgfo3neh" path="res://hud/hud.tscn" id="5_hq1ik"]
-[ext_resource type="PackedScene" uid="uid://c05su0jq3437j" path="res://option_menu.tscn" id="5_nfk4m"]
 [ext_resource type="PackedScene" uid="uid://qnolbh3cfav8" path="res://channel/channel.tscn" id="8_7ycvg"]
 [ext_resource type="PackedScene" uid="uid://c2agrq1i4pbt2" path="res://title/title.tscn" id="9_7ycvg"]
 
@@ -27,8 +26,5 @@ visible = false
 visible = false
 
 [node name="Title" parent="." unique_id=419323065 instance=ExtResource("9_7ycvg")]
-
-[node name="Option" parent="." unique_id=1209387124 instance=ExtResource("5_nfk4m")]
-visible = false
 
 [node name="Channel" parent="." unique_id=1466334463 instance=ExtResource("8_7ycvg")]

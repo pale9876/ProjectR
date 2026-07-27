@@ -5,7 +5,7 @@ extends Area2D
 const Player: Script = preload("uid://c2uxhumgng18h")
 
 
-enum State
+enum HurtState
 {
 	IDLE,
 	COUNTER,
@@ -14,17 +14,18 @@ enum State
 }
 
 
-const IDLE := State.IDLE
-const COUNTER := State.IDLE
-const GUARD := State.GUARD
-const DODGE := State.DODGE
+const IDLE := HurtState.IDLE
+const COUNTER := HurtState.IDLE
+const GUARD := HurtState.GUARD
+const DODGE := HurtState.DODGE
 
 
 signal counter()
 signal dodge()
 
 
-@export var state: State = IDLE
+@export var state: HurtState = IDLE
+
 
 var invincible_frame: int = 0:
 	set(value):

@@ -1,5 +1,5 @@
 extends LimboState
-class_name HurtState
+#class_name HurtState
 
 
 const Player: Script = preload("uid://c2uxhumgng18h")

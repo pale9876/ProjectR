@@ -1,8 +1,10 @@
 # title.gd
 extends CanvasLayer
 
+
 # Import
 const TitleUiButton: Script = preload("uid://chmqpyka2hi81")
+const ClassList: Script = preload("uid://cdgr4w6hpl2ud")
 
 
 
@@ -52,6 +54,10 @@ func _input(event: InputEvent) -> void:
 			second_page().hide()
 
 
+func get_class_list() -> ClassList:
+	return get_node(^"%ClassList") as ClassList
+
+
 func first_page() -> Control:
 	return get_node(^"%FirstPage") as Control
 
@@ -90,7 +96,6 @@ func title_ui() -> Control:
 
 func second_page() -> Control:
 	return get_node(^"%SecondPage") as Control
-	
 
 
 

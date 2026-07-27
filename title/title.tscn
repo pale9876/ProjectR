@@ -3,19 +3,22 @@
 [ext_resource type="Script" uid="uid://dtu3imugbu0pm" path="res://title/title.gd" id="1_y7k74"]
 [ext_resource type="Theme" uid="uid://cyev5gnpugequ" path="res://title_theme.tres" id="2_6s8lb"]
 [ext_resource type="Texture2D" uid="uid://c1kdqekuqw0nx" path="res://aseprite/asso_project/title/MainTitle2.png" id="2_crako"]
-[ext_resource type="Script" uid="uid://bbn2mtp6yjek8" path="res://title/control.gd" id="2_nx56k"]
 [ext_resource type="PackedScene" uid="uid://h46mjm4dsjnx" path="res://title/title_ui_button.tscn" id="5_0tjwc"]
 [ext_resource type="PackedScene" uid="uid://dw0ovxv0s3mlv" path="res://title/class_select_button.tscn" id="6_0tjwc"]
+[ext_resource type="Script" uid="uid://cdgr4w6hpl2ud" path="res://title/class_list.gd" id="6_lqna4"]
 [ext_resource type="Texture2D" uid="uid://cw7fw44ky8xln" path="res://placeholder/maid_09.png" id="7_64gp6"]
-[ext_resource type="Texture2D" uid="uid://bsmh3x7ssbm2p" path="res://placeholder/30_chocolatecake.png" id="7_yhhqk"]
 [ext_resource type="Texture2D" uid="uid://clcjxox00b83s" path="res://placeholder/maid_04.png" id="8_3l5ow"]
+[ext_resource type="Texture2D" uid="uid://cgv6iyurw1t5a" path="res://portrait/icon/predator.png" id="8_yhhqk"]
 [ext_resource type="Texture2D" uid="uid://huu86nxnv53a" path="res://placeholder/maid_08.png" id="9_bqme7"]
-[ext_resource type="Texture2D" uid="uid://c582ekcnwavpq" path="res://placeholder/26_chocolate.png" id="9_fyd4r"]
-[ext_resource type="Texture2D" uid="uid://cqofh1wt0foi8" path="res://placeholder/28_cookies.png" id="11_g7b4f"]
+[ext_resource type="Texture2D" uid="uid://j4340lcophwd" path="res://portrait/icon/executioner.png" id="10_yhhqk"]
 [ext_resource type="Texture2D" uid="uid://cp81gu14yralw" path="res://placeholder/maid_01.png" id="11_y1ss2"]
 [ext_resource type="Texture2D" uid="uid://byetpndbh00xq" path="res://placeholder/maid_010.png" id="12_5bniv"]
-[ext_resource type="Texture2D" uid="uid://d0qc4selqlf8u" path="res://placeholder/29_cookies_dish.png" id="13_ibxtg"]
+[ext_resource type="Texture2D" uid="uid://be84rj42egw0r" path="res://portrait/icon/chimera.png" id="12_yhhqk"]
+[ext_resource type="Texture2D" uid="uid://puyr6putkiid" path="res://portrait/icon/trickster.png" id="13_yhhqk"]
+[ext_resource type="Texture2D" uid="uid://biwys5tfcrvyy" path="res://portrait/icon/puppeteer.png" id="14_fyd4r"]
+[ext_resource type="Texture2D" uid="uid://cmpxq1668dbuf" path="res://portrait/trickster.png" id="14_g7b4f"]
 [ext_resource type="Texture2D" uid="uid://d2swtrldwc8la" path="res://placeholder/25_cheesepuff_bowl.png" id="17_povds"]
+[ext_resource type="Script" uid="uid://dvcrrp6wpmrtp" path="res://title/variable_statistics_progress.gd" id="18_yhhqk"]
 
 [node name="Title" type="CanvasLayer" unique_id=419323065]
 script = ExtResource("1_y7k74")
@@ -28,7 +31,6 @@ anchor_bottom = 1.0
 grow_horizontal = 2
 grow_vertical = 2
 theme = ExtResource("2_6s8lb")
-script = ExtResource("2_nx56k")
 
 [node name="TitleScreen" type="TextureRect" parent="Control" unique_id=708332907]
 layout_mode = 1
@@ -246,37 +248,41 @@ theme_override_constants/margin_right = 10
 theme_override_constants/margin_bottom = 10
 
 [node name="ClassList" type="VBoxContainer" parent="Control/CharacterSettings/Panel/HBoxContainer/MarginContainer" unique_id=1053217457]
+unique_name_in_owner = true
 layout_mode = 2
 size_flags_horizontal = 3
 theme_override_constants/separation = 8
 alignment = 1
+script = ExtResource("6_lqna4")
 
 [node name="Predator" parent="Control/CharacterSettings/Panel/HBoxContainer/MarginContainer/ClassList" unique_id=1675104851 instance=ExtResource("6_0tjwc")]
 layout_mode = 2
 button_name = "Predetor"
-class_icon = ExtResource("7_yhhqk")
+class_icon = ExtResource("8_yhhqk")
 portrait = ExtResource("7_64gp6")
 
 [node name="Executioner" parent="Control/CharacterSettings/Panel/HBoxContainer/MarginContainer/ClassList" unique_id=1828005212 instance=ExtResource("6_0tjwc")]
 layout_mode = 2
 button_name = "Executioner"
-class_icon = ExtResource("9_fyd4r")
+class_icon = ExtResource("10_yhhqk")
 portrait = ExtResource("8_3l5ow")
 
 [node name="Chimera" parent="Control/CharacterSettings/Panel/HBoxContainer/MarginContainer/ClassList" unique_id=349157552 instance=ExtResource("6_0tjwc")]
 layout_mode = 2
 button_name = "Chimera"
-class_icon = ExtResource("11_g7b4f")
+class_icon = ExtResource("12_yhhqk")
 portrait = ExtResource("9_bqme7")
 
 [node name="Trickster" parent="Control/CharacterSettings/Panel/HBoxContainer/MarginContainer/ClassList" unique_id=2127784702 instance=ExtResource("6_0tjwc")]
 layout_mode = 2
 button_name = "Trickster"
-class_icon = ExtResource("13_ibxtg")
+class_icon = ExtResource("13_yhhqk")
+portrait = ExtResource("14_g7b4f")
 
 [node name="Puppeteer" parent="Control/CharacterSettings/Panel/HBoxContainer/MarginContainer/ClassList" unique_id=1555685590 instance=ExtResource("6_0tjwc")]
 layout_mode = 2
 button_name = "Puppeteer"
+class_icon = ExtResource("14_fyd4r")
 portrait = ExtResource("11_y1ss2")
 
 [node name="Exocist" parent="Control/CharacterSettings/Panel/HBoxContainer/MarginContainer/ClassList" unique_id=1681734137 instance=ExtResource("6_0tjwc")]
@@ -313,24 +319,50 @@ theme_override_constants/margin_bottom = 10
 layout_mode = 2
 size_flags_horizontal = 3
 
-[node name="HBoxContainer" type="HBoxContainer" parent="Control/CharacterSettings/Panel/HBoxContainer/MarginContainer2/Panel/MarginContainer/VBoxContainer2" unique_id=1423333268]
+[node name="Top" type="HBoxContainer" parent="Control/CharacterSettings/Panel/HBoxContainer/MarginContainer2/Panel/MarginContainer/VBoxContainer2" unique_id=1423333268]
 layout_mode = 2
 alignment = 2
 
-[node name="Label" type="Label" parent="Control/CharacterSettings/Panel/HBoxContainer/MarginContainer2/Panel/MarginContainer/VBoxContainer2/HBoxContainer" unique_id=564895918]
+[node name="Label" type="Label" parent="Control/CharacterSettings/Panel/HBoxContainer/MarginContainer2/Panel/MarginContainer/VBoxContainer2/Top" unique_id=564895918]
 layout_mode = 2
 text = "Level"
 
-[node name="VSeparator" type="VSeparator" parent="Control/CharacterSettings/Panel/HBoxContainer/MarginContainer2/Panel/MarginContainer/VBoxContainer2/HBoxContainer" unique_id=1590082297]
-layout_mode = 2
-
-[node name="Level" type="Label" parent="Control/CharacterSettings/Panel/HBoxContainer/MarginContainer2/Panel/MarginContainer/VBoxContainer2/HBoxContainer" unique_id=1937781733]
+[node name="ClassLevel" type="Label" parent="Control/CharacterSettings/Panel/HBoxContainer/MarginContainer2/Panel/MarginContainer/VBoxContainer2/Top" unique_id=1937781733]
+unique_name_in_owner = true
 layout_mode = 2
 text = "0"
 
-[node name="ProgressBar" type="ProgressBar" parent="Control/CharacterSettings/Panel/HBoxContainer/MarginContainer2/Panel/MarginContainer/VBoxContainer2/HBoxContainer" unique_id=42109741]
+[node name="VSeparator" type="VSeparator" parent="Control/CharacterSettings/Panel/HBoxContainer/MarginContainer2/Panel/MarginContainer/VBoxContainer2/Top" unique_id=1590082297]
+layout_mode = 2
+
+[node name="Experience" type="ProgressBar" parent="Control/CharacterSettings/Panel/HBoxContainer/MarginContainer2/Panel/MarginContainer/VBoxContainer2/Top" unique_id=42109741]
+unique_name_in_owner = true
 layout_mode = 2
 size_flags_horizontal = 3
+
+[node name="AbilityList" type="VBoxContainer" parent="Control/CharacterSettings/Panel/HBoxContainer/MarginContainer2/Panel/MarginContainer/VBoxContainer2" unique_id=93183186]
+layout_mode = 2
+
+[node name="HBoxContainer" type="HBoxContainer" parent="Control/CharacterSettings/Panel/HBoxContainer/MarginContainer2/Panel/MarginContainer/VBoxContainer2/AbilityList" unique_id=1192594769]
+layout_mode = 2
+
+[node name="Label" type="Label" parent="Control/CharacterSettings/Panel/HBoxContainer/MarginContainer2/Panel/MarginContainer/VBoxContainer2/AbilityList/HBoxContainer" unique_id=1635038994]
+layout_mode = 2
+text = "Aggression"
+
+[node name="VSeparator" type="VSeparator" parent="Control/CharacterSettings/Panel/HBoxContainer/MarginContainer2/Panel/MarginContainer/VBoxContainer2/AbilityList/HBoxContainer" unique_id=854585139]
+layout_mode = 2
+
+[node name="Agression" type="Control" parent="Control/CharacterSettings/Panel/HBoxContainer/MarginContainer2/Panel/MarginContainer/VBoxContainer2/AbilityList/HBoxContainer" unique_id=1523575976]
+layout_mode = 2
+size_flags_horizontal = 3
+script = ExtResource("18_yhhqk")
+
+[node name="HBoxContainer2" type="HBoxContainer" parent="Control/CharacterSettings/Panel/HBoxContainer/MarginContainer2/Panel/MarginContainer/VBoxContainer2/AbilityList" unique_id=1870666357]
+layout_mode = 2
+
+[node name="Label" type="Label" parent="Control/CharacterSettings/Panel/HBoxContainer/MarginContainer2/Panel/MarginContainer/VBoxContainer2/AbilityList/HBoxContainer2" unique_id=1335647309]
+layout_mode = 2
 
 [node name="Control" type="Control" parent="Control/CharacterSettings/Panel/HBoxContainer/MarginContainer2" unique_id=614448242]
 layout_mode = 2
@@ -350,7 +382,6 @@ grow_horizontal = 2
 grow_vertical = 2
 size_flags_vertical = 3
 mouse_filter = 2
-flip_h = true
 
 [node name="ClassSelect" type="MarginContainer" parent="Control" unique_id=1537195625]
 unique_name_in_owner = true
