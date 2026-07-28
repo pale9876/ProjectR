@@ -2,16 +2,16 @@
 
 importer="texture"
 type="CompressedTexture2D"
-uid="uid://ouwfrje26nfc"
-path="res://.godot/imported/Prodo2.png-75d9a56fefd9fd9fb35bf25d5c020435.ctex"
+uid="uid://b8t7urgctkqu8"
+path="res://.godot/imported/puppeteer.png-47e0c1423e46baacaf8efe9602f0d0f3.ctex"
 metadata={
 "vram_texture": false
 }
 
 [deps]
 
-source_file="res://assets/aseprite/prodo/Prodo2.png"
-dest_files=["res://.godot/imported/Prodo2.png-75d9a56fefd9fd9fb35bf25d5c020435.ctex"]
+source_file="res://portrait/puppeteer.png"
+dest_files=["res://.godot/imported/puppeteer.png-47e0c1423e46baacaf8efe9602f0d0f3.ctex"]
 
 [params]
 

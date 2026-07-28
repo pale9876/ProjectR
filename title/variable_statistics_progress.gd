@@ -24,19 +24,37 @@ extends Control
 
 func _draw() -> void:
 	var border: float = float(total_border) / float(step - 2)
-	var width: float = size.x / float(step) - border 
+	var width: float = size.x / float(step - 2) - border 
 	var height: float = size.y
 	
-	for i: int in range(step):
-		var rect: Rect2 = Rect2(
-			Vector2((border * float(i)) + (width * float(i)), 0.),
-			Vector2(width, height)
-		)
-		var center_idx: int = int((step - 1) / 2.)
-		var color: Color = center_color if center_idx == i else negative_color if i < center_idx else positive_color
-		
+	var _create_rect: Callable = func(idx: int) -> Rect2: return Rect2(
+		Vector2((border * .5) + (border * float(idx)) + (width * float(idx)), 0.),
+		Vector2(width, height)
+	)
+	
+	var _center_idx: int = int((step - 2) / 2.)
+	
+	
+	for i: int in range(step - 2):
 		draw_rect(
-			rect, color, true
+			_create_rect.call(i) as Rect2, Color.WHITE, false
 		)
+	
+	
+	if value == 0:
+		draw_rect(
+			_create_rect.call(_center_idx) as Rect2, Color.WHITE, true
+		)
+	else:
+		var is_positive: bool = value > 0
+		var _arr: Array = range(_center_idx, _center_idx + value, -1 if value < 0 else 1)
+		for i: int in _arr:
+			draw_rect(
+				_create_rect.call(i) as Rect2, positive_color if is_positive else negative_color, true
+			)
+	
+	
+	
+	
 	
 	

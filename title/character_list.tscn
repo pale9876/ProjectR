@@ -1,0 +1,64 @@
+[gd_scene format=3 uid="uid://be5es7kj8my7a"]
+
+[ext_resource type="Script" uid="uid://dgxb13iyu7nlx" path="res://title/radio_button_container.gd" id="1_lw08b"]
+[ext_resource type="Script" uid="uid://csk3xurnqupws" path="res://title/radio_button.gd" id="2_fjptg"]
+
+[node name="CharacterList" type="ScrollContainer" unique_id=1848087007]
+anchors_preset = 9
+anchor_bottom = 1.0
+offset_right = 204.0
+grow_vertical = 2
+
+[node name="CharacterRadioButtonContainer" type="VBoxContainer" parent="." unique_id=456349144]
+unique_name_in_owner = true
+layout_mode = 2
+size_flags_horizontal = 3
+theme_override_constants/separation = 12
+alignment = 1
+script = ExtResource("1_lw08b")
+
+[node name="Label" type="Label" parent="CharacterRadioButtonContainer" unique_id=889152508]
+layout_mode = 2
+text = "Character"
+
+[node name="Maemi" type="Button" parent="CharacterRadioButtonContainer" unique_id=1652281017]
+unique_name_in_owner = true
+layout_mode = 2
+toggle_mode = true
+text = "Maemi"
+script = ExtResource("2_fjptg")
+
+[node name="Goni" type="Button" parent="CharacterRadioButtonContainer" unique_id=908156256]
+unique_name_in_owner = true
+layout_mode = 2
+toggle_mode = true
+text = "Goni"
+script = ExtResource("2_fjptg")
+
+[node name="Noru" type="Button" parent="CharacterRadioButtonContainer" unique_id=1316074627]
+unique_name_in_owner = true
+layout_mode = 2
+toggle_mode = true
+text = "Noru"
+script = ExtResource("2_fjptg")
+
+[node name="Dokage" type="Button" parent="CharacterRadioButtonContainer" unique_id=550776416]
+unique_name_in_owner = true
+layout_mode = 2
+toggle_mode = true
+text = "Dokage"
+script = ExtResource("2_fjptg")
+
+[node name="Rammasum" type="Button" parent="CharacterRadioButtonContainer" unique_id=414848761]
+unique_name_in_owner = true
+layout_mode = 2
+toggle_mode = true
+text = "Rammasum "
+script = ExtResource("2_fjptg")
+
+[node name="Kujira" type="Button" parent="CharacterRadioButtonContainer" unique_id=232691756]
+unique_name_in_owner = true
+layout_mode = 2
+toggle_mode = true
+text = "Kujira"
+script = ExtResource("2_fjptg")

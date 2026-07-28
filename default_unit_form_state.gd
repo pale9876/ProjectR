@@ -50,7 +50,11 @@ func _init() -> void:
 
 
 func change_sub_state(sub_state: LimboSubState) -> void:
-	_substate.exit()
+	assert(sub_state, "%s => sub_state 값이 null입니다." % name)
+	
+	if _substate != null:
+		_substate.exit()
+	
 	_substate = sub_state
 	sub_state.enter()
 

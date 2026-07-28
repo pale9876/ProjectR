@@ -2,16 +2,16 @@
 
 importer="texture"
 type="CompressedTexture2D"
-uid="uid://dhxhfubm5bbe2"
-path="res://.godot/imported/Prodo4.png-cd42e7f3f83cbb823766572c8afe81e5.ctex"
+uid="uid://1gn5p53k0gab"
+path="res://.godot/imported/predator.png-85d27ad1a34fa8053fbdc720713f1e50.ctex"
 metadata={
 "vram_texture": false
 }
 
 [deps]
 
-source_file="res://assets/aseprite/prodo/Prodo4.png"
-dest_files=["res://.godot/imported/Prodo4.png-cd42e7f3f83cbb823766572c8afe81e5.ctex"]
+source_file="res://portrait/predator.png"
+dest_files=["res://.godot/imported/predator.png-85d27ad1a34fa8053fbdc720713f1e50.ctex"]
 
 [params]
 

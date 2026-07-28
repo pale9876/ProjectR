@@ -2,16 +2,16 @@
 
 importer="texture"
 type="CompressedTexture2D"
-uid="uid://c5hy24d7ebebn"
-path="res://.godot/imported/Prodo3.png-1621946e58bc3eaa224716d0b287002c.ctex"
+uid="uid://dk14ub3ipvswt"
+path="res://.godot/imported/exorcist.png-450350b67cc0c670bd393420cc1c5d74.ctex"
 metadata={
 "vram_texture": false
 }
 
 [deps]
 
-source_file="res://assets/aseprite/prodo/Prodo3.png"
-dest_files=["res://.godot/imported/Prodo3.png-1621946e58bc3eaa224716d0b287002c.ctex"]
+source_file="res://portrait/icon/exorcist.png"
+dest_files=["res://.godot/imported/exorcist.png-450350b67cc0c670bd393420cc1c5d74.ctex"]
 
 [params]
 

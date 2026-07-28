@@ -2,16 +2,16 @@
 
 importer="texture"
 type="CompressedTexture2D"
-uid="uid://bljdfbs2dqt75"
-path="res://.godot/imported/Prodo1.png-aac8d8e0b40c1728caca01a2befaea84.ctex"
+uid="uid://camnnij4812ej"
+path="res://.godot/imported/executioner.png-07dae665fcb7312590055a59453dbf38.ctex"
 metadata={
 "vram_texture": false
 }
 
 [deps]
 
-source_file="res://assets/aseprite/prodo/Prodo1.png"
-dest_files=["res://.godot/imported/Prodo1.png-aac8d8e0b40c1728caca01a2befaea84.ctex"]
+source_file="res://portrait/executioner.png"
+dest_files=["res://.godot/imported/executioner.png-07dae665fcb7312590055a59453dbf38.ctex"]
 
 [params]
 
