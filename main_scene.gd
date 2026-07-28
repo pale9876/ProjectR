@@ -19,7 +19,7 @@ const World = preload("uid://dpn1opeegcme2")
 @onready var hud: Hud = $HUD
 #@onready var option: Option = $Option
 @onready var channel: Channel = $Channel
-@onready var title: Title = $Title
+@onready var title: Title = %Title
 
 
 var is_in_game: bool = false
@@ -30,18 +30,14 @@ func _ready() -> void:
 	
 	ingame.hide()
 	hud.hide()
-	#option.hide()
 	channel.hide()
 	
 	title.show()
 
-	
-	#option.close.button_up.connect(_option_close)
-	#title.option.button_up.connect(_option_open)
-	
-
 	GSignal.start.connect(on_start)
 	Global.main_scene = self
+	
+	
 
 
 func on_start() -> void:

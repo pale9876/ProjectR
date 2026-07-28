@@ -26,16 +26,6 @@ visible = false
 visible = false
 
 [node name="Title" parent="." unique_id=419323065 instance=ExtResource("9_7ycvg")]
+unique_name_in_owner = true
 
 [node name="Channel" parent="." unique_id=1466334463 instance=ExtResource("8_7ycvg")]
-
-[node name="Filter" type="CanvasLayer" parent="." unique_id=1938266230]
-
-[node name="Control" type="Control" parent="Filter" unique_id=1578075719]
-layout_mode = 3
-anchors_preset = 15
-anchor_right = 1.0
-anchor_bottom = 1.0
-grow_horizontal = 2
-grow_vertical = 2
-mouse_filter = 2

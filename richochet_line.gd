@@ -26,8 +26,6 @@ func _init() -> void:
 
 func shot() -> void:
 	add_point(start_offset * direction)
-	
-
 
 
 func start_point() -> Vector2:

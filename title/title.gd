@@ -51,6 +51,8 @@ func _ready() -> void:
 
 
 func _input(event: InputEvent) -> void:
+	%SubViewport.push_input(event)
+	
 	if event.is_action_pressed(&"ui_cancel"):
 		if second_page().visible:
 			first_page().show()

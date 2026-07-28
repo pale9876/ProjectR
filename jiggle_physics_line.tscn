@@ -1,0 +1,26 @@
+[gd_scene format=3 uid="uid://dxk0qa56mboc0"]
+
+[ext_resource type="Script" uid="uid://dbmtt7kidxppf" path="res://jiggle_physics_line.gd" id="1_v6ar6"]
+
+[sub_resource type="Curve2D" id="Curve2D_mtnn2"]
+_data = {
+"points": PackedVector2Array(0, 0, 0, 0, 0, 0, -23.085592, 0.33289498, 23.085592, -0.33289498, 96, 0, -41.506214, -1.21, 41.506214, 1.21, 224, 8, -38.204838, 0.3792075, 38.204838, -0.3792075, 376, -8, -36.104702, 0.82644624, 36.104702, -0.82644624, 528, 8, 0, 0, 0, 0, 624, 0)
+}
+point_count = 6
+
+[sub_resource type="CircleShape2D" id="CircleShape2D_wqsic"]
+radius = 24.0
+
+[node name="JigglePhysicsLine" type="Path2D" unique_id=657045148]
+texture_repeat = 2
+curve = SubResource("Curve2D_mtnn2")
+script = ExtResource("1_v6ar6")
+
+[node name="TextureLine" type="Line2D" parent="." unique_id=1335200667]
+
+[node name="Projectile" type="CharacterBody2D" parent="." unique_id=750564022]
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="Projectile" unique_id=1583049127]
+shape = SubResource("CircleShape2D_wqsic")
+
+[node name="AnimationPlayer" type="AnimationPlayer" parent="." unique_id=345500149]
