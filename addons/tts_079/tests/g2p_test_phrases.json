@@ -1,0 +1,198 @@
+[
+  {
+    "text": "hello",
+    "phonemes": "hEHlOW"
+  },
+  {
+    "text": "world",
+    "phonemes": "wERld"
+  },
+  {
+    "text": "yes",
+    "phonemes": "/yEHs\\"
+  },
+  {
+    "text": "no",
+    "phonemes": "/nOW\\"
+  },
+  {
+    "text": "the",
+    "phonemes": "\\DHIY/"
+  },
+  {
+    "text": "a",
+    "phonemes": "\\AX/"
+  },
+  {
+    "text": "I",
+    "phonemes": "/[AY\\"
+  },
+  {
+    "text": "hello.",
+    "phonemes": "hEHlOW."
+  },
+  {
+    "text": "hello!",
+    "phonemes": "hEHlOW!"
+  },
+  {
+    "text": "hello?",
+    "phonemes": "hEHlOW?"
+  },
+  {
+    "text": "hello;",
+    "phonemes": "hEHlOW;"
+  },
+  {
+    "text": "hello, world",
+    "phonemes": "hEHlAA  wERld"
+  },
+  {
+    "text": "yes, no, maybe",
+    "phonemes": "/yEHs\\  nAA  mEYbIY"
+  },
+  {
+    "text": "don't",
+    "phonemes": "d/OWnt\\"
+  },
+  {
+    "text": "it's a test",
+    "phonemes": "IHts\\AX/tEHst"
+  },
+  {
+    "text": "we're here",
+    "phonemes": "w/IY\\r/hIHr\\"
+  },
+  {
+    "text": "press one two three",
+    "phonemes": "prEHs/wAHn\\/tUW\\THrIY"
+  },
+  {
+    "text": "the law joy cow",
+    "phonemes": "\\DHAX/lAOdZHOYkAW"
+  },
+  {
+    "text": "la li lu le lo",
+    "phonemes": "lAAlAYlUWl/IY\\lOW"
+  },
+  {
+    "text": "sa si su se so",
+    "phonemes": "s\\AX/sAYsUWs/IY\\sOW"
+  },
+  {
+    "text": "the other them",
+    "phonemes": "\\DHIY//AHDHER\\\\DHEHm/"
+  },
+  {
+    "text": "there",
+    "phonemes": "/DHEHr\\"
+  },
+  {
+    "text": "bathe",
+    "phonemes": "bAETH"
+  },
+  {
+    "text": "breathe soothe lathe",
+    "phonemes": "brEHTHsUWTHlAETH"
+  },
+  {
+    "text": "that this though",
+    "phonemes": "\\DHAEt//DHIHs\\DHOW"
+  },
+  {
+    "text": "she sells yellow chips",
+    "phonemes": "SH/IY\\sEHlzyEHlOWtSHIHps"
+  },
+  {
+    "text": "jill plays please",
+    "phonemes": "dZHIHlplEYzplIYz"
+  },
+  {
+    "text": "sing",
+    "phonemes": "sIHNG"
+  },
+  {
+    "text": "north",
+    "phonemes": "nAOrTH"
+  },
+  {
+    "text": "lull",
+    "phonemes": "lUHl"
+  },
+  {
+    "text": "sass",
+    "phonemes": "sAEs"
+  },
+  {
+    "text": "yoyo",
+    "phonemes": "yOYOW"
+  },
+  {
+    "text": "carefully",
+    "phonemes": "kEHrfUHlIY"
+  },
+  {
+    "text": "happy",
+    "phonemes": "hAEpIY"
+  },
+  {
+    "text": "yellow",
+    "phonemes": "yEHlOW"
+  },
+  {
+    "text": "Hello, my name is Sbaitso.",
+    "phonemes": "hEHlAA  /mAY\\nEYm\\IXz/sbEYtsOW."
+  },
+  {
+    "text": "Sound check, one two three.",
+    "phonemes": "sAWndtSHEHk  /wAHn\\/tUW\\THrIY."
+  },
+  {
+    "text": "Hello slow echo world!",
+    "phonemes": "hEHlOWslOWEHtSHOWwERld!"
+  },
+  {
+    "text": "Press any key to continue.",
+    "phonemes": "prEHs/EHn[IY\\kIY\\tUW/kAXntIHnyUW."
+  },
+  {
+    "text": "The quick brown fox jumps over the lazy dog.",
+    "phonemes": "\\DHAX/kwIHkbrAWnfAAksdZHAHmps/OWv\\ER\\DHAX/lEYzIYdAOg."
+  },
+  {
+    "text": "how are you?",
+    "phonemes": "hAW\\AAr//yUW\\?"
+  },
+  {
+    "text": "what is your name?",
+    "phonemes": "\\hwAHt/\\IXz//yUHr\\nEYm?"
+  },
+  {
+    "text": "do you understand?",
+    "phonemes": "/dUW\\/yUW\\AHndERsTXAEnd?"
+  },
+  {
+    "text": "one hundred",
+    "phonemes": "/wAHn\\hAHndrIXd"
+  },
+  {
+    "text": "two thousand twenty six",
+    "phonemes": "/tUW\\THAWzAXndtwEHntIYsIHks"
+  },
+  {
+    "text": "a",
+    "phonemes": "\\AX/"
+  },
+  {
+    "text": "I am",
+    "phonemes": "/[AY\\AEm"
+  },
+  {
+    "text": "go",
+    "phonemes": "gOW"
+  },
+  {
+    "text": "be",
+    "phonemes": "b/IY\\"
+  }
+]

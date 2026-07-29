@@ -1,0 +1,8006 @@
+{
+  "bk0_wd0000": {
+    "offset": 0,
+    "length": 84,
+    "bank": 0,
+    "wavdesc": 0
+  },
+  "bk0_wd0036": {
+    "offset": 84,
+    "length": 87,
+    "bank": 0,
+    "wavdesc": 54
+  },
+  "bk0_wd0064": {
+    "offset": 171,
+    "length": 92,
+    "bank": 0,
+    "wavdesc": 100
+  },
+  "bk0_wd009F": {
+    "offset": 263,
+    "length": 69,
+    "bank": 0,
+    "wavdesc": 159
+  },
+  "bk0_wd00C1": {
+    "offset": 332,
+    "length": 78,
+    "bank": 0,
+    "wavdesc": 193
+  },
+  "bk0_wd00F9": {
+    "offset": 410,
+    "length": 89,
+    "bank": 0,
+    "wavdesc": 249
+  },
+  "bk0_wd0136": {
+    "offset": 499,
+    "length": 93,
+    "bank": 0,
+    "wavdesc": 310
+  },
+  "bk0_wd01E8": {
+    "offset": 592,
+    "length": 96,
+    "bank": 0,
+    "wavdesc": 488
+  },
+  "bk0_wd020C": {
+    "offset": 688,
+    "length": 95,
+    "bank": 0,
+    "wavdesc": 524
+  },
+  "bk0_wd0231": {
+    "offset": 783,
+    "length": 83,
+    "bank": 0,
+    "wavdesc": 561
+  },
+  "bk0_wd0251": {
+    "offset": 866,
+    "length": 95,
+    "bank": 0,
+    "wavdesc": 593
+  },
+  "bk0_wd027B": {
+    "offset": 961,
+    "length": 96,
+    "bank": 0,
+    "wavdesc": 635
+  },
+  "bk0_wd02A0": {
+    "offset": 1057,
+    "length": 95,
+    "bank": 0,
+    "wavdesc": 672
+  },
+  "bk0_wd02C5": {
+    "offset": 1152,
+    "length": 96,
+    "bank": 0,
+    "wavdesc": 709
+  },
+  "bk0_wd02EA": {
+    "offset": 1248,
+    "length": 96,
+    "bank": 0,
+    "wavdesc": 746
+  },
+  "bk0_wd0310": {
+    "offset": 1344,
+    "length": 96,
+    "bank": 0,
+    "wavdesc": 784
+  },
+  "bk0_wd0338": {
+    "offset": 1440,
+    "length": 131,
+    "bank": 0,
+    "wavdesc": 824
+  },
+  "bk0_wd0370": {
+    "offset": 1571,
+    "length": 96,
+    "bank": 0,
+    "wavdesc": 880
+  },
+  "bk0_wd0395": {
+    "offset": 1667,
+    "length": 96,
+    "bank": 0,
+    "wavdesc": 917
+  },
+  "bk0_wd03BB": {
+    "offset": 1763,
+    "length": 96,
+    "bank": 0,
+    "wavdesc": 955
+  },
+  "bk0_wd03E6": {
+    "offset": 1859,
+    "length": 96,
+    "bank": 0,
+    "wavdesc": 998
+  },
+  "bk0_wd0416": {
+    "offset": 1955,
+    "length": 96,
+    "bank": 0,
+    "wavdesc": 1046
+  },
+  "bk0_wd044A": {
+    "offset": 2051,
+    "length": 96,
+    "bank": 0,
+    "wavdesc": 1098
+  },
+  "bk0_wd0482": {
+    "offset": 2147,
+    "length": 96,
+    "bank": 0,
+    "wavdesc": 1154
+  },
+  "bk0_wd04CB": {
+    "offset": 2243,
+    "length": 96,
+    "bank": 0,
+    "wavdesc": 1227
+  },
+  "bk0_wd04F5": {
+    "offset": 2339,
+    "length": 96,
+    "bank": 0,
+    "wavdesc": 1269
+  },
+  "bk0_wd0524": {
+    "offset": 2435,
+    "length": 96,
+    "bank": 0,
+    "wavdesc": 1316
+  },
+  "bk0_wd0558": {
+    "offset": 2531,
+    "length": 96,
+    "bank": 0,
+    "wavdesc": 1368
+  },
+  "bk0_wd0593": {
+    "offset": 2627,
+    "length": 96,
+    "bank": 0,
+    "wavdesc": 1427
+  },
+  "bk0_wd05D9": {
+    "offset": 2723,
+    "length": 96,
+    "bank": 0,
+    "wavdesc": 1497
+  },
+  "bk0_wd0624": {
+    "offset": 2819,
+    "length": 96,
+    "bank": 0,
+    "wavdesc": 1572
+  },
+  "bk0_wd0681": {
+    "offset": 2915,
+    "length": 96,
+    "bank": 0,
+    "wavdesc": 1665
+  },
+  "bk0_wd06C9": {
+    "offset": 3011,
+    "length": 91,
+    "bank": 0,
+    "wavdesc": 1737
+  },
+  "bk0_wd06EE": {
+    "offset": 3102,
+    "length": 97,
+    "bank": 0,
+    "wavdesc": 1774
+  },
+  "bk0_wd0716": {
+    "offset": 3199,
+    "length": 94,
+    "bank": 0,
+    "wavdesc": 1814
+  },
+  "bk0_wd073C": {
+    "offset": 3293,
+    "length": 96,
+    "bank": 0,
+    "wavdesc": 1852
+  },
+  "bk0_wd0761": {
+    "offset": 3389,
+    "length": 96,
+    "bank": 0,
+    "wavdesc": 1889
+  },
+  "bk0_wd078B": {
+    "offset": 3485,
+    "length": 81,
+    "bank": 0,
+    "wavdesc": 1931
+  },
+  "bk0_wd07B0": {
+    "offset": 3566,
+    "length": 68,
+    "bank": 0,
+    "wavdesc": 1968
+  },
+  "bk0_wd07D4": {
+    "offset": 3634,
+    "length": 103,
+    "bank": 0,
+    "wavdesc": 2004
+  },
+  "bk0_wd080F": {
+    "offset": 3737,
+    "length": 84,
+    "bank": 0,
+    "wavdesc": 2063
+  },
+  "bk0_wd0831": {
+    "offset": 3821,
+    "length": 93,
+    "bank": 0,
+    "wavdesc": 2097
+  },
+  "bk0_wd0858": {
+    "offset": 3914,
+    "length": 56,
+    "bank": 0,
+    "wavdesc": 2136
+  },
+  "bk0_wd086E": {
+    "offset": 3970,
+    "length": 98,
+    "bank": 0,
+    "wavdesc": 2158
+  },
+  "bk0_wd0894": {
+    "offset": 4068,
+    "length": 92,
+    "bank": 0,
+    "wavdesc": 2196
+  },
+  "bk0_wd08B8": {
+    "offset": 4160,
+    "length": 95,
+    "bank": 0,
+    "wavdesc": 2232
+  },
+  "bk0_wd08DE": {
+    "offset": 4255,
+    "length": 96,
+    "bank": 0,
+    "wavdesc": 2270
+  },
+  "bk0_wd0905": {
+    "offset": 4351,
+    "length": 97,
+    "bank": 0,
+    "wavdesc": 2309
+  },
+  "bk0_wd092D": {
+    "offset": 4448,
+    "length": 84,
+    "bank": 0,
+    "wavdesc": 2349
+  },
+  "bk0_wd0959": {
+    "offset": 4532,
+    "length": 89,
+    "bank": 0,
+    "wavdesc": 2393
+  },
+  "bk0_wd0981": {
+    "offset": 4621,
+    "length": 90,
+    "bank": 0,
+    "wavdesc": 2433
+  },
+  "bk0_wd09B3": {
+    "offset": 4711,
+    "length": 95,
+    "bank": 0,
+    "wavdesc": 2483
+  },
+  "bk0_wd09FC": {
+    "offset": 4806,
+    "length": 96,
+    "bank": 0,
+    "wavdesc": 2556
+  },
+  "bk0_wd0A40": {
+    "offset": 4902,
+    "length": 88,
+    "bank": 0,
+    "wavdesc": 2624
+  },
+  "bk0_wd0A7C": {
+    "offset": 4990,
+    "length": 93,
+    "bank": 0,
+    "wavdesc": 2684
+  },
+  "bk0_wd0AB2": {
+    "offset": 5083,
+    "length": 99,
+    "bank": 0,
+    "wavdesc": 2738
+  },
+  "bk0_wd0AEF": {
+    "offset": 5182,
+    "length": 95,
+    "bank": 0,
+    "wavdesc": 2799
+  },
+  "bk0_wd0B32": {
+    "offset": 5277,
+    "length": 86,
+    "bank": 0,
+    "wavdesc": 2866
+  },
+  "bk0_wd0B6E": {
+    "offset": 5363,
+    "length": 96,
+    "bank": 0,
+    "wavdesc": 2926
+  },
+  "bk0_wd0BAE": {
+    "offset": 5459,
+    "length": 97,
+    "bank": 0,
+    "wavdesc": 2990
+  },
+  "bk0_wd0BF2": {
+    "offset": 5556,
+    "length": 114,
+    "bank": 0,
+    "wavdesc": 3058
+  },
+  "bk0_wd0C28": {
+    "offset": 5670,
+    "length": 96,
+    "bank": 0,
+    "wavdesc": 3112
+  },
+  "bk0_wd0C4D": {
+    "offset": 5766,
+    "length": 96,
+    "bank": 0,
+    "wavdesc": 3149
+  },
+  "bk0_wd0C74": {
+    "offset": 5862,
+    "length": 96,
+    "bank": 0,
+    "wavdesc": 3188
+  },
+  "bk0_wd0C99": {
+    "offset": 5958,
+    "length": 94,
+    "bank": 0,
+    "wavdesc": 3225
+  },
+  "bk0_wd0CDD": {
+    "offset": 6052,
+    "length": 93,
+    "bank": 0,
+    "wavdesc": 3293
+  },
+  "bk0_wd0D21": {
+    "offset": 6145,
+    "length": 95,
+    "bank": 0,
+    "wavdesc": 3361
+  },
+  "bk0_wd0D5B": {
+    "offset": 6240,
+    "length": 107,
+    "bank": 0,
+    "wavdesc": 3419
+  },
+  "bk0_wd0D8E": {
+    "offset": 6347,
+    "length": 96,
+    "bank": 0,
+    "wavdesc": 3470
+  },
+  "bk0_wd0DCA": {
+    "offset": 6443,
+    "length": 96,
+    "bank": 0,
+    "wavdesc": 3530
+  },
+  "bk0_wd0E02": {
+    "offset": 6539,
+    "length": 95,
+    "bank": 0,
+    "wavdesc": 3586
+  },
+  "bk0_wd0E34": {
+    "offset": 6634,
+    "length": 109,
+    "bank": 0,
+    "wavdesc": 3636
+  },
+  "bk0_wd0E6E": {
+    "offset": 6743,
+    "length": 94,
+    "bank": 0,
+    "wavdesc": 3694
+  },
+  "bk0_wd0EC2": {
+    "offset": 6837,
+    "length": 97,
+    "bank": 0,
+    "wavdesc": 3778
+  },
+  "bk0_wd0F1A": {
+    "offset": 6934,
+    "length": 96,
+    "bank": 0,
+    "wavdesc": 3866
+  },
+  "bk0_wd0F55": {
+    "offset": 7030,
+    "length": 98,
+    "bank": 0,
+    "wavdesc": 3925
+  },
+  "bk0_wd0F85": {
+    "offset": 7128,
+    "length": 99,
+    "bank": 0,
+    "wavdesc": 3973
+  },
+  "bk0_wd0FB0": {
+    "offset": 7227,
+    "length": 101,
+    "bank": 0,
+    "wavdesc": 4016
+  },
+  "bk0_wd0FDA": {
+    "offset": 7328,
+    "length": 96,
+    "bank": 0,
+    "wavdesc": 4058
+  },
+  "bk0_wd1017": {
+    "offset": 7424,
+    "length": 98,
+    "bank": 0,
+    "wavdesc": 4119
+  },
+  "bk0_wd1052": {
+    "offset": 7522,
+    "length": 97,
+    "bank": 0,
+    "wavdesc": 4178
+  },
+  "bk0_wd1089": {
+    "offset": 7619,
+    "length": 99,
+    "bank": 0,
+    "wavdesc": 4233
+  },
+  "bk0_wd10BD": {
+    "offset": 7718,
+    "length": 102,
+    "bank": 0,
+    "wavdesc": 4285
+  },
+  "bk0_wd10EE": {
+    "offset": 7820,
+    "length": 96,
+    "bank": 0,
+    "wavdesc": 4334
+  },
+  "bk0_wd111A": {
+    "offset": 7916,
+    "length": 106,
+    "bank": 0,
+    "wavdesc": 4378
+  },
+  "bk0_wd114D": {
+    "offset": 8022,
+    "length": 97,
+    "bank": 0,
+    "wavdesc": 4429
+  },
+  "bk0_wd118C": {
+    "offset": 8119,
+    "length": 99,
+    "bank": 0,
+    "wavdesc": 4492
+  },
+  "bk0_wd11C6": {
+    "offset": 8218,
+    "length": 96,
+    "bank": 0,
+    "wavdesc": 4550
+  },
+  "bk0_wd11FF": {
+    "offset": 8314,
+    "length": 112,
+    "bank": 0,
+    "wavdesc": 4607
+  },
+  "bk0_wd1247": {
+    "offset": 8426,
+    "length": 93,
+    "bank": 0,
+    "wavdesc": 4679
+  },
+  "bk0_wd126F": {
+    "offset": 8519,
+    "length": 93,
+    "bank": 0,
+    "wavdesc": 4719
+  },
+  "bk0_wd1298": {
+    "offset": 8612,
+    "length": 95,
+    "bank": 0,
+    "wavdesc": 4760
+  },
+  "bk0_wd12E1": {
+    "offset": 8707,
+    "length": 95,
+    "bank": 0,
+    "wavdesc": 4833
+  },
+  "bk0_wd1321": {
+    "offset": 8802,
+    "length": 98,
+    "bank": 0,
+    "wavdesc": 4897
+  },
+  "bk0_wd1350": {
+    "offset": 8900,
+    "length": 94,
+    "bank": 0,
+    "wavdesc": 4944
+  },
+  "bk0_wd139D": {
+    "offset": 8994,
+    "length": 96,
+    "bank": 0,
+    "wavdesc": 5021
+  },
+  "bk0_wd13E8": {
+    "offset": 9090,
+    "length": 95,
+    "bank": 0,
+    "wavdesc": 5096
+  },
+  "bk0_wd1438": {
+    "offset": 9185,
+    "length": 93,
+    "bank": 0,
+    "wavdesc": 5176
+  },
+  "bk0_wd1486": {
+    "offset": 9278,
+    "length": 94,
+    "bank": 0,
+    "wavdesc": 5254
+  },
+  "bk0_wd14D0": {
+    "offset": 9372,
+    "length": 96,
+    "bank": 0,
+    "wavdesc": 5328
+  },
+  "bk0_wd1514": {
+    "offset": 9468,
+    "length": 96,
+    "bank": 0,
+    "wavdesc": 5396
+  },
+  "bk0_wd1554": {
+    "offset": 9564,
+    "length": 91,
+    "bank": 0,
+    "wavdesc": 5460
+  },
+  "bk0_wd158A": {
+    "offset": 9655,
+    "length": 95,
+    "bank": 0,
+    "wavdesc": 5514
+  },
+  "bk0_wd15CF": {
+    "offset": 9750,
+    "length": 98,
+    "bank": 0,
+    "wavdesc": 5583
+  },
+  "bk0_wd1606": {
+    "offset": 9848,
+    "length": 109,
+    "bank": 0,
+    "wavdesc": 5638
+  },
+  "bk0_wd1636": {
+    "offset": 9957,
+    "length": 93,
+    "bank": 0,
+    "wavdesc": 5686
+  },
+  "bk0_wd1676": {
+    "offset": 10050,
+    "length": 91,
+    "bank": 0,
+    "wavdesc": 5750
+  },
+  "bk0_wd16B8": {
+    "offset": 10141,
+    "length": 108,
+    "bank": 0,
+    "wavdesc": 5816
+  },
+  "bk0_wd16F9": {
+    "offset": 10249,
+    "length": 96,
+    "bank": 0,
+    "wavdesc": 5881
+  },
+  "bk0_wd172E": {
+    "offset": 10345,
+    "length": 96,
+    "bank": 0,
+    "wavdesc": 5934
+  },
+  "bk0_wd176A": {
+    "offset": 10441,
+    "length": 96,
+    "bank": 0,
+    "wavdesc": 5994
+  },
+  "bk0_wd17AE": {
+    "offset": 10537,
+    "length": 107,
+    "bank": 0,
+    "wavdesc": 6062
+  },
+  "bk0_wd17FC": {
+    "offset": 10644,
+    "length": 95,
+    "bank": 0,
+    "wavdesc": 6140
+  },
+  "bk0_wd183F": {
+    "offset": 10739,
+    "length": 96,
+    "bank": 0,
+    "wavdesc": 6207
+  },
+  "bk0_wd1880": {
+    "offset": 10835,
+    "length": 96,
+    "bank": 0,
+    "wavdesc": 6272
+  },
+  "bk0_wd18BA": {
+    "offset": 10931,
+    "length": 91,
+    "bank": 0,
+    "wavdesc": 6330
+  },
+  "bk0_wd18F0": {
+    "offset": 11022,
+    "length": 98,
+    "bank": 0,
+    "wavdesc": 6384
+  },
+  "bk0_wd191E": {
+    "offset": 11120,
+    "length": 95,
+    "bank": 0,
+    "wavdesc": 6430
+  },
+  "bk0_wd1957": {
+    "offset": 11215,
+    "length": 96,
+    "bank": 0,
+    "wavdesc": 6487
+  },
+  "bk0_wd1992": {
+    "offset": 11311,
+    "length": 98,
+    "bank": 0,
+    "wavdesc": 6546
+  },
+  "bk0_wd19C2": {
+    "offset": 11409,
+    "length": 97,
+    "bank": 0,
+    "wavdesc": 6594
+  },
+  "bk0_wd19EF": {
+    "offset": 11506,
+    "length": 98,
+    "bank": 0,
+    "wavdesc": 6639
+  },
+  "bk0_wd1AE5": {
+    "offset": 11604,
+    "length": 96,
+    "bank": 0,
+    "wavdesc": 6885
+  },
+  "bk0_wd1B14": {
+    "offset": 11700,
+    "length": 121,
+    "bank": 0,
+    "wavdesc": 6932
+  },
+  "bk0_wd1BDC": {
+    "offset": 11821,
+    "length": 94,
+    "bank": 0,
+    "wavdesc": 7132
+  },
+  "bk0_wd1C23": {
+    "offset": 11915,
+    "length": 93,
+    "bank": 0,
+    "wavdesc": 7203
+  },
+  "bk0_wd1C69": {
+    "offset": 12008,
+    "length": 95,
+    "bank": 0,
+    "wavdesc": 7273
+  },
+  "bk0_wd1CA6": {
+    "offset": 12103,
+    "length": 94,
+    "bank": 0,
+    "wavdesc": 7334
+  },
+  "bk0_wd1CEA": {
+    "offset": 12197,
+    "length": 98,
+    "bank": 0,
+    "wavdesc": 7402
+  },
+  "bk0_wd1D18": {
+    "offset": 12295,
+    "length": 95,
+    "bank": 0,
+    "wavdesc": 7448
+  },
+  "bk0_wd1D63": {
+    "offset": 12390,
+    "length": 95,
+    "bank": 0,
+    "wavdesc": 7523
+  },
+  "bk0_wd1DAA": {
+    "offset": 12485,
+    "length": 111,
+    "bank": 0,
+    "wavdesc": 7594
+  },
+  "bk0_wd1DED": {
+    "offset": 12596,
+    "length": 96,
+    "bank": 0,
+    "wavdesc": 7661
+  },
+  "bk0_wd1E30": {
+    "offset": 12692,
+    "length": 97,
+    "bank": 0,
+    "wavdesc": 7728
+  },
+  "bk0_wd1E73": {
+    "offset": 12789,
+    "length": 104,
+    "bank": 0,
+    "wavdesc": 7795
+  },
+  "bk0_wd1EAE": {
+    "offset": 12893,
+    "length": 96,
+    "bank": 0,
+    "wavdesc": 7854
+  },
+  "bk0_wd1EEC": {
+    "offset": 12989,
+    "length": 92,
+    "bank": 0,
+    "wavdesc": 7916
+  },
+  "bk0_wd1F2B": {
+    "offset": 13081,
+    "length": 96,
+    "bank": 0,
+    "wavdesc": 7979
+  },
+  "bk0_wd1F51": {
+    "offset": 13177,
+    "length": 96,
+    "bank": 0,
+    "wavdesc": 8017
+  },
+  "bk0_wd1F76": {
+    "offset": 13273,
+    "length": 97,
+    "bank": 0,
+    "wavdesc": 8054
+  },
+  "bk0_wd1F9D": {
+    "offset": 13370,
+    "length": 96,
+    "bank": 0,
+    "wavdesc": 8093
+  },
+  "bk0_wd1FD6": {
+    "offset": 13466,
+    "length": 96,
+    "bank": 0,
+    "wavdesc": 8150
+  },
+  "bk0_wd2016": {
+    "offset": 13562,
+    "length": 96,
+    "bank": 0,
+    "wavdesc": 8214
+  },
+  "bk0_wd2067": {
+    "offset": 13658,
+    "length": 94,
+    "bank": 0,
+    "wavdesc": 8295
+  },
+  "bk0_wd20BA": {
+    "offset": 13752,
+    "length": 95,
+    "bank": 0,
+    "wavdesc": 8378
+  },
+  "bk0_wd2103": {
+    "offset": 13847,
+    "length": 94,
+    "bank": 0,
+    "wavdesc": 8451
+  },
+  "bk0_wd214B": {
+    "offset": 13941,
+    "length": 95,
+    "bank": 0,
+    "wavdesc": 8523
+  },
+  "bk0_wd218F": {
+    "offset": 14036,
+    "length": 95,
+    "bank": 0,
+    "wavdesc": 8591
+  },
+  "bk0_wd21CA": {
+    "offset": 14131,
+    "length": 94,
+    "bank": 0,
+    "wavdesc": 8650
+  },
+  "bk0_wd2200": {
+    "offset": 14225,
+    "length": 93,
+    "bank": 0,
+    "wavdesc": 8704
+  },
+  "bk0_wd2234": {
+    "offset": 14318,
+    "length": 92,
+    "bank": 0,
+    "wavdesc": 8756
+  },
+  "bk0_wd2263": {
+    "offset": 14410,
+    "length": 95,
+    "bank": 0,
+    "wavdesc": 8803
+  },
+  "bk0_wd22A7": {
+    "offset": 14505,
+    "length": 94,
+    "bank": 0,
+    "wavdesc": 8871
+  },
+  "bk0_wd22EA": {
+    "offset": 14599,
+    "length": 96,
+    "bank": 0,
+    "wavdesc": 8938
+  },
+  "bk0_wd2321": {
+    "offset": 14695,
+    "length": 95,
+    "bank": 0,
+    "wavdesc": 8993
+  },
+  "bk0_wd234B": {
+    "offset": 14790,
+    "length": 95,
+    "bank": 0,
+    "wavdesc": 9035
+  },
+  "bk0_wd2375": {
+    "offset": 14885,
+    "length": 94,
+    "bank": 0,
+    "wavdesc": 9077
+  },
+  "bk0_wd239F": {
+    "offset": 14979,
+    "length": 95,
+    "bank": 0,
+    "wavdesc": 9119
+  },
+  "bk0_wd23E1": {
+    "offset": 15074,
+    "length": 97,
+    "bank": 0,
+    "wavdesc": 9185
+  },
+  "bk0_wd2422": {
+    "offset": 15171,
+    "length": 97,
+    "bank": 0,
+    "wavdesc": 9250
+  },
+  "bk0_wd245A": {
+    "offset": 15268,
+    "length": 96,
+    "bank": 0,
+    "wavdesc": 9306
+  },
+  "bk0_wd2499": {
+    "offset": 15364,
+    "length": 96,
+    "bank": 0,
+    "wavdesc": 9369
+  },
+  "bk0_wd24D5": {
+    "offset": 15460,
+    "length": 95,
+    "bank": 0,
+    "wavdesc": 9429
+  },
+  "bk0_wd2512": {
+    "offset": 15555,
+    "length": 96,
+    "bank": 0,
+    "wavdesc": 9490
+  },
+  "bk0_wd255A": {
+    "offset": 15651,
+    "length": 96,
+    "bank": 0,
+    "wavdesc": 9562
+  },
+  "bk0_wd259E": {
+    "offset": 15747,
+    "length": 86,
+    "bank": 0,
+    "wavdesc": 9630
+  },
+  "bk0_wd25D1": {
+    "offset": 15833,
+    "length": 106,
+    "bank": 0,
+    "wavdesc": 9681
+  },
+  "bk0_wd25FB": {
+    "offset": 15939,
+    "length": 74,
+    "bank": 0,
+    "wavdesc": 9723
+  },
+  "bk0_wd261E": {
+    "offset": 16013,
+    "length": 20,
+    "bank": 0,
+    "wavdesc": 9758
+  },
+  "bk0_wd2627": {
+    "offset": 16033,
+    "length": 96,
+    "bank": 0,
+    "wavdesc": 9767
+  },
+  "bk0_wd2666": {
+    "offset": 16129,
+    "length": 96,
+    "bank": 0,
+    "wavdesc": 9830
+  },
+  "bk0_wd269F": {
+    "offset": 16225,
+    "length": 98,
+    "bank": 0,
+    "wavdesc": 9887
+  },
+  "bk0_wd26CB": {
+    "offset": 16323,
+    "length": 96,
+    "bank": 0,
+    "wavdesc": 9931
+  },
+  "bk0_wd270E": {
+    "offset": 16419,
+    "length": 96,
+    "bank": 0,
+    "wavdesc": 9998
+  },
+  "bk0_wd2751": {
+    "offset": 16515,
+    "length": 98,
+    "bank": 0,
+    "wavdesc": 10065
+  },
+  "bk0_wd2780": {
+    "offset": 16613,
+    "length": 99,
+    "bank": 0,
+    "wavdesc": 10112
+  },
+  "bk0_wd27A9": {
+    "offset": 16712,
+    "length": 99,
+    "bank": 0,
+    "wavdesc": 10153
+  },
+  "bk0_wd27D2": {
+    "offset": 16811,
+    "length": 96,
+    "bank": 0,
+    "wavdesc": 10194
+  },
+  "bk0_wd2814": {
+    "offset": 16907,
+    "length": 95,
+    "bank": 0,
+    "wavdesc": 10260
+  },
+  "bk0_wd284C": {
+    "offset": 17002,
+    "length": 94,
+    "bank": 0,
+    "wavdesc": 10316
+  },
+  "bk0_wd287E": {
+    "offset": 17096,
+    "length": 90,
+    "bank": 0,
+    "wavdesc": 10366
+  },
+  "bk0_wd28A6": {
+    "offset": 17186,
+    "length": 97,
+    "bank": 0,
+    "wavdesc": 10406
+  },
+  "bk0_wd28CF": {
+    "offset": 17283,
+    "length": 98,
+    "bank": 0,
+    "wavdesc": 10447
+  },
+  "bk0_wd28F6": {
+    "offset": 17381,
+    "length": 101,
+    "bank": 0,
+    "wavdesc": 10486
+  },
+  "bk0_wd2C45": {
+    "offset": 17482,
+    "length": 93,
+    "bank": 0,
+    "wavdesc": 11333
+  },
+  "bk0_wd2C8A": {
+    "offset": 17575,
+    "length": 94,
+    "bank": 0,
+    "wavdesc": 11402
+  },
+  "bk0_wd2CC8": {
+    "offset": 17669,
+    "length": 94,
+    "bank": 0,
+    "wavdesc": 11464
+  },
+  "bk0_wd2CFC": {
+    "offset": 17763,
+    "length": 94,
+    "bank": 0,
+    "wavdesc": 11516
+  },
+  "bk0_wd2D47": {
+    "offset": 17857,
+    "length": 98,
+    "bank": 0,
+    "wavdesc": 11591
+  },
+  "bk0_wd2D89": {
+    "offset": 17955,
+    "length": 98,
+    "bank": 0,
+    "wavdesc": 11657
+  },
+  "bk0_wd2DC6": {
+    "offset": 18053,
+    "length": 93,
+    "bank": 0,
+    "wavdesc": 11718
+  },
+  "bk0_wd2E0F": {
+    "offset": 18146,
+    "length": 92,
+    "bank": 0,
+    "wavdesc": 11791
+  },
+  "bk0_wd2E49": {
+    "offset": 18238,
+    "length": 86,
+    "bank": 0,
+    "wavdesc": 11849
+  },
+  "bk0_wd2E76": {
+    "offset": 18324,
+    "length": 94,
+    "bank": 0,
+    "wavdesc": 11894
+  },
+  "bk0_wd2EC4": {
+    "offset": 18418,
+    "length": 95,
+    "bank": 0,
+    "wavdesc": 11972
+  },
+  "bk0_wd2F00": {
+    "offset": 18513,
+    "length": 94,
+    "bank": 0,
+    "wavdesc": 12032
+  },
+  "bk0_wd2F35": {
+    "offset": 18607,
+    "length": 93,
+    "bank": 0,
+    "wavdesc": 12085
+  },
+  "bk0_wd2F63": {
+    "offset": 18700,
+    "length": 91,
+    "bank": 0,
+    "wavdesc": 12131
+  },
+  "bk0_wd2F8C": {
+    "offset": 18791,
+    "length": 90,
+    "bank": 0,
+    "wavdesc": 12172
+  },
+  "bk0_wd2FB2": {
+    "offset": 18881,
+    "length": 95,
+    "bank": 0,
+    "wavdesc": 12210
+  },
+  "bk0_wd2FEA": {
+    "offset": 18976,
+    "length": 95,
+    "bank": 0,
+    "wavdesc": 12266
+  },
+  "bk0_wd301D": {
+    "offset": 19071,
+    "length": 104,
+    "bank": 0,
+    "wavdesc": 12317
+  },
+  "bk0_wd3049": {
+    "offset": 19175,
+    "length": 93,
+    "bank": 0,
+    "wavdesc": 12361
+  },
+  "bk0_wd3083": {
+    "offset": 19268,
+    "length": 93,
+    "bank": 0,
+    "wavdesc": 12419
+  },
+  "bk0_wd30B7": {
+    "offset": 19361,
+    "length": 95,
+    "bank": 0,
+    "wavdesc": 12471
+  },
+  "bk0_wd30DD": {
+    "offset": 19456,
+    "length": 95,
+    "bank": 0,
+    "wavdesc": 12509
+  },
+  "bk0_wd311B": {
+    "offset": 19551,
+    "length": 94,
+    "bank": 0,
+    "wavdesc": 12571
+  },
+  "bk0_wd315D": {
+    "offset": 19645,
+    "length": 104,
+    "bank": 0,
+    "wavdesc": 12637
+  },
+  "bk0_wd3199": {
+    "offset": 19749,
+    "length": 95,
+    "bank": 0,
+    "wavdesc": 12697
+  },
+  "bk0_wd31DA": {
+    "offset": 19844,
+    "length": 98,
+    "bank": 0,
+    "wavdesc": 12762
+  },
+  "bk0_wd3205": {
+    "offset": 19942,
+    "length": 95,
+    "bank": 0,
+    "wavdesc": 12805
+  },
+  "bk0_wd323B": {
+    "offset": 20037,
+    "length": 94,
+    "bank": 0,
+    "wavdesc": 12859
+  },
+  "bk0_wd326F": {
+    "offset": 20131,
+    "length": 88,
+    "bank": 0,
+    "wavdesc": 12911
+  },
+  "bk0_wd329B": {
+    "offset": 20219,
+    "length": 94,
+    "bank": 0,
+    "wavdesc": 12955
+  },
+  "bk0_wd32D3": {
+    "offset": 20313,
+    "length": 93,
+    "bank": 0,
+    "wavdesc": 13011
+  },
+  "bk0_wd3307": {
+    "offset": 20406,
+    "length": 92,
+    "bank": 0,
+    "wavdesc": 13063
+  },
+  "bk0_wd3336": {
+    "offset": 20498,
+    "length": 97,
+    "bank": 0,
+    "wavdesc": 13110
+  },
+  "bk0_wd3364": {
+    "offset": 20595,
+    "length": 99,
+    "bank": 0,
+    "wavdesc": 13156
+  },
+  "bk0_wd3393": {
+    "offset": 20694,
+    "length": 94,
+    "bank": 0,
+    "wavdesc": 13203
+  },
+  "bk0_wd33D9": {
+    "offset": 20788,
+    "length": 96,
+    "bank": 0,
+    "wavdesc": 13273
+  },
+  "bk0_wd3415": {
+    "offset": 20884,
+    "length": 98,
+    "bank": 0,
+    "wavdesc": 13333
+  },
+  "bk0_wd344C": {
+    "offset": 20982,
+    "length": 95,
+    "bank": 0,
+    "wavdesc": 13388
+  },
+  "bk0_wd347D": {
+    "offset": 21077,
+    "length": 95,
+    "bank": 0,
+    "wavdesc": 13437
+  },
+  "bk0_wd3683": {
+    "offset": 21172,
+    "length": 95,
+    "bank": 0,
+    "wavdesc": 13955
+  },
+  "bk0_wd36BB": {
+    "offset": 21267,
+    "length": 96,
+    "bank": 0,
+    "wavdesc": 14011
+  },
+  "bk0_wd36F5": {
+    "offset": 21363,
+    "length": 94,
+    "bank": 0,
+    "wavdesc": 14069
+  },
+  "bk0_wd373A": {
+    "offset": 21457,
+    "length": 94,
+    "bank": 0,
+    "wavdesc": 14138
+  },
+  "bk0_wd378D": {
+    "offset": 21551,
+    "length": 95,
+    "bank": 0,
+    "wavdesc": 14221
+  },
+  "bk0_wd37E0": {
+    "offset": 21646,
+    "length": 90,
+    "bank": 0,
+    "wavdesc": 14304
+  },
+  "bk0_wd3825": {
+    "offset": 21736,
+    "length": 102,
+    "bank": 0,
+    "wavdesc": 14373
+  },
+  "bk0_wd386B": {
+    "offset": 21838,
+    "length": 99,
+    "bank": 0,
+    "wavdesc": 14443
+  },
+  "bk0_wd38AB": {
+    "offset": 21937,
+    "length": 95,
+    "bank": 0,
+    "wavdesc": 14507
+  },
+  "bk0_wd38F5": {
+    "offset": 22032,
+    "length": 93,
+    "bank": 0,
+    "wavdesc": 14581
+  },
+  "bk0_wd393D": {
+    "offset": 22125,
+    "length": 93,
+    "bank": 0,
+    "wavdesc": 14653
+  },
+  "bk0_wd3975": {
+    "offset": 22218,
+    "length": 92,
+    "bank": 0,
+    "wavdesc": 14709
+  },
+  "bk0_wd39A6": {
+    "offset": 22310,
+    "length": 92,
+    "bank": 0,
+    "wavdesc": 14758
+  },
+  "bk0_wd39CF": {
+    "offset": 22402,
+    "length": 92,
+    "bank": 0,
+    "wavdesc": 14799
+  },
+  "bk0_wd3B1D": {
+    "offset": 22494,
+    "length": 96,
+    "bank": 0,
+    "wavdesc": 15133
+  },
+  "bk0_wd3B5F": {
+    "offset": 22590,
+    "length": 96,
+    "bank": 0,
+    "wavdesc": 15199
+  },
+  "bk0_wd3BA0": {
+    "offset": 22686,
+    "length": 96,
+    "bank": 0,
+    "wavdesc": 15264
+  },
+  "bk0_wd3BDC": {
+    "offset": 22782,
+    "length": 93,
+    "bank": 0,
+    "wavdesc": 15324
+  },
+  "bk0_wd3C0F": {
+    "offset": 22875,
+    "length": 97,
+    "bank": 0,
+    "wavdesc": 15375
+  },
+  "bk0_wd3C37": {
+    "offset": 22972,
+    "length": 101,
+    "bank": 0,
+    "wavdesc": 15415
+  },
+  "bk0_wd3C5F": {
+    "offset": 23073,
+    "length": 103,
+    "bank": 0,
+    "wavdesc": 15455
+  },
+  "bk0_wd3C87": {
+    "offset": 23176,
+    "length": 96,
+    "bank": 0,
+    "wavdesc": 15495
+  },
+  "bk0_wd3CCE": {
+    "offset": 23272,
+    "length": 96,
+    "bank": 0,
+    "wavdesc": 15566
+  },
+  "bk0_wd3D12": {
+    "offset": 23368,
+    "length": 95,
+    "bank": 0,
+    "wavdesc": 15634
+  },
+  "bk0_wd3D4E": {
+    "offset": 23463,
+    "length": 95,
+    "bank": 0,
+    "wavdesc": 15694
+  },
+  "bk0_wd3D81": {
+    "offset": 23558,
+    "length": 93,
+    "bank": 0,
+    "wavdesc": 15745
+  },
+  "bk0_wd3DA9": {
+    "offset": 23651,
+    "length": 94,
+    "bank": 0,
+    "wavdesc": 15785
+  },
+  "bk0_wd3DF1": {
+    "offset": 23745,
+    "length": 95,
+    "bank": 0,
+    "wavdesc": 15857
+  },
+  "bk0_wd3E37": {
+    "offset": 23840,
+    "length": 95,
+    "bank": 0,
+    "wavdesc": 15927
+  },
+  "bk0_wd3E81": {
+    "offset": 23935,
+    "length": 95,
+    "bank": 0,
+    "wavdesc": 16001
+  },
+  "bk0_wd3EC4": {
+    "offset": 24030,
+    "length": 108,
+    "bank": 0,
+    "wavdesc": 16068
+  },
+  "bk0_wd3FF6": {
+    "offset": 24138,
+    "length": 95,
+    "bank": 0,
+    "wavdesc": 16374
+  },
+  "bk0_wd4043": {
+    "offset": 24233,
+    "length": 96,
+    "bank": 0,
+    "wavdesc": 16451
+  },
+  "bk0_wd408E": {
+    "offset": 24329,
+    "length": 96,
+    "bank": 0,
+    "wavdesc": 16526
+  },
+  "bk0_wd40E1": {
+    "offset": 24425,
+    "length": 98,
+    "bank": 0,
+    "wavdesc": 16609
+  },
+  "bk0_wd4120": {
+    "offset": 24523,
+    "length": 96,
+    "bank": 0,
+    "wavdesc": 16672
+  },
+  "bk0_wd415E": {
+    "offset": 24619,
+    "length": 92,
+    "bank": 0,
+    "wavdesc": 16734
+  },
+  "bk0_wd4195": {
+    "offset": 24711,
+    "length": 96,
+    "bank": 0,
+    "wavdesc": 16789
+  },
+  "bk0_wd41C1": {
+    "offset": 24807,
+    "length": 96,
+    "bank": 0,
+    "wavdesc": 16833
+  },
+  "bk0_wd41EA": {
+    "offset": 24903,
+    "length": 94,
+    "bank": 0,
+    "wavdesc": 16874
+  },
+  "bk0_wd4228": {
+    "offset": 24997,
+    "length": 97,
+    "bank": 0,
+    "wavdesc": 16936
+  },
+  "bk0_wd4265": {
+    "offset": 25094,
+    "length": 93,
+    "bank": 0,
+    "wavdesc": 16997
+  },
+  "bk0_wd4352": {
+    "offset": 25187,
+    "length": 95,
+    "bank": 0,
+    "wavdesc": 17234
+  },
+  "bk0_wd4396": {
+    "offset": 25282,
+    "length": 96,
+    "bank": 0,
+    "wavdesc": 17302
+  },
+  "bk0_wd446A": {
+    "offset": 25378,
+    "length": 99,
+    "bank": 0,
+    "wavdesc": 17514
+  },
+  "bk0_wd456B": {
+    "offset": 25477,
+    "length": 94,
+    "bank": 0,
+    "wavdesc": 17771
+  },
+  "bk0_wd45AF": {
+    "offset": 25571,
+    "length": 93,
+    "bank": 0,
+    "wavdesc": 17839
+  },
+  "bk0_wd45EE": {
+    "offset": 25664,
+    "length": 89,
+    "bank": 0,
+    "wavdesc": 17902
+  },
+  "bk0_wd462F": {
+    "offset": 25753,
+    "length": 86,
+    "bank": 0,
+    "wavdesc": 17967
+  },
+  "bk0_wd4780": {
+    "offset": 25839,
+    "length": 95,
+    "bank": 0,
+    "wavdesc": 18304
+  },
+  "bk0_wd47BD": {
+    "offset": 25934,
+    "length": 96,
+    "bank": 0,
+    "wavdesc": 18365
+  },
+  "bk0_wd47F3": {
+    "offset": 26030,
+    "length": 96,
+    "bank": 0,
+    "wavdesc": 18419
+  },
+  "bk0_wd4824": {
+    "offset": 26126,
+    "length": 95,
+    "bank": 0,
+    "wavdesc": 18468
+  },
+  "bk0_wd4851": {
+    "offset": 26221,
+    "length": 95,
+    "bank": 0,
+    "wavdesc": 18513
+  },
+  "bk0_wd487C": {
+    "offset": 26316,
+    "length": 93,
+    "bank": 0,
+    "wavdesc": 18556
+  },
+  "bk0_wd48A4": {
+    "offset": 26409,
+    "length": 93,
+    "bank": 0,
+    "wavdesc": 18596
+  },
+  "bk0_wd48CA": {
+    "offset": 26502,
+    "length": 93,
+    "bank": 0,
+    "wavdesc": 18634
+  },
+  "bk0_wd48EF": {
+    "offset": 26595,
+    "length": 92,
+    "bank": 0,
+    "wavdesc": 18671
+  },
+  "bk0_wd4913": {
+    "offset": 26687,
+    "length": 95,
+    "bank": 0,
+    "wavdesc": 18707
+  },
+  "bk0_wd4957": {
+    "offset": 26782,
+    "length": 95,
+    "bank": 0,
+    "wavdesc": 18775
+  },
+  "bk0_wd499B": {
+    "offset": 26877,
+    "length": 92,
+    "bank": 0,
+    "wavdesc": 18843
+  },
+  "bk0_wd49EA": {
+    "offset": 26969,
+    "length": 95,
+    "bank": 0,
+    "wavdesc": 18922
+  },
+  "bk0_wd4A3B": {
+    "offset": 27064,
+    "length": 96,
+    "bank": 0,
+    "wavdesc": 19003
+  },
+  "bk0_wd4A84": {
+    "offset": 27160,
+    "length": 94,
+    "bank": 0,
+    "wavdesc": 19076
+  },
+  "bk0_wd4AC6": {
+    "offset": 27254,
+    "length": 98,
+    "bank": 0,
+    "wavdesc": 19142
+  },
+  "bk0_wd4B08": {
+    "offset": 27352,
+    "length": 102,
+    "bank": 0,
+    "wavdesc": 19208
+  },
+  "bk0_wd4B41": {
+    "offset": 27454,
+    "length": 99,
+    "bank": 0,
+    "wavdesc": 19265
+  },
+  "bk0_wd4B7B": {
+    "offset": 27553,
+    "length": 99,
+    "bank": 0,
+    "wavdesc": 19323
+  },
+  "bk0_wd4BBC": {
+    "offset": 27652,
+    "length": 97,
+    "bank": 0,
+    "wavdesc": 19388
+  },
+  "bk0_wd4C01": {
+    "offset": 27749,
+    "length": 96,
+    "bank": 0,
+    "wavdesc": 19457
+  },
+  "bk0_wd4C49": {
+    "offset": 27845,
+    "length": 94,
+    "bank": 0,
+    "wavdesc": 19529
+  },
+  "bk0_wd4C8E": {
+    "offset": 27939,
+    "length": 93,
+    "bank": 0,
+    "wavdesc": 19598
+  },
+  "bk0_wd4CCF": {
+    "offset": 28032,
+    "length": 88,
+    "bank": 0,
+    "wavdesc": 19663
+  },
+  "bk0_wd4D06": {
+    "offset": 28120,
+    "length": 99,
+    "bank": 0,
+    "wavdesc": 19718
+  },
+  "bk0_wd4D32": {
+    "offset": 28219,
+    "length": 95,
+    "bank": 0,
+    "wavdesc": 19762
+  },
+  "bk0_wd4D76": {
+    "offset": 28314,
+    "length": 96,
+    "bank": 0,
+    "wavdesc": 19830
+  },
+  "bk0_wd4DB7": {
+    "offset": 28410,
+    "length": 96,
+    "bank": 0,
+    "wavdesc": 19895
+  },
+  "bk0_wd4DEE": {
+    "offset": 28506,
+    "length": 95,
+    "bank": 0,
+    "wavdesc": 19950
+  },
+  "bk0_wd4E21": {
+    "offset": 28601,
+    "length": 94,
+    "bank": 0,
+    "wavdesc": 20001
+  },
+  "bk0_wd4E4C": {
+    "offset": 28695,
+    "length": 96,
+    "bank": 0,
+    "wavdesc": 20044
+  },
+  "bk0_wd4E7D": {
+    "offset": 28791,
+    "length": 96,
+    "bank": 0,
+    "wavdesc": 20093
+  },
+  "bk0_wd4EB3": {
+    "offset": 28887,
+    "length": 96,
+    "bank": 0,
+    "wavdesc": 20147
+  },
+  "bk0_wd4EF5": {
+    "offset": 28983,
+    "length": 96,
+    "bank": 0,
+    "wavdesc": 20213
+  },
+  "bk0_wd4F2F": {
+    "offset": 29079,
+    "length": 96,
+    "bank": 0,
+    "wavdesc": 20271
+  },
+  "bk0_wd4F72": {
+    "offset": 29175,
+    "length": 102,
+    "bank": 0,
+    "wavdesc": 20338
+  },
+  "bk0_wd4FB7": {
+    "offset": 29277,
+    "length": 100,
+    "bank": 0,
+    "wavdesc": 20407
+  },
+  "bk0_wd4FDF": {
+    "offset": 29377,
+    "length": 100,
+    "bank": 0,
+    "wavdesc": 20447
+  },
+  "bk0_wd5104": {
+    "offset": 29477,
+    "length": 93,
+    "bank": 0,
+    "wavdesc": 20740
+  },
+  "bk0_wd5148": {
+    "offset": 29570,
+    "length": 95,
+    "bank": 0,
+    "wavdesc": 20808
+  },
+  "bk0_wd518B": {
+    "offset": 29665,
+    "length": 95,
+    "bank": 0,
+    "wavdesc": 20875
+  },
+  "bk0_wd5247": {
+    "offset": 29760,
+    "length": 95,
+    "bank": 0,
+    "wavdesc": 21063
+  },
+  "bk0_wd5291": {
+    "offset": 29855,
+    "length": 95,
+    "bank": 0,
+    "wavdesc": 21137
+  },
+  "bk0_wd52D8": {
+    "offset": 29950,
+    "length": 93,
+    "bank": 0,
+    "wavdesc": 21208
+  },
+  "bk0_wd531B": {
+    "offset": 30043,
+    "length": 96,
+    "bank": 0,
+    "wavdesc": 21275
+  },
+  "bk0_wd5360": {
+    "offset": 30139,
+    "length": 96,
+    "bank": 0,
+    "wavdesc": 21344
+  },
+  "bk0_wd53A0": {
+    "offset": 30235,
+    "length": 99,
+    "bank": 0,
+    "wavdesc": 21408
+  },
+  "bk0_wd53EB": {
+    "offset": 30334,
+    "length": 95,
+    "bank": 0,
+    "wavdesc": 21483
+  },
+  "bk0_wd542D": {
+    "offset": 30429,
+    "length": 95,
+    "bank": 0,
+    "wavdesc": 21549
+  },
+  "bk0_wd5468": {
+    "offset": 30524,
+    "length": 97,
+    "bank": 0,
+    "wavdesc": 21608
+  },
+  "bk0_wd54A2": {
+    "offset": 30621,
+    "length": 98,
+    "bank": 0,
+    "wavdesc": 21666
+  },
+  "bk0_wd54D6": {
+    "offset": 30719,
+    "length": 99,
+    "bank": 0,
+    "wavdesc": 21718
+  },
+  "bk0_wd5503": {
+    "offset": 30818,
+    "length": 94,
+    "bank": 0,
+    "wavdesc": 21763
+  },
+  "bk0_wd5551": {
+    "offset": 30912,
+    "length": 94,
+    "bank": 0,
+    "wavdesc": 21841
+  },
+  "bk0_wd55A2": {
+    "offset": 31006,
+    "length": 92,
+    "bank": 0,
+    "wavdesc": 21922
+  },
+  "bk0_wd55E6": {
+    "offset": 31098,
+    "length": 108,
+    "bank": 0,
+    "wavdesc": 21990
+  },
+  "bk0_wd5623": {
+    "offset": 31206,
+    "length": 93,
+    "bank": 0,
+    "wavdesc": 22051
+  },
+  "bk0_wd566E": {
+    "offset": 31299,
+    "length": 94,
+    "bank": 0,
+    "wavdesc": 22126
+  },
+  "bk0_wd56B3": {
+    "offset": 31393,
+    "length": 93,
+    "bank": 0,
+    "wavdesc": 22195
+  },
+  "bk0_wd56F4": {
+    "offset": 31486,
+    "length": 84,
+    "bank": 0,
+    "wavdesc": 22260
+  },
+  "bk0_wd5723": {
+    "offset": 31570,
+    "length": 95,
+    "bank": 0,
+    "wavdesc": 22307
+  },
+  "bk0_wd5770": {
+    "offset": 31665,
+    "length": 95,
+    "bank": 0,
+    "wavdesc": 22384
+  },
+  "bk0_wd57BF": {
+    "offset": 31760,
+    "length": 97,
+    "bank": 0,
+    "wavdesc": 22463
+  },
+  "bk0_wd57F5": {
+    "offset": 31857,
+    "length": 93,
+    "bank": 0,
+    "wavdesc": 22517
+  },
+  "bk0_wd581B": {
+    "offset": 31950,
+    "length": 93,
+    "bank": 0,
+    "wavdesc": 22555
+  },
+  "bk0_wd5841": {
+    "offset": 32043,
+    "length": 95,
+    "bank": 0,
+    "wavdesc": 22593
+  },
+  "bk0_wd5892": {
+    "offset": 32138,
+    "length": 94,
+    "bank": 0,
+    "wavdesc": 22674
+  },
+  "bk0_wd58E7": {
+    "offset": 32232,
+    "length": 95,
+    "bank": 0,
+    "wavdesc": 22759
+  },
+  "bk0_wd5936": {
+    "offset": 32327,
+    "length": 95,
+    "bank": 0,
+    "wavdesc": 22838
+  },
+  "bk0_wd597B": {
+    "offset": 32422,
+    "length": 96,
+    "bank": 0,
+    "wavdesc": 22907
+  },
+  "bk0_wd59BE": {
+    "offset": 32518,
+    "length": 97,
+    "bank": 0,
+    "wavdesc": 22974
+  },
+  "bk0_wd5A02": {
+    "offset": 32615,
+    "length": 86,
+    "bank": 0,
+    "wavdesc": 23042
+  },
+  "bk0_wd5A2E": {
+    "offset": 32701,
+    "length": 88,
+    "bank": 0,
+    "wavdesc": 23086
+  },
+  "bk0_wd5A65": {
+    "offset": 32789,
+    "length": 94,
+    "bank": 0,
+    "wavdesc": 23141
+  },
+  "bk0_wd5AA6": {
+    "offset": 32883,
+    "length": 96,
+    "bank": 0,
+    "wavdesc": 23206
+  },
+  "bk0_wd5AD1": {
+    "offset": 32979,
+    "length": 96,
+    "bank": 0,
+    "wavdesc": 23249
+  },
+  "bk0_wd5AF6": {
+    "offset": 33075,
+    "length": 98,
+    "bank": 0,
+    "wavdesc": 23286
+  },
+  "bk0_wd5B1C": {
+    "offset": 33173,
+    "length": 81,
+    "bank": 0,
+    "wavdesc": 23324
+  },
+  "bk0_wd5B51": {
+    "offset": 33254,
+    "length": 86,
+    "bank": 0,
+    "wavdesc": 23377
+  },
+  "bk0_wd5B8C": {
+    "offset": 33340,
+    "length": 93,
+    "bank": 0,
+    "wavdesc": 23436
+  },
+  "bk0_wd5BCC": {
+    "offset": 33433,
+    "length": 96,
+    "bank": 0,
+    "wavdesc": 23500
+  },
+  "bk0_wd5BF9": {
+    "offset": 33529,
+    "length": 95,
+    "bank": 0,
+    "wavdesc": 23545
+  },
+  "bk0_wd5C2C": {
+    "offset": 33624,
+    "length": 96,
+    "bank": 0,
+    "wavdesc": 23596
+  },
+  "bk0_wd5C57": {
+    "offset": 33720,
+    "length": 96,
+    "bank": 0,
+    "wavdesc": 23639
+  },
+  "bk0_wd5C7B": {
+    "offset": 33816,
+    "length": 96,
+    "bank": 0,
+    "wavdesc": 23675
+  },
+  "bk0_wd5CA1": {
+    "offset": 33912,
+    "length": 113,
+    "bank": 0,
+    "wavdesc": 23713
+  },
+  "bk0_wd5CD3": {
+    "offset": 34025,
+    "length": 68,
+    "bank": 0,
+    "wavdesc": 23763
+  },
+  "bk0_wd5CF0": {
+    "offset": 34093,
+    "length": 94,
+    "bank": 0,
+    "wavdesc": 23792
+  },
+  "bk0_wd5D1C": {
+    "offset": 34187,
+    "length": 96,
+    "bank": 0,
+    "wavdesc": 23836
+  },
+  "bk0_wd5D43": {
+    "offset": 34283,
+    "length": 96,
+    "bank": 0,
+    "wavdesc": 23875
+  },
+  "bk0_wd5D6F": {
+    "offset": 34379,
+    "length": 96,
+    "bank": 0,
+    "wavdesc": 23919
+  },
+  "bk0_wd5DB4": {
+    "offset": 34475,
+    "length": 96,
+    "bank": 0,
+    "wavdesc": 23988
+  },
+  "bk0_wd5DEE": {
+    "offset": 34571,
+    "length": 96,
+    "bank": 0,
+    "wavdesc": 24046
+  },
+  "bk0_wd5E32": {
+    "offset": 34667,
+    "length": 141,
+    "bank": 0,
+    "wavdesc": 24114
+  },
+  "bk0_wd5E8B": {
+    "offset": 34808,
+    "length": 96,
+    "bank": 0,
+    "wavdesc": 24203
+  },
+  "bk0_wd5EC0": {
+    "offset": 34904,
+    "length": 96,
+    "bank": 0,
+    "wavdesc": 24256
+  },
+  "bk0_wd5EEB": {
+    "offset": 35000,
+    "length": 96,
+    "bank": 0,
+    "wavdesc": 24299
+  },
+  "bk0_wd5F19": {
+    "offset": 35096,
+    "length": 60,
+    "bank": 0,
+    "wavdesc": 24345
+  },
+  "bk0_wd5F37": {
+    "offset": 35156,
+    "length": 87,
+    "bank": 0,
+    "wavdesc": 24375
+  },
+  "bk0_wd5F73": {
+    "offset": 35243,
+    "length": 92,
+    "bank": 0,
+    "wavdesc": 24435
+  },
+  "bk0_wd5FB2": {
+    "offset": 35335,
+    "length": 96,
+    "bank": 0,
+    "wavdesc": 24498
+  },
+  "bk0_wd5FD9": {
+    "offset": 35431,
+    "length": 77,
+    "bank": 0,
+    "wavdesc": 24537
+  },
+  "bk0_wd5FF8": {
+    "offset": 35508,
+    "length": 96,
+    "bank": 0,
+    "wavdesc": 24568
+  },
+  "bk0_wd6024": {
+    "offset": 35604,
+    "length": 96,
+    "bank": 0,
+    "wavdesc": 24612
+  },
+  "bk0_wd604D": {
+    "offset": 35700,
+    "length": 96,
+    "bank": 0,
+    "wavdesc": 24653
+  },
+  "bk0_wd6077": {
+    "offset": 35796,
+    "length": 96,
+    "bank": 0,
+    "wavdesc": 24695
+  },
+  "bk0_wd60A0": {
+    "offset": 35892,
+    "length": 87,
+    "bank": 0,
+    "wavdesc": 24736
+  },
+  "bk0_wd60CB": {
+    "offset": 35979,
+    "length": 92,
+    "bank": 0,
+    "wavdesc": 24779
+  },
+  "bk0_wd60FB": {
+    "offset": 36071,
+    "length": 95,
+    "bank": 0,
+    "wavdesc": 24827
+  },
+  "bk0_wd615D": {
+    "offset": 36166,
+    "length": 86,
+    "bank": 0,
+    "wavdesc": 24925
+  },
+  "bk0_wd6180": {
+    "offset": 36252,
+    "length": 91,
+    "bank": 0,
+    "wavdesc": 24960
+  },
+  "bk0_wd61AE": {
+    "offset": 36343,
+    "length": 93,
+    "bank": 0,
+    "wavdesc": 25006
+  },
+  "bk0_wd61E0": {
+    "offset": 36436,
+    "length": 84,
+    "bank": 0,
+    "wavdesc": 25056
+  },
+  "bk0_wd620C": {
+    "offset": 36520,
+    "length": 88,
+    "bank": 0,
+    "wavdesc": 25100
+  },
+  "bk0_wd6245": {
+    "offset": 36608,
+    "length": 92,
+    "bank": 0,
+    "wavdesc": 25157
+  },
+  "bk0_wd628A": {
+    "offset": 36700,
+    "length": 95,
+    "bank": 0,
+    "wavdesc": 25226
+  },
+  "bk0_wd62D2": {
+    "offset": 36795,
+    "length": 96,
+    "bank": 0,
+    "wavdesc": 25298
+  },
+  "bk0_wd631C": {
+    "offset": 36891,
+    "length": 87,
+    "bank": 0,
+    "wavdesc": 25372
+  },
+  "bk0_wd634D": {
+    "offset": 36978,
+    "length": 90,
+    "bank": 0,
+    "wavdesc": 25421
+  },
+  "bk0_wd6384": {
+    "offset": 37068,
+    "length": 90,
+    "bank": 0,
+    "wavdesc": 25476
+  },
+  "bk0_wd63C3": {
+    "offset": 37158,
+    "length": 95,
+    "bank": 0,
+    "wavdesc": 25539
+  },
+  "bk0_wd6409": {
+    "offset": 37253,
+    "length": 88,
+    "bank": 0,
+    "wavdesc": 25609
+  },
+  "bk0_wd643D": {
+    "offset": 37341,
+    "length": 92,
+    "bank": 0,
+    "wavdesc": 25661
+  },
+  "bk0_wd6476": {
+    "offset": 37433,
+    "length": 93,
+    "bank": 0,
+    "wavdesc": 25718
+  },
+  "bk0_wd64B3": {
+    "offset": 37526,
+    "length": 96,
+    "bank": 0,
+    "wavdesc": 25779
+  },
+  "bk0_wd64F5": {
+    "offset": 37622,
+    "length": 97,
+    "bank": 0,
+    "wavdesc": 25845
+  },
+  "bk0_wd6539": {
+    "offset": 37719,
+    "length": 78,
+    "bank": 0,
+    "wavdesc": 25913
+  },
+  "bk0_wd655D": {
+    "offset": 37797,
+    "length": 65,
+    "bank": 0,
+    "wavdesc": 25949
+  },
+  "bk0_wd657E": {
+    "offset": 37862,
+    "length": 92,
+    "bank": 0,
+    "wavdesc": 25982
+  },
+  "bk0_wd65B6": {
+    "offset": 37954,
+    "length": 94,
+    "bank": 0,
+    "wavdesc": 26038
+  },
+  "bk0_wd6602": {
+    "offset": 38048,
+    "length": 96,
+    "bank": 0,
+    "wavdesc": 26114
+  },
+  "bk0_wd6629": {
+    "offset": 38144,
+    "length": 96,
+    "bank": 0,
+    "wavdesc": 26153
+  },
+  "bk0_wd664E": {
+    "offset": 38240,
+    "length": 96,
+    "bank": 0,
+    "wavdesc": 26190
+  },
+  "bk0_wd667B": {
+    "offset": 38336,
+    "length": 96,
+    "bank": 0,
+    "wavdesc": 26235
+  },
+  "bk0_wd66A5": {
+    "offset": 38432,
+    "length": 94,
+    "bank": 0,
+    "wavdesc": 26277
+  },
+  "bk0_wd66DE": {
+    "offset": 38526,
+    "length": 96,
+    "bank": 0,
+    "wavdesc": 26334
+  },
+  "bk0_wd6720": {
+    "offset": 38622,
+    "length": 97,
+    "bank": 0,
+    "wavdesc": 26400
+  },
+  "bk0_wd6764": {
+    "offset": 38719,
+    "length": 96,
+    "bank": 0,
+    "wavdesc": 26468
+  },
+  "bk0_wd6798": {
+    "offset": 38815,
+    "length": 96,
+    "bank": 0,
+    "wavdesc": 26520
+  },
+  "bk0_wd67C5": {
+    "offset": 38911,
+    "length": 129,
+    "bank": 0,
+    "wavdesc": 26565
+  },
+  "bk0_wd6800": {
+    "offset": 39040,
+    "length": 96,
+    "bank": 0,
+    "wavdesc": 26624
+  },
+  "bk0_wd682B": {
+    "offset": 39136,
+    "length": 82,
+    "bank": 0,
+    "wavdesc": 26667
+  },
+  "bk0_wd685B": {
+    "offset": 39218,
+    "length": 88,
+    "bank": 0,
+    "wavdesc": 26715
+  },
+  "bk0_wd6897": {
+    "offset": 39306,
+    "length": 96,
+    "bank": 0,
+    "wavdesc": 26775
+  },
+  "bk0_wd68E1": {
+    "offset": 39402,
+    "length": 96,
+    "bank": 0,
+    "wavdesc": 26849
+  },
+  "bk0_wd691C": {
+    "offset": 39498,
+    "length": 96,
+    "bank": 0,
+    "wavdesc": 26908
+  },
+  "bk0_wd694A": {
+    "offset": 39594,
+    "length": 55,
+    "bank": 0,
+    "wavdesc": 26954
+  },
+  "bk0_wd6960": {
+    "offset": 39649,
+    "length": 96,
+    "bank": 0,
+    "wavdesc": 26976
+  },
+  "bk0_wd698D": {
+    "offset": 39745,
+    "length": 96,
+    "bank": 0,
+    "wavdesc": 27021
+  },
+  "bk0_wd69BE": {
+    "offset": 39841,
+    "length": 96,
+    "bank": 0,
+    "wavdesc": 27070
+  },
+  "bk0_wd69EA": {
+    "offset": 39937,
+    "length": 96,
+    "bank": 0,
+    "wavdesc": 27114
+  },
+  "bk0_wd6A0F": {
+    "offset": 40033,
+    "length": 96,
+    "bank": 0,
+    "wavdesc": 27151
+  },
+  "bk0_wd6A34": {
+    "offset": 40129,
+    "length": 96,
+    "bank": 0,
+    "wavdesc": 27188
+  },
+  "bk0_wd6A5A": {
+    "offset": 40225,
+    "length": 96,
+    "bank": 0,
+    "wavdesc": 27226
+  },
+  "bk0_wd6A83": {
+    "offset": 40321,
+    "length": 91,
+    "bank": 0,
+    "wavdesc": 27267
+  },
+  "bk0_wd6AAB": {
+    "offset": 40412,
+    "length": 96,
+    "bank": 0,
+    "wavdesc": 27307
+  },
+  "bk0_wd6AD4": {
+    "offset": 40508,
+    "length": 96,
+    "bank": 0,
+    "wavdesc": 27348
+  },
+  "bk0_wd6AFB": {
+    "offset": 40604,
+    "length": 96,
+    "bank": 0,
+    "wavdesc": 27387
+  },
+  "bk0_wd6B2A": {
+    "offset": 40700,
+    "length": 53,
+    "bank": 0,
+    "wavdesc": 27434
+  },
+  "bk0_wd6B40": {
+    "offset": 40753,
+    "length": 71,
+    "bank": 0,
+    "wavdesc": 27456
+  },
+  "bk0_wd6B62": {
+    "offset": 40824,
+    "length": 87,
+    "bank": 0,
+    "wavdesc": 27490
+  },
+  "bk0_wd6B92": {
+    "offset": 40911,
+    "length": 92,
+    "bank": 0,
+    "wavdesc": 27538
+  },
+  "bk0_wd6BC3": {
+    "offset": 41003,
+    "length": 80,
+    "bank": 0,
+    "wavdesc": 27587
+  },
+  "bk0_wd6BEC": {
+    "offset": 41083,
+    "length": 89,
+    "bank": 0,
+    "wavdesc": 27628
+  },
+  "bk0_wd6C1E": {
+    "offset": 41172,
+    "length": 91,
+    "bank": 0,
+    "wavdesc": 27678
+  },
+  "bk0_wd6C58": {
+    "offset": 41263,
+    "length": 93,
+    "bank": 0,
+    "wavdesc": 27736
+  },
+  "bk0_wd6C9E": {
+    "offset": 41356,
+    "length": 131,
+    "bank": 0,
+    "wavdesc": 27806
+  },
+  "bk0_wd6CD4": {
+    "offset": 41487,
+    "length": 85,
+    "bank": 0,
+    "wavdesc": 27860
+  },
+  "bk0_wd6CFB": {
+    "offset": 41572,
+    "length": 88,
+    "bank": 0,
+    "wavdesc": 27899
+  },
+  "bk0_wd6D22": {
+    "offset": 41660,
+    "length": 86,
+    "bank": 0,
+    "wavdesc": 27938
+  },
+  "bk0_wd6D49": {
+    "offset": 41746,
+    "length": 96,
+    "bank": 0,
+    "wavdesc": 27977
+  },
+  "bk0_wd6D71": {
+    "offset": 41842,
+    "length": 96,
+    "bank": 0,
+    "wavdesc": 28017
+  },
+  "bk0_wd6D97": {
+    "offset": 41938,
+    "length": 96,
+    "bank": 0,
+    "wavdesc": 28055
+  },
+  "bk0_wd6DBE": {
+    "offset": 42034,
+    "length": 96,
+    "bank": 0,
+    "wavdesc": 28094
+  },
+  "bk0_wd6DEE": {
+    "offset": 42130,
+    "length": 96,
+    "bank": 0,
+    "wavdesc": 28142
+  },
+  "bk0_wd6E18": {
+    "offset": 42226,
+    "length": 96,
+    "bank": 0,
+    "wavdesc": 28184
+  },
+  "bk0_wd6E43": {
+    "offset": 42322,
+    "length": 90,
+    "bank": 0,
+    "wavdesc": 28227
+  },
+  "bk0_wd6E82": {
+    "offset": 42412,
+    "length": 93,
+    "bank": 0,
+    "wavdesc": 28290
+  },
+  "bk0_wd6EC5": {
+    "offset": 42505,
+    "length": 96,
+    "bank": 0,
+    "wavdesc": 28357
+  },
+  "bk0_wd6F01": {
+    "offset": 42601,
+    "length": 96,
+    "bank": 0,
+    "wavdesc": 28417
+  },
+  "bk0_wd6F2E": {
+    "offset": 42697,
+    "length": 96,
+    "bank": 0,
+    "wavdesc": 28462
+  },
+  "bk0_wd6F61": {
+    "offset": 42793,
+    "length": 96,
+    "bank": 0,
+    "wavdesc": 28513
+  },
+  "bk0_wd6F97": {
+    "offset": 42889,
+    "length": 96,
+    "bank": 0,
+    "wavdesc": 28567
+  },
+  "bk0_wd6FCA": {
+    "offset": 42985,
+    "length": 62,
+    "bank": 0,
+    "wavdesc": 28618
+  },
+  "bk0_wd6FE6": {
+    "offset": 43047,
+    "length": 131,
+    "bank": 0,
+    "wavdesc": 28646
+  },
+  "bk0_wd701A": {
+    "offset": 43178,
+    "length": 96,
+    "bank": 0,
+    "wavdesc": 28698
+  },
+  "bk0_wd7045": {
+    "offset": 43274,
+    "length": 60,
+    "bank": 0,
+    "wavdesc": 28741
+  },
+  "bk0_wd705D": {
+    "offset": 43334,
+    "length": 82,
+    "bank": 0,
+    "wavdesc": 28765
+  },
+  "bk0_wd707D": {
+    "offset": 43416,
+    "length": 66,
+    "bank": 0,
+    "wavdesc": 28797
+  },
+  "bk0_wd7097": {
+    "offset": 43482,
+    "length": 83,
+    "bank": 0,
+    "wavdesc": 28823
+  },
+  "bk0_wd70B7": {
+    "offset": 43565,
+    "length": 76,
+    "bank": 0,
+    "wavdesc": 28855
+  },
+  "bk0_wd70D5": {
+    "offset": 43641,
+    "length": 102,
+    "bank": 0,
+    "wavdesc": 28885
+  },
+  "bk0_wd70FC": {
+    "offset": 43743,
+    "length": 96,
+    "bank": 0,
+    "wavdesc": 28924
+  },
+  "bk0_wd712E": {
+    "offset": 43839,
+    "length": 96,
+    "bank": 0,
+    "wavdesc": 28974
+  },
+  "bk0_wd7202": {
+    "offset": 43935,
+    "length": 96,
+    "bank": 0,
+    "wavdesc": 29186
+  },
+  "bk0_wd722C": {
+    "offset": 44031,
+    "length": 96,
+    "bank": 0,
+    "wavdesc": 29228
+  },
+  "bk0_wd7253": {
+    "offset": 44127,
+    "length": 96,
+    "bank": 0,
+    "wavdesc": 29267
+  },
+  "bk0_wd7279": {
+    "offset": 44223,
+    "length": 96,
+    "bank": 0,
+    "wavdesc": 29305
+  },
+  "bk0_wd72A1": {
+    "offset": 44319,
+    "length": 77,
+    "bank": 0,
+    "wavdesc": 29345
+  },
+  "bk0_wd72BF": {
+    "offset": 44396,
+    "length": 96,
+    "bank": 0,
+    "wavdesc": 29375
+  },
+  "bk0_wd72E7": {
+    "offset": 44492,
+    "length": 96,
+    "bank": 0,
+    "wavdesc": 29415
+  },
+  "bk0_wd730C": {
+    "offset": 44588,
+    "length": 96,
+    "bank": 0,
+    "wavdesc": 29452
+  },
+  "bk0_wd7336": {
+    "offset": 44684,
+    "length": 96,
+    "bank": 0,
+    "wavdesc": 29494
+  },
+  "bk0_wd7366": {
+    "offset": 44780,
+    "length": 85,
+    "bank": 0,
+    "wavdesc": 29542
+  },
+  "bk0_wd7396": {
+    "offset": 44865,
+    "length": 93,
+    "bank": 0,
+    "wavdesc": 29590
+  },
+  "bk0_wd73F6": {
+    "offset": 44958,
+    "length": 109,
+    "bank": 0,
+    "wavdesc": 29686
+  },
+  "bk0_wd742D": {
+    "offset": 45067,
+    "length": 96,
+    "bank": 0,
+    "wavdesc": 29741
+  },
+  "bk0_wd7455": {
+    "offset": 45163,
+    "length": 96,
+    "bank": 0,
+    "wavdesc": 29781
+  },
+  "bk0_wd747B": {
+    "offset": 45259,
+    "length": 101,
+    "bank": 0,
+    "wavdesc": 29819
+  },
+  "bk0_wd74A3": {
+    "offset": 45360,
+    "length": 64,
+    "bank": 0,
+    "wavdesc": 29859
+  },
+  "bk0_wd74C3": {
+    "offset": 45424,
+    "length": 91,
+    "bank": 0,
+    "wavdesc": 29891
+  },
+  "bk0_wd74F9": {
+    "offset": 45515,
+    "length": 94,
+    "bank": 0,
+    "wavdesc": 29945
+  },
+  "bk0_wd764F": {
+    "offset": 45609,
+    "length": 85,
+    "bank": 0,
+    "wavdesc": 30287
+  },
+  "bk0_wd767D": {
+    "offset": 45694,
+    "length": 93,
+    "bank": 0,
+    "wavdesc": 30333
+  },
+  "bk0_wd76F4": {
+    "offset": 45787,
+    "length": 67,
+    "bank": 0,
+    "wavdesc": 30452
+  },
+  "bk0_wd771B": {
+    "offset": 45854,
+    "length": 87,
+    "bank": 0,
+    "wavdesc": 30491
+  },
+  "bk0_wd775D": {
+    "offset": 45941,
+    "length": 94,
+    "bank": 0,
+    "wavdesc": 30557
+  },
+  "bk0_wd77AE": {
+    "offset": 46035,
+    "length": 75,
+    "bank": 0,
+    "wavdesc": 30638
+  },
+  "bk0_wd77DB": {
+    "offset": 46110,
+    "length": 86,
+    "bank": 0,
+    "wavdesc": 30683
+  },
+  "bk0_wd781C": {
+    "offset": 46196,
+    "length": 88,
+    "bank": 0,
+    "wavdesc": 30748
+  },
+  "bk0_wd7864": {
+    "offset": 46284,
+    "length": 93,
+    "bank": 0,
+    "wavdesc": 30820
+  },
+  "bk0_wd78A4": {
+    "offset": 46377,
+    "length": 75,
+    "bank": 0,
+    "wavdesc": 30884
+  },
+  "bk0_wd78C8": {
+    "offset": 46452,
+    "length": 86,
+    "bank": 0,
+    "wavdesc": 30920
+  },
+  "bk0_wd78FC": {
+    "offset": 46538,
+    "length": 94,
+    "bank": 0,
+    "wavdesc": 30972
+  },
+  "bk0_wd7946": {
+    "offset": 46632,
+    "length": 65,
+    "bank": 0,
+    "wavdesc": 31046
+  },
+  "bk0_wd7967": {
+    "offset": 46697,
+    "length": 95,
+    "bank": 0,
+    "wavdesc": 31079
+  },
+  "bk0_wd79A1": {
+    "offset": 46792,
+    "length": 94,
+    "bank": 0,
+    "wavdesc": 31137
+  },
+  "bk0_wd79EA": {
+    "offset": 46886,
+    "length": 96,
+    "bank": 0,
+    "wavdesc": 31210
+  },
+  "bk0_wd7A3E": {
+    "offset": 46982,
+    "length": 139,
+    "bank": 0,
+    "wavdesc": 31294
+  },
+  "bk0_wd7AE3": {
+    "offset": 47121,
+    "length": 71,
+    "bank": 0,
+    "wavdesc": 31459
+  },
+  "bk0_wd7B07": {
+    "offset": 47192,
+    "length": 88,
+    "bank": 0,
+    "wavdesc": 31495
+  },
+  "bk0_wd7B44": {
+    "offset": 47280,
+    "length": 91,
+    "bank": 0,
+    "wavdesc": 31556
+  },
+  "bk0_wd7B90": {
+    "offset": 47371,
+    "length": 95,
+    "bank": 0,
+    "wavdesc": 31632
+  },
+  "bk0_wd7BE1": {
+    "offset": 47466,
+    "length": 99,
+    "bank": 0,
+    "wavdesc": 31713
+  },
+  "bk0_wd7C07": {
+    "offset": 47565,
+    "length": 98,
+    "bank": 0,
+    "wavdesc": 31751
+  },
+  "bk0_wd7C2F": {
+    "offset": 47663,
+    "length": 100,
+    "bank": 0,
+    "wavdesc": 31791
+  },
+  "bk0_wd7C57": {
+    "offset": 47763,
+    "length": 94,
+    "bank": 0,
+    "wavdesc": 31831
+  },
+  "bk0_wd7C7C": {
+    "offset": 47857,
+    "length": 74,
+    "bank": 0,
+    "wavdesc": 31868
+  },
+  "bk0_wd7C9D": {
+    "offset": 47931,
+    "length": 92,
+    "bank": 0,
+    "wavdesc": 31901
+  },
+  "bk0_wd7CD8": {
+    "offset": 48023,
+    "length": 95,
+    "bank": 0,
+    "wavdesc": 31960
+  },
+  "bk0_wd7D17": {
+    "offset": 48118,
+    "length": 87,
+    "bank": 0,
+    "wavdesc": 32023
+  },
+  "bk0_wd7D50": {
+    "offset": 48205,
+    "length": 93,
+    "bank": 0,
+    "wavdesc": 32080
+  },
+  "bk0_wd7D8F": {
+    "offset": 48298,
+    "length": 54,
+    "bank": 0,
+    "wavdesc": 32143
+  },
+  "bk0_wd7DBB": {
+    "offset": 48352,
+    "length": 106,
+    "bank": 0,
+    "wavdesc": 32187
+  },
+  "bk0_wd7E18": {
+    "offset": 48458,
+    "length": 101,
+    "bank": 0,
+    "wavdesc": 32280
+  },
+  "bk0_wd7E6F": {
+    "offset": 48559,
+    "length": 96,
+    "bank": 0,
+    "wavdesc": 32367
+  },
+  "bk0_wd7EC7": {
+    "offset": 48655,
+    "length": 90,
+    "bank": 0,
+    "wavdesc": 32455
+  },
+  "bk0_wd7F01": {
+    "offset": 48745,
+    "length": 94,
+    "bank": 0,
+    "wavdesc": 32513
+  },
+  "bk0_wd8054": {
+    "offset": 48839,
+    "length": 97,
+    "bank": 0,
+    "wavdesc": 32852
+  },
+  "bk0_wd807C": {
+    "offset": 48936,
+    "length": 91,
+    "bank": 0,
+    "wavdesc": 32892
+  },
+  "bk0_wd80A5": {
+    "offset": 49027,
+    "length": 98,
+    "bank": 0,
+    "wavdesc": 32933
+  },
+  "bk0_wd80CD": {
+    "offset": 49125,
+    "length": 128,
+    "bank": 0,
+    "wavdesc": 32973
+  },
+  "bk0_wd8101": {
+    "offset": 49253,
+    "length": 99,
+    "bank": 0,
+    "wavdesc": 33025
+  },
+  "bk0_wd812A": {
+    "offset": 49352,
+    "length": 98,
+    "bank": 0,
+    "wavdesc": 33066
+  },
+  "bk0_wd8152": {
+    "offset": 49450,
+    "length": 96,
+    "bank": 0,
+    "wavdesc": 33106
+  },
+  "bk0_wd8177": {
+    "offset": 49546,
+    "length": 96,
+    "bank": 0,
+    "wavdesc": 33143
+  },
+  "bk0_wd827F": {
+    "offset": 49642,
+    "length": 90,
+    "bank": 0,
+    "wavdesc": 33407
+  },
+  "bk0_wd82AF": {
+    "offset": 49732,
+    "length": 90,
+    "bank": 0,
+    "wavdesc": 33455
+  },
+  "bk0_wd82EC": {
+    "offset": 49822,
+    "length": 93,
+    "bank": 0,
+    "wavdesc": 33516
+  },
+  "bk0_wd8335": {
+    "offset": 49915,
+    "length": 81,
+    "bank": 0,
+    "wavdesc": 33589
+  },
+  "bk0_wd836B": {
+    "offset": 49996,
+    "length": 89,
+    "bank": 0,
+    "wavdesc": 33643
+  },
+  "bk0_wd83AB": {
+    "offset": 50085,
+    "length": 90,
+    "bank": 0,
+    "wavdesc": 33707
+  },
+  "bk0_wd8401": {
+    "offset": 50175,
+    "length": 95,
+    "bank": 0,
+    "wavdesc": 33793
+  },
+  "bk0_wd8454": {
+    "offset": 50270,
+    "length": 133,
+    "bank": 0,
+    "wavdesc": 33876
+  },
+  "bk0_wd848B": {
+    "offset": 50403,
+    "length": 86,
+    "bank": 0,
+    "wavdesc": 33931
+  },
+  "bk0_wd84BD": {
+    "offset": 50489,
+    "length": 90,
+    "bank": 0,
+    "wavdesc": 33981
+  },
+  "bk0_wd8501": {
+    "offset": 50579,
+    "length": 95,
+    "bank": 0,
+    "wavdesc": 34049
+  },
+  "bk0_wd8544": {
+    "offset": 50674,
+    "length": 87,
+    "bank": 0,
+    "wavdesc": 34116
+  },
+  "bk0_wd857A": {
+    "offset": 50761,
+    "length": 91,
+    "bank": 0,
+    "wavdesc": 34170
+  },
+  "bk0_wd85B9": {
+    "offset": 50852,
+    "length": 87,
+    "bank": 0,
+    "wavdesc": 34233
+  },
+  "bk0_wd85F0": {
+    "offset": 50939,
+    "length": 95,
+    "bank": 0,
+    "wavdesc": 34288
+  },
+  "bk0_wd862B": {
+    "offset": 51034,
+    "length": 84,
+    "bank": 0,
+    "wavdesc": 34347
+  },
+  "bk0_wd8666": {
+    "offset": 51118,
+    "length": 92,
+    "bank": 0,
+    "wavdesc": 34406
+  },
+  "bk0_wd86B2": {
+    "offset": 51210,
+    "length": 101,
+    "bank": 0,
+    "wavdesc": 34482
+  },
+  "bk0_wd86D9": {
+    "offset": 51311,
+    "length": 93,
+    "bank": 0,
+    "wavdesc": 34521
+  },
+  "bk0_wd86FD": {
+    "offset": 51404,
+    "length": 96,
+    "bank": 0,
+    "wavdesc": 34557
+  },
+  "bk0_wd8723": {
+    "offset": 51500,
+    "length": 110,
+    "bank": 0,
+    "wavdesc": 34595
+  },
+  "bk0_wd874D": {
+    "offset": 51610,
+    "length": 102,
+    "bank": 0,
+    "wavdesc": 34637
+  },
+  "bk0_wd8774": {
+    "offset": 51712,
+    "length": 100,
+    "bank": 0,
+    "wavdesc": 34676
+  },
+  "bk0_wd879B": {
+    "offset": 51812,
+    "length": 96,
+    "bank": 0,
+    "wavdesc": 34715
+  },
+  "bk0_wd87BF": {
+    "offset": 51908,
+    "length": 96,
+    "bank": 0,
+    "wavdesc": 34751
+  },
+  "bk0_wd87E5": {
+    "offset": 52004,
+    "length": 96,
+    "bank": 0,
+    "wavdesc": 34789
+  },
+  "bk0_wd880E": {
+    "offset": 52100,
+    "length": 102,
+    "bank": 0,
+    "wavdesc": 34830
+  },
+  "bk0_wd8836": {
+    "offset": 52202,
+    "length": 102,
+    "bank": 0,
+    "wavdesc": 34870
+  },
+  "bk0_wd885F": {
+    "offset": 52304,
+    "length": 96,
+    "bank": 0,
+    "wavdesc": 34911
+  },
+  "bk0_wd888D": {
+    "offset": 52400,
+    "length": 96,
+    "bank": 0,
+    "wavdesc": 34957
+  },
+  "bk0_wd88C6": {
+    "offset": 52496,
+    "length": 96,
+    "bank": 0,
+    "wavdesc": 35014
+  },
+  "bk0_wd890A": {
+    "offset": 52592,
+    "length": 75,
+    "bank": 0,
+    "wavdesc": 35082
+  },
+  "bk0_wd8931": {
+    "offset": 52667,
+    "length": 91,
+    "bank": 0,
+    "wavdesc": 35121
+  },
+  "bk0_wd895E": {
+    "offset": 52758,
+    "length": 92,
+    "bank": 0,
+    "wavdesc": 35166
+  },
+  "bk0_wd898F": {
+    "offset": 52850,
+    "length": 93,
+    "bank": 0,
+    "wavdesc": 35215
+  },
+  "bk0_wd89C2": {
+    "offset": 52943,
+    "length": 88,
+    "bank": 0,
+    "wavdesc": 35266
+  },
+  "bk0_wd89F0": {
+    "offset": 53031,
+    "length": 89,
+    "bank": 0,
+    "wavdesc": 35312
+  },
+  "bk0_wd8A23": {
+    "offset": 53120,
+    "length": 94,
+    "bank": 0,
+    "wavdesc": 35363
+  },
+  "bk0_wd8A5C": {
+    "offset": 53214,
+    "length": 93,
+    "bank": 0,
+    "wavdesc": 35420
+  },
+  "bk0_wd8A89": {
+    "offset": 53307,
+    "length": 93,
+    "bank": 0,
+    "wavdesc": 35465
+  },
+  "bk0_wd8AC9": {
+    "offset": 53400,
+    "length": 97,
+    "bank": 0,
+    "wavdesc": 35529
+  },
+  "bk0_wd8B0A": {
+    "offset": 53497,
+    "length": 99,
+    "bank": 0,
+    "wavdesc": 35594
+  },
+  "bk0_wd8B4F": {
+    "offset": 53596,
+    "length": 100,
+    "bank": 0,
+    "wavdesc": 35663
+  },
+  "bk0_wd8B92": {
+    "offset": 53696,
+    "length": 96,
+    "bank": 0,
+    "wavdesc": 35730
+  },
+  "bk0_wd8BD2": {
+    "offset": 53792,
+    "length": 94,
+    "bank": 0,
+    "wavdesc": 35794
+  },
+  "bk0_wd8C00": {
+    "offset": 53886,
+    "length": 93,
+    "bank": 0,
+    "wavdesc": 35840
+  },
+  "bk0_wd8C37": {
+    "offset": 53979,
+    "length": 92,
+    "bank": 0,
+    "wavdesc": 35895
+  },
+  "bk0_wd8C79": {
+    "offset": 54071,
+    "length": 96,
+    "bank": 0,
+    "wavdesc": 35961
+  },
+  "bk0_wd8CC1": {
+    "offset": 54167,
+    "length": 68,
+    "bank": 0,
+    "wavdesc": 36033
+  },
+  "bk0_wd8CE5": {
+    "offset": 54235,
+    "length": 102,
+    "bank": 0,
+    "wavdesc": 36069
+  },
+  "bk0_wd8D26": {
+    "offset": 54337,
+    "length": 99,
+    "bank": 0,
+    "wavdesc": 36134
+  },
+  "bk0_wd8D75": {
+    "offset": 54436,
+    "length": 95,
+    "bank": 0,
+    "wavdesc": 36213
+  },
+  "bk0_wd8DC0": {
+    "offset": 54531,
+    "length": 83,
+    "bank": 0,
+    "wavdesc": 36288
+  },
+  "bk0_wd8DF4": {
+    "offset": 54614,
+    "length": 90,
+    "bank": 0,
+    "wavdesc": 36340
+  },
+  "bk0_wd8E37": {
+    "offset": 54704,
+    "length": 89,
+    "bank": 0,
+    "wavdesc": 36407
+  },
+  "bk0_wd8E7C": {
+    "offset": 54793,
+    "length": 93,
+    "bank": 0,
+    "wavdesc": 36476
+  },
+  "bk0_wd8EBD": {
+    "offset": 54886,
+    "length": 46,
+    "bank": 0,
+    "wavdesc": 36541
+  },
+  "bk0_wd8ED8": {
+    "offset": 54932,
+    "length": 77,
+    "bank": 0,
+    "wavdesc": 36568
+  },
+  "bk0_wd8EFC": {
+    "offset": 55009,
+    "length": 92,
+    "bank": 0,
+    "wavdesc": 36604
+  },
+  "bk0_wd8F32": {
+    "offset": 55101,
+    "length": 96,
+    "bank": 0,
+    "wavdesc": 36658
+  },
+  "bk0_wd8F6C": {
+    "offset": 55197,
+    "length": 96,
+    "bank": 0,
+    "wavdesc": 36716
+  },
+  "bk0_wd8FAB": {
+    "offset": 55293,
+    "length": 102,
+    "bank": 0,
+    "wavdesc": 36779
+  },
+  "bk0_wd8FDB": {
+    "offset": 55395,
+    "length": 95,
+    "bank": 0,
+    "wavdesc": 36827
+  },
+  "bk0_wd9002": {
+    "offset": 55490,
+    "length": 95,
+    "bank": 0,
+    "wavdesc": 36866
+  },
+  "bk0_wd9027": {
+    "offset": 55585,
+    "length": 111,
+    "bank": 0,
+    "wavdesc": 36903
+  },
+  "bk0_wd905B": {
+    "offset": 55696,
+    "length": 81,
+    "bank": 0,
+    "wavdesc": 36955
+  },
+  "bk0_wd9080": {
+    "offset": 55777,
+    "length": 93,
+    "bank": 0,
+    "wavdesc": 36992
+  },
+  "bk0_wd90AC": {
+    "offset": 55870,
+    "length": 95,
+    "bank": 0,
+    "wavdesc": 37036
+  },
+  "bk0_wd90E2": {
+    "offset": 55965,
+    "length": 95,
+    "bank": 0,
+    "wavdesc": 37090
+  },
+  "bk0_wd911D": {
+    "offset": 56060,
+    "length": 96,
+    "bank": 0,
+    "wavdesc": 37149
+  },
+  "bk0_wd9152": {
+    "offset": 56156,
+    "length": 74,
+    "bank": 0,
+    "wavdesc": 37202
+  },
+  "bk0_wd9180": {
+    "offset": 56230,
+    "length": 88,
+    "bank": 0,
+    "wavdesc": 37248
+  },
+  "bk0_wd91C8": {
+    "offset": 56318,
+    "length": 89,
+    "bank": 0,
+    "wavdesc": 37320
+  },
+  "bk0_wd9216": {
+    "offset": 56407,
+    "length": 94,
+    "bank": 0,
+    "wavdesc": 37398
+  },
+  "bk0_wd9269": {
+    "offset": 56501,
+    "length": 94,
+    "bank": 0,
+    "wavdesc": 37481
+  },
+  "bk0_wd92B2": {
+    "offset": 56595,
+    "length": 85,
+    "bank": 0,
+    "wavdesc": 37554
+  },
+  "bk0_wd92E4": {
+    "offset": 56680,
+    "length": 92,
+    "bank": 0,
+    "wavdesc": 37604
+  },
+  "bk0_wd9324": {
+    "offset": 56772,
+    "length": 95,
+    "bank": 0,
+    "wavdesc": 37668
+  },
+  "bk0_wd93E2": {
+    "offset": 56867,
+    "length": 103,
+    "bank": 0,
+    "wavdesc": 37858
+  },
+  "bk0_wd940C": {
+    "offset": 56970,
+    "length": 99,
+    "bank": 0,
+    "wavdesc": 37900
+  },
+  "bk0_wd9432": {
+    "offset": 57069,
+    "length": 98,
+    "bank": 0,
+    "wavdesc": 37938
+  },
+  "bk0_wd947E": {
+    "offset": 57167,
+    "length": 54,
+    "bank": 0,
+    "wavdesc": 38014
+  },
+  "bk0_wd9498": {
+    "offset": 57221,
+    "length": 98,
+    "bank": 0,
+    "wavdesc": 38040
+  },
+  "bk0_wd9767": {
+    "offset": 57319,
+    "length": 96,
+    "bank": 0,
+    "wavdesc": 38759
+  },
+  "bk0_wd978C": {
+    "offset": 57415,
+    "length": 96,
+    "bank": 0,
+    "wavdesc": 38796
+  },
+  "bk0_wd97B2": {
+    "offset": 57511,
+    "length": 96,
+    "bank": 0,
+    "wavdesc": 38834
+  },
+  "bk0_wd97D7": {
+    "offset": 57607,
+    "length": 96,
+    "bank": 0,
+    "wavdesc": 38871
+  },
+  "bk0_wd97FC": {
+    "offset": 57703,
+    "length": 96,
+    "bank": 0,
+    "wavdesc": 38908
+  },
+  "bk0_wd9825": {
+    "offset": 57799,
+    "length": 96,
+    "bank": 0,
+    "wavdesc": 38949
+  },
+  "bk0_wd984E": {
+    "offset": 57895,
+    "length": 96,
+    "bank": 0,
+    "wavdesc": 38990
+  },
+  "bk0_wd9874": {
+    "offset": 57991,
+    "length": 83,
+    "bank": 0,
+    "wavdesc": 39028
+  },
+  "bk0_wd98AE": {
+    "offset": 58074,
+    "length": 89,
+    "bank": 0,
+    "wavdesc": 39086
+  },
+  "bk0_wd98F0": {
+    "offset": 58163,
+    "length": 94,
+    "bank": 0,
+    "wavdesc": 39152
+  },
+  "bk0_wd993B": {
+    "offset": 58257,
+    "length": 80,
+    "bank": 0,
+    "wavdesc": 39227
+  },
+  "bk0_wd9964": {
+    "offset": 58337,
+    "length": 82,
+    "bank": 0,
+    "wavdesc": 39268
+  },
+  "bk0_wd99A1": {
+    "offset": 58419,
+    "length": 90,
+    "bank": 0,
+    "wavdesc": 39329
+  },
+  "bk0_wd9A6B": {
+    "offset": 58509,
+    "length": 96,
+    "bank": 0,
+    "wavdesc": 39531
+  },
+  "bk0_wd9A9C": {
+    "offset": 58605,
+    "length": 96,
+    "bank": 0,
+    "wavdesc": 39580
+  },
+  "bk0_wd9AD1": {
+    "offset": 58701,
+    "length": 96,
+    "bank": 0,
+    "wavdesc": 39633
+  },
+  "bk0_wd9B09": {
+    "offset": 58797,
+    "length": 59,
+    "bank": 0,
+    "wavdesc": 39689
+  },
+  "bk0_wd9B2F": {
+    "offset": 58856,
+    "length": 110,
+    "bank": 0,
+    "wavdesc": 39727
+  },
+  "bk0_wd9B59": {
+    "offset": 58966,
+    "length": 96,
+    "bank": 0,
+    "wavdesc": 39769
+  },
+  "bk0_wd9B7E": {
+    "offset": 59062,
+    "length": 89,
+    "bank": 0,
+    "wavdesc": 39806
+  },
+  "bk0_wd9BA1": {
+    "offset": 59151,
+    "length": 62,
+    "bank": 0,
+    "wavdesc": 39841
+  },
+  "bk0_wd9BC6": {
+    "offset": 59213,
+    "length": 93,
+    "bank": 0,
+    "wavdesc": 39878
+  },
+  "bk0_wd9C02": {
+    "offset": 59306,
+    "length": 96,
+    "bank": 0,
+    "wavdesc": 39938
+  },
+  "bk0_wd9C47": {
+    "offset": 59402,
+    "length": 97,
+    "bank": 0,
+    "wavdesc": 40007
+  },
+  "bk0_wd9C99": {
+    "offset": 59499,
+    "length": 72,
+    "bank": 0,
+    "wavdesc": 40089
+  },
+  "bk0_wd9CC2": {
+    "offset": 59571,
+    "length": 92,
+    "bank": 0,
+    "wavdesc": 40130
+  },
+  "bk0_wd9D0D": {
+    "offset": 59663,
+    "length": 89,
+    "bank": 0,
+    "wavdesc": 40205
+  },
+  "bk0_wd9D58": {
+    "offset": 59752,
+    "length": 96,
+    "bank": 0,
+    "wavdesc": 40280
+  },
+  "bk0_wd9D99": {
+    "offset": 59848,
+    "length": 95,
+    "bank": 0,
+    "wavdesc": 40345
+  },
+  "bk0_wd9DDF": {
+    "offset": 59943,
+    "length": 82,
+    "bank": 0,
+    "wavdesc": 40415
+  },
+  "bk0_wd9E17": {
+    "offset": 60025,
+    "length": 88,
+    "bank": 0,
+    "wavdesc": 40471
+  },
+  "bk0_wd9E63": {
+    "offset": 60113,
+    "length": 90,
+    "bank": 0,
+    "wavdesc": 40547
+  },
+  "bk0_wd9EB8": {
+    "offset": 60203,
+    "length": 95,
+    "bank": 0,
+    "wavdesc": 40632
+  },
+  "bk0_wd9F0E": {
+    "offset": 60298,
+    "length": 96,
+    "bank": 0,
+    "wavdesc": 40718
+  },
+  "bk0_wd9F34": {
+    "offset": 60394,
+    "length": 96,
+    "bank": 0,
+    "wavdesc": 40756
+  },
+  "bk0_wd9F5A": {
+    "offset": 60490,
+    "length": 96,
+    "bank": 0,
+    "wavdesc": 40794
+  },
+  "bk0_wd9F7F": {
+    "offset": 60586,
+    "length": 96,
+    "bank": 0,
+    "wavdesc": 40831
+  },
+  "bk0_wd9FA3": {
+    "offset": 60682,
+    "length": 96,
+    "bank": 0,
+    "wavdesc": 40867
+  },
+  "bk0_wd9FC8": {
+    "offset": 60778,
+    "length": 96,
+    "bank": 0,
+    "wavdesc": 40904
+  },
+  "bk0_wd9FEE": {
+    "offset": 60874,
+    "length": 94,
+    "bank": 0,
+    "wavdesc": 40942
+  },
+  "bk0_wdA0E3": {
+    "offset": 60968,
+    "length": 96,
+    "bank": 0,
+    "wavdesc": 41187
+  },
+  "bk0_wdA108": {
+    "offset": 61064,
+    "length": 96,
+    "bank": 0,
+    "wavdesc": 41224
+  },
+  "bk0_wdA130": {
+    "offset": 61160,
+    "length": 96,
+    "bank": 0,
+    "wavdesc": 41264
+  },
+  "bk0_wdA158": {
+    "offset": 61256,
+    "length": 96,
+    "bank": 0,
+    "wavdesc": 41304
+  },
+  "bk0_wdA17D": {
+    "offset": 61352,
+    "length": 96,
+    "bank": 0,
+    "wavdesc": 41341
+  },
+  "bk0_wdA1C3": {
+    "offset": 61448,
+    "length": 96,
+    "bank": 0,
+    "wavdesc": 41411
+  },
+  "bk0_wdA201": {
+    "offset": 61544,
+    "length": 96,
+    "bank": 0,
+    "wavdesc": 41473
+  },
+  "bk0_wdA237": {
+    "offset": 61640,
+    "length": 96,
+    "bank": 0,
+    "wavdesc": 41527
+  },
+  "bk0_wdA26D": {
+    "offset": 61736,
+    "length": 96,
+    "bank": 0,
+    "wavdesc": 41581
+  },
+  "bk0_wdA299": {
+    "offset": 61832,
+    "length": 96,
+    "bank": 0,
+    "wavdesc": 41625
+  },
+  "bk0_wdA2C1": {
+    "offset": 61928,
+    "length": 96,
+    "bank": 0,
+    "wavdesc": 41665
+  },
+  "bk0_wdA301": {
+    "offset": 62024,
+    "length": 96,
+    "bank": 0,
+    "wavdesc": 41729
+  },
+  "bk0_wdA342": {
+    "offset": 62120,
+    "length": 96,
+    "bank": 0,
+    "wavdesc": 41794
+  },
+  "bk0_wdA383": {
+    "offset": 62216,
+    "length": 62,
+    "bank": 0,
+    "wavdesc": 41859
+  },
+  "bk0_wdA39D": {
+    "offset": 62278,
+    "length": 81,
+    "bank": 0,
+    "wavdesc": 41885
+  },
+  "bk0_wdA3CA": {
+    "offset": 62359,
+    "length": 87,
+    "bank": 0,
+    "wavdesc": 41930
+  },
+  "bk0_wdA403": {
+    "offset": 62446,
+    "length": 92,
+    "bank": 0,
+    "wavdesc": 41987
+  },
+  "bk0_wdA446": {
+    "offset": 62538,
+    "length": 67,
+    "bank": 0,
+    "wavdesc": 42054
+  },
+  "bk0_wdA46C": {
+    "offset": 62605,
+    "length": 83,
+    "bank": 0,
+    "wavdesc": 42092
+  },
+  "bk0_wdA4A4": {
+    "offset": 62688,
+    "length": 92,
+    "bank": 0,
+    "wavdesc": 42148
+  },
+  "bk0_wdA4E6": {
+    "offset": 62780,
+    "length": 96,
+    "bank": 0,
+    "wavdesc": 42214
+  },
+  "bk0_wdA524": {
+    "offset": 62876,
+    "length": 96,
+    "bank": 0,
+    "wavdesc": 42276
+  },
+  "bk0_wdA566": {
+    "offset": 62972,
+    "length": 96,
+    "bank": 0,
+    "wavdesc": 42342
+  },
+  "bk0_wdA59B": {
+    "offset": 63068,
+    "length": 48,
+    "bank": 0,
+    "wavdesc": 42395
+  },
+  "bk0_wdA5B0": {
+    "offset": 63116,
+    "length": 96,
+    "bank": 0,
+    "wavdesc": 42416
+  },
+  "bk0_wdA5F7": {
+    "offset": 63212,
+    "length": 96,
+    "bank": 0,
+    "wavdesc": 42487
+  },
+  "bk0_wdA63C": {
+    "offset": 63308,
+    "length": 96,
+    "bank": 0,
+    "wavdesc": 42556
+  },
+  "bk0_wdA668": {
+    "offset": 63404,
+    "length": 96,
+    "bank": 0,
+    "wavdesc": 42600
+  },
+  "bk0_wdA68E": {
+    "offset": 63500,
+    "length": 96,
+    "bank": 0,
+    "wavdesc": 42638
+  },
+  "bk0_wdA6CC": {
+    "offset": 63596,
+    "length": 96,
+    "bank": 0,
+    "wavdesc": 42700
+  },
+  "bk0_wdA6F5": {
+    "offset": 63692,
+    "length": 96,
+    "bank": 0,
+    "wavdesc": 42741
+  },
+  "bk0_wdA733": {
+    "offset": 63788,
+    "length": 96,
+    "bank": 0,
+    "wavdesc": 42803
+  },
+  "bk0_wdA765": {
+    "offset": 63884,
+    "length": 96,
+    "bank": 0,
+    "wavdesc": 42853
+  },
+  "bk0_wdA795": {
+    "offset": 63980,
+    "length": 141,
+    "bank": 0,
+    "wavdesc": 42901
+  },
+  "bk0_wdA7CB": {
+    "offset": 64121,
+    "length": 96,
+    "bank": 0,
+    "wavdesc": 42955
+  },
+  "bk0_wdA823": {
+    "offset": 64217,
+    "length": 96,
+    "bank": 0,
+    "wavdesc": 43043
+  },
+  "bk0_wdA875": {
+    "offset": 64313,
+    "length": 136,
+    "bank": 0,
+    "wavdesc": 43125
+  },
+  "bk0_wdA8F1": {
+    "offset": 64449,
+    "length": 96,
+    "bank": 0,
+    "wavdesc": 43249
+  },
+  "bk0_wdA947": {
+    "offset": 64545,
+    "length": 106,
+    "bank": 0,
+    "wavdesc": 43335
+  },
+  "bk0_wdA99B": {
+    "offset": 64651,
+    "length": 96,
+    "bank": 0,
+    "wavdesc": 43419
+  },
+  "bk0_wdA9DB": {
+    "offset": 64747,
+    "length": 96,
+    "bank": 0,
+    "wavdesc": 43483
+  },
+  "bk0_wdAA1F": {
+    "offset": 64843,
+    "length": 96,
+    "bank": 0,
+    "wavdesc": 43551
+  },
+  "bk0_wdAA57": {
+    "offset": 64939,
+    "length": 96,
+    "bank": 0,
+    "wavdesc": 43607
+  },
+  "bk0_wdAA7E": {
+    "offset": 65035,
+    "length": 66,
+    "bank": 0,
+    "wavdesc": 43646
+  },
+  "bk0_wdAAA5": {
+    "offset": 65101,
+    "length": 93,
+    "bank": 0,
+    "wavdesc": 43685
+  },
+  "bk0_wdAAE7": {
+    "offset": 65194,
+    "length": 95,
+    "bank": 0,
+    "wavdesc": 43751
+  },
+  "bk0_wdAB2F": {
+    "offset": 65289,
+    "length": 93,
+    "bank": 0,
+    "wavdesc": 43823
+  },
+  "bk0_wdAB70": {
+    "offset": 65382,
+    "length": 93,
+    "bank": 0,
+    "wavdesc": 43888
+  },
+  "bk0_wdABAC": {
+    "offset": 65475,
+    "length": 93,
+    "bank": 0,
+    "wavdesc": 43948
+  },
+  "bk0_wdABED": {
+    "offset": 65568,
+    "length": 77,
+    "bank": 0,
+    "wavdesc": 44013
+  },
+  "bk0_wdAC1B": {
+    "offset": 65645,
+    "length": 84,
+    "bank": 0,
+    "wavdesc": 44059
+  },
+  "bk0_wdAC5A": {
+    "offset": 65729,
+    "length": 88,
+    "bank": 0,
+    "wavdesc": 44122
+  },
+  "bk0_wdACA2": {
+    "offset": 65817,
+    "length": 93,
+    "bank": 0,
+    "wavdesc": 44194
+  },
+  "bk0_wdACF1": {
+    "offset": 65910,
+    "length": 96,
+    "bank": 0,
+    "wavdesc": 44273
+  },
+  "bk0_wdAD36": {
+    "offset": 66006,
+    "length": 96,
+    "bank": 0,
+    "wavdesc": 44342
+  },
+  "bk0_wdAD75": {
+    "offset": 66102,
+    "length": 98,
+    "bank": 0,
+    "wavdesc": 44405
+  },
+  "bk0_wdADA3": {
+    "offset": 66200,
+    "length": 96,
+    "bank": 0,
+    "wavdesc": 44451
+  },
+  "bk0_wdADE9": {
+    "offset": 66296,
+    "length": 96,
+    "bank": 0,
+    "wavdesc": 44521
+  },
+  "bk0_wdAE26": {
+    "offset": 66392,
+    "length": 104,
+    "bank": 0,
+    "wavdesc": 44582
+  },
+  "bk0_wdAE5C": {
+    "offset": 66496,
+    "length": 85,
+    "bank": 0,
+    "wavdesc": 44636
+  },
+  "bk0_wdAE96": {
+    "offset": 66581,
+    "length": 86,
+    "bank": 0,
+    "wavdesc": 44694
+  },
+  "bk0_wdAEE6": {
+    "offset": 66667,
+    "length": 99,
+    "bank": 0,
+    "wavdesc": 44774
+  },
+  "bk0_wdAF3B": {
+    "offset": 66766,
+    "length": 96,
+    "bank": 0,
+    "wavdesc": 44859
+  },
+  "bk0_wdAF74": {
+    "offset": 66862,
+    "length": 96,
+    "bank": 0,
+    "wavdesc": 44916
+  },
+  "bk0_wdAFB3": {
+    "offset": 66958,
+    "length": 96,
+    "bank": 0,
+    "wavdesc": 44979
+  },
+  "bk0_wdAFE0": {
+    "offset": 67054,
+    "length": 96,
+    "bank": 0,
+    "wavdesc": 45024
+  },
+  "bk0_wdB01C": {
+    "offset": 67150,
+    "length": 96,
+    "bank": 0,
+    "wavdesc": 45084
+  },
+  "bk0_wdB051": {
+    "offset": 67246,
+    "length": 96,
+    "bank": 0,
+    "wavdesc": 45137
+  },
+  "bk0_wdB07F": {
+    "offset": 67342,
+    "length": 96,
+    "bank": 0,
+    "wavdesc": 45183
+  },
+  "bk0_wdB144": {
+    "offset": 67438,
+    "length": 96,
+    "bank": 0,
+    "wavdesc": 45380
+  },
+  "bk0_wdB18B": {
+    "offset": 67534,
+    "length": 96,
+    "bank": 0,
+    "wavdesc": 45451
+  },
+  "bk0_wdB1C2": {
+    "offset": 67630,
+    "length": 96,
+    "bank": 0,
+    "wavdesc": 45506
+  },
+  "bk0_wdB1F2": {
+    "offset": 67726,
+    "length": 96,
+    "bank": 0,
+    "wavdesc": 45554
+  },
+  "bk0_wdB218": {
+    "offset": 67822,
+    "length": 93,
+    "bank": 0,
+    "wavdesc": 45592
+  },
+  "bk0_wdB23D": {
+    "offset": 67915,
+    "length": 94,
+    "bank": 0,
+    "wavdesc": 45629
+  },
+  "bk0_wdB262": {
+    "offset": 68009,
+    "length": 102,
+    "bank": 0,
+    "wavdesc": 45666
+  },
+  "bk0_wdB289": {
+    "offset": 68111,
+    "length": 98,
+    "bank": 0,
+    "wavdesc": 45705
+  },
+  "bk0_wdB2B7": {
+    "offset": 68209,
+    "length": 94,
+    "bank": 0,
+    "wavdesc": 45751
+  },
+  "bk0_wdB2EF": {
+    "offset": 68303,
+    "length": 92,
+    "bank": 0,
+    "wavdesc": 45807
+  },
+  "bk0_wdB337": {
+    "offset": 68395,
+    "length": 95,
+    "bank": 0,
+    "wavdesc": 45879
+  },
+  "bk0_wdB38D": {
+    "offset": 68490,
+    "length": 87,
+    "bank": 0,
+    "wavdesc": 45965
+  },
+  "bk0_wdB3B9": {
+    "offset": 68577,
+    "length": 88,
+    "bank": 0,
+    "wavdesc": 46009
+  },
+  "bk0_wdB3FC": {
+    "offset": 68665,
+    "length": 91,
+    "bank": 0,
+    "wavdesc": 46076
+  },
+  "bk0_wdB449": {
+    "offset": 68756,
+    "length": 92,
+    "bank": 0,
+    "wavdesc": 46153
+  },
+  "bk0_wdB477": {
+    "offset": 68848,
+    "length": 92,
+    "bank": 0,
+    "wavdesc": 46199
+  },
+  "bk0_wdB4B1": {
+    "offset": 68940,
+    "length": 93,
+    "bank": 0,
+    "wavdesc": 46257
+  },
+  "bk0_wdB4F5": {
+    "offset": 69033,
+    "length": 93,
+    "bank": 0,
+    "wavdesc": 46325
+  },
+  "bk0_wdB524": {
+    "offset": 69126,
+    "length": 93,
+    "bank": 0,
+    "wavdesc": 46372
+  },
+  "bk0_wdB560": {
+    "offset": 69219,
+    "length": 94,
+    "bank": 0,
+    "wavdesc": 46432
+  },
+  "bk0_wdB5A6": {
+    "offset": 69313,
+    "length": 104,
+    "bank": 0,
+    "wavdesc": 46502
+  },
+  "bk0_wdB5D0": {
+    "offset": 69417,
+    "length": 110,
+    "bank": 0,
+    "wavdesc": 46544
+  },
+  "bk0_wdB64C": {
+    "offset": 69527,
+    "length": 95,
+    "bank": 0,
+    "wavdesc": 46668
+  },
+  "bk0_wdB672": {
+    "offset": 69622,
+    "length": 95,
+    "bank": 0,
+    "wavdesc": 46706
+  },
+  "bk0_wdB697": {
+    "offset": 69717,
+    "length": 96,
+    "bank": 0,
+    "wavdesc": 46743
+  },
+  "bk0_wdB70E": {
+    "offset": 69813,
+    "length": 101,
+    "bank": 0,
+    "wavdesc": 46862
+  },
+  "bk0_wdB738": {
+    "offset": 69914,
+    "length": 98,
+    "bank": 0,
+    "wavdesc": 46904
+  },
+  "bk0_wdB831": {
+    "offset": 70012,
+    "length": 95,
+    "bank": 0,
+    "wavdesc": 47153
+  },
+  "bk0_wdB857": {
+    "offset": 70107,
+    "length": 99,
+    "bank": 0,
+    "wavdesc": 47191
+  },
+  "bk0_wdB87F": {
+    "offset": 70206,
+    "length": 100,
+    "bank": 0,
+    "wavdesc": 47231
+  },
+  "bk0_wdB8A8": {
+    "offset": 70306,
+    "length": 91,
+    "bank": 0,
+    "wavdesc": 47272
+  },
+  "bk0_wdB8CE": {
+    "offset": 70397,
+    "length": 92,
+    "bank": 0,
+    "wavdesc": 47310
+  },
+  "bk0_wdB8F5": {
+    "offset": 70489,
+    "length": 103,
+    "bank": 0,
+    "wavdesc": 47349
+  },
+  "bk0_wdB91F": {
+    "offset": 70592,
+    "length": 105,
+    "bank": 0,
+    "wavdesc": 47391
+  },
+  "bk0_wdB949": {
+    "offset": 70697,
+    "length": 100,
+    "bank": 0,
+    "wavdesc": 47433
+  },
+  "bk0_wdB9E3": {
+    "offset": 70797,
+    "length": 92,
+    "bank": 0,
+    "wavdesc": 47587
+  },
+  "bk0_wdBA18": {
+    "offset": 70889,
+    "length": 94,
+    "bank": 0,
+    "wavdesc": 47640
+  },
+  "bk0_wdBA5B": {
+    "offset": 70983,
+    "length": 95,
+    "bank": 0,
+    "wavdesc": 47707
+  },
+  "bk0_wdBC07": {
+    "offset": 71078,
+    "length": 96,
+    "bank": 0,
+    "wavdesc": 48135
+  },
+  "bk0_wdBC2C": {
+    "offset": 71174,
+    "length": 97,
+    "bank": 0,
+    "wavdesc": 48172
+  },
+  "bk0_wdBC53": {
+    "offset": 71271,
+    "length": 99,
+    "bank": 0,
+    "wavdesc": 48211
+  },
+  "bk0_wdBC7D": {
+    "offset": 71370,
+    "length": 87,
+    "bank": 0,
+    "wavdesc": 48253
+  },
+  "bk0_wdBCB1": {
+    "offset": 71457,
+    "length": 92,
+    "bank": 0,
+    "wavdesc": 48305
+  },
+  "bk0_wdBCEE": {
+    "offset": 71549,
+    "length": 94,
+    "bank": 0,
+    "wavdesc": 48366
+  },
+  "bk0_wdBD28": {
+    "offset": 71643,
+    "length": 96,
+    "bank": 0,
+    "wavdesc": 48424
+  },
+  "bk0_wdBD62": {
+    "offset": 71739,
+    "length": 96,
+    "bank": 0,
+    "wavdesc": 48482
+  },
+  "bk0_wdBD8B": {
+    "offset": 71835,
+    "length": 96,
+    "bank": 0,
+    "wavdesc": 48523
+  },
+  "bk0_wdBDB4": {
+    "offset": 71931,
+    "length": 96,
+    "bank": 0,
+    "wavdesc": 48564
+  },
+  "bk0_wdBDDC": {
+    "offset": 72027,
+    "length": 96,
+    "bank": 0,
+    "wavdesc": 48604
+  },
+  "bk0_wdBE01": {
+    "offset": 72123,
+    "length": 96,
+    "bank": 0,
+    "wavdesc": 48641
+  },
+  "bk0_wdBE30": {
+    "offset": 72219,
+    "length": 96,
+    "bank": 0,
+    "wavdesc": 48688
+  },
+  "bk0_wdBE59": {
+    "offset": 72315,
+    "length": 107,
+    "bank": 0,
+    "wavdesc": 48729
+  },
+  "bk0_wdBE8D": {
+    "offset": 72422,
+    "length": 96,
+    "bank": 0,
+    "wavdesc": 48781
+  },
+  "bk0_wdBED4": {
+    "offset": 72518,
+    "length": 96,
+    "bank": 0,
+    "wavdesc": 48852
+  },
+  "bk0_wdBF28": {
+    "offset": 72614,
+    "length": 96,
+    "bank": 0,
+    "wavdesc": 48936
+  },
+  "bk0_wdBF69": {
+    "offset": 72710,
+    "length": 79,
+    "bank": 0,
+    "wavdesc": 49001
+  },
+  "bk0_wdC06F": {
+    "offset": 72789,
+    "length": 96,
+    "bank": 0,
+    "wavdesc": 49263
+  },
+  "bk0_wdC0A7": {
+    "offset": 72885,
+    "length": 96,
+    "bank": 0,
+    "wavdesc": 49319
+  },
+  "bk0_wdC0E1": {
+    "offset": 72981,
+    "length": 94,
+    "bank": 0,
+    "wavdesc": 49377
+  },
+  "bk0_wdC105": {
+    "offset": 73075,
+    "length": 96,
+    "bank": 0,
+    "wavdesc": 49413
+  },
+  "bk0_wdC134": {
+    "offset": 73171,
+    "length": 84,
+    "bank": 0,
+    "wavdesc": 49460
+  },
+  "bk0_wdC15D": {
+    "offset": 73255,
+    "length": 101,
+    "bank": 0,
+    "wavdesc": 49501
+  },
+  "bk0_wdC191": {
+    "offset": 73356,
+    "length": 96,
+    "bank": 0,
+    "wavdesc": 49553
+  },
+  "bk0_wdC1C1": {
+    "offset": 73452,
+    "length": 103,
+    "bank": 0,
+    "wavdesc": 49601
+  },
+  "bk0_wdC30D": {
+    "offset": 73555,
+    "length": 101,
+    "bank": 0,
+    "wavdesc": 49933
+  },
+  "bk0_wdC342": {
+    "offset": 73656,
+    "length": 97,
+    "bank": 0,
+    "wavdesc": 49986
+  },
+  "bk0_wdC371": {
+    "offset": 73753,
+    "length": 100,
+    "bank": 0,
+    "wavdesc": 50033
+  },
+  "bk0_wdC3FB": {
+    "offset": 73853,
+    "length": 97,
+    "bank": 0,
+    "wavdesc": 50171
+  },
+  "bk0_wdC42E": {
+    "offset": 73950,
+    "length": 94,
+    "bank": 0,
+    "wavdesc": 50222
+  },
+  "bk0_wdC45C": {
+    "offset": 74044,
+    "length": 96,
+    "bank": 0,
+    "wavdesc": 50268
+  },
+  "bk0_wdC48D": {
+    "offset": 74140,
+    "length": 96,
+    "bank": 0,
+    "wavdesc": 50317
+  },
+  "bk0_wdC4B7": {
+    "offset": 74236,
+    "length": 96,
+    "bank": 0,
+    "wavdesc": 50359
+  },
+  "bk0_wdC4E1": {
+    "offset": 74332,
+    "length": 96,
+    "bank": 0,
+    "wavdesc": 50401
+  },
+  "bk0_wdC50A": {
+    "offset": 74428,
+    "length": 96,
+    "bank": 0,
+    "wavdesc": 50442
+  },
+  "bk0_wdC530": {
+    "offset": 74524,
+    "length": 96,
+    "bank": 0,
+    "wavdesc": 50480
+  },
+  "bk0_wdC562": {
+    "offset": 74620,
+    "length": 100,
+    "bank": 0,
+    "wavdesc": 50530
+  },
+  "bk0_wdC594": {
+    "offset": 74720,
+    "length": 95,
+    "bank": 0,
+    "wavdesc": 50580
+  },
+  "bk0_wdC5C9": {
+    "offset": 74815,
+    "length": 96,
+    "bank": 0,
+    "wavdesc": 50633
+  },
+  "bk0_wdC5FF": {
+    "offset": 74911,
+    "length": 96,
+    "bank": 0,
+    "wavdesc": 50687
+  },
+  "bk0_wdC636": {
+    "offset": 75007,
+    "length": 96,
+    "bank": 0,
+    "wavdesc": 50742
+  },
+  "bk0_wdC663": {
+    "offset": 75103,
+    "length": 124,
+    "bank": 0,
+    "wavdesc": 50787
+  },
+  "bk0_wdC69B": {
+    "offset": 75227,
+    "length": 96,
+    "bank": 0,
+    "wavdesc": 50843
+  },
+  "bk0_wdC6D0": {
+    "offset": 75323,
+    "length": 96,
+    "bank": 0,
+    "wavdesc": 50896
+  },
+  "bk0_wdC70C": {
+    "offset": 75419,
+    "length": 96,
+    "bank": 0,
+    "wavdesc": 50956
+  },
+  "bk0_wdC747": {
+    "offset": 75515,
+    "length": 96,
+    "bank": 0,
+    "wavdesc": 51015
+  },
+  "bk0_wdC77D": {
+    "offset": 75611,
+    "length": 96,
+    "bank": 0,
+    "wavdesc": 51069
+  },
+  "bk0_wdC7AC": {
+    "offset": 75707,
+    "length": 105,
+    "bank": 0,
+    "wavdesc": 51116
+  },
+  "bk0_wdC7DE": {
+    "offset": 75812,
+    "length": 93,
+    "bank": 0,
+    "wavdesc": 51166
+  },
+  "bk0_wdC89A": {
+    "offset": 75905,
+    "length": 85,
+    "bank": 0,
+    "wavdesc": 51354
+  },
+  "bk0_wdC8D1": {
+    "offset": 75990,
+    "length": 86,
+    "bank": 0,
+    "wavdesc": 51409
+  },
+  "bk0_wdC913": {
+    "offset": 76076,
+    "length": 92,
+    "bank": 0,
+    "wavdesc": 51475
+  },
+  "bk0_wdC962": {
+    "offset": 76168,
+    "length": 93,
+    "bank": 0,
+    "wavdesc": 51554
+  },
+  "bk0_wdC9A7": {
+    "offset": 76261,
+    "length": 96,
+    "bank": 0,
+    "wavdesc": 51623
+  },
+  "bk0_wdC9D8": {
+    "offset": 76357,
+    "length": 96,
+    "bank": 0,
+    "wavdesc": 51672
+  },
+  "bk0_wdCA06": {
+    "offset": 76453,
+    "length": 96,
+    "bank": 0,
+    "wavdesc": 51718
+  },
+  "bk0_wdCA2F": {
+    "offset": 76549,
+    "length": 94,
+    "bank": 0,
+    "wavdesc": 51759
+  },
+  "bk0_wdCA55": {
+    "offset": 76643,
+    "length": 95,
+    "bank": 0,
+    "wavdesc": 51797
+  },
+  "bk0_wdCA7A": {
+    "offset": 76738,
+    "length": 96,
+    "bank": 0,
+    "wavdesc": 51834
+  },
+  "bk0_wdCABF": {
+    "offset": 76834,
+    "length": 95,
+    "bank": 0,
+    "wavdesc": 51903
+  },
+  "bk0_wdCB02": {
+    "offset": 76929,
+    "length": 98,
+    "bank": 0,
+    "wavdesc": 51970
+  },
+  "bk0_wdCB43": {
+    "offset": 77027,
+    "length": 95,
+    "bank": 0,
+    "wavdesc": 52035
+  },
+  "bk0_wdCB8E": {
+    "offset": 77122,
+    "length": 92,
+    "bank": 0,
+    "wavdesc": 52110
+  },
+  "bk0_wdCBD6": {
+    "offset": 77214,
+    "length": 91,
+    "bank": 0,
+    "wavdesc": 52182
+  },
+  "bk0_wdCC16": {
+    "offset": 77305,
+    "length": 94,
+    "bank": 0,
+    "wavdesc": 52246
+  },
+  "bk0_wdCC61": {
+    "offset": 77399,
+    "length": 95,
+    "bank": 0,
+    "wavdesc": 52321
+  },
+  "bk0_wdCDAD": {
+    "offset": 77494,
+    "length": 94,
+    "bank": 0,
+    "wavdesc": 52653
+  },
+  "bk0_wdCDF1": {
+    "offset": 77588,
+    "length": 97,
+    "bank": 0,
+    "wavdesc": 52721
+  },
+  "bk0_wdCE27": {
+    "offset": 77685,
+    "length": 98,
+    "bank": 0,
+    "wavdesc": 52775
+  },
+  "bk0_wdCE5C": {
+    "offset": 77783,
+    "length": 119,
+    "bank": 0,
+    "wavdesc": 52828
+  },
+  "bk0_wdCE8C": {
+    "offset": 77902,
+    "length": 95,
+    "bank": 0,
+    "wavdesc": 52876
+  },
+  "bk0_wdCEC4": {
+    "offset": 77997,
+    "length": 91,
+    "bank": 0,
+    "wavdesc": 52932
+  },
+  "bk0_wdCEF5": {
+    "offset": 78088,
+    "length": 96,
+    "bank": 0,
+    "wavdesc": 52981
+  },
+  "bk0_wdCF1F": {
+    "offset": 78184,
+    "length": 94,
+    "bank": 0,
+    "wavdesc": 53023
+  },
+  "bk0_wdCF54": {
+    "offset": 78278,
+    "length": 97,
+    "bank": 0,
+    "wavdesc": 53076
+  },
+  "bk0_wdCF81": {
+    "offset": 78375,
+    "length": 96,
+    "bank": 0,
+    "wavdesc": 53121
+  },
+  "bk0_wdCFB4": {
+    "offset": 78471,
+    "length": 102,
+    "bank": 0,
+    "wavdesc": 53172
+  },
+  "bk0_wdCFE4": {
+    "offset": 78573,
+    "length": 106,
+    "bank": 0,
+    "wavdesc": 53220
+  },
+  "bk0_wdD0BA": {
+    "offset": 78679,
+    "length": 102,
+    "bank": 0,
+    "wavdesc": 53434
+  },
+  "bk0_wdD0EE": {
+    "offset": 78781,
+    "length": 102,
+    "bank": 0,
+    "wavdesc": 53486
+  },
+  "bk0_wdD120": {
+    "offset": 78883,
+    "length": 105,
+    "bank": 0,
+    "wavdesc": 53536
+  },
+  "bk0_wdD150": {
+    "offset": 78988,
+    "length": 96,
+    "bank": 0,
+    "wavdesc": 53584
+  },
+  "bk0_wdD17A": {
+    "offset": 79084,
+    "length": 114,
+    "bank": 0,
+    "wavdesc": 53626
+  },
+  "bk0_wdD1AF": {
+    "offset": 79198,
+    "length": 96,
+    "bank": 0,
+    "wavdesc": 53679
+  },
+  "bk0_wdD1EC": {
+    "offset": 79294,
+    "length": 96,
+    "bank": 0,
+    "wavdesc": 53740
+  },
+  "bk0_wdD227": {
+    "offset": 79390,
+    "length": 99,
+    "bank": 0,
+    "wavdesc": 53799
+  },
+  "bk0_wdD2B9": {
+    "offset": 79489,
+    "length": 96,
+    "bank": 0,
+    "wavdesc": 53945
+  },
+  "bk0_wdD2F4": {
+    "offset": 79585,
+    "length": 94,
+    "bank": 0,
+    "wavdesc": 54004
+  },
+  "bk0_wdD330": {
+    "offset": 79679,
+    "length": 95,
+    "bank": 0,
+    "wavdesc": 54064
+  },
+  "bk0_wdD36A": {
+    "offset": 79774,
+    "length": 93,
+    "bank": 0,
+    "wavdesc": 54122
+  },
+  "bk0_wdD3A5": {
+    "offset": 79867,
+    "length": 96,
+    "bank": 0,
+    "wavdesc": 54181
+  },
+  "bk0_wdD3D9": {
+    "offset": 79963,
+    "length": 96,
+    "bank": 0,
+    "wavdesc": 54233
+  },
+  "bk0_wdD4A1": {
+    "offset": 80059,
+    "length": 97,
+    "bank": 0,
+    "wavdesc": 54433
+  },
+  "bk0_wdD4D3": {
+    "offset": 80156,
+    "length": 96,
+    "bank": 0,
+    "wavdesc": 54483
+  },
+  "bk0_wdD512": {
+    "offset": 80252,
+    "length": 96,
+    "bank": 0,
+    "wavdesc": 54546
+  },
+  "bk0_wdD55E": {
+    "offset": 80348,
+    "length": 96,
+    "bank": 0,
+    "wavdesc": 54622
+  },
+  "bk0_wdD5A7": {
+    "offset": 80444,
+    "length": 94,
+    "bank": 0,
+    "wavdesc": 54695
+  },
+  "bk0_wdD5F3": {
+    "offset": 80538,
+    "length": 95,
+    "bank": 0,
+    "wavdesc": 54771
+  },
+  "bk0_wdD63F": {
+    "offset": 80633,
+    "length": 97,
+    "bank": 0,
+    "wavdesc": 54847
+  },
+  "bk0_wdD67C": {
+    "offset": 80730,
+    "length": 97,
+    "bank": 0,
+    "wavdesc": 54908
+  },
+  "bk0_wdD6B8": {
+    "offset": 80827,
+    "length": 99,
+    "bank": 0,
+    "wavdesc": 54968
+  },
+  "bk0_wdD700": {
+    "offset": 80926,
+    "length": 96,
+    "bank": 0,
+    "wavdesc": 55040
+  },
+  "bk0_wdD74B": {
+    "offset": 81022,
+    "length": 97,
+    "bank": 0,
+    "wavdesc": 55115
+  },
+  "bk0_wdD79F": {
+    "offset": 81119,
+    "length": 95,
+    "bank": 0,
+    "wavdesc": 55199
+  },
+  "bk0_wdD7E1": {
+    "offset": 81214,
+    "length": 95,
+    "bank": 0,
+    "wavdesc": 55265
+  },
+  "bk0_wdD81F": {
+    "offset": 81309,
+    "length": 95,
+    "bank": 0,
+    "wavdesc": 55327
+  },
+  "bk0_wdD85D": {
+    "offset": 81404,
+    "length": 94,
+    "bank": 0,
+    "wavdesc": 55389
+  },
+  "bk0_wdD8A5": {
+    "offset": 81498,
+    "length": 93,
+    "bank": 0,
+    "wavdesc": 55461
+  },
+  "bk0_wdD995": {
+    "offset": 81591,
+    "length": 95,
+    "bank": 0,
+    "wavdesc": 55701
+  },
+  "bk0_wdD9DA": {
+    "offset": 81686,
+    "length": 96,
+    "bank": 0,
+    "wavdesc": 55770
+  },
+  "bk0_wdDA2B": {
+    "offset": 81782,
+    "length": 96,
+    "bank": 0,
+    "wavdesc": 55851
+  },
+  "bk0_wdDA6D": {
+    "offset": 81878,
+    "length": 97,
+    "bank": 0,
+    "wavdesc": 55917
+  },
+  "bk0_wdDAB2": {
+    "offset": 81975,
+    "length": 97,
+    "bank": 0,
+    "wavdesc": 55986
+  },
+  "bk0_wdDAEA": {
+    "offset": 82072,
+    "length": 97,
+    "bank": 0,
+    "wavdesc": 56042
+  },
+  "bk0_wdDB20": {
+    "offset": 82169,
+    "length": 97,
+    "bank": 0,
+    "wavdesc": 56096
+  },
+  "bk0_wdDB62": {
+    "offset": 82266,
+    "length": 92,
+    "bank": 0,
+    "wavdesc": 56162
+  },
+  "bk0_wdDBA2": {
+    "offset": 82358,
+    "length": 94,
+    "bank": 0,
+    "wavdesc": 56226
+  },
+  "bk0_wdDBE6": {
+    "offset": 82452,
+    "length": 95,
+    "bank": 0,
+    "wavdesc": 56294
+  },
+  "bk0_wdDC0F": {
+    "offset": 82547,
+    "length": 96,
+    "bank": 0,
+    "wavdesc": 56335
+  },
+  "bk0_wdDC37": {
+    "offset": 82643,
+    "length": 94,
+    "bank": 0,
+    "wavdesc": 56375
+  },
+  "bk0_wdDC5E": {
+    "offset": 82737,
+    "length": 93,
+    "bank": 0,
+    "wavdesc": 56414
+  },
+  "bk0_wdDC84": {
+    "offset": 82830,
+    "length": 95,
+    "bank": 0,
+    "wavdesc": 56452
+  },
+  "bk0_wdDCA9": {
+    "offset": 82925,
+    "length": 94,
+    "bank": 0,
+    "wavdesc": 56489
+  },
+  "bk0_wdDCE2": {
+    "offset": 83019,
+    "length": 94,
+    "bank": 0,
+    "wavdesc": 56546
+  },
+  "bk0_wdDD21": {
+    "offset": 83113,
+    "length": 95,
+    "bank": 0,
+    "wavdesc": 56609
+  },
+  "bk0_wdDD66": {
+    "offset": 83208,
+    "length": 96,
+    "bank": 0,
+    "wavdesc": 56678
+  },
+  "bk0_wdDDA5": {
+    "offset": 83304,
+    "length": 98,
+    "bank": 0,
+    "wavdesc": 56741
+  },
+  "bk0_wdDDF9": {
+    "offset": 83402,
+    "length": 95,
+    "bank": 0,
+    "wavdesc": 56825
+  },
+  "bk0_wdDE3C": {
+    "offset": 83497,
+    "length": 96,
+    "bank": 0,
+    "wavdesc": 56892
+  },
+  "bk0_wdDE84": {
+    "offset": 83593,
+    "length": 93,
+    "bank": 0,
+    "wavdesc": 56964
+  },
+  "bk0_wdDED1": {
+    "offset": 83686,
+    "length": 95,
+    "bank": 0,
+    "wavdesc": 57041
+  },
+  "bk0_wdDF12": {
+    "offset": 83781,
+    "length": 95,
+    "bank": 0,
+    "wavdesc": 57106
+  },
+  "bk0_wdDF3B": {
+    "offset": 83876,
+    "length": 95,
+    "bank": 0,
+    "wavdesc": 57147
+  },
+  "bk0_wdDF64": {
+    "offset": 83971,
+    "length": 95,
+    "bank": 0,
+    "wavdesc": 57188
+  },
+  "bk0_wdDF92": {
+    "offset": 84066,
+    "length": 95,
+    "bank": 0,
+    "wavdesc": 57234
+  },
+  "bk0_wdDFCB": {
+    "offset": 84161,
+    "length": 91,
+    "bank": 0,
+    "wavdesc": 57291
+  },
+  "bk0_wdDFF7": {
+    "offset": 84252,
+    "length": 92,
+    "bank": 0,
+    "wavdesc": 57335
+  },
+  "bk0_wdE03F": {
+    "offset": 84344,
+    "length": 94,
+    "bank": 0,
+    "wavdesc": 57407
+  },
+  "bk0_wdE090": {
+    "offset": 84438,
+    "length": 96,
+    "bank": 0,
+    "wavdesc": 57488
+  },
+  "bk0_wdE0B9": {
+    "offset": 84534,
+    "length": 98,
+    "bank": 0,
+    "wavdesc": 57529
+  },
+  "bk0_wdE0E3": {
+    "offset": 84632,
+    "length": 98,
+    "bank": 0,
+    "wavdesc": 57571
+  },
+  "bk0_wdE10A": {
+    "offset": 84730,
+    "length": 97,
+    "bank": 0,
+    "wavdesc": 57610
+  },
+  "bk0_wdE133": {
+    "offset": 84827,
+    "length": 107,
+    "bank": 0,
+    "wavdesc": 57651
+  },
+  "bk0_wdE161": {
+    "offset": 84934,
+    "length": 94,
+    "bank": 0,
+    "wavdesc": 57697
+  },
+  "bk0_wdE18F": {
+    "offset": 85028,
+    "length": 94,
+    "bank": 0,
+    "wavdesc": 57743
+  },
+  "bk0_wdE1C1": {
+    "offset": 85122,
+    "length": 95,
+    "bank": 0,
+    "wavdesc": 57793
+  },
+  "bk0_wdE1F2": {
+    "offset": 85217,
+    "length": 95,
+    "bank": 0,
+    "wavdesc": 57842
+  },
+  "bk0_wdE223": {
+    "offset": 85312,
+    "length": 92,
+    "bank": 0,
+    "wavdesc": 57891
+  },
+  "bk0_wdE250": {
+    "offset": 85404,
+    "length": 98,
+    "bank": 0,
+    "wavdesc": 57936
+  },
+  "bk0_wdE3AA": {
+    "offset": 85502,
+    "length": 93,
+    "bank": 0,
+    "wavdesc": 58282
+  },
+  "bk0_wdE3E0": {
+    "offset": 85595,
+    "length": 93,
+    "bank": 0,
+    "wavdesc": 58336
+  },
+  "bk0_wdE424": {
+    "offset": 85688,
+    "length": 95,
+    "bank": 0,
+    "wavdesc": 58404
+  },
+  "bk0_wdE460": {
+    "offset": 85783,
+    "length": 98,
+    "bank": 0,
+    "wavdesc": 58464
+  },
+  "bk0_wdE489": {
+    "offset": 85881,
+    "length": 98,
+    "bank": 0,
+    "wavdesc": 58505
+  },
+  "bk0_wdE4B2": {
+    "offset": 85979,
+    "length": 99,
+    "bank": 0,
+    "wavdesc": 58546
+  },
+  "bk0_wdE4D9": {
+    "offset": 86078,
+    "length": 96,
+    "bank": 0,
+    "wavdesc": 58585
+  },
+  "bk0_wdE4FE": {
+    "offset": 86174,
+    "length": 94,
+    "bank": 0,
+    "wavdesc": 58622
+  },
+  "bk0_wdE523": {
+    "offset": 86268,
+    "length": 106,
+    "bank": 0,
+    "wavdesc": 58659
+  },
+  "bk0_wdE54C": {
+    "offset": 86374,
+    "length": 96,
+    "bank": 0,
+    "wavdesc": 58700
+  },
+  "bk0_wdE575": {
+    "offset": 86470,
+    "length": 99,
+    "bank": 0,
+    "wavdesc": 58741
+  },
+  "bk0_wdE59E": {
+    "offset": 86569,
+    "length": 94,
+    "bank": 0,
+    "wavdesc": 58782
+  },
+  "bk0_wdE5D1": {
+    "offset": 86663,
+    "length": 95,
+    "bank": 0,
+    "wavdesc": 58833
+  },
+  "bk0_wdE60E": {
+    "offset": 86758,
+    "length": 96,
+    "bank": 0,
+    "wavdesc": 58894
+  },
+  "bk0_wdE652": {
+    "offset": 86854,
+    "length": 93,
+    "bank": 0,
+    "wavdesc": 58962
+  },
+  "bk0_wdE681": {
+    "offset": 86947,
+    "length": 95,
+    "bank": 0,
+    "wavdesc": 59009
+  },
+  "bk0_wdE6B7": {
+    "offset": 87042,
+    "length": 98,
+    "bank": 0,
+    "wavdesc": 59063
+  },
+  "bk0_wdE6E1": {
+    "offset": 87140,
+    "length": 108,
+    "bank": 0,
+    "wavdesc": 59105
+  },
+  "bk0_wdE70C": {
+    "offset": 87248,
+    "length": 96,
+    "bank": 0,
+    "wavdesc": 59148
+  },
+  "bk0_wdE731": {
+    "offset": 87344,
+    "length": 98,
+    "bank": 0,
+    "wavdesc": 59185
+  },
+  "bk0_wdE75F": {
+    "offset": 87442,
+    "length": 97,
+    "bank": 0,
+    "wavdesc": 59231
+  },
+  "bk0_wdE792": {
+    "offset": 87539,
+    "length": 95,
+    "bank": 0,
+    "wavdesc": 59282
+  },
+  "bk0_wdE7BC": {
+    "offset": 87634,
+    "length": 95,
+    "bank": 0,
+    "wavdesc": 59324
+  },
+  "bk0_wdE7E9": {
+    "offset": 87729,
+    "length": 95,
+    "bank": 0,
+    "wavdesc": 59369
+  },
+  "bk0_wdE81A": {
+    "offset": 87824,
+    "length": 93,
+    "bank": 0,
+    "wavdesc": 59418
+  },
+  "bk0_wdE844": {
+    "offset": 87917,
+    "length": 93,
+    "bank": 0,
+    "wavdesc": 59460
+  },
+  "bk0_wdE871": {
+    "offset": 88010,
+    "length": 95,
+    "bank": 0,
+    "wavdesc": 59505
+  },
+  "bk0_wdE89D": {
+    "offset": 88105,
+    "length": 94,
+    "bank": 0,
+    "wavdesc": 59549
+  },
+  "bk0_wdE8CA": {
+    "offset": 88199,
+    "length": 95,
+    "bank": 0,
+    "wavdesc": 59594
+  },
+  "bk0_wdE8F8": {
+    "offset": 88294,
+    "length": 95,
+    "bank": 0,
+    "wavdesc": 59640
+  },
+  "bk0_wdE929": {
+    "offset": 88389,
+    "length": 93,
+    "bank": 0,
+    "wavdesc": 59689
+  },
+  "bk0_wdE95A": {
+    "offset": 88482,
+    "length": 95,
+    "bank": 0,
+    "wavdesc": 59738
+  },
+  "bk0_wdE990": {
+    "offset": 88577,
+    "length": 97,
+    "bank": 0,
+    "wavdesc": 59792
+  },
+  "bk0_wdE9C1": {
+    "offset": 88674,
+    "length": 98,
+    "bank": 0,
+    "wavdesc": 59841
+  },
+  "bk0_wdE9F7": {
+    "offset": 88772,
+    "length": 98,
+    "bank": 0,
+    "wavdesc": 59895
+  },
+  "bk0_wdEA35": {
+    "offset": 88870,
+    "length": 97,
+    "bank": 0,
+    "wavdesc": 59957
+  },
+  "bk0_wdEA7A": {
+    "offset": 88967,
+    "length": 96,
+    "bank": 0,
+    "wavdesc": 60026
+  },
+  "bk0_wdEAA3": {
+    "offset": 89063,
+    "length": 96,
+    "bank": 0,
+    "wavdesc": 60067
+  },
+  "bk0_wdEACC": {
+    "offset": 89159,
+    "length": 97,
+    "bank": 0,
+    "wavdesc": 60108
+  },
+  "bk0_wdEAF4": {
+    "offset": 89256,
+    "length": 96,
+    "bank": 0,
+    "wavdesc": 60148
+  },
+  "bk0_wdEB1A": {
+    "offset": 89352,
+    "length": 88,
+    "bank": 0,
+    "wavdesc": 60186
+  },
+  "bk0_wdEB3D": {
+    "offset": 89440,
+    "length": 90,
+    "bank": 0,
+    "wavdesc": 60221
+  },
+  "bk0_wdEB61": {
+    "offset": 89530,
+    "length": 97,
+    "bank": 0,
+    "wavdesc": 60257
+  },
+  "bk0_wdEB8E": {
+    "offset": 89627,
+    "length": 97,
+    "bank": 0,
+    "wavdesc": 60302
+  },
+  "bk0_wdEBBB": {
+    "offset": 89724,
+    "length": 96,
+    "bank": 0,
+    "wavdesc": 60347
+  },
+  "bk0_wdEC17": {
+    "offset": 89820,
+    "length": 96,
+    "bank": 0,
+    "wavdesc": 60439
+  },
+  "bk0_wdEC3F": {
+    "offset": 89916,
+    "length": 95,
+    "bank": 0,
+    "wavdesc": 60479
+  },
+  "bk0_wdEC67": {
+    "offset": 90011,
+    "length": 96,
+    "bank": 0,
+    "wavdesc": 60519
+  },
+  "bk0_wdEC8D": {
+    "offset": 90107,
+    "length": 98,
+    "bank": 0,
+    "wavdesc": 60557
+  },
+  "bk0_wdECB3": {
+    "offset": 90205,
+    "length": 96,
+    "bank": 0,
+    "wavdesc": 60595
+  },
+  "bk0_wdECDB": {
+    "offset": 90301,
+    "length": 98,
+    "bank": 0,
+    "wavdesc": 60635
+  },
+  "bk0_wdED07": {
+    "offset": 90399,
+    "length": 98,
+    "bank": 0,
+    "wavdesc": 60679
+  },
+  "bk0_wdED35": {
+    "offset": 90497,
+    "length": 98,
+    "bank": 0,
+    "wavdesc": 60725
+  },
+  "bk0_wdEDCC": {
+    "offset": 90595,
+    "length": 95,
+    "bank": 0,
+    "wavdesc": 60876
+  },
+  "bk0_wdEE03": {
+    "offset": 90690,
+    "length": 98,
+    "bank": 0,
+    "wavdesc": 60931
+  },
+  "bk0_wdEE40": {
+    "offset": 90788,
+    "length": 96,
+    "bank": 0,
+    "wavdesc": 60992
+  },
+  "bk0_wdEE7E": {
+    "offset": 90884,
+    "length": 94,
+    "bank": 0,
+    "wavdesc": 61054
+  },
+  "bk0_wdEEBC": {
+    "offset": 90978,
+    "length": 96,
+    "bank": 0,
+    "wavdesc": 61116
+  },
+  "bk0_wdEF0A": {
+    "offset": 91074,
+    "length": 92,
+    "bank": 0,
+    "wavdesc": 61194
+  },
+  "bk0_wdEF45": {
+    "offset": 91166,
+    "length": 98,
+    "bank": 0,
+    "wavdesc": 61253
+  },
+  "bk0_wdEF88": {
+    "offset": 91264,
+    "length": 92,
+    "bank": 0,
+    "wavdesc": 61320
+  },
+  "bk0_wdEFC5": {
+    "offset": 91356,
+    "length": 93,
+    "bank": 0,
+    "wavdesc": 61381
+  },
+  "bk0_wdF00C": {
+    "offset": 91449,
+    "length": 97,
+    "bank": 0,
+    "wavdesc": 61452
+  },
+  "bk0_wdF061": {
+    "offset": 91546,
+    "length": 92,
+    "bank": 0,
+    "wavdesc": 61537
+  },
+  "bk0_wdF0AE": {
+    "offset": 91638,
+    "length": 93,
+    "bank": 0,
+    "wavdesc": 61614
+  },
+  "bk0_wdF10A": {
+    "offset": 91731,
+    "length": 95,
+    "bank": 0,
+    "wavdesc": 61706
+  },
+  "bk0_wdF154": {
+    "offset": 91826,
+    "length": 96,
+    "bank": 0,
+    "wavdesc": 61780
+  },
+  "bk0_wdF241": {
+    "offset": 91922,
+    "length": 94,
+    "bank": 0,
+    "wavdesc": 62017
+  },
+  "bk0_wdF277": {
+    "offset": 92016,
+    "length": 96,
+    "bank": 0,
+    "wavdesc": 62071
+  },
+  "bk0_wdF2B2": {
+    "offset": 92112,
+    "length": 96,
+    "bank": 0,
+    "wavdesc": 62130
+  },
+  "bk0_wdF2F1": {
+    "offset": 92208,
+    "length": 93,
+    "bank": 0,
+    "wavdesc": 62193
+  },
+  "bk0_wdF334": {
+    "offset": 92301,
+    "length": 94,
+    "bank": 0,
+    "wavdesc": 62260
+  },
+  "bk0_wdF36D": {
+    "offset": 92395,
+    "length": 96,
+    "bank": 0,
+    "wavdesc": 62317
+  },
+  "bk0_wdF392": {
+    "offset": 92491,
+    "length": 96,
+    "bank": 0,
+    "wavdesc": 62354
+  },
+  "bk0_wdF3B8": {
+    "offset": 92587,
+    "length": 96,
+    "bank": 0,
+    "wavdesc": 62392
+  },
+  "bk0_wdF3DE": {
+    "offset": 92683,
+    "length": 84,
+    "bank": 0,
+    "wavdesc": 62430
+  },
+  "bk0_wdF412": {
+    "offset": 92767,
+    "length": 90,
+    "bank": 0,
+    "wavdesc": 62482
+  },
+  "bk0_wdF44F": {
+    "offset": 92857,
+    "length": 93,
+    "bank": 0,
+    "wavdesc": 62543
+  },
+  "bk0_wdF491": {
+    "offset": 92950,
+    "length": 95,
+    "bank": 0,
+    "wavdesc": 62609
+  },
+  "bk0_wdF4E5": {
+    "offset": 93045,
+    "length": 95,
+    "bank": 0,
+    "wavdesc": 62693
+  },
+  "bk0_wdF51F": {
+    "offset": 93140,
+    "length": 96,
+    "bank": 0,
+    "wavdesc": 62751
+  },
+  "bk0_wdF562": {
+    "offset": 93236,
+    "length": 97,
+    "bank": 0,
+    "wavdesc": 62818
+  },
+  "bk0_wdF5A9": {
+    "offset": 93333,
+    "length": 87,
+    "bank": 0,
+    "wavdesc": 62889
+  },
+  "bk0_wdF5D8": {
+    "offset": 93420,
+    "length": 89,
+    "bank": 0,
+    "wavdesc": 62936
+  },
+  "bk0_wdF607": {
+    "offset": 93509,
+    "length": 91,
+    "bank": 0,
+    "wavdesc": 62983
+  },
+  "bk0_wdF63B": {
+    "offset": 93600,
+    "length": 93,
+    "bank": 0,
+    "wavdesc": 63035
+  },
+  "bk0_wdF677": {
+    "offset": 93693,
+    "length": 86,
+    "bank": 0,
+    "wavdesc": 63095
+  },
+  "bk0_wdF6A3": {
+    "offset": 93779,
+    "length": 89,
+    "bank": 0,
+    "wavdesc": 63139
+  },
+  "bk0_wdF6D3": {
+    "offset": 93868,
+    "length": 93,
+    "bank": 0,
+    "wavdesc": 63187
+  },
+  "bk0_wdF707": {
+    "offset": 93961,
+    "length": 96,
+    "bank": 0,
+    "wavdesc": 63239
+  },
+  "bk0_wdF72E": {
+    "offset": 94057,
+    "length": 96,
+    "bank": 0,
+    "wavdesc": 63278
+  },
+  "bk0_wdF756": {
+    "offset": 94153,
+    "length": 96,
+    "bank": 0,
+    "wavdesc": 63318
+  },
+  "bk0_wdF782": {
+    "offset": 94249,
+    "length": 94,
+    "bank": 0,
+    "wavdesc": 63362
+  },
+  "bk0_wdF7AA": {
+    "offset": 94343,
+    "length": 96,
+    "bank": 0,
+    "wavdesc": 63402
+  },
+  "bk0_wdF7D1": {
+    "offset": 94439,
+    "length": 89,
+    "bank": 0,
+    "wavdesc": 63441
+  },
+  "bk0_wdF7F5": {
+    "offset": 94528,
+    "length": 78,
+    "bank": 0,
+    "wavdesc": 63477
+  },
+  "bk0_wdF817": {
+    "offset": 94606,
+    "length": 84,
+    "bank": 0,
+    "wavdesc": 63511
+  },
+  "bk0_wdF84A": {
+    "offset": 94690,
+    "length": 89,
+    "bank": 0,
+    "wavdesc": 63562
+  },
+  "bk0_wdF881": {
+    "offset": 94779,
+    "length": 90,
+    "bank": 0,
+    "wavdesc": 63617
+  },
+  "bk0_wdF8C6": {
+    "offset": 94869,
+    "length": 95,
+    "bank": 0,
+    "wavdesc": 63686
+  },
+  "bk0_wdF915": {
+    "offset": 94964,
+    "length": 62,
+    "bank": 0,
+    "wavdesc": 63765
+  },
+  "bk0_wdF933": {
+    "offset": 95026,
+    "length": 85,
+    "bank": 0,
+    "wavdesc": 63795
+  },
+  "bk0_wdF965": {
+    "offset": 95111,
+    "length": 88,
+    "bank": 0,
+    "wavdesc": 63845
+  },
+  "bk0_wdF9A1": {
+    "offset": 95199,
+    "length": 92,
+    "bank": 0,
+    "wavdesc": 63905
+  },
+  "bk0_wdF9E6": {
+    "offset": 95291,
+    "length": 79,
+    "bank": 0,
+    "wavdesc": 63974
+  },
+  "bk0_wdFA0B": {
+    "offset": 95370,
+    "length": 89,
+    "bank": 0,
+    "wavdesc": 64011
+  },
+  "bk0_wdFA36": {
+    "offset": 95459,
+    "length": 93,
+    "bank": 0,
+    "wavdesc": 64054
+  },
+  "bk0_wdFA64": {
+    "offset": 95552,
+    "length": 101,
+    "bank": 0,
+    "wavdesc": 64100
+  },
+  "bk0_wdFA8C": {
+    "offset": 95653,
+    "length": 105,
+    "bank": 0,
+    "wavdesc": 64140
+  },
+  "bk0_wdFAB5": {
+    "offset": 95758,
+    "length": 83,
+    "bank": 0,
+    "wavdesc": 64181
+  },
+  "bk0_wdFAD8": {
+    "offset": 95841,
+    "length": 89,
+    "bank": 0,
+    "wavdesc": 64216
+  },
+  "bk0_wdFAFF": {
+    "offset": 95930,
+    "length": 92,
+    "bank": 0,
+    "wavdesc": 64255
+  },
+  "bk0_wdFB2E": {
+    "offset": 96022,
+    "length": 87,
+    "bank": 0,
+    "wavdesc": 64302
+  },
+  "bk0_wdFB5C": {
+    "offset": 96109,
+    "length": 90,
+    "bank": 0,
+    "wavdesc": 64348
+  },
+  "bk0_wdFB96": {
+    "offset": 96199,
+    "length": 95,
+    "bank": 0,
+    "wavdesc": 64406
+  },
+  "bk0_wdFBDB": {
+    "offset": 96294,
+    "length": 96,
+    "bank": 0,
+    "wavdesc": 64475
+  },
+  "bk0_wdFC2A": {
+    "offset": 96390,
+    "length": 96,
+    "bank": 0,
+    "wavdesc": 64554
+  },
+  "bk0_wdFC50": {
+    "offset": 96486,
+    "length": 96,
+    "bank": 0,
+    "wavdesc": 64592
+  },
+  "bk0_wdFC75": {
+    "offset": 96582,
+    "length": 96,
+    "bank": 0,
+    "wavdesc": 64629
+  },
+  "bk0_wdFC9C": {
+    "offset": 96678,
+    "length": 50,
+    "bank": 0,
+    "wavdesc": 64668
+  },
+  "bk0_wdFCB1": {
+    "offset": 96728,
+    "length": 61,
+    "bank": 0,
+    "wavdesc": 64689
+  },
+  "bk0_wdFCCC": {
+    "offset": 96789,
+    "length": 86,
+    "bank": 0,
+    "wavdesc": 64716
+  },
+  "bk0_wdFCF8": {
+    "offset": 96875,
+    "length": 90,
+    "bank": 0,
+    "wavdesc": 64760
+  },
+  "bk0_wdFD2A": {
+    "offset": 96965,
+    "length": 90,
+    "bank": 0,
+    "wavdesc": 64810
+  },
+  "bk0_wdFD62": {
+    "offset": 97055,
+    "length": 90,
+    "bank": 0,
+    "wavdesc": 64866
+  },
+  "bk0_wdFDA2": {
+    "offset": 97145,
+    "length": 92,
+    "bank": 0,
+    "wavdesc": 64930
+  },
+  "bk0_wdFDE9": {
+    "offset": 97237,
+    "length": 96,
+    "bank": 0,
+    "wavdesc": 65001
+  },
+  "bk0_wdFE19": {
+    "offset": 97333,
+    "length": 96,
+    "bank": 0,
+    "wavdesc": 65049
+  },
+  "bk0_wdFE4C": {
+    "offset": 97429,
+    "length": 57,
+    "bank": 0,
+    "wavdesc": 65100
+  },
+  "bk0_wdFE67": {
+    "offset": 97486,
+    "length": 81,
+    "bank": 0,
+    "wavdesc": 65127
+  },
+  "bk0_wdFE8D": {
+    "offset": 97567,
+    "length": 89,
+    "bank": 0,
+    "wavdesc": 65165
+  },
+  "bk0_wdFEBD": {
+    "offset": 97656,
+    "length": 91,
+    "bank": 0,
+    "wavdesc": 65213
+  },
+  "bk0_wdFEF4": {
+    "offset": 97747,
+    "length": 94,
+    "bank": 0,
+    "wavdesc": 65268
+  },
+  "bk0_wdFF36": {
+    "offset": 97841,
+    "length": 95,
+    "bank": 0,
+    "wavdesc": 65334
+  },
+  "bk0_wdFF72": {
+    "offset": 97936,
+    "length": 94,
+    "bank": 0,
+    "wavdesc": 65394
+  },
+  "bk0_wdFFA9": {
+    "offset": 98030,
+    "length": 95,
+    "bank": 0,
+    "wavdesc": 65449
+  },
+  "bk0_wdFFD7": {
+    "offset": 98125,
+    "length": 95,
+    "bank": 0,
+    "wavdesc": 65495
+  },
+  "bk1_wd0003": {
+    "offset": 98220,
+    "length": 95,
+    "bank": 1,
+    "wavdesc": 3
+  },
+  "bk1_wd002A": {
+    "offset": 98315,
+    "length": 95,
+    "bank": 1,
+    "wavdesc": 42
+  },
+  "bk1_wd006C": {
+    "offset": 98410,
+    "length": 95,
+    "bank": 1,
+    "wavdesc": 108
+  },
+  "bk1_wd00B5": {
+    "offset": 98505,
+    "length": 95,
+    "bank": 1,
+    "wavdesc": 181
+  },
+  "bk1_wd0109": {
+    "offset": 98600,
+    "length": 95,
+    "bank": 1,
+    "wavdesc": 265
+  },
+  "bk1_wd015C": {
+    "offset": 98695,
+    "length": 95,
+    "bank": 1,
+    "wavdesc": 348
+  },
+  "bk1_wd01AB": {
+    "offset": 98790,
+    "length": 95,
+    "bank": 1,
+    "wavdesc": 427
+  },
+  "bk1_wd01FD": {
+    "offset": 98885,
+    "length": 97,
+    "bank": 1,
+    "wavdesc": 509
+  },
+  "bk1_wd0249": {
+    "offset": 98982,
+    "length": 96,
+    "bank": 1,
+    "wavdesc": 585
+  },
+  "bk1_wd0297": {
+    "offset": 99078,
+    "length": 95,
+    "bank": 1,
+    "wavdesc": 663
+  },
+  "bk1_wd02E2": {
+    "offset": 99173,
+    "length": 98,
+    "bank": 1,
+    "wavdesc": 738
+  },
+  "bk1_wd032A": {
+    "offset": 99271,
+    "length": 97,
+    "bank": 1,
+    "wavdesc": 810
+  },
+  "bk1_wd036D": {
+    "offset": 99368,
+    "length": 96,
+    "bank": 1,
+    "wavdesc": 877
+  },
+  "bk1_wd03B1": {
+    "offset": 99464,
+    "length": 96,
+    "bank": 1,
+    "wavdesc": 945
+  },
+  "bk1_wd03F4": {
+    "offset": 99560,
+    "length": 96,
+    "bank": 1,
+    "wavdesc": 1012
+  },
+  "bk1_wd0436": {
+    "offset": 99656,
+    "length": 95,
+    "bank": 1,
+    "wavdesc": 1078
+  },
+  "bk1_wd047C": {
+    "offset": 99751,
+    "length": 95,
+    "bank": 1,
+    "wavdesc": 1148
+  },
+  "bk1_wd04BF": {
+    "offset": 99846,
+    "length": 95,
+    "bank": 1,
+    "wavdesc": 1215
+  },
+  "bk1_wd0505": {
+    "offset": 99941,
+    "length": 95,
+    "bank": 1,
+    "wavdesc": 1285
+  },
+  "bk1_wd0544": {
+    "offset": 100036,
+    "length": 97,
+    "bank": 1,
+    "wavdesc": 1348
+  },
+  "bk1_wd058E": {
+    "offset": 100133,
+    "length": 95,
+    "bank": 1,
+    "wavdesc": 1422
+  },
+  "bk1_wd05DA": {
+    "offset": 100228,
+    "length": 95,
+    "bank": 1,
+    "wavdesc": 1498
+  },
+  "bk1_wd0617": {
+    "offset": 100323,
+    "length": 107,
+    "bank": 1,
+    "wavdesc": 1559
+  },
+  "bk1_wd0653": {
+    "offset": 100430,
+    "length": 94,
+    "bank": 1,
+    "wavdesc": 1619
+  },
+  "bk1_wd0697": {
+    "offset": 100524,
+    "length": 110,
+    "bank": 1,
+    "wavdesc": 1687
+  },
+  "bk1_wd06D7": {
+    "offset": 100634,
+    "length": 95,
+    "bank": 1,
+    "wavdesc": 1751
+  },
+  "bk1_wd0715": {
+    "offset": 100729,
+    "length": 96,
+    "bank": 1,
+    "wavdesc": 1813
+  },
+  "bk1_wd0758": {
+    "offset": 100825,
+    "length": 96,
+    "bank": 1,
+    "wavdesc": 1880
+  },
+  "bk1_wd0792": {
+    "offset": 100921,
+    "length": 97,
+    "bank": 1,
+    "wavdesc": 1938
+  },
+  "bk1_wd07C7": {
+    "offset": 101018,
+    "length": 94,
+    "bank": 1,
+    "wavdesc": 1991
+  },
+  "bk1_wd0813": {
+    "offset": 101112,
+    "length": 95,
+    "bank": 1,
+    "wavdesc": 2067
+  },
+  "bk1_wd085D": {
+    "offset": 101207,
+    "length": 93,
+    "bank": 1,
+    "wavdesc": 2141
+  },
+  "bk1_wd089D": {
+    "offset": 101300,
+    "length": 96,
+    "bank": 1,
+    "wavdesc": 2205
+  },
+  "bk1_wd08D0": {
+    "offset": 101396,
+    "length": 96,
+    "bank": 1,
+    "wavdesc": 2256
+  },
+  "bk1_wd090E": {
+    "offset": 101492,
+    "length": 96,
+    "bank": 1,
+    "wavdesc": 2318
+  },
+  "bk1_wd0B04": {
+    "offset": 101588,
+    "length": 95,
+    "bank": 1,
+    "wavdesc": 2820
+  },
+  "bk1_wd0B4D": {
+    "offset": 101683,
+    "length": 96,
+    "bank": 1,
+    "wavdesc": 2893
+  },
+  "bk1_wd0B92": {
+    "offset": 101779,
+    "length": 101,
+    "bank": 1,
+    "wavdesc": 2962
+  },
+  "bk1_wd0BCB": {
+    "offset": 101880,
+    "length": 99,
+    "bank": 1,
+    "wavdesc": 3019
+  },
+  "bk1_wd0BFD": {
+    "offset": 101979,
+    "length": 98,
+    "bank": 1,
+    "wavdesc": 3069
+  },
+  "bk1_wd0C30": {
+    "offset": 102077,
+    "length": 98,
+    "bank": 1,
+    "wavdesc": 3120
+  },
+  "bk1_wd0C6D": {
+    "offset": 102175,
+    "length": 97,
+    "bank": 1,
+    "wavdesc": 3181
+  },
+  "bk1_wd0CAB": {
+    "offset": 102272,
+    "length": 95,
+    "bank": 1,
+    "wavdesc": 3243
+  },
+  "bk1_wd0CDA": {
+    "offset": 102367,
+    "length": 95,
+    "bank": 1,
+    "wavdesc": 3290
+  },
+  "bk1_wd0D0B": {
+    "offset": 102462,
+    "length": 92,
+    "bank": 1,
+    "wavdesc": 3339
+  },
+  "bk1_wd0DC4": {
+    "offset": 102554,
+    "length": 97,
+    "bank": 1,
+    "wavdesc": 3524
+  },
+  "bk1_wd0E0B": {
+    "offset": 102651,
+    "length": 96,
+    "bank": 1,
+    "wavdesc": 3595
+  },
+  "bk1_wd0E54": {
+    "offset": 102747,
+    "length": 92,
+    "bank": 1,
+    "wavdesc": 3668
+  },
+  "bk1_wd0EAA": {
+    "offset": 102839,
+    "length": 92,
+    "bank": 1,
+    "wavdesc": 3754
+  },
+  "bk1_wd0EE1": {
+    "offset": 102931,
+    "length": 92,
+    "bank": 1,
+    "wavdesc": 3809
+  },
+  "bk1_wd0F1E": {
+    "offset": 103023,
+    "length": 91,
+    "bank": 1,
+    "wavdesc": 3870
+  },
+  "bk1_wd0F6E": {
+    "offset": 103114,
+    "length": 92,
+    "bank": 1,
+    "wavdesc": 3950
+  },
+  "bk1_wd0FB8": {
+    "offset": 103206,
+    "length": 93,
+    "bank": 1,
+    "wavdesc": 4024
+  },
+  "bk1_wd108B": {
+    "offset": 103299,
+    "length": 93,
+    "bank": 1,
+    "wavdesc": 4235
+  },
+  "bk1_wd10CE": {
+    "offset": 103392,
+    "length": 94,
+    "bank": 1,
+    "wavdesc": 4302
+  },
+  "bk1_wd1119": {
+    "offset": 103486,
+    "length": 94,
+    "bank": 1,
+    "wavdesc": 4377
+  },
+  "bk1_wd114D": {
+    "offset": 103580,
+    "length": 94,
+    "bank": 1,
+    "wavdesc": 4429
+  },
+  "bk1_wd1184": {
+    "offset": 103674,
+    "length": 96,
+    "bank": 1,
+    "wavdesc": 4484
+  },
+  "bk1_wd11BE": {
+    "offset": 103770,
+    "length": 95,
+    "bank": 1,
+    "wavdesc": 4542
+  },
+  "bk1_wd11FF": {
+    "offset": 103865,
+    "length": 95,
+    "bank": 1,
+    "wavdesc": 4607
+  },
+  "bk1_wd1242": {
+    "offset": 103960,
+    "length": 93,
+    "bank": 1,
+    "wavdesc": 4674
+  },
+  "bk1_wd127F": {
+    "offset": 104053,
+    "length": 96,
+    "bank": 1,
+    "wavdesc": 4735
+  },
+  "bk1_wd12C6": {
+    "offset": 104149,
+    "length": 93,
+    "bank": 1,
+    "wavdesc": 4806
+  },
+  "bk1_wd131C": {
+    "offset": 104242,
+    "length": 94,
+    "bank": 1,
+    "wavdesc": 4892
+  },
+  "bk1_wd1378": {
+    "offset": 104336,
+    "length": 92,
+    "bank": 1,
+    "wavdesc": 4984
+  },
+  "bk1_wd13C8": {
+    "offset": 104428,
+    "length": 96,
+    "bank": 1,
+    "wavdesc": 5064
+  },
+  "bk1_wd140F": {
+    "offset": 104524,
+    "length": 96,
+    "bank": 1,
+    "wavdesc": 5135
+  },
+  "bk1_wd1464": {
+    "offset": 104620,
+    "length": 96,
+    "bank": 1,
+    "wavdesc": 5220
+  },
+  "bk1_wd149D": {
+    "offset": 104716,
+    "length": 96,
+    "bank": 1,
+    "wavdesc": 5277
+  },
+  "bk1_wd14DD": {
+    "offset": 104812,
+    "length": 98,
+    "bank": 1,
+    "wavdesc": 5341
+  },
+  "bk1_wd152E": {
+    "offset": 104910,
+    "length": 98,
+    "bank": 1,
+    "wavdesc": 5422
+  },
+  "bk1_wd1587": {
+    "offset": 105008,
+    "length": 95,
+    "bank": 1,
+    "wavdesc": 5511
+  },
+  "bk1_wd15D2": {
+    "offset": 105103,
+    "length": 95,
+    "bank": 1,
+    "wavdesc": 5586
+  },
+  "bk1_wd1623": {
+    "offset": 105198,
+    "length": 95,
+    "bank": 1,
+    "wavdesc": 5667
+  },
+  "bk1_wd165C": {
+    "offset": 105293,
+    "length": 93,
+    "bank": 1,
+    "wavdesc": 5724
+  },
+  "bk1_wd1697": {
+    "offset": 105386,
+    "length": 97,
+    "bank": 1,
+    "wavdesc": 5783
+  },
+  "bk1_wd1764": {
+    "offset": 105483,
+    "length": 92,
+    "bank": 1,
+    "wavdesc": 5988
+  },
+  "bk1_wd1797": {
+    "offset": 105575,
+    "length": 92,
+    "bank": 1,
+    "wavdesc": 6039
+  },
+  "bk1_wd17CD": {
+    "offset": 105667,
+    "length": 97,
+    "bank": 1,
+    "wavdesc": 6093
+  },
+  "bk1_wd1807": {
+    "offset": 105764,
+    "length": 96,
+    "bank": 1,
+    "wavdesc": 6151
+  },
+  "bk1_wd1849": {
+    "offset": 105860,
+    "length": 98,
+    "bank": 1,
+    "wavdesc": 6217
+  },
+  "bk1_wd188C": {
+    "offset": 105958,
+    "length": 96,
+    "bank": 1,
+    "wavdesc": 6284
+  },
+  "bk1_wd18CF": {
+    "offset": 106054,
+    "length": 96,
+    "bank": 1,
+    "wavdesc": 6351
+  },
+  "bk1_wd1911": {
+    "offset": 106150,
+    "length": 97,
+    "bank": 1,
+    "wavdesc": 6417
+  },
+  "bk1_wd194B": {
+    "offset": 106247,
+    "length": 95,
+    "bank": 1,
+    "wavdesc": 6475
+  },
+  "bk1_wd1980": {
+    "offset": 106342,
+    "length": 95,
+    "bank": 1,
+    "wavdesc": 6528
+  },
+  "bk1_wd19AC": {
+    "offset": 106437,
+    "length": 96,
+    "bank": 1,
+    "wavdesc": 6572
+  },
+  "bk1_wd19D4": {
+    "offset": 106533,
+    "length": 92,
+    "bank": 1,
+    "wavdesc": 6612
+  },
+  "bk1_wd19F9": {
+    "offset": 106625,
+    "length": 96,
+    "bank": 1,
+    "wavdesc": 6649
+  },
+  "bk1_wd1A3E": {
+    "offset": 106721,
+    "length": 96,
+    "bank": 1,
+    "wavdesc": 6718
+  },
+  "bk1_wd1A88": {
+    "offset": 106817,
+    "length": 95,
+    "bank": 1,
+    "wavdesc": 6792
+  },
+  "bk1_wd1ACC": {
+    "offset": 106912,
+    "length": 95,
+    "bank": 1,
+    "wavdesc": 6860
+  },
+  "bk1_wd1B10": {
+    "offset": 107007,
+    "length": 95,
+    "bank": 1,
+    "wavdesc": 6928
+  },
+  "bk1_wd1B4D": {
+    "offset": 107102,
+    "length": 93,
+    "bank": 1,
+    "wavdesc": 6989
+  },
+  "bk1_wd1B92": {
+    "offset": 107195,
+    "length": 96,
+    "bank": 1,
+    "wavdesc": 7058
+  },
+  "bk1_wd1BD7": {
+    "offset": 107291,
+    "length": 97,
+    "bank": 1,
+    "wavdesc": 7127
+  },
+  "bk1_wd1C1E": {
+    "offset": 107388,
+    "length": 96,
+    "bank": 1,
+    "wavdesc": 7198
+  },
+  "bk1_wd1C5C": {
+    "offset": 107484,
+    "length": 98,
+    "bank": 1,
+    "wavdesc": 7260
+  },
+  "bk1_wd1C95": {
+    "offset": 107582,
+    "length": 108,
+    "bank": 1,
+    "wavdesc": 7317
+  },
+  "bk1_wd1CC6": {
+    "offset": 107690,
+    "length": 96,
+    "bank": 1,
+    "wavdesc": 7366
+  },
+  "bk1_wd1D11": {
+    "offset": 107786,
+    "length": 96,
+    "bank": 1,
+    "wavdesc": 7441
+  },
+  "bk1_wd1D66": {
+    "offset": 107882,
+    "length": 96,
+    "bank": 1,
+    "wavdesc": 7526
+  },
+  "bk1_wd1DB5": {
+    "offset": 107978,
+    "length": 97,
+    "bank": 1,
+    "wavdesc": 7605
+  },
+  "bk1_wd1DFF": {
+    "offset": 108075,
+    "length": 96,
+    "bank": 1,
+    "wavdesc": 7679
+  },
+  "bk1_wd1E41": {
+    "offset": 108171,
+    "length": 95,
+    "bank": 1,
+    "wavdesc": 7745
+  },
+  "bk1_wd1E8B": {
+    "offset": 108266,
+    "length": 93,
+    "bank": 1,
+    "wavdesc": 7819
+  },
+  "bk1_wd1EC6": {
+    "offset": 108359,
+    "length": 104,
+    "bank": 1,
+    "wavdesc": 7878
+  },
+  "bk1_wd1F02": {
+    "offset": 108463,
+    "length": 96,
+    "bank": 1,
+    "wavdesc": 7938
+  },
+  "bk1_wd1F51": {
+    "offset": 108559,
+    "length": 96,
+    "bank": 1,
+    "wavdesc": 8017
+  },
+  "bk1_wd1F9D": {
+    "offset": 108655,
+    "length": 96,
+    "bank": 1,
+    "wavdesc": 8093
+  },
+  "bk1_wd1FE6": {
+    "offset": 108751,
+    "length": 94,
+    "bank": 1,
+    "wavdesc": 8166
+  },
+  "bk1_wd2029": {
+    "offset": 108845,
+    "length": 98,
+    "bank": 1,
+    "wavdesc": 8233
+  },
+  "bk1_wd2059": {
+    "offset": 108943,
+    "length": 95,
+    "bank": 1,
+    "wavdesc": 8281
+  },
+  "bk1_wd20A0": {
+    "offset": 109038,
+    "length": 95,
+    "bank": 1,
+    "wavdesc": 8352
+  },
+  "bk1_wd20E1": {
+    "offset": 109133,
+    "length": 93,
+    "bank": 1,
+    "wavdesc": 8417
+  },
+  "bk1_wd212C": {
+    "offset": 109226,
+    "length": 95,
+    "bank": 1,
+    "wavdesc": 8492
+  },
+  "bk1_wd2171": {
+    "offset": 109321,
+    "length": 98,
+    "bank": 1,
+    "wavdesc": 8561
+  },
+  "bk1_wd21B7": {
+    "offset": 109419,
+    "length": 98,
+    "bank": 1,
+    "wavdesc": 8631
+  },
+  "bk1_wd21F2": {
+    "offset": 109517,
+    "length": 98,
+    "bank": 1,
+    "wavdesc": 8690
+  },
+  "bk1_wd2322": {
+    "offset": 109615,
+    "length": 95,
+    "bank": 1,
+    "wavdesc": 8994
+  },
+  "bk1_wd2362": {
+    "offset": 109710,
+    "length": 96,
+    "bank": 1,
+    "wavdesc": 9058
+  },
+  "bk1_wd239F": {
+    "offset": 109806,
+    "length": 97,
+    "bank": 1,
+    "wavdesc": 9119
+  },
+  "bk1_wd23D5": {
+    "offset": 109903,
+    "length": 96,
+    "bank": 1,
+    "wavdesc": 9173
+  },
+  "bk1_wd2405": {
+    "offset": 109999,
+    "length": 93,
+    "bank": 1,
+    "wavdesc": 9221
+  },
+  "bk1_wd2430": {
+    "offset": 110092,
+    "length": 95,
+    "bank": 1,
+    "wavdesc": 9264
+  },
+  "bk1_wd2457": {
+    "offset": 110187,
+    "length": 89,
+    "bank": 1,
+    "wavdesc": 9303
+  },
+  "bk1_wd247B": {
+    "offset": 110276,
+    "length": 96,
+    "bank": 1,
+    "wavdesc": 9339
+  },
+  "bk1_wd24BE": {
+    "offset": 110372,
+    "length": 96,
+    "bank": 1,
+    "wavdesc": 9406
+  },
+  "bk1_wd2503": {
+    "offset": 110468,
+    "length": 94,
+    "bank": 1,
+    "wavdesc": 9475
+  },
+  "bk1_wd254B": {
+    "offset": 110562,
+    "length": 96,
+    "bank": 1,
+    "wavdesc": 9547
+  },
+  "bk1_wd257F": {
+    "offset": 110658,
+    "length": 94,
+    "bank": 1,
+    "wavdesc": 9599
+  },
+  "bk1_wd25CA": {
+    "offset": 110752,
+    "length": 87,
+    "bank": 1,
+    "wavdesc": 9674
+  },
+  "bk1_wd2789": {
+    "offset": 110839,
+    "length": 95,
+    "bank": 1,
+    "wavdesc": 10121
+  },
+  "bk1_wd27C4": {
+    "offset": 110934,
+    "length": 97,
+    "bank": 1,
+    "wavdesc": 10180
+  },
+  "bk1_wd27FA": {
+    "offset": 111031,
+    "length": 95,
+    "bank": 1,
+    "wavdesc": 10234
+  },
+  "bk1_wd2829": {
+    "offset": 111126,
+    "length": 95,
+    "bank": 1,
+    "wavdesc": 10281
+  },
+  "bk1_wd2855": {
+    "offset": 111221,
+    "length": 94,
+    "bank": 1,
+    "wavdesc": 10325
+  },
+  "bk1_wd287D": {
+    "offset": 111315,
+    "length": 93,
+    "bank": 1,
+    "wavdesc": 10365
+  },
+  "bk1_wd28A2": {
+    "offset": 111408,
+    "length": 92,
+    "bank": 1,
+    "wavdesc": 10402
+  },
+  "bk1_wd28C7": {
+    "offset": 111500,
+    "length": 95,
+    "bank": 1,
+    "wavdesc": 10439
+  },
+  "bk1_wd290E": {
+    "offset": 111595,
+    "length": 96,
+    "bank": 1,
+    "wavdesc": 10510
+  },
+  "bk1_wd2952": {
+    "offset": 111691,
+    "length": 102,
+    "bank": 1,
+    "wavdesc": 10578
+  },
+  "bk1_wd29A1": {
+    "offset": 111793,
+    "length": 95,
+    "bank": 1,
+    "wavdesc": 10657
+  },
+  "bk1_wd29F6": {
+    "offset": 111888,
+    "length": 92,
+    "bank": 1,
+    "wavdesc": 10742
+  },
+  "bk1_wd2A53": {
+    "offset": 111980,
+    "length": 96,
+    "bank": 1,
+    "wavdesc": 10835
+  },
+  "bk1_wd2AA5": {
+    "offset": 112076,
+    "length": 90,
+    "bank": 1,
+    "wavdesc": 10917
+  },
+  "bk1_wd2AF9": {
+    "offset": 112166,
+    "length": 97,
+    "bank": 1,
+    "wavdesc": 11001
+  },
+  "bk1_wd2B49": {
+    "offset": 112263,
+    "length": 95,
+    "bank": 1,
+    "wavdesc": 11081
+  },
+  "bk1_wd2B83": {
+    "offset": 112358,
+    "length": 94,
+    "bank": 1,
+    "wavdesc": 11139
+  },
+  "bk1_wd2BBB": {
+    "offset": 112452,
+    "length": 95,
+    "bank": 1,
+    "wavdesc": 11195
+  },
+  "bk1_wd2BEE": {
+    "offset": 112547,
+    "length": 100,
+    "bank": 1,
+    "wavdesc": 11246
+  },
+  "bk1_wd2C22": {
+    "offset": 112647,
+    "length": 95,
+    "bank": 1,
+    "wavdesc": 11298
+  },
+  "bk1_wd2C5D": {
+    "offset": 112742,
+    "length": 98,
+    "bank": 1,
+    "wavdesc": 11357
+  },
+  "bk1_wd2C8C": {
+    "offset": 112840,
+    "length": 95,
+    "bank": 1,
+    "wavdesc": 11404
+  },
+  "bk1_wd2CCD": {
+    "offset": 112935,
+    "length": 94,
+    "bank": 1,
+    "wavdesc": 11469
+  },
+  "bk1_wd2D0A": {
+    "offset": 113029,
+    "length": 97,
+    "bank": 1,
+    "wavdesc": 11530
+  },
+  "bk1_wd2DB4": {
+    "offset": 113126,
+    "length": 96,
+    "bank": 1,
+    "wavdesc": 11700
+  },
+  "bk1_wd2DF9": {
+    "offset": 113222,
+    "length": 95,
+    "bank": 1,
+    "wavdesc": 11769
+  },
+  "bk1_wd2E3B": {
+    "offset": 113317,
+    "length": 95,
+    "bank": 1,
+    "wavdesc": 11835
+  },
+  "bk1_wd2E76": {
+    "offset": 113412,
+    "length": 96,
+    "bank": 1,
+    "wavdesc": 11894
+  },
+  "bk1_wd2EA9": {
+    "offset": 113508,
+    "length": 95,
+    "bank": 1,
+    "wavdesc": 11945
+  },
+  "bk1_wd2FAF": {
+    "offset": 113603,
+    "length": 96,
+    "bank": 1,
+    "wavdesc": 12207
+  },
+  "bk1_wd2FEB": {
+    "offset": 113699,
+    "length": 96,
+    "bank": 1,
+    "wavdesc": 12267
+  },
+  "bk1_wd3024": {
+    "offset": 113795,
+    "length": 97,
+    "bank": 1,
+    "wavdesc": 12324
+  },
+  "bk1_wd305E": {
+    "offset": 113892,
+    "length": 98,
+    "bank": 1,
+    "wavdesc": 12382
+  },
+  "bk1_wd309D": {
+    "offset": 113990,
+    "length": 98,
+    "bank": 1,
+    "wavdesc": 12445
+  },
+  "bk1_wd30DC": {
+    "offset": 114088,
+    "length": 96,
+    "bank": 1,
+    "wavdesc": 12508
+  },
+  "bk1_wd3117": {
+    "offset": 114184,
+    "length": 96,
+    "bank": 1,
+    "wavdesc": 12567
+  },
+  "bk1_wd315A": {
+    "offset": 114280,
+    "length": 95,
+    "bank": 1,
+    "wavdesc": 12634
+  },
+  "bk1_wd3195": {
+    "offset": 114375,
+    "length": 95,
+    "bank": 1,
+    "wavdesc": 12693
+  },
+  "bk1_wd31CF": {
+    "offset": 114470,
+    "length": 95,
+    "bank": 1,
+    "wavdesc": 12751
+  },
+  "bk1_wd3204": {
+    "offset": 114565,
+    "length": 95,
+    "bank": 1,
+    "wavdesc": 12804
+  },
+  "bk1_wd3234": {
+    "offset": 114660,
+    "length": 94,
+    "bank": 1,
+    "wavdesc": 12852
+  },
+  "bk1_wd327F": {
+    "offset": 114754,
+    "length": 95,
+    "bank": 1,
+    "wavdesc": 12927
+  },
+  "bk1_wd32C7": {
+    "offset": 114849,
+    "length": 94,
+    "bank": 1,
+    "wavdesc": 12999
+  },
+  "bk1_wd3306": {
+    "offset": 114943,
+    "length": 96,
+    "bank": 1,
+    "wavdesc": 13062
+  },
+  "bk1_wd33C1": {
+    "offset": 115039,
+    "length": 93,
+    "bank": 1,
+    "wavdesc": 13249
+  },
+  "bk1_wd3406": {
+    "offset": 115132,
+    "length": 95,
+    "bank": 1,
+    "wavdesc": 13318
+  },
+  "bk1_wd343B": {
+    "offset": 115227,
+    "length": 105,
+    "bank": 1,
+    "wavdesc": 13371
+  },
+  "bk1_wd3467": {
+    "offset": 115332,
+    "length": 94,
+    "bank": 1,
+    "wavdesc": 13415
+  },
+  "bk1_wd34AF": {
+    "offset": 115426,
+    "length": 98,
+    "bank": 1,
+    "wavdesc": 13487
+  },
+  "bk1_wd34E4": {
+    "offset": 115524,
+    "length": 95,
+    "bank": 1,
+    "wavdesc": 13540
+  },
+  "bk1_wd3528": {
+    "offset": 115619,
+    "length": 92,
+    "bank": 1,
+    "wavdesc": 13608
+  },
+  "bk1_wd3568": {
+    "offset": 115711,
+    "length": 93,
+    "bank": 1,
+    "wavdesc": 13672
+  },
+  "bk1_wd3598": {
+    "offset": 115804,
+    "length": 94,
+    "bank": 1,
+    "wavdesc": 13720
+  },
+  "bk1_wd35F1": {
+    "offset": 115898,
+    "length": 95,
+    "bank": 1,
+    "wavdesc": 13809
+  },
+  "bk1_wd3640": {
+    "offset": 115993,
+    "length": 98,
+    "bank": 1,
+    "wavdesc": 13888
+  },
+  "bk1_wd3684": {
+    "offset": 116091,
+    "length": 95,
+    "bank": 1,
+    "wavdesc": 13956
+  },
+  "bk1_wd36C7": {
+    "offset": 116186,
+    "length": 97,
+    "bank": 1,
+    "wavdesc": 14023
+  },
+  "bk1_wd3713": {
+    "offset": 116283,
+    "length": 94,
+    "bank": 1,
+    "wavdesc": 14099
+  },
+  "bk1_wd3756": {
+    "offset": 116377,
+    "length": 95,
+    "bank": 1,
+    "wavdesc": 14166
+  },
+  "bk1_wd37A2": {
+    "offset": 116472,
+    "length": 96,
+    "bank": 1,
+    "wavdesc": 14242
+  },
+  "bk1_wd37F0": {
+    "offset": 116568,
+    "length": 96,
+    "bank": 1,
+    "wavdesc": 14320
+  },
+  "bk1_wd3840": {
+    "offset": 116664,
+    "length": 94,
+    "bank": 1,
+    "wavdesc": 14400
+  },
+  "bk1_wd3888": {
+    "offset": 116758,
+    "length": 95,
+    "bank": 1,
+    "wavdesc": 14472
+  },
+  "bk1_wd38C6": {
+    "offset": 116853,
+    "length": 96,
+    "bank": 1,
+    "wavdesc": 14534
+  },
+  "bk1_wd38FB": {
+    "offset": 116949,
+    "length": 96,
+    "bank": 1,
+    "wavdesc": 14587
+  },
+  "bk1_wd3928": {
+    "offset": 117045,
+    "length": 96,
+    "bank": 1,
+    "wavdesc": 14632
+  },
+  "bk1_wd3953": {
+    "offset": 117141,
+    "length": 97,
+    "bank": 1,
+    "wavdesc": 14675
+  },
+  "bk1_wd397B": {
+    "offset": 117238,
+    "length": 95,
+    "bank": 1,
+    "wavdesc": 14715
+  },
+  "bk1_wd3B03": {
+    "offset": 117333,
+    "length": 96,
+    "bank": 1,
+    "wavdesc": 15107
+  },
+  "bk1_wd3B61": {
+    "offset": 117429,
+    "length": 96,
+    "bank": 1,
+    "wavdesc": 15201
+  },
+  "bk1_wd3BB8": {
+    "offset": 117525,
+    "length": 96,
+    "bank": 1,
+    "wavdesc": 15288
+  },
+  "bk1_wd3C01": {
+    "offset": 117621,
+    "length": 93,
+    "bank": 1,
+    "wavdesc": 15361
+  },
+  "bk1_wd3C3E": {
+    "offset": 117714,
+    "length": 103,
+    "bank": 1,
+    "wavdesc": 15422
+  },
+  "bk1_wd3C7C": {
+    "offset": 117817,
+    "length": 96,
+    "bank": 1,
+    "wavdesc": 15484
+  },
+  "bk1_wd3CDC": {
+    "offset": 117913,
+    "length": 95,
+    "bank": 1,
+    "wavdesc": 15580
+  },
+  "bk1_wd3D2A": {
+    "offset": 118008,
+    "length": 96,
+    "bank": 1,
+    "wavdesc": 15658
+  },
+  "bk1_wd3D71": {
+    "offset": 118104,
+    "length": 96,
+    "bank": 1,
+    "wavdesc": 15729
+  },
+  "bk1_wd3DBD": {
+    "offset": 118200,
+    "length": 96,
+    "bank": 1,
+    "wavdesc": 15805
+  },
+  "bk1_wd3DF3": {
+    "offset": 118296,
+    "length": 95,
+    "bank": 1,
+    "wavdesc": 15859
+  },
+  "bk1_wd3E21": {
+    "offset": 118391,
+    "length": 96,
+    "bank": 1,
+    "wavdesc": 15905
+  },
+  "bk1_wd3E53": {
+    "offset": 118487,
+    "length": 96,
+    "bank": 1,
+    "wavdesc": 15955
+  },
+  "bk1_wd3E83": {
+    "offset": 118583,
+    "length": 96,
+    "bank": 1,
+    "wavdesc": 16003
+  },
+  "bk1_wd3EB1": {
+    "offset": 118679,
+    "length": 95,
+    "bank": 1,
+    "wavdesc": 16049
+  },
+  "bk1_wd3EDC": {
+    "offset": 118774,
+    "length": 94,
+    "bank": 1,
+    "wavdesc": 16092
+  },
+  "bk1_wd3F03": {
+    "offset": 118868,
+    "length": 93,
+    "bank": 1,
+    "wavdesc": 16131
+  },
+  "bk1_wd3F29": {
+    "offset": 118961,
+    "length": 95,
+    "bank": 1,
+    "wavdesc": 16169
+  },
+  "bk1_wd3F7F": {
+    "offset": 119056,
+    "length": 96,
+    "bank": 1,
+    "wavdesc": 16255
+  },
+  "bk1_wd3FC7": {
+    "offset": 119152,
+    "length": 96,
+    "bank": 1,
+    "wavdesc": 16327
+  },
+  "bk1_wd3FFD": {
+    "offset": 119248,
+    "length": 99,
+    "bank": 1,
+    "wavdesc": 16381
+  },
+  "bk1_wd4035": {
+    "offset": 119347,
+    "length": 98,
+    "bank": 1,
+    "wavdesc": 16437
+  },
+  "bk1_wd4072": {
+    "offset": 119445,
+    "length": 97,
+    "bank": 1,
+    "wavdesc": 16498
+  },
+  "bk1_wd40C1": {
+    "offset": 119542,
+    "length": 96,
+    "bank": 1,
+    "wavdesc": 16577
+  },
+  "bk1_wd411D": {
+    "offset": 119638,
+    "length": 96,
+    "bank": 1,
+    "wavdesc": 16669
+  },
+  "bk1_wd4162": {
+    "offset": 119734,
+    "length": 98,
+    "bank": 1,
+    "wavdesc": 16738
+  },
+  "bk1_wd41A3": {
+    "offset": 119832,
+    "length": 97,
+    "bank": 1,
+    "wavdesc": 16803
+  },
+  "bk1_wd41D9": {
+    "offset": 119929,
+    "length": 93,
+    "bank": 1,
+    "wavdesc": 16857
+  },
+  "bk1_wd4205": {
+    "offset": 120022,
+    "length": 96,
+    "bank": 1,
+    "wavdesc": 16901
+  },
+  "bk1_wd424E": {
+    "offset": 120118,
+    "length": 95,
+    "bank": 1,
+    "wavdesc": 16974
+  },
+  "bk1_wd4298": {
+    "offset": 120213,
+    "length": 97,
+    "bank": 1,
+    "wavdesc": 17048
+  },
+  "bk1_wd42D8": {
+    "offset": 120310,
+    "length": 97,
+    "bank": 1,
+    "wavdesc": 17112
+  },
+  "bk1_wd4306": {
+    "offset": 120407,
+    "length": 98,
+    "bank": 1,
+    "wavdesc": 17158
+  },
+  "bk1_wd4331": {
+    "offset": 120505,
+    "length": 93,
+    "bank": 1,
+    "wavdesc": 17201
+  },
+  "bk1_wd436C": {
+    "offset": 120598,
+    "length": 94,
+    "bank": 1,
+    "wavdesc": 17260
+  },
+  "bk1_wd43AD": {
+    "offset": 120692,
+    "length": 94,
+    "bank": 1,
+    "wavdesc": 17325
+  },
+  "bk1_wd43F6": {
+    "offset": 120786,
+    "length": 96,
+    "bank": 1,
+    "wavdesc": 17398
+  },
+  "bk1_wd4448": {
+    "offset": 120882,
+    "length": 97,
+    "bank": 1,
+    "wavdesc": 17480
+  },
+  "bk1_wd4498": {
+    "offset": 120979,
+    "length": 96,
+    "bank": 1,
+    "wavdesc": 17560
+  },
+  "bk1_wd44DB": {
+    "offset": 121075,
+    "length": 96,
+    "bank": 1,
+    "wavdesc": 17627
+  },
+  "bk1_wd4518": {
+    "offset": 121171,
+    "length": 95,
+    "bank": 1,
+    "wavdesc": 17688
+  },
+  "bk1_wd455A": {
+    "offset": 121266,
+    "length": 95,
+    "bank": 1,
+    "wavdesc": 17754
+  },
+  "bk1_wd45A6": {
+    "offset": 121361,
+    "length": 96,
+    "bank": 1,
+    "wavdesc": 17830
+  },
+  "bk1_wd45EE": {
+    "offset": 121457,
+    "length": 100,
+    "bank": 1,
+    "wavdesc": 17902
+  },
+  "bk1_wd462E": {
+    "offset": 121557,
+    "length": 96,
+    "bank": 1,
+    "wavdesc": 17966
+  },
+  "bk1_wd4655": {
+    "offset": 121653,
+    "length": 95,
+    "bank": 1,
+    "wavdesc": 18005
+  },
+  "bk1_wd46A1": {
+    "offset": 121748,
+    "length": 95,
+    "bank": 1,
+    "wavdesc": 18081
+  },
+  "bk1_wd46E6": {
+    "offset": 121843,
+    "length": 94,
+    "bank": 1,
+    "wavdesc": 18150
+  },
+  "bk1_wd471E": {
+    "offset": 121937,
+    "length": 101,
+    "bank": 1,
+    "wavdesc": 18206
+  },
+  "bk1_wd474F": {
+    "offset": 122038,
+    "length": 96,
+    "bank": 1,
+    "wavdesc": 18255
+  },
+  "bk1_wd47A4": {
+    "offset": 122134,
+    "length": 95,
+    "bank": 1,
+    "wavdesc": 18340
+  },
+  "bk1_wd47F3": {
+    "offset": 122229,
+    "length": 95,
+    "bank": 1,
+    "wavdesc": 18419
+  },
+  "bk1_wd483A": {
+    "offset": 122324,
+    "length": 98,
+    "bank": 1,
+    "wavdesc": 18490
+  },
+  "bk1_wd4877": {
+    "offset": 122422,
+    "length": 102,
+    "bank": 1,
+    "wavdesc": 18551
+  },
+  "bk1_wd48AD": {
+    "offset": 122524,
+    "length": 95,
+    "bank": 1,
+    "wavdesc": 18605
+  },
+  "bk1_wd4902": {
+    "offset": 122619,
+    "length": 94,
+    "bank": 1,
+    "wavdesc": 18690
+  },
+  "bk1_wd494E": {
+    "offset": 122713,
+    "length": 94,
+    "bank": 1,
+    "wavdesc": 18766
+  },
+  "bk1_wd498B": {
+    "offset": 122807,
+    "length": 93,
+    "bank": 1,
+    "wavdesc": 18827
+  },
+  "bk1_wd49BC": {
+    "offset": 122900,
+    "length": 90,
+    "bank": 1,
+    "wavdesc": 18876
+  },
+  "bk1_wd49E8": {
+    "offset": 122990,
+    "length": 102,
+    "bank": 1,
+    "wavdesc": 18920
+  },
+  "bk1_wd4A13": {
+    "offset": 123092,
+    "length": 102,
+    "bank": 1,
+    "wavdesc": 18963
+  },
+  "bk1_wd4A3B": {
+    "offset": 123194,
+    "length": 107,
+    "bank": 1,
+    "wavdesc": 19003
+  },
+  "bk1_wd4A64": {
+    "offset": 123301,
+    "length": 100,
+    "bank": 1,
+    "wavdesc": 19044
+  },
+  "bk1_wd4A96": {
+    "offset": 123401,
+    "length": 101,
+    "bank": 1,
+    "wavdesc": 19094
+  },
+  "bk1_wd4AC8": {
+    "offset": 123502,
+    "length": 99,
+    "bank": 1,
+    "wavdesc": 19144
+  },
+  "bk1_wd4AF5": {
+    "offset": 123601,
+    "length": 101,
+    "bank": 1,
+    "wavdesc": 19189
+  },
+  "bk1_wd4B24": {
+    "offset": 123702,
+    "length": 95,
+    "bank": 1,
+    "wavdesc": 19236
+  },
+  "bk1_wd4B65": {
+    "offset": 123797,
+    "length": 93,
+    "bank": 1,
+    "wavdesc": 19301
+  },
+  "bk1_wd4BAC": {
+    "offset": 123890,
+    "length": 93,
+    "bank": 1,
+    "wavdesc": 19372
+  },
+  "bk1_wd4BEB": {
+    "offset": 123983,
+    "length": 93,
+    "bank": 1,
+    "wavdesc": 19435
+  },
+  "bk1_wd4C23": {
+    "offset": 124076,
+    "length": 95,
+    "bank": 1,
+    "wavdesc": 19491
+  },
+  "bk1_wd4C63": {
+    "offset": 124171,
+    "length": 98,
+    "bank": 1,
+    "wavdesc": 19555
+  },
+  "bk1_wd4CA1": {
+    "offset": 124269,
+    "length": 97,
+    "bank": 1,
+    "wavdesc": 19617
+  },
+  "bk1_wd4CD9": {
+    "offset": 124366,
+    "length": 97,
+    "bank": 1,
+    "wavdesc": 19673
+  },
+  "bk1_wd4D0B": {
+    "offset": 124463,
+    "length": 96,
+    "bank": 1,
+    "wavdesc": 19723
+  },
+  "bk1_wd4D38": {
+    "offset": 124559,
+    "length": 94,
+    "bank": 1,
+    "wavdesc": 19768
+  },
+  "bk1_wd4D65": {
+    "offset": 124653,
+    "length": 96,
+    "bank": 1,
+    "wavdesc": 19813
+  },
+  "bk1_wd4DAA": {
+    "offset": 124749,
+    "length": 98,
+    "bank": 1,
+    "wavdesc": 19882
+  },
+  "bk1_wd4DEC": {
+    "offset": 124847,
+    "length": 98,
+    "bank": 1,
+    "wavdesc": 19948
+  },
+  "bk1_wd4E2E": {
+    "offset": 124945,
+    "length": 95,
+    "bank": 1,
+    "wavdesc": 20014
+  },
+  "bk1_wd4E73": {
+    "offset": 125040,
+    "length": 98,
+    "bank": 1,
+    "wavdesc": 20083
+  },
+  "bk1_wd4EAC": {
+    "offset": 125138,
+    "length": 97,
+    "bank": 1,
+    "wavdesc": 20140
+  },
+  "bk1_wd4EE0": {
+    "offset": 125235,
+    "length": 96,
+    "bank": 1,
+    "wavdesc": 20192
+  },
+  "bk1_wd4F2A": {
+    "offset": 125331,
+    "length": 96,
+    "bank": 1,
+    "wavdesc": 20266
+  },
+  "bk1_wd4F73": {
+    "offset": 125427,
+    "length": 98,
+    "bank": 1,
+    "wavdesc": 20339
+  },
+  "bk1_wd4FC0": {
+    "offset": 125525,
+    "length": 97,
+    "bank": 1,
+    "wavdesc": 20416
+  },
+  "bk1_wd5009": {
+    "offset": 125622,
+    "length": 96,
+    "bank": 1,
+    "wavdesc": 20489
+  },
+  "bk1_wd5052": {
+    "offset": 125718,
+    "length": 95,
+    "bank": 1,
+    "wavdesc": 20562
+  },
+  "bk1_wd5092": {
+    "offset": 125813,
+    "length": 96,
+    "bank": 1,
+    "wavdesc": 20626
+  }
+}

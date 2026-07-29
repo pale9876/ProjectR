@@ -8,7 +8,8 @@ signal updated()
 
 @export_category("Attribute")
 @export_range(8, 64, 2) var curve_point: int = 16
-@export var max_radius: float = 36.26
+@export var degree: float = 0.
+@export var max_radius: float = 36.25
 @export_flags_2d_physics var mask: int = 3
 
 var _destination: Vector2
@@ -25,7 +26,6 @@ var _finished: bool = false
 
 
 @export_tool_button("Emit", '2D') var _emit: Callable = emit
-
 
 
 func get_tessel() -> PackedVector2Array:
