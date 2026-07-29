@@ -1,4 +1,5 @@
 @tool
+# tail_path.gd
 extends Path2D
 
 @export var playing: bool = false
