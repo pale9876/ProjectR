@@ -1,0 +1,402 @@
+[gd_scene format=3 uid="uid://cfdt7041dne44"]
+
+[ext_resource type="Script" uid="uid://b7k86uoip3rdc" path="res://trail_line.gd" id="1_nyb8w"]
+
+[sub_resource type="Curve2D" id="Curve2D_p036d"]
+_data = {
+"points": PackedVector2Array(-70.947556, 32.35646, 22.539442, -42.34683, 0, 0, -44.572636, -0.067441106, 44.572636, 0.067441106, 86, -64, 3.0445995, -36.859856, -38.25793, 47.347004, 152, 18)
+}
+point_count = 3
+
+[sub_resource type="Curve" id="Curve_p036d"]
+_limits = [0.0, 2.0, 0.0, 1.0]
+_data = [Vector2(0, 1.0738257), 0.0, 15.599756, 0, 0, Vector2(1, 0), -11.776322, 0.0, 0, 0]
+point_count = 2
+
+[sub_resource type="Gradient" id="Gradient_p036d"]
+offsets = PackedFloat32Array(0, 0.23636363)
+colors = PackedColorArray(0, 0, 0, 0, 1, 1, 1, 1)
+
+[sub_resource type="GradientTexture2D" id="GradientTexture2D_2kmqr"]
+gradient = SubResource("Gradient_p036d")
+fill_to = Vector2(0.525641, 0)
+
+[sub_resource type="Animation" id="Animation_p036d"]
+length = 0.001
+tracks/0/type = "value"
+tracks/0/imported = false
+tracks/0/enabled = true
+tracks/0/path = NodePath(".:curve:point_2/in")
+tracks/0/interp = 1
+tracks/0/loop_wrap = true
+tracks/0/keys = {
+"times": PackedFloat32Array(0),
+"transitions": PackedFloat32Array(1),
+"update": 0,
+"values": [Vector2(3.0445995, -36.859856)]
+}
+tracks/1/type = "value"
+tracks/1/imported = false
+tracks/1/enabled = true
+tracks/1/path = NodePath(".:curve:point_2/position")
+tracks/1/interp = 1
+tracks/1/loop_wrap = true
+tracks/1/keys = {
+"times": PackedFloat32Array(0),
+"transitions": PackedFloat32Array(1),
+"update": 0,
+"values": [Vector2(152, 18)]
+}
+tracks/2/type = "value"
+tracks/2/imported = false
+tracks/2/enabled = true
+tracks/2/path = NodePath(".:curve:point_1/out")
+tracks/2/interp = 1
+tracks/2/loop_wrap = true
+tracks/2/keys = {
+"times": PackedFloat32Array(0),
+"transitions": PackedFloat32Array(1),
+"update": 0,
+"values": [Vector2(44.572636, 0.067441106)]
+}
+tracks/3/type = "value"
+tracks/3/imported = false
+tracks/3/enabled = true
+tracks/3/path = NodePath(".:curve:point_1/in")
+tracks/3/interp = 1
+tracks/3/loop_wrap = true
+tracks/3/keys = {
+"times": PackedFloat32Array(0),
+"transitions": PackedFloat32Array(1),
+"update": 0,
+"values": [Vector2(-44.572636, -0.067441106)]
+}
+tracks/4/type = "value"
+tracks/4/imported = false
+tracks/4/enabled = true
+tracks/4/path = NodePath(".:curve:point_1/position")
+tracks/4/interp = 1
+tracks/4/loop_wrap = true
+tracks/4/keys = {
+"times": PackedFloat32Array(0),
+"transitions": PackedFloat32Array(1),
+"update": 0,
+"values": [Vector2(86, -64)]
+}
+tracks/5/type = "value"
+tracks/5/imported = false
+tracks/5/enabled = true
+tracks/5/path = NodePath(".:curve:point_0/out")
+tracks/5/interp = 1
+tracks/5/loop_wrap = true
+tracks/5/keys = {
+"times": PackedFloat32Array(0),
+"transitions": PackedFloat32Array(1),
+"update": 0,
+"values": [Vector2(22.539442, -42.34683)]
+}
+tracks/6/type = "value"
+tracks/6/imported = false
+tracks/6/enabled = true
+tracks/6/path = NodePath(".:curve:point_0/position")
+tracks/6/interp = 1
+tracks/6/loop_wrap = true
+tracks/6/keys = {
+"times": PackedFloat32Array(0),
+"transitions": PackedFloat32Array(1),
+"update": 0,
+"values": [Vector2(0, 0)]
+}
+
+[sub_resource type="Animation" id="Animation_2kmqr"]
+resource_name = "attack"
+length = 0.33400166141688825
+step = 0.0167
+tracks/0/type = "value"
+tracks/0/imported = false
+tracks/0/enabled = true
+tracks/0/path = NodePath(".:curve:point_2/in")
+tracks/0/interp = 1
+tracks/0/loop_wrap = true
+tracks/0/keys = {
+"times": PackedFloat32Array(0, 0.06666667, 0.13333334, 0.20000002, 0.26666668),
+"transitions": PackedFloat32Array(1, 1, 1, 1, 1),
+"update": 1,
+"values": [Vector2(80.0446, -46.759857), Vector2(-4.3608704, -84.11658), Vector2(58.813522, 43.837173), Vector2(70.636406, -28.14896), Vector2(38.25793, -47.347004)]
+}
+tracks/1/type = "value"
+tracks/1/imported = false
+tracks/1/enabled = true
+tracks/1/path = NodePath(".:curve:point_2/position")
+tracks/1/interp = 1
+tracks/1/loop_wrap = true
+tracks/1/keys = {
+"times": PackedFloat32Array(0, 0.06666667, 0.13333334, 0.20000002, 0.26666668),
+"transitions": PackedFloat32Array(1, 1, 1, 1, 1),
+"update": 1,
+"values": [Vector2(152, 18), Vector2(221, -156), Vector2(135, -233), Vector2(21, -216), Vector2(6, -211)]
+}
+tracks/2/type = "value"
+tracks/2/imported = false
+tracks/2/enabled = true
+tracks/2/path = NodePath(".:curve:point_1/out")
+tracks/2/interp = 1
+tracks/2/loop_wrap = true
+tracks/2/keys = {
+"times": PackedFloat32Array(0, 0.06666667, 0.13333334, 0.20000002, 0.26666668),
+"transitions": PackedFloat32Array(1, 1, 1, 1, 1),
+"update": 1,
+"values": [Vector2(74.27264, 2.2674413), Vector2(-11.989081, -50.857662), Vector2(6.274555, -48.058853), Vector2(2.7243242, -77.88779), Vector2(-5.4741893, -54.07746)]
+}
+tracks/3/type = "value"
+tracks/3/imported = false
+tracks/3/enabled = true
+tracks/3/path = NodePath(".:curve:point_1/in")
+tracks/3/interp = 1
+tracks/3/loop_wrap = true
+tracks/3/keys = {
+"times": PackedFloat32Array(0, 0.06666667, 0.13333334, 0.20000002, 0.26666668),
+"transitions": PackedFloat32Array(1, 1, 1, 1, 1),
+"update": 1,
+"values": [Vector2(-74.27264, -2.2674413), Vector2(11.989081, 50.857662), Vector2(-6.274555, 48.058853), Vector2(-2.7243242, 77.88779), Vector2(5.4741893, 54.07746)]
+}
+tracks/4/type = "value"
+tracks/4/imported = false
+tracks/4/enabled = true
+tracks/4/path = NodePath(".:curve:point_1/position")
+tracks/4/interp = 1
+tracks/4/loop_wrap = true
+tracks/4/keys = {
+"times": PackedFloat32Array(0, 0.06666667, 0.13333334, 0.20000002, 0.26666668),
+"transitions": PackedFloat32Array(1, 1, 1, 1, 1),
+"update": 1,
+"values": [Vector2(116, -136), Vector2(85, -149), Vector2(181, -76), Vector2(151, -113), Vector2(163, -150)]
+}
+tracks/5/type = "value"
+tracks/5/imported = false
+tracks/5/enabled = true
+tracks/5/path = NodePath(".:curve:point_0/out")
+tracks/5/interp = 1
+tracks/5/loop_wrap = true
+tracks/5/keys = {
+"times": PackedFloat32Array(0, 0.06666667, 0.13333334, 0.20000002, 0.26666668),
+"transitions": PackedFloat32Array(1, 1, 1, 1, 1),
+"update": 1,
+"values": [Vector2(9.339441, -62.14683), Vector2(55.145638, -44.08348), Vector2(80.802826, -0.25816417), Vector2(48.013115, -10.663886), Vector2(70.947556, -32.35646)]
+}
+tracks/6/type = "value"
+tracks/6/imported = false
+tracks/6/enabled = true
+tracks/6/path = NodePath(".:curve:point_0/position")
+tracks/6/interp = 1
+tracks/6/loop_wrap = true
+tracks/6/keys = {
+"times": PackedFloat32Array(0, 0.06666667, 0.13333334, 0.20000002, 0.26666668),
+"transitions": PackedFloat32Array(1, 1, 1, 1, 1),
+"update": 1,
+"values": [Vector2(0, 0), Vector2(0, 0), Vector2(0, 0), Vector2(0, 0), Vector2(0, 0)]
+}
+
+[sub_resource type="Animation" id="Animation_nribf"]
+resource_name = "wag"
+length = 0.6012016545504332
+loop_mode = 1
+step = 0.0167
+tracks/0/type = "value"
+tracks/0/imported = false
+tracks/0/enabled = true
+tracks/0/path = NodePath(".:curve:point_2/in")
+tracks/0/interp = 1
+tracks/0/loop_wrap = true
+tracks/0/keys = {
+"times": PackedFloat32Array(0, 0.10000001, 0.20000002, 0.3, 0.40000004, 0.5),
+"transitions": PackedFloat32Array(1, 1, 1, 1, 1, 1),
+"update": 1,
+"values": [Vector2(3.0445995, -36.859856), Vector2(-22.226896, -26.614656), Vector2(-22.324976, 33.95108), Vector2(20.802946, 38.954624), Vector2(-38.61922, 54.663933), Vector2(-39.30223, -10.22234)]
+}
+tracks/1/type = "value"
+tracks/1/imported = false
+tracks/1/enabled = true
+tracks/1/path = NodePath(".:curve:point_2/position")
+tracks/1/interp = 1
+tracks/1/loop_wrap = true
+tracks/1/keys = {
+"times": PackedFloat32Array(0, 0.10000001, 0.20000002, 0.3, 0.40000004, 0.5),
+"transitions": PackedFloat32Array(1, 1, 1, 1, 1, 1),
+"update": 1,
+"values": [Vector2(152, 18), Vector2(229, 12), Vector2(246, -7), Vector2(180, -60), Vector2(224, -42), Vector2(228, 21)]
+}
+tracks/2/type = "value"
+tracks/2/imported = false
+tracks/2/enabled = true
+tracks/2/path = NodePath(".:curve:point_1/out")
+tracks/2/interp = 1
+tracks/2/loop_wrap = true
+tracks/2/keys = {
+"times": PackedFloat32Array(0, 0.10000001, 0.20000002, 0.3, 0.40000004, 0.5),
+"transitions": PackedFloat32Array(1, 1, 1, 1, 1, 1),
+"update": 1,
+"values": [Vector2(44.572636, 0.067441106), Vector2(44.572636, 0.067441106), Vector2(43.572636, 0.067441106), Vector2(46.621677, -10.17776), Vector2(49.35373, -0.61557317), Vector2(49.35373, -0.61557317)]
+}
+tracks/3/type = "value"
+tracks/3/imported = false
+tracks/3/enabled = true
+tracks/3/path = NodePath(".:curve:point_1/in")
+tracks/3/interp = 1
+tracks/3/loop_wrap = true
+tracks/3/keys = {
+"times": PackedFloat32Array(0, 0.10000001, 0.20000002, 0.3, 0.40000004, 0.5),
+"transitions": PackedFloat32Array(1, 1, 1, 1, 1, 1),
+"update": 1,
+"values": [Vector2(-44.572636, -0.067441106), Vector2(-44.572636, -0.067441106), Vector2(-43.572636, -0.067441106), Vector2(-46.621677, 10.17776), Vector2(-49.35373, 0.61557317), Vector2(-49.35373, 0.61557317)]
+}
+tracks/4/type = "value"
+tracks/4/imported = false
+tracks/4/enabled = true
+tracks/4/path = NodePath(".:curve:point_1/position")
+tracks/4/interp = 1
+tracks/4/loop_wrap = true
+tracks/4/keys = {
+"times": PackedFloat32Array(0, 0.10000001, 0.20000002, 0.3, 0.40000004, 0.5),
+"transitions": PackedFloat32Array(1, 1, 1, 1, 1, 1),
+"update": 1,
+"values": [Vector2(86, -64), Vector2(122, -43), Vector2(124, 44), Vector2(115, 52), Vector2(106, 11), Vector2(109, -25)]
+}
+tracks/5/type = "value"
+tracks/5/imported = false
+tracks/5/enabled = true
+tracks/5/path = NodePath(".:curve:point_0/out")
+tracks/5/interp = 1
+tracks/5/loop_wrap = true
+tracks/5/keys = {
+"times": PackedFloat32Array(0, 0.10000001, 0.20000002, 0.3, 0.40000004, 0.5),
+"transitions": PackedFloat32Array(1, 1, 1, 1, 1, 1),
+"update": 1,
+"values": [Vector2(22.539442, -42.34683), Vector2(28.00355, -20.4904), Vector2(14.588482, 25.29424), Vector2(15.709308, 32.10163), Vector2(30.735603, 7.5131493), Vector2(28.686563, -6.8301315)]
+}
+tracks/6/type = "value"
+tracks/6/imported = false
+tracks/6/enabled = true
+tracks/6/path = NodePath(".:curve:point_0/position")
+tracks/6/interp = 1
+tracks/6/loop_wrap = true
+tracks/6/keys = {
+"times": PackedFloat32Array(0, 0.10000001, 0.20000002, 0.3, 0.40000004, 0.5),
+"transitions": PackedFloat32Array(1, 1, 1, 1, 1, 1),
+"update": 1,
+"values": [Vector2(0, 0), Vector2(0, 0), Vector2(0, 0), Vector2(0, 0), Vector2(0, 0), Vector2(0, 0)]
+}
+
+[sub_resource type="Animation" id="Animation_in1cm"]
+resource_name = "wag_2"
+length = 1.0020016442507507
+loop_mode = 1
+step = 0.0167
+tracks/0/type = "value"
+tracks/0/imported = false
+tracks/0/enabled = true
+tracks/0/path = NodePath(".:curve:point_2/in")
+tracks/0/interp = 1
+tracks/0/loop_wrap = true
+tracks/0/keys = {
+"times": PackedFloat32Array(0, 0.06666667, 0.13333334, 0.20000002, 0.26666668, 0.33333334, 0.40000004, 0.4666667, 0.53440166, 0.6, 0.6666667, 0.73333335, 0.8000001, 0.86666673, 0.9333334),
+"transitions": PackedFloat32Array(1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1),
+"update": 1,
+"values": [Vector2(38.499146, -40.49622), Vector2(-8.773579, -60.49622), Vector2(-36.046303, -44.132584), Vector2(-36.046303, -44.132584), Vector2(-36.046303, 3.1401424), Vector2(-59.682663, 44.049232), Vector2(-38.773575, 64.04923), Vector2(-60.591755, 29.50378), Vector2(7.590061, 44.958324), Vector2(23.044605, 39.50378), Vector2(23.044605, 39.50378), Vector2(23.044605, 39.50378), Vector2(-12.409939, 43.140144), Vector2(-22.073, -43.827408), Vector2(11.747713, -61.543022)]
+}
+tracks/1/type = "value"
+tracks/1/imported = false
+tracks/1/enabled = true
+tracks/1/path = NodePath(".:curve:point_2/position")
+tracks/1/interp = 1
+tracks/1/loop_wrap = true
+tracks/1/keys = {
+"times": PackedFloat32Array(0, 0.06666667, 0.13333334, 0.20000002, 0.26666668, 0.33333334, 0.40000004, 0.4666667, 0.53440166, 0.6, 0.6666667, 0.73333335, 0.8000001, 0.86666673, 0.9333334),
+"transitions": PackedFloat32Array(1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1),
+"update": 1,
+"values": [Vector2(152, 18), Vector2(190, -44), Vector2(216, -96), Vector2(206, -133), Vector2(178, -151), Vector2(151, -149), Vector2(113, -120), Vector2(156, -72), Vector2(156, -72), Vector2(190, -41), Vector2(229, -6), Vector2(228, 18), Vector2(247, 66), Vector2(247, 66), Vector2(247, 66)]
+}
+tracks/2/type = "value"
+tracks/2/imported = false
+tracks/2/enabled = true
+tracks/2/path = NodePath(".:curve:point_1/out")
+tracks/2/interp = 1
+tracks/2/loop_wrap = true
+tracks/2/keys = {
+"times": PackedFloat32Array(0, 0.06666667, 0.13333334, 0.20000002, 0.26666668, 0.33333334, 0.40000004, 0.4666667, 0.53440166, 0.6, 0.6666667, 0.73333335, 0.8000001, 0.86666673, 0.9333334),
+"transitions": PackedFloat32Array(1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1),
+"update": 1,
+"values": [Vector2(44.572636, 0.067441106), Vector2(41.845364, -11.75074), Vector2(31.845364, -25.387104), Vector2(5.4817276, -39.023468), Vector2(10.027182, -49.93256), Vector2(-17.245548, -51.75074), Vector2(33.66354, -41.75074), Vector2(33.66354, -41.75074), Vector2(40.936268, -17.205286), Vector2(40.936268, -9.023468), Vector2(44.36496, -2.3228931), Vector2(55.48172, 3.7038045), Vector2(32.754448, 50.97653), Vector2(53.69108, 12.324284), Vector2(53.69108, 12.324284)]
+}
+tracks/3/type = "value"
+tracks/3/imported = false
+tracks/3/enabled = true
+tracks/3/path = NodePath(".:curve:point_1/in")
+tracks/3/interp = 1
+tracks/3/loop_wrap = true
+tracks/3/keys = {
+"times": PackedFloat32Array(0, 0.06666667, 0.13333334, 0.20000002, 0.26666668, 0.33333334, 0.40000004, 0.4666667, 0.53440166, 0.6, 0.6666667, 0.73333335, 0.8000001, 0.86666673, 0.9333334),
+"transitions": PackedFloat32Array(1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1),
+"update": 1,
+"values": [Vector2(-44.572636, -0.067441106), Vector2(-41.845364, 11.75074), Vector2(-31.845364, 25.387104), Vector2(-5.4817276, 39.023468), Vector2(-10.027182, 49.93256), Vector2(17.245548, 51.75074), Vector2(-33.66354, 41.75074), Vector2(-33.66354, 41.75074), Vector2(-40.936268, 17.205286), Vector2(-40.936268, 9.023468), Vector2(-44.36496, 2.3228931), Vector2(-55.48172, -3.7038045), Vector2(-32.754448, -50.97653), Vector2(-53.69108, -12.324284), Vector2(-53.69108, -12.324284)]
+}
+tracks/4/type = "value"
+tracks/4/imported = false
+tracks/4/enabled = true
+tracks/4/path = NodePath(".:curve:point_1/position")
+tracks/4/interp = 1
+tracks/4/loop_wrap = true
+tracks/4/keys = {
+"times": PackedFloat32Array(0, 0.06666667, 0.13333334, 0.20000002, 0.26666668, 0.33333334, 0.40000004, 0.4666667, 0.53440166, 0.6, 0.6666667, 0.73333335, 0.8000001, 0.86666673, 0.9333334),
+"transitions": PackedFloat32Array(1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1),
+"update": 1,
+"values": [Vector2(111, -88), Vector2(94, -125), Vector2(94, -125), Vector2(128, -83), Vector2(128, -33), Vector2(111, -32), Vector2(123, 34), Vector2(123, 34), Vector2(121, 77), Vector2(128, 96), Vector2(132, 66), Vector2(132, 79), Vector2(133, 45), Vector2(154, -44), Vector2(152, -71)]
+}
+tracks/5/type = "value"
+tracks/5/imported = false
+tracks/5/enabled = true
+tracks/5/path = NodePath(".:curve:point_0/out")
+tracks/5/interp = 1
+tracks/5/loop_wrap = true
+tracks/5/keys = {
+"times": PackedFloat32Array(0, 0.06666667, 0.13333334, 0.20000002, 0.26666668, 0.33333334, 0.40000004, 0.4666667, 0.53440166, 0.6, 0.6666667, 0.73333335, 0.8000001, 0.86666673, 0.9333334),
+"transitions": PackedFloat32Array(1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1),
+"update": 1,
+"values": [Vector2(31.630352, -55.0741), Vector2(12.539444, -56.89228), Vector2(47.084896, -33.25592), Vector2(62.53944, 1.2895317), Vector2(33.44854, 30.38044), Vector2(27.084904, 68.562256), Vector2(27.084904, 68.562256), Vector2(27.084904, 68.562256), Vector2(14.357632, 69.471344), Vector2(14.357632, 69.471344), Vector2(44.357628, 35.83498), Vector2(64.35763, 7.653162), Vector2(61.630356, -32.34684), Vector2(55.188316, -43.62041), Vector2(40.693726, -56.504494)]
+}
+tracks/6/type = "value"
+tracks/6/imported = false
+tracks/6/enabled = true
+tracks/6/path = NodePath(".:curve:point_0/position")
+tracks/6/interp = 1
+tracks/6/loop_wrap = true
+tracks/6/keys = {
+"times": PackedFloat32Array(0, 0.06666667, 0.13333334, 0.20000002, 0.26666668, 0.33333334, 0.40000004, 0.4666667, 0.53440166, 0.6, 0.6666667, 0.73333335, 0.8000001, 0.86666673, 0.9333334),
+"transitions": PackedFloat32Array(1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1),
+"update": 1,
+"values": [Vector2(0, 0), Vector2(0, 0), Vector2(0, 0), Vector2(0, 0), Vector2(0, 0), Vector2(0, 0), Vector2(0, 0), Vector2(0, 0), Vector2(0, 0), Vector2(0, 0), Vector2(0, 0), Vector2(0, 0), Vector2(0, 0), Vector2(0, 0), Vector2(0, 0)]
+}
+
+[sub_resource type="AnimationLibrary" id="AnimationLibrary_2kmqr"]
+_data = {
+&"RESET": SubResource("Animation_p036d"),
+&"attack": SubResource("Animation_2kmqr"),
+&"wag": SubResource("Animation_nribf"),
+&"wag_2": SubResource("Animation_in1cm")
+}
+
+[node name="AnimatedTailLine" type="Path2D" unique_id=581507229 node_paths=PackedStringArray("line")]
+curve = SubResource("Curve2D_p036d")
+script = ExtResource("1_nyb8w")
+line = NodePath("Line2D")
+
+[node name="Line2D" type="Line2D" parent="." unique_id=1324528242]
+points = PackedVector2Array(0, 0, 16.678299, -27.874554, 25.363415, -38.877228, 29.942871, -43.63896, 34.737553, -47.90535, 39.790436, -51.6747, 45.144493, -54.945305, 50.842705, -57.715466, 56.92803, -59.983475, 63.44345, -61.747635, 70.43193, -63.006245, 86, -64, 94.12, -63.47294, 101.75804, -61.96903, 108.90324, -59.56622, 115.54472, -56.34247, 121.67166, -52.375725, 127.27318, -47.743958, 132.33838, -42.525116, 136.85646, -36.797157, 140.81653, -30.638035, 144.2077, -24.12571, 147.01913, -17.338135, 149.23996, -10.353268, 150.85933, -3.2490654, 151.86636, 3.8965187, 152.25021, 11.005526, 152, 18)
+width = 30.0
+width_curve = SubResource("Curve_p036d")
+texture = SubResource("GradientTexture2D_2kmqr")
+texture_mode = 2
+begin_cap_mode = 2
+
+[node name="AnimationPlayer" type="AnimationPlayer" parent="." unique_id=540715364]
+libraries/ = SubResource("AnimationLibrary_2kmqr")

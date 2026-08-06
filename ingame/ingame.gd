@@ -168,11 +168,11 @@ func set_lev_with_cal(_lev: Leviathan, _cal: Calamity) -> void:
 
 
 func get_keikai() -> MapKeikai:
-	return get_node(^"Keikai") as MapKeikai
+	return get_node(^"%Keikai") as MapKeikai
 
 
 func get_world() -> World:
-	return get_node(^"World") as World
+	return get_node(^"%World") as World
 
 
 func get_probability() -> Dictionary:

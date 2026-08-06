@@ -1,4 +1,4 @@
-[gd_scene format=3 uid="uid://bojwedrhsqh1r"]
+[gd_scene format=3 uid="uid://gt8n25rtcupv"]
 
 [ext_resource type="Script" uid="uid://7bcvh07m418k" path="res://tail_path_2d.gd" id="1_e204m"]
 
@@ -13,7 +13,7 @@ colors = PackedColorArray(0.30588236, 1, 1, 1, 1, 1, 1, 1)
 
 [sub_resource type="Curve2D" id="Curve2D_71ccw"]
 _data = {
-"points": PackedVector2Array(0, 0, -0.12238414, -4.998502, 0, 0, 0.12238414, 4.998502, -0.12238414, -4.998502, -0.4815712, -19.66868, -53.868916, -19.345428, 0, 0, 52.49775, -59.599754)
+"points": PackedVector2Array(0, 0, 1.2532812, 9.921154, 0, 0, -1.2532812, -9.921154, 1.2532812, 9.921154, 2.8328018, 22.424864, 104.677, 43.713806, 0, 0, 63.222393, -55.417862)
 }
 point_count = 3
 
@@ -30,7 +30,7 @@ _data = {
 point_count = 3
 
 [node name="Tail" type="Line2D" unique_id=941599455]
-points = PackedVector2Array(0, 0, -0.4815712, -19.66868, -0.44972092, -23.61305, 0.16950059, -30.737104, 0.9018204, -35.04143, 2.0239167, -39.600574, 3.6167681, -44.234505, 5.7613516, -48.76319, 7.065849, -50.93181, 8.538646, -53.006596, 10.189865, -54.965057, 12.029629, -56.784683, 14.068059, -58.442978, 16.315279, -59.917427, 18.781408, -61.18554, 21.47657, -62.224792, 24.41089, -63.012695, 27.594488, -63.52674, 31.037483, -63.744423, 34.750004, -63.643234, 38.74217, -63.20068, 43.024097, -62.394253, 52.49775, -59.599754)
+points = PackedVector2Array(0, 0, 2.8328018, 22.424864, 3.0089679, 22.850595, 3.4133925, 23.19851, 4.03621, 23.469852, 4.8675556, 23.665865, 5.8975616, 23.787786, 7.116363, 23.836866, 10.080888, 23.721464, 17.84138, 22.671219, 27.517605, 20.594677, 50.091587, 13.68092, 61.726498, 9.002808, 72.75146, 3.6166105, 82.53504, -2.3981233, 86.76401, -5.616331, 90.44584, -8.961841, 93.501625, -12.4247055, 94.77008, -14.1970415, 95.85243, -15.994986, 96.73879, -17.817299, 97.41933, -19.662737, 97.88413, -21.530054, 98.12337, -23.41801, 98.12718, -25.325365, 97.885666, -27.250868, 97.38899, -29.193285, 96.62726, -31.151363, 95.59064, -33.123867, 94.26925, -35.109554, 92.65321, -37.107178, 90.73268, -39.11549, 85.938644, -43.159237, 79.8082, -47.230843, 72.26242, -51.320366, 63.222393, -55.417862)
 width = 15.0
 width_curve = SubResource("Curve_71ccw")
 default_color = Color(1, 0.22352941, 0, 1)
@@ -43,6 +43,8 @@ curve = SubResource("Curve2D_71ccw")
 script = ExtResource("1_e204m")
 playing = true
 speed_scale = 7.55
+m_rat = 76.75392302639965
+n_rat = 74.80613558117399
 
 [node name="MiddlePath" type="Path2D" parent="Path2D" unique_id=354495471]
 unique_name_in_owner = true
@@ -52,9 +54,9 @@ curve = SubResource("Curve2D_4voq8")
 
 [node name="Middle" type="PathFollow2D" parent="Path2D/MiddlePath" unique_id=1651339063]
 unique_name_in_owner = true
-position = Vector2(23.518429, -19.668674)
-rotation = 0.9584743
-progress = 3.8336754
+position = Vector2(26.832802, 22.42487)
+rotation = 2.0087256
+progress = 52.38004
 
 [node name="EndPath" type="Path2D" parent="Path2D" unique_id=2053792671]
 unique_name_in_owner = true
@@ -63,6 +65,6 @@ curve = SubResource("Curve2D_jdwou")
 
 [node name="End" type="PathFollow2D" parent="Path2D/EndPath" unique_id=1034781660]
 unique_name_in_owner = true
-position = Vector2(-3.5022497, -83.599754)
-rotation = 0.308815
-progress = 21.005669
+position = Vector2(7.2223935, -79.41786)
+rotation = 0.44236612
+progress = 32.51882

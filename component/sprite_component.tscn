@@ -1,36 +1,13 @@
 [gd_scene format=3 uid="uid://cljktitiy0g50"]
 
 [ext_resource type="Script" uid="uid://b0paoljcmbiys" path="res://player/sprite_component.gd" id="1_yhqmw"]
-[ext_resource type="Script" uid="uid://dbcsuysfwo30x" path="res://player/sprite_moduler.gd" id="2_ce7vr"]
-[ext_resource type="SpriteFrames" uid="uid://dhhxgkevom0u8" path="res://sample_upper_motions.tres" id="3_3w3cq"]
-[ext_resource type="SpriteFrames" uid="uid://dhmvj5bwddbin" path="res://sample_lower_motions.tres" id="4_mg4jq"]
-[ext_resource type="SpriteFrames" uid="uid://72n3ls5rb05n" path="res://sample_motion_frames.tres" id="5_12oy4"]
+[ext_resource type="PackedScene" uid="uid://bxvvp46sren6n" path="res://sprite_module/idle.tscn" id="2_k18hv"]
+[ext_resource type="PackedScene" uid="uid://c32vxjmjaldxa" path="res://sprite_module/move.tscn" id="3_jenf4"]
 
-[node name="SpriteComponent" type="Node2D" unique_id=363892716 node_paths=PackedStringArray("moduler", "sprite")]
+[node name="SpriteComponent" type="Node2D" unique_id=363892716 node_paths=PackedStringArray("current")]
 script = ExtResource("1_yhqmw")
-moduler = NodePath("SpriteModuler")
-sprite = NodePath("AnimatedSprite2D")
+current = NodePath("Idle")
 
-[node name="SpriteModuler" type="Node2D" parent="." unique_id=657174181 node_paths=PackedStringArray("upper", "lower")]
-position = Vector2(0, -64)
-script = ExtResource("2_ce7vr")
-upper = NodePath("Upper")
-lower = NodePath("Lower")
+[node name="Idle" parent="." unique_id=1549121677 instance=ExtResource("2_k18hv")]
 
-[node name="Upper" type="AnimatedSprite2D" parent="SpriteModuler" unique_id=12327840]
-sprite_frames = ExtResource("3_3w3cq")
-animation = &"reload"
-frame = 5
-frame_progress = 1.0
-
-[node name="Lower" type="AnimatedSprite2D" parent="SpriteModuler" unique_id=1221413801]
-sprite_frames = ExtResource("4_mg4jq")
-animation = &"move"
-frame_progress = 0.74364126
-
-[node name="AnimatedSprite2D" type="AnimatedSprite2D" parent="." unique_id=152865229]
-visible = false
-position = Vector2(59, -32)
-sprite_frames = ExtResource("5_12oy4")
-animation = &"aerial_down"
-offset = Vector2(-59, -32)
+[node name="Move" parent="." unique_id=1338144491 instance=ExtResource("3_jenf4")]

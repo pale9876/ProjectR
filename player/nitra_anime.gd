@@ -1,6 +1,7 @@
 # nitra_anime.gd
 @tool
 extends AnimationPlayer
+class_name MotionLibrary
 
 
 var freeze_frame: int = 0

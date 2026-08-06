@@ -1,12 +1,18 @@
 # sprite_component.gd
+@tool
 extends Node2D
 
+# Import
+const DirectionModuler: Script = preload("uid://dghhexdudu0xy")
 
-const SpriteModuler: Script = preload("uid://dbcsuysfwo30x")
 
-
-@export var moduler: SpriteModuler
-@export var sprite: AnimatedSprite2D
+@export var current: DirectionModuler:
+	set(path):
+		current = path
+		if is_inside_tree():
+			if current:
+				for node: Node in get_children():
+					(node as DirectionModuler).visible = node == current
 
 
 var force: Vector2
@@ -18,21 +24,6 @@ var time_scale: float:
 		time_scale = maxf(0., value)
 
 
-func init_sprites(
-	_upper: SpriteFrames,
-	_lower: SpriteFrames,
-	_sprite: SpriteFrames
-) -> void:
-	moduler.upper.sprite_frames = _upper
-	moduler.lower.sprite_frames = _lower
-	sprite.sprite_frames = _sprite
-
-
-func _ready() -> void:
-	sprite.show()
-	moduler.hide()
-
-
 func _physics_process(delta: float) -> void:
 	if time > 0.:
 		force = - force
@@ -42,17 +33,8 @@ func _physics_process(delta: float) -> void:
 		time -= delta * time_scale
 
 
-func play_modules(anim_name: StringName) -> void:
-	moduler.play(anim_name)
-	moduler.show()
-	sprite.hide()
-	
-
-
-func play(anim_name: StringName) -> void:
-	sprite.play(anim_name)
-	moduler.hide()
-	sprite.show()
+func has_module(_name: String) -> bool:
+	return get_node(NodePath(_name)) in get_children()
 
 
 func shake(_force: Vector2, _duration: float, _scale: float) -> void:

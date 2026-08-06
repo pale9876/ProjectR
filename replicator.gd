@@ -68,8 +68,8 @@ func get_collider() -> CollisionShape2D:
 	return get_node(^"UnitCollision") as CollisionShape2D
 
 
-func get_anim() -> NitraAnime:
-	return get_node(^"NitraAnime") as NitraAnime
+func get_anim() -> MotionLibrary:
+	return get_node(^"MotionLibrary") as MotionLibrary
 
 
 func get_stage() -> Stage:

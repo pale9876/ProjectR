@@ -1,0 +1,21 @@
+[gd_scene format=3 uid="uid://c32vxjmjaldxa"]
+
+[ext_resource type="Script" uid="uid://dghhexdudu0xy" path="res://component/direction_moduler.gd" id="1_ucnb2"]
+[ext_resource type="Texture2D" uid="uid://b7pw6wh1f50rn" path="res://aseprite/asso_project/sample_motions/move.png" id="2_86hxo"]
+
+[node name="Move" type="Node2D" unique_id=1549121677]
+script = ExtResource("1_ucnb2")
+hframes = 8
+offset = Vector2(0, -64)
+
+[node name="Left" type="Sprite2D" parent="." unique_id=569612952]
+visible = false
+texture = ExtResource("2_86hxo")
+offset = Vector2(0, -64)
+flip_h = true
+hframes = 8
+
+[node name="Right" type="Sprite2D" parent="." unique_id=2017628584]
+texture = ExtResource("2_86hxo")
+offset = Vector2(0, -64)
+hframes = 8

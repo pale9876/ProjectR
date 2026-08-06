@@ -14,6 +14,7 @@
 [ext_resource type="Script" uid="uid://bupj3hlvtt67s" path="res://unit/hurtbox.gd" id="8_k7l50"]
 [ext_resource type="Script" uid="uid://bdj3moatwduju" path="res://unit/awareness.gd" id="9_yvxo8"]
 [ext_resource type="Script" uid="uid://dcybwuwfqeqr3" path="res://unit/state/state_machine.gd" id="10_x1h6o"]
+[ext_resource type="PackedScene" uid="uid://cfdt7041dne44" path="res://animated_tail.tscn" id="11_2e5g1"]
 [ext_resource type="Script" uid="uid://8cq3ted0s3ob" path="res://unit/state/idle.gd" id="11_3b2yn"]
 [ext_resource type="Script" uid="uid://ditjbaamrfw0k" path="res://unit/dynamic_collision.gd" id="13_k0h15"]
 [ext_resource type="Script" uid="uid://cflyf2esm4eqo" path="res://unit/state/fall.gd" id="13_pvbt4"]
@@ -60,10 +61,10 @@ fill = 1
 fill_from = Vector2(0.5, 0.5)
 fill_to = Vector2(0.85, 0.85)
 
-[sub_resource type="RectangleShape2D" id="RectangleShape2D_gjkc3"]
+[sub_resource type="RectangleShape2D" id="RectangleShape2D_2e5g1"]
 size = Vector2(38, 92)
 
-[sub_resource type="RectangleShape2D" id="RectangleShape2D_2e5g1"]
+[sub_resource type="RectangleShape2D" id="RectangleShape2D_binie"]
 size = Vector2(38, 92)
 
 [sub_resource type="Animation" id="Animation_njs1s"]
@@ -286,6 +287,11 @@ info = SubResource("Resource_pvbt4")
 [node name="DropShadow" type="Sprite2D" parent="." unique_id=924943166]
 texture = SubResource("GradientTexture2D_wqsic")
 
+[node name="AnimatedTailLine" parent="." unique_id=581507229 instance=ExtResource("11_2e5g1")]
+position = Vector2(-8, -48)
+rotation = 3.1415927
+scale = Vector2(0.22, -0.22)
+
 [node name="SpriteComponent" parent="." unique_id=363892716 instance=ExtResource("3_k7avp")]
 modulate = Color(1, 0, 0, 1)
 
@@ -301,7 +307,7 @@ animation = &"idle"
 
 [node name="UnitCollision" type="CollisionShape2D" parent="." unique_id=2120811417]
 position = Vector2(0, -46)
-shape = SubResource("RectangleShape2D_gjkc3")
+shape = SubResource("RectangleShape2D_2e5g1")
 debug_color = Color(0, 0.6, 0.69803923, 0.2)
 script = ExtResource("7_gjkc3")
 metadata/_custom_type_script = "uid://bhhy483vjefa1"
@@ -314,7 +320,7 @@ script = ExtResource("8_k7l50")
 
 [node name="HurtboxShape" type="CollisionShape2D" parent="Hurtbox" unique_id=1180949192]
 position = Vector2(0, -46)
-shape = SubResource("RectangleShape2D_2e5g1")
+shape = SubResource("RectangleShape2D_binie")
 debug_color = Color(0.8509804, 0.03529412, 0.21960784, 0.39607844)
 script = ExtResource("7_gjkc3")
 metadata/_custom_type_script = "uid://bhhy483vjefa1"

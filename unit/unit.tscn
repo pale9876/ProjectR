@@ -159,7 +159,7 @@ texture = SubResource("GradientTexture2D_wqsic")
 
 [node name="AnimatedSprite2D" type="AnimatedSprite2D" parent="." unique_id=621636092]
 sprite_frames = SubResource("SpriteFrames_guff7")
-animation = &"down"
+animation = &"idle"
 
 [node name="CollisionShape2D" type="CollisionShape2D" parent="." unique_id=54862801]
 position = Vector2(0, -56)
@@ -208,9 +208,6 @@ collision_layer = 0
 collision_mask = 2
 monitorable = false
 script = ExtResource("11_j0e0d")
-height = 256.0
-dist = 550.0
-x_offset = -30.0
 
 [node name="CollisionPolygon2D" type="CollisionPolygon2D" parent="Awareness" unique_id=262851000]
 polygon = PackedVector2Array(-30, -256, -30, 0, 520, 0, 520, -256)

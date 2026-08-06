@@ -4,28 +4,28 @@
 
 [sub_resource type="Curve" id="Curve_71ccw"]
 _limits = [0.0, 5.0, 0.0, 1.0]
-_data = [Vector2(0, 0.8455882), 0.0, 6.603411, 1, 0, Vector2(0.70977, 1.8382349), -3.1985316, -3.1985316, 0, 0, Vector2(1, 0), -8.884797, 0.0, 0, 0]
-point_count = 3
+_data = [Vector2(0, 0.272727), 0.0, 12.282472, 1, 0, Vector2(1, 0), -19.840925, 0.0, 0, 0]
+point_count = 2
 
 [sub_resource type="Gradient" id="Gradient_4voq8"]
-offsets = PackedFloat32Array(0, 0.6284585)
-colors = PackedColorArray(0.30588236, 1, 1, 1, 1, 1, 1, 1)
+offsets = PackedFloat32Array(0, 0.0513834, 1)
+colors = PackedColorArray(0.30588236, 1, 1, 0, 0.3360614, 1, 1, 1, 1, 1, 1, 1)
 
 [sub_resource type="Curve2D" id="Curve2D_71ccw"]
 _data = {
-"points": PackedVector2Array(0, 0, 4.2236366, 2.6759849, 0, 0, -4.2236366, -2.6759849, 4.2236366, 2.6759849, 10.282719, 6.51486, 37.32763, 7.781632, 0, 0, 43.84484, -61.96006)
+"points": PackedVector2Array(0, 0, 6.689182, 7.43336, 0, 0, -5.879791, -6.5339236, 13.361641, 14.848137, 23.16909, 25.746675, -23.209948, 137.38103, 0, 0, 93.43306, 13.225976)
 }
 point_count = 3
 
 [sub_resource type="Curve2D" id="Curve2D_4voq8"]
 _data = {
-"points": PackedVector2Array(0, 0, 0, 0, 21.333328, -22.779663, 0, 0, 0, 0, 37.33333, 0, 0, 0, 0, 0, 26.666672, 22.779663)
+"points": PackedVector2Array(0, 0, 0, 0, 5.3333282, -15.186447, -0.83165836, -27.45295, 0.83165836, 27.45295, 16, 15.186432, 0, 0, 0, 0, 0, 45.55931)
 }
 point_count = 3
 
 [sub_resource type="Curve2D" id="Curve2D_jdwou"]
 _data = {
-"points": PackedVector2Array(0, 0, 0, 0, -24, -88, -1.8315074, -35.030033, 1.8315074, 35.030033, 32, -48, 0, 0, 0, 0, -8, 8)
+"points": PackedVector2Array(0, 0, 0, 0, 8, -104, 2.251183, -54.874954, -2.251183, 54.874954, 40, -32, 0, 0, 0, 0, 8, 32)
 }
 point_count = 3
 
@@ -33,12 +33,13 @@ point_count = 3
 
 [node name="Tail" type="Line2D" parent="." unique_id=859378972]
 position = Vector2(304, 192)
-points = PackedVector2Array(0, 0, 10.282719, 6.51486, 10.525801, 6.5923877, 10.856542, 6.575954, 11.271132, 6.468342, 11.765764, 6.2723346, 12.97991, 5.6262755, 14.468502, 4.6600475, 22.557844, -1.9611226, 32.60032, -11.923265, 42.645504, -23.800991, 47.059605, -30.012768, 50.742973, -36.168922, 53.45181, -42.091278, 54.364586, -44.909107, 54.9423, -47.60167, 55.095993, -48.894012, 55.154488, -50.146694, 55.11397, -51.356922, 54.970657, -52.52191, 54.72071, -53.638885, 54.360344, -54.705055, 53.885727, -55.717632, 53.293064, -56.673843, 52.578545, -57.570892, 51.738358, -58.406006, 50.768684, -59.1764, 49.665733, -59.87928, 48.425674, -60.51187, 47.044716, -61.07139, 43.84484, -61.96006)
+points = PackedVector2Array(0, 0, 23.16909, 25.746675, 24.480368, 27.407034, 25.905125, 29.562273, 29.072527, 35.106483, 36.52088, 49.373585, 45.153057, 64.533615, 49.80024, 71.194016, 52.18685, 74.074776, 54.607964, 76.572266, 57.057922, 78.62378, 58.29196, 79.46269, 59.531097, 80.16658, 60.774624, 80.727615, 62.02184, 81.13795, 63.272034, 81.38975, 64.524506, 81.47517, 65.77855, 81.38636, 67.033455, 81.1155, 68.28853, 80.65474, 69.54305, 79.99623, 70.796326, 79.13214, 72.047646, 78.054634, 73.29631, 76.75586, 74.541595, 75.22798, 77.019264, 71.45355, 79.475006, 66.668625, 84.29815, 53.816364, 93.43306, 13.225976)
 width = 15.0
 width_curve = SubResource("Curve_71ccw")
 default_color = Color(1, 0.22352941, 0, 1)
 gradient = SubResource("Gradient_4voq8")
 joint_mode = 2
+begin_cap_mode = 1
 end_cap_mode = 2
 
 [node name="Path2D" type="Path2D" parent="Tail" unique_id=1233250280]
@@ -46,18 +47,23 @@ curve = SubResource("Curve2D_71ccw")
 script = ExtResource("2_4voq8")
 playing = true
 speed_scale = 7.55
+m_rat = 10356.9597563707
+n_rat = 10355.011968925472
+mid_in = 8.79
+mid_out = 19.975
+end_strength = 2292.81
 
 [node name="MiddlePath" type="Path2D" parent="Tail/Path2D" unique_id=2061563779]
 unique_name_in_owner = true
-position = Vector2(-24, -5.841255e-06)
+position = Vector2(16, -16.000006)
 scale = Vector2(1.5, 1.0535715)
 curve = SubResource("Curve2D_4voq8")
 
 [node name="Middle" type="PathFollow2D" parent="Tail/Path2D/MiddlePath" unique_id=2124305860]
 unique_name_in_owner = true
-position = Vector2(34.28272, 6.514866)
-rotation = 2.0087256
-progress = 35.068054
+position = Vector2(7.169091, 41.74668)
+rotation = 2.423848
+progress = 62.26547
 
 [node name="EndPath" type="Path2D" parent="Tail/Path2D" unique_id=465058308]
 unique_name_in_owner = true
@@ -66,6 +72,6 @@ curve = SubResource("Curve2D_jdwou")
 
 [node name="End" type="PathFollow2D" parent="Tail/Path2D/EndPath" unique_id=115512213]
 unique_name_in_owner = true
-position = Vector2(-12.15516, -85.96006)
-rotation = 0.22605668
-progress = 12.0672035
+position = Vector2(37.43306, -10.774024)
+rotation = 1.7819663
+progress = 104.102646

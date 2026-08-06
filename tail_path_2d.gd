@@ -6,6 +6,18 @@ extends Path2D
 @export var length: float
 @export var speed_scale: float = 3.5
 
+@export_category("Init Progress Ratio")
+@export var m_rat: float = TAU * .52
+@export var n_rat: float = TAU * .21
+
+var _m_rat: float
+var _n_rat: float
+
+
+@export var fp_out: float = 10.
+@export var mid_in: float = 10.
+@export var mid_out: float = 10.
+@export var end_strength: float = 2275.
 
 @onready var middle_path: Path2D = %MiddlePath
 @onready var end_path: Path2D = %EndPath
@@ -21,8 +33,6 @@ func _enter_tree() -> void:
 	)
 
 
-var m_rat: float = TAU * .46
-var n_rat: float = TAU * .25
 
 
 func _ready() -> void:
@@ -40,6 +50,7 @@ func _physics_process(delta: float) -> void:
 	if !playing: return
 	
 	var speed: float = delta * speed_scale
+	
 	m_rat += speed
 	n_rat += speed
 	
@@ -60,9 +71,9 @@ func _physics_process(delta: float) -> void:
 	var rot_scale: float = 1.55
 	var _scaled: float = middle_point.normalized().angle() * rot_scale
 	
-	curve.set_point_out(0, middle_point.normalized() * to_middle_length)
+	curve.set_point_out(0, middle_point.normalized() * fp_out)
 	curve.set_point_position(1, middle_point)
-	curve.set_point_in(1, middle_point.normalized() * - 5.)
-	curve.set_point_out(1, middle_point.normalized() * 5.)
+	curve.set_point_in(1, middle_point.normalized()  * - mid_in)
+	curve.set_point_out(1, middle_point.normalized() * mid_out)
 	curve.set_point_position(2, end_point)
-	curve.set_point_in(2, dir * (absf(next_ratio - prev_ratio) * 1225.))
+	curve.set_point_in(2, dir * (absf(next_ratio - prev_ratio) * end_strength))
