@@ -1,5 +1,6 @@
 @tool
 extends Node2D
+class_name DirectionSpriteModuler
 
 
 @export var hframes: int = 1:
@@ -18,21 +19,29 @@ extends Node2D
 var frame: int = 0:
 	set(val):
 		frame = clampi(val, 0, hframes * vframes - 1)
-		if is_inside_tree():
+		if is_node_ready():
 			get_current_sprite().frame = frame
 
 @export_range(-1, 1, 2) var direction: int = 1:
 	set(val):
 		direction = clampi(val, -1, 1)
-		if is_inside_tree():
-			_update()
+		_update()
 
 @export var offset: Vector2 = Vector2(0., 0.):
 	set(value):
 		offset = value
-		if is_inside_tree():
-			for node: Node in get_children():
-				(node as Sprite2D).offset = offset
+		for node: Node in get_children():
+			(node as Sprite2D).offset = offset
+
+@export var left_texture: Texture2D:
+	set(tex):
+		left_texture = tex
+		_update()
+
+@export var right_texture: Texture2D:
+	set(tex):
+		right_texture = tex
+		_update()
 
 
 func _ready() -> void:
@@ -50,10 +59,18 @@ func propagate_vframes() -> void:
 
 
 func _update() -> void:
-	var sprite: Sprite2D = get_current_sprite()
-	sprite.frame = frame
+	if !is_inside_tree(): return
+	
+	var current_sprite: Sprite2D = get_current_sprite()
+	current_sprite.frame = frame
+	
 	for node: Node in get_children():
-		(node as Sprite2D).visible = sprite == node
+		if node is Sprite2D:
+			var sprite := node as Sprite2D
+			sprite.visible = current_sprite == node
+			sprite.flip_h = sprite.name == &"Left"
+			#sprite.texture = texture
+			sprite.texture = left_texture if sprite.name == &"Left" else right_texture
 
 
 func get_current_sprite() -> Sprite2D:

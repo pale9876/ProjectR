@@ -6,6 +6,7 @@
 [node name="Idle" type="Node2D" unique_id=1549121677]
 script = ExtResource("1_rv7mf")
 offset = Vector2(0, -64)
+texture = ExtResource("2_v0af2")
 
 [node name="Left" type="Sprite2D" parent="." unique_id=569612952]
 visible = false

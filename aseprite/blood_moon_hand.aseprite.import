@@ -1,0 +1,14 @@
+[remap]
+
+importer="aseprite_wizard.plugin.noop"
+type="PackedDataContainer"
+uid="uid://bnq54g7w0hjcd"
+path="res://.godot/imported/blood_moon_hand.aseprite-3d6c66f79a74c2319f48abc107636144.res"
+
+[deps]
+
+source_file="res://aseprite/blood_moon_hand.aseprite"
+dest_files=["res://.godot/imported/blood_moon_hand.aseprite-3d6c66f79a74c2319f48abc107636144.res"]
+
+[params]
+

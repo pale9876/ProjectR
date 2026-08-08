@@ -1,0 +1,14 @@
+[remap]
+
+importer="aseprite_wizard.plugin.noop"
+type="PackedDataContainer"
+uid="uid://6siwu08x2bjl"
+path="res://.godot/imported/sandbag.aseprite-cc1b5c6e642d09e4aeccd6f3b8fd4920.res"
+
+[deps]
+
+source_file="res://aseprite/asso_project/sandbag.aseprite"
+dest_files=["res://.godot/imported/sandbag.aseprite-cc1b5c6e642d09e4aeccd6f3b8fd4920.res"]
+
+[params]
+

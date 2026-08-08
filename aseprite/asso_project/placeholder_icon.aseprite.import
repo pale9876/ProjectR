@@ -1,0 +1,14 @@
+[remap]
+
+importer="aseprite_wizard.plugin.noop"
+type="PackedDataContainer"
+uid="uid://kyc063jdwfun"
+path="res://.godot/imported/placeholder_icon.aseprite-d89d9b7f9fe8bf017aae0d006a213215.res"
+
+[deps]
+
+source_file="res://aseprite/asso_project/placeholder_icon.aseprite"
+dest_files=["res://.godot/imported/placeholder_icon.aseprite-d89d9b7f9fe8bf017aae0d006a213215.res"]
+
+[params]
+

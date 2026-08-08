@@ -2,17 +2,18 @@
 @tool
 extends Node2D
 
+
 # Import
 const DirectionModuler: Script = preload("uid://dghhexdudu0xy")
 
 
-@export var current: DirectionModuler:
+@export var current: NodePath:
 	set(path):
 		current = path
-		if is_inside_tree():
-			if current:
-				for node: Node in get_children():
-					(node as DirectionModuler).visible = node == current
+		var node := get_node_or_null(path)
+		if node and node.is_inside_tree() and node is DirectionModuler:
+			for _node in get_children():
+				_node.visible = node == _node
 
 
 var force: Vector2
@@ -24,13 +25,15 @@ var time_scale: float:
 		time_scale = maxf(0., value)
 
 
+
 func _physics_process(delta: float) -> void:
-	if time > 0.:
-		force = - force
-		
-		position = position.lerp(force, randf_range(.125, .225))
-		force = force.lerp(Vector2(), randf_range(.095, .225))
-		time -= delta * time_scale
+	if !Engine.is_editor_hint():
+		if time > 0.:
+			force = - force
+			
+			position = position.lerp(force, randf_range(.125, .225))
+			force = force.lerp(Vector2(), randf_range(.095, .225))
+			time -= delta * time_scale
 
 
 func has_module(_name: String) -> bool:

@@ -7,6 +7,7 @@
 script = ExtResource("1_ucnb2")
 hframes = 8
 offset = Vector2(0, -64)
+texture = ExtResource("2_86hxo")
 
 [node name="Left" type="Sprite2D" parent="." unique_id=569612952]
 visible = false

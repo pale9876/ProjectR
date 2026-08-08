@@ -1,0 +1,125 @@
+[gd_scene format=3 uid="uid://bsg27f4cy1k8d"]
+
+[ext_resource type="Script" uid="uid://dghhexdudu0xy" path="res://component/direction_moduler.gd" id="1_hguy8"]
+[ext_resource type="Script" uid="uid://dh5p5e7a2p0on" path="res://karada_moduler.gd" id="1_ugxwm"]
+[ext_resource type="Texture2D" uid="uid://o3iwk43i42mj" path="res://aseprite/asso_project/characters/noru/idle/back_hair2.png" id="3_0qs8x"]
+[ext_resource type="Texture2D" uid="uid://cmey6ycwwsbag" path="res://aseprite/asso_project/characters/noru/idle/left_arm2.png" id="4_mi1lx"]
+[ext_resource type="Texture2D" uid="uid://c5d5aqfrj1khr" path="res://aseprite/asso_project/characters/noru/idle/face.png" id="5_ibxdy"]
+[ext_resource type="Texture2D" uid="uid://71c7mfxyhx7h" path="res://aseprite/asso_project/characters/noru/idle/left_side_tail.png" id="6_wu7io"]
+[ext_resource type="Texture2D" uid="uid://c1bbrfhxoapfw" path="res://aseprite/asso_project/characters/noru/idle/right_side_tail.png" id="7_y4ini"]
+[ext_resource type="Texture2D" uid="uid://dp845eh675c3m" path="res://aseprite/asso_project/characters/noru/idle/front_hair.png" id="8_dr57r"]
+
+[node name="Karada" type="Node2D" unique_id=1414427272]
+script = ExtResource("1_ugxwm")
+ORDER_BY_PARTS = Dictionary[int, PackedStringArray]({
+0: PackedStringArray("BackHair", "LeftArm", "Body", "Head", "Leg", "RightArm"),
+1: PackedStringArray("BackHair", "LeftArm", "Head", "Body", "RightArm", "Leg"),
+2: PackedStringArray("LeftArm", "BackHair", "Body", "Head", "RightArm", "Leg"),
+3: PackedStringArray("RightArm", "BackHair", "Body", "Head", "Leg", "LeftArm"),
+4: PackedStringArray("BackHair", "Body", "Head", "Leg", "RightArm", "LeftArm"),
+5: PackedStringArray("BackHair", "Body", "Head", "Leg", "LeftArm", "RightArm")
+})
+
+[node name="BackHair" type="Node2D" parent="." unique_id=1657119763]
+script = ExtResource("1_hguy8")
+right_texture = ExtResource("3_0qs8x")
+metadata/_custom_type_script = "uid://dghhexdudu0xy"
+
+[node name="Left" type="Sprite2D" parent="BackHair" unique_id=344711333]
+visible = false
+flip_h = true
+
+[node name="Right" type="Sprite2D" parent="BackHair" unique_id=621850449]
+texture = ExtResource("3_0qs8x")
+
+[node name="LeftArm" type="Node2D" parent="." unique_id=802512860]
+script = ExtResource("1_hguy8")
+right_texture = ExtResource("4_mi1lx")
+metadata/_custom_type_script = "uid://dghhexdudu0xy"
+
+[node name="Left" type="Sprite2D" parent="LeftArm" unique_id=1389621223]
+visible = false
+flip_h = true
+
+[node name="Right" type="Sprite2D" parent="LeftArm" unique_id=1377616937]
+texture = ExtResource("4_mi1lx")
+
+[node name="Body" type="Node2D" parent="." unique_id=1762163287]
+script = ExtResource("1_hguy8")
+metadata/_custom_type_script = "uid://dghhexdudu0xy"
+
+[node name="Left" type="Sprite2D" parent="Body" unique_id=1678762537]
+visible = false
+flip_h = true
+
+[node name="Right" type="Sprite2D" parent="Body" unique_id=1478847589]
+
+[node name="Head" type="Node2D" parent="." unique_id=636699963]
+
+[node name="Face" type="Node2D" parent="Head" unique_id=1401703625]
+script = ExtResource("1_hguy8")
+right_texture = ExtResource("5_ibxdy")
+metadata/_custom_type_script = "uid://dghhexdudu0xy"
+
+[node name="Left" type="Sprite2D" parent="Head/Face" unique_id=1567952421]
+visible = false
+flip_h = true
+
+[node name="Right" type="Sprite2D" parent="Head/Face" unique_id=2119747146]
+texture = ExtResource("5_ibxdy")
+
+[node name="LeftSideTail" type="Node2D" parent="Head" unique_id=1445517371]
+script = ExtResource("1_hguy8")
+right_texture = ExtResource("6_wu7io")
+metadata/_custom_type_script = "uid://dghhexdudu0xy"
+
+[node name="Left" type="Sprite2D" parent="Head/LeftSideTail" unique_id=1538888696]
+visible = false
+flip_h = true
+
+[node name="Right" type="Sprite2D" parent="Head/LeftSideTail" unique_id=1796553058]
+texture = ExtResource("6_wu7io")
+
+[node name="RightSideTail" type="Node2D" parent="Head" unique_id=1890805412]
+script = ExtResource("1_hguy8")
+right_texture = ExtResource("7_y4ini")
+metadata/_custom_type_script = "uid://dghhexdudu0xy"
+
+[node name="Left" type="Sprite2D" parent="Head/RightSideTail" unique_id=1627940066]
+visible = false
+flip_h = true
+
+[node name="Right" type="Sprite2D" parent="Head/RightSideTail" unique_id=1101418140]
+texture = ExtResource("7_y4ini")
+
+[node name="FrontHair" type="Node2D" parent="Head" unique_id=1834089434]
+script = ExtResource("1_hguy8")
+right_texture = ExtResource("8_dr57r")
+metadata/_custom_type_script = "uid://dghhexdudu0xy"
+
+[node name="Left" type="Sprite2D" parent="Head/FrontHair" unique_id=403718966]
+visible = false
+flip_h = true
+
+[node name="Right" type="Sprite2D" parent="Head/FrontHair" unique_id=1203120629]
+texture = ExtResource("8_dr57r")
+
+[node name="Leg" type="Node2D" parent="." unique_id=17434081]
+script = ExtResource("1_hguy8")
+metadata/_custom_type_script = "uid://dghhexdudu0xy"
+
+[node name="Left" type="Sprite2D" parent="Leg" unique_id=524029729]
+visible = false
+flip_h = true
+
+[node name="Right" type="Sprite2D" parent="Leg" unique_id=649046717]
+
+[node name="RightArm" type="Node2D" parent="." unique_id=478589404]
+script = ExtResource("1_hguy8")
+metadata/_custom_type_script = "uid://dghhexdudu0xy"
+
+[node name="Left" type="Sprite2D" parent="RightArm" unique_id=1216967677]
+visible = false
+flip_h = true
+
+[node name="Right" type="Sprite2D" parent="RightArm" unique_id=21537249]

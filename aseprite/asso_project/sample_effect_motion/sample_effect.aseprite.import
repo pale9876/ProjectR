@@ -1,0 +1,14 @@
+[remap]
+
+importer="aseprite_wizard.plugin.noop"
+type="PackedDataContainer"
+uid="uid://d05qc5gdtrynt"
+path="res://.godot/imported/sample_effect.aseprite-872fd48d1c287ef4e4e5482ce2f9b6a0.res"
+
+[deps]
+
+source_file="res://aseprite/asso_project/sample_effect_motion/sample_effect.aseprite"
+dest_files=["res://.godot/imported/sample_effect.aseprite-872fd48d1c287ef4e4e5482ce2f9b6a0.res"]
+
+[params]
+
