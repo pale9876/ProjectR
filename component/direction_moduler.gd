@@ -33,15 +33,11 @@ var frame: int = 0:
 		for node: Node in get_children():
 			(node as Sprite2D).offset = offset
 
-@export var left_texture: Texture2D:
-	set(tex):
-		left_texture = tex
-		_update()
 
-@export var right_texture: Texture2D:
-	set(tex):
-		right_texture = tex
-		_update()
+
+#@export var texture: Texture:
+	#set(tex):
+		#_import_texture(tex)
 
 
 func _ready() -> void:
@@ -69,8 +65,13 @@ func _update() -> void:
 			var sprite := node as Sprite2D
 			sprite.visible = current_sprite == node
 			sprite.flip_h = sprite.name == &"Left"
-			#sprite.texture = texture
-			sprite.texture = left_texture if sprite.name == &"Left" else right_texture
+
+
+func _import_texture(tex: Texture) -> void:
+	for node: Node in get_children():
+		if node is Sprite2D:
+			if node.visible:
+				node.texture = tex
 
 
 func get_current_sprite() -> Sprite2D:

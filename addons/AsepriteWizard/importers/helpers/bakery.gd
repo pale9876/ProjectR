@@ -1,7 +1,9 @@
 @tool
 extends RefCounted
 
+
 const logger = preload("../../config/logger.gd")
+
 
 func save_bake_file(source_path: String, resource: Resource) -> int:
 	var bake_path = _bake_path(source_path)

@@ -1,0 +1,41 @@
+[gd_scene format=3 uid="uid://c4gcbxwk30yws"]
+
+[ext_resource type="Script" uid="uid://c4ma143wnovjq" path="res://body_part/body_part.gd" id="1_n2f50"]
+[ext_resource type="PackedScene" uid="uid://cgjxkmo53vf01" path="res://ingame/map/keikai.tscn" id="1_rrv58"]
+
+[sub_resource type="CapsuleShape2D" id="CapsuleShape2D_rrv58"]
+
+[node name="BodyPartPhysicsAnimationTest" type="Node2D" unique_id=1318705265]
+
+[node name="Stage" type="Node2D" parent="." unique_id=1172189214]
+
+[node name="Head" type="CharacterBody2D" parent="Stage" unique_id=446869719]
+position = Vector2(111, 232)
+collision_layer = 0
+script = ExtResource("1_n2f50")
+
+[node name="Sprite2D" type="Sprite2D" parent="Stage/Head" unique_id=2108969145]
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="Stage/Head" unique_id=64698713]
+
+[node name="LimboHSM" type="LimboHSM" parent="Stage/Head" unique_id=855570892]
+
+[node name="Roll" type="LimboState" parent="Stage/Head/LimboHSM" unique_id=656343536]
+
+[node name="Leg" type="CharacterBody2D" parent="Stage" unique_id=258865510]
+position = Vector2(227, 249)
+
+[node name="Arm" type="CharacterBody2D" parent="Stage" unique_id=14165862]
+position = Vector2(337, 245)
+
+[node name="Body" type="CharacterBody2D" parent="Stage" unique_id=1495380441]
+position = Vector2(382, 247)
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="Stage/Body" unique_id=1491582195]
+shape = SubResource("CapsuleShape2D_rrv58")
+
+[node name="Keikai" parent="." unique_id=1292865989 instance=ExtResource("1_rrv58")]
+_left = 0
+_right = 600
+_ceil = 0
+_floor = 300

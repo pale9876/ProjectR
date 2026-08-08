@@ -22,11 +22,11 @@ func _get_preset_count():
 	return 1
 
 
-func _get_preset_name(i):
+func _get_preset_name(i) -> String:
 	return "Default"
 
 
-func _get_import_order():
+func _get_import_order() -> int:
 	return 1
 
 
@@ -85,7 +85,7 @@ func _handle_bake_fallback(source_file: String, save_path: String) -> int:
 
 	if config.should_generate_bake_files() && _bakery.has_bake_file(source_file):
 		logger.warn("Aseprite command failed. Falling back to baked file", source_file)
-		var resource_path = "%s.%s" % [save_path, _get_save_extension()]
+		var resource_path: String = "%s.%s" % [save_path, _get_save_extension()]
 		return _bakery.load_bake_texture(source_file, resource_path)
 	else:
 		return ERR_UNCONFIGURED

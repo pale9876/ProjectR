@@ -1,15 +1,18 @@
 @tool
 extends PanelContainer
 
-const logger = preload("../../config/logger.gd")
-const wizard_config = preload("../../config/wizard_config.gd")
-const result_code = preload("../../config/result_codes.gd")
-var _aseprite_file_exporter = preload("../../aseprite/file_exporter.gd").new()
+const logger: Script = preload("../../config/logger.gd")
+const wizard_config: Script = preload("../../config/wizard_config.gd")
+const result_code: Script = preload("../../config/result_codes.gd")
+
+
+var _aseprite_file_exporter := preload("../../aseprite/file_exporter.gd").new()
 var config = preload("../../config/config.gd").new()
 
 var scene: Node
 var target_node: Node
 var file_system: EditorFileSystem = EditorInterface.get_resource_filesystem()
+
 
 var _slice: String = ""
 var _source_uid: int = -1

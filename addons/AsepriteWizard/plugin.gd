@@ -148,7 +148,7 @@ func _open_window():
 		return
 
 	window = WizardWindow.instantiate()
-	window.connect("close_requested",Callable(self,"_on_window_closed"))
+	window.connect("close_requested", Callable(self,"_on_window_closed"))
 	add_control_to_bottom_panel(window, "Aseprite Wizard")
 	make_bottom_panel_item_visible(window)
 

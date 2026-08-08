@@ -7,23 +7,23 @@ extends "./static_texture_import_plugin_base.gd"
 ## Imports first frame from Aseprite file as texture
 ##
 
-func _get_importer_name():
+func _get_importer_name() -> String:
 	return "aseprite_wizard.plugin.static-texture"
 
 
-func _get_visible_name():
+func _get_visible_name() -> String:
 	return "Aseprite Texture"
 
 
-func _get_recognized_extensions():
+func _get_recognized_extensions() -> PackedStringArray:
 	return ["aseprite", "ase"]
 
 
-func _get_priority():
+func _get_priority() -> float:
 	return 2.0 if config.get_default_importer() == config.IMPORTER_STATIC_TEXTURE_NAME else 0.8
 
 
-func _get_import_options(_path, _i):
+func _get_import_options(_path, _i) -> Array[Dictionary]:
 	return [
 		{"name": "layer/exclude_layers_pattern", "default_value": config.get_default_exclusion_pattern()},
 		{"name": "layer/only_visible_layers", "default_value": false},
@@ -45,22 +45,22 @@ func _get_import_options(_path, _i):
 		},
 	]
 
-func _import(source_file, save_path, options, platform_variants, gen_files):
-	var bake_result = _handle_bake_fallback(source_file, save_path)
+func _import(source_file, save_path, options, platform_variants, gen_files) -> int:
+	var bake_result: int = _handle_bake_fallback(source_file, save_path)
 
 	if bake_result != CONTINUE_STATUS_CODE:
 		return bake_result
 	
-	var absolute_source_file = ProjectSettings.globalize_path(source_file)
-	var source_path = source_file.get_base_dir()
+	var absolute_source_file: String = ProjectSettings.globalize_path(source_file)
+	var source_path: String = source_file.get_base_dir()
 
-	var aseprite_opts = {
-		"exception_pattern": options['layer/exclude_layers_pattern'],
-		"only_visible_layers": options['layer/only_visible_layers'],
-		"split_layers": options.get('layer/split_layers', false),
-		"output_filename": '',
-		"output_folder": source_path,
-		"scale": str(options["sheet/scale"]),
+	var aseprite_opts: Dictionary = {
+		"exception_pattern" : options['layer/exclude_layers_pattern'],
+		"only_visible_layers" : options['layer/only_visible_layers'],
+		"split_layers" : options.get('layer/split_layers', false),
+		"output_filename" : '',
+		"output_folder" : source_path,
+		"scale" : str(options["sheet/scale"]),
 	}
 
 	if options['first_frame_only']:
@@ -69,13 +69,21 @@ func _import(source_file, save_path, options, platform_variants, gen_files):
 		aseprite_opts['sheet_type'] = options["sheet/sheet_type"]
 		aseprite_opts['sheet_columns'] = options["sheet/sheet_columns"]
 
-	var result = _generate_texture(absolute_source_file, aseprite_opts)
+	var result: Dictionary = _generate_texture(
+		absolute_source_file, aseprite_opts
+	)
 
 	if not result.is_ok:
-		logger.error("Could not import aseprite file: %s" % result_codes.get_error_message(result.code), source_file)
+		logger.error(
+			"Could not import aseprite file: %s" % result_codes.get_error_message(result.code),
+			source_file
+		)
+		
 		return FAILED
 
 	var sprite_sheet = result.content.sprite_sheet
 	var data = result.content.data
 
-	return _save_resource(source_file, sprite_sheet, save_path, result.content.data_file, data.meta.size)
+	return _save_resource(
+		source_file, sprite_sheet, save_path, result.content.data_file, data.meta.size
+	)

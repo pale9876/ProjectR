@@ -1,11 +1,12 @@
 @tool
 extends "../base_sprite_resource_creator.gd"
 
+
 func load_texture(target_node: Node, aseprite_files: Dictionary, options: Dictionary) -> void:
 	var source_file = aseprite_files.data_file
 	var sprite_sheet = aseprite_files.sprite_sheet
 	var data = _aseprite_file_exporter.load_json_content(source_file)
-	var texture
+	var texture: Texture
 
 	if options.get("should_create_portable_texture", false):
 		texture = _load_compressed_texture(sprite_sheet)

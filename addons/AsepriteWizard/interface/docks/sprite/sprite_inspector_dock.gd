@@ -6,6 +6,7 @@ const SpriteAnimationCreator = preload("../../../creators/animation_player/sprit
 const TextureRectAnimationCreator = preload("../../../creators/animation_player/texture_rect_animation_creator.gd")
 const StaticTextureCreator = preload("../../../creators/static_texture/texture_creator.gd")
 
+
 enum ImportMode {
 	ANIMATION = 0,
 	IMAGE = 1
@@ -16,6 +17,7 @@ var static_texture_creator: StaticTextureCreator
 
 var _import_mode = -1
 var _animation_player_path: String
+
 
 @onready var _import_mode_options_field: OptionButton = $dock_fields/VBoxContainer/modes/options
 @onready var _animation_player_field: OptionButton = $dock_fields/VBoxContainer/animation_player/options
@@ -195,7 +197,7 @@ func _import_for_animation_player():
 ##
 ## Import first frame from aseprite file as node texture
 ##
-func _import_static():
+func _import_static() -> void:
 	var source_path = ProjectSettings.globalize_path(_source)
 	var root = get_tree().get_edited_scene_root()
 
@@ -204,7 +206,7 @@ func _import_static():
 
 	_save_config()
 
-	var aseprite_output = _aseprite_file_exporter.generate_aseprite_file(source_path, options)
+	var aseprite_output: Dictionary = _aseprite_file_exporter.generate_aseprite_file(source_path, options)
 
 	if not aseprite_output.is_ok:
 		_notify_aseprite_error(aseprite_output.code)
