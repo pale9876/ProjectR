@@ -1,4 +1,4 @@
-[gd_scene format=3 uid="uid://bsg27f4cy1k8d"]
+[gd_scene format=4 uid="uid://bsg27f4cy1k8d"]
 
 [ext_resource type="Script" uid="uid://dghhexdudu0xy" path="res://component/direction_moduler.gd" id="1_hguy8"]
 [ext_resource type="Script" uid="uid://dh5p5e7a2p0on" path="res://karada_moduler.gd" id="1_ugxwm"]
@@ -8,6 +8,10 @@
 [ext_resource type="Texture2D" uid="uid://71c7mfxyhx7h" path="res://aseprite/asso_project/characters/noru/idle/left_side_tail.png" id="6_wu7io"]
 [ext_resource type="Texture2D" uid="uid://c1bbrfhxoapfw" path="res://aseprite/asso_project/characters/noru/idle/right_side_tail.png" id="7_y4ini"]
 [ext_resource type="Texture2D" uid="uid://dp845eh675c3m" path="res://aseprite/asso_project/characters/noru/idle/front_hair.png" id="8_dr57r"]
+
+[sub_resource type="PortableCompressedTexture2D" id="PortableCompressedTexture2D_y4ini"]
+_data = PackedByteArray("AAADAAUAAAABAAAAAAEAAAABAABUAgAAUklGRkwCAABXRUJQVlA4TD8CAAAv/8A/EOfAJgCANLjDZQG4CEAHUq/BurhbDbaRbSv57pb++RVQCxVQvENI5A6MAwBQcZ2aEdqg1vL0N0d3M//x//8BNKZhc4fVS27/AVxlrqDHM16WeiJircsGa77qcQBNj/sxSCU47TAvkUEo0dKZGAKxalO+StFeaVfh2h68qECibdtO6pyLxM47HEMCt+z//9BbIHWrKUT0fwKw+3/3/+7/3f+7/3f///V7CDlxQyi/7Kw6jgCGIXAVgpWPZmYjhhBCYGoIVjtaHoo8DaHBjsfM6LKmY2ZchU1G2ux4PGY2BhC90ciUbWLjSNcwZMPAm33Kjsca2FqWxTnnlmVZ+IKZLfLlnt3vX2V5AogZuDZzcr5kl8tJzMTAVzNnWGGguw1mINyA0gQD7dPtdpsm0C7TdJtyUc5EZPo8TZOIqCphIiLee8lVVemKIuK9eF9TtkRk9n7mLc7z7L2qej/Pc0HJUtWK1vnakKkYY1ssKVeNTUpTXE+Zqip/9RjZQoy6JhbAc9+vczlTug6Zo01jjPyBqn47x5PwJ9IVawDoEpFOpKvy1lhyHPW1dgBMydOga5FnAJxzjqF+K3mpPWpdmyNKHoWu7cET+r6XR/7xgUddUADLBylDqocDAOfAUxkADlVwncpZyq8pve/hPSBd2cIW6X0PWbq+26GQngR4DqRreuGBMjwf0jUxlkp4yaFNcrKkuEKEMCEOK/COhxUoyCsPLzhVEVHitIC6qogoW6pa0xy7/3f/7/7f/f/rBgA=")
+size_override = Vector2(256, 256)
 
 [node name="Karada" type="Node2D" unique_id=1414427272]
 script = ExtResource("1_ugxwm")
@@ -113,6 +117,33 @@ visible = false
 flip_h = true
 
 [node name="Right" type="Sprite2D" parent="Leg" unique_id=649046717]
+texture_filter = 1
+texture = SubResource("PortableCompressedTexture2D_y4ini")
+metadata/_aseprite_wizard_interface_config_ = {
+"layer_section": true,
+"output_section": true,
+"pending_changes": {},
+"slice_section": true
+}
+metadata/_aseprite_wizard_config_ = {
+"convert_fps_field": 60.0,
+"convert_ms_field": 16.0,
+"convert_to_fps": false,
+"embed_tex": true,
+"i_mode": 1,
+"keep_anim_length": false,
+"layers": ["Layer 1"],
+"o_ex_p": "",
+"o_folder": "",
+"o_name": "",
+"only_visible": false,
+"player": "",
+"scale": "1.0",
+"slice": "",
+"source": "res://aseprite/asso_project/characters/Godette/godette.aseprite",
+"source_uid": -1
+}
+metadata/_aseprite_wizard_source_file_hash_ = "781e8569f36d68700eba182eeefe1bb7"
 
 [node name="RightArm" type="Node2D" parent="." unique_id=478589404]
 script = ExtResource("1_hguy8")

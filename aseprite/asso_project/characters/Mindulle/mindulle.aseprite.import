@@ -7,7 +7,7 @@ valid=false
 
 [deps]
 
-source_file="res://aseprite/asso_project/aseprite/characters/Mindulle/mindulle.aseprite"
+source_file="res://aseprite/asso_project/characters/Mindulle/mindulle.aseprite"
 
 [params]
 
