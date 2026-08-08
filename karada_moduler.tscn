@@ -22,7 +22,6 @@ ORDER_BY_PARTS = Dictionary[int, PackedStringArray]({
 
 [node name="BackHair" type="Node2D" parent="." unique_id=1657119763]
 script = ExtResource("1_hguy8")
-texture = null
 metadata/_custom_type_script = "uid://dghhexdudu0xy"
 
 [node name="Left" type="Sprite2D" parent="BackHair" unique_id=344711333]
@@ -34,7 +33,6 @@ texture = ExtResource("3_0qs8x")
 
 [node name="LeftArm" type="Node2D" parent="." unique_id=802512860]
 script = ExtResource("1_hguy8")
-texture = null
 metadata/_custom_type_script = "uid://dghhexdudu0xy"
 
 [node name="Left" type="Sprite2D" parent="LeftArm" unique_id=1389621223]
@@ -46,7 +44,6 @@ texture = ExtResource("4_mi1lx")
 
 [node name="Body" type="Node2D" parent="." unique_id=1762163287]
 script = ExtResource("1_hguy8")
-texture = null
 metadata/_custom_type_script = "uid://dghhexdudu0xy"
 
 [node name="Left" type="Sprite2D" parent="Body" unique_id=1678762537]
@@ -59,7 +56,6 @@ flip_h = true
 
 [node name="Face" type="Node2D" parent="Head" unique_id=1401703625]
 script = ExtResource("1_hguy8")
-texture = null
 metadata/_custom_type_script = "uid://dghhexdudu0xy"
 
 [node name="Left" type="Sprite2D" parent="Head/Face" unique_id=1567952421]
@@ -71,7 +67,6 @@ texture = ExtResource("5_ibxdy")
 
 [node name="LeftSideTail" type="Node2D" parent="Head" unique_id=1445517371]
 script = ExtResource("1_hguy8")
-texture = null
 metadata/_custom_type_script = "uid://dghhexdudu0xy"
 
 [node name="Left" type="Sprite2D" parent="Head/LeftSideTail" unique_id=1538888696]
@@ -83,7 +78,6 @@ texture = ExtResource("6_wu7io")
 
 [node name="RightSideTail" type="Node2D" parent="Head" unique_id=1890805412]
 script = ExtResource("1_hguy8")
-texture = null
 metadata/_custom_type_script = "uid://dghhexdudu0xy"
 
 [node name="Left" type="Sprite2D" parent="Head/RightSideTail" unique_id=1627940066]
@@ -95,7 +89,6 @@ texture = ExtResource("7_y4ini")
 
 [node name="FrontHair" type="Node2D" parent="Head" unique_id=1834089434]
 script = ExtResource("1_hguy8")
-texture = null
 metadata/_custom_type_script = "uid://dghhexdudu0xy"
 
 [node name="Left" type="Sprite2D" parent="Head/FrontHair" unique_id=403718966]
@@ -107,7 +100,6 @@ texture = ExtResource("8_dr57r")
 
 [node name="Leg" type="Node2D" parent="." unique_id=17434081]
 script = ExtResource("1_hguy8")
-texture = null
 metadata/_custom_type_script = "uid://dghhexdudu0xy"
 
 [node name="Left" type="Sprite2D" parent="Leg" unique_id=524029729]
@@ -144,7 +136,6 @@ metadata/_aseprite_wizard_source_file_hash_ = "781e8569f36d68700eba182eeefe1bb7"
 
 [node name="RightArm" type="Node2D" parent="." unique_id=478589404]
 script = ExtResource("1_hguy8")
-texture = null
 metadata/_custom_type_script = "uid://dghhexdudu0xy"
 
 [node name="Left" type="Sprite2D" parent="RightArm" unique_id=1216967677]

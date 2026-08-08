@@ -1,3 +1,4 @@
+# body_part.gd
 extends CharacterBody2D
 class_name BodyPart
 

@@ -1,7 +1,10 @@
 [gd_scene format=3 uid="uid://c4gcbxwk30yws"]
 
-[ext_resource type="Script" uid="uid://c4ma143wnovjq" path="res://body_part/body_part.gd" id="1_n2f50"]
 [ext_resource type="PackedScene" uid="uid://cgjxkmo53vf01" path="res://ingame/map/keikai.tscn" id="1_rrv58"]
+[ext_resource type="Script" uid="uid://dy8l74rtwyydu" path="res://body_part/body_part_sprite_module.gd" id="2_c3duy"]
+
+[sub_resource type="CircleShape2D" id="CircleShape2D_wqsic"]
+radius = 11.0
 
 [sub_resource type="CapsuleShape2D" id="CapsuleShape2D_rrv58"]
 
@@ -10,29 +13,57 @@
 [node name="Stage" type="Node2D" parent="." unique_id=1172189214]
 
 [node name="Head" type="CharacterBody2D" parent="Stage" unique_id=446869719]
-position = Vector2(111, 232)
+position = Vector2(87, 191)
 collision_layer = 0
-script = ExtResource("1_n2f50")
 
-[node name="Sprite2D" type="Sprite2D" parent="Stage/Head" unique_id=2108969145]
+[node name="BodyPartSpriteModule" type="Node2D" parent="Stage/Head" unique_id=1667886556]
+script = ExtResource("2_c3duy")
+
+[node name="BackHair" type="Sprite2D" parent="Stage/Head/BodyPartSpriteModule" unique_id=1473676511]
+
+[node name="Face" type="Sprite2D" parent="Stage/Head/BodyPartSpriteModule" unique_id=1550463554]
+
+[node name="RightTail" type="Sprite2D" parent="Stage/Head/BodyPartSpriteModule" unique_id=1458949878]
+
+[node name="LeftHair" type="Sprite2D" parent="Stage/Head/BodyPartSpriteModule" unique_id=322907141]
+
+[node name="FrontHair" type="Sprite2D" parent="Stage/Head/BodyPartSpriteModule" unique_id=538529891]
 
 [node name="CollisionShape2D" type="CollisionShape2D" parent="Stage/Head" unique_id=64698713]
+shape = SubResource("CircleShape2D_wqsic")
 
 [node name="LimboHSM" type="LimboHSM" parent="Stage/Head" unique_id=855570892]
 
-[node name="Roll" type="LimboState" parent="Stage/Head/LimboHSM" unique_id=656343536]
+[node name="Aerial" type="LimboState" parent="Stage/Head/LimboHSM" unique_id=656343536]
+
+[node name="TouchedGround" type="LimboState" parent="Stage/Head/LimboHSM" unique_id=58478921]
 
 [node name="Leg" type="CharacterBody2D" parent="Stage" unique_id=258865510]
 position = Vector2(227, 249)
 
+[node name="Sprite2D" type="Sprite2D" parent="Stage/Leg" unique_id=752386607]
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="Stage/Leg" unique_id=2016806482]
+position = Vector2(110, -4)
+
 [node name="Arm" type="CharacterBody2D" parent="Stage" unique_id=14165862]
 position = Vector2(337, 245)
+
+[node name="Sprite2D" type="Sprite2D" parent="Stage/Arm" unique_id=1116605166]
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="Stage/Arm" unique_id=260015792]
 
 [node name="Body" type="CharacterBody2D" parent="Stage" unique_id=1495380441]
 position = Vector2(382, 247)
 
+[node name="Sprite2D" type="Sprite2D" parent="Stage/Body" unique_id=1973509857]
+
 [node name="CollisionShape2D" type="CollisionShape2D" parent="Stage/Body" unique_id=1491582195]
 shape = SubResource("CapsuleShape2D_rrv58")
+
+[node name="BodyPartSpawnPoint" type="Marker2D" parent="Stage" unique_id=406200359]
+position = Vector2(127, 115)
+gizmo_extents = 20.0
 
 [node name="Keikai" parent="." unique_id=1292865989 instance=ExtResource("1_rrv58")]
 _left = 0
