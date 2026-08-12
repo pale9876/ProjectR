@@ -2,127 +2,41 @@
 extends CanvasLayer
 
 
-# Import
-const TitleUiButton: Script = preload("uid://chmqpyka2hi81")
-const ClassList: Script = preload("uid://cdgr4w6hpl2ud")
-const CharacterList: Script = preload("uid://dq6jdkets46eg")
-const RadioButtonContainer: Script = preload("uid://dgxb13iyu7nlx")
 
 
-func _ready() -> void:
-	var _first_page := first_page()
-	var _second_page := second_page()
+func _init() -> void:
+	visible = false
 	
-	_first_page.show()
-	title_ui().show()
-	
-	_second_page.hide()
-	get_achievements().hide()
-	get_chara_settings().hide()
-	get_class_settings().hide()
-	
-	get_start_btn().button_up.connect(
-		func() -> void:
-			GSignal.start.emit()
+	visibility_changed.connect(
+		func () -> void:
+			if visible:
+				turn_on()
+			else:
+				turn_off()
 	)
-	
-	get_map_editor_btn().button_up.connect(
-		func() -> void:
-			pass
-	)
-	
-	get_profile_btn().button_up.connect(
-		func() -> void:
-			_first_page.hide()
-			_second_page.show()
-	)
-	
-	get_class_btn().button_up.connect(
-		func() -> void:
-			get_class_settings().show()
-			get_main_ui().hide()
-	)
-	
 
-	get_chara_radio_containers().toggled.connect(
-		func() -> void:
-			pass
-	)
+
+func _enter_tree() -> void:
+	turn_on()
+
+
+func turn_on() -> void:
+	get_anim().play(&"turn_on")
+
+
+func turn_off() -> void:
+	get_anim().play(&"turn_off")
+
 
 
 func _input(event: InputEvent) -> void:
-	%SubViewport.push_input(event)
-	
-	if event.is_action_pressed(&"ui_cancel"):
-		if second_page().visible:
-			first_page().show()
-			second_page().hide()
+	get_main_title_viewport().push_input(event)
 
 
-func get_chara_list() -> CharacterList:
-	return get_node(^"%CharacterList") as CharacterList
-
-
-func get_chara_radio_containers() -> RadioButtonContainer:
-	return get_chara_list().get_radio_btn_container()
-
-
-func get_main_ui() -> Control:
-	return get_node(^"%MainUI") as Control
-
-
-func get_achievements() -> Control:
-	return get_node(^"%PlayerAchievements") as Control
-
-
-func get_chara_settings() -> Control:
-	return get_node(^"%CharacterSettings") as Control
-
-
-func get_class_list() -> ClassList:
-	return get_node(^"%ClassList") as ClassList
-
-
-func first_page() -> Control:
-	return get_node(^"%FirstPage") as Control
-
-
-func get_start_btn() -> Button:
-	return get_node(^"%Start") as Button
-
-
-func get_option_btn() -> Button:
-	return get_node(^"%Option") as Button
-
-
-func get_profile_btn() -> Button:
-	return get_node(^"%Profile") as Button
-
-
-func get_achievement_btn() -> Button:
-	return get_node(^"%Achievement") as Button
-
-
-func get_map_editor_btn() -> Button:
-	return get_node(^"%MapEditor") as Button
-
-
-func get_class_btn() -> Button:
-	return get_node(^"%Class") as Button
-
-
-func get_class_settings() -> Control:
-	return get_node(^"%ClassSettings") as Control
-
-
-func title_ui() -> Control:
-	return get_node(^"%TitleUI") as Control
-
-
-func second_page() -> Control:
-	return get_node(^"%SecondPage") as Control
+func get_anim() -> AnimationPlayer:
+	return get_node(^"AnimationPlayer")
 
 
 
-
-	
+func get_main_title_viewport() -> SubViewport:
+	return get_node(^"%TitleViewport")

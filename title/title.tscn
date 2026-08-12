@@ -1,595 +1,185 @@
 [gd_scene format=3 uid="uid://c2agrq1i4pbt2"]
 
 [ext_resource type="Script" uid="uid://dtu3imugbu0pm" path="res://title/title.gd" id="1_y7k74"]
-[ext_resource type="Theme" uid="uid://cyev5gnpugequ" path="res://title_theme.tres" id="2_6s8lb"]
-[ext_resource type="Texture2D" uid="uid://c1kdqekuqw0nx" path="res://aseprite/asso_project/title/MainTitle2.png" id="2_crako"]
-[ext_resource type="PackedScene" uid="uid://h46mjm4dsjnx" path="res://title/title_ui_button.tscn" id="5_0tjwc"]
-[ext_resource type="PackedScene" uid="uid://dw0ovxv0s3mlv" path="res://title/class_select_button.tscn" id="6_0tjwc"]
-[ext_resource type="Script" uid="uid://cdgr4w6hpl2ud" path="res://title/class_list.gd" id="6_lqna4"]
-[ext_resource type="Texture2D" uid="uid://1gn5p53k0gab" path="res://portrait/predator.png" id="8_fyd4r"]
-[ext_resource type="Texture2D" uid="uid://cgv6iyurw1t5a" path="res://portrait/icon/predator.png" id="8_yhhqk"]
-[ext_resource type="Texture2D" uid="uid://huu86nxnv53a" path="res://placeholder/maid_08.png" id="9_bqme7"]
-[ext_resource type="Texture2D" uid="uid://camnnij4812ej" path="res://portrait/executioner.png" id="10_fyd4r"]
-[ext_resource type="Texture2D" uid="uid://j4340lcophwd" path="res://portrait/icon/executioner.png" id="10_yhhqk"]
-[ext_resource type="Texture2D" uid="uid://byetpndbh00xq" path="res://placeholder/maid_010.png" id="12_5bniv"]
-[ext_resource type="Texture2D" uid="uid://be84rj42egw0r" path="res://portrait/icon/chimera.png" id="12_yhhqk"]
-[ext_resource type="Texture2D" uid="uid://puyr6putkiid" path="res://portrait/icon/trickster.png" id="13_yhhqk"]
-[ext_resource type="Texture2D" uid="uid://biwys5tfcrvyy" path="res://portrait/icon/puppeteer.png" id="14_fyd4r"]
-[ext_resource type="Texture2D" uid="uid://cmpxq1668dbuf" path="res://portrait/trickster.png" id="14_g7b4f"]
-[ext_resource type="Texture2D" uid="uid://b8t7urgctkqu8" path="res://portrait/puppeteer.png" id="16_g7b4f"]
-[ext_resource type="Texture2D" uid="uid://dk14ub3ipvswt" path="res://portrait/icon/exorcist.png" id="17_fyd4r"]
-[ext_resource type="Script" uid="uid://dvcrrp6wpmrtp" path="res://title/variable_statistics_progress.gd" id="18_yhhqk"]
-[ext_resource type="PackedScene" uid="uid://be5es7kj8my7a" path="res://title/character_list.tscn" id="20_g7b4f"]
-[ext_resource type="Script" uid="uid://dq6jdkets46eg" path="res://title/character_list.gd" id="21_ibxtg"]
-[ext_resource type="Shader" uid="uid://6ly1dbvypuv" path="res://shaders/crt.gdshader" id="22_povds"]
-[ext_resource type="Shader" uid="uid://c6qc3hkvc3sta" path="res://shaders/chromatic.gdshader" id="23_ahhml"]
+[ext_resource type="PackedScene" uid="uid://d30oqfxv18ru8" path="res://title/title_ui.tscn" id="2_0tjwc"]
+[ext_resource type="Shader" uid="uid://6ly1dbvypuv" path="res://shader/crt.gdshader" id="22_povds"]
+[ext_resource type="Script" uid="uid://cl8jpoxnqv76g" path="res://title/filter_rect.gd" id="23_3jafg"]
+[ext_resource type="Shader" uid="uid://c6qc3hkvc3sta" path="res://shader/chromatic.gdshader" id="23_ahhml"]
+[ext_resource type="Shader" uid="uid://dxn8hlrd3ett5" path="res://shader/crt_turn_off.gdshader" id="24_ahhml"]
 
-[sub_resource type="InputEventKey" id="InputEventKey_ibxtg"]
-device = -1
-pressed = true
-keycode = 4194309
-
-[sub_resource type="Shortcut" id="Shortcut_ibxtg"]
-events = [SubResource("InputEventKey_ibxtg")]
-
-[sub_resource type="ViewportTexture" id="ViewportTexture_afgga"]
-viewport_path = NodePath("SubViewportContainer/SubViewport")
-
-[sub_resource type="ShaderMaterial" id="ShaderMaterial_eudk5"]
+[sub_resource type="ShaderMaterial" id="ShaderMaterial_i01a6"]
 shader = ExtResource("22_povds")
 shader_parameter/resolution = Vector2(640, 360)
-shader_parameter/scan_line_amount = 0.5
-shader_parameter/warp_amount = 0.05
-shader_parameter/vignette_amount = 0.5
-shader_parameter/vignette_intensity = 0.3
-shader_parameter/grille_amount = 0.05
-shader_parameter/brightness_boost = 1.2
+shader_parameter/scan_line_amount = 0.422000020045
+shader_parameter/warp_amount = 0.0930000044175
+shader_parameter/vignette_amount = 0.166000007885
+shader_parameter/vignette_intensity = 0.36400001729
+shader_parameter/grille_amount = 0.398000018905
+shader_parameter/brightness_boost = 1.22800001083
 
-[sub_resource type="ShaderMaterial" id="ShaderMaterial_vwyar"]
+[sub_resource type="ShaderMaterial" id="ShaderMaterial_povds"]
 shader = ExtResource("23_ahhml")
-shader_parameter/intensity = 1.80000002682216
-shader_parameter/threshold = 0.60000000894072
+shader_parameter/intensity = 1.30000001937156
+shader_parameter/threshold = 1.0
+
+[sub_resource type="ShaderMaterial" id="ShaderMaterial_3jafg"]
+shader = ExtResource("24_ahhml")
+shader_parameter/FADE_COLOR = Color(0.06417534, 0.07080308, 0.10395581, 1)
+shader_parameter/BUFFER = 2.0
+shader_parameter/SCALE_SPEED = 1.0
+shader_parameter/progress = 0.0
+
+[sub_resource type="Animation" id="Animation_eudk5"]
+length = 0.001
+tracks/0/type = "value"
+tracks/0/imported = false
+tracks/0/enabled = true
+tracks/0/path = NodePath("TurnOnOffFilterRect:material:shader_parameter/progress")
+tracks/0/interp = 1
+tracks/0/loop_wrap = true
+tracks/0/keys = {
+"times": PackedFloat32Array(0),
+"transitions": PackedFloat32Array(1),
+"update": 0,
+"values": [0.0]
+}
+tracks/1/type = "value"
+tracks/1/imported = false
+tracks/1/enabled = true
+tracks/1/path = NodePath(".:visible")
+tracks/1/interp = 1
+tracks/1/loop_wrap = true
+tracks/1/keys = {
+"times": PackedFloat32Array(0),
+"transitions": PackedFloat32Array(1),
+"update": 1,
+"values": [false]
+}
+
+[sub_resource type="Animation" id="Animation_3jafg"]
+resource_name = "turn_off"
+step = 0.0167
+tracks/0/type = "value"
+tracks/0/imported = false
+tracks/0/enabled = true
+tracks/0/path = NodePath("TurnOnOffFilterRect:material:shader_parameter/progress")
+tracks/0/interp = 1
+tracks/0/loop_wrap = true
+tracks/0/keys = {
+"times": PackedFloat32Array(0, 1),
+"transitions": PackedFloat32Array(0.24148433, 1),
+"update": 0,
+"values": [0.0, 1.0]
+}
+
+[sub_resource type="Animation" id="Animation_ahhml"]
+resource_name = "turn_on"
+step = 0.0167
+tracks/0/type = "value"
+tracks/0/imported = false
+tracks/0/enabled = true
+tracks/0/path = NodePath("TurnOnOffFilterRect:material:shader_parameter/progress")
+tracks/0/interp = 1
+tracks/0/loop_wrap = true
+tracks/0/keys = {
+"times": PackedFloat32Array(0, 1),
+"transitions": PackedFloat32Array(0.2176377, 1),
+"update": 0,
+"values": [1.0, 0.0]
+}
+tracks/1/type = "value"
+tracks/1/imported = false
+tracks/1/enabled = true
+tracks/1/path = NodePath(".:visible")
+tracks/1/interp = 1
+tracks/1/loop_wrap = true
+tracks/1/keys = {
+"times": PackedFloat32Array(0),
+"transitions": PackedFloat32Array(1),
+"update": 1,
+"values": [true]
+}
+
+[sub_resource type="AnimationLibrary" id="AnimationLibrary_3jafg"]
+_data = {
+&"RESET": SubResource("Animation_eudk5"),
+&"turn_off": SubResource("Animation_3jafg"),
+&"turn_on": SubResource("Animation_ahhml")
+}
 
 [node name="Title" type="CanvasLayer" unique_id=419323065]
+visible = false
 script = ExtResource("1_y7k74")
 
-[node name="SubViewportContainer" type="SubViewportContainer" parent="." unique_id=1400195837]
+[node name="SubViewportContainer" type="SubViewportContainer" parent="." unique_id=370223908]
 anchors_preset = 15
 anchor_right = 1.0
 anchor_bottom = 1.0
 grow_horizontal = 2
 grow_vertical = 2
 
-[node name="SubViewport" type="SubViewport" parent="SubViewportContainer" unique_id=1089819371]
-unique_name_in_owner = true
+[node name="SubViewport" type="SubViewport" parent="SubViewportContainer" unique_id=1579827824]
+handle_input_locally = false
+size = Vector2i(640, 360)
+render_target_update_mode = 0
+
+[node name="SubViewportContainer2" type="SubViewportContainer" parent="SubViewportContainer/SubViewport" unique_id=561673042]
+offset_right = 640.0
+offset_bottom = 360.0
+
+[node name="SubViewport" type="SubViewport" parent="SubViewportContainer/SubViewport/SubViewportContainer2" unique_id=945658051]
 handle_input_locally = false
 size = Vector2i(640, 360)
 render_target_update_mode = 4
 
-[node name="Control" type="Control" parent="SubViewportContainer/SubViewport" unique_id=259717838]
-layout_mode = 3
-anchors_preset = 15
-anchor_right = 1.0
-anchor_bottom = 1.0
-grow_horizontal = 2
-grow_vertical = 2
-theme = ExtResource("2_6s8lb")
-
-[node name="TitleScreen" type="TextureRect" parent="SubViewportContainer/SubViewport/Control" unique_id=708332907]
-layout_mode = 1
-anchors_preset = 15
-anchor_right = 1.0
-anchor_bottom = 1.0
-offset_left = 642.0
-offset_top = -148.0
-offset_right = 788.1929
-offset_bottom = 196.0
-grow_horizontal = 2
-grow_vertical = 2
-scale = Vector2(-1, 1)
-texture = ExtResource("2_crako")
-stretch_mode = 2
-flip_h = true
-
-[node name="MainUI" type="HBoxContainer" parent="SubViewportContainer/SubViewport/Control" unique_id=1138622615]
-unique_name_in_owner = true
-layout_mode = 1
-anchors_preset = 15
-anchor_right = 1.0
-anchor_bottom = 1.0
-grow_horizontal = 2
-grow_vertical = 2
-
-[node name="SelectMenu" type="MarginContainer" parent="SubViewportContainer/SubViewport/Control/MainUI" unique_id=1982981467]
-layout_mode = 2
-theme_override_constants/margin_left = 50
-theme_override_constants/margin_top = 10
-theme_override_constants/margin_right = 10
-theme_override_constants/margin_bottom = 10
-
-[node name="CenterContainer2" type="CenterContainer" parent="SubViewportContainer/SubViewport/Control/MainUI/SelectMenu" unique_id=505442059]
-layout_mode = 2
-size_flags_horizontal = 6
-size_flags_vertical = 4
-
-[node name="FirstPage" type="VBoxContainer" parent="SubViewportContainer/SubViewport/Control/MainUI/SelectMenu/CenterContainer2" unique_id=438646725]
-unique_name_in_owner = true
-custom_minimum_size = Vector2(125, 0)
-layout_mode = 2
-size_flags_horizontal = 3
-theme_override_constants/separation = 10
-
-[node name="Control" type="Control" parent="SubViewportContainer/SubViewport/Control/MainUI/SelectMenu/CenterContainer2/FirstPage" unique_id=658253900]
-custom_minimum_size = Vector2(100, 30)
-layout_mode = 2
-size_flags_vertical = 3
-
-[node name="Start" parent="SubViewportContainer/SubViewport/Control/MainUI/SelectMenu/CenterContainer2/FirstPage/Control" unique_id=938715085 instance=ExtResource("5_0tjwc")]
-unique_name_in_owner = true
-layout_mode = 1
-anchors_preset = 15
-anchor_right = 1.0
-anchor_bottom = 1.0
-grow_horizontal = 2
-grow_vertical = 2
-focus_neighbor_bottom = NodePath("../../Control2/Option")
-shortcut = SubResource("Shortcut_ibxtg")
-
-[node name="Control2" type="Control" parent="SubViewportContainer/SubViewport/Control/MainUI/SelectMenu/CenterContainer2/FirstPage" unique_id=1534087175]
-custom_minimum_size = Vector2(100, 30)
-layout_mode = 2
-size_flags_vertical = 3
-
-[node name="Option" parent="SubViewportContainer/SubViewport/Control/MainUI/SelectMenu/CenterContainer2/FirstPage/Control2" unique_id=926642094 instance=ExtResource("5_0tjwc")]
-unique_name_in_owner = true
-layout_mode = 1
-anchors_preset = 15
-anchor_right = 1.0
-anchor_bottom = 1.0
-grow_horizontal = 2
-grow_vertical = 2
-focus_neighbor_bottom = NodePath("../../Control4/Profile")
-text = "Option"
-
-[node name="Control4" type="Control" parent="SubViewportContainer/SubViewport/Control/MainUI/SelectMenu/CenterContainer2/FirstPage" unique_id=1300987879]
-custom_minimum_size = Vector2(100, 30)
-layout_mode = 2
-size_flags_vertical = 3
-
-[node name="Profile" parent="SubViewportContainer/SubViewport/Control/MainUI/SelectMenu/CenterContainer2/FirstPage/Control4" unique_id=845802994 instance=ExtResource("5_0tjwc")]
-unique_name_in_owner = true
-layout_mode = 1
-anchors_preset = 15
-anchor_right = 1.0
-anchor_bottom = 1.0
-grow_horizontal = 2
-grow_vertical = 2
-focus_neighbor_bottom = NodePath("../../Control6/Achievement")
-text = "Profile"
-
-[node name="Control6" type="Control" parent="SubViewportContainer/SubViewport/Control/MainUI/SelectMenu/CenterContainer2/FirstPage" unique_id=267896251]
-custom_minimum_size = Vector2(100, 30)
-layout_mode = 2
-size_flags_vertical = 3
-
-[node name="Achievement" parent="SubViewportContainer/SubViewport/Control/MainUI/SelectMenu/CenterContainer2/FirstPage/Control6" unique_id=1755490576 instance=ExtResource("5_0tjwc")]
-unique_name_in_owner = true
-layout_mode = 1
-anchors_preset = 15
-anchor_right = 1.0
-anchor_bottom = 1.0
-grow_horizontal = 2
-grow_vertical = 2
-focus_neighbor_bottom = NodePath("../../Control3/MapEditor")
-text = "Achievement
-"
-
-[node name="Control3" type="Control" parent="SubViewportContainer/SubViewport/Control/MainUI/SelectMenu/CenterContainer2/FirstPage" unique_id=1304454826]
-custom_minimum_size = Vector2(100, 30)
-layout_mode = 2
-size_flags_vertical = 3
-
-[node name="MapEditor" parent="SubViewportContainer/SubViewport/Control/MainUI/SelectMenu/CenterContainer2/FirstPage/Control3" unique_id=75221255 instance=ExtResource("5_0tjwc")]
-unique_name_in_owner = true
-layout_mode = 1
-anchors_preset = 15
-anchor_right = 1.0
-anchor_bottom = 1.0
-grow_horizontal = 2
-grow_vertical = 2
-focus_neighbor_bottom = NodePath("../../Control/Start")
-text = "Map Editor"
-
-[node name="SecondPage" type="VBoxContainer" parent="SubViewportContainer/SubViewport/Control/MainUI/SelectMenu/CenterContainer2" unique_id=28441656]
-unique_name_in_owner = true
-visible = false
-custom_minimum_size = Vector2(125, 0)
-layout_mode = 2
-size_flags_horizontal = 3
-theme_override_constants/separation = 10
-
-[node name="Control5" type="Control" parent="SubViewportContainer/SubViewport/Control/MainUI/SelectMenu/CenterContainer2/SecondPage" unique_id=296342386]
-custom_minimum_size = Vector2(100, 30)
-layout_mode = 2
-size_flags_vertical = 3
-
-[node name="Class" parent="SubViewportContainer/SubViewport/Control/MainUI/SelectMenu/CenterContainer2/SecondPage/Control5" unique_id=1998749731 instance=ExtResource("5_0tjwc")]
-unique_name_in_owner = true
-layout_mode = 1
-anchors_preset = 15
-anchor_right = 1.0
-anchor_bottom = 1.0
-grow_horizontal = 2
-grow_vertical = 2
-text = "Class"
-
-[node name="Control7" type="Control" parent="SubViewportContainer/SubViewport/Control/MainUI/SelectMenu/CenterContainer2/SecondPage" unique_id=1787706504]
-custom_minimum_size = Vector2(100, 30)
-layout_mode = 2
-size_flags_vertical = 3
-
-[node name="Character" parent="SubViewportContainer/SubViewport/Control/MainUI/SelectMenu/CenterContainer2/SecondPage/Control7" unique_id=1244850189 instance=ExtResource("5_0tjwc")]
-unique_name_in_owner = true
-layout_mode = 1
-anchors_preset = 15
-anchor_right = 1.0
-anchor_bottom = 1.0
-grow_horizontal = 2
-grow_vertical = 2
-text = "Character"
-
-[node name="TitleUI" type="MarginContainer" parent="SubViewportContainer/SubViewport/Control/MainUI" unique_id=617814466]
-unique_name_in_owner = true
-visible = false
-layout_mode = 2
-size_flags_horizontal = 3
-theme_override_constants/margin_left = 10
-theme_override_constants/margin_top = 10
-theme_override_constants/margin_right = 10
-theme_override_constants/margin_bottom = 10
-
-[node name="MarginContainer" type="MarginContainer" parent="SubViewportContainer/SubViewport/Control/MainUI/TitleUI" unique_id=422328106]
-layout_mode = 2
-size_flags_horizontal = 6
-size_flags_vertical = 4
-
-[node name="CenterContainer" type="CenterContainer" parent="SubViewportContainer/SubViewport/Control/MainUI/TitleUI/MarginContainer" unique_id=1007073550]
-layout_mode = 2
-size_flags_horizontal = 2
-size_flags_vertical = 0
-
-[node name="Title" type="Label" parent="SubViewportContainer/SubViewport/Control/MainUI/TitleUI/MarginContainer/CenterContainer" unique_id=968861072]
-layout_mode = 2
-text = "Anti-Apocalypse Strategy Organization"
-
-[node name="ClassSettings" type="MarginContainer" parent="SubViewportContainer/SubViewport/Control" unique_id=1581658883]
-unique_name_in_owner = true
-visible = false
-layout_mode = 1
-anchors_preset = 15
-anchor_right = 1.0
-anchor_bottom = 1.0
-grow_horizontal = 2
-grow_vertical = 2
-theme_override_constants/margin_left = 20
-theme_override_constants/margin_top = 20
-theme_override_constants/margin_right = 20
-theme_override_constants/margin_bottom = 20
-
-[node name="Panel" type="Panel" parent="SubViewportContainer/SubViewport/Control/ClassSettings" unique_id=864309469]
-layout_mode = 2
-
-[node name="HBoxContainer" type="HBoxContainer" parent="SubViewportContainer/SubViewport/Control/ClassSettings/Panel" unique_id=1780533488]
-layout_mode = 1
-anchors_preset = 15
-anchor_right = 1.0
-anchor_bottom = 1.0
-grow_horizontal = 2
-grow_vertical = 2
-
-[node name="MarginContainer" type="MarginContainer" parent="SubViewportContainer/SubViewport/Control/ClassSettings/Panel/HBoxContainer" unique_id=1892223827]
-layout_mode = 2
-size_flags_horizontal = 3
-size_flags_stretch_ratio = 0.65
-theme_override_constants/margin_left = 10
-theme_override_constants/margin_top = 10
-theme_override_constants/margin_right = 10
-theme_override_constants/margin_bottom = 10
-
-[node name="ClassList" type="VBoxContainer" parent="SubViewportContainer/SubViewport/Control/ClassSettings/Panel/HBoxContainer/MarginContainer" unique_id=1053217457]
-unique_name_in_owner = true
-layout_mode = 2
-size_flags_horizontal = 3
-theme_override_constants/separation = 8
-alignment = 1
-script = ExtResource("6_lqna4")
-
-[node name="Predator" parent="SubViewportContainer/SubViewport/Control/ClassSettings/Panel/HBoxContainer/MarginContainer/ClassList" unique_id=1675104851 instance=ExtResource("6_0tjwc")]
-layout_mode = 2
-button_name = "Predator"
-class_icon = ExtResource("8_yhhqk")
-portrait = ExtResource("8_fyd4r")
-
-[node name="Executioner" parent="SubViewportContainer/SubViewport/Control/ClassSettings/Panel/HBoxContainer/MarginContainer/ClassList" unique_id=1828005212 instance=ExtResource("6_0tjwc")]
-layout_mode = 2
-button_name = "Executioner"
-class_icon = ExtResource("10_yhhqk")
-portrait = ExtResource("10_fyd4r")
-
-[node name="Chimera" parent="SubViewportContainer/SubViewport/Control/ClassSettings/Panel/HBoxContainer/MarginContainer/ClassList" unique_id=349157552 instance=ExtResource("6_0tjwc")]
-layout_mode = 2
-button_name = "Chimera"
-class_icon = ExtResource("12_yhhqk")
-portrait = ExtResource("9_bqme7")
-
-[node name="Trickster" parent="SubViewportContainer/SubViewport/Control/ClassSettings/Panel/HBoxContainer/MarginContainer/ClassList" unique_id=2127784702 instance=ExtResource("6_0tjwc")]
-layout_mode = 2
-button_name = "Trickster"
-class_icon = ExtResource("13_yhhqk")
-portrait = ExtResource("14_g7b4f")
-
-[node name="Puppeteer" parent="SubViewportContainer/SubViewport/Control/ClassSettings/Panel/HBoxContainer/MarginContainer/ClassList" unique_id=1555685590 instance=ExtResource("6_0tjwc")]
-layout_mode = 2
-button_name = "Puppeteer"
-class_icon = ExtResource("14_fyd4r")
-portrait = ExtResource("16_g7b4f")
-
-[node name="Exorcist" parent="SubViewportContainer/SubViewport/Control/ClassSettings/Panel/HBoxContainer/MarginContainer/ClassList" unique_id=1681734137 instance=ExtResource("6_0tjwc")]
-layout_mode = 2
-button_name = "Exorcist"
-class_icon = ExtResource("17_fyd4r")
-portrait = ExtResource("12_5bniv")
-
-[node name="MarginContainer2" type="MarginContainer" parent="SubViewportContainer/SubViewport/Control/ClassSettings/Panel/HBoxContainer" unique_id=1851678740]
-layout_mode = 2
-size_flags_horizontal = 3
-theme_override_constants/margin_left = 10
-theme_override_constants/margin_top = 10
-theme_override_constants/margin_right = 10
-theme_override_constants/margin_bottom = 10
-
-[node name="Panel" type="Panel" parent="SubViewportContainer/SubViewport/Control/ClassSettings/Panel/HBoxContainer/MarginContainer2" unique_id=826907944]
-layout_mode = 2
-mouse_filter = 2
-
-[node name="MarginContainer" type="MarginContainer" parent="SubViewportContainer/SubViewport/Control/ClassSettings/Panel/HBoxContainer/MarginContainer2/Panel" unique_id=1840804060]
-layout_mode = 1
-anchors_preset = 15
-anchor_right = 1.0
-anchor_bottom = 1.0
-grow_horizontal = 2
-grow_vertical = 2
-theme_override_constants/margin_left = 50
-theme_override_constants/margin_top = 10
-theme_override_constants/margin_right = 10
-theme_override_constants/margin_bottom = 10
-
-[node name="VBoxContainer2" type="VBoxContainer" parent="SubViewportContainer/SubViewport/Control/ClassSettings/Panel/HBoxContainer/MarginContainer2/Panel/MarginContainer" unique_id=323220575]
-layout_mode = 2
-size_flags_horizontal = 3
-
-[node name="Top" type="HBoxContainer" parent="SubViewportContainer/SubViewport/Control/ClassSettings/Panel/HBoxContainer/MarginContainer2/Panel/MarginContainer/VBoxContainer2" unique_id=1423333268]
-layout_mode = 2
-alignment = 2
-
-[node name="Label" type="Label" parent="SubViewportContainer/SubViewport/Control/ClassSettings/Panel/HBoxContainer/MarginContainer2/Panel/MarginContainer/VBoxContainer2/Top" unique_id=564895918]
-layout_mode = 2
-text = "Level"
-
-[node name="ClassLevel" type="Label" parent="SubViewportContainer/SubViewport/Control/ClassSettings/Panel/HBoxContainer/MarginContainer2/Panel/MarginContainer/VBoxContainer2/Top" unique_id=1937781733]
-unique_name_in_owner = true
-layout_mode = 2
-text = "0"
-
-[node name="VSeparator" type="VSeparator" parent="SubViewportContainer/SubViewport/Control/ClassSettings/Panel/HBoxContainer/MarginContainer2/Panel/MarginContainer/VBoxContainer2/Top" unique_id=1590082297]
-layout_mode = 2
-
-[node name="Experience" type="ProgressBar" parent="SubViewportContainer/SubViewport/Control/ClassSettings/Panel/HBoxContainer/MarginContainer2/Panel/MarginContainer/VBoxContainer2/Top" unique_id=42109741]
-unique_name_in_owner = true
-layout_mode = 2
-size_flags_horizontal = 3
-
-[node name="AbilityList" type="HBoxContainer" parent="SubViewportContainer/SubViewport/Control/ClassSettings/Panel/HBoxContainer/MarginContainer2/Panel/MarginContainer/VBoxContainer2" unique_id=668915047]
-layout_mode = 2
-
-[node name="VBoxContainer" type="VBoxContainer" parent="SubViewportContainer/SubViewport/Control/ClassSettings/Panel/HBoxContainer/MarginContainer2/Panel/MarginContainer/VBoxContainer2/AbilityList" unique_id=446318020]
-layout_mode = 2
-
-[node name="Label" type="Label" parent="SubViewportContainer/SubViewport/Control/ClassSettings/Panel/HBoxContainer/MarginContainer2/Panel/MarginContainer/VBoxContainer2/AbilityList/VBoxContainer" unique_id=980208943]
-layout_mode = 2
-size_flags_horizontal = 0
-text = "Aggresive"
-
-[node name="Label2" type="Label" parent="SubViewportContainer/SubViewport/Control/ClassSettings/Panel/HBoxContainer/MarginContainer2/Panel/MarginContainer/VBoxContainer2/AbilityList/VBoxContainer" unique_id=919001630]
-layout_mode = 2
-size_flags_horizontal = 0
-text = "Defensive"
-
-[node name="Label3" type="Label" parent="SubViewportContainer/SubViewport/Control/ClassSettings/Panel/HBoxContainer/MarginContainer2/Panel/MarginContainer/VBoxContainer2/AbilityList/VBoxContainer" unique_id=2052599535]
-layout_mode = 2
-size_flags_horizontal = 0
-text = "Utility"
-
-[node name="VSeparator" type="VSeparator" parent="SubViewportContainer/SubViewport/Control/ClassSettings/Panel/HBoxContainer/MarginContainer2/Panel/MarginContainer/VBoxContainer2/AbilityList" unique_id=1238448503]
-layout_mode = 2
-
-[node name="VBoxContainer2" type="VBoxContainer" parent="SubViewportContainer/SubViewport/Control/ClassSettings/Panel/HBoxContainer/MarginContainer2/Panel/MarginContainer/VBoxContainer2/AbilityList" unique_id=1414481811]
-layout_mode = 2
-size_flags_horizontal = 3
-
-[node name="Aggresive" type="Control" parent="SubViewportContainer/SubViewport/Control/ClassSettings/Panel/HBoxContainer/MarginContainer2/Panel/MarginContainer/VBoxContainer2/AbilityList/VBoxContainer2" unique_id=53831449]
-unique_name_in_owner = true
-layout_mode = 2
-size_flags_vertical = 3
-script = ExtResource("18_yhhqk")
-value = 3
-
-[node name="Defensive" type="Control" parent="SubViewportContainer/SubViewport/Control/ClassSettings/Panel/HBoxContainer/MarginContainer2/Panel/MarginContainer/VBoxContainer2/AbilityList/VBoxContainer2" unique_id=920403367]
-unique_name_in_owner = true
-layout_mode = 2
-size_flags_vertical = 3
-script = ExtResource("18_yhhqk")
-
-[node name="Utility" type="Control" parent="SubViewportContainer/SubViewport/Control/ClassSettings/Panel/HBoxContainer/MarginContainer2/Panel/MarginContainer/VBoxContainer2/AbilityList/VBoxContainer2" unique_id=1122209862]
-unique_name_in_owner = true
-layout_mode = 2
-size_flags_vertical = 3
-script = ExtResource("18_yhhqk")
-value = -4
-
-[node name="MarginContainer" type="MarginContainer" parent="SubViewportContainer/SubViewport/Control/ClassSettings/Panel/HBoxContainer/MarginContainer2/Panel/MarginContainer/VBoxContainer2" unique_id=2007230405]
-layout_mode = 2
-size_flags_vertical = 3
-theme_override_constants/margin_left = 5
-theme_override_constants/margin_top = 5
-theme_override_constants/margin_right = 5
-theme_override_constants/margin_bottom = 5
-
-[node name="Description" type="RichTextLabel" parent="SubViewportContainer/SubViewport/Control/ClassSettings/Panel/HBoxContainer/MarginContainer2/Panel/MarginContainer/VBoxContainer2/MarginContainer" unique_id=2131789148]
-unique_name_in_owner = true
-layout_mode = 2
-text = "blah blah blah blah blah blah blah blah blah blah blah blah blah blah blah blah blah blah blah blah blah blah blah blah blah blah blah blah blah blah blah blah blah blah blah blah"
-
-[node name="Control" type="Control" parent="SubViewportContainer/SubViewport/Control/ClassSettings/Panel/HBoxContainer/MarginContainer2" unique_id=614448242]
-layout_mode = 2
-mouse_filter = 2
-
-[node name="ClassPortrait" type="TextureRect" parent="SubViewportContainer/SubViewport/Control/ClassSettings/Panel/HBoxContainer/MarginContainer2/Control" unique_id=1920933787]
-unique_name_in_owner = true
-layout_mode = 1
-anchors_preset = 15
-anchor_right = 1.0
-anchor_bottom = 1.0
-offset_left = -211.0
-offset_top = -33.0
-offset_right = -191.0
-offset_bottom = 29.0
-grow_horizontal = 2
-grow_vertical = 2
-size_flags_vertical = 3
-mouse_filter = 2
-
-[node name="PlayerAchievements" type="MarginContainer" parent="SubViewportContainer/SubViewport/Control" unique_id=1411660859]
-unique_name_in_owner = true
-visible = false
-layout_mode = 1
-anchors_preset = 15
-anchor_right = 1.0
-anchor_bottom = 1.0
-grow_horizontal = 2
-grow_vertical = 2
-theme_override_constants/margin_left = 20
-theme_override_constants/margin_top = 20
-theme_override_constants/margin_right = 20
-theme_override_constants/margin_bottom = 20
-
-[node name="Panel" type="Panel" parent="SubViewportContainer/SubViewport/Control/PlayerAchievements" unique_id=978852651]
-layout_mode = 2
-
-[node name="CharacterSettings" type="Panel" parent="SubViewportContainer/SubViewport/Control" unique_id=1231963206]
-unique_name_in_owner = true
-visible = false
-layout_mode = 1
-anchors_preset = 15
-anchor_right = 1.0
-anchor_bottom = 1.0
-grow_horizontal = 2
-grow_vertical = 2
-
-[node name="MarginContainer" type="MarginContainer" parent="SubViewportContainer/SubViewport/Control/CharacterSettings" unique_id=1955293736]
-layout_mode = 1
-anchors_preset = 15
-anchor_right = 1.0
-anchor_bottom = 1.0
-grow_horizontal = 2
-grow_vertical = 2
-theme_override_constants/margin_left = 10
-theme_override_constants/margin_top = 10
-theme_override_constants/margin_right = 10
-theme_override_constants/margin_bottom = 10
-
-[node name="HBoxContainer" type="HSplitContainer" parent="SubViewportContainer/SubViewport/Control/CharacterSettings/MarginContainer" unique_id=434806606]
-layout_mode = 2
-split_offsets = PackedInt32Array(158)
-split_offset = 158
-
-[node name="VSplitContainer" type="VSplitContainer" parent="SubViewportContainer/SubViewport/Control/CharacterSettings/MarginContainer/HBoxContainer" unique_id=1037159496]
-layout_mode = 2
-
-[node name="CharacterList" parent="SubViewportContainer/SubViewport/Control/CharacterSettings/MarginContainer/HBoxContainer/VSplitContainer" unique_id=1848087007 instance=ExtResource("20_g7b4f")]
-unique_name_in_owner = true
-layout_mode = 2
-script = ExtResource("21_ibxtg")
-
-[node name="VBoxContainer2" type="VBoxContainer" parent="SubViewportContainer/SubViewport/Control/CharacterSettings/MarginContainer/HBoxContainer" unique_id=837923951]
-layout_mode = 2
-size_flags_horizontal = 3
-
-[node name="AnimationPlayer" type="AnimationPlayer" parent="." unique_id=597338014]
-
-[node name="ScreenFilter" type="Control" parent="." unique_id=786100690]
-layout_mode = 3
-anchors_preset = 15
-anchor_right = 1.0
-anchor_bottom = 1.0
-grow_horizontal = 2
-grow_vertical = 2
-mouse_filter = 2
-
-[node name="SubViewportContainer" type="SubViewportContainer" parent="ScreenFilter" unique_id=419496013]
-layout_mode = 1
-anchors_preset = 15
-anchor_right = 1.0
-anchor_bottom = 1.0
-grow_horizontal = 2
-grow_vertical = 2
-mouse_filter = 2
-
-[node name="SubViewport" type="SubViewport" parent="ScreenFilter/SubViewportContainer" unique_id=866410122]
-handle_input_locally = false
-canvas_item_default_texture_filter = 0
-size = Vector2i(640, 360)
-render_target_update_mode = 4
-
-[node name="SubViewportContainer" type="SubViewportContainer" parent="ScreenFilter/SubViewportContainer/SubViewport" unique_id=2033917224]
+[node name="CRT" type="SubViewportContainer" parent="SubViewportContainer/SubViewport/SubViewportContainer2/SubViewport" unique_id=1400195837]
 anchors_preset = 15
 anchor_right = 1.0
 anchor_bottom = 1.0
 offset_right = 128.0
 grow_horizontal = 2
 grow_vertical = 2
-mouse_filter = 2
 
-[node name="SubViewport" type="SubViewport" parent="ScreenFilter/SubViewportContainer/SubViewport/SubViewportContainer" unique_id=851675260]
+[node name="TitleViewport" type="SubViewport" parent="SubViewportContainer/SubViewport/SubViewportContainer2/SubViewport/CRT" unique_id=1089819371]
+unique_name_in_owner = true
 handle_input_locally = false
-canvas_item_default_texture_filter = 0
 size = Vector2i(640, 360)
 render_target_update_mode = 4
 
-[node name="TextureRect" type="TextureRect" parent="ScreenFilter/SubViewportContainer/SubViewport/SubViewportContainer/SubViewport" unique_id=2103233665]
-anchors_preset = 15
-anchor_right = 1.0
-anchor_bottom = 1.0
-grow_horizontal = 2
-grow_vertical = 2
-mouse_filter = 2
-texture = SubResource("ViewportTexture_afgga")
+[node name="TitleUI" parent="SubViewportContainer/SubViewport/SubViewportContainer2/SubViewport/CRT/TitleViewport" unique_id=1482659797 instance=ExtResource("2_0tjwc")]
 
-[node name="CRT" type="ColorRect" parent="ScreenFilter/SubViewportContainer/SubViewport" unique_id=1164111969]
-material = SubResource("ShaderMaterial_eudk5")
+[node name="CrtFilterRect" type="ColorRect" parent="SubViewportContainer/SubViewport/SubViewportContainer2/SubViewport" unique_id=985019017]
+material = SubResource("ShaderMaterial_i01a6")
 anchors_preset = 15
 anchor_right = 1.0
 anchor_bottom = 1.0
 grow_horizontal = 2
 grow_vertical = 2
 mouse_filter = 2
+script = ExtResource("23_3jafg")
+shader = SubResource("ShaderMaterial_i01a6")
 
-[node name="Chromatic" type="ColorRect" parent="ScreenFilter" unique_id=540368819]
-material = SubResource("ShaderMaterial_vwyar")
-layout_mode = 1
+[node name="ChromaticFilterRect" type="ColorRect" parent="SubViewportContainer/SubViewport" unique_id=1256722450]
+material = SubResource("ShaderMaterial_povds")
 anchors_preset = 15
 anchor_right = 1.0
 anchor_bottom = 1.0
 grow_horizontal = 2
 grow_vertical = 2
 mouse_filter = 2
+script = ExtResource("23_3jafg")
+shader = SubResource("ShaderMaterial_povds")
+
+[node name="TurnOnOffFilterRect" type="ColorRect" parent="." unique_id=1264409543]
+material = SubResource("ShaderMaterial_3jafg")
+anchors_preset = 15
+anchor_right = 1.0
+anchor_bottom = 1.0
+grow_horizontal = 2
+grow_vertical = 2
+mouse_filter = 2
+script = ExtResource("23_3jafg")
+shader = SubResource("ShaderMaterial_3jafg")
+
+[node name="AnimationPlayer" type="AnimationPlayer" parent="." unique_id=597338014]
+libraries/ = SubResource("AnimationLibrary_3jafg")

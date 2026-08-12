@@ -37,7 +37,7 @@
 [ext_resource type="AnimationLibrary" uid="uid://b5pittsqyeeq3" path="res://motion/knockback.res" id="30_v2yrs"]
 [ext_resource type="Script" uid="uid://im1wyvflgwp0" path="res://unit/state/unit_state.gd" id="33_qjbny"]
 [ext_resource type="AnimationLibrary" uid="uid://c4rqs4fs1eal4" path="res://motion/pushback.res" id="34_gjkc3"]
-[ext_resource type="Script" uid="uid://chb5h0vw5lpvq" path="res://player/nitra_anime.gd" id="36_yeahc"]
+[ext_resource type="Script" uid="uid://chb5h0vw5lpvq" path="res://player/motion_library.gd" id="36_yeahc"]
 [ext_resource type="Script" uid="uid://dr8n2mbhooxjo" path="res://player/hitbox_component.gd" id="37_v2yrs"]
 
 [sub_resource type="Resource" id="Resource_pvbt4"]
@@ -70,102 +70,6 @@ size = Vector2(38, 92)
 [sub_resource type="Animation" id="Animation_njs1s"]
 length = 0.001
 step = 0.016666668
-tracks/0/type = "value"
-tracks/0/imported = false
-tracks/0/enabled = true
-tracks/0/path = NodePath("SpriteComponent/AnimatedSprite2D:animation")
-tracks/0/interp = 1
-tracks/0/loop_wrap = true
-tracks/0/keys = {
-"times": PackedFloat32Array(0),
-"transitions": PackedFloat32Array(1),
-"update": 1,
-"values": [&"idle"]
-}
-tracks/1/type = "value"
-tracks/1/imported = false
-tracks/1/enabled = true
-tracks/1/path = NodePath("SpriteComponent/AnimatedSprite2D:frame")
-tracks/1/interp = 1
-tracks/1/loop_wrap = true
-tracks/1/keys = {
-"times": PackedFloat32Array(0),
-"transitions": PackedFloat32Array(1),
-"update": 1,
-"values": [0]
-}
-tracks/2/type = "value"
-tracks/2/imported = false
-tracks/2/enabled = true
-tracks/2/path = NodePath("Hurtbox/HurtboxShape:height")
-tracks/2/interp = 1
-tracks/2/loop_wrap = true
-tracks/2/keys = {
-"times": PackedFloat32Array(0),
-"transitions": PackedFloat32Array(1),
-"update": 1,
-"values": [92]
-}
-tracks/3/type = "value"
-tracks/3/imported = false
-tracks/3/enabled = true
-tracks/3/path = NodePath("Hurtbox/HurtboxShape:width")
-tracks/3/interp = 1
-tracks/3/loop_wrap = true
-tracks/3/keys = {
-"times": PackedFloat32Array(0),
-"transitions": PackedFloat32Array(1),
-"update": 1,
-"values": [38]
-}
-tracks/4/type = "value"
-tracks/4/imported = false
-tracks/4/enabled = true
-tracks/4/path = NodePath("Hurtbox/HurtboxShape:offset_y")
-tracks/4/interp = 1
-tracks/4/loop_wrap = true
-tracks/4/keys = {
-"times": PackedFloat32Array(0),
-"transitions": PackedFloat32Array(1),
-"update": 1,
-"values": [0]
-}
-tracks/5/type = "value"
-tracks/5/imported = false
-tracks/5/enabled = true
-tracks/5/path = NodePath("UnitCollision:width")
-tracks/5/interp = 1
-tracks/5/loop_wrap = true
-tracks/5/keys = {
-"times": PackedFloat32Array(0),
-"transitions": PackedFloat32Array(1),
-"update": 1,
-"values": [38]
-}
-tracks/6/type = "value"
-tracks/6/imported = false
-tracks/6/enabled = true
-tracks/6/path = NodePath("UnitCollision:height")
-tracks/6/interp = 1
-tracks/6/loop_wrap = true
-tracks/6/keys = {
-"times": PackedFloat32Array(0),
-"transitions": PackedFloat32Array(1),
-"update": 1,
-"values": [92]
-}
-tracks/7/type = "value"
-tracks/7/imported = false
-tracks/7/enabled = true
-tracks/7/path = NodePath("UnitCollision:offset_y")
-tracks/7/interp = 1
-tracks/7/loop_wrap = true
-tracks/7/keys = {
-"times": PackedFloat32Array(0),
-"transitions": PackedFloat32Array(1),
-"update": 1,
-"values": [0]
-}
 
 [sub_resource type="AnimationLibrary" id="AnimationLibrary_a8ovg"]
 _data = {
@@ -288,22 +192,16 @@ info = SubResource("Resource_pvbt4")
 texture = SubResource("GradientTexture2D_wqsic")
 
 [node name="AnimatedTailLine" parent="." unique_id=581507229 instance=ExtResource("11_2e5g1")]
-position = Vector2(-8, -48)
+position = Vector2(0, -48)
 rotation = 3.1415927
 scale = Vector2(0.22, -0.22)
 
 [node name="SpriteComponent" parent="." unique_id=363892716 instance=ExtResource("3_k7avp")]
 modulate = Color(1, 0, 0, 1)
+current = NodePath("")
 
-[node name="Upper" parent="SpriteComponent/SpriteModuler" parent_id_path=PackedInt32Array(363892716, 657174181) index="0" unique_id=12327840]
+[node name="Move" parent="SpriteComponent" index="1" unique_id=1338144491]
 visible = false
-
-[node name="Lower" parent="SpriteComponent/SpriteModuler" parent_id_path=PackedInt32Array(363892716, 657174181) index="1" unique_id=1221413801]
-visible = false
-
-[node name="AnimatedSprite2D" parent="SpriteComponent" index="1" unique_id=152865229]
-visible = true
-animation = &"idle"
 
 [node name="UnitCollision" type="CollisionShape2D" parent="." unique_id=2120811417]
 position = Vector2(0, -46)
@@ -346,11 +244,8 @@ wait_time = 4.0
 script = ExtResource("37_v2yrs")
 metadata/_custom_type_script = "uid://dr8n2mbhooxjo"
 
-[node name="NitraAnime" type="AnimationPlayer" parent="." unique_id=1268957844]
+[node name="MotionLibrary" type="AnimationPlayer" parent="." unique_id=1268957844]
 libraries/ = SubResource("AnimationLibrary_a8ovg")
-libraries/aerial = ExtResource("30_njs1s")
-libraries/down = ExtResource("21_wp6bj")
-libraries/idle = ExtResource("15_507e4")
 script = ExtResource("36_yeahc")
 
 [node name="BTPlayer" type="BTPlayer" parent="." unique_id=415912197]

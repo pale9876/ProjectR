@@ -40,7 +40,9 @@ const INTERFACE_SECTION_KEY_ANIMATION = "animation_section"
 
 
 func _pre_setup():
-	_expandable_sections[INTERFACE_SECTION_KEY_ANIMATION] = { "header": _animation_section_header, "content": _animation_section_container}
+	_expandable_sections[INTERFACE_SECTION_KEY_ANIMATION] = {
+		"header": _animation_section_header, "content": _animation_section_container
+	}
 
 
 func _setup():

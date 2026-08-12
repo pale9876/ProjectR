@@ -1,0 +1,561 @@
+[gd_scene format=3 uid="uid://d30oqfxv18ru8"]
+
+[ext_resource type="Theme" uid="uid://cyev5gnpugequ" path="res://title_theme.tres" id="1_1j68i"]
+[ext_resource type="Texture2D" uid="uid://c1kdqekuqw0nx" path="res://aseprite/asso_project/title/MainTitle2.png" id="2_n4ayq"]
+[ext_resource type="Script" uid="uid://cgy23ubrds5ul" path="res://title/title_ui.gd" id="2_x1875"]
+[ext_resource type="PackedScene" uid="uid://h46mjm4dsjnx" path="res://title/title_ui_button.tscn" id="3_x1875"]
+[ext_resource type="Script" uid="uid://cdgr4w6hpl2ud" path="res://title/class_list.gd" id="4_w87gd"]
+[ext_resource type="PackedScene" uid="uid://dw0ovxv0s3mlv" path="res://title/class_select_button.tscn" id="5_vp20t"]
+[ext_resource type="Texture2D" uid="uid://cgv6iyurw1t5a" path="res://portrait/icon/predator.png" id="6_kmer8"]
+[ext_resource type="Texture2D" uid="uid://1gn5p53k0gab" path="res://portrait/predator.png" id="7_bawnk"]
+[ext_resource type="Script" uid="uid://dl4wx13qp80c4" path="res://title/class_info.gd" id="7_x1875"]
+[ext_resource type="Texture2D" uid="uid://j4340lcophwd" path="res://portrait/icon/executioner.png" id="8_3xl2h"]
+[ext_resource type="Texture2D" uid="uid://camnnij4812ej" path="res://portrait/executioner.png" id="9_ntoon"]
+[ext_resource type="Texture2D" uid="uid://be84rj42egw0r" path="res://portrait/icon/chimera.png" id="10_l7kcw"]
+[ext_resource type="Texture2D" uid="uid://huu86nxnv53a" path="res://placeholder/maid_08.png" id="11_craob"]
+[ext_resource type="Texture2D" uid="uid://puyr6putkiid" path="res://portrait/icon/trickster.png" id="12_tald7"]
+[ext_resource type="Texture2D" uid="uid://cmpxq1668dbuf" path="res://portrait/trickster.png" id="13_6oeve"]
+[ext_resource type="Texture2D" uid="uid://biwys5tfcrvyy" path="res://portrait/icon/puppeteer.png" id="14_x3suq"]
+[ext_resource type="Texture2D" uid="uid://b8t7urgctkqu8" path="res://portrait/puppeteer.png" id="15_2yh0h"]
+[ext_resource type="Texture2D" uid="uid://dk14ub3ipvswt" path="res://portrait/icon/exorcist.png" id="16_tu44a"]
+[ext_resource type="Texture2D" uid="uid://byetpndbh00xq" path="res://placeholder/maid_010.png" id="17_87hsn"]
+[ext_resource type="Script" uid="uid://dvcrrp6wpmrtp" path="res://title/variable_statistics_progress.gd" id="18_53yp0"]
+[ext_resource type="PackedScene" uid="uid://be5es7kj8my7a" path="res://title/character_list.tscn" id="19_t4lib"]
+[ext_resource type="Script" uid="uid://dq6jdkets46eg" path="res://title/character_list.gd" id="20_wif7g"]
+
+[sub_resource type="InputEventKey" id="InputEventKey_ibxtg"]
+device = -1
+pressed = true
+keycode = 4194309
+
+[sub_resource type="Shortcut" id="Shortcut_ibxtg"]
+events = [SubResource("InputEventKey_ibxtg")]
+
+[sub_resource type="Resource" id="Resource_n4ayq"]
+script = ExtResource("7_x1875")
+name = "Predator"
+icon = ExtResource("6_kmer8")
+portrait = ExtResource("7_bawnk")
+description = "개별 타겟에게 강력한 데미지를 구사하는 클래스이다."
+stat = Dictionary[String, int]({
+"Aggressive": 3,
+"Defensive": 4,
+"Utility": -3
+})
+metadata/_custom_type_script = "uid://dl4wx13qp80c4"
+
+[sub_resource type="Resource" id="Resource_w87gd"]
+script = ExtResource("7_x1875")
+name = "Executioner"
+icon = ExtResource("8_3xl2h")
+portrait = ExtResource("9_ntoon")
+description = "넓은 범위의 제압에 특화된 근거리 클래스이다. 근거리 무기 활용 시, 추가데미지를 부여한다."
+stat = Dictionary[String, int]({
+"Aggressive": 1,
+"Defensive": 3,
+"Utility": 2
+})
+metadata/_custom_type_script = "uid://dl4wx13qp80c4"
+
+[sub_resource type="Resource" id="Resource_x1875"]
+script = ExtResource("7_x1875")
+name = "Chimera"
+icon = ExtResource("10_l7kcw")
+portrait = ExtResource("11_craob")
+description = "통상 모션과 호환되지만 전용 모션또한 이용 가능한 클래스이다. 해당 클래스를 선택할 수 있는 캐릭터는 제한적이며, 무기 또한 사용할 수 없다."
+stat = Dictionary[String, int]({
+"Aggressive": 4,
+"Defensive": -2,
+"Utility": -3
+})
+metadata/_custom_type_script = "uid://dl4wx13qp80c4"
+
+[sub_resource type="Resource" id="Resource_vp20t"]
+script = ExtResource("7_x1875")
+name = "Trickster"
+icon = ExtResource("12_tald7")
+portrait = ExtResource("13_6oeve")
+description = "원거리 전투에 특화된 캐릭터이다. 무기를 이용한 원거리 공격 시, 추가 데미지를 부여한다."
+stat = Dictionary[String, int]({
+"Aggressive": 3,
+"Defensive": -3,
+"Utility": 2
+})
+metadata/_custom_type_script = "uid://dl4wx13qp80c4"
+
+[sub_resource type="Resource" id="Resource_kmer8"]
+script = ExtResource("7_x1875")
+name = "Puppeteer"
+icon = ExtResource("14_x3suq")
+portrait = ExtResource("15_2yh0h")
+description = "플레이어가 조종할 수 있는 인형 1체를 지원한다. 사용자가 구사할 수 있는 모션이 제한되고, 인형에게 전용 모션을 추가할 수 있다."
+stat = Dictionary[String, int]({
+"Aggressive": -3,
+"Defensive": 3,
+"Utility": 0
+})
+metadata/_custom_type_script = "uid://dl4wx13qp80c4"
+
+[sub_resource type="Resource" id="Resource_bawnk"]
+script = ExtResource("7_x1875")
+name = "Exorcist"
+icon = ExtResource("16_tu44a")
+portrait = ExtResource("17_87hsn")
+description = "공격 모션 중이 아닐 때, 이동 시, 원거리 공격을 무력화하며 진입할 수 있다. 빠른 기동성을 자랑한다."
+stat = Dictionary[String, int]({
+"Aggressive": 3,
+"Defensive": 0,
+"Utility": 4
+})
+metadata/_custom_type_script = "uid://dl4wx13qp80c4"
+
+[node name="TitleUI" type="Control" unique_id=1482659797]
+layout_mode = 3
+anchors_preset = 15
+anchor_right = 1.0
+anchor_bottom = 1.0
+grow_horizontal = 2
+grow_vertical = 2
+theme = ExtResource("1_1j68i")
+script = ExtResource("2_x1875")
+
+[node name="TitleScreen" type="TextureRect" parent="." unique_id=1100489049]
+layout_mode = 1
+anchors_preset = 15
+anchor_right = 1.0
+anchor_bottom = 1.0
+offset_left = 642.0
+offset_top = -148.0
+offset_right = 788.1929
+offset_bottom = 196.0
+grow_horizontal = 2
+grow_vertical = 2
+scale = Vector2(-1, 1)
+texture = ExtResource("2_n4ayq")
+stretch_mode = 2
+flip_h = true
+
+[node name="MainUI" type="HBoxContainer" parent="." unique_id=1118765805]
+unique_name_in_owner = true
+layout_mode = 1
+anchors_preset = 15
+anchor_right = 1.0
+anchor_bottom = 1.0
+grow_horizontal = 2
+grow_vertical = 2
+
+[node name="SelectMenu" type="MarginContainer" parent="MainUI" unique_id=1038479927]
+layout_mode = 2
+theme_override_constants/margin_left = 50
+theme_override_constants/margin_top = 10
+theme_override_constants/margin_right = 10
+theme_override_constants/margin_bottom = 10
+
+[node name="CenterContainer2" type="CenterContainer" parent="MainUI/SelectMenu" unique_id=1601494086]
+layout_mode = 2
+size_flags_horizontal = 6
+size_flags_vertical = 4
+
+[node name="FirstPage" type="VBoxContainer" parent="MainUI/SelectMenu/CenterContainer2" unique_id=1442055490]
+unique_name_in_owner = true
+custom_minimum_size = Vector2(125, 0)
+layout_mode = 2
+size_flags_horizontal = 3
+theme_override_constants/separation = 10
+
+[node name="Control" type="Control" parent="MainUI/SelectMenu/CenterContainer2/FirstPage" unique_id=43230102]
+custom_minimum_size = Vector2(100, 30)
+layout_mode = 2
+size_flags_vertical = 3
+
+[node name="Start" parent="MainUI/SelectMenu/CenterContainer2/FirstPage/Control" unique_id=938715085 instance=ExtResource("3_x1875")]
+unique_name_in_owner = true
+layout_mode = 1
+anchors_preset = 15
+anchor_right = 1.0
+anchor_bottom = 1.0
+grow_horizontal = 2
+grow_vertical = 2
+focus_neighbor_bottom = NodePath("../../Control2/Option")
+shortcut = SubResource("Shortcut_ibxtg")
+
+[node name="Control2" type="Control" parent="MainUI/SelectMenu/CenterContainer2/FirstPage" unique_id=199738953]
+custom_minimum_size = Vector2(100, 30)
+layout_mode = 2
+size_flags_vertical = 3
+
+[node name="Option" parent="MainUI/SelectMenu/CenterContainer2/FirstPage/Control2" unique_id=1081531110 instance=ExtResource("3_x1875")]
+unique_name_in_owner = true
+layout_mode = 1
+anchors_preset = 15
+anchor_right = 1.0
+anchor_bottom = 1.0
+grow_horizontal = 2
+grow_vertical = 2
+focus_neighbor_bottom = NodePath("../../Control4/Profile")
+text = "Option"
+
+[node name="Control4" type="Control" parent="MainUI/SelectMenu/CenterContainer2/FirstPage" unique_id=2122794870]
+custom_minimum_size = Vector2(100, 30)
+layout_mode = 2
+size_flags_vertical = 3
+
+[node name="Profile" parent="MainUI/SelectMenu/CenterContainer2/FirstPage/Control4" unique_id=1816342281 instance=ExtResource("3_x1875")]
+unique_name_in_owner = true
+layout_mode = 1
+anchors_preset = 15
+anchor_right = 1.0
+anchor_bottom = 1.0
+grow_horizontal = 2
+grow_vertical = 2
+focus_neighbor_bottom = NodePath("../../Control6/Achievement")
+text = "Profile"
+
+[node name="Control6" type="Control" parent="MainUI/SelectMenu/CenterContainer2/FirstPage" unique_id=619786638]
+custom_minimum_size = Vector2(100, 30)
+layout_mode = 2
+size_flags_vertical = 3
+
+[node name="Achievement" parent="MainUI/SelectMenu/CenterContainer2/FirstPage/Control6" unique_id=175316624 instance=ExtResource("3_x1875")]
+unique_name_in_owner = true
+layout_mode = 1
+anchors_preset = 15
+anchor_right = 1.0
+anchor_bottom = 1.0
+grow_horizontal = 2
+grow_vertical = 2
+focus_neighbor_bottom = NodePath("../../Control3/MapEditor")
+text = "Achievement
+"
+
+[node name="Control3" type="Control" parent="MainUI/SelectMenu/CenterContainer2/FirstPage" unique_id=1435637914]
+custom_minimum_size = Vector2(100, 30)
+layout_mode = 2
+size_flags_vertical = 3
+
+[node name="MapEditor" parent="MainUI/SelectMenu/CenterContainer2/FirstPage/Control3" unique_id=1506696403 instance=ExtResource("3_x1875")]
+unique_name_in_owner = true
+layout_mode = 1
+anchors_preset = 15
+anchor_right = 1.0
+anchor_bottom = 1.0
+grow_horizontal = 2
+grow_vertical = 2
+focus_neighbor_bottom = NodePath("../../Control/Start")
+text = "Map Editor"
+
+[node name="SecondPage" type="VBoxContainer" parent="MainUI/SelectMenu/CenterContainer2" unique_id=271771578]
+unique_name_in_owner = true
+visible = false
+custom_minimum_size = Vector2(125, 0)
+layout_mode = 2
+size_flags_horizontal = 3
+theme_override_constants/separation = 10
+
+[node name="Control5" type="Control" parent="MainUI/SelectMenu/CenterContainer2/SecondPage" unique_id=489709038]
+custom_minimum_size = Vector2(100, 30)
+layout_mode = 2
+size_flags_vertical = 3
+
+[node name="Class" parent="MainUI/SelectMenu/CenterContainer2/SecondPage/Control5" unique_id=445445138 instance=ExtResource("3_x1875")]
+unique_name_in_owner = true
+layout_mode = 1
+anchors_preset = 15
+anchor_right = 1.0
+anchor_bottom = 1.0
+grow_horizontal = 2
+grow_vertical = 2
+text = "Class"
+
+[node name="Control7" type="Control" parent="MainUI/SelectMenu/CenterContainer2/SecondPage" unique_id=1505873761]
+custom_minimum_size = Vector2(100, 30)
+layout_mode = 2
+size_flags_vertical = 3
+
+[node name="Character" parent="MainUI/SelectMenu/CenterContainer2/SecondPage/Control7" unique_id=957775897 instance=ExtResource("3_x1875")]
+unique_name_in_owner = true
+layout_mode = 1
+anchors_preset = 15
+anchor_right = 1.0
+anchor_bottom = 1.0
+grow_horizontal = 2
+grow_vertical = 2
+text = "Character"
+
+[node name="TitleUI" type="MarginContainer" parent="MainUI" unique_id=1500526658]
+unique_name_in_owner = true
+layout_mode = 2
+size_flags_horizontal = 3
+theme_override_constants/margin_left = 10
+theme_override_constants/margin_top = 10
+theme_override_constants/margin_right = 10
+theme_override_constants/margin_bottom = 10
+
+[node name="MarginContainer" type="MarginContainer" parent="MainUI/TitleUI" unique_id=1988627511]
+layout_mode = 2
+size_flags_horizontal = 6
+size_flags_vertical = 4
+
+[node name="CenterContainer" type="CenterContainer" parent="MainUI/TitleUI/MarginContainer" unique_id=1813979292]
+layout_mode = 2
+size_flags_horizontal = 2
+size_flags_vertical = 0
+
+[node name="Title" type="Label" parent="MainUI/TitleUI/MarginContainer/CenterContainer" unique_id=724634022]
+layout_mode = 2
+text = "Anti-Apocalypse Strategy Organization"
+
+[node name="ClassSettings" type="MarginContainer" parent="." unique_id=1724839874]
+unique_name_in_owner = true
+layout_mode = 1
+anchors_preset = 15
+anchor_right = 1.0
+anchor_bottom = 1.0
+grow_horizontal = 2
+grow_vertical = 2
+theme_override_constants/margin_left = 20
+theme_override_constants/margin_top = 20
+theme_override_constants/margin_right = 20
+theme_override_constants/margin_bottom = 20
+
+[node name="Panel" type="Panel" parent="ClassSettings" unique_id=984314681]
+layout_mode = 2
+
+[node name="HBoxContainer" type="HBoxContainer" parent="ClassSettings/Panel" unique_id=1809492937]
+layout_mode = 1
+anchors_preset = 15
+anchor_right = 1.0
+anchor_bottom = 1.0
+grow_horizontal = 2
+grow_vertical = 2
+
+[node name="MarginContainer" type="MarginContainer" parent="ClassSettings/Panel/HBoxContainer" unique_id=2040246674]
+layout_mode = 2
+size_flags_horizontal = 3
+size_flags_stretch_ratio = 0.65
+theme_override_constants/margin_left = 10
+theme_override_constants/margin_top = 10
+theme_override_constants/margin_right = 10
+theme_override_constants/margin_bottom = 10
+
+[node name="ClassList" type="VBoxContainer" parent="ClassSettings/Panel/HBoxContainer/MarginContainer" unique_id=966106980]
+unique_name_in_owner = true
+layout_mode = 2
+size_flags_horizontal = 3
+theme_override_constants/separation = 8
+alignment = 1
+script = ExtResource("4_w87gd")
+
+[node name="Predator" parent="ClassSettings/Panel/HBoxContainer/MarginContainer/ClassList" unique_id=1675104851 instance=ExtResource("5_vp20t")]
+layout_mode = 2
+class_info = SubResource("Resource_n4ayq")
+
+[node name="Executioner" parent="ClassSettings/Panel/HBoxContainer/MarginContainer/ClassList" unique_id=41452571 instance=ExtResource("5_vp20t")]
+layout_mode = 2
+class_info = SubResource("Resource_w87gd")
+
+[node name="Chimera" parent="ClassSettings/Panel/HBoxContainer/MarginContainer/ClassList" unique_id=1697819993 instance=ExtResource("5_vp20t")]
+layout_mode = 2
+class_info = SubResource("Resource_x1875")
+
+[node name="Trickster" parent="ClassSettings/Panel/HBoxContainer/MarginContainer/ClassList" unique_id=1865309037 instance=ExtResource("5_vp20t")]
+layout_mode = 2
+class_info = SubResource("Resource_vp20t")
+
+[node name="Puppeteer" parent="ClassSettings/Panel/HBoxContainer/MarginContainer/ClassList" unique_id=1174702832 instance=ExtResource("5_vp20t")]
+layout_mode = 2
+class_info = SubResource("Resource_kmer8")
+
+[node name="Exorcist" parent="ClassSettings/Panel/HBoxContainer/MarginContainer/ClassList" unique_id=1931057540 instance=ExtResource("5_vp20t")]
+layout_mode = 2
+class_info = SubResource("Resource_bawnk")
+
+[node name="MarginContainer2" type="MarginContainer" parent="ClassSettings/Panel/HBoxContainer" unique_id=729713372]
+layout_mode = 2
+size_flags_horizontal = 3
+theme_override_constants/margin_left = 10
+theme_override_constants/margin_top = 10
+theme_override_constants/margin_right = 10
+theme_override_constants/margin_bottom = 10
+
+[node name="Control" type="Control" parent="ClassSettings/Panel/HBoxContainer/MarginContainer2" unique_id=830470005]
+layout_mode = 2
+mouse_filter = 2
+
+[node name="ClassPortrait" type="TextureRect" parent="ClassSettings/Panel/HBoxContainer/MarginContainer2/Control" unique_id=937668208]
+unique_name_in_owner = true
+layout_mode = 1
+anchors_preset = 15
+anchor_right = 1.0
+anchor_bottom = 1.0
+offset_left = -211.0
+offset_top = -33.0
+offset_right = -191.0
+offset_bottom = 29.0
+grow_horizontal = 2
+grow_vertical = 2
+size_flags_vertical = 3
+mouse_filter = 2
+
+[node name="Panel" type="Panel" parent="ClassSettings/Panel/HBoxContainer/MarginContainer2" unique_id=2002684748]
+layout_mode = 2
+mouse_filter = 2
+
+[node name="MarginContainer" type="MarginContainer" parent="ClassSettings/Panel/HBoxContainer/MarginContainer2/Panel" unique_id=1371008788]
+layout_mode = 1
+anchors_preset = 15
+anchor_right = 1.0
+anchor_bottom = 1.0
+grow_horizontal = 2
+grow_vertical = 2
+theme_override_constants/margin_left = 50
+theme_override_constants/margin_top = 10
+theme_override_constants/margin_right = 10
+theme_override_constants/margin_bottom = 10
+
+[node name="VBoxContainer2" type="VBoxContainer" parent="ClassSettings/Panel/HBoxContainer/MarginContainer2/Panel/MarginContainer" unique_id=1888533222]
+layout_mode = 2
+size_flags_horizontal = 3
+
+[node name="Top" type="HBoxContainer" parent="ClassSettings/Panel/HBoxContainer/MarginContainer2/Panel/MarginContainer/VBoxContainer2" unique_id=549791135]
+layout_mode = 2
+alignment = 2
+
+[node name="HBoxContainer" type="HBoxContainer" parent="ClassSettings/Panel/HBoxContainer/MarginContainer2/Panel/MarginContainer/VBoxContainer2/Top" unique_id=1333528471]
+layout_mode = 2
+size_flags_horizontal = 0
+
+[node name="Label" type="Label" parent="ClassSettings/Panel/HBoxContainer/MarginContainer2/Panel/MarginContainer/VBoxContainer2/Top/HBoxContainer" unique_id=830372186]
+layout_mode = 2
+text = "Level"
+
+[node name="ClassLevel" type="Label" parent="ClassSettings/Panel/HBoxContainer/MarginContainer2/Panel/MarginContainer/VBoxContainer2/Top/HBoxContainer" unique_id=808860955]
+unique_name_in_owner = true
+layout_mode = 2
+text = "0"
+
+[node name="VSeparator" type="VSeparator" parent="ClassSettings/Panel/HBoxContainer/MarginContainer2/Panel/MarginContainer/VBoxContainer2/Top" unique_id=716733103]
+layout_mode = 2
+
+[node name="Experience" type="ProgressBar" parent="ClassSettings/Panel/HBoxContainer/MarginContainer2/Panel/MarginContainer/VBoxContainer2/Top" unique_id=800980792]
+unique_name_in_owner = true
+layout_mode = 2
+size_flags_horizontal = 3
+
+[node name="HSeparator" type="HSeparator" parent="ClassSettings/Panel/HBoxContainer/MarginContainer2/Panel/MarginContainer/VBoxContainer2" unique_id=1678591294]
+layout_mode = 2
+
+[node name="AbilityList" type="HBoxContainer" parent="ClassSettings/Panel/HBoxContainer/MarginContainer2/Panel/MarginContainer/VBoxContainer2" unique_id=1923472581]
+layout_mode = 2
+
+[node name="VBoxContainer" type="VBoxContainer" parent="ClassSettings/Panel/HBoxContainer/MarginContainer2/Panel/MarginContainer/VBoxContainer2/AbilityList" unique_id=241788949]
+layout_mode = 2
+
+[node name="Label" type="Label" parent="ClassSettings/Panel/HBoxContainer/MarginContainer2/Panel/MarginContainer/VBoxContainer2/AbilityList/VBoxContainer" unique_id=1256236126]
+layout_mode = 2
+size_flags_horizontal = 0
+text = "Aggressive"
+
+[node name="Label2" type="Label" parent="ClassSettings/Panel/HBoxContainer/MarginContainer2/Panel/MarginContainer/VBoxContainer2/AbilityList/VBoxContainer" unique_id=1510094087]
+layout_mode = 2
+size_flags_horizontal = 0
+text = "Defensive"
+
+[node name="Label3" type="Label" parent="ClassSettings/Panel/HBoxContainer/MarginContainer2/Panel/MarginContainer/VBoxContainer2/AbilityList/VBoxContainer" unique_id=208380259]
+layout_mode = 2
+size_flags_horizontal = 0
+text = "Utility"
+
+[node name="VSeparator" type="VSeparator" parent="ClassSettings/Panel/HBoxContainer/MarginContainer2/Panel/MarginContainer/VBoxContainer2/AbilityList" unique_id=1331080314]
+layout_mode = 2
+
+[node name="StatAttrContainer" type="VBoxContainer" parent="ClassSettings/Panel/HBoxContainer/MarginContainer2/Panel/MarginContainer/VBoxContainer2/AbilityList" unique_id=270711098]
+unique_name_in_owner = true
+layout_mode = 2
+size_flags_horizontal = 3
+
+[node name="Aggressive" type="Control" parent="ClassSettings/Panel/HBoxContainer/MarginContainer2/Panel/MarginContainer/VBoxContainer2/AbilityList/StatAttrContainer" unique_id=1050067978]
+unique_name_in_owner = true
+layout_mode = 2
+size_flags_vertical = 3
+script = ExtResource("18_53yp0")
+
+[node name="Defensive" type="Control" parent="ClassSettings/Panel/HBoxContainer/MarginContainer2/Panel/MarginContainer/VBoxContainer2/AbilityList/StatAttrContainer" unique_id=1743894127]
+unique_name_in_owner = true
+layout_mode = 2
+size_flags_vertical = 3
+script = ExtResource("18_53yp0")
+
+[node name="Utility" type="Control" parent="ClassSettings/Panel/HBoxContainer/MarginContainer2/Panel/MarginContainer/VBoxContainer2/AbilityList/StatAttrContainer" unique_id=949364854]
+unique_name_in_owner = true
+layout_mode = 2
+size_flags_vertical = 3
+script = ExtResource("18_53yp0")
+
+[node name="MarginContainer" type="MarginContainer" parent="ClassSettings/Panel/HBoxContainer/MarginContainer2/Panel/MarginContainer/VBoxContainer2" unique_id=1185453660]
+layout_mode = 2
+size_flags_vertical = 3
+theme_override_constants/margin_left = 5
+theme_override_constants/margin_top = 5
+theme_override_constants/margin_right = 5
+theme_override_constants/margin_bottom = 5
+
+[node name="ClassDescription" type="RichTextLabel" parent="ClassSettings/Panel/HBoxContainer/MarginContainer2/Panel/MarginContainer/VBoxContainer2/MarginContainer" unique_id=1673852816]
+unique_name_in_owner = true
+layout_mode = 2
+
+[node name="PlayerAchievements" type="MarginContainer" parent="." unique_id=400119271]
+unique_name_in_owner = true
+visible = false
+layout_mode = 1
+anchors_preset = 15
+anchor_right = 1.0
+anchor_bottom = 1.0
+grow_horizontal = 2
+grow_vertical = 2
+theme_override_constants/margin_left = 20
+theme_override_constants/margin_top = 20
+theme_override_constants/margin_right = 20
+theme_override_constants/margin_bottom = 20
+
+[node name="Panel" type="Panel" parent="PlayerAchievements" unique_id=555423223]
+layout_mode = 2
+
+[node name="CharacterSettings" type="Panel" parent="." unique_id=182821206]
+unique_name_in_owner = true
+visible = false
+layout_mode = 1
+anchors_preset = 15
+anchor_right = 1.0
+anchor_bottom = 1.0
+grow_horizontal = 2
+grow_vertical = 2
+
+[node name="MarginContainer" type="MarginContainer" parent="CharacterSettings" unique_id=1285479302]
+layout_mode = 1
+anchors_preset = 15
+anchor_right = 1.0
+anchor_bottom = 1.0
+grow_horizontal = 2
+grow_vertical = 2
+theme_override_constants/margin_left = 10
+theme_override_constants/margin_top = 10
+theme_override_constants/margin_right = 10
+theme_override_constants/margin_bottom = 10
+
+[node name="HBoxContainer" type="HSplitContainer" parent="CharacterSettings/MarginContainer" unique_id=62681679]
+layout_mode = 2
+split_offsets = PackedInt32Array(158)
+split_offset = 158
+
+[node name="VSplitContainer" type="VSplitContainer" parent="CharacterSettings/MarginContainer/HBoxContainer" unique_id=832259440]
+layout_mode = 2
+
+[node name="CharacterList" parent="CharacterSettings/MarginContainer/HBoxContainer/VSplitContainer" unique_id=1848087007 instance=ExtResource("19_t4lib")]
+unique_name_in_owner = true
+layout_mode = 2
+script = ExtResource("20_wif7g")
+
+[node name="VBoxContainer2" type="VBoxContainer" parent="CharacterSettings/MarginContainer/HBoxContainer" unique_id=954025327]
+layout_mode = 2
+size_flags_horizontal = 3

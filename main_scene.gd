@@ -32,7 +32,7 @@ func _ready() -> void:
 	hud.hide()
 	channel.hide()
 	
-	title.show()
+	title.turn_on()
 
 	GSignal.start.connect(on_start)
 	Global.main_scene = self

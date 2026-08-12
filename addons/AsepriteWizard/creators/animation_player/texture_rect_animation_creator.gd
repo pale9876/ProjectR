@@ -20,7 +20,10 @@ func _get_frame_key(target_node: Node, frame: Dictionary, context: Dictionary, s
 func _get_atlas_texture(base_texture: Texture2D, frame_data: Dictionary, slice_info: Variant) -> AtlasTexture:
 	var tex = AtlasTexture.new()
 	tex.atlas = base_texture
-	tex.region = Rect2(Vector2(frame_data.frame.x, frame_data.frame.y), Vector2(frame_data.frame.w, frame_data.frame.h))
+	tex.region = Rect2(
+		Vector2(frame_data.frame.x, frame_data.frame.y),
+		Vector2(frame_data.frame.w, frame_data.frame.h)
+	)
 	tex.filter_clip = true
 
 	if slice_info != null:

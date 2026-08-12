@@ -15,7 +15,7 @@
 [ext_resource type="Script" uid="uid://bhhy483vjefa1" path="res://collision/dynamic_unit_collision.gd" id="8_pjwc4"]
 [ext_resource type="PackedScene" uid="uid://bxvvp46sren6n" path="res://sprite_module/idle.tscn" id="9_3dxkp"]
 [ext_resource type="PackedScene" uid="uid://bxss2wpi0rh6n" path="res://sprite_module/jump.tscn" id="9_7crtr"]
-[ext_resource type="Script" uid="uid://chb5h0vw5lpvq" path="res://player/nitra_anime.gd" id="9_55jnj"]
+[ext_resource type="Script" uid="uid://chb5h0vw5lpvq" path="res://player/motion_library.gd" id="9_55jnj"]
 [ext_resource type="AnimationLibrary" uid="uid://dpx01h1c5dyn4" path="res://motion/jump_hammer.res" id="9_dx5ib"]
 [ext_resource type="AnimationLibrary" uid="uid://dg8bnd42k7kv8" path="res://motion/blowkick.res" id="9_gswnw"]
 [ext_resource type="Script" uid="uid://bsrhpk5urdhab" path="res://player/high_punch.gd" id="9_yllr7"]

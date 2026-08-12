@@ -1,7 +1,7 @@
 [gd_scene format=3 uid="uid://b7ya2gtphhn00"]
 
 [ext_resource type="Script" uid="uid://dqd845y1secly" path="res://npc/pathed_unit.gd" id="1_o6cys"]
-[ext_resource type="Shader" uid="uid://b7ev33xt35608" path="res://shaders/pixel_shader_outline.gdshader" id="2_ocili"]
+[ext_resource type="Shader" uid="uid://b7ev33xt35608" path="res://shader/pixel_shader_outline.gdshader" id="2_ocili"]
 [ext_resource type="Script" uid="uid://cktpq0kuvmge1" path="res://npc/awareness.gd" id="3_fnhme"]
 [ext_resource type="SpriteFrames" uid="uid://72n3ls5rb05n" path="res://sample_motion_frames.tres" id="3_ocili"]
 [ext_resource type="Script" uid="uid://daj72rw34sd0j" path="res://npc/npc_collider.gd" id="4_phifv"]

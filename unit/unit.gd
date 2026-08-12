@@ -63,9 +63,6 @@ func get_btbb() -> Blackboard:
 	return get_bt().blackboard
 
 
-func get_sprite() -> AnimatedSprite2D:
-	return get_sprite_component().sprite
-
 
 func get_hurtbox() -> Hurtbox:
 	return get_node(^"Hurtbox") as Hurtbox
