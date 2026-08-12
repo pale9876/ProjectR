@@ -36,6 +36,17 @@ func _init() -> void:
 	#player_camera = PlayerCamera.new()
 
 
+func _enter_tree() -> void:
+	get_tree().set_auto_accept_quit(false)
+
+
+func _notification(what: int) -> void:
+	match what:
+		NOTIFICATION_WM_CLOSE_REQUEST:
+			pass
+
+
+
 func _process(delta: float) -> void:
 	if Input.is_action_just_pressed("toggle_debug"):
 		debug_toggled.emit()

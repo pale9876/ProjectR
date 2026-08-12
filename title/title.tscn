@@ -111,44 +111,46 @@ _data = {
 visible = false
 script = ExtResource("1_y7k74")
 
-[node name="SubViewportContainer" type="SubViewportContainer" parent="." unique_id=370223908]
+[node name="TurnOnOff" type="SubViewportContainer" parent="." unique_id=370223908]
 anchors_preset = 15
 anchor_right = 1.0
 anchor_bottom = 1.0
 grow_horizontal = 2
 grow_vertical = 2
 
-[node name="SubViewport" type="SubViewport" parent="SubViewportContainer" unique_id=1579827824]
+[node name="SubViewport" type="SubViewport" parent="TurnOnOff" unique_id=1579827824]
 handle_input_locally = false
 size = Vector2i(640, 360)
 render_target_update_mode = 0
 
-[node name="SubViewportContainer2" type="SubViewportContainer" parent="SubViewportContainer/SubViewport" unique_id=561673042]
-offset_right = 640.0
-offset_bottom = 360.0
+[node name="Chromatic" type="SubViewportContainer" parent="TurnOnOff/SubViewport" unique_id=561673042]
+anchors_preset = 15
+anchor_right = 1.0
+anchor_bottom = 1.0
+grow_horizontal = 2
+grow_vertical = 2
 
-[node name="SubViewport" type="SubViewport" parent="SubViewportContainer/SubViewport/SubViewportContainer2" unique_id=945658051]
+[node name="SubViewport" type="SubViewport" parent="TurnOnOff/SubViewport/Chromatic" unique_id=945658051]
 handle_input_locally = false
 size = Vector2i(640, 360)
 render_target_update_mode = 4
 
-[node name="CRT" type="SubViewportContainer" parent="SubViewportContainer/SubViewport/SubViewportContainer2/SubViewport" unique_id=1400195837]
+[node name="CRT" type="SubViewportContainer" parent="TurnOnOff/SubViewport/Chromatic/SubViewport" unique_id=1400195837]
 anchors_preset = 15
 anchor_right = 1.0
 anchor_bottom = 1.0
-offset_right = 128.0
 grow_horizontal = 2
 grow_vertical = 2
 
-[node name="TitleViewport" type="SubViewport" parent="SubViewportContainer/SubViewport/SubViewportContainer2/SubViewport/CRT" unique_id=1089819371]
+[node name="TitleViewport" type="SubViewport" parent="TurnOnOff/SubViewport/Chromatic/SubViewport/CRT" unique_id=1089819371]
 unique_name_in_owner = true
 handle_input_locally = false
 size = Vector2i(640, 360)
 render_target_update_mode = 4
 
-[node name="TitleUI" parent="SubViewportContainer/SubViewport/SubViewportContainer2/SubViewport/CRT/TitleViewport" unique_id=1482659797 instance=ExtResource("2_0tjwc")]
+[node name="TitleUI" parent="TurnOnOff/SubViewport/Chromatic/SubViewport/CRT/TitleViewport" unique_id=1482659797 instance=ExtResource("2_0tjwc")]
 
-[node name="CrtFilterRect" type="ColorRect" parent="SubViewportContainer/SubViewport/SubViewportContainer2/SubViewport" unique_id=985019017]
+[node name="CrtFilterRect" type="ColorRect" parent="TurnOnOff/SubViewport/Chromatic/SubViewport" unique_id=985019017]
 material = SubResource("ShaderMaterial_i01a6")
 anchors_preset = 15
 anchor_right = 1.0
@@ -159,7 +161,7 @@ mouse_filter = 2
 script = ExtResource("23_3jafg")
 shader = SubResource("ShaderMaterial_i01a6")
 
-[node name="ChromaticFilterRect" type="ColorRect" parent="SubViewportContainer/SubViewport" unique_id=1256722450]
+[node name="ChromaticFilterRect" type="ColorRect" parent="TurnOnOff/SubViewport" unique_id=1256722450]
 material = SubResource("ShaderMaterial_povds")
 anchors_preset = 15
 anchor_right = 1.0

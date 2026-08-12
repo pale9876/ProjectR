@@ -49,7 +49,7 @@ project/assembly_name="Holoverse"
 
 [editor_plugins]
 
-enabled=PackedStringArray("res://addons/AsepriteWizard/plugin.cfg", "res://addons/rumblepak/plugin.cfg", "res://addons/sprouty_dialogs/plugin.cfg")
+enabled=PackedStringArray("res://addons/AsepriteWizard/plugin.cfg", "res://addons/rumblepak/plugin.cfg", "res://addons/scriptory/plugin.cfg", "res://addons/sprouty_dialogs/plugin.cfg")
 
 [input]
 

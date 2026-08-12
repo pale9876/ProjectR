@@ -11,13 +11,13 @@ script = ExtResource("1_d5x1h")
 
 [node name="Background" type="CanvasLayer" parent="." unique_id=416058432]
 
-[node name="ColorRect" type="ColorRect" parent="Background" unique_id=1910507285]
+[node name="BackgroundColorRect" type="ColorRect" parent="Background" unique_id=1910507285]
 anchors_preset = 15
 anchor_right = 1.0
 anchor_bottom = 1.0
 grow_horizontal = 2
 grow_vertical = 2
-color = Color(0, 0, 0, 1)
+color = Color(0.006626662, 0.002099998, 0.07, 1)
 
 [node name="Ingame" parent="." unique_id=906912944 instance=ExtResource("2_8mm7a")]
 visible = false

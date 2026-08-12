@@ -201,10 +201,5 @@ metadata/_custom_type_script = "uid://xuoxmo1sa6u6"
 [node name="SandBag" parent="Stage" unique_id=2064536848 instance=ExtResource("8_utk2m")]
 position = Vector2(616, 264)
 
-[node name="Door" type="Sprite2D" parent="." unique_id=970407551]
-modulate = Color(0.23031491, 0.23031494, 0.23031494, 1)
-
 [node name="StartSpawnPosition" type="Marker2D" parent="." unique_id=1159361734]
 position = Vector2(128, 256)
-
-[node name="Node2D" type="Node2D" parent="." unique_id=1792191516]

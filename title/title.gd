@@ -14,10 +14,19 @@ func _init() -> void:
 			else:
 				turn_off()
 	)
+	
+	
 
 
 func _enter_tree() -> void:
 	turn_on()
+	
+
+
+func _notification(what: int) -> void:
+	match what:
+		NOTIFICATION_WM_CLOSE_REQUEST:
+			turn_off()
 
 
 func turn_on() -> void:
@@ -25,7 +34,12 @@ func turn_on() -> void:
 
 
 func turn_off() -> void:
-	get_anim().play(&"turn_off")
+	var anim := get_anim()
+	anim.play(&"turn_off")
+	
+	await anim.animation_finished
+	
+	get_tree().quit()
 
 
 

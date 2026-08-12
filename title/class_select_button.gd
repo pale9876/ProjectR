@@ -39,6 +39,11 @@ func _ready() -> void:
 				var progress: VariableStatisticsProgress = get_stat_attr_container().get_node_or_null(NodePath(attr))
 				progress.value = 0
 	)
+	
+	button_up.connect(
+		func () -> void:
+			pass
+	)
 
 
 func get_class_label() -> Label:

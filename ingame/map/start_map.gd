@@ -6,6 +6,7 @@ class_name Map
 
 # Import
 const World: Script = preload("uid://dpn1opeegcme2")
+const Keikai: Script = preload("uid://o348jlsiq2tc")
 
 
 
@@ -51,16 +52,16 @@ const World: Script = preload("uid://dpn1opeegcme2")
 
 
 
-func disabled() -> bool:
-	return self in get_world().current_map
+#func disabled() -> bool:
+	#return self in get_world().current_map
 
 
 func _enter_tree() -> void:
 	if Engine.is_editor_hint(): return
 	
-	if guidance:
-		location = guidance.location
-		size = guidance.size
+	#if guidance:
+		#location = guidance.location
+		#size = guidance.size
 
 
 func _draw() -> void:
@@ -86,8 +87,8 @@ func get_world() -> World:
 	return get_parent() as World
 
 
-func get_keikai():
-	return get_world().get_parent()
+func get_keikai() -> Keikai:
+	return get_world().get_node("Keikai") as Keikai
 
 
 func get_tile_size() -> float:
