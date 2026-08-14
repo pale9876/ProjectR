@@ -1,27 +1,23 @@
 [gd_scene format=3 uid="uid://cwl8070q73n7y"]
 
-[ext_resource type="Shader" uid="uid://g6eajyouefkv" path="res://normal_map.gdshader" id="1_ps8yq"]
-[ext_resource type="Texture2D" uid="uid://btknanf4h32wf" path="res://target_sample.png" id="1_w8pht"]
 [ext_resource type="Texture2D" uid="uid://lufobo82nkv4" path="res://normal_map_example.png" id="2_r2egm"]
 
-[sub_resource type="ShaderMaterial" id="ShaderMaterial_r2egm"]
-shader = ExtResource("1_ps8yq")
-shader_parameter/normal_map = ExtResource("2_r2egm")
+[sub_resource type="Gradient" id="Gradient_ps8yq"]
+interpolation_mode = 1
+offsets = PackedFloat32Array(0, 0.6743295)
+colors = PackedColorArray(0.2231029, 0.2231029, 0.22310287, 1, 1, 1, 1, 0)
 
-[sub_resource type="AtlasTexture" id="AtlasTexture_65cmg"]
-atlas = ExtResource("1_w8pht")
-region = Rect2(0, 0, 256, 256)
+[sub_resource type="GradientTexture2D" id="GradientTexture2D_ps8yq"]
+gradient = SubResource("Gradient_ps8yq")
+width = 256
+height = 256
+fill = 1
+fill_from = Vector2(0.5, 0.5)
+fill_to = Vector2(0.87606835, 0.1965812)
 
-[sub_resource type="SpriteFrames" id="SpriteFrames_7jywp"]
-animations = [{
-"frames": [{
-"duration": 1.0,
-"texture": SubResource("AtlasTexture_65cmg")
-}],
-"loop": 1,
-"name": &"default",
-"speed": 5.0
-}]
+[sub_resource type="CanvasTexture" id="CanvasTexture_ydceo"]
+diffuse_texture = SubResource("GradientTexture2D_ps8yq")
+normal_texture = ExtResource("2_r2egm")
 
 [sub_resource type="Gradient" id="Gradient_65cmg"]
 interpolation_mode = 1
@@ -38,11 +34,10 @@ fill_to = Vector2(1, 1)
 
 [node name="NormalMapTest" type="Node2D" unique_id=1094302592]
 
-[node name="Target" type="AnimatedSprite2D" parent="." unique_id=2006690199]
-material = SubResource("ShaderMaterial_r2egm")
-sprite_frames = SubResource("SpriteFrames_7jywp")
+[node name="Sprite2D" type="Sprite2D" parent="." unique_id=1944181046]
+texture = SubResource("CanvasTexture_ydceo")
 
 [node name="PointLight2D" type="PointLight2D" parent="." unique_id=1185483695]
-position = Vector2(-123, 1)
+position = Vector2(-92, -24)
 texture = SubResource("GradientTexture2D_wqsic")
-height = 30.0
+height = 64.0

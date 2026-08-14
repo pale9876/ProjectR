@@ -16,6 +16,12 @@ config/features=PackedStringArray("4.7", "Forward Plus")
 run/max_fps=60
 config/icon="res://icon.svg"
 
+[aseprite]
+
+import/import_plugin/default_automatic_importer="Static Texture"
+import/import_plugin/generate_bake_files=true
+animation/layers/only_include_visible_layers_by_default=true
+
 [audio]
 
 buses/default_bus_layout="uid://w8hk2j6ewb5f"

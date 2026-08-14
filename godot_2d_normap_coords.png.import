@@ -2,16 +2,16 @@
 
 importer="texture"
 type="CompressedTexture2D"
-uid="uid://cns87j0mwisbk"
-path="res://.godot/imported/head.png-0428d563356e710cdcd7f6194063b110.ctex"
+uid="uid://bb1vxrrivj6ro"
+path="res://.godot/imported/godot_2d_normap_coords.png-4d98d1f981f494ed4c43153cf9fa439c.ctex"
 metadata={
 "vram_texture": false
 }
 
 [deps]
 
-source_file="res://head.png"
-dest_files=["res://.godot/imported/head.png-0428d563356e710cdcd7f6194063b110.ctex"]
+source_file="res://godot_2d_normap_coords.png"
+dest_files=["res://.godot/imported/godot_2d_normap_coords.png-4d98d1f981f494ed4c43153cf9fa439c.ctex"]
 
 [params]
 

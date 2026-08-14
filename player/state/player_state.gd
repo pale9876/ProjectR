@@ -22,7 +22,7 @@ func get_hsm() -> StateMachine:
 	return get_root() as StateMachine
 
 
-func get_anim() -> AnimationPlayer:
+func get_anim() -> MotionLibrary:
 	return (get_state_machine().get_parent() as Player).get_anim()
 
 

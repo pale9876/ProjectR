@@ -40,28 +40,26 @@ enum PartsOrder
 func _enter_tree() -> void:
 	ORDER_BY_PARTS = { # 우측기준
 		PartsOrder.DEFAULT : [
-			"BackHair", "LeftArm", "Body", "Head", "Leg", "RightArm"
-		],
-		PartsOrder.HIGH_KICK : [
-			"BackHair", "LeftArm", "Head", "Body", "RightArm", "Leg"
-		],
-		PartsOrder.LEFT_HAND_BACK : [
-			"LeftArm", "BackHair", "Body", "Head", "RightArm", "Leg"
-		],
-		PartsOrder.RIGHT_HAND_BACK : [
-			"RightArm", "BackHair", "Body", "Head", "Leg", "LeftArm"
-		],
-		PartsOrder.BOTH_HAND_LEFT: [
-			"BackHair", "Body", "Head", "Leg", "RightArm", "LeftArm"
-		],
-		PartsOrder.BOTH_HAND_RIGHT: [
-			"BackHair", "Body", "Head", "Leg", "LeftArm", "RightArm"
+			"BackHair",
+			"BodyBackRace",
+			"RightArm",
+			"Leg",
+			"Body",
+			"LeftArm",
+			"Head",
 		],
 	}
+
+func _ready() -> void:
+	order = PartsOrder.DEFAULT
 
 
 func order_place_arm_by_dir(order_type: PartsOrder) -> PackedStringArray:
 	var result: PackedStringArray = PackedStringArray()
+	
+	if !ORDER_BY_PARTS.has(order_type):
+		return []
+	
 	var values: PackedStringArray = ORDER_BY_PARTS[order_type]
 	
 	result.resize(values.size())
@@ -102,6 +100,8 @@ func ordering_parts(_order: PartsOrder) -> void:
 	if !is_node_ready(): return
 	
 	var parts_order: PackedStringArray = order_place_arm_by_dir(order)
+	
+	if parts_order.is_empty(): return
 	
 	for index: int in range(get_child_count()):
 		var node_name: StringName = get_child(index).name

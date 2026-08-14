@@ -108,7 +108,7 @@ func get_hurtbox() -> Hurtbox:
 	return get_replicator().get_hurtbox()
 
 
-func get_anim() -> AnimationPlayer:
+func get_anim() -> MotionLibrary:
 	return get_replicator().get_anim()
 
 

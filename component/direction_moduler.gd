@@ -34,12 +34,6 @@ var frame: int = 0:
 			(node as Sprite2D).offset = offset
 
 
-
-#@export var texture: Texture:
-	#set(tex):
-		#_import_texture(tex)
-
-
 func _ready() -> void:
 	_update()
 

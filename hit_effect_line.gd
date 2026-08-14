@@ -21,4 +21,4 @@ class_name CurvedLine
 func create_curve() -> PackedVector2Array:
 	if !path: return []
 	
-	return path.curve.tessellate()
+	return path.curve.tessellate_even_length(4, 8.)

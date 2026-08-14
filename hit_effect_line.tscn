@@ -4,12 +4,12 @@
 
 [sub_resource type="Curve2D" id="Curve2D_apo3c"]
 _data = {
-"points": PackedVector2Array(54.424744, 54.92704, -54.424744, -54.92704, 62, -45, 0, -86.11132, 0, 86.11132, -65, 0)
+"points": PackedVector2Array(-126.22088, 0, 126.22088, 0, 0, -128, 0, 0, 0, 0, 128, 0)
 }
 point_count = 2
 
 [sub_resource type="Curve" id="Curve_apo3c"]
-_data = [Vector2(0, 0), 0.0, 1.1066555, 0, 0, Vector2(1, 1), 4.447425e-07, 0.0, 0, 0]
+_data = [Vector2(0, 1), 0.0, 0.0, 0, 0, Vector2(1, 1), 4.447425e-07, 0.0, 0, 0]
 point_count = 2
 
 [sub_resource type="Gradient" id="Gradient_n88ca"]
@@ -55,6 +55,30 @@ tracks/2/keys = {
 "update": 1,
 "values": [2]
 }
+tracks/3/type = "value"
+tracks/3/imported = false
+tracks/3/enabled = true
+tracks/3/path = NodePath("Line2D:width_curve:point_0/position")
+tracks/3/interp = 1
+tracks/3/loop_wrap = true
+tracks/3/keys = {
+"times": PackedFloat32Array(0),
+"transitions": PackedFloat32Array(1),
+"update": 0,
+"values": [Vector2(0, 1)]
+}
+tracks/4/type = "value"
+tracks/4/imported = false
+tracks/4/enabled = true
+tracks/4/path = NodePath("Line2D:width_curve:point_1/position")
+tracks/4/interp = 1
+tracks/4/loop_wrap = true
+tracks/4/keys = {
+"times": PackedFloat32Array(0),
+"transitions": PackedFloat32Array(1),
+"update": 0,
+"values": [Vector2(1, 1)]
+}
 
 [sub_resource type="Animation" id="Animation_apo3c"]
 resource_name = "hammer"
@@ -67,10 +91,10 @@ tracks/0/path = NodePath("Line2D:progress")
 tracks/0/interp = 1
 tracks/0/loop_wrap = true
 tracks/0/keys = {
-"times": PackedFloat32Array(0, 0.016666668, 0.1),
-"transitions": PackedFloat32Array(1, 1, 1),
-"update": 1,
-"values": [0.15, 0.25, 1.0]
+"times": PackedFloat32Array(0, 0.1),
+"transitions": PackedFloat32Array(-9.513661, 1),
+"update": 0,
+"values": [0.15, 1.0]
 }
 tracks/1/type = "value"
 tracks/1/imported = false
@@ -79,7 +103,7 @@ tracks/1/path = NodePath("Line2D:modulate")
 tracks/1/interp = 1
 tracks/1/loop_wrap = true
 tracks/1/keys = {
-"times": PackedFloat32Array(0, 0.06666667, 0.31666666),
+"times": PackedFloat32Array(0, 0.15, 0.38333333),
 "transitions": PackedFloat32Array(0.32987767, 2, 1),
 "update": 0,
 "values": [Color(1, 1, 1, 0), Color(1, 1, 1, 1), Color(1, 1, 1, 0)]
@@ -91,16 +115,70 @@ tracks/2/path = NodePath("Line2D:end_cap_mode")
 tracks/2/interp = 1
 tracks/2/loop_wrap = true
 tracks/2/keys = {
-"times": PackedFloat32Array(0, 0.10000001),
+"times": PackedFloat32Array(0, 0.06666667),
 "transitions": PackedFloat32Array(1, 1),
 "update": 1,
 "values": [2, 0]
 }
 
+[sub_resource type="Animation" id="Animation_7p586"]
+resource_name = "throw"
+length = 0.4008016597002745
+step = 0.0167
+tracks/0/type = "value"
+tracks/0/imported = false
+tracks/0/enabled = true
+tracks/0/path = NodePath("Line2D:progress")
+tracks/0/interp = 1
+tracks/0/loop_wrap = true
+tracks/0/keys = {
+"times": PackedFloat32Array(0, 0.05),
+"transitions": PackedFloat32Array(0.35355422, 1),
+"update": 0,
+"values": [0.0, 1.0]
+}
+tracks/1/type = "value"
+tracks/1/imported = false
+tracks/1/enabled = true
+tracks/1/path = NodePath("Line2D:modulate")
+tracks/1/interp = 1
+tracks/1/loop_wrap = true
+tracks/1/keys = {
+"times": PackedFloat32Array(0, 0.06666667, 0.4),
+"transitions": PackedFloat32Array(0.13869628, 1, 0.45062527),
+"update": 0,
+"values": [Color(1, 1, 1, 0), Color(1, 1, 1, 1), Color(1, 1, 1, 0)]
+}
+tracks/2/type = "value"
+tracks/2/imported = false
+tracks/2/enabled = true
+tracks/2/path = NodePath("Line2D:width_curve:point_0/position")
+tracks/2/interp = 1
+tracks/2/loop_wrap = true
+tracks/2/keys = {
+"times": PackedFloat32Array(0),
+"transitions": PackedFloat32Array(1),
+"update": 0,
+"values": [Vector2(0, 1)]
+}
+tracks/3/type = "value"
+tracks/3/imported = false
+tracks/3/enabled = true
+tracks/3/path = NodePath("Line2D:width_curve:point_1/position")
+tracks/3/interp = 1
+tracks/3/loop_wrap = true
+tracks/3/keys = {
+"times": PackedFloat32Array(0),
+"transitions": PackedFloat32Array(1),
+"update": 0,
+"values": [Vector2(1, 1)]
+}
+
 [sub_resource type="AnimationLibrary" id="AnimationLibrary_n1lfh"]
 _data = {
 &"RESET": SubResource("Animation_n1lfh"),
-&"hammer": SubResource("Animation_apo3c")
+&"hammer": SubResource("Animation_apo3c"),
+&"throw": SubResource("Animation_7p586")
 }
 
 [node name="Path2D" type="Path2D" unique_id=1034894302]

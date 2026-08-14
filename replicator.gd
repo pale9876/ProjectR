@@ -6,7 +6,6 @@ class_name Replicator
 const SpriteComponent: Script = preload("uid://b0paoljcmbiys")
 const SpriteModuler: Script = preload("uid://dbcsuysfwo30x")
 const StateMachine: Script = preload("uid://nmmtety5yvve")
-const NitraAnime: Script = preload("uid://chb5h0vw5lpvq")
 
 
 @export var z_value: float = 0.:

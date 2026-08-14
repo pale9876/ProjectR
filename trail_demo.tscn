@@ -1,0 +1,31 @@
+[gd_scene format=3 uid="uid://djqx5iw2tdacp"]
+
+[ext_resource type="Script" uid="uid://bpd43rifoe0u" path="res://script/trail.gd" id="1_itoq2"]
+[ext_resource type="Script" uid="uid://rb7nap7ct0eg" path="res://script/mouse_pointer.gd" id="2_8iw3a"]
+
+[sub_resource type="Curve2D" id="Curve2D_8iw3a"]
+
+[sub_resource type="Curve" id="Curve_icmt4"]
+_data = [Vector2(0, 0), 0.0, 6.067417, 0, 0, Vector2(0.41587302, 1), 0.0, 0.0, 0, 0]
+point_count = 2
+
+[sub_resource type="Gradient" id="Gradient_8iw3a"]
+offsets = PackedFloat32Array(0, 0.37184116)
+colors = PackedColorArray(0, 0, 0, 0, 1, 1, 1, 1)
+
+[node name="Node2D" type="Node2D" unique_id=79644937]
+
+[node name="Trail" type="Path2D" parent="." unique_id=936433075 node_paths=PackedStringArray("target")]
+curve = SubResource("Curve2D_8iw3a")
+script = ExtResource("1_itoq2")
+execute = true
+target = NodePath("../MousePointer")
+
+[node name="Line2D" type="Line2D" parent="Trail" unique_id=923574644]
+width_curve = SubResource("Curve_icmt4")
+gradient = SubResource("Gradient_8iw3a")
+begin_cap_mode = 1
+end_cap_mode = 1
+
+[node name="MousePointer" type="Node2D" parent="." unique_id=1530092584]
+script = ExtResource("2_8iw3a")
