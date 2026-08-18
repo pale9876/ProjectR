@@ -7,15 +7,13 @@ const PlayerCamera: Script = preload("uid://b7phyhue4y3yg")
 
 
 @export_category("Data")
-@export var info: PlayerInformation
+@export var info: UnitInformation
 
 
 @export_group("Debug")
 @export var toggles: Array[Node]
 
 var input_state: InputState
-
-
 
 var _prefix: StringName = &""
 
@@ -45,15 +43,10 @@ func _ready() -> void:
 		stat.name = name
 		stat.hp = info.hp
 		stat.speed = info.speed
-		
-		get_sprite_component().init_sprites(
-			info.upper_sprite,
-			info.lower_sprite,
-			info.sprite
-		)
 	
 	var state_machine := get_state_machine() as StateMachine
 	var idle_state := state_machine.get_state(^"Idle")
+	
 	state_machine.initial_state = idle_state
 	state_machine.initialize(self)
 	state_machine.set_active(true)

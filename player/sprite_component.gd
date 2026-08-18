@@ -7,13 +7,21 @@ extends Node2D
 const DirectionModuler: Script = preload("uid://dghhexdudu0xy")
 
 
-@export var current: NodePath:
-	set(path):
-		current = path
-		var node := get_node_or_null(path)
-		if node and node.is_inside_tree() and node is DirectionModuler:
+@export var current: KaradaModule:
+	set(node):
+		current = node
+		#var node := get_node_or_null(path)
+		if node and node.is_inside_tree():
 			for _node in get_children():
 				_node.visible = node == _node
+
+
+@export var offset: Vector2 = Vector2(0., -64.):
+	set(value):
+		offset = value
+		for node: Node in get_children():
+			if node is KaradaModule:
+				node.position = offset
 
 
 var force: Vector2

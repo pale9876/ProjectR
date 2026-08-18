@@ -8,6 +8,8 @@ const SpriteModuler: Script = preload("uid://dbcsuysfwo30x")
 const StateMachine: Script = preload("uid://nmmtety5yvve")
 
 
+@export var unit_info: UnitInformation
+
 @export var z_value: float = 0.:
 	set(val):
 		if is_in_stage():

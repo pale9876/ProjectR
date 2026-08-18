@@ -1,0 +1,126 @@
+[gd_scene format=3 uid="uid://1q3c7032ub84"]
+
+[sub_resource type="Curve2D" id="Curve2D_1u4yc"]
+_data = {
+"points": PackedVector2Array(0, 0, 0, 0, -127, 49, 0, 0, 0, 0, 180, -86)
+}
+point_count = 2
+
+[sub_resource type="Gradient" id="Gradient_1u4yc"]
+offsets = PackedFloat32Array(0, 0.4117647)
+colors = PackedColorArray(1, 1, 1, 1, 1, 1, 1, 0)
+
+[sub_resource type="GradientTexture2D" id="GradientTexture2D_j4kbh"]
+gradient = SubResource("Gradient_1u4yc")
+width = 16
+height = 16
+fill = 1
+fill_from = Vector2(0.5, 0.5)
+
+[sub_resource type="Curve" id="Curve_1u4yc"]
+_data = [Vector2(0, 0.9887641), 0.0, -5.0717845, 0, 0, Vector2(0.5169231, 0), 0.0, 0.0, 0, 0]
+point_count = 2
+
+[sub_resource type="CurveTexture" id="CurveTexture_1u4yc"]
+curve = SubResource("Curve_1u4yc")
+
+[sub_resource type="ParticleProcessMaterial" id="ParticleProcessMaterial_1u4yc"]
+particle_flag_disable_z = true
+emission_shape = 4
+emission_point_count = 1
+spread = 81.28
+flatness = 0.209
+initial_velocity_max = 100.759995
+orbit_velocity_min = 9.49949e-08
+orbit_velocity_max = 0.0990001
+gravity = Vector3(0, 0, 0)
+scale_min = 0.25
+scale_max = 4.25
+scale_curve = SubResource("CurveTexture_1u4yc")
+
+[sub_resource type="Animation" id="Animation_j4kbh"]
+length = 0.001
+tracks/0/type = "value"
+tracks/0/imported = false
+tracks/0/enabled = true
+tracks/0/path = NodePath("SakuraPathParticle/PathFollow2D:progress_ratio")
+tracks/0/interp = 1
+tracks/0/loop_wrap = true
+tracks/0/keys = {
+"times": PackedFloat32Array(0),
+"transitions": PackedFloat32Array(1),
+"update": 0,
+"values": [0.0]
+}
+tracks/1/type = "value"
+tracks/1/imported = false
+tracks/1/enabled = true
+tracks/1/path = NodePath("SakuraPathParticle/PathFollow2D/GPUParticles2D:emitting")
+tracks/1/interp = 1
+tracks/1/loop_wrap = true
+tracks/1/keys = {
+"times": PackedFloat32Array(0),
+"transitions": PackedFloat32Array(1),
+"update": 1,
+"values": [false]
+}
+
+[sub_resource type="Animation" id="Animation_1u4yc"]
+resource_name = "slash"
+length = 0.5344016562670469
+step = 0.0167
+tracks/0/type = "value"
+tracks/0/imported = false
+tracks/0/enabled = true
+tracks/0/path = NodePath("SakuraPathParticle/PathFollow2D:progress_ratio")
+tracks/0/interp = 1
+tracks/0/loop_wrap = true
+tracks/0/keys = {
+"times": PackedFloat32Array(0, 0.28333333),
+"transitions": PackedFloat32Array(0.29730198, 1),
+"update": 0,
+"values": [0.0, 1.0]
+}
+tracks/1/type = "value"
+tracks/1/imported = false
+tracks/1/enabled = true
+tracks/1/path = NodePath("SakuraPathParticle/PathFollow2D/GPUParticles2D:emitting")
+tracks/1/interp = 1
+tracks/1/loop_wrap = true
+tracks/1/keys = {
+"times": PackedFloat32Array(0, 0.2),
+"transitions": PackedFloat32Array(1, 1),
+"update": 1,
+"values": [true, false]
+}
+
+[sub_resource type="AnimationLibrary" id="AnimationLibrary_j4kbh"]
+_data = {
+&"RESET": SubResource("Animation_j4kbh"),
+&"slash": SubResource("Animation_1u4yc")
+}
+
+[node name="SakuraParticle" type="Node2D" unique_id=990427099]
+
+[node name="SakuraPathParticle" type="Path2D" parent="." unique_id=783541487]
+curve = SubResource("Curve2D_1u4yc")
+
+[node name="PathFollow2D" type="PathFollow2D" parent="SakuraPathParticle" unique_id=168572841]
+position = Vector2(-127, 49)
+rotates = false
+cubic_interp = false
+loop = false
+
+[node name="GPUParticles2D" type="GPUParticles2D" parent="SakuraPathParticle/PathFollow2D" unique_id=1932374315]
+emitting = false
+amount = 95
+texture = SubResource("GradientTexture2D_j4kbh")
+preprocess = 0.55
+randomness = 0.34
+fixed_fps = 60
+process_material = SubResource("ParticleProcessMaterial_1u4yc")
+
+[node name="AnimationPlayer" type="AnimationPlayer" parent="SakuraPathParticle" unique_id=1150953322]
+root_node = NodePath("../..")
+libraries/ = SubResource("AnimationLibrary_j4kbh")
+autoplay = &"slash"

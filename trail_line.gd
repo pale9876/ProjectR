@@ -64,7 +64,7 @@ func _init() -> void:
 
 func _ready() -> void:
 	_update()
-	get_anim().play(&"wag_2")
+	get_anim().play(&"wag")
 
 
 func _update() -> void:

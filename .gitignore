@@ -15,3 +15,17 @@ obj/
 export/
 build/
 builds/
+/rust_script/mini_game/target/debug/.fingerprint
+/rust_script/mini_game/target/debug/incremental
+/rust_script/mini_game/target/debug/deps
+rust_script/mini_game/target/CACHEDIR.TAG
+rust_script/mini_game/target/debug/.cargo-lock
+rust_script/mini_game/target/debug/mini_game.d
+rust_script/mini_game/target/debug/mini_game.dll.exp
+rust_script/mini_game/target/debug/mini_game.dll.lib
+rust_script/mini_game/target/debug/mini_game.pdb
+rust_script/mini_game/target/debug/~mini_0.pdb
+rust_script/mini_game/target/debug/~mini_game.dll
+rust_script/mini_game/target/flycheck0/stderr
+rust_script/mini_game/target/flycheck0/stdout
+rust_script/mini_game/target/.rustc_info.json

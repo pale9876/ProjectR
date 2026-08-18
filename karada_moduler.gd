@@ -1,6 +1,7 @@
 # karada_moduler.gd
 @tool
 extends Node2D
+class_name KaradaModule
 
 
 enum PartsOrder
@@ -40,6 +41,7 @@ enum PartsOrder
 func _enter_tree() -> void:
 	ORDER_BY_PARTS = { # 우측기준
 		PartsOrder.DEFAULT : [
+			"BackHairAccessory",
 			"BackHair",
 			"BodyBackRace",
 			"RightArm",
