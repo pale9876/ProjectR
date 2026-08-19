@@ -1,13 +1,6 @@
 [gd_scene format=3 uid="uid://cljktitiy0g50"]
 
 [ext_resource type="Script" uid="uid://b0paoljcmbiys" path="res://player/sprite_component.gd" id="1_yhqmw"]
-[ext_resource type="PackedScene" uid="uid://bxvvp46sren6n" path="res://sprite_module/idle.tscn" id="2_k18hv"]
-[ext_resource type="PackedScene" uid="uid://c32vxjmjaldxa" path="res://sprite_module/move.tscn" id="3_jenf4"]
 
-[node name="SpriteComponent" type="Node2D" unique_id=363892716 node_paths=PackedStringArray("current")]
+[node name="SpriteComponent" type="Node2D" unique_id=363892716]
 script = ExtResource("1_yhqmw")
-current = NodePath("Idle")
-
-[node name="Idle" parent="." unique_id=1549121677 instance=ExtResource("2_k18hv")]
-
-[node name="Move" parent="." unique_id=1338144491 instance=ExtResource("3_jenf4")]

@@ -2,7 +2,7 @@
 
 [ext_resource type="Script" uid="uid://dpn1opeegcme2" path="res://ingame/world.gd" id="1_50kwp"]
 [ext_resource type="PackedScene" uid="uid://ccd41t1qrjttn" path="res://ingame/map/start_map.tscn" id="2_6dhv1"]
-[ext_resource type="Script" uid="uid://c6w0iyaft7ljo" path="res://map_guidance.gd" id="3_gyfbf"]
+[ext_resource type="Script" uid="uid://c6w0iyaft7ljo" path="res://script/map_guidance.gd" id="3_gyfbf"]
 [ext_resource type="Script" uid="uid://di5e7qxe7d0dj" path="res://ingame/map/start_map.gd" id="4_cd3lu"]
 [ext_resource type="PackedScene" uid="uid://3o7lliqsl3gt" path="res://ingame/map_templete.tscn" id="5_6dhv1"]
 [ext_resource type="PackedScene" uid="uid://cgjxkmo53vf01" path="res://ingame/map/keikai.tscn" id="5_2286k"]

@@ -1,7 +1,7 @@
 [gd_scene format=3 uid="uid://c4gcbxwk30yws"]
 
 [ext_resource type="PackedScene" uid="uid://cgjxkmo53vf01" path="res://ingame/map/keikai.tscn" id="1_rrv58"]
-[ext_resource type="Script" uid="uid://dy8l74rtwyydu" path="res://body_part/body_part_sprite_module.gd" id="2_c3duy"]
+[ext_resource type="Script" uid="uid://dy8l74rtwyydu" path="res://script/body_part_sprite_module.gd" id="2_c3duy"]
 
 [sub_resource type="CircleShape2D" id="CircleShape2D_wqsic"]
 radius = 11.0

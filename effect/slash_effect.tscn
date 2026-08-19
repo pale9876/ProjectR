@@ -1,6 +1,6 @@
 [gd_scene format=3 uid="uid://cibyfuteend82"]
 
-[ext_resource type="Script" uid="uid://b8egty07siny7" path="res://script/flash_effect.gd" id="1_n6ho7"]
+[ext_resource type="Script" uid="uid://b8egty07siny7" path="res://script/node2d/flash_effect.gd" id="1_n6ho7"]
 
 [sub_resource type="Gradient" id="Gradient_1grlx"]
 offsets = PackedFloat32Array(0, 0.60932946, 0.8367347)

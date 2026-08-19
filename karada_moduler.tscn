@@ -1,7 +1,7 @@
 [gd_scene format=4 uid="uid://bsg27f4cy1k8d"]
 
 [ext_resource type="Script" uid="uid://dghhexdudu0xy" path="res://component/direction_moduler.gd" id="1_hguy8"]
-[ext_resource type="Script" uid="uid://dh5p5e7a2p0on" path="res://karada_moduler.gd" id="1_ugxwm"]
+[ext_resource type="Script" uid="uid://dh5p5e7a2p0on" path="res://script/node2d/karada_moduler.gd" id="1_ugxwm"]
 [ext_resource type="Texture2D" uid="uid://o3iwk43i42mj" path="res://aseprite/asso_project/characters/noru/idle/back_hair2.png" id="3_0qs8x"]
 [ext_resource type="Texture2D" uid="uid://cmey6ycwwsbag" path="res://aseprite/asso_project/characters/noru/idle/left_arm2.png" id="4_mi1lx"]
 [ext_resource type="Texture2D" uid="uid://71c7mfxyhx7h" path="res://aseprite/asso_project/characters/noru/idle/left_side_tail.png" id="6_wu7io"]

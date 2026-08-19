@@ -1,6 +1,6 @@
 [gd_scene format=3 uid="uid://cfdt7041dne44"]
 
-[ext_resource type="Script" uid="uid://b7k86uoip3rdc" path="res://trail_line.gd" id="1_nyb8w"]
+[ext_resource type="Script" uid="uid://b7k86uoip3rdc" path="res://script/trail_line.gd" id="1_nyb8w"]
 
 [sub_resource type="Curve2D" id="Curve2D_p036d"]
 _data = {

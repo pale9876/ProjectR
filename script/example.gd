@@ -12,9 +12,8 @@ func _ready() -> void:
 	($PDFormBase as PDFormBase).build_export(
 		globalized, true
 	)
-	
-	#print(PDF.export(globalized))
-	
+
+
 func get_desktop_path() -> String:
 	var ret = ""
 	var slashes = 0

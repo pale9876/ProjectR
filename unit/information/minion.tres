@@ -1,6 +1,6 @@
 [gd_resource type="Resource" script_class="UnitInformation" format=3 uid="uid://c8qn50dilibqs"]
 
-[ext_resource type="Script" uid="uid://c3ykemf4n3om1" path="res://unit/information/information.gd" id="1_7rvsm"]
+[ext_resource type="Script" uid="uid://c3ykemf4n3om1" path="res://script/resource/unit_information.gd" id="1_7rvsm"]
 [ext_resource type="SpriteFrames" uid="uid://dhmvj5bwddbin" path="res://sample_lower_motions.tres" id="1_bsmeq"]
 [ext_resource type="SpriteFrames" uid="uid://72n3ls5rb05n" path="res://sample_motion_frames.tres" id="3_q8u3r"]
 [ext_resource type="SpriteFrames" uid="uid://dhhxgkevom0u8" path="res://sample_upper_motions.tres" id="4_0rnpg"]

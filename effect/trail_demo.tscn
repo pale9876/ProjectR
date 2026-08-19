@@ -1,7 +1,7 @@
 [gd_scene format=3 uid="uid://djqx5iw2tdacp"]
 
-[ext_resource type="Script" uid="uid://bpd43rifoe0u" path="res://script/trail.gd" id="1_itoq2"]
-[ext_resource type="Script" uid="uid://rb7nap7ct0eg" path="res://script/mouse_pointer.gd" id="2_8iw3a"]
+[ext_resource type="Script" uid="uid://bpd43rifoe0u" path="res://script/node2d/trail.gd" id="1_itoq2"]
+[ext_resource type="Script" uid="uid://rb7nap7ct0eg" path="res://script/node2d/mouse_pointer.gd" id="2_8iw3a"]
 
 [sub_resource type="Curve2D" id="Curve2D_8iw3a"]
 

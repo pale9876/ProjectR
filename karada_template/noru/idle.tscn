@@ -1,6 +1,6 @@
 [gd_scene format=4 uid="uid://icrh2ja363p"]
 
-[ext_resource type="Script" uid="uid://dh5p5e7a2p0on" path="res://karada_moduler.gd" id="1_uojtt"]
+[ext_resource type="Script" uid="uid://dh5p5e7a2p0on" path="res://script/node2d/karada_moduler.gd" id="1_uojtt"]
 [ext_resource type="Script" uid="uid://dghhexdudu0xy" path="res://component/direction_moduler.gd" id="2_dhccw"]
 [ext_resource type="Texture2D" uid="uid://o3iwk43i42mj" path="res://aseprite/asso_project/characters/noru/idle/back_hair2.png" id="3_rbjmn"]
 [ext_resource type="Texture2D" uid="uid://cmey6ycwwsbag" path="res://aseprite/asso_project/characters/noru/idle/left_arm2.png" id="4_kdp8t"]

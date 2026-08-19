@@ -1,7 +1,7 @@
 [gd_scene format=3 uid="uid://dilvfresgr4yw"]
 
 [ext_resource type="Script" uid="uid://ckdpjvr4t2w8l" path="res://player/gunshot.gd" id="1_aqa1o"]
-[ext_resource type="Script" uid="uid://xw07ofvvtrxk" path="res://hitbox_info.gd" id="2_ioj4e"]
+[ext_resource type="Script" uid="uid://xw07ofvvtrxk" path="res://script/hitbox_info.gd" id="2_ioj4e"]
 
 [sub_resource type="Curve" id="Curve_jfgyi"]
 _data = [Vector2(0, 0), 0.0, 2.8824024, 0, 0, Vector2(1, 1), 0.0, 0.0, 0, 0]

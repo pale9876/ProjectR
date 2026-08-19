@@ -1,10 +1,10 @@
 [gd_scene format=3 uid="uid://cflkr7ot4song"]
 
-[ext_resource type="Script" uid="uid://d1d0pny6f1e6" path="res://pond.gd" id="1_micnc"]
+[ext_resource type="Script" uid="uid://d1d0pny6f1e6" path="res://script/pond.gd" id="1_micnc"]
 [ext_resource type="Script" uid="uid://d2ox33o3w3u0r" path="res://unit/hitbox_shape.gd" id="2_e62h4"]
-[ext_resource type="Script" uid="uid://bh0o5rf34hsj7" path="res://pond_hitbox.gd" id="3_xpml8"]
-[ext_resource type="Script" uid="uid://xw07ofvvtrxk" path="res://hitbox_info.gd" id="3_yrlwy"]
-[ext_resource type="Texture2D" uid="uid://d2aoon8pj35x5" path="res://aseprite/blood_moon_hand_attack.png" id="4_yrlwy"]
+[ext_resource type="Script" uid="uid://bh0o5rf34hsj7" path="res://script/pond_hitbox.gd" id="3_xpml8"]
+[ext_resource type="Script" uid="uid://xw07ofvvtrxk" path="res://script/hitbox_info.gd" id="3_yrlwy"]
+[ext_resource type="Texture2D" path="res://aseprite/blood_moon_hand_attack.png" id="4_yrlwy"]
 
 [sub_resource type="Gradient" id="Gradient_4uvmm"]
 interpolation_mode = 1

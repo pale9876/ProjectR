@@ -1,18 +1,15 @@
 [gd_scene format=3 uid="uid://bpojlualakpuu"]
 
 [ext_resource type="Script" uid="uid://bl84ixx4kubfe" path="res://unit/unit.gd" id="1_xr0ca"]
-[ext_resource type="SpriteFrames" uid="uid://dhmvj5bwddbin" path="res://sample_lower_motions.tres" id="2_w2uev"]
 [ext_resource type="Script" uid="uid://cpsg0ho6132tj" path="res://ai/tasks/unit/set_act_state.gd" id="3_6c1mr"]
 [ext_resource type="PackedScene" uid="uid://cljktitiy0g50" path="res://component/sprite_component.tscn" id="3_k7avp"]
-[ext_resource type="Script" uid="uid://c3ykemf4n3om1" path="res://unit/information/information.gd" id="3_t3pbd"]
-[ext_resource type="SpriteFrames" uid="uid://72n3ls5rb05n" path="res://sample_motion_frames.tres" id="4_cibo8"]
-[ext_resource type="SpriteFrames" uid="uid://dhhxgkevom0u8" path="res://sample_upper_motions.tres" id="5_2d64t"]
+[ext_resource type="Script" uid="uid://c3ykemf4n3om1" path="res://script/resource/unit_information.gd" id="3_t3pbd"]
 [ext_resource type="Script" uid="uid://dibqva5a64jvq" path="res://ai/tasks/unit/patrol_wait.gd" id="5_toejp"]
 [ext_resource type="Script" uid="uid://dmj17w1hipj7o" path="res://ai/tasks/unit/trace_target.gd" id="6_2clmh"]
 [ext_resource type="Script" uid="uid://bhhy483vjefa1" path="res://collision/dynamic_unit_collision.gd" id="7_gjkc3"]
 [ext_resource type="Script" uid="uid://cdbxf87eqivir" path="res://ai/tasks/set_target_position.gd" id="8_1kauj"]
 [ext_resource type="Script" uid="uid://bupj3hlvtt67s" path="res://unit/hurtbox.gd" id="8_k7l50"]
-[ext_resource type="Script" uid="uid://bdj3moatwduju" path="res://unit/awareness.gd" id="9_yvxo8"]
+[ext_resource type="Script" uid="uid://bdj3moatwduju" path="res://script/unit_awareness.gd" id="9_yvxo8"]
 [ext_resource type="Script" uid="uid://dcybwuwfqeqr3" path="res://unit/state/state_machine.gd" id="10_x1h6o"]
 [ext_resource type="PackedScene" uid="uid://cfdt7041dne44" path="res://animated_tail.tscn" id="11_2e5g1"]
 [ext_resource type="Script" uid="uid://8cq3ted0s3ob" path="res://unit/state/idle.gd" id="11_3b2yn"]
@@ -42,10 +39,6 @@
 
 [sub_resource type="Resource" id="Resource_pvbt4"]
 script = ExtResource("3_t3pbd")
-name = &"SampleUnit"
-upper_motions = ExtResource("5_2d64t")
-lower_motions = ExtResource("2_w2uev")
-sprite_frames = ExtResource("4_cibo8")
 metadata/_custom_type_script = "uid://c3ykemf4n3om1"
 
 [sub_resource type="Gradient" id="Gradient_2ul3e"]
@@ -61,10 +54,10 @@ fill = 1
 fill_from = Vector2(0.5, 0.5)
 fill_to = Vector2(0.85, 0.85)
 
-[sub_resource type="RectangleShape2D" id="RectangleShape2D_2e5g1"]
+[sub_resource type="RectangleShape2D" id="RectangleShape2D_yeahc"]
 size = Vector2(38, 92)
 
-[sub_resource type="RectangleShape2D" id="RectangleShape2D_binie"]
+[sub_resource type="RectangleShape2D" id="RectangleShape2D_v2yrs"]
 size = Vector2(38, 92)
 
 [sub_resource type="Animation" id="Animation_njs1s"]
@@ -198,14 +191,10 @@ scale = Vector2(0.22, -0.22)
 
 [node name="SpriteComponent" parent="." unique_id=363892716 instance=ExtResource("3_k7avp")]
 modulate = Color(1, 0, 0, 1)
-current = NodePath("")
-
-[node name="Move" parent="SpriteComponent" index="1" unique_id=1338144491]
-visible = false
 
 [node name="UnitCollision" type="CollisionShape2D" parent="." unique_id=2120811417]
 position = Vector2(0, -46)
-shape = SubResource("RectangleShape2D_2e5g1")
+shape = SubResource("RectangleShape2D_yeahc")
 debug_color = Color(0, 0.6, 0.69803923, 0.2)
 script = ExtResource("7_gjkc3")
 metadata/_custom_type_script = "uid://bhhy483vjefa1"
@@ -218,7 +207,7 @@ script = ExtResource("8_k7l50")
 
 [node name="HurtboxShape" type="CollisionShape2D" parent="Hurtbox" unique_id=1180949192]
 position = Vector2(0, -46)
-shape = SubResource("RectangleShape2D_binie")
+shape = SubResource("RectangleShape2D_v2yrs")
 debug_color = Color(0.8509804, 0.03529412, 0.21960784, 0.39607844)
 script = ExtResource("7_gjkc3")
 metadata/_custom_type_script = "uid://bhhy483vjefa1"
@@ -236,9 +225,6 @@ script = ExtResource("13_k0h15")
 offset = Vector2(-10, -128)
 height = 175.0
 dist = 720.0
-
-[node name="AwarenessTimer" type="Timer" parent="Awareness" unique_id=361304879]
-wait_time = 4.0
 
 [node name="HitboxComponent" type="Node2D" parent="." unique_id=1346051445]
 script = ExtResource("37_v2yrs")

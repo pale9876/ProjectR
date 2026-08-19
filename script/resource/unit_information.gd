@@ -1,0 +1,123 @@
+# information.gd for unit.stat
+@tool
+extends Resource
+class_name UnitInformation
+
+
+enum Race {
+	UMONEIRA = 0, # Human, Normal Ear, DEFAULT
+	NAITAM, # FoxEar, Tail
+	RYUKYU_MONOS, # DogEar, Tail
+	GUOREO, # Long or Big Horn
+	MONGOLIANA_CHILD, # Long Ear
+	MIXED, # 혼혈
+	
+	DICLONIUS, # ? 디클로니우스
+}
+
+
+enum Nation { # s = simillar
+	BYEONHAN_GUORE = 0, # s(Korea), DEFAULT
+	MANDAGAN, # s(Chinese)
+	EMPIRE_ARIMIN, # s(Japanese)
+	
+	SLOVANACCI, # s(Russia)
+	SUBORTEAR, # s(German),
+}
+
+
+enum CharacterClass {
+	NONE = 0, # DEFAULT
+	
+	# Unit (with Player)
+	PREDATOR,
+	EXECUTIONER,
+	CHIMERA,
+	TRICKSTER,
+	PUPPETEER,
+	EXORCIST,
+	
+	# NPC
+	OFFICER, # 인사 및 사무부
+	CLEANER, # 청소부
+	CLEANER_TEAM_LEADER, # 청소부 관리인
+	COUNTER, # 대응팀
+	COUNTER_TEAM_LEADER, # 대응 분대장
+	
+	IMPERIOR_ORDER,
+	IMPERIOR_ORDER_LEADER,
+	
+	CIVILIAN, # 민간인
+}
+
+
+@export_group("캐릭터 정보 및 클래스")
+@export var is_replicant: bool = true # replicant가 아닐 시, NPC 진영
+@export var unique: bool = false
+@export var race: Race = Race.UMONEIRA
+@export var nation: Nation = Nation.BYEONHAN_GUORE
+@export var chara_class: CharacterClass = CharacterClass.NONE
+@export var last_name: StringName = &"Unnamed"
+@export var first_name: StringName = &"Unnamed"
+
+
+@export_group("초기 스탯")
+@export var speed: float = 225. # px / sec, 초당 픽셀 이동
+@export var hp: int = 1826
+
+
+@export var meta: Dictionary[String, Variant] = {
+	# ! 이곳에 기록되어야 할 정도
+	# - 해당 캐릭터의 성격 및 전투 기록
+	# - 부친과 모친의 인종 데이터
+}
+
+
+func add_meta(d_name: String, data: Variant) -> void:
+	meta[d_name] = data
+
+
+func erase_meta(d_name: String) -> void:
+	if meta.has(d_name):
+		meta.erase(d_name)
+
+
+func init_npc_stat() -> void:
+	match CharacterClass:
+		CharacterClass.CLEANER || CharacterClass.CLEANER_TEAM_LEADER:
+			speed = 135.
+			hp = 920
+		
+		CharacterClass.COUNTER:
+			speed = 175.
+			hp = 1250
+		
+		CharacterClass.COUNTER_TEAM_LEADER:
+			speed = 175.
+			hp = 1860
+		
+		CharacterClass.OFFICER:
+			speed = 175.
+			hp = 720
+		
+		CharacterClass.IMPERIOR_ORDER:
+			speed
+			hp
+		
+		CharacterClass.IMPERIOR_ORDER_LEADER:
+			speed
+			hp
+
+
+func get_full_name() -> String:
+	var ret: String = ""
+	
+	if Nation.BYEONHAN_GUORE:
+		ret = first_name + " " + last_name
+	else:
+		ret = last_name + " " + first_name
+	
+	return ret
+
+
+	

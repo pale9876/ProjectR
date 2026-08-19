@@ -9,7 +9,7 @@
 [ext_resource type="Script" uid="uid://bupj3hlvtt67s" path="res://unit/hurtbox.gd" id="8_a3q01"]
 [ext_resource type="Script" uid="uid://dcybwuwfqeqr3" path="res://unit/state/state_machine.gd" id="9_4xbu7"]
 [ext_resource type="Script" uid="uid://8cq3ted0s3ob" path="res://unit/state/idle.gd" id="10_a2j7n"]
-[ext_resource type="Script" uid="uid://bdj3moatwduju" path="res://unit/awareness.gd" id="11_j0e0d"]
+[ext_resource type="Script" uid="uid://bdj3moatwduju" path="res://script/unit_awareness.gd" id="11_j0e0d"]
 [ext_resource type="Script" uid="uid://b5f86w8q41bvq" path="res://unit/poly_rect.gd" id="12_5dfwp"]
 
 [sub_resource type="Gradient" id="Gradient_2ul3e"]

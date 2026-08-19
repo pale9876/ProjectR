@@ -1,6 +1,6 @@
 [gd_scene format=3 uid="uid://plj4pbs5rbjv"]
 
-[ext_resource type="Shader" uid="uid://bnjyvse04828e" path="res://slide_fade.gdshader" id="1_cgr6h"]
+[ext_resource type="Shader" uid="uid://bnjyvse04828e" path="res://shader/slide_fade.gdshader" id="1_cgr6h"]
 [ext_resource type="Texture2D" uid="uid://c6rpceeuhu5eo" path="res://aseprite/traitor_will_be_dead/player.png" id="1_r2ijw"]
 
 [sub_resource type="ShaderMaterial" id="ShaderMaterial_icmt4"]

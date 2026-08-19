@@ -1,8 +1,8 @@
 [gd_scene format=3 uid="uid://chex0hq7pum6u"]
 
-[ext_resource type="Script" uid="uid://ulkqaypwpn2f" path="res://projectiled_hitbox.gd" id="1_5elg0"]
+[ext_resource type="Script" uid="uid://ulkqaypwpn2f" path="res://script/projectiled_hitbox.gd" id="1_5elg0"]
 [ext_resource type="Script" uid="uid://d2ox33o3w3u0r" path="res://unit/hitbox_shape.gd" id="2_uuk2o"]
-[ext_resource type="Script" uid="uid://xw07ofvvtrxk" path="res://hitbox_info.gd" id="3_bw3e0"]
+[ext_resource type="Script" uid="uid://xw07ofvvtrxk" path="res://script/hitbox_info.gd" id="3_bw3e0"]
 
 [sub_resource type="RectangleShape2D" id="RectangleShape2D_uuk2o"]
 size = Vector2(42, 16)

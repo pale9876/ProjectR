@@ -1,9 +1,9 @@
 [gd_scene format=3 uid="uid://d351e4a1wx67d"]
 
-[ext_resource type="Script" uid="uid://c4ma143wnovjq" path="res://body_part/body_part.gd" id="1_rbh5q"]
-[ext_resource type="Script" uid="uid://xbuenvvr1rrg" path="res://body_part/onfloor.gd" id="2_nrgac"]
+[ext_resource type="Script" uid="uid://c4ma143wnovjq" path="res://script/body_part.gd" id="1_rbh5q"]
+[ext_resource type="Script" uid="uid://xbuenvvr1rrg" path="res://script/onfloor.gd" id="2_nrgac"]
 [ext_resource type="SpriteFrames" uid="uid://bwceg85437jba" path="res://body_part/sample_body_part.tres" id="2_ysgey"]
-[ext_resource type="Script" uid="uid://dshp0gaed8vqg" path="res://body_part/flyaway.gd" id="4_awt4o"]
+[ext_resource type="Script" uid="uid://dshp0gaed8vqg" path="res://script/flyaway.gd" id="4_awt4o"]
 
 [sub_resource type="CircleShape2D" id="CircleShape2D_wqsic"]
 radius = 8.0

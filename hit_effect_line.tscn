@@ -1,6 +1,6 @@
 [gd_scene format=3 uid="uid://ls5gyhnousy4"]
 
-[ext_resource type="Script" uid="uid://b0x4nq754xlgr" path="res://hit_effect_line.gd" id="1_7p586"]
+[ext_resource type="Script" uid="uid://b0x4nq754xlgr" path="res://script/hit_effect_line.gd" id="1_7p586"]
 
 [sub_resource type="Curve2D" id="Curve2D_apo3c"]
 _data = {

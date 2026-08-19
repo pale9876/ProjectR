@@ -1,6 +1,6 @@
 [gd_scene format=3 uid="uid://buwm6vc0te1be"]
 
-[ext_resource type="Script" uid="uid://7bcvh07m418k" path="res://tail_path_2d.gd" id="2_4voq8"]
+[ext_resource type="Script" uid="uid://7bcvh07m418k" path="res://script/tail_path_2d.gd" id="2_4voq8"]
 
 [sub_resource type="Curve" id="Curve_71ccw"]
 _limits = [0.0, 5.0, 0.0, 1.0]
