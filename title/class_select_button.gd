@@ -11,7 +11,7 @@ const PLACEHOLDER_TRICKSTER: Texture = preload("uid://clf6um28evr5d")
 
 
 
-@export var class_info: ClassInfo
+@export var class_info: ClassUIInfo
 
 
 func _enter_tree() -> void:

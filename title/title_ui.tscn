@@ -8,7 +8,7 @@
 [ext_resource type="PackedScene" uid="uid://dw0ovxv0s3mlv" path="res://title/class_select_button.tscn" id="5_vp20t"]
 [ext_resource type="Texture2D" uid="uid://cgv6iyurw1t5a" path="res://portrait/icon/predator.png" id="6_kmer8"]
 [ext_resource type="Texture2D" uid="uid://1gn5p53k0gab" path="res://portrait/predator.png" id="7_bawnk"]
-[ext_resource type="Script" uid="uid://dl4wx13qp80c4" path="res://title/class_info.gd" id="7_x1875"]
+[ext_resource type="Script" uid="uid://dl4wx13qp80c4" path="res://title/class_ui_info.gd" id="7_x1875"]
 [ext_resource type="Texture2D" uid="uid://j4340lcophwd" path="res://portrait/icon/executioner.png" id="8_3xl2h"]
 [ext_resource type="Texture2D" uid="uid://camnnij4812ej" path="res://portrait/executioner.png" id="9_ntoon"]
 [ext_resource type="Texture2D" uid="uid://be84rj42egw0r" path="res://portrait/icon/chimera.png" id="10_l7kcw"]

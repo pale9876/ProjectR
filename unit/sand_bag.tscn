@@ -39,6 +39,7 @@
 
 [sub_resource type="Resource" id="Resource_pvbt4"]
 script = ExtResource("3_t3pbd")
+is_replicant = false
 metadata/_custom_type_script = "uid://c3ykemf4n3om1"
 
 [sub_resource type="Gradient" id="Gradient_2ul3e"]
@@ -176,7 +177,7 @@ var/suffix/value = &""
 var/suffix/hint = 0
 var/suffix/hint_string = ""
 
-[node name="SandBag" type="CharacterBody2D" unique_id=2064536848]
+[node name="SandBag" type="CharacterBody2D" unique_id=2064536848 groups=["neutrality"]]
 collision_layer = 2
 script = ExtResource("1_xr0ca")
 info = SubResource("Resource_pvbt4")

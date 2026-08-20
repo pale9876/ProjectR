@@ -69,7 +69,7 @@ enum CharacterClass {
 @export var meta: Dictionary[String, Variant] = {
 	# ! 이곳에 기록되어야 할 정도
 	# - 해당 캐릭터의 성격 및 전투 기록
-	# - 부친과 모친의 인종 데이터
+	# - 부모의 인종 데이터
 }
 
 
