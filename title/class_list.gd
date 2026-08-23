@@ -26,10 +26,10 @@ func _ready() -> void:
 			
 
 func toggle(btn: ClassSelectButton) -> void:
-	#_selected = btn
-	#for node: Node in get_children():
-		#node.button_pressed = (_selected == btn)
-	pass
+	Global.data.class_selected = btn.name
+	
+	for node: Node in get_children():
+		node.button_pressed = (node == btn)
 
 
 	
