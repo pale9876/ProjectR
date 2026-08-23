@@ -22,6 +22,10 @@ extends Control
 		queue_redraw()
 
 
+func _enter_tree() -> void:
+	set_anchors_preset(Control.PRESET_FULL_RECT)
+
+
 func _draw() -> void:
 	var border: float = float(total_border) / float(step - 2)
 	var width: float = size.x / float(step - 2) - border 

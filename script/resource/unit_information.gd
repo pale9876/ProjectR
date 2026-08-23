@@ -5,7 +5,8 @@ class_name UnitInformation
 
 
 enum Race {
-	UMONEIRA = 0, # Human, Normal Ear, DEFAULT
+	UNKNOWN = 0,
+	UMONEIRA, # Human, Normal Ear, DEFAULT
 	NAITAM, # FoxEar, Tail
 	RYUKYU_MONOS, # DogEar, Tail
 	GUOREO, # Long or Big Horn
@@ -17,7 +18,8 @@ enum Race {
 
 
 enum Nation { # s = simillar
-	BYEONHAN_GUORE = 0, # s(Korea), DEFAULT
+	UNKNOWN = 0,
+	BYEONHAN_GUORE, # s(Korea), DEFAULT
 	MANDAGAN, # s(Chinese)
 	EMPIRE_ARIMIN, # s(Japanese)
 	
@@ -48,12 +50,14 @@ enum CharacterClass {
 	IMPERIOR_ORDER_LEADER,
 	
 	CIVILIAN, # 민간인
+	SUBJECT, # 피실험자
 }
 
 
 @export_group("캐릭터 정보 및 클래스")
 @export var is_replicant: bool = true # replicant가 아닐 시, NPC 진영
 @export var unique: bool = false
+@export var cannot_terminate: bool = false
 @export var race: Race = Race.UMONEIRA
 @export var nation: Nation = Nation.BYEONHAN_GUORE
 @export var chara_class: CharacterClass = CharacterClass.NONE

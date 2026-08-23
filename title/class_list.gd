@@ -9,11 +9,11 @@ signal class_changed(_select: StringName)
 const ClassSelectButton: Script = preload("uid://ptibopjrd7sc")
 
 
-var _selected: ClassSelectButton = null:
-	set(btn):
-		if btn != _selected:
-			_selected = btn
-			class_changed.emit(btn.button_name)
+#var _selected: ClassSelectButton = null:
+	#set(btn):
+		#if btn != _selected:
+			#_selected = btn
+			#class_changed.emit(btn.button_name)
 
 
 func _ready() -> void:
@@ -21,11 +21,15 @@ func _ready() -> void:
 		if node is ClassSelectButton:
 			node.button_up.connect(
 				func() -> void: # Toggle
-					_selected = node
-					for _node: Node in get_children():
-						_node.button_pressed = (_selected == _node)
+					toggle(node)
 			)
 			
+
+func toggle(btn: ClassSelectButton) -> void:
+	#_selected = btn
+	#for node: Node in get_children():
+		#node.button_pressed = (_selected == btn)
+	pass
 
 
 	

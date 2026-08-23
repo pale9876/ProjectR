@@ -6,20 +6,12 @@
 [ext_resource type="PackedScene" uid="uid://h46mjm4dsjnx" path="res://title/title_ui_button.tscn" id="3_x1875"]
 [ext_resource type="Script" uid="uid://cdgr4w6hpl2ud" path="res://title/class_list.gd" id="4_w87gd"]
 [ext_resource type="PackedScene" uid="uid://dw0ovxv0s3mlv" path="res://title/class_select_button.tscn" id="5_vp20t"]
-[ext_resource type="Texture2D" uid="uid://cgv6iyurw1t5a" path="res://portrait/icon/predator.png" id="6_kmer8"]
-[ext_resource type="Texture2D" uid="uid://1gn5p53k0gab" path="res://portrait/predator.png" id="7_bawnk"]
-[ext_resource type="Script" uid="uid://dl4wx13qp80c4" path="res://title/class_ui_info.gd" id="7_x1875"]
-[ext_resource type="Texture2D" uid="uid://j4340lcophwd" path="res://portrait/icon/executioner.png" id="8_3xl2h"]
-[ext_resource type="Texture2D" uid="uid://camnnij4812ej" path="res://portrait/executioner.png" id="9_ntoon"]
-[ext_resource type="Texture2D" uid="uid://be84rj42egw0r" path="res://portrait/icon/chimera.png" id="10_l7kcw"]
-[ext_resource type="Texture2D" uid="uid://huu86nxnv53a" path="res://placeholder/maid_08.png" id="11_craob"]
-[ext_resource type="Texture2D" uid="uid://puyr6putkiid" path="res://portrait/icon/trickster.png" id="12_tald7"]
-[ext_resource type="Texture2D" uid="uid://cmpxq1668dbuf" path="res://portrait/trickster.png" id="13_6oeve"]
-[ext_resource type="Texture2D" uid="uid://biwys5tfcrvyy" path="res://portrait/icon/puppeteer.png" id="14_x3suq"]
-[ext_resource type="Texture2D" uid="uid://b8t7urgctkqu8" path="res://portrait/puppeteer.png" id="15_2yh0h"]
-[ext_resource type="Texture2D" uid="uid://dk14ub3ipvswt" path="res://portrait/icon/exorcist.png" id="16_tu44a"]
-[ext_resource type="Texture2D" uid="uid://byetpndbh00xq" path="res://placeholder/maid_010.png" id="17_87hsn"]
-[ext_resource type="Script" uid="uid://dvcrrp6wpmrtp" path="res://title/variable_statistics_progress.gd" id="18_53yp0"]
+[ext_resource type="Resource" uid="uid://b5d4qaihox42l" path="res://class_info/predator.tres" id="7_2segn"]
+[ext_resource type="Resource" uid="uid://djuxrqt1jlhwl" path="res://class_info/executioner.tres" id="8_ml3lu"]
+[ext_resource type="Resource" uid="uid://xnd2mvddrqa2" path="res://class_info/chimera.tres" id="9_4dws5"]
+[ext_resource type="Resource" uid="uid://cv0lt2ikqgq3r" path="res://class_info/trickster.tres" id="10_a66lt"]
+[ext_resource type="Resource" uid="uid://c0k466cyi4t5w" path="res://class_info/exorcist.tres" id="11_5d5gr"]
+[ext_resource type="Script" uid="uid://5kps1ydik3il" path="res://script/stat_attr_container.gd" id="12_ml3lu"]
 [ext_resource type="PackedScene" uid="uid://be5es7kj8my7a" path="res://title/character_list.tscn" id="19_t4lib"]
 [ext_resource type="Script" uid="uid://dq6jdkets46eg" path="res://title/character_list.gd" id="20_wif7g"]
 
@@ -30,84 +22,6 @@ keycode = 4194309
 
 [sub_resource type="Shortcut" id="Shortcut_ibxtg"]
 events = [SubResource("InputEventKey_ibxtg")]
-
-[sub_resource type="Resource" id="Resource_n4ayq"]
-script = ExtResource("7_x1875")
-name = "Predator"
-icon = ExtResource("6_kmer8")
-portrait = ExtResource("7_bawnk")
-description = "개별 타겟에게 강력한 데미지를 구사하는 클래스이다."
-stat = Dictionary[String, int]({
-"Aggressive": 3,
-"Defensive": 4,
-"Utility": -3
-})
-metadata/_custom_type_script = "uid://dl4wx13qp80c4"
-
-[sub_resource type="Resource" id="Resource_w87gd"]
-script = ExtResource("7_x1875")
-name = "Executioner"
-icon = ExtResource("8_3xl2h")
-portrait = ExtResource("9_ntoon")
-description = "넓은 범위의 제압에 특화된 근거리 클래스이다. 근거리 무기 활용 시, 추가데미지를 부여한다."
-stat = Dictionary[String, int]({
-"Aggressive": 1,
-"Defensive": 3,
-"Utility": 2
-})
-metadata/_custom_type_script = "uid://dl4wx13qp80c4"
-
-[sub_resource type="Resource" id="Resource_x1875"]
-script = ExtResource("7_x1875")
-name = "Chimera"
-icon = ExtResource("10_l7kcw")
-portrait = ExtResource("11_craob")
-description = "통상 모션과 호환되지만 전용 모션또한 이용 가능한 클래스이다. 해당 클래스를 선택할 수 있는 캐릭터는 제한적이며, 무기 또한 사용할 수 없다."
-stat = Dictionary[String, int]({
-"Aggressive": 4,
-"Defensive": -2,
-"Utility": -3
-})
-metadata/_custom_type_script = "uid://dl4wx13qp80c4"
-
-[sub_resource type="Resource" id="Resource_vp20t"]
-script = ExtResource("7_x1875")
-name = "Trickster"
-icon = ExtResource("12_tald7")
-portrait = ExtResource("13_6oeve")
-description = "원거리 전투에 특화된 캐릭터이다. 무기를 이용한 원거리 공격 시, 추가 데미지를 부여한다."
-stat = Dictionary[String, int]({
-"Aggressive": 3,
-"Defensive": -3,
-"Utility": 2
-})
-metadata/_custom_type_script = "uid://dl4wx13qp80c4"
-
-[sub_resource type="Resource" id="Resource_kmer8"]
-script = ExtResource("7_x1875")
-name = "Puppeteer"
-icon = ExtResource("14_x3suq")
-portrait = ExtResource("15_2yh0h")
-description = "플레이어가 조종할 수 있는 인형 1체를 지원한다. 사용자가 구사할 수 있는 모션이 제한되고, 인형에게 전용 모션을 추가할 수 있다."
-stat = Dictionary[String, int]({
-"Aggressive": -3,
-"Defensive": 3,
-"Utility": 0
-})
-metadata/_custom_type_script = "uid://dl4wx13qp80c4"
-
-[sub_resource type="Resource" id="Resource_bawnk"]
-script = ExtResource("7_x1875")
-name = "Exorcist"
-icon = ExtResource("16_tu44a")
-portrait = ExtResource("17_87hsn")
-description = "공격 모션 중이 아닐 때, 이동 시, 원거리 공격을 무력화하며 진입할 수 있다. 빠른 기동성을 자랑한다."
-stat = Dictionary[String, int]({
-"Aggressive": 3,
-"Defensive": 0,
-"Utility": 4
-})
-metadata/_custom_type_script = "uid://dl4wx13qp80c4"
 
 [node name="TitleUI" type="Control" unique_id=1482659797]
 layout_mode = 3
@@ -307,7 +221,6 @@ text = "Anti-Apocalypse Strategy Organization"
 
 [node name="ClassSettings" type="MarginContainer" parent="." unique_id=1724839874]
 unique_name_in_owner = true
-visible = false
 layout_mode = 1
 anchors_preset = 15
 anchor_right = 1.0
@@ -353,27 +266,27 @@ script = ExtResource("4_w87gd")
 
 [node name="Predator" parent="ClassSettings/VBoxContainer/Panel/HBoxContainer/MarginContainer/ClassList" unique_id=1675104851 instance=ExtResource("5_vp20t")]
 layout_mode = 2
-class_info = SubResource("Resource_n4ayq")
+class_info = ExtResource("7_2segn")
 
 [node name="Executioner" parent="ClassSettings/VBoxContainer/Panel/HBoxContainer/MarginContainer/ClassList" unique_id=41452571 instance=ExtResource("5_vp20t")]
 layout_mode = 2
-class_info = SubResource("Resource_w87gd")
+class_info = ExtResource("8_ml3lu")
 
 [node name="Chimera" parent="ClassSettings/VBoxContainer/Panel/HBoxContainer/MarginContainer/ClassList" unique_id=1697819993 instance=ExtResource("5_vp20t")]
 layout_mode = 2
-class_info = SubResource("Resource_x1875")
+class_info = ExtResource("9_4dws5")
 
 [node name="Trickster" parent="ClassSettings/VBoxContainer/Panel/HBoxContainer/MarginContainer/ClassList" unique_id=1865309037 instance=ExtResource("5_vp20t")]
 layout_mode = 2
-class_info = SubResource("Resource_vp20t")
+class_info = ExtResource("10_a66lt")
 
 [node name="Puppeteer" parent="ClassSettings/VBoxContainer/Panel/HBoxContainer/MarginContainer/ClassList" unique_id=1174702832 instance=ExtResource("5_vp20t")]
 layout_mode = 2
-class_info = SubResource("Resource_kmer8")
+class_info = ExtResource("7_2segn")
 
 [node name="Exorcist" parent="ClassSettings/VBoxContainer/Panel/HBoxContainer/MarginContainer/ClassList" unique_id=1931057540 instance=ExtResource("5_vp20t")]
 layout_mode = 2
-class_info = SubResource("Resource_bawnk")
+class_info = ExtResource("11_5d5gr")
 
 [node name="MarginContainer2" type="MarginContainer" parent="ClassSettings/VBoxContainer/Panel/HBoxContainer" unique_id=729713372]
 layout_mode = 2
@@ -450,52 +363,24 @@ size_flags_horizontal = 3
 [node name="HSeparator" type="HSeparator" parent="ClassSettings/VBoxContainer/Panel/HBoxContainer/MarginContainer2/Panel/MarginContainer/VBoxContainer2" unique_id=1678591294]
 layout_mode = 2
 
-[node name="AbilityList" type="HBoxContainer" parent="ClassSettings/VBoxContainer/Panel/HBoxContainer/MarginContainer2/Panel/MarginContainer/VBoxContainer2" unique_id=1923472581]
+[node name="StatAttrContainer" type="HBoxContainer" parent="ClassSettings/VBoxContainer/Panel/HBoxContainer/MarginContainer2/Panel/MarginContainer/VBoxContainer2" unique_id=1923472581]
+unique_name_in_owner = true
 layout_mode = 2
+script = ExtResource("12_ml3lu")
 
-[node name="VBoxContainer" type="VBoxContainer" parent="ClassSettings/VBoxContainer/Panel/HBoxContainer/MarginContainer2/Panel/MarginContainer/VBoxContainer2/AbilityList" unique_id=241788949]
-layout_mode = 2
-
-[node name="Label" type="Label" parent="ClassSettings/VBoxContainer/Panel/HBoxContainer/MarginContainer2/Panel/MarginContainer/VBoxContainer2/AbilityList/VBoxContainer" unique_id=1256236126]
-layout_mode = 2
-size_flags_horizontal = 0
-text = "Aggressive"
-
-[node name="Label2" type="Label" parent="ClassSettings/VBoxContainer/Panel/HBoxContainer/MarginContainer2/Panel/MarginContainer/VBoxContainer2/AbilityList/VBoxContainer" unique_id=1510094087]
-layout_mode = 2
-size_flags_horizontal = 0
-text = "Defensive"
-
-[node name="Label3" type="Label" parent="ClassSettings/VBoxContainer/Panel/HBoxContainer/MarginContainer2/Panel/MarginContainer/VBoxContainer2/AbilityList/VBoxContainer" unique_id=208380259]
-layout_mode = 2
-size_flags_horizontal = 0
-text = "Utility"
-
-[node name="VSeparator" type="VSeparator" parent="ClassSettings/VBoxContainer/Panel/HBoxContainer/MarginContainer2/Panel/MarginContainer/VBoxContainer2/AbilityList" unique_id=1331080314]
-layout_mode = 2
-
-[node name="StatAttrContainer" type="VBoxContainer" parent="ClassSettings/VBoxContainer/Panel/HBoxContainer/MarginContainer2/Panel/MarginContainer/VBoxContainer2/AbilityList" unique_id=270711098]
+[node name="StatAttrNameContainer" type="VBoxContainer" parent="ClassSettings/VBoxContainer/Panel/HBoxContainer/MarginContainer2/Panel/MarginContainer/VBoxContainer2/StatAttrContainer" unique_id=241788949]
 unique_name_in_owner = true
 layout_mode = 2
 size_flags_horizontal = 3
+size_flags_stretch_ratio = 0.45
 
-[node name="Aggressive" type="Control" parent="ClassSettings/VBoxContainer/Panel/HBoxContainer/MarginContainer2/Panel/MarginContainer/VBoxContainer2/AbilityList/StatAttrContainer" unique_id=1050067978]
+[node name="VSeparator" type="VSeparator" parent="ClassSettings/VBoxContainer/Panel/HBoxContainer/MarginContainer2/Panel/MarginContainer/VBoxContainer2/StatAttrContainer" unique_id=1331080314]
+layout_mode = 2
+
+[node name="StatValueContainer" type="VBoxContainer" parent="ClassSettings/VBoxContainer/Panel/HBoxContainer/MarginContainer2/Panel/MarginContainer/VBoxContainer2/StatAttrContainer" unique_id=270711098]
 unique_name_in_owner = true
 layout_mode = 2
-size_flags_vertical = 3
-script = ExtResource("18_53yp0")
-
-[node name="Defensive" type="Control" parent="ClassSettings/VBoxContainer/Panel/HBoxContainer/MarginContainer2/Panel/MarginContainer/VBoxContainer2/AbilityList/StatAttrContainer" unique_id=1743894127]
-unique_name_in_owner = true
-layout_mode = 2
-size_flags_vertical = 3
-script = ExtResource("18_53yp0")
-
-[node name="Utility" type="Control" parent="ClassSettings/VBoxContainer/Panel/HBoxContainer/MarginContainer2/Panel/MarginContainer/VBoxContainer2/AbilityList/StatAttrContainer" unique_id=949364854]
-unique_name_in_owner = true
-layout_mode = 2
-size_flags_vertical = 3
-script = ExtResource("18_53yp0")
+size_flags_horizontal = 3
 
 [node name="MarginContainer" type="MarginContainer" parent="ClassSettings/VBoxContainer/Panel/HBoxContainer/MarginContainer2/Panel/MarginContainer/VBoxContainer2" unique_id=1185453660]
 layout_mode = 2

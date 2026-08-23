@@ -1,8 +1,9 @@
 extends Node
 
+
 # Save Path
 const PATH: String = "user://"
-const DEFAULT_SAVE_FOLDER_PATH: String = "user://save/"
+const DEFAULT_SAVE_FOLDER_PATH: String = "user://save/autosave.tres"
 
 
 # Import
@@ -22,11 +23,10 @@ signal debug_toggled()
 
 
 var data: Data
+
 var player: Player
 var player_camera: PlayerCamera
-
 var current_data_name: String
-
 var main_scene: MainScene
 
 
@@ -53,11 +53,17 @@ func _process(delta: float) -> void:
 
 
 
-func load_data(save_file_name: String = "autosave") -> void:
-	var save_path: String = DEFAULT_SAVE_FOLDER_PATH + save_file_name
-	var exist: bool = ResourceLoader.exists(save_path)
-	var res := ResourceLoader.load(save_path, "Data")
+func save_data(path: String) -> void:
+	var err: Error = ResourceSaver.save(data, DEFAULT_SAVE_FOLDER_PATH if path.is_empty() else path)
+	if err != OK:
+		pass
 
+
+func load_data(path: String) -> void:
+	var exist: bool = ResourceLoader.exists(DEFAULT_SAVE_FOLDER_PATH if path.is_empty() else path)
+	var res := ResourceLoader.load(DEFAULT_SAVE_FOLDER_PATH if path.is_empty() else path, "Resource")
+	if res is Data:
+		data = res
 
 
 func start_dialog(
@@ -106,7 +112,5 @@ func get_hud() -> Hud:
 
 
 class Data extends Resource:
-	var character: PlayerInformation
-	var stat: Dictionary
-	var stage: int
-	var position: Vector2
+	var class_selected: ClassInformation = null
+	var ach: Dictionary[String, Variant] = {}

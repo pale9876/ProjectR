@@ -4,19 +4,24 @@ extends Button
 
 # Import
 const VariableStatisticsProgress: Script = preload("uid://dvcrrp6wpmrtp")
+const StatAttrContainer: Script = preload("uid://5kps1ydik3il")
 
+# Placeholder
 const PLACEHOLDER_EXECUTIONER: Texture = preload("uid://clcjxox00b83s")
 const PLACEHOLDER_PREDATOR: Texture = preload("uid://cw7fw44ky8xln")
 const PLACEHOLDER_TRICKSTER: Texture = preload("uid://clf6um28evr5d")
 
 
+@export var class_info: ClassInformation
 
-@export var class_info: ClassUIInfo
+
+func _init() -> void:
+	class_info = ClassInformation.new()
 
 
 func _enter_tree() -> void:
-	get_class_label().text = class_info.name
-	get_icon().texture = class_info.icon
+	get_class_label().text = get_class_ui_info().name
+	get_icon().texture = get_class_ui_info().icon
 
 
 func _ready() -> void:
@@ -24,26 +29,31 @@ func _ready() -> void:
 	
 	mouse_entered.connect(
 		func() -> void:
-			get_portrait().texture = class_info.portrait
-			get_class_description().text = class_info.description
-			for attr: String in class_info.stat:
-				var progress: VariableStatisticsProgress = get_stat_attr_container().get_node_or_null(NodePath(attr))
-				progress.value = class_info.stat[attr]
+			var ui_info := get_class_ui_info()
+			var meta: Dictionary[String, Variant] = class_info.get_class_meta()
+			
+			get_portrait().texture = ui_info.portrait
+			get_class_description().text = ui_info.description
+			
+			for attr: String in meta:
+				get_stat_attr_container().set_attr(attr, meta[attr])
 	)
 	
 	mouse_exited.connect(
 		func() -> void:
+			var meta: Dictionary[String, Variant] = class_info.get_class_meta()
+			
 			get_portrait().texture = null
 			get_class_description().text = ""
-			for attr: String in class_info.stat:
-				var progress: VariableStatisticsProgress = get_stat_attr_container().get_node_or_null(NodePath(attr))
-				progress.value = 0
+			
+			for attr: String in meta:
+				get_stat_attr_container().clear()
 	)
 	
-	button_up.connect(
-		func () -> void:
-			pass
-	)
+
+
+func get_class_ui_info() -> Resource:
+	return class_info.ui_info
 
 
 func get_class_label() -> Label:
@@ -62,8 +72,8 @@ func get_icon() -> TextureRect:
 	return get_node(^"%Icon") as TextureRect
 
 
-func get_stat_attr_container() -> VBoxContainer:
-	return get_node(^"%StatAttrContainer") as VBoxContainer
+func get_stat_attr_container() -> StatAttrContainer:
+	return get_node(^"%StatAttrContainer") as StatAttrContainer
 
 
 	
