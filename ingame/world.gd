@@ -3,9 +3,13 @@
 extends Node2D
 
 
+# Const
+const TILE_SIZE: int = 16
+
+
 # Import
 const Ingame: Script = preload("uid://lf1g8r7wbov3")
-const TILE_SIZE: int = 16
+const MapKeikai = preload("uid://o348jlsiq2tc")
 
 
 @export var tile_size: int = TILE_SIZE
@@ -108,9 +112,11 @@ func set_keikai() -> void:
 	var _floor: int = int(max_point.y * tile_size)
 	
 	var val: Vector4i = Vector4i(_left, _right, _ceil, _floor)
-	get_ingame().get_keikai().set_keikai(val)
-	
-	
+	get_keikai().set_keikai(val)
+
+
+func get_keikai() -> MapKeikai:
+	return get_node(^"%Keikai") as MapKeikai
 	
 	
 	

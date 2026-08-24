@@ -15,11 +15,6 @@ name = "Executioner"
 icon = SubResource("CompressedTexture2D_5kyi5")
 portrait = SubResource("CompressedTexture2D_4nigd")
 description = "넓은 범위의 제압에 특화된 근거리 클래스이다. 근거리 무기 활용 시, 추가데미지를 부여한다."
-stat = Dictionary[String, int]({
-"Aggressive": 1,
-"Defensive": 3,
-"Utility": 2
-})
 metadata/_custom_type_script = "uid://dl4wx13qp80c4"
 
 [resource]

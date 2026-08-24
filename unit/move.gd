@@ -5,12 +5,12 @@ extends UnitState
 var idle_state: UnitState
 
 
-func _target_found() -> void:
-	pass
-
-
-func _target_lost() -> void:
-	pass
+#func _target_found() -> void:
+	#pass
+#
+#
+#func _target_lost() -> void:
+	#pass
 
 
 
@@ -24,8 +24,8 @@ func _ready() -> void:
 	var unit := get_state_machine().get_parent() as Unit
 	var awareness := unit.get_awareness_area()
 	
-	awareness.found.connect(_target_found)
-	awareness.lost.connect(_target_lost)
+	#awareness.found.connect(_target_found)
+	#awareness.lost.connect(_target_lost)
 
 
 func _enter() -> void:

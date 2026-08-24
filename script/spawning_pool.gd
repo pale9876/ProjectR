@@ -1,9 +1,8 @@
+# spawning_pool.gd
 extends Node
 
 
-
 var pool: PackedInt32Array = PackedInt32Array()
-
 
 
 func create_sprite_frames() -> SpriteFrames:

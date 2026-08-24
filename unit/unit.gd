@@ -23,11 +23,12 @@ func _enter_tree() -> void:
 	GSignal.soft_pause.connect(soft_pause)
 	GSignal.resume.connect(resume)
 	
-	# init hp
-	stat.name = info.name
+	# init unit infos
+	stat.name = info.get_full_name()
 	stat.max_hp = info.hp
 	stat.hp = stat.max_hp
-	stat.speed = info.speed
+	stat.chara_class = info.chara_class
+	
 
 
 func _ready() -> void:
@@ -35,11 +36,11 @@ func _ready() -> void:
 	
 	get_bt().active = false
 	
-	get_sprite_component().init_sprites(
-		info.upper_motions,
-		info.lower_motions,
-		info.sprite_frames
-	)
+	#get_sprite_component().init_sprites(
+		#info.upper_motions,
+		#info.lower_motions,
+		#info.sprite_frames
+	#)
 	
 	hsm.initial_state = hsm.get_node(^"Idle") as LimboState
 	hsm.initialize(self)

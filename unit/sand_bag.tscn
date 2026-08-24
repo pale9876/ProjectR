@@ -90,24 +90,24 @@ var/move_order/hint_string = ""
 script = ExtResource("3_6c1mr")
 
 [sub_resource type="BBVariant" id="BBVariant_4xbu7"]
-type = 4
-saved_value = "patrol"
 resource_name = "patrol"
+saved_value = "patrol"
+type = 4
 
 [sub_resource type="BTCheckVar" id="BTCheckVar_a2j7n"]
 variable = &"act"
 value = SubResource("BBVariant_4xbu7")
 
 [sub_resource type="BTConsolePrint" id="BTConsolePrint_a2j7n"]
-text = "순찰 중"
 _enabled = false
+text = "순찰 중"
 
 [sub_resource type="BTAction" id="BTAction_n0aob"]
 script = ExtResource("8_1kauj")
 
 [sub_resource type="BTConsolePrint" id="BTConsolePrint_4xbu7"]
-text = "잠시 쉬는 중"
 _enabled = false
+text = "잠시 쉬는 중"
 
 [sub_resource type="BTWait" id="BTWait_a2j7n"]
 script = ExtResource("5_toejp")
@@ -117,33 +117,33 @@ custom_name = "IF :: Act is \"patrol\""
 children = [SubResource("BTCheckVar_a2j7n"), SubResource("BTConsolePrint_a2j7n"), SubResource("BTAction_n0aob"), SubResource("BTConsolePrint_4xbu7"), SubResource("BTWait_a2j7n")]
 
 [sub_resource type="BBVariant" id="BBVariant_a3q01"]
-type = 4
-saved_value = "trace"
 resource_name = "trace"
+saved_value = "trace"
+type = 4
 
 [sub_resource type="BTCheckVar" id="BTCheckVar_4xbu7"]
 variable = &"act"
 value = SubResource("BBVariant_a3q01")
 
 [sub_resource type="BTConsolePrint" id="BTConsolePrint_j0e0d"]
-text = "타겟을 발견함."
 _enabled = false
+text = "타겟을 발견함."
 
 [sub_resource type="BTAction" id="BTAction_j0e0d"]
 script = ExtResource("6_2clmh")
 
 [sub_resource type="BTConsolePrint" id="BTConsolePrint_5dfwp"]
-text = "타겟이 인식반경에서 벗어남."
 _enabled = false
+text = "타겟이 인식반경에서 벗어남."
 
 [sub_resource type="BTSequence" id="BTSequence_a2j7n"]
 custom_name = "IF:: Act is \"Trace\""
 children = [SubResource("BTCheckVar_4xbu7"), SubResource("BTConsolePrint_j0e0d"), SubResource("BTAction_j0e0d"), SubResource("BTConsolePrint_5dfwp")]
 
 [sub_resource type="BBVariant" id="BBVariant_w11yh"]
-type = 4
-saved_value = "move"
 resource_name = "move"
+saved_value = "move"
+type = 4
 
 [sub_resource type="BTCheckVar" id="BTCheckVar_1kauj"]
 variable = &"act"
@@ -271,6 +271,8 @@ type = 1
 anim_library = ExtResource("28_yeahc")
 library_name = &"fall"
 metadata/_custom_type_script = "uid://im1wyvflgwp0"
+
+[node name="Dead" type="LimboState" parent="StateMachine" unique_id=1839768077]
 
 [node name="#HurtState" type="LimboState" parent="StateMachine" unique_id=231535512]
 process_mode = 4

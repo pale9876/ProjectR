@@ -22,6 +22,7 @@ const EditorThemeUtils := Namespace.EditorThemeUtils
 const DynamicTable := Namespace.DynamicTable
 const RegistryCacheData := Namespace.YardEditorCache.RegistryCacheData
 
+
 const ACCELERATORS_WIN: Dictionary = {
 	EditMenuAction.DELETE_ENTRIES: KEY_MASK_CTRL | KEY_BACKSPACE,
 	EditMenuAction.CUT_CELL_VALUE: KEY_MASK_CTRL | KEY_X,
@@ -29,6 +30,7 @@ const ACCELERATORS_WIN: Dictionary = {
 	EditMenuAction.PASTE_TO_CELL: KEY_MASK_CTRL | KEY_V,
 	EditMenuAction.SELECT_ALL: KEY_MASK_CTRL | KEY_A,
 }
+
 
 const ACCELERATORS_MAC: Dictionary = {
 	EditMenuAction.DELETE_ENTRIES: KEY_MASK_META | KEY_BACKSPACE,
@@ -571,22 +573,30 @@ func _setup_add_entry() -> void:
 
 func _add_entry_from_picker(res: Resource, string_id: StringName) -> void:
 	var res_is_file := res.resource_path and ResourceLoader.exists(res.resource_path)
+	
 	if not res_is_file:
 		var current_dir := EditorInterface.get_current_path().get_base_dir()
 		var save_path := current_dir.path_join(str(string_id) + ".tres")
+		
 		if ResourceLoader.exists(save_path):
 			_print_fake_error("A file already exists at '%s'. Choose a different String ID or save the resource manually first." % save_path)
 			return
-		var save_status := ResourceSaver.save(res, save_path, ResourceSaver.FLAG_CHANGE_PATH)
+		
+		var save_status := ResourceSaver.save(
+			res, save_path, ResourceSaver.FLAG_CHANGE_PATH
+		)
+		
 		if save_status != OK:
 			_print_fake_error("Failed to save resource to '%s'." % save_path)
 			return
+		
 		EditorInterface.get_editor_toaster().push_toast("Resource saved to %s" % save_path)
 		res = load(save_path) # Required because of race condition shinenigans I guess
 
 	var uid := ResourceUID.path_to_uid(res.resource_path)
 
 	var adding_status := RegistryIO.add_entry(current_registry, uid, string_id)
+	
 	match adding_status:
 		OK:
 			if res_is_file:
@@ -777,4 +787,6 @@ func _on_add_entry_button_pressed() -> void:
 	if add_entry_button.disabled:
 		return
 
-	_add_entry_from_picker(_res_picker.edited_resource, StringName(entry_name_line_edit.text))
+	_add_entry_from_picker(
+		_res_picker.edited_resource, StringName(entry_name_line_edit.text)
+	)

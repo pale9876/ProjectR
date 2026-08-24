@@ -15,11 +15,6 @@ name = "Chimera"
 icon = SubResource("CompressedTexture2D_o27vl")
 portrait = SubResource("CompressedTexture2D_a36yq")
 description = "통상 모션과 호환되지만 전용 모션또한 이용 가능한 클래스이다. 해당 클래스를 선택할 수 있는 캐릭터는 제한적이며, 무기 또한 사용할 수 없다."
-stat = Dictionary[String, int]({
-"Aggressive": 4,
-"Defensive": -2,
-"Utility": -3
-})
 metadata/_custom_type_script = "uid://dl4wx13qp80c4"
 
 [resource]

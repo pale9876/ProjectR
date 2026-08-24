@@ -15,11 +15,6 @@ name = "Exorcist"
 icon = SubResource("CompressedTexture2D_iwmgf")
 portrait = SubResource("CompressedTexture2D_n3siq")
 description = "공격 모션 중이 아닐 때, 이동 시, 원거리 공격을 무력화하며 진입할 수 있다. 빠른 기동성을 자랑한다."
-stat = Dictionary[String, int]({
-"Aggressive": 3,
-"Defensive": 0,
-"Utility": 4
-})
 metadata/_custom_type_script = "uid://dl4wx13qp80c4"
 
 [resource]
