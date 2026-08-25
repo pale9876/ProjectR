@@ -8,7 +8,7 @@ addons/ziva_agent
 # Godot mono / .NET
 .mono/
 *.csproj.DotSettings.user
-bin/
+
 obj/
 
 # Builds / exports
@@ -29,3 +29,4 @@ rust_script/mini_game/target/debug/~mini_game.dll
 rust_script/mini_game/target/flycheck0/stderr
 rust_script/mini_game/target/flycheck0/stdout
 rust_script/mini_game/target/.rustc_info.json
+/rust_script/mini_game/bin

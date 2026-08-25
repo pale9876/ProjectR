@@ -26,7 +26,7 @@ enum RangeType {
 
 @export_group("Scene")
 @export var sprite_motion: PackedScene
-@export var state: PackedScene
+@export var target_state: PackedScene
 @export var substate: Array[PackedScene]
 @export var hitbox: PackedScene
 @export var library_name: StringName
@@ -35,9 +35,9 @@ enum RangeType {
 
 @export_group("Stat")
 @export var damage_base: int = 10
-@export var when_stand: BladeModuleStat
-@export var when_exposed: BladeModuleStat
-@export var when_downed: BladeModuleStat
+#@export var when_stand: BladeModuleStat
+#@export var when_exposed: BladeModuleStat
+#@export var when_downed: BladeModuleStat
 
 
 static func _create_motion(motion: BladeMotionFramed) -> Animation:
@@ -59,6 +59,20 @@ static func _create_motion(motion: BladeMotionFramed) -> Animation:
 
 func init_module(unit: Unit) -> void:
 	var motion_lib: MotionLibrary = unit.get_anim()
+	var hitbox_component: HitboxComponent = unit.get_hitbox_component()
+	var hsm: StateMachine = unit.get_state_machine()
+	
+	# Init State / SubStates
+	var state := target_state.instantiate() as DefaultUnitFormState
+	if !hsm.has_state(String(state.name)):
+		hsm.add_child(state)
+	
+	for _scene: PackedScene in substate:
+		var _substate := _scene.instantiate() as LimboSubState
+		if !state.has_substate(_substate.name):
+			state.add_child(_substate)
+	
+	# Init Motion
 	var anim_lib: AnimationLibrary = AnimationLibrary.new()
 	
 	for motion: BladeMotionFramed in motion_info:

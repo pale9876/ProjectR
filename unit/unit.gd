@@ -56,13 +56,8 @@ func get_awareness_area() -> Awareness:
 	return get_node(^"Awareness") as Awareness
 
 
-func get_state_machine() -> LimboHSM:
-	return get_node(^"StateMachine") as LimboHSM
-
-
 func get_btbb() -> Blackboard:
 	return get_bt().blackboard
-
 
 
 func get_hurtbox() -> Hurtbox:

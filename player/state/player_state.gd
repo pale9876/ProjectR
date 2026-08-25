@@ -3,7 +3,7 @@ class_name PlayerState
 
 
 # Import
-const StateMachine: Script = preload("uid://nmmtety5yvve")
+#const StateMachine: Script = preload("uid://nmmtety5yvve")
 
 
 # Conditions
@@ -14,8 +14,8 @@ const StateMachine: Script = preload("uid://nmmtety5yvve")
 
 
 ## get_root()를 통하여 찾음.
-func get_state(node_path: NodePath) -> PlayerState:
-	return get_state_machine().get_state(node_path)
+#func get_state(node_path: NodePath) -> PlayerState:
+	#return get_state_machine().get_state(node_path)
 
 
 func get_hsm() -> StateMachine:
@@ -98,7 +98,6 @@ func take_motion(_motion: Vector2, duration: float) -> void:
 	var _destination: Vector2 = collider.get_position()
 
 
-## 노드패스를 통해 찾음.
 func get_state_machine() -> StateMachine:
 	return get_parent() as StateMachine
 

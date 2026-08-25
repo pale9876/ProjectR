@@ -49,8 +49,8 @@ func get_sprite_component() -> SpriteComponent:
 	return get_node(^"SpriteComponent") as SpriteComponent
 
 
-func get_state_machine() -> LimboHSM:
-	return get_node(^"StateMachine")
+func get_state_machine() -> StateMachine:
+	return get_node(^"StateMachine") as StateMachine
 
 
 func get_sprite() -> AnimatedSprite2D:

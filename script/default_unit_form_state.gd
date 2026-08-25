@@ -44,6 +44,10 @@ var force_duration: int = 0:
 var _substate: LimboSubState
 
 
+func has_substate(state_name: String) -> bool:
+	return get_node_or_null(NodePath(state_name)) != null
+
+
 func _init() -> void:
 	anim_library = ANIM_LIB_PLACEHOLDER
 	library_name = &"placeholder"
@@ -96,8 +100,8 @@ func get_state(node_path: NodePath) -> LimboState:
 	return get_hsm().get_node(node_path) as LimboState
 
 
-func get_hsm() -> LimboHSM:
-	return get_parent() as LimboHSM
+func get_hsm() -> StateMachine:
+	return get_parent() as StateMachine
 
 
 func get_replicator() -> Replicator:

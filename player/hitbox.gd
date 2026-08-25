@@ -1,5 +1,6 @@
 # player/hitbox.gd
 @icon("uid://3njfw3qgjcnf")
+@tool
 extends Area2D
 class_name PlayerHitbox
 
@@ -21,10 +22,11 @@ func _init() -> void:
 
 
 func _enter_tree() -> void:
+	if Engine.is_editor_hint(): return
+	
 	area_shape_entered.connect(_entered)
 	
 	var player := get_player()
-	
 	player.state.face_changed.connect(_on_face_changed)
 
 
@@ -34,8 +36,9 @@ func _on_face_changed() -> void:
 
 
 func _exit_tree() -> void:
+	if Engine.is_editor_hint(): return
+	
 	area_shape_entered.disconnect(_entered)
-
 
 
 func _entered(_rid: RID, area: Area2D, area_idx: int, local_idx: int) -> void:

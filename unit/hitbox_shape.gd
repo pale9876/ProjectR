@@ -1,4 +1,5 @@
 @icon("uid://beciwjrmhkiw6")
+@tool
 extends CollisionShape2D
 class_name HitboxShape
 
@@ -11,6 +12,8 @@ var result: Array[HitResult] = []
 
 
 func _init() -> void:
+	if Engine.is_editor_hint(): return
+	
 	disabled = true
 	visible = false
 
@@ -18,6 +21,7 @@ func _init() -> void:
 func push_result(_result: HitResult) -> void:
 	if result.size() < hitbox_info.max_available_unit_hit_count:
 		result.push_back(_result)
+	pass
 
 
 func clear() -> void:

@@ -1,5 +1,6 @@
 # state_machine.gd
 extends LimboHSM
+class_name StateMachine
 
 
 # Import
@@ -13,43 +14,27 @@ const EV_REVERT: StringName = &"revert"
 
 
 @export var label: Label
-@export var input_postpone: int = 3
+#@export var input_postpone: int = 3
 
 
-var locked_frame: int = 0:
-	set(value):
-		locked_frame = maxi(value, 0)
+#var locked_frame: int = 0:
+	#set(value):
+		#locked_frame = maxi(value, 0)
 
 
-# input_arr : ev_name
-var input_map: Dictionary[PlayerState.Type, Dictionary] = {
-	# Dictionary[PlayerState.Type, Dictionary[PackedStringArray, StringName]]
-	PlayerState.IDLE : {
-		
-	},
-	PlayerState.JUMP : {
-		
-	},
-}
-
-
-func type_has_input_action(type: PlayerState.Type, input_act: PackedStringArray) -> bool:
-	return input_map[type].has(input_act)
-
-
-func type_set_action(
-	type: PlayerState.Type,
-	input_act: PackedStringArray,
-	_state: LimboState,
-	ev: StringName,
-	_guard: Callable
-) -> void:
-	if ev.is_empty():
-		printerr("%s => 이벤트 이름이 비어 있습니다." % [_state.name])
-		return
-	
-	input_map[type][input_act] = ev
-	add_transition(ANYSTATE, _state, ev, _guard)
+#func type_set_action(
+	#type: PlayerState.Type,
+	#input_act: PackedStringArray,
+	#_state: LimboState,
+	#ev: StringName,
+	#_guard: Callable
+#) -> void:
+	#if ev.is_empty():
+		#printerr("%s => 이벤트 이름이 비어 있습니다." % [_state.name])
+		#return
+	#
+	#input_map[type][input_act] = ev
+	#add_transition(ANYSTATE, _state, ev, _guard)
 
 
 
@@ -80,25 +65,12 @@ func get_states_from_category(category_path: NodePath) -> Array[LimboState]:
 
 
 func _physics_process(_delta: float) -> void:
-	var state: PlayerState.Type = get_current_type()
-	var input_cached := InputState.get_cached()
-	
-	if ("attack" in input_cached) or ("kick" in input_cached):
-		if input_map[state].has(input_cached):
-			dispatch(input_map[state][input_cached])
-			#print("Dispatch => ", input_map[state][input_cache])
-		InputState.clear()
-		return
+	pass
 
-	if input_map[state].has(input_cached):
-		dispatch(input_map[state][input_cached])
-		InputState.clear()
-		return
 
-	var active_states := get_active_states()
-	for active: PlayerActive in active_states:
-		if !active.cooldowned():
-			active.tick()
+func has_state(node_path: String) -> bool:
+	return get_node_or_null(node_path) != null
+
 
 
 func get_current_type() -> PlayerState.Type:
@@ -130,20 +102,6 @@ func get_player() -> Player:
 func get_state(state_name: NodePath) -> PlayerState:
 	return get_node(state_name) as PlayerState
 
-
-func get_action_input_map_list() -> PackedStringArray:
-	return input_map.keys()
-
-
-func inputmap_clear() -> void:
-	input_map = {
-		PlayerState.IDLE : {
-			# PackedStringArray() : StringName(ev_name)
-		},
-		PlayerState.JUMP : {
-			# PackedStringArray() : StringName(ev_name)
-		},
-	}
 
 
 func revert() -> bool:

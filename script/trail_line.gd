@@ -2,7 +2,8 @@
 extends Path2D
 
 
-@export var line: Line2D
+func get_line() -> Line2D:
+	return get_node(^"Line2D") as Line2D
 
 
 @export_tool_button("Insert Path Points", "AnimationPlayer")
@@ -64,14 +65,20 @@ func _init() -> void:
 
 func _ready() -> void:
 	_update()
-	get_anim().play(&"wag")
+	_play(&"wag")
+
+
+func _play(anim_name: StringName) -> void:
+	var anim: AnimationPlayer = get_anim()
+	if anim.has_animation(anim_name):
+		anim.play(anim_name)
+
 
 
 func _update() -> void:
 	var points: PackedVector2Array = curve.tessellate(4)
 	
-	if line:
-		line.points = points
+	get_line().points = points
 
 
 func get_anim() -> AnimationPlayer:

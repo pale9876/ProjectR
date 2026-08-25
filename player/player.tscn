@@ -76,7 +76,7 @@ size = Vector2(50, 81)
 
 [sub_resource type="Curve2D" id="Curve2D_p036d"]
 _data = {
-"points": PackedVector2Array(-21.795643, -7.237314, 21.795643, 7.237314, 0, -56, 5.7179327, 12.941523, -5.7179327, -12.941523, 24, -64, 13.169615, 1.454536, -13.169615, -1.454536, 0, -80)
+"points": PackedVector2Array(6.643985, 12.462168, -6.643985, -12.462168, 0, -56, -13.601753, -1.047569, 13.601753, 1.047569, 0, -80, -9.116758, -9.965306, 9.116758, 9.965306, 32, -64)
 }
 point_count = 3
 
@@ -384,7 +384,7 @@ script = ExtResource("9_n0b8q")
 line = NodePath("Line2D")
 
 [node name="Line2D" type="Line2D" parent="Tail" unique_id=1324528242]
-points = PackedVector2Array(0, -56, 7.523508, -53.735046, 13.749121, -52.376858, 16.376072, -52.041878, 18.679571, -51.938477, 20.659964, -52.068283, 21.529102, -52.221153, 22.317593, -52.432938, 23.025473, -52.703842, 23.652792, -53.034058, 24.199593, -53.42381, 24.665913, -53.873283, 25.051798, -54.38269, 25.357288, -54.952236, 25.582432, -55.58212, 25.727264, -56.272545, 25.791836, -57.023727, 25.776184, -57.835854, 25.680351, -58.709137, 25.504383, -59.643776, 24.912209, -61.69795, 24, -64, 21.867237, -68.34347, 19.689724, -71.75516, 18.552462, -73.15255, 17.365944, -74.36617, 16.11748, -75.4124, 14.79438, -76.30762, 13.383957, -77.06823, 11.87352, -77.71062, 8.501846, -78.70627, 0, -80)
+points = PackedVector2Array(0, -56, -4.7156777, -65.15479, -6.50612, -69.346504, -7.152475, -71.275406, -7.5921516, -73.06615, -7.724931, -73.90341, -7.794574, -74.69858, -7.7972584, -75.44912, -7.729165, -76.15253, -7.586469, -76.80628, -7.365349, -77.40787, -7.0619836, -77.95476, -6.67255, -78.444435, -6.193227, -78.87439, -5.6201916, -79.24208, -4.949623, -79.54501, -4.177698, -79.780655, -3.3005955, -79.9465, -2.314493, -80.040016, 0, -80, 4.9062614, -79.42047, 9.456196, -78.459435, 13.6985, -77.10471, 17.681873, -75.344154, 21.455013, -73.16557, 25.066614, -70.5568, 28.565376, -67.50567, 32, -64)
 width = 5.25
 width_curve = SubResource("Curve_p036d")
 gradient = SubResource("Gradient_6wior")
@@ -683,7 +683,6 @@ script = ExtResource("9_55jnj")
 blackboard_plan = SubResource("BlackboardPlan_sweqy")
 script = ExtResource("3_2ieo8")
 label = NodePath("../StateLabel")
-input_postpone = 6
 
 [node name="#Default" type="LimboState" parent="StateMachine" unique_id=1422560660]
 process_mode = 4
@@ -836,6 +835,7 @@ visible = false
 script = ExtResource("22_uw77l")
 
 [node name="PunchCombo" type="Area2D" parent="HitboxComponent" unique_id=776727955]
+visible = false
 collision_layer = 0
 collision_mask = 2
 input_pickable = false
@@ -876,6 +876,7 @@ hitbox_info = SubResource("Resource_wqsic")
 metadata/_custom_type_script = "uid://d2ox33o3w3u0r"
 
 [node name="SlideHitbox" parent="HitboxComponent" unique_id=227710391 instance=ExtResource("20_x7c3f")]
+visible = false
 collision_layer = 0
 collision_mask = 2
 input_pickable = false
@@ -885,13 +886,14 @@ monitorable = false
 hitbox_info = SubResource("Resource_pbsf6")
 
 [node name="ChargingCounter" type="Area2D" parent="HitboxComponent" unique_id=1232055323]
+visible = false
 collision_layer = 0
 collision_mask = 2
 monitorable = false
 script = ExtResource("21_bjvpn")
 metadata/_custom_type_script = "uid://0dw4edo0eshv"
 
-[node name="CollisionShape2D" type="CollisionShape2D" parent="HitboxComponent/ChargingCounter" unique_id=525022277]
+[node name="HitPolygon" type="CollisionShape2D" parent="HitboxComponent/ChargingCounter" unique_id=525022277]
 visible = false
 shape = SubResource("ConvexPolygonShape2D_6wior")
 disabled = true
@@ -914,6 +916,7 @@ script = ExtResource("36_ge24q")
 [node name="GrabPoint" type="Marker2D" parent="HitboxComponent/PoundGrab" unique_id=1471553841]
 
 [node name="Blowkick" type="Area2D" parent="HitboxComponent" unique_id=2122655193]
+visible = false
 collision_layer = 0
 collision_mask = 2
 monitorable = false
@@ -930,7 +933,10 @@ metadata/_custom_type_script = "uid://d2ox33o3w3u0r"
 
 [node name="JumpHammer" type="Area2D" parent="HitboxComponent" unique_id=276204299]
 visible = false
+collision_layer = 0
+collision_mask = 2
 input_pickable = false
+monitorable = false
 script = ExtResource("21_bjvpn")
 metadata/_custom_type_script = "uid://0dw4edo0eshv"
 
@@ -944,6 +950,9 @@ metadata/_custom_type_script = "uid://d2ox33o3w3u0r"
 
 [node name="PlayerHitbox" type="Area2D" parent="HitboxComponent" unique_id=2021337172]
 visible = false
+collision_layer = 0
+collision_mask = 2
+monitorable = false
 script = ExtResource("21_bjvpn")
 metadata/_custom_type_script = "uid://0dw4edo0eshv"
 
@@ -957,6 +966,10 @@ hitbox_info = SubResource("Resource_ch6w5")
 metadata/_custom_type_script = "uid://d2ox33o3w3u0r"
 
 [node name="BrutalSlicer" type="Area2D" parent="HitboxComponent" unique_id=1198123673]
+visible = false
+collision_layer = 0
+collision_mask = 2
+monitorable = false
 script = ExtResource("21_bjvpn")
 metadata/_custom_type_script = "uid://0dw4edo0eshv"
 
