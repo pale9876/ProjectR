@@ -9,5 +9,5 @@ unique = true
 cannot_terminate = true
 race = 5
 nation = 2
-chara_class = 14
+chara_class = 15
 metadata/_custom_type_script = "uid://c3ykemf4n3om1"

@@ -76,7 +76,7 @@ size = Vector2(50, 81)
 
 [sub_resource type="Curve2D" id="Curve2D_p036d"]
 _data = {
-"points": PackedVector2Array(-9.177864, -13.546204, 9.177864, 13.546204, 0, -56, -9.703796, 6.983127, 9.703796, -6.983127, 32, -48, 13.169615, 1.454536, -13.169615, -1.454536, 24, -72)
+"points": PackedVector2Array(-21.795643, -7.237314, 21.795643, 7.237314, 0, -56, 5.7179327, 12.941523, -5.7179327, -12.941523, 24, -64, 13.169615, 1.454536, -13.169615, -1.454536, 0, -80)
 }
 point_count = 3
 
@@ -227,76 +227,10 @@ size_override = Vector2(256, 256)
 
 [sub_resource type="Animation" id="Animation_7crtr"]
 length = 0.001
-tracks/0/type = "value"
-tracks/0/imported = false
-tracks/0/enabled = true
-tracks/0/path = NodePath("SpriteComponent:current")
-tracks/0/interp = 1
-tracks/0/loop_wrap = true
-tracks/0/keys = {
-"times": PackedFloat32Array(0),
-"transitions": PackedFloat32Array(1),
-"update": 1,
-"values": [NodePath("Idle")]
-}
-
-[sub_resource type="Animation" id="Animation_wpyo2"]
-resource_name = "idle"
-length = 0.267201663133502
-step = 0.0167
-tracks/0/type = "value"
-tracks/0/imported = false
-tracks/0/enabled = true
-tracks/0/path = NodePath("SpriteComponent:current")
-tracks/0/interp = 1
-tracks/0/loop_wrap = true
-tracks/0/keys = {
-"times": PackedFloat32Array(0),
-"transitions": PackedFloat32Array(1),
-"update": 1,
-"values": [NodePath("Idle")]
-}
-
-[sub_resource type="Animation" id="Animation_jbx34"]
-resource_name = "jump"
-step = 0.0167
-tracks/0/type = "value"
-tracks/0/imported = false
-tracks/0/enabled = true
-tracks/0/path = NodePath("SpriteComponent:current")
-tracks/0/interp = 1
-tracks/0/loop_wrap = true
-tracks/0/keys = {
-"times": PackedFloat32Array(0),
-"transitions": PackedFloat32Array(1),
-"update": 1,
-"values": [NodePath("Move")]
-}
-
-[sub_resource type="Animation" id="Animation_vgvch"]
-resource_name = "move"
-length = 0.5344016562670469
-loop_mode = 1
-step = 0.0167
-tracks/0/type = "value"
-tracks/0/imported = false
-tracks/0/enabled = true
-tracks/0/path = NodePath("SpriteComponent:current")
-tracks/0/interp = 1
-tracks/0/loop_wrap = true
-tracks/0/keys = {
-"times": PackedFloat32Array(0),
-"transitions": PackedFloat32Array(1),
-"update": 1,
-"values": [NodePath("Move")]
-}
 
 [sub_resource type="AnimationLibrary" id="AnimationLibrary_7crtr"]
 _data = {
-&"RESET": SubResource("Animation_7crtr"),
-&"idle": SubResource("Animation_wpyo2"),
-&"jump": SubResource("Animation_jbx34"),
-&"move": SubResource("Animation_vgvch")
+&"RESET": SubResource("Animation_7crtr")
 }
 
 [sub_resource type="BlackboardPlan" id="BlackboardPlan_sweqy"]
@@ -450,7 +384,7 @@ script = ExtResource("9_n0b8q")
 line = NodePath("Line2D")
 
 [node name="Line2D" type="Line2D" parent="Tail" unique_id=1324528242]
-points = PackedVector2Array(0, -56, 1.7652314, -53.601093, 3.6120434, -51.480587, 5.5296626, -49.63309, 7.507315, -48.053192, 9.534226, -46.73549, 11.599623, -45.674576, 13.692731, -44.865047, 15.802775, -44.3015, 17.918983, -43.978535, 20.030582, -43.89074, 22.126793, -44.032715, 24.196848, -44.39906, 26.229969, -44.98436, 28.215385, -45.783222, 30.142319, -46.790237, 32, -48, 32.868187, -48.67911, 33.653976, -49.404335, 34.35839, -50.17152, 34.98246, -50.976513, 35.527206, -51.815155, 35.993652, -52.6833, 36.38283, -53.576786, 36.695766, -54.491463, 36.933483, -55.423176, 37.097004, -56.36777, 37.18736, -57.32109, 37.205574, -58.27899, 37.15267, -59.237305, 37.02968, -60.191883, 36.837624, -61.138573, 36.57753, -62.07322, 36.250427, -62.991673, 35.857334, -63.88977, 35.399284, -64.76337, 34.877296, -65.60831, 34.292404, -66.420425, 33.645626, -67.19559, 32.937992, -67.92961, 32.17053, -68.61837, 31.34426, -69.2577, 30.46021, -69.84344, 29.519407, -70.371445, 28.522877, -70.837555, 27.471645, -71.237625, 26.36674, -71.56749, 25.20918, -71.823, 24, -72)
+points = PackedVector2Array(0, -56, 7.523508, -53.735046, 13.749121, -52.376858, 16.376072, -52.041878, 18.679571, -51.938477, 20.659964, -52.068283, 21.529102, -52.221153, 22.317593, -52.432938, 23.025473, -52.703842, 23.652792, -53.034058, 24.199593, -53.42381, 24.665913, -53.873283, 25.051798, -54.38269, 25.357288, -54.952236, 25.582432, -55.58212, 25.727264, -56.272545, 25.791836, -57.023727, 25.776184, -57.835854, 25.680351, -58.709137, 25.504383, -59.643776, 24.912209, -61.69795, 24, -64, 21.867237, -68.34347, 19.689724, -71.75516, 18.552462, -73.15255, 17.365944, -74.36617, 16.11748, -75.4124, 14.79438, -76.30762, 13.383957, -77.06823, 11.87352, -77.71062, 8.501846, -78.70627, 0, -80)
 width = 5.25
 width_curve = SubResource("Curve_p036d")
 gradient = SubResource("Gradient_6wior")

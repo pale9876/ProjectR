@@ -8,5 +8,5 @@ is_replicant = false
 unique = true
 race = 3
 nation = 3
-chara_class = 14
+chara_class = 15
 metadata/_custom_type_script = "uid://c3ykemf4n3om1"

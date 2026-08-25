@@ -6,7 +6,7 @@
 script = ExtResource("1_5imp6")
 is_replicant = false
 unique = true
-chara_class = 14
+chara_class = 15
 last_name = &"Hon-gi"
 first_name = &"Ju"
 metadata/_custom_type_script = "uid://c3ykemf4n3om1"

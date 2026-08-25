@@ -6,5 +6,5 @@
 script = ExtResource("1_hhild")
 is_replicant = false
 unique = true
-chara_class = 14
+chara_class = 15
 metadata/_custom_type_script = "uid://c3ykemf4n3om1"

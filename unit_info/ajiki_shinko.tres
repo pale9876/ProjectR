@@ -6,7 +6,7 @@
 script = ExtResource("1_yjdyy")
 race = 3
 nation = 3
-chara_class = 15
+chara_class = 16
 last_name = &"Ajiki"
 first_name = &"Shinko"
 metadata/_custom_type_script = "uid://c3ykemf4n3om1"

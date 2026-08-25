@@ -1,0 +1,15 @@
+[gd_resource type="Resource" script_class="Registry" format=3 uid="uid://ct0y2qk7cl5l1"]
+
+[ext_resource type="Script" uid="uid://dqtv77mng5dyh" path="res://addons/yard/registry.gd" id="1_oajvv"]
+
+[resource]
+script = ExtResource("1_oajvv")
+_version = 2
+_scan_rulesets = Array[Dictionary]([{
+&"allowed_file_extensions": Array[String]([".res"]),
+&"class_restrictions": Array[StringName]([&"\"res://script/resource/blade_module_info.gd\""]),
+&"recursive_scan": false,
+&"scan_directories": Array[String](["res://blade"]),
+&"scan_regex_exclude": "",
+&"scan_regex_include": ""
+}])

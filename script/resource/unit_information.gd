@@ -38,6 +38,7 @@ enum CharacterClass {
 	TRICKSTER,
 	PUPPETEER,
 	EXORCIST,
+	TWIN,
 	
 	# NPC
 	OFFICER, # 인사 및 사무부
@@ -51,6 +52,8 @@ enum CharacterClass {
 	
 	CIVILIAN, # 민간인
 	SUBJECT, # 피실험자
+	
+	CUSTOM, # 사용자 정의
 }
 
 

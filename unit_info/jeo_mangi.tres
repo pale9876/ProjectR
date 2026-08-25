@@ -5,7 +5,7 @@
 [resource]
 script = ExtResource("1_l6ksg")
 race = 4
-chara_class = 15
+chara_class = 16
 last_name = &"Man-gi"
 first_name = &"Jeo"
 metadata/_custom_type_script = "uid://c3ykemf4n3om1"
