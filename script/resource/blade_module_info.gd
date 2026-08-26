@@ -34,7 +34,7 @@ enum RangeType {
 
 
 @export_group("Stat")
-@export var damage_base: int = 10
+
 #@export var when_stand: BladeModuleStat
 #@export var when_exposed: BladeModuleStat
 #@export var when_downed: BladeModuleStat
