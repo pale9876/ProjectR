@@ -121,9 +121,13 @@ size = Vector2(45, 20)
 
 [sub_resource type="Resource" id="Resource_jbx34"]
 script = ExtResource("52_vgvch")
+aftermath = null
+stun_frame = null
 
 [sub_resource type="Resource" id="Resource_s3g0c"]
 script = ExtResource("52_vgvch")
+aftermath = null
+stun_frame = null
 
 [sub_resource type="Resource" id="Resource_2ieo8"]
 script = ExtResource("23_s7qer")
@@ -138,9 +142,13 @@ size = Vector2(60, 20)
 
 [sub_resource type="Resource" id="Resource_35wys"]
 script = ExtResource("52_vgvch")
+aftermath = null
+stun_frame = null
 
 [sub_resource type="Resource" id="Resource_pjwc4"]
 script = ExtResource("52_vgvch")
+aftermath = null
+stun_frame = null
 
 [sub_resource type="Resource" id="Resource_yllr7"]
 script = ExtResource("23_s7qer")
@@ -155,9 +163,13 @@ size = Vector2(40, 70)
 
 [sub_resource type="Resource" id="Resource_or4qq"]
 script = ExtResource("52_vgvch")
+aftermath = null
+stun_frame = null
 
 [sub_resource type="Resource" id="Resource_hggc2"]
 script = ExtResource("52_vgvch")
+aftermath = null
+stun_frame = null
 
 [sub_resource type="Resource" id="Resource_kb6p2"]
 script = ExtResource("23_s7qer")
@@ -172,9 +184,13 @@ size = Vector2(47, 48)
 
 [sub_resource type="Resource" id="Resource_b2j0d"]
 script = ExtResource("52_vgvch")
+aftermath = null
+stun_frame = null
 
 [sub_resource type="Resource" id="Resource_7l6ig"]
 script = ExtResource("52_vgvch")
+aftermath = null
+stun_frame = null
 
 [sub_resource type="Resource" id="Resource_wqsic"]
 script = ExtResource("23_s7qer")
@@ -186,9 +202,13 @@ metadata/_custom_type_script = "uid://xw07ofvvtrxk"
 
 [sub_resource type="Resource" id="Resource_j3r50"]
 script = ExtResource("52_vgvch")
+aftermath = null
+stun_frame = null
 
 [sub_resource type="Resource" id="Resource_utr5e"]
 script = ExtResource("52_vgvch")
+aftermath = null
+stun_frame = null
 
 [sub_resource type="Resource" id="Resource_pbsf6"]
 script = ExtResource("23_s7qer")
@@ -210,9 +230,13 @@ height = 132.0
 
 [sub_resource type="Resource" id="Resource_do7qw"]
 script = ExtResource("52_vgvch")
+aftermath = null
+stun_frame = null
 
 [sub_resource type="Resource" id="Resource_2h6tc"]
 script = ExtResource("52_vgvch")
+aftermath = null
+stun_frame = null
 
 [sub_resource type="Resource" id="Resource_7jywp"]
 script = ExtResource("23_s7qer")
@@ -227,9 +251,13 @@ size = Vector2(47, 67)
 
 [sub_resource type="Resource" id="Resource_8rogd"]
 script = ExtResource("52_vgvch")
+aftermath = null
+stun_frame = null
 
 [sub_resource type="Resource" id="Resource_48p26"]
 script = ExtResource("52_vgvch")
+aftermath = null
+stun_frame = null
 
 [sub_resource type="Resource" id="Resource_greoi"]
 script = ExtResource("23_s7qer")
@@ -244,9 +272,13 @@ size = Vector2(44, 63)
 
 [sub_resource type="Resource" id="Resource_anp34"]
 script = ExtResource("52_vgvch")
+aftermath = null
+stun_frame = null
 
 [sub_resource type="Resource" id="Resource_jdjat"]
 script = ExtResource("52_vgvch")
+aftermath = null
+stun_frame = null
 
 [sub_resource type="Resource" id="Resource_ch6w5"]
 script = ExtResource("23_s7qer")
@@ -261,9 +293,13 @@ size = Vector2(66, 56)
 
 [sub_resource type="Resource" id="Resource_j420s"]
 script = ExtResource("52_vgvch")
+aftermath = null
+stun_frame = null
 
 [sub_resource type="Resource" id="Resource_kcq4v"]
 script = ExtResource("52_vgvch")
+aftermath = null
+stun_frame = null
 
 [sub_resource type="Resource" id="Resource_p5tca"]
 script = ExtResource("23_s7qer")
