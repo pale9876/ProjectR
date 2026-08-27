@@ -2,9 +2,15 @@ extends Resource
 class_name BladeModuleStat
 
 
+enum DamageType {
+	NONE,
+	HAMMER,
+	EXPLOSIVE,
+	SLASH,
+}
 
 
-
+@export var type: DamageType = DamageType
 @export_range(0., 1., .01) var damage_ratio: float = 1.
 
 @export_enum(

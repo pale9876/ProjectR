@@ -5,12 +5,11 @@ class_name HitboxShape
 
 
 
-@export var hitbox_info: HitboxInformation
-
-
+@export var blade_stat: BladeModuleStat
 
 
 var result: Array[HitResult] = []
+
 
 
 func _init() -> void:

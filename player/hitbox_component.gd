@@ -8,13 +8,6 @@ func _enter_tree() -> void:
 	set_owner(get_parent())
 
 
-func get_player_hitbox(node_path: NodePath) -> PlayerHitbox:
-	return get_node(node_path) as PlayerHitbox
-
-
-func get_unit_hitbox(node_path: NodePath) -> Area2D:
-	return get_node(node_path) as Area2D
-
 
 func has_projectile() -> void:
 	pass
@@ -22,7 +15,7 @@ func has_projectile() -> void:
 
 func has_hitbox(node_path: NodePath) -> bool:
 	var node := get_node(node_path)
-	if node is PlayerHitbox:
+	if node is Hitbox:
 		return true
 	
 	return false
@@ -47,3 +40,11 @@ func is_hit(hitbox_name: StringName, hitbox_shape_name: StringName) -> bool:
 
 func add_hitbox(hitbox: Node2D) -> void:
 	add_child(hitbox)
+
+
+func get_player_hitbox(node_path: NodePath) -> Hitbox:
+	return get_node(node_path) as Hitbox
+
+
+func get_unit_hitbox(node_path: NodePath) -> Area2D:
+	return get_node(node_path) as Area2D

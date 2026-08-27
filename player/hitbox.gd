@@ -2,7 +2,7 @@
 @icon("uid://3njfw3qgjcnf")
 @tool
 extends Area2D
-class_name PlayerHitbox
+class_name Hitbox
 
 
 # Import
