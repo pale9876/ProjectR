@@ -5,8 +5,7 @@ extends Control
 # Import
 const TimeLine: Script = preload("uid://vid40exokkq0")
 
-@onready var v_box_container: VBoxContainer = %VBoxContainer2
-
+#@onready var v_box_container: VBoxContainer = %VBoxContainer2
 
 var cursor: int = 0
 
@@ -18,8 +17,8 @@ func _draw() -> void:
 	var cursor_point_x := float(cursor * separate)
 	
 	draw_line(
-		Vector2(cursor_point_x, 0.), # From
-		Vector2(cursor_point_x, v_box_container.size.y),
+		Vector2(get_timeline().panel_offset.x, 0.) + Vector2(cursor_point_x, 0.), # From
+		Vector2(get_timeline().panel_offset.x, 0.) + Vector2(cursor_point_x, get_timeline().size.y),
 		Color.WHITE,
 		2.
 	)

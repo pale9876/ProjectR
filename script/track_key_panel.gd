@@ -1,15 +1,26 @@
 # track_key_panel.gd
-extends Panel
+@icon("res://icon/ui/components/icon-comp-key-ui.svg")
+extends Control
 
 
-func set_track_label(track_name: String) -> void:
-	get_label().text = track_name
+const TimeLine: Script = preload("uid://vid40exokkq0")
+const TrackKeyButton = preload("uid://t7pfrr7gggfn")
 
 
-func add_key(cursor: float, value: Variant) -> void:
-	
-	Vector2(cursor, size.y / 2.)
+@onready var timeline: TimeLine = %Timeline
 
 
-func get_label() -> Label:
-	return get_node(^"Label") as Label
+func insert_key(frame: int) -> void:
+	var key_point: Vector2 = Vector2(timeline.frame_get_distance(frame), position.y + size.y - 16.)
+	var key_btn := TrackKeyButton.new()
+	key_btn.position = key_point
+	add_child(key_btn)
+	pass
+
+
+func move_frame_point(point: int, to: int) -> void:
+	pass
+
+
+func get_key() -> void:
+	pass
