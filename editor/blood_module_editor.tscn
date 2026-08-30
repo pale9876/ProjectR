@@ -16,7 +16,6 @@
 [ext_resource type="Script" uid="uid://ddx7b05flbdmm" path="res://script/resource/blade_module_stat.gd" id="10_2shv3"]
 [ext_resource type="Script" uid="uid://ckmkljsue5f87" path="res://script/hitbox_tab.gd" id="12_2shv3"]
 [ext_resource type="Script" uid="uid://ye44dw01m5gd" path="res://script/karada_module_scene_loader.gd" id="12_sxy11"]
-[ext_resource type="Script" uid="uid://t7pfrr7gggfn" path="res://script/track_key_button.gd" id="16_2shv3"]
 
 [sub_resource type="RectangleShape2D" id="RectangleShape2D_mk808"]
 size = Vector2(38, 92)
@@ -41,6 +40,21 @@ font_size = 12
 [sub_resource type="StyleBoxFlat" id="StyleBoxFlat_jxkv5"]
 bg_color = Color(0.21230483, 0.21230483, 0.21230483, 0.31764707)
 
+[sub_resource type="Animation" id="Animation_kk2cp"]
+length = 0.001
+tracks/0/type = "value"
+tracks/0/imported = false
+tracks/0/enabled = true
+tracks/0/path = NodePath("BloodModuleEditor/Panel/MarginContainer/VBoxContainer/HSplitContainer/PreviewPanel/MarginContainer/SubViewportContainer/SubViewport/TargetGrid/Sprite/KaradaTemplate:direction")
+tracks/0/interp = 1
+tracks/0/loop_wrap = true
+tracks/0/keys = {
+"times": PackedFloat32Array(0),
+"transitions": PackedFloat32Array(1),
+"update": 1,
+"values": [1]
+}
+
 [sub_resource type="Animation" id="Animation_mk808"]
 resource_name = "example"
 length = 4.008001567003131
@@ -52,14 +66,15 @@ tracks/0/path = NodePath("BloodModuleEditor/Panel/MarginContainer/VBoxContainer/
 tracks/0/interp = 1
 tracks/0/loop_wrap = true
 tracks/0/keys = {
-"times": PackedFloat32Array(),
-"transitions": PackedFloat32Array(),
+"times": PackedFloat32Array(1.0666667),
+"transitions": PackedFloat32Array(1),
 "update": 1,
-"values": []
+"values": [1]
 }
 
 [sub_resource type="AnimationLibrary" id="AnimationLibrary_2shv3"]
 _data = {
+&"RESET": SubResource("Animation_kk2cp"),
 &"example": SubResource("Animation_mk808")
 }
 
@@ -433,21 +448,17 @@ grow_horizontal = 2
 grow_vertical = 2
 theme_override_styles/panel = SubResource("StyleBoxFlat_jxkv5")
 
-[node name="ScrollContainer" type="ScrollContainer" parent="BloodModuleEditor/Panel/MarginContainer/VBoxContainer/MarginContainer/TrackPanel/Panel" unique_id=1638685228]
-clip_contents = false
+[node name="VBoxContainer" type="VBoxContainer" parent="BloodModuleEditor/Panel/MarginContainer/VBoxContainer/MarginContainer/TrackPanel/Panel" unique_id=122092764]
 layout_mode = 1
 anchors_preset = 15
 anchor_right = 1.0
 anchor_bottom = 1.0
 grow_horizontal = 2
 grow_vertical = 2
-size_flags_vertical = 3
-horizontal_scroll_mode = 2
-vertical_scroll_mode = 2
 
-[node name="Timeline" type="Control" parent="BloodModuleEditor/Panel/MarginContainer/VBoxContainer/MarginContainer/TrackPanel/Panel/ScrollContainer" unique_id=598407361]
+[node name="Timeline" type="Control" parent="BloodModuleEditor/Panel/MarginContainer/VBoxContainer/MarginContainer/TrackPanel/Panel/VBoxContainer" unique_id=598407361]
 unique_name_in_owner = true
-custom_minimum_size = Vector2(5760, 320)
+custom_minimum_size = Vector2(5888, 0)
 layout_mode = 2
 size_flags_horizontal = 3
 size_flags_vertical = 3
@@ -455,23 +466,16 @@ mouse_filter = 1
 script = ExtResource("4_7tqod")
 panel_offset = Vector2(128, 32)
 
-[node name="Cursor" type="Control" parent="BloodModuleEditor/Panel/MarginContainer/VBoxContainer/MarginContainer/TrackPanel/Panel/ScrollContainer/Timeline" unique_id=483017389]
+[node name="Cursor" type="Control" parent="BloodModuleEditor/Panel/MarginContainer/VBoxContainer/MarginContainer/TrackPanel/Panel/VBoxContainer/Timeline" unique_id=483017389]
 layout_mode = 1
 anchors_preset = 15
 anchor_right = 1.0
 anchor_bottom = 1.0
+offset_bottom = -293.0
 grow_horizontal = 2
 grow_vertical = 2
 mouse_filter = 1
 script = ExtResource("5_cgtgf")
-
-[node name="TrackKey" type="Control" parent="BloodModuleEditor/Panel/MarginContainer/VBoxContainer/MarginContainer/TrackPanel/Panel/ScrollContainer/Timeline" unique_id=23726359]
-anchors_preset = 0
-offset_left = 265.0
-offset_top = 31.0
-offset_right = 273.0
-offset_bottom = 39.0
-script = ExtResource("16_2shv3")
 
 [node name="KaradaModuleSceneLoader" type="FileDialog" parent="." unique_id=1491051613]
 unique_name_in_owner = true
