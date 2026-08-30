@@ -15,14 +15,23 @@ enum PartsOrder
 }
 
 
-@export var ORDER_BY_PARTS: Dictionary[PartsOrder, PackedStringArray] = {}
-
+const ORDER_BY_PARTS: Dictionary[PartsOrder, Array] = {
+	PartsOrder.DEFAULT : [
+			"BackHairAccessory",
+			"BackHair",
+			"BodyBackRace",
+			"RightArm",
+			"Leg",
+			"Body",
+			"LeftArm",
+			"Head",
+	],
+}
 
 @export var order: PartsOrder = PartsOrder.DEFAULT:
 	set(type):
 		order = type
 		ordering_parts(order)
-
 
 @export_range(-1, 1, 2) var direction: int = 1:
 	set(val):
@@ -36,21 +45,8 @@ enum PartsOrder
 				elif node is DirectionSpriteModuler:
 					node.direction = direction
 			ordering_parts(order)
+@export_enum("NONE", "Left", "Right", "BOTH") var weapon_handle: String = "NONE"
 
-
-func _enter_tree() -> void:
-	ORDER_BY_PARTS = { # 우측기준
-		PartsOrder.DEFAULT : [
-			"BackHairAccessory",
-			"BackHair",
-			"BodyBackRace",
-			"RightArm",
-			"Leg",
-			"Body",
-			"LeftArm",
-			"Head",
-		],
-	}
 
 func _ready() -> void:
 	order = PartsOrder.DEFAULT

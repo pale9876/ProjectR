@@ -1,3 +1,5 @@
+# hurtbox.gd
+@tool
 extends Area2D
 class_name Hurtbox
 
@@ -61,16 +63,16 @@ func _init() -> void:
 
 
 func _enter_tree() -> void:
-	owner = get_parent() as Replicator
+	if is_editing(): return
+	
+	owner = get_parent()
 
 
 func _physics_process(_delta: float) -> void:
+	if is_editing(): return
+	
 	if invincible_frame > 0:
 		invincible_frame -= 1
-
-
-func get_unit() -> Replicator:
-	return get_parent() as Replicator
 
 
 func damaged(hitbox_info: HitboxInformation, hit_result: HitResult) -> void:
@@ -179,5 +181,9 @@ func check_collide(to: Node2D) -> bool:
 	
 	return true
 
+func get_unit() -> Replicator:
+	return get_parent() as Replicator
 
-	
+
+func is_editing() -> bool:
+	return ProjectSettings.get("global/EDITOR_MODE") as bool or Engine.is_editor_hint()

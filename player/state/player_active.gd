@@ -5,7 +5,7 @@ class_name PlayerActive
 @export var cooltime_frame: int = 8
 @export var just_frame: bool = false
 @export var hitbox_scene: PackedScene
-@export var hitbox: PlayerHitbox
+@export var hitbox: Hitbox
 
 
 var _punched: bool = false

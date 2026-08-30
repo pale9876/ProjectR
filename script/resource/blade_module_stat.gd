@@ -10,7 +10,7 @@ enum DamageType {
 }
 
 
-@export var type: DamageType = DamageType
+@export var type: DamageType = DamageType.NONE
 @export_range(0., 1., .01) var damage_ratio: float = 1.
 
 @export_enum(

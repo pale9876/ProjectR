@@ -45,9 +45,7 @@ size_override = Vector2(256, 256)
 
 [node name="Idle" type="Node2D" unique_id=1893632528]
 script = ExtResource("1_uojtt")
-ORDER_BY_PARTS = Dictionary[int, PackedStringArray]({
-0: PackedStringArray("BackHairAccessory", "BackHair", "BodyBackRace", "RightArm", "Leg", "Body", "LeftArm", "Head")
-})
+weapon_handle = "Left"
 
 [node name="BackHairAccessory" type="Node2D" parent="." unique_id=1731142679]
 script = ExtResource("2_dhccw")

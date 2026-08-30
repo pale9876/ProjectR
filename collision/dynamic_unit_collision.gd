@@ -3,6 +3,9 @@ extends CollisionShape2D
 class_name DynamicUnitCollision
 
 
+const DEFAULT_WIDTH_HEIGHT: Vector2i = Vector2(38, 92)
+
+
 @export var width: int = 38:
 	set(value):
 		width = maxi(0, snappedi(value, 2))

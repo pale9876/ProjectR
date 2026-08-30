@@ -1,4 +1,5 @@
-# blade_motion_frame
+# blade_motion_frame.gd
+@tool
 extends Resource
 class_name BladeMotionFrame
 
@@ -7,6 +8,7 @@ const TICK: float = 1. / 60.
 
 
 @export var name: String = "Idle"
+@export var motive: Animation
 @export var frame_length: int = 16
 @export var hit_hold_frame: int = 2
 @export var follow_up_command: Array[String] # 후속 커맨드
@@ -14,13 +16,15 @@ const TICK: float = 1. / 60.
 
 
 func parse() -> Animation:
-	var anim: Animation = Animation.new()
-	anim.length = motion.frame_length * TICK
+	if !motive:
+		motive = Animation.new()
+	#var anim: Animation = Animation.new()
+	#anim.length = motion.frame_length * TICK
 	
-	for trigger: BladeMotionTrigger in motion.trigger:
-		var _track: int = plant_trigger(anim, trigger)
+	for trigger: BladeMotionTrigger in trigger:
+		var _track: int = plant_trigger(motive, trigger)
 	
-	return anim
+	return motive
 
 
 func plant_trigger(anim: Animation, trigger: BladeMotionTrigger) -> int:

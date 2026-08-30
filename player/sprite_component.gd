@@ -12,8 +12,9 @@ const DirectionModuler: Script = preload("uid://dghhexdudu0xy")
 		current = node
 		#var node := get_node_or_null(path)
 		if node and node.is_inside_tree():
-			for _node in get_children():
-				_node.visible = node == _node
+			for child: Node in get_children():
+				if child is KaradaModule:
+					child.visible = node == child
 
 
 @export var offset: Vector2 = Vector2(0., -64.):

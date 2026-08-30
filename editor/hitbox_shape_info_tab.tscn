@@ -1,0 +1,86 @@
+[gd_scene format=3 uid="uid://cpcr2pgxmsphj"]
+
+[ext_resource type="Script" uid="uid://578fqg0vrxft" path="res://script/hitbox_shape_info_tab.gd" id="1_xjxxq"]
+
+[node name="HitboxShapeInfoTab" type="TabBar" unique_id=369080868]
+anchors_preset = 15
+anchor_right = 1.0
+anchor_bottom = 1.0
+grow_horizontal = 2
+grow_vertical = 2
+script = ExtResource("1_xjxxq")
+metadata/_tab_index = 1
+
+[node name="VBoxContainer" type="VBoxContainer" parent="." unique_id=1233701272]
+layout_mode = 1
+anchors_preset = 15
+anchor_right = 1.0
+anchor_bottom = 1.0
+grow_horizontal = 2
+grow_vertical = 2
+
+[node name="HitboxName" type="LineEdit" parent="VBoxContainer" unique_id=560271836]
+layout_mode = 2
+theme_override_font_sizes/font_size = 18
+placeholder_text = "Hitbox Name"
+
+[node name="VBoxContainer" type="VBoxContainer" parent="VBoxContainer" unique_id=1122922396]
+layout_mode = 2
+
+[node name="Label" type="Label" parent="VBoxContainer/VBoxContainer" unique_id=289771306]
+layout_mode = 2
+text = "Size"
+
+[node name="HBoxContainer" type="HBoxContainer" parent="VBoxContainer/VBoxContainer" unique_id=126839853]
+layout_mode = 2
+
+[node name="Label" type="Label" parent="VBoxContainer/VBoxContainer/HBoxContainer" unique_id=1862410726]
+layout_mode = 2
+text = "X => "
+
+[node name="SpinBox" type="SpinBox" parent="VBoxContainer/VBoxContainer/HBoxContainer" unique_id=423197882]
+layout_mode = 2
+
+[node name="HBoxContainer3" type="HBoxContainer" parent="VBoxContainer/VBoxContainer" unique_id=121957069]
+layout_mode = 2
+
+[node name="Label" type="Label" parent="VBoxContainer/VBoxContainer/HBoxContainer3" unique_id=1805922644]
+layout_mode = 2
+text = "Y => "
+
+[node name="SpinBox" type="SpinBox" parent="VBoxContainer/VBoxContainer/HBoxContainer3" unique_id=2081538567]
+layout_mode = 2
+
+[node name="VBoxContainer2" type="VBoxContainer" parent="VBoxContainer" unique_id=919624555]
+layout_mode = 2
+
+[node name="Label" type="Label" parent="VBoxContainer/VBoxContainer2" unique_id=1468921413]
+layout_mode = 2
+text = "Offset"
+
+[node name="HBoxContainer" type="HBoxContainer" parent="VBoxContainer/VBoxContainer2" unique_id=1807745679]
+layout_mode = 2
+
+[node name="Label" type="Label" parent="VBoxContainer/VBoxContainer2/HBoxContainer" unique_id=1277092166]
+layout_mode = 2
+text = "X => "
+
+[node name="SpinBox" type="SpinBox" parent="VBoxContainer/VBoxContainer2/HBoxContainer" unique_id=439814001]
+layout_mode = 2
+
+[node name="HBoxContainer3" type="HBoxContainer" parent="VBoxContainer/VBoxContainer2" unique_id=1259263273]
+layout_mode = 2
+
+[node name="Label" type="Label" parent="VBoxContainer/VBoxContainer2/HBoxContainer3" unique_id=2052263631]
+layout_mode = 2
+text = "Y => "
+
+[node name="SpinBox" type="SpinBox" parent="VBoxContainer/VBoxContainer2/HBoxContainer3" unique_id=925114818]
+layout_mode = 2
+
+[node name="HFlowContainer" type="HFlowContainer" parent="VBoxContainer" unique_id=158168920]
+layout_mode = 2
+
+[node name="Delete" type="Button" parent="VBoxContainer/HFlowContainer" unique_id=627635566]
+layout_mode = 2
+text = "Delete Hitbox"

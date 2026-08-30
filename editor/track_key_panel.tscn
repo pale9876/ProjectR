@@ -1,0 +1,51 @@
+[gd_scene format=3 uid="uid://c6apiqqsa270h"]
+
+[ext_resource type="Script" uid="uid://br0o21e6ceori" path="res://script/track_key_panel.gd" id="1_lfknj"]
+
+[sub_resource type="Gradient" id="Gradient_lfknj"]
+interpolation_mode = 1
+offsets = PackedFloat32Array(0, 0.63709676)
+colors = PackedColorArray(1, 1, 1, 1, 0, 0, 0, 0)
+
+[sub_resource type="GradientTexture2D" id="GradientTexture2D_wqsic"]
+gradient = SubResource("Gradient_lfknj")
+width = 8
+height = 8
+fill = 1
+fill_from = Vector2(0.5, 0.5)
+
+[node name="TrackKeyPanel" type="Panel" unique_id=1876991518]
+custom_minimum_size = Vector2(0, 32)
+offset_right = 96.0
+offset_bottom = 32.0
+mouse_filter = 2
+script = ExtResource("1_lfknj")
+
+[node name="Label" type="Label" parent="." unique_id=1660170224]
+layout_mode = 1
+anchors_preset = 14
+anchor_top = 0.5
+anchor_right = 1.0
+anchor_bottom = 0.5
+offset_top = -11.5
+offset_bottom = 11.5
+grow_horizontal = 2
+grow_vertical = 2
+text = "Track"
+vertical_alignment = 1
+text_overrun_behavior = 5
+
+[node name="TextureRect" type="TextureRect" parent="." unique_id=978636914]
+layout_mode = 1
+anchors_preset = 8
+anchor_left = 0.5
+anchor_top = 0.5
+anchor_right = 0.5
+anchor_bottom = 0.5
+offset_left = 1728.0
+offset_top = -4.0
+offset_right = 1736.0
+offset_bottom = 4.0
+grow_horizontal = 2
+grow_vertical = 2
+texture = SubResource("GradientTexture2D_wqsic")

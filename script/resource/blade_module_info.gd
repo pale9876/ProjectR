@@ -27,9 +27,9 @@ const TICK := BladeMotionFrame.TICK
 
 @export_group("Scene")
 @export var sprite_motion: PackedScene
+@export var hitbox: PackedScene
 @export var target_state: PackedScene
 @export var substate: Array[PackedScene]
-@export var hitbox: PackedScene
 #@export var library_name: StringName
 #@export var motion_info: Array[BladeMotionFrame] = []
 

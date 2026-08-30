@@ -22,7 +22,7 @@ func _init() -> void:
 
 
 func _enter_tree() -> void:
-	if Engine.is_editor_hint(): return
+	if is_editing(): return
 	
 	area_shape_entered.connect(_entered)
 	
@@ -116,3 +116,7 @@ func get_player() -> Player:
 
 func get_component() -> HitboxComponent:
 	return get_parent() as HitboxComponent
+
+
+func is_editing() -> bool:
+	return ProjectSettings.get("global/EDITOR_MODE") as bool or Engine.is_editor_hint()

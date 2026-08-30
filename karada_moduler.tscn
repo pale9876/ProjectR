@@ -6,7 +6,6 @@
 [ext_resource type="Texture2D" uid="uid://cmey6ycwwsbag" path="res://aseprite/asso_project/characters/noru/idle/left_arm2.png" id="4_mi1lx"]
 [ext_resource type="Texture2D" uid="uid://71c7mfxyhx7h" path="res://aseprite/asso_project/characters/noru/idle/left_side_tail.png" id="6_wu7io"]
 [ext_resource type="Texture2D" uid="uid://c1bbrfhxoapfw" path="res://aseprite/asso_project/characters/noru/idle/right_side_tail.png" id="7_y4ini"]
-[ext_resource type="Texture2D" uid="uid://dp845eh675c3m" path="res://aseprite/asso_project/characters/noru/idle/front_hair.png" id="8_dr57r"]
 
 [sub_resource type="PortableCompressedTexture2D" id="PortableCompressedTexture2D_y4ini"]
 _data = PackedByteArray("AAADAAUAAAABAAAAAAEAAAABAABYAAAAUklGRlAAAABXRUJQVlA4TEMAAAAv/8A/EBcgEEjC33oNAUHRfasJCIrme23+A/4VKAoAMsJTKtFE0PvcvYj+TwB8/3//r46YHnmT9NSdcXrkTeH7/4keAA==")
@@ -20,40 +19,66 @@ size_override = Vector2(256, 256)
 _data = PackedByteArray("AAADAAUAAAABAAAAAAEAAAABAACMAAAAUklGRoQAAABXRUJQVlA4THcAAAAv/8A/EA8w5XM/3/Mf8HAU23bbPNcsBUEUwsCUAqBCMxRB0NJ9f1XSS0T/J0B//z+b98k7BOAqykNDMVB2o8zC7aAdN0S2cNVgKB9bwTlo4+Rs6nrokoBrx3QJUFxXzkrnvBnpmLwhaf0uBB9fEdvAGMxKC/KVHwA=")
 size_override = Vector2(256, 256)
 
-[sub_resource type="PortableCompressedTexture2D" id="PortableCompressedTexture2D_dr57r"]
-_data = PackedByteArray("AAADAAUAAAABAAAAAAEAAAABAACsAAAAUklGRqQAAABXRUJQVlA4TJcAAAAv/8A/EB8gECD8H5phQ0hA+L/REI2QgJD93+WS+Q/A35KC21rb1iSO9NknI+AufapsEJZgA6pvOrT+rXx+3CL6PwHB3/8/rwttI23YTkpWsZUyRXWGMqMNhzlq4IXhTbdwwluu4wGlalSllFKoPa5SStWsi1Jr1vCihrDh8Lbr+CElLXCDp0/nMRCSCidAD4bDnPX3/0/UAA==")
+[sub_resource type="PortableCompressedTexture2D" id="PortableCompressedTexture2D_uojtt"]
+_data = PackedByteArray("AAADAAUAAAABAAAAAAEAAAABAACsAAAAUklGRqQAAABXRUJQVlA4TJcAAAAv/8A/EB8gECD8H5phQ0hA+L/REI2QgJD93+WS+Q/A35KC28i21UZMufpRCcyGXJE6kJtwB45edcb4U3i/mSL6PwHG3/8/rxPahiKwHY1YyZZGFyqtqEerqhiq1EJ10y0U85ZLNcDYDDUxxhjUHm5ijM1YF8bWWNWFVWBVddulV28BVz6H3Hsu1YOJlMAZVVW5xt//v04DAA==")
 size_override = Vector2(256, 256)
 
-[sub_resource type="PortableCompressedTexture2D" id="PortableCompressedTexture2D_wu7io"]
-_data = PackedByteArray("AAADAAUAAAABAAAAAAEAAAABAACwAAAAUklGRqgAAABXRUJQVlA4TJsAAAAv/8A/EC+gpm0jqFPZlf/yHZOjQSZgsUhrr4JAforatoH6K82CPrah2fwHgP+ndD2eKQJXjWy7zZWuCVQCzwSuvAZQGUThT+Ymf+7lRvR/AiT8H/6PXhugS4ary2Uey8VP3XwslR1+PaQETSJbJoMm/8KnbudsiQzAm+Z5ieQ/WegZX2Wp+8WTzpMFd3TJxEAl/B/+D/+H/18gAgA=")
+[sub_resource type="PortableCompressedTexture2D" id="PortableCompressedTexture2D_dhccw"]
+_data = PackedByteArray("AAADAAUAAAABAAAAAAEAAAABAACuAAAAUklGRqYAAABXRUJQVlA4TJoAAAAv/8A/EC+gpm0jqFPZlf/yHZOjQSZgsUhrr4JAforatoH6K82CPrah2fwHgP+ndD2eKQJXjWy7zZWuCVQCzwSuvAZQGUThT+Ymf+7lRvR/AiT8H/6P3gLokuHqcpnH8uli8fuos8Ovh5SgSWTLZNDkX/jU7ZwtkQF40zwvkfwnCz3jqyx1v3jSebLgji6ZGKiE/8P/4f/w/wtE")
 size_override = Vector2(256, 256)
 
-[node name="Karada" type="Node2D" unique_id=1414427272]
+[sub_resource type="PortableCompressedTexture2D" id="PortableCompressedTexture2D_rbjmn"]
+_data = PackedByteArray("AAADAAUAAAABAAAAAAEAAAABAABCAAAAUklGRjoAAABXRUJQVlA4TC0AAAAv/8A/EA8w39M93vMf8FATAGjCRwz6tyKGFpDpRUT/JwCmuUGrkzTGrPH/jwQA")
+size_override = Vector2(256, 256)
+
+[sub_resource type="PortableCompressedTexture2D" id="PortableCompressedTexture2D_kdp8t"]
+_data = PackedByteArray("AAADAAUAAAABAAAAAAEAAAABAABWAAAAUklGRk4AAABXRUJQVlA4TEIAAAAv/8A/EA8wLbM0C/Mf8FATyVbzPwhAAjapgjQkISDVP1TEiP5PADzWB7JIlqiyuELnyZx22dMZIpiWqiFVhe//BRk=")
+size_override = Vector2(256, 256)
+
+[sub_resource type="PortableCompressedTexture2D" id="PortableCompressedTexture2D_l60pe"]
+_data = PackedByteArray("AAADAAUAAAABAAAAAAEAAAABAABSAAAAUklGRkoAAABXRUJQVlA4TD0AAAAv/8A/EA8wLbM0C/Mf8FAUSVJD5nkOwAlYO2nYyzlE9H8CyHM90lhER4NoNjtfPRfNxEIbK0As5LG+/xdkAA==")
+size_override = Vector2(256, 256)
+
+[sub_resource type="PortableCompressedTexture2D" id="PortableCompressedTexture2D_pdl0p"]
+_data = PackedByteArray("AAADAAUAAAABAAAAAAEAAAABAABkAAAAUklGRlwAAABXRUJQVlA4TFAAAAAv/8A/EA8wsJM/IfMf8GAb2baSLwVQEqVZZQ5tOIT8DLIXnz9EHtH/CVBfy11AHSElERSLQJkPmul8sIw7vx1bqW7cNJOVrWLjtIR+/1/SAQ==")
+size_override = Vector2(256, 256)
+
+[node name="KaradaTemplate" type="Node2D" unique_id=1893632528]
 script = ExtResource("1_ugxwm")
 ORDER_BY_PARTS = Dictionary[int, PackedStringArray]({
-0: PackedStringArray("BackHair", "BodyBackRace", "RightArm", "Leg", "Body", "LeftArm", "Head")
+0: PackedStringArray("BackHairAccessory", "BackHair", "BodyBackRace", "RightArm", "Leg", "Body", "LeftArm", "Head")
 })
 
-[node name="BackHair" type="Node2D" parent="." unique_id=1657119763]
+[node name="BackHairAccessory" type="Node2D" parent="." unique_id=1731142679]
 script = ExtResource("1_hguy8")
 metadata/_custom_type_script = "uid://dghhexdudu0xy"
 
-[node name="Left" type="Sprite2D" parent="BackHair" unique_id=344711333]
+[node name="Left" type="Sprite2D" parent="BackHairAccessory" unique_id=1517609946]
 visible = false
 flip_h = true
 
-[node name="Right" type="Sprite2D" parent="BackHair" unique_id=621850449]
+[node name="Right" type="Sprite2D" parent="BackHairAccessory" unique_id=921218792]
+
+[node name="BackHair" type="Node2D" parent="." unique_id=2146823369]
+script = ExtResource("1_hguy8")
+metadata/_custom_type_script = "uid://dghhexdudu0xy"
+
+[node name="Left" type="Sprite2D" parent="BackHair" unique_id=1252781987]
+visible = false
+flip_h = true
+
+[node name="Right" type="Sprite2D" parent="BackHair" unique_id=2030907891]
 texture = ExtResource("3_0qs8x")
 
-[node name="BodyBackRace" type="Node2D" parent="." unique_id=1062566030]
+[node name="BodyBackRace" type="Node2D" parent="." unique_id=1037628612]
 script = ExtResource("1_hguy8")
 metadata/_custom_type_script = "uid://dghhexdudu0xy"
 
-[node name="Left" type="Sprite2D" parent="BodyBackRace" unique_id=202882492]
+[node name="Left" type="Sprite2D" parent="BodyBackRace" unique_id=1872042033]
 visible = false
 flip_h = true
 
-[node name="Right" type="Sprite2D" parent="BodyBackRace" unique_id=22355744]
+[node name="Right" type="Sprite2D" parent="BodyBackRace" unique_id=721083640]
 texture_filter = 1
 texture = SubResource("PortableCompressedTexture2D_y4ini")
 metadata/_aseprite_wizard_interface_config_ = {
@@ -82,15 +107,15 @@ metadata/_aseprite_wizard_config_ = {
 }
 metadata/_aseprite_wizard_source_file_hash_ = "f7e126ddefea898856a3f4c3463df43a"
 
-[node name="RightArm" type="Node2D" parent="." unique_id=478589404]
+[node name="RightArm" type="Node2D" parent="." unique_id=1319391177]
 script = ExtResource("1_hguy8")
 metadata/_custom_type_script = "uid://dghhexdudu0xy"
 
-[node name="Left" type="Sprite2D" parent="RightArm" unique_id=1216967677]
+[node name="Left" type="Sprite2D" parent="RightArm" unique_id=2111993791]
 visible = false
 flip_h = true
 
-[node name="Right" type="Sprite2D" parent="RightArm" unique_id=21537249]
+[node name="Right" type="Sprite2D" parent="RightArm" unique_id=716719479]
 texture_filter = 1
 texture = SubResource("PortableCompressedTexture2D_fybp7")
 metadata/_aseprite_wizard_interface_config_ = {
@@ -119,15 +144,15 @@ metadata/_aseprite_wizard_config_ = {
 }
 metadata/_aseprite_wizard_source_file_hash_ = "f7e126ddefea898856a3f4c3463df43a"
 
-[node name="Leg" type="Node2D" parent="." unique_id=17434081]
+[node name="Leg" type="Node2D" parent="." unique_id=1083169114]
 script = ExtResource("1_hguy8")
 metadata/_custom_type_script = "uid://dghhexdudu0xy"
 
-[node name="Left" type="Sprite2D" parent="Leg" unique_id=524029729]
+[node name="Left" type="Sprite2D" parent="Leg" unique_id=653795673]
 visible = false
 flip_h = true
 
-[node name="Right" type="Sprite2D" parent="Leg" unique_id=649046717]
+[node name="Right" type="Sprite2D" parent="Leg" unique_id=1053727955]
 texture_filter = 1
 texture = SubResource("PortableCompressedTexture2D_ew54i")
 metadata/_aseprite_wizard_interface_config_ = {
@@ -156,21 +181,23 @@ metadata/_aseprite_wizard_config_ = {
 }
 metadata/_aseprite_wizard_source_file_hash_ = "f7e126ddefea898856a3f4c3463df43a"
 
-[node name="Body" type="Node2D" parent="." unique_id=1762163287]
+[node name="Body" type="Node2D" parent="." unique_id=1987647964]
 script = ExtResource("1_hguy8")
 metadata/_custom_type_script = "uid://dghhexdudu0xy"
 
-[node name="Left" type="Sprite2D" parent="Body" unique_id=1678762537]
+[node name="Left" type="Sprite2D" parent="Body" unique_id=796242995]
 visible = false
 flip_h = true
 
-[node name="Right" type="Sprite2D" parent="Body" unique_id=1478847589]
+[node name="Right" type="Sprite2D" parent="Body" unique_id=1391215639]
 texture_filter = 1
-texture = SubResource("PortableCompressedTexture2D_dr57r")
+texture = SubResource("PortableCompressedTexture2D_uojtt")
 metadata/_aseprite_wizard_interface_config_ = {
 "layer_section": true,
 "output_section": true,
-"pending_changes": {},
+"pending_changes": {
+"embed_tex": false
+},
 "slice_section": true
 }
 metadata/_aseprite_wizard_config_ = {
@@ -191,32 +218,32 @@ metadata/_aseprite_wizard_config_ = {
 "source": "res://aseprite/asso_project/characters/noru/noru_idle.aseprite",
 "source_uid": 6290199164166850251
 }
-metadata/_aseprite_wizard_source_file_hash_ = "f7e126ddefea898856a3f4c3463df43a"
+metadata/_aseprite_wizard_source_file_hash_ = "7bf53fed3104cf0bfe9b59ef9eb623ca"
 
-[node name="LeftArm" type="Node2D" parent="." unique_id=802512860]
+[node name="LeftArm" type="Node2D" parent="." unique_id=644284220]
 script = ExtResource("1_hguy8")
 metadata/_custom_type_script = "uid://dghhexdudu0xy"
 
-[node name="Left" type="Sprite2D" parent="LeftArm" unique_id=1389621223]
+[node name="Left" type="Sprite2D" parent="LeftArm" unique_id=1600857281]
 visible = false
 flip_h = true
 
-[node name="Right" type="Sprite2D" parent="LeftArm" unique_id=1377616937]
+[node name="Right" type="Sprite2D" parent="LeftArm" unique_id=422777175]
 texture = ExtResource("4_mi1lx")
 
-[node name="Head" type="Node2D" parent="." unique_id=636699963]
+[node name="Head" type="Node2D" parent="." unique_id=1990522908]
 
-[node name="Face" type="Node2D" parent="Head" unique_id=1401703625]
+[node name="Face" type="Node2D" parent="Head" unique_id=1696641577]
 script = ExtResource("1_hguy8")
 metadata/_custom_type_script = "uid://dghhexdudu0xy"
 
-[node name="Left" type="Sprite2D" parent="Head/Face" unique_id=1567952421]
+[node name="Left" type="Sprite2D" parent="Head/Face" unique_id=1337254208]
 visible = false
 flip_h = true
 
-[node name="Right" type="Sprite2D" parent="Head/Face" unique_id=2119747146]
+[node name="Right" type="Sprite2D" parent="Head/Face" unique_id=1227920376]
 texture_filter = 1
-texture = SubResource("PortableCompressedTexture2D_wu7io")
+texture = SubResource("PortableCompressedTexture2D_dhccw")
 metadata/_aseprite_wizard_interface_config_ = {
 "layer_section": true,
 "output_section": true,
@@ -241,37 +268,175 @@ metadata/_aseprite_wizard_config_ = {
 "source": "res://aseprite/asso_project/characters/noru/noru_idle.aseprite",
 "source_uid": 6290199164166850251
 }
-metadata/_aseprite_wizard_source_file_hash_ = "f7e126ddefea898856a3f4c3463df43a"
+metadata/_aseprite_wizard_source_file_hash_ = "7bf53fed3104cf0bfe9b59ef9eb623ca"
 
-[node name="LeftSideTail" type="Node2D" parent="Head" unique_id=1445517371]
+[node name="FaceAccessory" type="Node2D" parent="Head" unique_id=1652468335]
 script = ExtResource("1_hguy8")
 metadata/_custom_type_script = "uid://dghhexdudu0xy"
 
-[node name="Left" type="Sprite2D" parent="Head/LeftSideTail" unique_id=1538888696]
+[node name="Left" type="Sprite2D" parent="Head/FaceAccessory" unique_id=733838547]
 visible = false
 flip_h = true
 
-[node name="Right" type="Sprite2D" parent="Head/LeftSideTail" unique_id=1796553058]
+[node name="Right" type="Sprite2D" parent="Head/FaceAccessory" unique_id=1115449945]
+texture_filter = 1
+texture = SubResource("PortableCompressedTexture2D_rbjmn")
+metadata/_aseprite_wizard_interface_config_ = {
+"layer_section": true,
+"output_section": true,
+"pending_changes": {},
+"slice_section": true
+}
+metadata/_aseprite_wizard_config_ = {
+"convert_fps_field": 60.0,
+"convert_ms_field": 16.0,
+"convert_to_fps": false,
+"embed_tex": true,
+"i_mode": 1,
+"keep_anim_length": false,
+"layers": ["face_accessory"],
+"o_ex_p": "",
+"o_folder": "",
+"o_name": "",
+"only_visible": true,
+"player": "",
+"scale": "1.0",
+"slice": "",
+"source": "res://aseprite/asso_project/characters/noru/noru_idle.aseprite",
+"source_uid": 6290199164166850251
+}
+metadata/_aseprite_wizard_source_file_hash_ = "7bf53fed3104cf0bfe9b59ef9eb623ca"
+
+[node name="LeftSideTail" type="Node2D" parent="Head" unique_id=209639290]
+script = ExtResource("1_hguy8")
+metadata/_custom_type_script = "uid://dghhexdudu0xy"
+
+[node name="Left" type="Sprite2D" parent="Head/LeftSideTail" unique_id=103046313]
+visible = false
+flip_h = true
+
+[node name="Right" type="Sprite2D" parent="Head/LeftSideTail" unique_id=507756001]
 texture = ExtResource("6_wu7io")
 
-[node name="RightSideTail" type="Node2D" parent="Head" unique_id=1890805412]
+[node name="TsunoLeft" type="Node2D" parent="Head" unique_id=320491563]
 script = ExtResource("1_hguy8")
 metadata/_custom_type_script = "uid://dghhexdudu0xy"
 
-[node name="Left" type="Sprite2D" parent="Head/RightSideTail" unique_id=1627940066]
+[node name="Left" type="Sprite2D" parent="Head/TsunoLeft" unique_id=2138191822]
 visible = false
 flip_h = true
 
-[node name="Right" type="Sprite2D" parent="Head/RightSideTail" unique_id=1101418140]
+[node name="Right" type="Sprite2D" parent="Head/TsunoLeft" unique_id=1001143814]
+texture_filter = 1
+texture = SubResource("PortableCompressedTexture2D_kdp8t")
+metadata/_aseprite_wizard_interface_config_ = {
+"layer_section": true,
+"output_section": true,
+"pending_changes": {},
+"slice_section": true
+}
+metadata/_aseprite_wizard_config_ = {
+"convert_fps_field": 60.0,
+"convert_ms_field": 16.0,
+"convert_to_fps": false,
+"embed_tex": true,
+"i_mode": 1,
+"keep_anim_length": false,
+"layers": ["left_tsuno"],
+"o_ex_p": "",
+"o_folder": "",
+"o_name": "",
+"only_visible": true,
+"player": "",
+"scale": "1.0",
+"slice": "",
+"source": "res://aseprite/asso_project/characters/noru/noru_idle.aseprite",
+"source_uid": 6290199164166850251
+}
+metadata/_aseprite_wizard_source_file_hash_ = "7bf53fed3104cf0bfe9b59ef9eb623ca"
+
+[node name="RightSideTail" type="Node2D" parent="Head" unique_id=1485810712]
+script = ExtResource("1_hguy8")
+metadata/_custom_type_script = "uid://dghhexdudu0xy"
+
+[node name="Left" type="Sprite2D" parent="Head/RightSideTail" unique_id=1950527015]
+visible = false
+flip_h = true
+
+[node name="Right" type="Sprite2D" parent="Head/RightSideTail" unique_id=372420013]
 texture = ExtResource("7_y4ini")
 
-[node name="FrontHair" type="Node2D" parent="Head" unique_id=1834089434]
+[node name="TsunoRight" type="Node2D" parent="Head" unique_id=1485293906]
 script = ExtResource("1_hguy8")
 metadata/_custom_type_script = "uid://dghhexdudu0xy"
 
-[node name="Left" type="Sprite2D" parent="Head/FrontHair" unique_id=403718966]
+[node name="Left" type="Sprite2D" parent="Head/TsunoRight" unique_id=758323035]
 visible = false
 flip_h = true
 
-[node name="Right" type="Sprite2D" parent="Head/FrontHair" unique_id=1203120629]
-texture = ExtResource("8_dr57r")
+[node name="Right" type="Sprite2D" parent="Head/TsunoRight" unique_id=1473615917]
+texture_filter = 1
+texture = SubResource("PortableCompressedTexture2D_l60pe")
+metadata/_aseprite_wizard_interface_config_ = {
+"animation_section": true,
+"layer_section": true,
+"output_section": true,
+"pending_changes": {},
+"slice_section": true
+}
+metadata/_aseprite_wizard_config_ = {
+"convert_fps_field": 60.0,
+"convert_ms_field": 16.0,
+"convert_to_fps": false,
+"embed_tex": true,
+"i_mode": 1,
+"keep_anim_length": false,
+"layers": ["right_tsuno"],
+"o_ex_p": "",
+"o_folder": "",
+"o_name": "",
+"only_visible": true,
+"player": "",
+"scale": "1.0",
+"slice": "",
+"source": "res://aseprite/asso_project/characters/noru/noru_idle.aseprite",
+"source_uid": 6290199164166850251
+}
+metadata/_aseprite_wizard_source_file_hash_ = "7bf53fed3104cf0bfe9b59ef9eb623ca"
+
+[node name="FrontHair" type="Node2D" parent="Head" unique_id=1630171928]
+script = ExtResource("1_hguy8")
+metadata/_custom_type_script = "uid://dghhexdudu0xy"
+
+[node name="Left" type="Sprite2D" parent="Head/FrontHair" unique_id=1851479811]
+visible = false
+flip_h = true
+
+[node name="Right" type="Sprite2D" parent="Head/FrontHair" unique_id=2099126325]
+texture_filter = 1
+texture = SubResource("PortableCompressedTexture2D_pdl0p")
+metadata/_aseprite_wizard_interface_config_ = {
+"layer_section": true,
+"output_section": true,
+"pending_changes": {},
+"slice_section": true
+}
+metadata/_aseprite_wizard_config_ = {
+"convert_fps_field": 60.0,
+"convert_ms_field": 16.0,
+"convert_to_fps": false,
+"embed_tex": true,
+"i_mode": 1,
+"keep_anim_length": false,
+"layers": ["fronthair"],
+"o_ex_p": "",
+"o_folder": "",
+"o_name": "",
+"only_visible": true,
+"player": "",
+"scale": "1.0",
+"slice": "",
+"source": "res://aseprite/asso_project/characters/noru/noru_idle.aseprite",
+"source_uid": 6290199164166850251
+}
+metadata/_aseprite_wizard_source_file_hash_ = "7bf53fed3104cf0bfe9b59ef9eb623ca"

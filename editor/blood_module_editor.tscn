@@ -1,0 +1,505 @@
+[gd_scene format=3 uid="uid://cmhdv1n6q8qwy"]
+
+[ext_resource type="Script" uid="uid://vxc7y6taqdjv" path="res://script/blood_module_editor_canvas_layer.gd" id="1_aildl"]
+[ext_resource type="Script" uid="uid://ckp8tm56n185b" path="res://script/blood_module_editor.gd" id="1_qc8vt"]
+[ext_resource type="Script" uid="uid://41jsw8mjdv4d" path="res://script/track_panel.gd" id="1_tqs4u"]
+[ext_resource type="Script" uid="uid://divac8obh38ov" path="res://script/sprite_preview_viewport_container.gd" id="2_7tqod"]
+[ext_resource type="Script" uid="uid://dee8x8ajwo10r" path="res://script/target_grid.gd" id="3_4v260"]
+[ext_resource type="Script" uid="uid://bupj3hlvtt67s" path="res://unit/hurtbox.gd" id="3_da8m0"]
+[ext_resource type="Script" uid="uid://bhhy483vjefa1" path="res://collision/dynamic_unit_collision.gd" id="4_4v260"]
+[ext_resource type="Script" uid="uid://vid40exokkq0" path="res://script/time_line.gd" id="4_7tqod"]
+[ext_resource type="Script" uid="uid://n6ri1pjxe2xq" path="res://script/track_key_container.gd" id="5_5e5oh"]
+[ext_resource type="Script" uid="uid://dw0ekro1jqg25" path="res://script/cursor.gd" id="5_cgtgf"]
+[ext_resource type="PackedScene" uid="uid://bsg27f4cy1k8d" path="res://karada_moduler.tscn" id="5_x7m8u"]
+[ext_resource type="Script" uid="uid://dvuxn7joxtk3l" path="res://script/preview_camera.gd" id="6_pt6n7"]
+[ext_resource type="Script" uid="uid://0dw4edo0eshv" path="res://player/hitbox.gd" id="8_kk2cp"]
+[ext_resource type="Script" uid="uid://d2ox33o3w3u0r" path="res://unit/hitbox_shape.gd" id="9_mk808"]
+[ext_resource type="Script" uid="uid://ddx7b05flbdmm" path="res://script/resource/blade_module_stat.gd" id="10_2shv3"]
+[ext_resource type="Script" uid="uid://ckmkljsue5f87" path="res://script/hitbox_tab.gd" id="12_2shv3"]
+[ext_resource type="Script" uid="uid://ye44dw01m5gd" path="res://script/karada_module_scene_loader.gd" id="12_sxy11"]
+
+[sub_resource type="RectangleShape2D" id="RectangleShape2D_mk808"]
+size = Vector2(38, 92)
+
+[sub_resource type="RectangleShape2D" id="RectangleShape2D_kk2cp"]
+
+[sub_resource type="Resource" id="Resource_wqsic"]
+script = ExtResource("10_2shv3")
+type = 1
+metadata/_custom_type_script = "uid://ddx7b05flbdmm"
+
+[sub_resource type="LabelSettings" id="LabelSettings_5e5oh"]
+font_size = 18
+outline_size = 1
+
+[sub_resource type="LabelSettings" id="LabelSettings_da8m0"]
+font_size = 12
+
+[sub_resource type="LabelSettings" id="LabelSettings_cgtgf"]
+font_size = 12
+
+[sub_resource type="StyleBoxFlat" id="StyleBoxFlat_jxkv5"]
+bg_color = Color(0.21230483, 0.21230483, 0.21230483, 0.31764707)
+
+[sub_resource type="Animation" id="Animation_mk808"]
+resource_name = "example"
+step = 0.0167
+tracks/0/type = "value"
+tracks/0/imported = false
+tracks/0/enabled = true
+tracks/0/path = NodePath("BloodModuleEditor/Panel/MarginContainer/VBoxContainer/HSplitContainer/PreviewPanel/MarginContainer/SubViewportContainer/SubViewport/TargetGrid/Sprite/KaradaTemplate:direction")
+tracks/0/interp = 1
+tracks/0/loop_wrap = true
+tracks/0/keys = {
+"times": PackedFloat32Array(),
+"transitions": PackedFloat32Array(),
+"update": 1,
+"values": []
+}
+
+[sub_resource type="AnimationLibrary" id="AnimationLibrary_2shv3"]
+_data = {
+&"example": SubResource("Animation_mk808")
+}
+
+[node name="BloodModuleEditorCanvas" type="CanvasLayer" unique_id=1283345317]
+script = ExtResource("1_aildl")
+
+[node name="BloodModuleEditor" type="Control" parent="." unique_id=614225778]
+layout_mode = 3
+anchors_preset = 15
+anchor_right = 1.0
+anchor_bottom = 1.0
+grow_horizontal = 2
+grow_vertical = 2
+script = ExtResource("1_qc8vt")
+
+[node name="Panel" type="Panel" parent="BloodModuleEditor" unique_id=2039249791]
+layout_mode = 1
+anchors_preset = 15
+anchor_right = 1.0
+anchor_bottom = 1.0
+grow_horizontal = 2
+grow_vertical = 2
+
+[node name="MarginContainer" type="MarginContainer" parent="BloodModuleEditor/Panel" unique_id=193270465]
+layout_mode = 1
+anchors_preset = 15
+anchor_right = 1.0
+anchor_bottom = 1.0
+grow_horizontal = 2
+grow_vertical = 2
+theme_override_constants/margin_left = 10
+theme_override_constants/margin_top = 10
+theme_override_constants/margin_right = 10
+theme_override_constants/margin_bottom = 10
+
+[node name="VBoxContainer" type="VBoxContainer" parent="BloodModuleEditor/Panel/MarginContainer" unique_id=1391620841]
+layout_mode = 2
+
+[node name="MarginContainer2" type="MarginContainer" parent="BloodModuleEditor/Panel/MarginContainer/VBoxContainer" unique_id=1425477162]
+layout_mode = 2
+theme_override_constants/margin_left = 5
+theme_override_constants/margin_top = 5
+theme_override_constants/margin_right = 5
+theme_override_constants/margin_bottom = 5
+
+[node name="HFlowContainer" type="HFlowContainer" parent="BloodModuleEditor/Panel/MarginContainer/VBoxContainer/MarginContainer2" unique_id=1160109543]
+layout_mode = 2
+
+[node name="Import" type="Button" parent="BloodModuleEditor/Panel/MarginContainer/VBoxContainer/MarginContainer2/HFlowContainer" unique_id=693318912]
+unique_name_in_owner = true
+layout_mode = 2
+text = "Import"
+
+[node name="Export" type="Button" parent="BloodModuleEditor/Panel/MarginContainer/VBoxContainer/MarginContainer2/HFlowContainer" unique_id=210569177]
+unique_name_in_owner = true
+layout_mode = 2
+text = "Export"
+
+[node name="HSplitContainer" type="HSplitContainer" parent="BloodModuleEditor/Panel/MarginContainer/VBoxContainer" unique_id=1722955731]
+layout_mode = 2
+size_flags_vertical = 3
+split_offsets = PackedInt32Array(-84)
+split_offset = -84
+
+[node name="PreviewPanel" type="Panel" parent="BloodModuleEditor/Panel/MarginContainer/VBoxContainer/HSplitContainer" unique_id=679730177]
+layout_mode = 2
+size_flags_horizontal = 3
+
+[node name="MarginContainer" type="MarginContainer" parent="BloodModuleEditor/Panel/MarginContainer/VBoxContainer/HSplitContainer/PreviewPanel" unique_id=7492168]
+layout_mode = 1
+anchors_preset = 15
+anchor_right = 1.0
+anchor_bottom = 1.0
+grow_horizontal = 2
+grow_vertical = 2
+theme_override_constants/margin_left = 5
+theme_override_constants/margin_top = 5
+theme_override_constants/margin_right = 5
+theme_override_constants/margin_bottom = 5
+
+[node name="SubViewportContainer" type="SubViewportContainer" parent="BloodModuleEditor/Panel/MarginContainer/VBoxContainer/HSplitContainer/PreviewPanel/MarginContainer" unique_id=1370421652]
+layout_mode = 2
+stretch = true
+script = ExtResource("2_7tqod")
+
+[node name="SubViewport" type="SubViewport" parent="BloodModuleEditor/Panel/MarginContainer/VBoxContainer/HSplitContainer/PreviewPanel/MarginContainer/SubViewportContainer" unique_id=501700886]
+handle_input_locally = false
+physics_object_picking = true
+physics_object_picking_sort = true
+size = Vector2i(210, 135)
+render_target_update_mode = 4
+
+[node name="TargetGrid" type="Node2D" parent="BloodModuleEditor/Panel/MarginContainer/VBoxContainer/HSplitContainer/PreviewPanel/MarginContainer/SubViewportContainer/SubViewport" unique_id=1826310992]
+unique_name_in_owner = true
+script = ExtResource("3_4v260")
+neg_y_grid_line_color = Color(1, 1, 0, 1)
+
+[node name="Sprite" type="Node2D" parent="BloodModuleEditor/Panel/MarginContainer/VBoxContainer/HSplitContainer/PreviewPanel/MarginContainer/SubViewportContainer/SubViewport/TargetGrid" unique_id=360454485]
+position = Vector2(0, -64)
+
+[node name="KaradaTemplate" parent="BloodModuleEditor/Panel/MarginContainer/VBoxContainer/HSplitContainer/PreviewPanel/MarginContainer/SubViewportContainer/SubViewport/TargetGrid/Sprite" unique_id=1893632528 instance=ExtResource("5_x7m8u")]
+
+[node name="Hurtbox" type="Area2D" parent="BloodModuleEditor/Panel/MarginContainer/VBoxContainer/HSplitContainer/PreviewPanel/MarginContainer/SubViewportContainer/SubViewport/TargetGrid" unique_id=836645522]
+visible = false
+collision_layer = 2
+collision_mask = 0
+monitoring = false
+script = ExtResource("3_da8m0")
+metadata/_custom_type_script = "uid://bupj3hlvtt67s"
+
+[node name="DynamicUnitCollision" type="CollisionShape2D" parent="BloodModuleEditor/Panel/MarginContainer/VBoxContainer/HSplitContainer/PreviewPanel/MarginContainer/SubViewportContainer/SubViewport/TargetGrid/Hurtbox" unique_id=1647698152]
+position = Vector2(0, -46)
+shape = SubResource("RectangleShape2D_mk808")
+script = ExtResource("4_4v260")
+metadata/_custom_type_script = "uid://bhhy483vjefa1"
+
+[node name="Hitbox" type="Area2D" parent="BloodModuleEditor/Panel/MarginContainer/VBoxContainer/HSplitContainer/PreviewPanel/MarginContainer/SubViewportContainer/SubViewport/TargetGrid" unique_id=871010149]
+visible = false
+collision_layer = 0
+collision_mask = 2
+monitorable = false
+script = ExtResource("8_kk2cp")
+metadata/_custom_type_script = "uid://0dw4edo0eshv"
+
+[node name="HitboxShape" type="CollisionShape2D" parent="BloodModuleEditor/Panel/MarginContainer/VBoxContainer/HSplitContainer/PreviewPanel/MarginContainer/SubViewportContainer/SubViewport/TargetGrid/Hitbox" unique_id=550415726]
+shape = SubResource("RectangleShape2D_kk2cp")
+script = ExtResource("9_mk808")
+blade_stat = SubResource("Resource_wqsic")
+metadata/_custom_type_script = "uid://d2ox33o3w3u0r"
+
+[node name="PreviewCamera" type="Camera2D" parent="BloodModuleEditor/Panel/MarginContainer/VBoxContainer/HSplitContainer/PreviewPanel/MarginContainer/SubViewportContainer/SubViewport" unique_id=1158212102]
+unique_name_in_owner = true
+limit_left = -512
+limit_top = -512
+limit_right = 512
+limit_bottom = 512
+script = ExtResource("6_pt6n7")
+
+[node name="TabContainer" type="TabContainer" parent="BloodModuleEditor/Panel/MarginContainer/VBoxContainer/HSplitContainer" unique_id=774905012]
+layout_mode = 2
+size_flags_horizontal = 3
+current_tab = 0
+
+[node name="Information" type="TabBar" parent="BloodModuleEditor/Panel/MarginContainer/VBoxContainer/HSplitContainer/TabContainer" unique_id=493083955]
+unique_name_in_owner = true
+layout_mode = 2
+metadata/_tab_index = 0
+
+[node name="Panel2" type="Panel" parent="BloodModuleEditor/Panel/MarginContainer/VBoxContainer/HSplitContainer/TabContainer/Information" unique_id=1815769529]
+layout_mode = 1
+anchors_preset = 15
+anchor_right = 1.0
+anchor_bottom = 1.0
+grow_horizontal = 2
+grow_vertical = 2
+size_flags_horizontal = 3
+
+[node name="MarginContainer" type="MarginContainer" parent="BloodModuleEditor/Panel/MarginContainer/VBoxContainer/HSplitContainer/TabContainer/Information/Panel2" unique_id=23508235]
+layout_mode = 1
+anchors_preset = 15
+anchor_right = 1.0
+anchor_bottom = 1.0
+grow_horizontal = 2
+grow_vertical = 2
+theme_override_constants/margin_left = 5
+theme_override_constants/margin_top = 5
+theme_override_constants/margin_right = 5
+theme_override_constants/margin_bottom = 5
+
+[node name="ScrollContainer" type="ScrollContainer" parent="BloodModuleEditor/Panel/MarginContainer/VBoxContainer/HSplitContainer/TabContainer/Information/Panel2/MarginContainer" unique_id=1128524087]
+layout_mode = 2
+
+[node name="VBoxContainer" type="VBoxContainer" parent="BloodModuleEditor/Panel/MarginContainer/VBoxContainer/HSplitContainer/TabContainer/Information/Panel2/MarginContainer/ScrollContainer" unique_id=1290860395]
+layout_mode = 2
+size_flags_horizontal = 3
+size_flags_vertical = 3
+
+[node name="MotionName" type="LineEdit" parent="BloodModuleEditor/Panel/MarginContainer/VBoxContainer/HSplitContainer/TabContainer/Information/Panel2/MarginContainer/ScrollContainer/VBoxContainer" unique_id=1417871509]
+unique_name_in_owner = true
+layout_mode = 2
+placeholder_text = "Motion Name"
+
+[node name="MotionClass" type="LineEdit" parent="BloodModuleEditor/Panel/MarginContainer/VBoxContainer/HSplitContainer/TabContainer/Information/Panel2/MarginContainer/ScrollContainer/VBoxContainer" unique_id=955327524]
+unique_name_in_owner = true
+layout_mode = 2
+placeholder_text = "Motion Class"
+
+[node name="HSeparator" type="HSeparator" parent="BloodModuleEditor/Panel/MarginContainer/VBoxContainer/HSplitContainer/TabContainer/Information/Panel2/MarginContainer/ScrollContainer/VBoxContainer" unique_id=1976150482]
+layout_mode = 2
+
+[node name="MotivatedUnit" type="LineEdit" parent="BloodModuleEditor/Panel/MarginContainer/VBoxContainer/HSplitContainer/TabContainer/Information/Panel2/MarginContainer/ScrollContainer/VBoxContainer" unique_id=1285241942]
+unique_name_in_owner = true
+layout_mode = 2
+placeholder_text = "Motivated Unit"
+
+[node name="Sprite" type="TabBar" parent="BloodModuleEditor/Panel/MarginContainer/VBoxContainer/HSplitContainer/TabContainer" unique_id=171458311]
+unique_name_in_owner = true
+visible = false
+layout_mode = 2
+metadata/_tab_index = 1
+
+[node name="ScrollContainer" type="ScrollContainer" parent="BloodModuleEditor/Panel/MarginContainer/VBoxContainer/HSplitContainer/TabContainer/Sprite" unique_id=434382255]
+layout_mode = 1
+anchors_preset = 15
+anchor_right = 1.0
+anchor_bottom = 1.0
+grow_horizontal = 2
+grow_vertical = 2
+
+[node name="VBoxContainer" type="VBoxContainer" parent="BloodModuleEditor/Panel/MarginContainer/VBoxContainer/HSplitContainer/TabContainer/Sprite/ScrollContainer" unique_id=532901764]
+layout_mode = 2
+size_flags_horizontal = 3
+size_flags_vertical = 3
+
+[node name="HBoxContainer" type="HBoxContainer" parent="BloodModuleEditor/Panel/MarginContainer/VBoxContainer/HSplitContainer/TabContainer/Sprite/ScrollContainer/VBoxContainer" unique_id=656611511]
+layout_mode = 2
+
+[node name="Frame" type="SpinBox" parent="BloodModuleEditor/Panel/MarginContainer/VBoxContainer/HSplitContainer/TabContainer/Sprite/ScrollContainer/VBoxContainer/HBoxContainer" unique_id=94594517]
+layout_mode = 2
+size_flags_horizontal = 3
+max_value = 240.0
+value = 5.0
+suffix = "Frame"
+custom_arrow_step = 1.0
+
+[node name="InsertFrame" type="Button" parent="BloodModuleEditor/Panel/MarginContainer/VBoxContainer/HSplitContainer/TabContainer/Sprite/ScrollContainer/VBoxContainer/HBoxContainer" unique_id=658907919]
+layout_mode = 2
+size_flags_horizontal = 0
+text = "Insert"
+
+[node name="Hitbox" type="TabBar" parent="BloodModuleEditor/Panel/MarginContainer/VBoxContainer/HSplitContainer/TabContainer" unique_id=818876657]
+unique_name_in_owner = true
+visible = false
+layout_mode = 2
+script = ExtResource("12_2shv3")
+metadata/_tab_index = 2
+
+[node name="HitboxInfoTab" type="TabContainer" parent="BloodModuleEditor/Panel/MarginContainer/VBoxContainer/HSplitContainer/TabContainer/Hitbox" unique_id=279510412]
+layout_mode = 1
+anchors_preset = 15
+anchor_right = 1.0
+anchor_bottom = 1.0
+grow_horizontal = 2
+grow_vertical = 2
+current_tab = 0
+tabs_position = 1
+
+[node name="Enter" type="TabBar" parent="BloodModuleEditor/Panel/MarginContainer/VBoxContainer/HSplitContainer/TabContainer/Hitbox/HitboxInfoTab" unique_id=143094011]
+layout_mode = 2
+metadata/_tab_index = 0
+
+[node name="VBoxContainer2" type="VBoxContainer" parent="BloodModuleEditor/Panel/MarginContainer/VBoxContainer/HSplitContainer/TabContainer/Hitbox/HitboxInfoTab/Enter" unique_id=1719101608]
+layout_mode = 1
+anchors_preset = 15
+anchor_right = 1.0
+anchor_bottom = 1.0
+grow_horizontal = 2
+grow_vertical = 2
+
+[node name="AddHitbox" type="Button" parent="BloodModuleEditor/Panel/MarginContainer/VBoxContainer/HSplitContainer/TabContainer/Hitbox/HitboxInfoTab/Enter/VBoxContainer2" unique_id=1569843060]
+layout_mode = 2
+text = "Add Hitbox Shape"
+
+[node name="Hurtbox" type="TabBar" parent="BloodModuleEditor/Panel/MarginContainer/VBoxContainer/HSplitContainer/TabContainer" unique_id=229971343]
+unique_name_in_owner = true
+visible = false
+layout_mode = 2
+metadata/_tab_index = 3
+
+[node name="ScrollContainer" type="ScrollContainer" parent="BloodModuleEditor/Panel/MarginContainer/VBoxContainer/HSplitContainer/TabContainer/Hurtbox" unique_id=1066873985]
+layout_mode = 1
+anchors_preset = 15
+anchor_right = 1.0
+anchor_bottom = 1.0
+grow_horizontal = 2
+grow_vertical = 2
+
+[node name="VBoxContainer" type="VBoxContainer" parent="BloodModuleEditor/Panel/MarginContainer/VBoxContainer/HSplitContainer/TabContainer/Hurtbox/ScrollContainer" unique_id=1669569767]
+layout_mode = 2
+size_flags_horizontal = 3
+size_flags_vertical = 3
+
+[node name="Label2" type="Label" parent="BloodModuleEditor/Panel/MarginContainer/VBoxContainer/HSplitContainer/TabContainer/Hurtbox/ScrollContainer/VBoxContainer" unique_id=1460248024]
+layout_mode = 2
+text = "Offset Y"
+label_settings = SubResource("LabelSettings_5e5oh")
+
+[node name="HBoxContainer4" type="HBoxContainer" parent="BloodModuleEditor/Panel/MarginContainer/VBoxContainer/HSplitContainer/TabContainer/Hurtbox/ScrollContainer/VBoxContainer" unique_id=177985844]
+layout_mode = 2
+
+[node name="Label" type="Label" parent="BloodModuleEditor/Panel/MarginContainer/VBoxContainer/HSplitContainer/TabContainer/Hurtbox/ScrollContainer/VBoxContainer/HBoxContainer4" unique_id=662994658]
+layout_mode = 2
+text = "Value => "
+label_settings = SubResource("LabelSettings_da8m0")
+
+[node name="OffsetY" type="SpinBox" parent="BloodModuleEditor/Panel/MarginContainer/VBoxContainer/HSplitContainer/TabContainer/Hurtbox/ScrollContainer/VBoxContainer/HBoxContainer4" unique_id=1276806541]
+unique_name_in_owner = true
+layout_mode = 2
+custom_arrow_step = 1.0
+
+[node name="HSeparator" type="HSeparator" parent="BloodModuleEditor/Panel/MarginContainer/VBoxContainer/HSplitContainer/TabContainer/Hurtbox/ScrollContainer/VBoxContainer" unique_id=269471248]
+layout_mode = 2
+
+[node name="Label" type="Label" parent="BloodModuleEditor/Panel/MarginContainer/VBoxContainer/HSplitContainer/TabContainer/Hurtbox/ScrollContainer/VBoxContainer" unique_id=1933681138]
+layout_mode = 2
+text = "Size"
+label_settings = SubResource("LabelSettings_5e5oh")
+
+[node name="HBoxContainer" type="HBoxContainer" parent="BloodModuleEditor/Panel/MarginContainer/VBoxContainer/HSplitContainer/TabContainer/Hurtbox/ScrollContainer/VBoxContainer" unique_id=2075496910]
+layout_mode = 2
+
+[node name="Label" type="Label" parent="BloodModuleEditor/Panel/MarginContainer/VBoxContainer/HSplitContainer/TabContainer/Hurtbox/ScrollContainer/VBoxContainer/HBoxContainer" unique_id=730709752]
+layout_mode = 2
+text = "Width => "
+label_settings = SubResource("LabelSettings_cgtgf")
+
+[node name="HurtboxWidth" type="SpinBox" parent="BloodModuleEditor/Panel/MarginContainer/VBoxContainer/HSplitContainer/TabContainer/Hurtbox/ScrollContainer/VBoxContainer/HBoxContainer" unique_id=1515818398]
+unique_name_in_owner = true
+layout_mode = 2
+max_value = 256.0
+custom_arrow_step = 1.0
+
+[node name="HBoxContainer2" type="HBoxContainer" parent="BloodModuleEditor/Panel/MarginContainer/VBoxContainer/HSplitContainer/TabContainer/Hurtbox/ScrollContainer/VBoxContainer" unique_id=1752975592]
+layout_mode = 2
+
+[node name="Label" type="Label" parent="BloodModuleEditor/Panel/MarginContainer/VBoxContainer/HSplitContainer/TabContainer/Hurtbox/ScrollContainer/VBoxContainer/HBoxContainer2" unique_id=1228500341]
+layout_mode = 2
+text = "Height => "
+label_settings = SubResource("LabelSettings_cgtgf")
+
+[node name="HurtboxHeight" type="SpinBox" parent="BloodModuleEditor/Panel/MarginContainer/VBoxContainer/HSplitContainer/TabContainer/Hurtbox/ScrollContainer/VBoxContainer/HBoxContainer2" unique_id=312432722]
+unique_name_in_owner = true
+layout_mode = 2
+max_value = 256.0
+custom_arrow_step = 1.0
+
+[node name="HSeparator2" type="HSeparator" parent="BloodModuleEditor/Panel/MarginContainer/VBoxContainer/HSplitContainer/TabContainer/Hurtbox/ScrollContainer/VBoxContainer" unique_id=1593408107]
+layout_mode = 2
+
+[node name="HFlowContainer" type="HFlowContainer" parent="BloodModuleEditor/Panel/MarginContainer/VBoxContainer/HSplitContainer/TabContainer/Hurtbox/ScrollContainer/VBoxContainer" unique_id=980860642]
+layout_mode = 2
+
+[node name="InsertKey" type="Button" parent="BloodModuleEditor/Panel/MarginContainer/VBoxContainer/HSplitContainer/TabContainer/Hurtbox/ScrollContainer/VBoxContainer/HFlowContainer" unique_id=573947814]
+layout_mode = 2
+size_flags_horizontal = 0
+text = "Insert Key"
+
+[node name="MarginContainer" type="MarginContainer" parent="BloodModuleEditor/Panel/MarginContainer/VBoxContainer" unique_id=657880674]
+layout_mode = 2
+size_flags_vertical = 3
+theme_override_constants/margin_left = 5
+theme_override_constants/margin_top = 5
+theme_override_constants/margin_right = 5
+theme_override_constants/margin_bottom = 5
+
+[node name="TrackPanel" type="Control" parent="BloodModuleEditor/Panel/MarginContainer/VBoxContainer/MarginContainer" unique_id=960451454]
+clip_contents = true
+layout_mode = 2
+size_flags_horizontal = 3
+size_flags_vertical = 3
+script = ExtResource("1_tqs4u")
+
+[node name="Panel" type="Panel" parent="BloodModuleEditor/Panel/MarginContainer/VBoxContainer/MarginContainer/TrackPanel" unique_id=1672680890]
+layout_mode = 1
+anchors_preset = -1
+anchor_right = 0.998
+anchor_bottom = 0.99300003
+offset_right = 1.2199707
+offset_bottom = 0.95199585
+grow_horizontal = 2
+grow_vertical = 2
+theme_override_styles/panel = SubResource("StyleBoxFlat_jxkv5")
+
+[node name="VBoxContainer2" type="VBoxContainer" parent="BloodModuleEditor/Panel/MarginContainer/VBoxContainer/MarginContainer/TrackPanel/Panel" unique_id=341016587]
+unique_name_in_owner = true
+layout_mode = 1
+anchors_preset = -1
+anchor_top = 0.051000003
+anchor_right = 0.98
+anchor_bottom = 0.934
+offset_left = 105.0
+offset_top = 0.06399965
+offset_right = 0.2000122
+offset_bottom = -0.024002075
+size_flags_horizontal = 3
+
+[node name="Control" type="Control" parent="BloodModuleEditor/Panel/MarginContainer/VBoxContainer/MarginContainer/TrackPanel/Panel/VBoxContainer2" unique_id=1588257532]
+layout_mode = 2
+
+[node name="ScrollContainer2" type="ScrollContainer" parent="BloodModuleEditor/Panel/MarginContainer/VBoxContainer/MarginContainer/TrackPanel/Panel/VBoxContainer2/Control" unique_id=1103691394]
+layout_mode = 1
+anchors_preset = -1
+anchor_left = -0.21300001
+anchor_right = 1.024
+offset_left = 0.009010315
+offset_top = 29.0
+offset_right = -0.83203125
+offset_bottom = 112.0
+grow_horizontal = 2
+grow_vertical = 2
+
+[node name="TrackKeyContainer" type="VBoxContainer" parent="BloodModuleEditor/Panel/MarginContainer/VBoxContainer/MarginContainer/TrackPanel/Panel/VBoxContainer2/Control/ScrollContainer2" unique_id=1532876709]
+unique_name_in_owner = true
+propagate_maximum_size = false
+layout_mode = 2
+size_flags_horizontal = 3
+size_flags_vertical = 4
+script = ExtResource("5_5e5oh")
+
+[node name="ScrollContainer" type="ScrollContainer" parent="BloodModuleEditor/Panel/MarginContainer/VBoxContainer/MarginContainer/TrackPanel/Panel/VBoxContainer2" unique_id=1638685228]
+clip_contents = false
+layout_mode = 2
+size_flags_vertical = 3
+
+[node name="VBoxContainer" type="VBoxContainer" parent="BloodModuleEditor/Panel/MarginContainer/VBoxContainer/MarginContainer/TrackPanel/Panel/VBoxContainer2/ScrollContainer" unique_id=805766633]
+layout_mode = 2
+size_flags_vertical = 3
+mouse_filter = 2
+
+[node name="Timeline" type="Control" parent="BloodModuleEditor/Panel/MarginContainer/VBoxContainer/MarginContainer/TrackPanel/Panel/VBoxContainer2/ScrollContainer/VBoxContainer" unique_id=598407361]
+custom_minimum_size = Vector2(5760, 25)
+layout_mode = 2
+script = ExtResource("4_7tqod")
+
+[node name="Cursor" type="Control" parent="BloodModuleEditor/Panel/MarginContainer/VBoxContainer/MarginContainer/TrackPanel/Panel/VBoxContainer2/ScrollContainer/VBoxContainer/Timeline" unique_id=483017389]
+layout_mode = 1
+anchors_preset = 15
+anchor_right = 1.0
+anchor_bottom = 1.0
+grow_horizontal = 2
+grow_vertical = 2
+mouse_filter = 2
+script = ExtResource("5_cgtgf")
+
+[node name="KaradaModuleSceneLoader" type="FileDialog" parent="." unique_id=1491051613]
+unique_name_in_owner = true
+title = "Open a File"
+file_mode = 0
+display_mode = 1
+filters = PackedStringArray("*.tscn")
+script = ExtResource("12_sxy11")
+
+[node name="AnimationPlayer" type="AnimationPlayer" parent="." unique_id=1126608958]
+libraries/ = SubResource("AnimationLibrary_2shv3")
