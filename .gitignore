@@ -30,3 +30,4 @@ rust_script/mini_game/target/flycheck0/stderr
 rust_script/mini_game/target/flycheck0/stdout
 rust_script/mini_game/target/.rustc_info.json
 /rust_script/mini_game/bin
+addons/godot_gif/bin/~godot_gif.windows.template_debug.x86_64.dll
