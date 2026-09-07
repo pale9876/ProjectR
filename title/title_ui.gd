@@ -8,9 +8,10 @@ const CharacterList: Script = preload("uid://dq6jdkets46eg")
 const RadioButtonContainer: Script = preload("uid://dgxb13iyu7nlx")
 
 
-
+@onready var gate_screen: Control = %GateScreen
 @onready var ingame_option_ui: Control = %IngameOptionUI
-
+@onready var enter_btn: Button = %Enter
+@onready var title_screen: TextureRect = %TitleScreen
 
 
 func _ready() -> void:
@@ -60,6 +61,22 @@ func _ready() -> void:
 		func() -> void:
 			pass
 	)
+	
+	title_screen.visible = false
+	get_main_ui().visible = false
+	gate_screen.visible = true
+	
+	enter_btn.button_up.connect(
+		func () -> void:
+			gate_screen.visible = false
+			get_main_ui().visible = true
+			title_screen.visible = true
+	)
+
+
+
+func initialize() -> void:
+	gate_screen.visible = true
 
 
 func _unhandled_input(event: InputEvent) -> void:
