@@ -1,0 +1,154 @@
+[gd_scene format=3 uid="uid://cy3jqego7pk8c"]
+
+[ext_resource type="Script" uid="uid://cvgiebayhh0h" path="res://script/ingame_option_ui.gd" id="1_skvw6"]
+[ext_resource type="Script" uid="uid://v0lifxo8wby" path="res://script/ingame_option_checkbox_attribute.gd" id="2_244lt"]
+
+[node name="IngameOptionUI" type="Control" unique_id=1200181442]
+layout_mode = 3
+anchors_preset = 15
+anchor_right = 1.0
+anchor_bottom = 1.0
+grow_horizontal = 2
+grow_vertical = 2
+script = ExtResource("1_skvw6")
+
+[node name="PanelContainer" type="PanelContainer" parent="." unique_id=1906170283]
+layout_mode = 1
+anchors_preset = 15
+anchor_right = 1.0
+anchor_bottom = 1.0
+grow_horizontal = 2
+grow_vertical = 2
+
+[node name="MarginContainer" type="MarginContainer" parent="PanelContainer" unique_id=1448036696]
+layout_mode = 2
+theme_override_constants/margin_left = 10
+theme_override_constants/margin_top = 10
+theme_override_constants/margin_right = 10
+theme_override_constants/margin_bottom = 10
+
+[node name="VBoxContainer" type="VBoxContainer" parent="PanelContainer/MarginContainer" unique_id=198849356]
+layout_mode = 2
+
+[node name="HBoxContainer" type="HBoxContainer" parent="PanelContainer/MarginContainer/VBoxContainer" unique_id=1602269166]
+layout_mode = 2
+size_flags_vertical = 3
+
+[node name="DolaOption" type="VBoxContainer" parent="PanelContainer/MarginContainer/VBoxContainer/HBoxContainer" unique_id=1501648421]
+layout_mode = 2
+size_flags_horizontal = 3
+
+[node name="UseDoLA" type="CheckBox" parent="PanelContainer/MarginContainer/VBoxContainer/HBoxContainer/DolaOption" unique_id=1140616773]
+layout_mode = 2
+button_pressed = true
+text = "신체 훼손 표현"
+script = ExtResource("2_244lt")
+description = "[Use Depictions of Limb Amputation]
+
+모든 유닛, 스토리, 캐릭터에게 신체 훼손 표현이 적용됩니다. 해제시, 모든 종류의 신체훼손이 출현하지 않습니다.
+
+이 옵션은 게임에 기본적으로 적용됩니다. 비활성화할 수 있습니다.
+
+적용이 되지 않는 캐릭터 또한 존재합니다."
+sub_option_container = NodePath("../HBoxContainer/DoLACheckBoxGroup")
+metadata/_custom_type_script = "uid://v0lifxo8wby"
+
+[node name="HBoxContainer" type="HBoxContainer" parent="PanelContainer/MarginContainer/VBoxContainer/HBoxContainer/DolaOption" unique_id=1585592774]
+layout_mode = 2
+
+[node name="Blank" type="Control" parent="PanelContainer/MarginContainer/VBoxContainer/HBoxContainer/DolaOption/HBoxContainer" unique_id=272343440]
+layout_mode = 2
+size_flags_horizontal = 3
+size_flags_stretch_ratio = 0.23
+
+[node name="DoLACheckBoxGroup" type="VBoxContainer" parent="PanelContainer/MarginContainer/VBoxContainer/HBoxContainer/DolaOption/HBoxContainer" unique_id=1742902582]
+layout_mode = 2
+size_flags_horizontal = 3
+
+[node name="HSeparator" type="HSeparator" parent="PanelContainer/MarginContainer/VBoxContainer/HBoxContainer/DolaOption/HBoxContainer/DoLACheckBoxGroup" unique_id=698907992]
+layout_mode = 2
+
+[node name="KidsFree" type="CheckBox" parent="PanelContainer/MarginContainer/VBoxContainer/HBoxContainer/DolaOption/HBoxContainer/DoLACheckBoxGroup" unique_id=1840627727]
+layout_mode = 2
+button_pressed = true
+text = "미성년자 출입금지"
+script = ExtResource("2_244lt")
+invert = true
+description = "[미취학 아동 출입금지]
+
+ 16세 이하로 설정된 유닛을 절대 소환하지 않습니다.
+
+ 스토리에서 또한 16세 이하 캐릭터들과 태아에 대한 묘사가 삭제됩니다.
+
+ 게임 내 몇몇 스토리 요소가 삭제됩니다.
+
+ 기본적으로 활성화되어 있습니다."
+sub_option_container = NodePath("../HBoxContainer/DoLAChildrenCheckboxGroup")
+metadata/_custom_type_script = "uid://v0lifxo8wby"
+
+[node name="HBoxContainer" type="HBoxContainer" parent="PanelContainer/MarginContainer/VBoxContainer/HBoxContainer/DolaOption/HBoxContainer/DoLACheckBoxGroup" unique_id=1760606122]
+layout_mode = 2
+alignment = 2
+
+[node name="Blank" type="Control" parent="PanelContainer/MarginContainer/VBoxContainer/HBoxContainer/DolaOption/HBoxContainer/DoLACheckBoxGroup/HBoxContainer" unique_id=1623353473]
+layout_mode = 2
+size_flags_horizontal = 3
+
+[node name="DoLAChildrenCheckboxGroup" type="VBoxContainer" parent="PanelContainer/MarginContainer/VBoxContainer/HBoxContainer/DolaOption/HBoxContainer/DoLACheckBoxGroup/HBoxContainer" unique_id=570756130]
+visible = false
+layout_mode = 2
+size_flags_horizontal = 3
+
+[node name="HSeparator" type="HSeparator" parent="PanelContainer/MarginContainer/VBoxContainer/HBoxContainer/DolaOption/HBoxContainer/DoLACheckBoxGroup/HBoxContainer/DoLAChildrenCheckboxGroup" unique_id=1557726676]
+layout_mode = 2
+
+[node name="DoNotChildAbuse" type="CheckBox" parent="PanelContainer/MarginContainer/VBoxContainer/HBoxContainer/DolaOption/HBoxContainer/DoLACheckBoxGroup/HBoxContainer/DoLAChildrenCheckboxGroup" unique_id=551144664]
+layout_mode = 2
+text = "아동학대 반대"
+script = ExtResource("2_244lt")
+description = "[아동학대 반대]
+
+16세 이하 유닛은 공격대상에서 제외됩니다. 플레이어의 모든 공격은 해당 유닛들에게 맞지 않고, 타격 가능한 대상에서 제외됩니다.
+
+관련 요소 출현, 묘사가 삭제됩니다."
+metadata/_custom_type_script = "uid://v0lifxo8wby"
+
+[node name="DoNotUseDoLAtoChildren" type="CheckBox" parent="PanelContainer/MarginContainer/VBoxContainer/HBoxContainer/DolaOption/HBoxContainer/DoLACheckBoxGroup/HBoxContainer/DoLAChildrenCheckboxGroup" unique_id=96393603]
+layout_mode = 2
+text = "Do not Use DoLA to children"
+script = ExtResource("2_244lt")
+description = "[Do not Use DoLA to children]
+
+ 16세 이하로 설정된 유닛은 신체 훼손 효과가 사용되지 않습니다.
+
+ 스토리 상 아동의 신체 훼손 묘사가 포함된 모든 묘사를 생략합니다.
+
+ "
+metadata/_custom_type_script = "uid://v0lifxo8wby"
+
+[node name="DoNotKillCivilian" type="CheckBox" parent="PanelContainer/MarginContainer/VBoxContainer/HBoxContainer/DolaOption/HBoxContainer/DoLACheckBoxGroup" unique_id=350319097]
+layout_mode = 2
+text = "민간인 학살금지"
+script = ExtResource("2_244lt")
+description = "[Do Not Kill Civilian]
+
+ 플레이어는 복제인간이 아닌 비무장 일반인으로 설정된 NPC를 공격할 수 없습니다.
+
+ 무장한 인간 또는 NPC들 간의 공격은 정상적으로 이루어집니다."
+metadata/_custom_type_script = "uid://v0lifxo8wby"
+
+[node name="VSeparator" type="VSeparator" parent="PanelContainer/MarginContainer/VBoxContainer/HBoxContainer" unique_id=1112054805]
+layout_mode = 2
+
+[node name="OptionDescription" type="RichTextLabel" parent="PanelContainer/MarginContainer/VBoxContainer/HBoxContainer" unique_id=376184956]
+unique_name_in_owner = true
+layout_mode = 2
+size_flags_horizontal = 3
+
+[node name="HFlowContainer" type="HFlowContainer" parent="PanelContainer/MarginContainer/VBoxContainer" unique_id=1817558069]
+layout_mode = 2
+alignment = 2
+
+[node name="Close" type="Button" parent="PanelContainer/MarginContainer/VBoxContainer/HFlowContainer" unique_id=33169611]
+layout_mode = 2
+text = "Close"

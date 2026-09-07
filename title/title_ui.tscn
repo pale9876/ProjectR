@@ -1,6 +1,6 @@
 [gd_scene format=3 uid="uid://d30oqfxv18ru8"]
 
-[ext_resource type="Theme" uid="uid://cyev5gnpugequ" path="res://title_theme.tres" id="1_1j68i"]
+[ext_resource type="Script" uid="uid://bpje5fqosbd7a" path="res://script/gate_screen.gd" id="2_ml3lu"]
 [ext_resource type="Texture2D" uid="uid://c1kdqekuqw0nx" path="res://aseprite/asso_project/title/MainTitle2.png" id="2_n4ayq"]
 [ext_resource type="Script" uid="uid://cgy23ubrds5ul" path="res://title/title_ui.gd" id="2_x1875"]
 [ext_resource type="PackedScene" uid="uid://h46mjm4dsjnx" path="res://title/title_ui_button.tscn" id="3_x1875"]
@@ -12,6 +12,7 @@
 [ext_resource type="Resource" uid="uid://cv0lt2ikqgq3r" path="res://class_info/trickster.tres" id="10_a66lt"]
 [ext_resource type="Resource" uid="uid://c0k466cyi4t5w" path="res://class_info/exorcist.tres" id="11_5d5gr"]
 [ext_resource type="Script" uid="uid://5kps1ydik3il" path="res://script/stat_attr_container.gd" id="12_ml3lu"]
+[ext_resource type="PackedScene" uid="uid://cy3jqego7pk8c" path="res://title/ingame_option_ui.tscn" id="14_2segn"]
 [ext_resource type="PackedScene" uid="uid://be5es7kj8my7a" path="res://title/character_list.tscn" id="19_t4lib"]
 [ext_resource type="Script" uid="uid://dq6jdkets46eg" path="res://title/character_list.gd" id="20_wif7g"]
 
@@ -30,10 +31,42 @@ anchor_right = 1.0
 anchor_bottom = 1.0
 grow_horizontal = 2
 grow_vertical = 2
-theme = ExtResource("1_1j68i")
 script = ExtResource("2_x1875")
 
+[node name="GateScreen" type="Control" parent="." unique_id=405166940]
+layout_mode = 1
+anchors_preset = 15
+anchor_right = 1.0
+anchor_bottom = 1.0
+grow_horizontal = 2
+grow_vertical = 2
+script = ExtResource("2_ml3lu")
+
+[node name="TextureRect" type="TextureRect" parent="GateScreen" unique_id=516287284]
+layout_mode = 1
+anchors_preset = 15
+anchor_right = 1.0
+anchor_bottom = 1.0
+grow_horizontal = 2
+grow_vertical = 2
+
+[node name="Enter" type="Button" parent="GateScreen" unique_id=804973010]
+layout_mode = 1
+anchors_preset = 8
+anchor_left = 0.5
+anchor_top = 0.5
+anchor_right = 0.5
+anchor_bottom = 0.5
+offset_left = -27.0
+offset_top = 76.0
+offset_right = 27.0
+offset_bottom = 107.0
+grow_horizontal = 2
+grow_vertical = 2
+text = "Enter "
+
 [node name="TitleScreen" type="TextureRect" parent="." unique_id=1100489049]
+visible = false
 layout_mode = 1
 anchors_preset = 15
 anchor_right = 1.0
@@ -51,6 +84,7 @@ flip_h = true
 
 [node name="MainUI" type="HBoxContainer" parent="." unique_id=1118765805]
 unique_name_in_owner = true
+visible = false
 layout_mode = 1
 anchors_preset = 15
 anchor_right = 1.0
@@ -221,6 +255,7 @@ text = "Anti-Apocalypse Strategy Organization"
 
 [node name="ClassSettings" type="MarginContainer" parent="." unique_id=1724839874]
 unique_name_in_owner = true
+visible = false
 layout_mode = 1
 anchors_preset = 15
 anchor_right = 1.0
@@ -457,3 +492,8 @@ script = ExtResource("20_wif7g")
 [node name="VBoxContainer2" type="VBoxContainer" parent="CharacterSettings/MarginContainer/HBoxContainer" unique_id=954025327]
 layout_mode = 2
 size_flags_horizontal = 3
+
+[node name="IngameOptionUI" parent="." unique_id=1200181442 instance=ExtResource("14_2segn")]
+unique_name_in_owner = true
+visible = false
+layout_mode = 1

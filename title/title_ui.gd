@@ -8,7 +8,14 @@ const CharacterList: Script = preload("uid://dq6jdkets46eg")
 const RadioButtonContainer: Script = preload("uid://dgxb13iyu7nlx")
 
 
+
+@onready var ingame_option_ui: Control = %IngameOptionUI
+
+
+
 func _ready() -> void:
+	ingame_option_ui.visible = false
+	
 	var _first_page := first_page()
 	var _second_page := second_page()
 	
@@ -30,6 +37,12 @@ func _ready() -> void:
 			pass
 	)
 	
+	get_ingame_option_btn().button_up.connect(
+		func() -> void:
+			ingame_option_ui.visible = true
+			
+	)
+
 	get_profile_btn().button_up.connect(
 		func() -> void:
 			_first_page.hide()
@@ -90,7 +103,7 @@ func get_start_btn() -> Button:
 	return get_node(^"%Start") as Button
 
 
-func get_option_btn() -> Button:
+func get_ingame_option_btn() -> Button:
 	return get_node(^"%Option") as Button
 
 
