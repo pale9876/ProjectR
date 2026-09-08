@@ -62,9 +62,7 @@ func _ready() -> void:
 			pass
 	)
 	
-	title_screen.visible = false
-	get_main_ui().visible = false
-	gate_screen.visible = true
+	initialize()
 	
 	enter_btn.button_up.connect(
 		func () -> void:
@@ -76,7 +74,10 @@ func _ready() -> void:
 
 
 func initialize() -> void:
+	title_screen.visible = false
+	get_main_ui().visible = false
 	gate_screen.visible = true
+
 
 
 func _unhandled_input(event: InputEvent) -> void:
