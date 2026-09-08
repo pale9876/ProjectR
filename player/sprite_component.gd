@@ -7,14 +7,12 @@ extends Node2D
 const DirectionModuler: Script = preload("uid://dghhexdudu0xy")
 
 
-@export var current: KaradaModule:
+@export var current: Node2D:
 	set(node):
 		current = node
-		#var node := get_node_or_null(path)
 		if node and node.is_inside_tree():
 			for child: Node in get_children():
-				if child is KaradaModule:
-					child.visible = node == child
+				if child is Node2D: child.visible = node == child
 
 
 @export var offset: Vector2 = Vector2(0., -64.):
@@ -34,7 +32,6 @@ var time_scale: float:
 		time_scale = maxf(0., value)
 
 
-
 func _physics_process(delta: float) -> void:
 	if !Engine.is_editor_hint():
 		if time > 0.:
@@ -52,3 +49,9 @@ func has_module(_name: String) -> bool:
 func shake(_force: Vector2, _duration: float, _scale: float) -> void:
 	force = _force
 	time = _duration
+
+
+func change(karada_name: String) -> void:
+	if has_module(karada_name):
+		var karada: KaradaModule = get_node(NodePath(karada_name)) as KaradaModule
+		current = karada

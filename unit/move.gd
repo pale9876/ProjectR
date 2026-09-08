@@ -15,7 +15,8 @@ var idle_state: UnitState
 
 
 func _enter_tree() -> void:
-	add_library()
+	#add_library()
+	pass
 
 
 func _ready() -> void:

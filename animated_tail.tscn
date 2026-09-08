@@ -335,96 +335,6 @@ tracks/8/keys = {
 "values": [Vector2(-50.478146, 36.50322), Vector2(8.085857, 69.77822), Vector2(65.318855, 57.79922)]
 }
 
-[sub_resource type="Animation" id="Animation_nribf"]
-resource_name = "wag"
-length = 0.6012016545504332
-loop_mode = 1
-step = 0.0167
-tracks/0/type = "value"
-tracks/0/imported = false
-tracks/0/enabled = true
-tracks/0/path = NodePath(".:curve:point_2/in")
-tracks/0/interp = 1
-tracks/0/loop_wrap = true
-tracks/0/keys = {
-"times": PackedFloat32Array(0, 0.10000001, 0.20000002, 0.3, 0.40000004, 0.5),
-"transitions": PackedFloat32Array(1, 1, 1, 1, 1, 1),
-"update": 1,
-"values": [Vector2(3.0445995, -36.859856), Vector2(-22.226896, -26.614656), Vector2(-22.324976, 33.95108), Vector2(20.802946, 38.954624), Vector2(-38.61922, 54.663933), Vector2(-39.30223, -10.22234)]
-}
-tracks/1/type = "value"
-tracks/1/imported = false
-tracks/1/enabled = true
-tracks/1/path = NodePath(".:curve:point_2/position")
-tracks/1/interp = 1
-tracks/1/loop_wrap = true
-tracks/1/keys = {
-"times": PackedFloat32Array(0, 0.10000001, 0.20000002, 0.3, 0.40000004, 0.5),
-"transitions": PackedFloat32Array(1, 1, 1, 1, 1, 1),
-"update": 1,
-"values": [Vector2(152, 18), Vector2(229, 12), Vector2(246, -7), Vector2(180, -60), Vector2(224, -42), Vector2(228, 21)]
-}
-tracks/2/type = "value"
-tracks/2/imported = false
-tracks/2/enabled = true
-tracks/2/path = NodePath(".:curve:point_1/out")
-tracks/2/interp = 1
-tracks/2/loop_wrap = true
-tracks/2/keys = {
-"times": PackedFloat32Array(0, 0.10000001, 0.20000002, 0.3, 0.40000004, 0.5),
-"transitions": PackedFloat32Array(1, 1, 1, 1, 1, 1),
-"update": 1,
-"values": [Vector2(44.572636, 0.067441106), Vector2(44.572636, 0.067441106), Vector2(43.572636, 0.067441106), Vector2(46.621677, -10.17776), Vector2(49.35373, -0.61557317), Vector2(49.35373, -0.61557317)]
-}
-tracks/3/type = "value"
-tracks/3/imported = false
-tracks/3/enabled = true
-tracks/3/path = NodePath(".:curve:point_1/in")
-tracks/3/interp = 1
-tracks/3/loop_wrap = true
-tracks/3/keys = {
-"times": PackedFloat32Array(0, 0.10000001, 0.20000002, 0.3, 0.40000004, 0.5),
-"transitions": PackedFloat32Array(1, 1, 1, 1, 1, 1),
-"update": 1,
-"values": [Vector2(-44.572636, -0.067441106), Vector2(-44.572636, -0.067441106), Vector2(-43.572636, -0.067441106), Vector2(-46.621677, 10.17776), Vector2(-49.35373, 0.61557317), Vector2(-49.35373, 0.61557317)]
-}
-tracks/4/type = "value"
-tracks/4/imported = false
-tracks/4/enabled = true
-tracks/4/path = NodePath(".:curve:point_1/position")
-tracks/4/interp = 1
-tracks/4/loop_wrap = true
-tracks/4/keys = {
-"times": PackedFloat32Array(0, 0.10000001, 0.20000002, 0.3, 0.40000004, 0.5),
-"transitions": PackedFloat32Array(1, 1, 1, 1, 1, 1),
-"update": 1,
-"values": [Vector2(86, -64), Vector2(122, -43), Vector2(124, 44), Vector2(115, 52), Vector2(106, 11), Vector2(109, -25)]
-}
-tracks/5/type = "value"
-tracks/5/imported = false
-tracks/5/enabled = true
-tracks/5/path = NodePath(".:curve:point_0/out")
-tracks/5/interp = 1
-tracks/5/loop_wrap = true
-tracks/5/keys = {
-"times": PackedFloat32Array(0, 0.10000001, 0.20000002, 0.3, 0.40000004, 0.5),
-"transitions": PackedFloat32Array(1, 1, 1, 1, 1, 1),
-"update": 1,
-"values": [Vector2(22.539442, -42.34683), Vector2(28.00355, -20.4904), Vector2(14.588482, 25.29424), Vector2(15.709308, 32.10163), Vector2(30.735603, 7.5131493), Vector2(28.686563, -6.8301315)]
-}
-tracks/6/type = "value"
-tracks/6/imported = false
-tracks/6/enabled = true
-tracks/6/path = NodePath(".:curve:point_0/position")
-tracks/6/interp = 1
-tracks/6/loop_wrap = true
-tracks/6/keys = {
-"times": PackedFloat32Array(0, 0.10000001, 0.20000002, 0.3, 0.40000004, 0.5),
-"transitions": PackedFloat32Array(1, 1, 1, 1, 1, 1),
-"update": 1,
-"values": [Vector2(0, 0), Vector2(0, 0), Vector2(0, 0), Vector2(0, 0), Vector2(0, 0), Vector2(0, 0)]
-}
-
 [sub_resource type="Animation" id="Animation_in1cm"]
 resource_name = "wag_2"
 length = 1.0020016442507509
@@ -544,14 +454,12 @@ _data = {
 &"RESET": SubResource("Animation_p036d"),
 &"attack": SubResource("Animation_2kmqr"),
 &"example": SubResource("Animation_nyb8w"),
-&"wag": SubResource("Animation_nribf"),
-&"wag_2": SubResource("Animation_in1cm")
+&"wag": SubResource("Animation_in1cm")
 }
 
-[node name="AnimatedTailLine" type="Path2D" unique_id=581507229 node_paths=PackedStringArray("line")]
+[node name="AnimatedTailLine" type="Path2D" unique_id=581507229]
 curve = SubResource("Curve2D_p036d")
 script = ExtResource("1_nyb8w")
-line = NodePath("Line2D")
 
 [node name="Line2D" type="Line2D" parent="." unique_id=1324528242]
 points = PackedVector2Array(0, 0, 16.678299, -27.874554, 25.363415, -38.877228, 29.942871, -43.63896, 34.737553, -47.90535, 39.790436, -51.6747, 45.144493, -54.945305, 50.842705, -57.715466, 56.92803, -59.983475, 63.44345, -61.747635, 70.43193, -63.006245, 86, -64, 94.12, -63.47294, 101.75804, -61.96903, 108.90324, -59.56622, 115.54472, -56.34247, 121.67166, -52.375725, 127.27318, -47.743958, 132.33838, -42.525116, 136.85646, -36.797157, 140.81653, -30.638035, 144.2077, -24.12571, 147.01913, -17.338135, 149.23996, -10.353268, 150.85933, -3.2490654, 151.86636, 3.8965187, 152.25021, 11.005526, 152, 18)

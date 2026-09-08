@@ -3,7 +3,8 @@ extends UnitState
 
 
 func _enter_tree() -> void:
-	add_library()
+	#add_library()
+	pass
 
 
 func _enter() -> void:

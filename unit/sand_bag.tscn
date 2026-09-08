@@ -10,7 +10,6 @@
 [ext_resource type="Script" uid="uid://cdbxf87eqivir" path="res://ai/tasks/set_target_position.gd" id="8_1kauj"]
 [ext_resource type="Script" uid="uid://bupj3hlvtt67s" path="res://unit/hurtbox.gd" id="8_k7l50"]
 [ext_resource type="Script" uid="uid://bdj3moatwduju" path="res://script/unit_awareness.gd" id="9_yvxo8"]
-[ext_resource type="Script" uid="uid://dcybwuwfqeqr3" path="res://unit/state/state_machine.gd" id="10_x1h6o"]
 [ext_resource type="PackedScene" uid="uid://cfdt7041dne44" path="res://animated_tail.tscn" id="11_2e5g1"]
 [ext_resource type="Script" uid="uid://8cq3ted0s3ob" path="res://unit/state/idle.gd" id="11_3b2yn"]
 [ext_resource type="Script" uid="uid://ditjbaamrfw0k" path="res://unit/dynamic_collision.gd" id="13_k0h15"]
@@ -18,6 +17,7 @@
 [ext_resource type="Script" uid="uid://8j24mmna7pmh" path="res://unit/state/jump.gd" id="14_w11yh"]
 [ext_resource type="Script" uid="uid://c1823275u0dxi" path="res://player/state/comment.gd" id="15_4fp7c"]
 [ext_resource type="AnimationLibrary" uid="uid://c2lftjcgk3lp4" path="res://motion/idle.res" id="15_507e4"]
+[ext_resource type="Script" uid="uid://nmmtety5yvve" path="res://player/state_machine.gd" id="15_yeahc"]
 [ext_resource type="Script" uid="uid://dmhr7bhy8lgt5" path="res://unit/move.gd" id="18_t3pbd"]
 [ext_resource type="Script" uid="uid://6eubdpqc1rif" path="res://unit/grabbed.gd" id="19_cibo8"]
 [ext_resource type="Script" uid="uid://h6umakp1bcu0" path="res://unit/grab.gd" id="20_2d64t"]
@@ -55,10 +55,10 @@ fill = 1
 fill_from = Vector2(0.5, 0.5)
 fill_to = Vector2(0.85, 0.85)
 
-[sub_resource type="RectangleShape2D" id="RectangleShape2D_yeahc"]
+[sub_resource type="RectangleShape2D" id="RectangleShape2D_v2yrs"]
 size = Vector2(38, 92)
 
-[sub_resource type="RectangleShape2D" id="RectangleShape2D_v2yrs"]
+[sub_resource type="RectangleShape2D" id="RectangleShape2D_gjkc3"]
 size = Vector2(38, 92)
 
 [sub_resource type="Animation" id="Animation_njs1s"]
@@ -195,7 +195,7 @@ modulate = Color(1, 0, 0, 1)
 
 [node name="UnitCollision" type="CollisionShape2D" parent="." unique_id=2120811417]
 position = Vector2(0, -46)
-shape = SubResource("RectangleShape2D_yeahc")
+shape = SubResource("RectangleShape2D_v2yrs")
 debug_color = Color(0, 0.6, 0.69803923, 0.2)
 script = ExtResource("7_gjkc3")
 metadata/_custom_type_script = "uid://bhhy483vjefa1"
@@ -208,7 +208,7 @@ script = ExtResource("8_k7l50")
 
 [node name="HurtboxShape" type="CollisionShape2D" parent="Hurtbox" unique_id=1180949192]
 position = Vector2(0, -46)
-shape = SubResource("RectangleShape2D_v2yrs")
+shape = SubResource("RectangleShape2D_gjkc3")
 debug_color = Color(0.8509804, 0.03529412, 0.21960784, 0.39607844)
 script = ExtResource("7_gjkc3")
 metadata/_custom_type_script = "uid://bhhy483vjefa1"
@@ -239,9 +239,11 @@ script = ExtResource("36_yeahc")
 behavior_tree = SubResource("BehaviorTree_2ul3e")
 blackboard_plan = SubResource("BlackboardPlan_ak6ua")
 
-[node name="StateMachine" type="LimboHSM" parent="." unique_id=942695327]
+[node name="StateMachine" type="LimboHSM" parent="." unique_id=928114458 node_paths=PackedStringArray("label")]
 blackboard_plan = SubResource("BlackboardPlan_k0h15")
-script = ExtResource("10_x1h6o")
+script = ExtResource("15_yeahc")
+label = NodePath("../StateLabel")
+metadata/_custom_type_script = "uid://nmmtety5yvve"
 
 [node name="#Default" type="LimboState" parent="StateMachine" unique_id=1906376363]
 process_mode = 4
@@ -330,5 +332,9 @@ metadata/_custom_type_script = "uid://c1823275u0dxi"
 [node name="Grab" type="LimboState" parent="StateMachine" unique_id=1141453359]
 script = ExtResource("20_2d64t")
 metadata/_custom_type_script = "uid://im1wyvflgwp0"
+
+[node name="StateLabel" type="Label" parent="." unique_id=1138912887]
+offset_right = 40.0
+offset_bottom = 23.0
 
 [editable path="SpriteComponent"]

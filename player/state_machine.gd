@@ -5,7 +5,7 @@ class_name StateMachine
 
 # Import
 const Idle: Script = preload("uid://c08p61o8pw6vo")
-const Move: Script = preload("uid://c4q85mvv6k6wb")
+#const Move: Script = preload("uid://c4q85mvv6k6wb")
 const Player: Script = preload("uid://c2uxhumgng18h")
 
 
@@ -44,7 +44,8 @@ func _ready() -> void:
 
 	active_state_changed.connect(
 		func(current: LimboState, _prev: LimboState) -> void:
-			label.text = current.name
+			if label:
+				label.text = "State: %s" % current.name
 	)
 
 

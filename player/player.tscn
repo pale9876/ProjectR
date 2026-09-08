@@ -238,9 +238,6 @@ position = Vector2(0, -64)
 visible = false
 position = Vector2(0, -64)
 script = ExtResource("11_a1u5o")
-ORDER_BY_PARTS = Dictionary[int, PackedStringArray]({
-0: PackedStringArray("BackHairAccessory", "BackHair", "BodyBackRace", "RightArm", "Leg", "Body", "LeftArm", "Head")
-})
 
 [node name="BackHairAccessory" type="Node2D" parent="SpriteComponent/Walk" unique_id=1591016064]
 script = ExtResource("12_3dxkp")
@@ -579,9 +576,9 @@ metadata/_custom_type_script = "uid://b7x8s5btnaxj2"
 [node name="HighPunchCombo" type="LimboState" parent="StateMachine" unique_id=662588822 node_paths=PackedStringArray("hitbox")]
 script = ExtResource("9_yllr7")
 cooltime_frame = 6
+hitbox = NodePath("../../HitboxComponent/PunchCombo")
 action_input = PackedStringArray("attack")
 ev_name = &"high_punch_combo"
-hitbox = NodePath("../../HitboxComponent/PunchCombo")
 
 [node name="LeftPunch" type="Node" parent="StateMachine/HighPunchCombo" unique_id=1731762629]
 script = ExtResource("48_hggc2")
@@ -596,15 +593,15 @@ script = ExtResource("50_7l6ig")
 metadata/_custom_type_script = "uid://0kxmhttvge4l"
 
 [node name="Slide" parent="StateMachine" unique_id=591192304 node_paths=PackedStringArray("hitbox") instance=ExtResource("16_uw77l")]
-action_input = PackedStringArray("down", "down", "kick")
 hitbox = NodePath("../../HitboxComponent/SlideHitbox")
+action_input = PackedStringArray("down", "down", "kick")
 
 [node name="JumpKick" parent="StateMachine" unique_id=1156718825 instance=ExtResource("19_r7pn3")]
 script = ExtResource("20_2uvqg")
-action_input = PackedStringArray("kick")
 cooltime_frame = 8
 just_frame = false
 hitbox_scene = null
+action_input = PackedStringArray("kick")
 
 [node name="JumpHammer" type="LimboState" parent="StateMachine" unique_id=1138518008]
 script = ExtResource("21_1s1yo")
@@ -615,9 +612,9 @@ metadata/_custom_type_script = "uid://b7x8s5btnaxj2"
 [node name="Blowkick" type="LimboState" parent="StateMachine" unique_id=1713774209 node_paths=PackedStringArray("hitbox")]
 script = ExtResource("22_r7pn3")
 cooltime_frame = 12
+hitbox = NodePath("../../HitboxComponent/Blowkick")
 action_input = PackedStringArray("down", "front", "kick")
 ev_name = &"blowkick"
-hitbox = NodePath("../../HitboxComponent/Blowkick")
 metadata/_custom_type_script = "uid://b7x8s5btnaxj2"
 
 [node name="ChargingCounter" type="LimboState" parent="StateMachine" unique_id=1052840880]
